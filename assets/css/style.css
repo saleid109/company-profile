@@ -1,0 +1,123 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--color-bg-light);
+}
+
+/* القواعد العامة للعناوين */
+h1, h2, h3, h4 {
+    font-family: var(--font-main);
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+/* تنسيق التوب بار */
+.top-bar {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    font-size: 14px;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;       /* إجبارها على أخذ العرض الكامل */
+    max-width: 100%;   /* إلغاء القيد المسبق 1280px */
+    padding: 0 30px;   /* هامش بسيط جداً من اليمين واليسار لجمالية التصميم */
+    margin: 0;
+}
+
+.flex-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: var(--transition);
+    gap: 8;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px; 
+}
+
+.language {
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2); /* خط فاصل رقيق */
+}
+
+.language a {
+    font-weight: var(--weight-bold); /* 700 */
+    color: var(--color-white);
+}
+
+.top-bar a:hover {
+    color: var(--color-primary);
+}
+
+
+/*تسجيل الدخول*/
+.user-info span {
+    font-weight: var(--weight-bold); 
+}
+
+.user-info i {
+    margin-left: 8px; /* مسافة على اليسار لأن الموقع RTL */
+    margin-right: 0;
+}
+
+/* السلة والعداد */
+.cart-info {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* توحيد المسافة بين الأيقونة والسعر */
+    flex-direction: row; /* التأكد من الترتيب الأفقي */
+}
+
+/* الأيقونة  */
+.cart-icon-wrapper {
+    position: relative; 
+    display: flex;
+    align-items: center;
+}
+
+/*العداد الاحمر*/
+.cart-badge {
+    position: absolute;
+    top: -10px;      /* يرفع الدائرة للأعلى */
+    right: -6px;   /* يحرك الدائرة لليسار/اليمين فوق الأيقونة */
+    background-color: var(--color-accent);
+    color:var(--color-white);
+    font-size: 10px;
+    width: 14px;    /* عرض ثابت للدائرة */
+    height: 14px;   /* ارتفاع ثابت للدائرة */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.price-text{
+    font-weight: var(--weight-regular);
+}
+

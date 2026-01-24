@@ -1,0 +1,13 @@
+@media (max-width: 480px) {
+  .header-container {
+    flex-wrap: wrap; /* لجعل العناصر تنزل لسطر جديد بدل التداخل */
+    font-size: 12px; 
+  }
+}
+
+.container {
+    width: 95%; /* مساحة أكبر قليلاً للموبايل */
+    margin: 0 auto;
+}
+
+/* 4. مثال لاستخدام Media Query للشاشات الكبيرة */

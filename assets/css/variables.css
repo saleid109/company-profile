@@ -1,0 +1,41 @@
+/*  التي تستخدم بكثرة اعدادات المتغيرات */
+:root {
+  /*الخطوط- */
+  --font-main: 'Tajawal', sans-serif;
+  --font-en: 'Montserrat', sans-serif;
+
+  --color-primary: #FFCC35;
+  --color-secondary: #00025B;
+  --color-bg-light: #F5F5F5;
+  --color-text: #181A2A;
+    --color-white: #FFFFFF;
+
+
+/* 1. ألوان إضافية من التصميم */
+
+  --color-accent: #FF4D4D;      /* اللون الأحمر لعداد السلة والتنبيهات */
+  --color-navy-light: #000385;  /*عند الضغط Hover */
+  --color-gray-text: #666666;   
+
+  /* . متغيرات المسافات (Spacing) - لتوحيد الأبعاد في الموقع */
+  --section-padding: 80px 0;    /* المسافة الثابتة بين الأقسام الرئيسية */
+  --card-padding: 25px;         /* المسافة الداخلية للبطاقات */
+  --border-radius: 12px;        /* لتوحيد انحناء زوايا البطاقات والأزرار */
+
+  /* 3. متغيرات الترتيب (Z-index) - لمنع تداخل العناصر */
+  --z-fixed: 100;               /* للهيدر الثابت */
+  --z-modal: 200;               /* للنوافذ المنبثقة إن وجدت */
+  --weight-regular: 400;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  /* قياسات الهيكل */
+  --max-width: 1280px;
+  --header-height: 40px; 
+  
+  /* تأثيرات احترافية */
+  --transition: all 0.3s ease;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
