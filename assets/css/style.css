@@ -261,6 +261,9 @@ h4 {
     display: flex;
     gap: 20px;
     justify-content: center;
+    font-family: var(--font-main);
+    font-weight: var(--weight-bold);
+
 }
 
 .home-buttons a {
@@ -293,6 +296,7 @@ h4 {
 /*  زر الاستشارة*/
 .btn-outline {
     background-color: var(--color-primary);
+    font-family: var(--font-main);
     color: var(--color-secondary);
     padding: 10px 23px;
     border-radius: 8px;
