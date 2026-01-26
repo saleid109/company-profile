@@ -51,7 +51,6 @@ h1, h2, h3, h4 {
     color: var(--color-white);
     text-decoration: none;
     transition: var(--transition);
-    gap: 8;
 }
 
 .social-links {
@@ -136,22 +135,18 @@ h1, h2, h3, h4 {
 
 /*  حاوية الشعار  */
 .logo {
-    position: relative;
-    width: 260px; 
-    height: 100%; 
-    bottom: 15px;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 /*الصورة */
 .logo img {
-    position: absolute;
-    top: 50%; /* ابدأ من المنتصف */
-    right: 0;  /* التصق باليمين */
-    transform: translateY(-35%); 
-    height: 110px; 
-    width: auto ;
-    z-index: 9999; /* لضمان ظهورها فوق كل شيء */
+    height: 50px;
+    width: auto;
+    z-index: var(--z-fixed);
     display: block;
+    object-fit: contain;
 }
 
 
@@ -285,12 +280,10 @@ h1, h2, h3, h4 {
     border-radius: 8px;
     text-decoration: none;
     font-weight: var(--weight-bold);
-    transition: all 0.3s ease;
+    transition: var(--transition);
     display: inline-block;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-servers:hover {
