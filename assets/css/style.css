@@ -278,8 +278,8 @@ h1, h2, h3, h4 {
 
 }
 
-/*  زر الاستشارة*/
-.btn-btn-servers {
+/*  زر طلب خدمة*/
+.btn-servers {
     background-color: var(--color-primary);
     color: var(--color-secondary);
     padding: 10px 23px;
@@ -292,6 +292,25 @@ h1, h2, h3, h4 {
 }
 
 .btn-servers:hover {
+    background-color: var(--color-white); 
+    color: var(--color-secondary); 
+    box-shadow: 0 5px 15px rgba(176, 176, 182, 0.4);
+}
+
+/*  زر انضمام*/
+.btn-outline {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 10px 23px;
+    border-radius: 54px;
+    text-decoration: none;
+    font-weight: var(--weight-bold);
+    transition: all 0.3s ease;
+    display: inline-block;
+
+}
+
+.btn-outline:hover {
     background-color: var(--color-white); 
     color: var(--color-secondary); 
     box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
