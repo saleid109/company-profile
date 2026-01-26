@@ -166,5 +166,7 @@
 
 .btn-servers{
     background-color: var(--color-bg-light);
+    color: var(--color-secondary);
+    width: ;
 
 }
