@@ -273,7 +273,7 @@ h4 {
 }
 
 /*  زر طلب خدمة*/
-/* زر طلب خدمة - تعديل الزوايا والظل */
+
 .btn-servers {
     background-color: var(--color-primary);
     color: var(--color-secondary);
@@ -287,12 +287,12 @@ h4 {
     cursor: pointer;
 }
 
-/* زر تصفح أعمالنا (أو الاستشارة) - تعديل ليناسب فيجما */
+/*زر استثمر معنا  */
 .btn-outline {
-    background-color: var(--color-white); /* في فيجما يظهر الزر الثاني غالباً بلون أبيض */
+    background-color: var(--color-white);
     color: var(--color-secondary);
-    padding: 12px 30px;
-    border-radius: 50px; /* زوايا مستديرة بالكامل */
+    padding: 14px 30px;
+    border-radius: 22px;
     text-decoration: none;
     font-weight: var(--weight-bold);
     transition: all 0.3s ease;
