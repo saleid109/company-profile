@@ -264,6 +264,8 @@ h4 {
     font-family: var(--font-main);
     font-weight: var(--weight-bold);
 
+
+
 }
 
 .home-buttons a {
@@ -272,35 +274,40 @@ h4 {
     -webkit-tap-highlight-color: transparent;
 }
 
-/*  زر طلب خدمة*/
 
+/*زر طلب خدمة   */
 .btn-servers {
     background-color: var(--color-primary);
     color: var(--color-secondary);
-    padding: 10px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: var(--weight-bold);
-    transition: var(--transition);
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-}
-
-/*زر استثمر معنا  */
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    padding: 10px 23px;
-    border-radius: 8px;
+    padding: 17px 65px;
+    border-radius: 2px;
     text-decoration: none;
     font-weight: var(--weight-bold);
     transition: all 0.3s ease;
     display: inline-block;
+
 }
 
-.btn-primary:hover {
+.btn-servers:hover {
     background-color: var(--color-white);
     color: var(--color-secondary);
-    box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
+    box-shadow: 0 5px 15px rgba(135, 135, 139, 0.4);
+}
+/*زر استثمر معنا  */
+.btn-outline {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 17px 75px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: var(--weight-bold);
+    transition: all 0.3s ease;
+    display: inline-block;
+
+}
+
+.btn-outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+    box-shadow: 0 5px 15px rgba(135, 135, 139, 0.4);
 }
