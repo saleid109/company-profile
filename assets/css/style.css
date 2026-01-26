@@ -251,7 +251,7 @@ h4 {
 }
 .hero-content p {
     font-size: 1.2rem;
-    max-width: 700px;
+    max-width: var(--z-fixed);
     margin: 0 auto 30px;
     line-height: 1.8;
 }
