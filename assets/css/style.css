@@ -81,7 +81,7 @@ h1, h2, h3, h4 {
 }
 
 .user-info i {
-    margin-left: 8px; /* مسافة على اليسار لأن الموقع RTL */
+    margin-left: 8px; 
     margin-right: 0;
 }
 
@@ -108,16 +108,114 @@ h1, h2, h3, h4 {
     background-color: var(--color-accent);
     color:var(--color-white);
     font-size: 10px;
-    width: 14px;    /* عرض ثابت للدائرة */
-    height: 14px;   /* ارتفاع ثابت للدائرة */
+    width: 14px;    /* عرض للدائرة */
+    height: 14px;   /* ارتفاع للدائرة */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
 }
+/*السعر*/
 
 .price-text{
     font-weight: var(--weight-regular);
+}
+
+
+/*  الحاوية الأب  */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+    height: 70px; /* تحديد ارتفاع ثابت للهيدر يساعد في ضبط العناصر */
+    background-color: var(--color-secondary);
+    padding: 0 30px;
+}
+
+/*  حاوية الشعار  */
+.logo {
+    position: relative;
+    width: 260px; 
+    height: 100%; 
+    bottom: 15px;
+}
+
+/*الصورة */
+.logo img {
+    position: absolute;
+    top: 50%; /* ابدأ من المنتصف */
+    right: 0;  /* التصق باليمين */
+    transform: translateY(-35%); 
+    height: 110px; 
+    width: auto ;
+    z-index: 9999; /* لضمان ظهورها فوق كل شيء */
+    display: block;
+}
+
+
+/* الروابط */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+.nav-menu a:hover {
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.nav-menu a.active {
+    color: var(--color-primary);
+    font-weight: var(--weight-bold);
+    position: relative;
+}
+
+/*  خط صغير تحت كلمة الرئيسية  */
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+}
+.nav-menu a.active:hover{
+    color: var(--color-bg-light);
+    transform: translateY(-2px);
+
+}
+.mobile-menu-icon {
+    display: none; 
+}
+/*  زر الاستشارة*/
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 10px 23px;
+    border-radius: 54px;
+    text-decoration: none;
+    font-weight: var(--weight-bold);
+    transition: all 0.3s ease;
+    display: inline-block;
+
+}
+
+.btn-primary:hover {
+    background-color: var(--color-white); 
+    color: var(--color-secondary); 
+    box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
 }
 

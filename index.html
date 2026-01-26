@@ -1,70 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الموقع التعريفي - نقطة صعود</title>
-  
-  <!-- الخطوط -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الموقع التعريفي - نقطة صعود</title>
 
-  <!-- الأيقونات -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- الخطوط -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-<!--الأنماط المخصصة للهاتف المحمول-->
-  <link 
-  rel="stylesheet" 
-  media="screen and (max-width: 980px)"
-  href="./styles/mobile.css"/>
-
+    <!-- الأيقونات -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <!--صفحات الانماط الاساسية css-->
-    <link rel="stylesheet" href="./assets/css/css-reset.css">
-    <link rel="stylesheet" href="./assets/css/variables.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-  <header>
-    <!--العلوي barTOP-->
-    <div class="top-bar">
-      <div class="container">
-        <!-- اللغة والتواصل الاجتماعي -->
-        <div class="flex-group">
-        <!--مواقع التواصل الاجتماعي-->
-          <div class="social-links">
-            <a href="#" class="ml-3"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="ml-3"><i class="fab fa-tiktok"></i></a>
-            <a href="#" class="ml-3"><i class="fab fa-x-twitter"></i></a>
+    <link rel="stylesheet" href="./assets/css/css-reset.css" />
+    <link rel="stylesheet" href="./assets/css/variables.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/mobile.css" />
+
+        <!--الأنماط المخصصة للهاتف المحمول-->
+          <!--لسرعة التحميل-->
+    <!-- <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="./assets/css/mobile.css"
+    /> -->
+  </head>
+  <body>
+    <header>
+      <!--العلوي barTOP-->
+      <div class="top-bar">
+        <div class="container">
+          <!-- اللغة والتواصل الاجتماعي -->
+          <div class="flex-group">
+
+              <!-- أيقونات التواصل -->
+            <div class="social-links">
+              <a href="#" class="ml-3" aria-label="زيارتنا  على لينكدإن">
+                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="ml-3"><i class="fab fa-tiktok"></i></a>
+              <a href="#" class="ml-3"><i class="fab fa-x-twitter"></i></a>
+            </div>
+            <!--اللغة-->
+            <div class="language en-text">
+              <a href="#">عربي</a> | <a href="#">EN</a>
+            </div>
           </div>
-          <!--اللغة-->
-          <div class="language en-text">
-            <a href="#">عربي</a> | <a href="#">EN</a>
+
+          <!--  معلومات المستخدم والسلة -->
+          <div class="flex-group">
+            <!--اسم المستخدم-->
+            <div class="user-info">
+              <i class="fas fa-user-circle"></i>
+              <span>تسجيل الدخول</span>
+            </div>
+            <!-- ايقونة السلة و العداد-->
+            <div class="cart-info">
+              <div class="cart-icon-wrapper">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge">2</span>
+              </div>
+              <!--السعر-->
+              <span class="price-text">1,200 ر.س</span>
+            </div>
           </div>
         </div>
+      </div>
+    </header>
 
-        <!--  معلومات المستخدم والسلة -->
-<div class="flex-group">
-  <!--اسم المستخدم-->
-  <div class="user-info">
-    <i class="fas fa-user-circle"></i>
-    <span>تسجيل الدخول</span>
-  </div>
-<!-- ايقونة السلة و العداد-->
-  <div class="cart-info">
-    <div class="cart-icon-wrapper">
-      <i class="fas fa-shopping-cart"></i>
-      <span class="cart-badge">2</span>
+    <!--القائمة الرئيسية (Main Navbar) -->
+<nav class="main-nav" aria-label="القائمة الرئيسية">
+  <div class="container nav-wrapper">
+    
+    <!-- الشعار-->
+    <div class="logo">
+      <a href="#hero" title="العودة للرئيسية">
+        <img src="./public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود - متخصصون في الحلول الرقمية">
+      </a>
     </div>
-    <!--السعر-->
-    <span class="price-text">1,200 ر.س</span>
-  </div>
+<!--ايقونة التنقل للجوال -->
+    <button class="mobile-menu-icon" onclick="toggleMenu()" aria-label="فتح القائمة">
+    <i class="fas fa-bars"></i>
+</button>
+    <!-- روابط التنقل-->
+    <div class="navbar-links">
+      <ul class="nav-menu">
+        <li><a href="#hero" class="active" aria-current="page">الرئيسية</a></li>
+        <li class="dropdown">
+          <a href="#about" aria-haspopup="true" aria-expanded="false">
+    عن نقطة صعود <i class="fas fa-chevron-down mr-1 text-xs" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+        <!--القوائم المنسدلة-->
+        <li class="dropdown">
+          <a href="#services" aria-haspopup="true" aria-expanded="false">
+            خدماتنا <i class="fas fa-chevron-down mr-1 text-xs" aria-hidden="true"></i>
+          </a>
+        </li>
+        
+        <li><a href="#portfolio">أعمالنا</a></li>
+        
+        <li class="dropdown">
+          <a href="#team" aria-haspopup="true" aria-expanded="false">
+            طاقم العمل <i class="fas fa-chevron-down mr-1 text-xs" aria-hidden="true"></i>
+          </a>
+        </li>
+        
+        <li><a href="#clients-partners">شركاء النجاح</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </div>
 
-</div>
+    <!--زر الاستشارة-->
+    <div class="nav-actions">
+      <a href="#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
+    </div>
+
+  </div>
+</nav>
+<!--قسم البداية Hero-->
+<main>
+  <section id="hero" class="hero-section">
+    <div class="hero-bg">
+      <img src="./public/images/nasa-1lfI7wkGWZ4-unsplash.svg" alt="شاشة البداية">
+    </div>
+
+    <div class="container hero-content">
+      <div class="text-h">
+        <h1>نقطة بداية... تقودك نحو الصعود</h1>
+        <p>نقدم حلولاً مبتكرة تشمل تطوير المواقع، تحليل الأعمال، وتطوير التطبيقات. نساعدك على تحويل أفكارك إلى واقع رقمي يواكب تطلعاتك ويعزز نموك.</p>
+      </div>
+      
+      <div class="home-buttons">
+        <a href="#services" class="btn-primary">اطلب الخدمة</a>
+        <a href="#portfolio" class="btn-outline">تصفح أعمالنا</a>
       </div>
     </div>
-  </header>
+  </section>
+</main>
 
-  <!-- 2. القائمة الرئيسية (Main Navbar) -->
-    
-
-</body>
+  </body>
 </html>

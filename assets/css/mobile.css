@@ -1,13 +1,109 @@
-@media (max-width: 480px) {
-  .header-container {
-    flex-wrap: wrap; /* لجعل العناصر تنزل لسطر جديد بدل التداخل */
-    font-size: 12px; 
-  }
+@media screen and (max-width: 768px) {
+    /* 1. ضبط شريط المعلومات العلوي (Top Bar) */
+    .top-bar {
+        height: auto;
+        padding: 5px 0;
+    }
+
+    .top-bar .container {
+        flex-direction: column; /* ترتيب السطور عمودياً */
+        gap: 5px;
+        padding: 0 15px;
+    }
+
+    /* موازنة العناصر في السطرين */
+    .top-bar .flex-group {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    /* 2. شريط التنقل الرئيسي (Main Nav) */
+    .main-nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: var(--color-secondary);
+    }
+
+.nav-wrapper {
+        display: flex;
+        flex-direction: row; /* التأكد من الاتجاه الأفقي */
+        justify-content: space-between; /* توزيع العناصر على الأطراف */
+        align-items: center;
+        height: 65px;
+        padding: 0 15px;
+    }
+
+    /* --- الشعار في اليمين --- */
+    .logo {
+        order: 1; 
+        margin: 0;
+        position: static;
+        transform: none;
+    }
+
+    .logo img {
+        height: 40px; /* حجم متناسق */
+        width: auto;
+        display: block;
+    }
+
+    /* ---أيقونة القائمة --- */
+    .mobile-menu-icon {
+        order: 2; /* العنصر الثاني */
+        display: block;
+        font-size: 22px;
+        color: var(--color-bg-light);
+        background: none;
+        border: none;
+        margin: 0 10px; /* مسافة بسيطة */
+    }
+
+    /* --- زر الاستشارة في أقصى اليسار --- */
+    .nav-actions {
+        order: 3; /* آخر عنصر جهة اليسار */
+    }
+
+    .nav-actions .btn-primary {
+        padding: 8px 15px;
+        font-size: 12px;
+        white-space: nowrap;
+        border-radius: 4px;
+
 }
 
-.container {
-    width: 95%; /* مساحة أكبر قليلاً للموبايل */
-    margin: 0 auto;
+    /* --- ضبط القائمة المنسدلة --- */
+    .navbar-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 100%;
+        background-color: var(--color-secondary);
+        z-index: 1000;
+        display: none; /* تظهر بالجافا سكريبت */
+    }
+
+    .navbar-links.open {
+        display: block;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .nav-menu li a {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: block;
+        width: 100%;
+        text-align: right;
+    }
 }
 
-/* 4. مثال لاستخدام Media Query للشاشات الكبيرة */
+/* حركة ظهور القائمة */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
