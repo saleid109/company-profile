@@ -274,7 +274,6 @@ h1, h2, h3, h4 {
     text-decoration: none;
     outline: none;
     -webkit-tap-highlight-color: transparent;
-    border-radius: 50px;
 
 }
 
@@ -288,7 +287,7 @@ h1, h2, h3, h4 {
     font-weight: var(--weight-bold);
     transition: all 0.3s ease;
     display: inline-block;
-
+ 
 }
 
 .btn-servers:hover {
