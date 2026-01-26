@@ -206,7 +206,7 @@ h1, h2, h3, h4 {
     background-color: var(--color-primary);
     color: var(--color-secondary);
     padding: 10px 23px;
-    border-radius: 54px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: var(--weight-bold);
     transition: all 0.3s ease;
@@ -282,12 +282,15 @@ h1, h2, h3, h4 {
     background-color: var(--color-primary);
     color: var(--color-secondary);
     padding: 10px 23px;
-    border-radius: 54px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: var(--weight-bold);
     transition: all 0.3s ease;
     display: inline-block;
- 
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
 }
 
 .btn-servers:hover {
@@ -301,7 +304,7 @@ h1, h2, h3, h4 {
     background-color: var(--color-primary);
     color: var(--color-secondary);
     padding: 10px 23px;
-    border-radius: 54px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: var(--weight-bold);
     transition: all 0.3s ease;
