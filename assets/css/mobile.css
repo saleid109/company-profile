@@ -1,12 +1,12 @@
 @media screen and (max-width: 768px) {
-    /* 1. ضبط شريط المعلومات العلوي (Top Bar) */
+    /*   شريط المعلومات العلوي (Top Bar) */
     .top-bar {
         height: auto;
         padding: 5px 0;
     }
 
     .top-bar .container {
-        flex-direction: column; /* ترتيب السطور عمودياً */
+        flex-direction: column; 
         gap: 5px;
         padding: 0 15px;
     }
@@ -18,7 +18,7 @@
         gap: 10px;
     }
 
-    /* 2. شريط التنقل الرئيسي (Main Nav) */
+    /*  شريط التنقل الرئيسي (Main Nav) */
     .main-nav {
         position: sticky;
         top: 0;
@@ -160,4 +160,11 @@
     text-decoration: none;
     outline: none;
     -webkit-tap-highlight-color: transparent;
+    border-radius: 50px;
+
+}
+
+.btn-servers{
+    background-color: var(--color-bg-light);
+
 }
