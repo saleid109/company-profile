@@ -226,7 +226,7 @@ h4 {
     overflow: hidden;
 }
 
-/* تنسيق الصورة لتغطي الخلفية */
+/*  الصورة الخلفية */
 .hero-bg {
     position: absolute;
     top: 0;
@@ -288,10 +288,10 @@ h4 {
 }
 
 /*زر استثمر معنا  */
-.btn-outline {
-    background-color: var(--color-white);
+.btn-primary {
+    background-color: var(--color-primary);
     color: var(--color-secondary);
-    padding: 10px 30px;
+    padding: 10px 23px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: var(--weight-bold);
@@ -299,9 +299,8 @@ h4 {
     display: inline-block;
 }
 
-.home-buttons a:hover {
-    text-decoration: none;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
+.btn-primary:hover {
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+    box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
 }
-
