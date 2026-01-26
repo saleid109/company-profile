@@ -200,6 +200,7 @@ h1, h2, h3, h4 {
 .mobile-menu-icon {
     display: none; 
 }
+
 /*  زر الاستشارة*/
 .btn-primary {
     background-color: var(--color-primary);
@@ -218,6 +219,8 @@ h1, h2, h3, h4 {
     color: var(--color-secondary); 
     box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
 }
+
+/*البداية*/
 
 .hero-section {
     position: relative;
@@ -275,7 +278,21 @@ h1, h2, h3, h4 {
 
 }
 
-.btn-servers{
-    background-color: var(--color-bg-light);
+/*  زر الاستشارة*/
+.btn-btn-servers {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 10px 23px;
+    border-radius: 54px;
+    text-decoration: none;
+    font-weight: var(--weight-bold);
+    transition: all 0.3s ease;
+    display: inline-block;
 
+}
+
+.btn-servers:hover {
+    background-color: var(--color-white); 
+    color: var(--color-secondary); 
+    box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
 }
