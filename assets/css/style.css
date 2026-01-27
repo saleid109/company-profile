@@ -296,7 +296,7 @@ h4 {
 }
 
 .btn-servers:hover {
-    background-color: var(--color-navy-light);
+    background-color: var(--color-bg-light);
     color: var(--color-secondary);
     box-shadow: 0 5px 15px rgba(135, 135, 139, 0.4);
 }
@@ -314,7 +314,7 @@ h4 {
 }
 
 .btn-outline:hover {
-    background-color: var(--color-navy-light);
+    background-color: var(--color-bg-light);
     color: var(--color-secondary);
     box-shadow: 0 5px 15px rgba(135, 135, 139, 0.4);
 }
