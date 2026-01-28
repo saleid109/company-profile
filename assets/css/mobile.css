@@ -1,57 +1,56 @@
 @media screen and (max-width: 768px) {
   /*   شريط المعلومات العلوي (Top Bar) */
-    .top-bar {
+  .top-bar {
     height: auto;
     padding: 5px 0;
-    }
+  }
 
-    .top-bar .container {
+  .top-bar .container {
     flex-direction: column;
     gap: 5px;
     padding: 0 15px;
-    }
+  }
 
   /* موازنة العناصر في السطرين */
-    .top-bar .flex-group {
+  .top-bar .flex-group {
     width: 100%;
     justify-content: space-between;
     gap: 10px;
-    }
+  }
 
   /*  شريط التنقل الرئيسي (Main Nav) */
-    .main-nav {
+  .main-nav {
     position: sticky;
     top: 0;
     z-index: 1000;
     background-color: var(--color-secondary);
-    }
+  }
 
-    .nav-wrapper {
+  .nav-wrapper {
     display: flex;
     flex-direction: row; /* التأكد من الاتجاه الأفقي */
     justify-content: space-between; /* توزيع العناصر على الأطراف */
     align-items: center;
     height: 65px;
     padding: 0 15px;
-}
+  }
 
   /*-الشعار */
-    .logo {
+  .logo {
     margin: 0;
     position: static;
     transform: none;
-    margin-right: auto;
-    }
+    order: 1;
+  }
 
-    .logo img {
-    order:1;
+  .logo img {
     height: 50px; /* حجم متناسق */
     width: auto;
     display: block;
-    }
+  }
 
   /* ---أيقونة القائمة --- */
-    .mobile-menu-icon {
+  .mobile-menu-icon {
     order: 2; /* العنصر الثاني */
     display: block;
     font-size: 22px;
@@ -59,22 +58,22 @@
     background: none;
     border: none;
     margin: 0 10px; /* مسافة بسيطة */
-    }
+  }
 
   /* --- زر الاستشارة في أقصى اليسار --- */
-    .nav-actions {
+  .nav-actions {
     order: 3; /* آخر عنصر جهة اليسار */
-    }
+  }
 
-    .nav-actions .btn-primary {
+  .nav-actions .btn-primary {
     padding: 8px 15px;
     font-size: 12px;
     white-space: nowrap;
     border-radius: 4px;
-    }
+  }
 
   /* --- ضبط القائمة المنسدلة --- */
-    .navbar-links {
+  .navbar-links {
     position: absolute;
     top: 65px;
     right: 0;
@@ -82,96 +81,129 @@
     background-color: var(--color-secondary);
     z-index: 1000;
     display: none; /* تظهر بالجافا سكريبت */
-    }
+  }
 
-    .navbar-links.open {
+  .navbar-links.open {
     display: block;
-    }
+  }
 
-    .nav-menu {
+  .nav-menu {
     flex-direction: column;
     padding: 10px 0;
-    }
+  }
 
-    .nav-menu li a {
+  .nav-menu li a {
     padding: 15px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: block;
     width: 100%;
     text-align: right;
-    }
+  }
 }
 
 /* حركة ظهور القائمة */
 @keyframes slideDown {
-    from {
+  from {
     opacity: 0;
     transform: translateY(-10px);
-    }
-    to {
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
-    }
+  }
+}
+
+/* Tablet/iPad size (768px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .nav-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+
+  .mobile-menu-icon {
+    order: unset;
+  }
+
+  .navbar-links {
+    position: static;
+    display: block !important;
+    width: auto;
+    background-color: transparent;
+  }
+
+  .nav-menu {
+    flex-direction: row;
+    padding: 0;
+    gap: 15px;
+  }
+
+  .nav-menu li a {
+    padding: 0;
+    border-bottom: none;
+  }
 }
 
 .hero-section {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--color-white);
-    overflow: hidden;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+  overflow: hidden;
 }
 
 /* تنسيق الصورة لتغطي الخلفية */
 .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .hero-bg img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover; /* لضمان عدم تمدد الصورة بشكل خاطئ */
   filter: brightness(0.4); /* تعتيم الصورة لإبراز النص */
 }
 
 /* تنسيق النصوص */
 .hero-content h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 20px;
-    color: var(--color-bg-light);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 20px;
+  color: var(--color-bg-light);
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-    line-height: 1.8;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
 }
 
 /* تنسيق الأزرار */
 .home-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
 .home-buttons a {
-    text-decoration: none;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
-    border-radius: 50px;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 50px;
 }
 
 .btn-servers {
-    background-color: var(--color-bg-light);
-    color: var(--color-secondary);
-
+  background-color: var(--color-bg-light);
+  color: var(--color-secondary);
 }
