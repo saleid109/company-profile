@@ -273,6 +273,8 @@ h4 {
 
 }
 
+
+
 .home-buttons a {
     text-decoration: none;
     outline: none;
@@ -281,18 +283,7 @@ h4 {
 
 
 /*زز طلب خدمة */
-.btn-servers {
-    width: 260px;
-    /*القيمةمنفيجما*/height: 70px;
-    /*القيمةمنفيجما*/border-radius: 10px;
-    /*القيمةمنفيجما*/display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    /*مقاسالخطالمناسبللزر*/padding: 10px;
-    /*القيمةمنفيجما*/border: none;
 
-}
 
 .btn-servers:hover {
     background-color: var(--color-bg-light);
@@ -300,18 +291,6 @@ h4 {
     box-shadow: 0 5px 15px rgba(135, 135, 139, 0.4);
 }
 /*زر استثمر معنا  */
-.btn-outline {
-    width: 260px;          /* القيمة من فيجما */
-    height: 70px;         /* القيمة من فيجما */
-    border-radius: 10px;  /* القيمة من فيجما */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;      /* مقاس الخط المناسب للزر */
-    padding: 10px;        /* القيمة من فيجما */
-    border: none;
-}
-
 .btn-outline:hover {
     background-color: var(--color-bg-light);
     color: var(--color-secondary);
