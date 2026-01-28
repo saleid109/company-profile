@@ -209,7 +209,6 @@ h4 {
 
 .btn-primary:hover {
     background-color: var(--color-white);
-    color: var(--color-secondary);
     box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
 }
 
@@ -262,18 +261,39 @@ h4 {
 }
 
 /* تنسيق الأزرار */
-.home-buttons {
+/* الأزرار الرئيسية في الـ Hero بناءً على فيجما */
+.home-buttons .btn-servers, 
+.home-buttons .btn-outline {
+    width: 260px;
+    height: 70px;
+    border-radius: 10px;
     display: flex;
-    gap: 20px;
+    align-items: center;
     justify-content: center;
-    font-family: var(--font-main);
-    font-weight: var(--weight-bold);
-
-
-
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    transition: 0.3s;
 }
 
 
+
+/* زر طلب خدمة (الأبيض) */
+.btn-servers {
+    background-color: var(--color-bg-light); 
+    color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+}
+
+/* زر استثمر معنا (الأصفر)   */
+.btn-outline {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-family: var(--font-main);
+    font-weight: var(--weight-bold);
+
+}
 
 .home-buttons a {
     text-decoration: none;
@@ -281,18 +301,8 @@ h4 {
     -webkit-tap-highlight-color: transparent;
 }
 
-
-/*زز طلب خدمة */
-
-
-.btn-servers:hover {
+.btn-outline:hover{
     background-color: var(--color-bg-light);
-    color: var(--color-secondary);
-    box-shadow: 0 5px 15px rgba(135, 135, 139, 0.4);
+    
 }
-/*زر استثمر معنا  */
-.btn-outline:hover {
-    background-color: var(--color-bg-light);
-    color: var(--color-secondary);
-    box-shadow: 0 5px 15px rgba(135, 135, 139, 0.4);
-}
+
