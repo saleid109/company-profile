@@ -226,10 +226,13 @@
 }
 
 .home-buttons a {
-  text-decoration: none;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-  border-radius: 50px;
+    width: 260px;         /* مقاس فيجما */
+    height: 70px;        /* مقاس فيجما */
+    border-radius: 10px; /* مقاس فيجما */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 .btn-servers {
