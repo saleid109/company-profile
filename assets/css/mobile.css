@@ -123,17 +123,27 @@
     padding: 0 20px;
   }
 
-  .home-buttons a {
-    padding: 14px 40px;
-    font-size: 14px;
-  }
-
-
-  .hero-content {
-    max-width: 1026px; /* مقاس فيجما */
-    margin: 0 auto;
+.home-buttons a {
+    width: 260px;
+    height: 70px;
+    border-radius: 10px; /* القيمة الصحيحة من التصميم */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
+/* حل مشكلة ظهور الأيقونة في الجوال */
+.mobile-menu-icon {
+    color: #FFCC33 !important; /* اللون الأصفر ليكون واضحاً */
+    font-size: 24px;
+}
+
+/* ضبط عرض المحتوى */
+.hero-content {
+    max-width: 1026px; /* مقاس فيجما المعتمد */
+    margin: 0 auto;
+}
 /* تنسيق النصوص */
 .hero-content h1 {
   font-size: clamp(1.5rem, 5vw, 3.1rem);
@@ -153,6 +163,7 @@
   display: flex;
   gap: 20px;
   justify-content: center;
+  align-items: center;
 }
 
 .home-buttons a {
@@ -276,6 +287,8 @@
   display: flex;
   gap: 20px;
   justify-content: center;
+  align-items: center;
+
 }
 
 /* تنسيق الأزرار */
