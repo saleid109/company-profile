@@ -170,6 +170,9 @@
   color: var(--color-secondary);
 }
 
+
+}
+
 /* حركة ظهور القائمة */
 @keyframes slideDown {
   from {
@@ -181,9 +184,6 @@
     transform: translateY(0);
   }
 }
-
-}
-
 
 
 
