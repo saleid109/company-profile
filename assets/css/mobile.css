@@ -204,15 +204,20 @@
   filter: brightness(0.4); /* تعتيم الصورة لإبراز النص */
 }
 
+.hero-content {
+    max-width: 1026px; /* مقاس فيجما */
+    margin: 0 auto;
+}
+
 /* تنسيق النصوص */
 .hero-content h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.5rem, 5vw, 3.1rem);
   margin-bottom: 20px;
   color: var(--color-bg-light);
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   max-width: 700px;
   margin: 0 auto 30px;
   line-height: 1.8;
