@@ -103,10 +103,11 @@
 
   /* تنسيق الـ H1 في الجوال */
   .hero-content h1 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(1rem, 4vw, 2rem);
     margin-bottom: 15px;
     line-height: 1.4;
     letter-spacing: -0.5px;
+    top: 12px;
   }
 
   .hero-content p {
