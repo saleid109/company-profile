@@ -418,33 +418,3 @@ h4 {
   margin-top: 18px;
 }
 
-/* Hide or shrink the accent on small screens to avoid layout issues */
-@media screen and (max-width: 900px) {
-  .about-cards::before { display: none; }
-
-/* Responsive */
-@media screen and (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 28px;
-  }
-  .about-image {
-    order: -1;
-  }
-  .diamond {
-    width: 240px;
-    height: 240px;
-    margin: 0 auto;
-  }
-  .about-cards {
-    align-items: center;
-  }
-  .card {
-    max-width: 520px;
-    margin: 0 auto;
-  }
-  .about-content {
-    padding: 0 10px;
-  }
-}
