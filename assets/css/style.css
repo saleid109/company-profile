@@ -357,12 +357,29 @@ h4 {
   line-height: 1.8;
 }
 .about-cards {
+  position: relative; /* required for the accent pseudo-element */
   display: flex;
   flex-direction: column;
   gap: 14px;
   margin-top: 12px;
+  padding-right: 24px; /* space so the accent doesn't overlap text */
+}
+/* blue vertical rounded box behind the cards */
+.about-cards::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 0;
+  width: 84px;
+  background: var(--color-primary);
+  border-radius: 12px;
+  z-index: 0;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.08);
 }
 .card {
+  position: relative;
+  z-index: 1;
   background: var(--color-white);
   border-left: 6px solid var(--color-primary);
   padding: 16px;
@@ -400,6 +417,10 @@ h4 {
 .about-cta {
   margin-top: 18px;
 }
+
+/* Hide or shrink the accent on small screens to avoid layout issues */
+@media screen and (max-width: 900px) {
+  .about-cards::before { display: none; }
 
 /* Responsive */
 @media screen and (max-width: 900px) {
