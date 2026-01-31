@@ -345,3 +345,11 @@
     justify-content: center;
     font-weight: bold;
 }
+
+/* About section mobile tweaks */
+@media screen and (max-width: 768px) {
+  .about-section { padding: 40px 0; }
+  .diamond { width: 200px; height: 200px; }
+  .about-content h2 { font-size: 1.4rem; }
+  .lead { font-size: 0.95rem; }
+}
