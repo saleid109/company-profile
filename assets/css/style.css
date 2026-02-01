@@ -545,3 +545,20 @@ button:focus,
     transform: translateY(-3px);
     box-shadow: 0 8px 26px rgba(2, 6, 23, 0.12);
 }
+
+/* Dropdown submenu (for future use) */
+.dropdown > ul, .dropdown .submenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: var(--color-secondary);
+  padding: 8px 10px;
+  border-radius: 6px;
+  min-width: 160px;
+}
+.dropdown.open > ul, .dropdown.open .submenu {
+  display: block;
+}
+.dropdown > a[aria-expanded="true"]::after {
+  transform: rotate(-180deg);
+}

@@ -14,3 +14,95 @@ function toggleMenu() {
         menuIcon.classList.add('fa-bars');
     }
 }
+
+/* === Accessibility: keyboard support for dropdowns and nav === */
+(function () {
+    function initNavAccessibility() {
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dd => {
+            const trigger = dd.querySelector('a');
+            const submenu = dd.querySelector('ul'); // if a submenu exists
+
+            // Ensure aria attributes exist
+            trigger.setAttribute('aria-expanded', trigger.getAttribute('aria-expanded') || 'false');
+            trigger.setAttribute('role', 'button');
+
+            // Click toggles (only if submenu exists)
+            trigger.addEventListener('click', (e) => {
+                if (!submenu) return; // allow normal link behavior when no submenu
+                e.preventDefault();
+                const open = trigger.getAttribute('aria-expanded') === 'true';
+                trigger.setAttribute('aria-expanded', String(!open));
+                dd.classList.toggle('open', !open);
+                if (!open) {
+                    // focus first item in submenu
+                    const firstMenuItem = submenu.querySelector('a');
+                    if (firstMenuItem) firstMenuItem.focus();
+                }
+            });
+
+            // Keyboard handling
+            trigger.addEventListener('keydown', (e) => {
+                if (!submenu) return; // nothing to toggle
+                switch (e.key) {
+                    case 'Enter':
+                    case ' ':
+                        e.preventDefault();
+                        trigger.click();
+                        break;
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        dd.classList.add('open');
+                        trigger.setAttribute('aria-expanded', 'true');
+                        const first = submenu.querySelector('a');
+                        if (first) first.focus();
+                        break;
+                    case 'Escape':
+                        dd.classList.remove('open');
+                        trigger.setAttribute('aria-expanded', 'false');
+                        trigger.focus();
+                        break;
+                }
+            });
+
+            // Close on focusout
+            dd.addEventListener('focusout', (e) => {
+                // if focus moved outside the dropdown
+                if (!dd.contains(e.relatedTarget)) {
+                    dd.classList.remove('open');
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    }
+
+    // Run on DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNavAccessibility);
+    } else {
+        initNavAccessibility();
+    }
+})();
+
+/* === Optional accessibility audit: run axe-core when '?audit=1' in URL (dev only) === */
+(function () {
+    try {
+        if (location.search.indexOf('audit=1') > -1) {
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.11.2/axe.min.js';
+            script.crossOrigin = 'anonymous';
+            script.onload = function () {
+                // run axe
+                if (window.axe) {
+                    window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2aa'] } })
+                      .then(results => console.log('Axe results:', results))
+                      .catch(err => console.error('Axe error:', err));
+                }
+            };
+            document.head.appendChild(script);
+        }
+    } catch (err) {
+        // ignore in production
+        console.warn('Accessibility audit loader error', err);
+    }
+})();
