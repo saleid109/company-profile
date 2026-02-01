@@ -474,43 +474,44 @@ h4 {
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
 }
+
 .about-cta .btn-primary:hover {
     background-color: var(--color-white);
     box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
 }
 
-   .about-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 28px;
-    }
+.about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 28px;
+}
 
-    .about-image {
-        order: -1;
-    }
+.about-image {
+    order: -1;
+}
 
-    .diamond-container {
-        width: 240px;
-        height: 240px;
-        margin: 0 auto;
-    }
+.diamond-container {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+}
 
-    .about-cards {
-        align-items: center;
-    }
+.about-cards {
+    align-items: center;
+}
 
-    .card {
-        max-width: 520px;
-        margin: 0 auto;
-    }
+.card {
+    max-width: 520px;
+    margin: 0 auto;
+}
 
-    .about-content {
-        padding: 0 10px;
-    }
+.about-content {
+    padding: 0 10px;
+}
 
-    .about-cards::before {
-        display: none;
-    }
+.about-cards::before {
+    display: none;
+}
 }
 
 /* ===== Accessibility helpers ===== */
@@ -575,118 +576,4 @@ button:focus,
 
 .dropdown>a[aria-expanded="true"]::after {
     transform: rotate(-180deg);
-}
-
-/* ===== Mobile Styles ===== */
-@media (max-width: 768px) { 
-  .nav-wrapper {
-    padding: 0 15px;
-  }
-
-  .nav-menu {
-    display: none; /* إخفاء القائمة الافتراضية */
-  }                     
-    .mobile-menu-icon {
-        display: block; /* إظهار أيقونة القائمة */
-        cursor: pointer;
-    }
-    .hero-content h1 {
-        font-size: clamp(1.5rem, 6vw, 2.5rem);
-        margin-bottom: 15px;
-        color: var(--color-bg-light);
-        font-family: var(--font-main);
-        max-width: 90%;
-    }
-    .hero-content p {
-        font-size: 1rem;
-        max-width: 90%;
-        margin: 0 auto 20px;
-        line-height: 1.6;
-        font-weight: var(--weight-bold);
-        font-family: var(--font-main);
-    }
-    .navbar-links {
-    position: absolute;
-    top: 65px;      
-    right: 0;
-    width: 100%;
-    background-color: var(--color-secondary);
-    z-index: 1000;
-    display: none; /* تظهر بالجافا سكريبت */
-    }
-    .navbar-links.open {
-    display: block;
-    }
-    .nav-menu {
-    flex-direction: column;
-    padding: 10px 0;
-    }
-
-
-    .nav-menu li a {
-    padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    display: block; 
-    width: 100%;
-    text-align: right;
-    }
-    .navbar-links {
-position: absolute;
-    top: 65px;
-    right: 0;
-    width: 100%;
-    background-color: var(--color-secondary);
-    z-index: 1000;
-    display: none; /* تظهر بالجافا سكريبت */
-  }
-
-  .navbar-links.open {
-    display: block;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    padding: 10px 0;
-  }
-
-  .nav-menu li a {
-    padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    display: block;
-    width: 100%;
-    text-align: right;
-  }
-
-  /* تنسيق الـ H1 في الجوال */
-  .hero-content h1 {
-    font-size: clamp(1rem, 4vw, 2rem);
-    margin-bottom: 15px;
-    line-height: 1.4;
-    letter-spacing: -0.5px;
-    top: 12px;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-    max-width: 90%;
-    margin: 0 auto 20px;
-    line-height: 1.6;
-  }
-
-  .home-buttons {
-    flex-direction: column;
-    gap: 15px;
-    padding: 0 20px;
-  }
-.home-buttons a {
-    width: 260px;
-    height: 70px;
-    border-radius: 10px; /* القيمة الصحيحة من التصميم */
-    display: flex;
-    align-items: center;
-    justify-content: center;    
-    font-size: 20px;
-    padding: 10px;
-    border: none;
-    transition: 0.3s;
 }
