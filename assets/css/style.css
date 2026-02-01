@@ -318,40 +318,8 @@ h4 {
     background-color: var(--color-bg-light);
 }
 
-/* diamond icon container (white with yellow frame) */
-.card-icon {
-    width: 64px;
-    height: 64px;
-    transform: rotate(45deg);
-    /* diamond shape */
-    background: var(--color-white);
-    border: 3px solid var(--color-primary);
-    /* yellow frame */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
-    border-radius: 8px;
-    padding: 0;
+.btn-servers:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
-.card-icon i,
-.card-icon .material-symbols-outlined {
-    transform: rotate(-45deg);
-    /* keep icon upright */
-    font-size: 20px;
-    color: var(--color-primary);
-    line-height: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* smaller diamond on small screens */
-@media screen and (max-width: 900px) {
-    .card-icon {
-        width: 48px;
-        height: 48px;
-        border-width: 2px;
-    }
-}
