@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="./assets/css/mobile.css" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
     <header>
       <!--العلوي barTOP-->
       <div class="top-bar">
@@ -128,7 +129,7 @@
     </nav>
 
     <!--قسم البداية Hero-->
-    <main>
+    <main id="main-content">
       <section id="hero" class="hero-section">
         <div class="hero-bg">
           <img src="./public/images/nasa-1lfI7wkGWZ4-unsplash.svg" 
@@ -168,22 +169,22 @@
                 </div>
 <!--بطاقات الرسالة -->
                 <div class="about-cards">
-                    <article class="card">
+                    <article class="card" role="article" tabindex="0" aria-labelledby="mission-heading">
                         <div class="card-icon" aria-hidden="true">
                             <i class="fa-solid fa-badge-check" aria-hidden="true"></i>
                         </div>
                         <div class="card-info">
-                            <h3>الرسالة</h3>
+                            <h3 id="mission-heading">الرسالة</h3>
                             <p>تمكين الكفاءات الوطنية وتقديم خدمات تقنية مبتكرة وبرامج تأهيلية مكثفة.</p>
                         </div>
                     </article>
 <!--بطاقات الرسالة -->
-                    <article class="card">
+                    <article class="card" role="article" tabindex="0" aria-labelledby="vision-heading">
                         <div class="card-icon" aria-hidden="true">
-                            <i class="fas fa-eye"></i>
+                            <i class="fas fa-eye" aria-hidden="true"></i>
                         </div>
                         <div class="card-info">
-                            <h3>الرؤية</h3>
+                            <h3 id="vision-heading">الرؤية</h3>
                             <p>أن نكون المصدر الأول لربط الشباب السعودي بسوق العمل عبر حلول تقنية فعّالة.</p>
                         </div>
                     </article>
@@ -191,10 +192,13 @@
             </div>
 <!--الصورة التعريفية-->
             <div class="about-image">
-                <div class="diamond-container">
-                    <img src="./public/images/Group 19.png" alt="فريق عمل نقطة صعود المتكامل">
-                </div>
-            </div>
+                <figure>
+                    <div class="diamond-container">
+                        <img src="./public/images/Group 19.png" alt="فريق عمل نقطة صعود المتكامل" width="680" height="680" loading="lazy">
+                    </div>
+                    <figcaption class="sr-only">فريق عمل نقطة صعود المتكامل</figcaption>
+                </figure>
+            </div> 
 
         </div>
     </div>
