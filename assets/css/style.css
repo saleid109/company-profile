@@ -139,7 +139,7 @@ h4 {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    height: 70px;/* تحديد ارتفاع  للهيدر يساعد في ضبط العناصر */
+    height: 70px;/*  ارتفاع للهيدر يساعد في ضبط العناصر */
     background-color: var(--color-secondary);
     padding: 0 30px;
 }
@@ -268,7 +268,7 @@ h4 {
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     max-width: 700px;
     margin: 0 auto 30px;
     line-height: 1.8;
@@ -357,4 +357,19 @@ h4 {
     margin-bottom: 30px;
     font-weight: var(--weight-bold);
 }
+
+.read-more-link .btn-text {
+    font-size: 1rem;
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-family: var(--font-main);
+}
+.read-more-link .btn-text i {
+    margin-left: 8px;
+}
+.read-more-link .btn-text:hover {
+    text-decoration: underline;
+}
+/* بطاقات الرسالة والرؤية */
 
