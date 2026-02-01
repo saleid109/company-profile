@@ -350,7 +350,7 @@ h4 {
     color: var(--color-secondary);
     font-family: var(--font-main);
     margin-bottom: 30px;
-   w: var(--weight-bold);
+    font-weight: var(--weight-bold);
 
 }
 
