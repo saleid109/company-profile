@@ -1,10 +1,10 @@
 function toggleMenu() {
     const navLinks = document.querySelector('.navbar-links');
     const menuIcon = document.querySelector('.mobile-menu-icon i');
-    
+
     // تبديل ظهور القائمة
     navLinks.classList.toggle('open');
-    
+
     // تبديل شكل الأيقونة من (Bars) إلى (X) عند الفتح
     if (navLinks.classList.contains('open')) {
         menuIcon.classList.remove('fa-bars');
@@ -95,8 +95,8 @@ function toggleMenu() {
                 // run axe
                 if (window.axe) {
                     window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2aa'] } })
-                      .then(results => console.log('Axe results:', results))
-                      .catch(err => console.error('Axe error:', err));
+                        .then(results => console.log('Axe results:', results))
+                        .catch(err => console.error('Axe error:', err));
                 }
             };
             document.head.appendChild(script);
