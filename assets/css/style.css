@@ -335,6 +335,7 @@ h4 {
 }
 
 #about-heading {
+    display: flex;
     text-align: right;
     margin: 40px 0 20px 0;
     padding: 0 70px;
@@ -350,25 +351,10 @@ h4 {
     padding: 0 70px;
     margin: 40px 0 20px 0;
     line-height: 1.6;
+    max-width: 700px;
     color: var(--color-secondary);
     font-family: var(--font-main);
     margin-bottom: 30px;
     font-weight: var(--weight-bold);
-
 }
 
-.about-cards-container {
-    background-color: var(--color-bg-light);
-    padding: 20px;
-    border-radius: 88px;
-    margin-top: 20px;
-    -webkit-border-radius: 88px;
-    -moz-border-radius: 88px;
-    -ms-border-radius: 88px;
-    -o-border-radius: 88px;
-}
-.about-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
