@@ -291,7 +291,11 @@ h4 {
     border: none;
     transition: 0.3s;
 }
-
+.home-buttons a {
+    text-decoration: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
 /* زر طلب خدمة (الأبيض) */
 .btn-servers {
     background-color: var(--color-bg-light);
@@ -299,6 +303,12 @@ h4 {
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
 }
+
+.btn-servers:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
 
 /* زر استثمر معنا (الأصفر)   */
 .btn-outline {
@@ -308,19 +318,9 @@ h4 {
     font-weight: var(--weight-bold);
 }
 
-.home-buttons a {
-    text-decoration: none;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
 .btn-outline:hover {
     background-color: var(--color-bg-light);
 }
 
-.btn-servers:hover {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-}
 
 
