@@ -305,3 +305,11 @@ h4 {
     
 }
 
+/* FontAwesome icon inside card */
+.card-icon i {
+  font-size: 20px;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
