@@ -324,7 +324,12 @@ h4 {
     background-color: var(--color-bg-light);
 }
 
+/*.*/
+
 /* ----- About Section ----- */
+
+
+
 .about-section {
     padding: 80px 0;
     background-color: var(--color-bg-light);
@@ -512,7 +517,8 @@ h4 {
 .about-cards::before {
     display: none;
 }
-}
+
+
 
 /* ===== Accessibility helpers ===== */
 .skip-link {
