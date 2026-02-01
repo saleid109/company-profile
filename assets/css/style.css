@@ -547,18 +547,22 @@ button:focus,
 }
 
 /* Dropdown submenu (for future use) */
-.dropdown > ul, .dropdown .submenu {
-  display: none;
-  position: absolute;
-  right: 0;
-  background: var(--color-secondary);
-  padding: 8px 10px;
-  border-radius: 6px;
-  min-width: 160px;
+.dropdown>ul,
+.dropdown .submenu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: var(--color-secondary);
+    padding: 8px 10px;
+    border-radius: 6px;
+    min-width: 160px;
 }
-.dropdown.open > ul, .dropdown.open .submenu {
-  display: block;
+
+.dropdown.open>ul,
+.dropdown.open .submenu {
+    display: block;
 }
-.dropdown > a[aria-expanded="true"]::after {
-  transform: rotate(-180deg);
+
+.dropdown>a[aria-expanded="true"]::after {
+    transform: rotate(-180deg);
 }
