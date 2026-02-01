@@ -325,11 +325,7 @@
 
 }
 
-.home-buttons a {
-    text-decoration: none;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
-}
+
 
 .btn-outline:hover{
     background-color: var(--color-bg-light);
@@ -344,5 +340,8 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    text-decoration: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
