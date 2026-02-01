@@ -343,11 +343,26 @@ h4 {
     color: var(--color-secondary);
 }
 
+.lead p {
+    text-align: right;
+    font-size: 1.2rem;
+    padding: 0 70px;
+    color: var(--color-secondary);
+    font-family: var(--font-main);
+    margin-bottom: 30px;
+   w: var(--weight-bold);
+
+}
+
 .about-cards-container {
-    background-color: #001f4d;
+    background-color: var(--color-bg-light);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 88px;
     margin-top: 20px;
+    -webkit-border-radius: 88px;
+    -moz-border-radius: 88px;
+    -ms-border-radius: 88px;
+    -o-border-radius: 88px;
 }
 .about-cards {
     display: flex;
