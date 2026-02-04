@@ -328,134 +328,104 @@ h4 {
 /* ----- قصتنا / About Section ----- */
 
 /* حاوية القسم */
+/* ----- قسم عن الشركة (About Section) ----- */
+
 #about {
-    display: flex;
     padding: 80px 0;
     background-color: var(--color-bg-light);
-    align-items: center;
+    overflow: hidden; /* لضمان عدم خروج العناصر عن الإطار */
 }
-/* عنوان القسم */
-#about-heading {
-    display: flex;
-    text-align: right;
-    margin: 40px 0 20px 0;
-    padding: 0 70px;
-    font-size: 2.5rem;
-    font-weight: var(--weight-bold);
-    font-family: var(--font-main);
-    color: var(--color-secondary);
-}
-/* الفقرة التمهيدية */
-.lead p {
-    display: flex;
-    text-align: right;
-    font-weight: var(--weight-bold);
-    font-size: 32px;
-    padding: 0 70px;
-    margin: 40px 0 20px 0;
-    line-height: 1.6;
-    max-width: 700px;
-    color: var(--color-secondary);
-    font-family: var(--font-main);
-    margin-bottom: 30px;
-    
-}
-/* الحاوية الكبرى للقسم */
+
+/* الحاوية التي تجمع العمودين */
 .about-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* محاذاة العناصر للأعلى */
-    gap: 50px; /* مسافة بين النص والبطاقات */
-    padding: 60px 0;
+    align-items: center; /* توسيط العناصر عمودياً */
+    gap: 40px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* تنسيق عمود النص */
+/* العمود الأول: النصوص (جهة اليمين) */
 .about-content {
-    flex: 1; /* يأخذ نصف المساحة */
+    flex: 1;
     text-align: right;
 }
 
-/* تنسيق عمود البطاقات */
-.about-visual {
-    flex: 1; /* يأخذ النصف الآخر */
-}
-
-/* تأكدي من حذف العرض الثابت (700px) الذي كان في الكود السابق للبطاقات */
-.about-cards {
-    width: 100% !important; /* لتأخذ عرض العمود الخاص بها */
+#about-heading {
+    font-size: 2.5rem;
+    font-weight: var(--weight-bold);
+    color: var(--color-secondary);
     margin-bottom: 20px;
 }
-/*رابط قراءة المزيد */
+
+.lead p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-secondary);
+    margin-bottom: 30px;
+}
+
 .read-more-link .btn-text {
-    font-size: 11px;
-    font-weight: var(--weight-regular);
     color: var(--color-secondary);
     text-decoration: none;
-    font-family: var(--font-main);
+    font-weight: var(--weight-bold);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end; /* ليكون السهم جهة اليسار والنص يمين */
 }
-/* أيقونة السهم بجانب النص */
-.read-more-link .btn-text i {
-    margin-left: 8px;
-}
-.read-more-link .btn-text:hover {
-    text-decoration: underline;
-}
-/* بطاقات الرسالة والرؤية */
 
-/* حاوية البطاقات */
-/* حاوية البطاقات (المستطيل الأزرق الداكن) */
+/* العمود الثاني: البطاقات (جهة اليسار) */
+.about-visual {
+    flex: 1;
+}
+
 .about-cards-container {
     background-color: var(--color-secondary);
-    padding: 40px 20px;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column; /* ترتيب البطاقات فوق بعضها */
-    gap: 30px;
-    width: 100%; /* تأخذ كامل عرض العمود الخاص بها */
+    padding: 40px 30px;
     border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-/* البطاقة الفردية (البيضاء) */
+/* البطاقة البيضاء */
 .about-cards {
     background-color: var(--color-white);
-    padding: 25px;
-    border-radius: 8px;
+    padding: 20px;
+    border-radius: 10px;
     display: flex;
-    flex-direction: row-reverse; /* أيقونة على اليمين والنص على اليسار */
+    flex-direction: row-reverse; /* الأيقونة يمين والنص يسار */
     align-items: center;
-    justify-content: space-between;
-    width: 90%; /* لتترك مسافة بسيطة داخل الحاوية الزرقاء */
-    margin: 0 auto; /* لتتوسط الحاوية الزرقاء */
-    min-height: 120px; /* ارتفاع أدنى بدلاً من ارتفاع ثابت */
-    box-shadow: var(--shadow);
+    gap: 20px;
+    transition: var(--transition);
 }
 
-/* تنسيق النصوص داخل البطاقة */
+.about-cards:hover {
+    transform: translateX(10px); /* حركة بسيطة عند الهوفر */
+}
+
 .card-info {
-    text-align: right;
     flex: 1;
-    padding-right: 15px;
+    text-align: right;
 }
 
-.about-cards h3 {
-    font-size: 1.4rem;
+.card-info h3 {
+    font-size: 1.3rem;
     color: var(--color-secondary);
     margin-bottom: 5px;
 }
 
-.about-cards p {
-    font-size: 0.95rem;
+.card-info p {
+    font-size: 0.9rem;
     color: var(--color-gray-text);
-    line-height: 1.5;
+    margin: 0;
 }
 
-/* أيقونة البطاقة */
 .card-icon i {
-    font-size: 35px;
+    font-size: 30px;
     color: var(--color-primary);
 }
-
-
-
-
-
+/* ----- نهاية قسم عن الشركة (About Section) ----- */
