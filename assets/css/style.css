@@ -379,59 +379,57 @@ h4 {
 /* بطاقات الرسالة والرؤية */
 
 /* حاوية البطاقات */
+/* حاوية البطاقات (المستطيل الأزرق الداكن) */
 .about-cards-container {
     background-color: var(--color-secondary);
-    padding: 8px;
-    margin-top: 20px;
+    padding: 40px 20px;
+    margin-top: 40px;
     display: flex;
-    gap: 20px;
-    width: 100px;
-    height:300px;
+    flex-direction: column; /* ترتيب البطاقات فوق بعضها */
+    gap: 30px;
+    width: 100%; /* تأخذ كامل عرض العمود الخاص بها */
+    border-radius: var(--border-radius);
 }
 
-/* البطاقة الفردية */
+/* البطاقة الفردية (البيضاء) */
 .about-cards {
     background-color: var(--color-white);
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
-    flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse; /* أيقونة على اليمين والنص على اليسار */
     align-items: center;
-    text-align: center;
-    width: 700px;
-    height: 172px;
-    margin: 32px auto;
+    justify-content: space-between;
+    width: 90%; /* لتترك مسافة بسيطة داخل الحاوية الزرقاء */
+    margin: 0 auto; /* لتتوسط الحاوية الزرقاء */
+    min-height: 120px; /* ارتفاع أدنى بدلاً من ارتفاع ثابت */
+    box-shadow: var(--shadow);
+}
+
+/* تنسيق النصوص داخل البطاقة */
+.card-info {
+    text-align: right;
+    flex: 1;
+    padding-right: 15px;
+}
+
+.about-cards h3 {
+    font-size: 1.4rem;
+    color: var(--color-secondary);
+    margin-bottom: 5px;
+}
+
+.about-cards p {
+    font-size: 0.95rem;
+    color: var(--color-gray-text);
+    line-height: 1.5;
 }
 
 /* أيقونة البطاقة */
-.about-cards i {
-    font-size: 40px;
+.card-icon i {
+    font-size: 35px;
     color: var(--color-primary);
-    margin-bottom: 15px;
 }
-/* عنوان البطاقة */
-.about-cards h3 {
-    font-size: 1.5rem;
-    color: var(--color-secondary);
-    margin-bottom: 10px;
-    font-family: var(--font-main);
-}   
-/* وصف البطاقة */
-.about-cards p {
-    font-size: 1rem;
-    color: var(--color-secondary);
-    font-family: var(--font-main);
-}   
-/* بطاقة الرؤية  */ 
-.about-cards.vision-card {
-    margin-left: 20px;
-}
-/* بطاقة الرسالة  */
-.about-cards.mission-card {
-    margin-right: 20px;
-}
-
 
 
 
