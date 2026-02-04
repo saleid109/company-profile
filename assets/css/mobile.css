@@ -182,7 +182,49 @@
 }
 
 
+
+.btn-servers:hover{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+
 }
+.btn-outline {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-family: var(--font-main);
+    font-weight: var(--weight-bold);
+}
+.btn-outline:hover{
+    background-color: var(--color-bg-light);
+
+}
+
+.why-us-wrapper {
+        padding: 40px 20px;
+    }
+
+    .section-title {
+        font-size: 26px; /* تصغير العنوان ليناسب شاشة الجوال */
+    }
+
+    .section-desc {
+        font-size: 1rem;
+    }
+
+    .feature-item {
+        flex-direction: column; /* جعل الأيقونة فوق النص في الجوال لزيادة المساحة */
+        text-align: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .feature-icon {
+        margin-bottom: 10px;
+    }
+
+    .why-us-image img {
+        max-width: 100%; /* ضمان عدم خروج الصورة عن حواف الشاشة */
+    }
 
 /* حركة ظهور القائمة */
 @keyframes slideDown {
