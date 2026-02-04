@@ -325,7 +325,7 @@ h4 {
 
 /* ----- تنسيق قسم عن الشركة (About Section) ----- */
 
-/* تعديل الحاوية العامة أو إضافة padding مخصص للقسم */
+/*  الحاوية العامة للقسم */
 .why-us-wrapper {
     display: flex;
     justify-content: space-between;
@@ -335,19 +335,21 @@ h4 {
     max-width: 1400px;
     margin: 0 auto;
 }
-
+/* العمود النصي */
 .why-us-content {
     flex: 1.2;
     text-align: right;
 }
-
+/* عنوان القسم */
 .section-title {
     font-size: 32px;
     color: var(--color-secondary);
-    margin-top: 0; /* رفع العنوان للأعلى */
+    margin-top: 5px; /* رفع العنوان للأعلى */
     margin-bottom: 15px;
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
 }
-
+/* وصف القسم */
 .section-desc {
     font-size: 1.1rem;
     line-height: 1.7;
@@ -361,27 +363,22 @@ h4 {
     padding-right: 30px; /* مسافة للعمود الأزرق */
     margin-top: 40px;
 }
-
+/* حاوية البطاقات والعمود الخلفي المرن */
 .features-list {
     position: relative;
-    padding-right: 50px; /* زيادة المسافة لإفساح مجال للعمود العريض */
+    padding-right: 50px; /* زيادةالمسافةللعمودالأزرق*/
     margin-top: 40px;
 }
-
+/* العمود الأزرق الخلفي */
 .features-list::before {
     content: "";
     position: absolute;
-    /*القيمالسالبةتجعلالعموديبرزلأعلىولأسفلالبطاقات*/top: -40px;
+    top: -40px;
     bottom: -40px;
     right: 0;
-    width: 100px;
-    /*زيادةالعرضكمافيالتصميم*/background: var(--color-secondary);
-    border-radius: 15px;
-    /*حوافدائريةللعمود*/z-index: 1;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
+    width: 100px;/* عرض العمود الأزرق */
+    background: var(--color-secondary);
+    z-index: 1;/* خلف البطاقات */
 }
 /* تنسيق البطاقة الصغيرة */
 .feature-item {
@@ -398,7 +395,7 @@ h4 {
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: var(--transition);
 }
-
+/* تأثير التحويم على البطاقة */
 .feature-item:hover {
     transform: translateX(-5px);
 }
@@ -416,19 +413,19 @@ h4 {
     transform: rotate(45deg); /* تدوير المربع */
     border-radius: 8px;
 }
-
+/* تنسيق الأيقونة داخل المعين */
 .feature-icon i {
     font-size: 18px;
     color: var(--color-secondary);
     transform: rotate(-45deg); /* عكس التدوير للأيقونة */
 }
-
+/* نص البطاقة */
 .feature-info h3 {
     font-size: 1.2rem;
     color: var(--color-secondary);
     margin-bottom: 5px;
 }
-
+/* نص البطاقة */
 .feature-info p {
     font-size: 0.9rem;
     color: var(--color-gray-text);
@@ -436,10 +433,12 @@ h4 {
 }
 
 /* تنسيق الصورة */
+
+/* حاوية الصورة */
 .why-us-image {
     flex: 1;
 }
-
+/* تنسيق الصورة داخل الحاوية */
 .why-us-image img {
     width: 100%;
     height: auto;
