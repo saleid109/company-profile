@@ -342,6 +342,7 @@ h4 {
     margin-bottom: 20px;
     color: var(--color-secondary);
 }
+
 .why-us-content p {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -353,6 +354,38 @@ h4 {
 .why-us-content .btn-primary {
     padding: 12px 30px;
     font-size: 16px;
+}
+
+/* حاوية البطاقات */
+.features-list {
+    position: relative;
+    /* مهم لتمركز العمود المطلق */
+    padding-right: 40px;
+    /* تباعد لتفادي تداخل النص مع العمود */
+}
+
+/* العمود الخلفي */
+.features-list::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: 0;
+    /* أو left: 0; لو تريد العمود على اليسار */
+    width: 80px;
+    /* عرض العمود */
+    height: 80%;
+    /* طول العمود */
+    background: var(--color-secondary);
+    border-radius: 12px;
+    z-index: 1;
+    /* خلف البطاقات */
+    box-shadow: var(--shadow);
+}
+
+/* تأكد أن البطاقات فوق العمود */
+.feature-item {
+    position: relative;
+    z-index: 2;
 }
 
 /* عمود النصوص (اليمين) */
@@ -371,7 +404,6 @@ h4 {
 .why-us-image img {
     width: 100%;
     border-radius: 20px;
-    box-shadow: var(--shadow);
     z-index: 2;
     position: relative;
 }
