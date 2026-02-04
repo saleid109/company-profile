@@ -382,6 +382,7 @@ h4 {
 
 /* تنسيق زر "اقرأ المزيد" ليكون بارزاً وأنيقاً */
 .btn-read-more {
+    align-self: flex-start;
     display: inline-block;
     background: linear-gradient(90deg, #FFC821, #FFCC33); /* التدرج الأصفر */
     color: var(--color-secondary);
