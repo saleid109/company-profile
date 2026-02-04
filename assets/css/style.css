@@ -360,7 +360,31 @@ h4 {
     margin-bottom: 30px;
     
 }
+/* الحاوية الكبرى للقسم */
+.about-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* محاذاة العناصر للأعلى */
+    gap: 50px; /* مسافة بين النص والبطاقات */
+    padding: 60px 0;
+}
 
+/* تنسيق عمود النص */
+.about-content {
+    flex: 1; /* يأخذ نصف المساحة */
+    text-align: right;
+}
+
+/* تنسيق عمود البطاقات */
+.about-visual {
+    flex: 1; /* يأخذ النصف الآخر */
+}
+
+/* تأكدي من حذف العرض الثابت (700px) الذي كان في الكود السابق للبطاقات */
+.about-cards {
+    width: 100% !important; /* لتأخذ عرض العمود الخاص بها */
+    margin-bottom: 20px;
+}
 /*رابط قراءة المزيد */
 .read-more-link .btn-text {
     font-size: 11px;
