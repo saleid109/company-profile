@@ -348,6 +348,13 @@ h4 {
     color: var(--color-text);
     margin-bottom: 30px;
 }
+
+/* تنسيق زر اقرأ المزيد */
+.why-us-content .btn-primary {
+    padding: 12px 30px;
+    font-size: 16px;
+}
+
 /* عمود النصوص (اليمين) */
 .why-us-content {
     flex: 1.2;
