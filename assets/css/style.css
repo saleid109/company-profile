@@ -423,7 +423,17 @@ h4 {
     color: var(--color-secondary);
     font-family: var(--font-main);
 }   
-/* نهاية قصتنا */   
+/* بطاقة الرؤية  */ 
+.about-cards.vision-card {
+    margin-left: 20px;
+}
+/* بطاقة الرسالة  */
+.about-cards.mission-card {
+    margin-right: 20px;
+}
 
-# 
+
+
+
+
 
