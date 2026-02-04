@@ -431,10 +431,10 @@ h4 {
 
 /* إطار الأيقونة (المعين الأصفر) */
 .feature-icon {
-    width: 40px;  /* تصغير الحجم */
-    height: 40px;
-    min-width: 40px;
-    border: 2px solid #FFCC35; /* لون أصفر */
+    width: 35px;         /* تصغير حجم الإطار المعين */
+    height: 35px;
+    min-width: 35px;
+    border: 2px solid #FFCC35; /* اللون الأصفر كما في الصورة */
     background: #fff;
     display: flex;
     align-items: center;
@@ -445,9 +445,9 @@ h4 {
 
 /* الأيقونة نفسها بالداخل */
 .feature-icon i {
-    font-size: 18px; /* تصغير حجم الأيقونة */
-    color: #000066; /* لون كحلي */
-    transform: rotate(-45deg); /* تعديل ميلان الأيقونة لتبدو مستقيمة */
+    font-size: 16px;      /* تصغير حجم الأيقونة لتناسب الإطار */
+    color: #000066;      /* اللون الكحلي الغامق كما في الصورة */
+    transform: rotate(-45deg); /* تعديل ميلان الأيقونة لتبقى مستقيمة */
 }
 
 
