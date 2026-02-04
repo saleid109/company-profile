@@ -339,7 +339,9 @@ h4 {
 }
 
 .why-us-content {
-    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* يضمن اصطفاف كل شيء لليمين في وضعية RTL */
     text-align: right;
 }
 
