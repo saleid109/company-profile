@@ -325,12 +325,15 @@ h4 {
 
 /* ----- تنسيق قسم عن الشركة (About Section) ----- */
 
+/* تعديل الحاوية العامة أو إضافة padding مخصص للقسم */
 .why-us-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* محاذاة للأعلى لرفع العنوان */
-    gap: 50px;
-    padding: 60px 0;
+    align-items: center; /* توسيط عمودي ليتناسب مع طول العمود الأزرق */
+    gap: 60px;
+    padding: 100px 80px; /* زيادة الرقم 80 لإبعاد المحتوى عن الحواف الجانبية */
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .why-us-content {
