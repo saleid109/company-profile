@@ -384,6 +384,8 @@ h4 {
 
 /* تأكد أن البطاقات فوق العمود */
 .feature-item {
+    background: var(--color-white);
+    /* إضافة خلفية بيضاء معتمة تضمن عدم رؤية العمود من خلف النص */
     position: relative;
     z-index: 2;
 }
