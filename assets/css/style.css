@@ -342,8 +342,10 @@ h4 {
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    gap: 40px; /* تقليل الفجوة لاستغلال عرض الشاشة للصورة */
-    padding: 80px 5%; /* تقليل الهوامش الجانبية قليلاً */
+    gap: 40px; /* تقليل الفجوة لترك مساحة أكبر للصورة */
+    padding: 60px 5%; /* تقليل الهوامش الجانبية لاستغلال عرض الشاشة */
+    max-width: 1400px;
+    margin: 0 auto;
 }
 .section-title {
     font-size: 32px;
@@ -375,7 +377,6 @@ h4 {
     right: 0;
     width: 80px; /* عرض العمود المتناسق */
     background: #000066; /* اللون الكحلي الداكن */
-    border-radius: 10px;
     z-index: 1;
 }
 /* تنسيق زر "اقرأ المزيد" ليكون بارزاً وأنيقاً */
