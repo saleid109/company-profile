@@ -430,24 +430,26 @@ h4 {
 }
 
 /* إطار الأيقونة (المعين الأصفر) */
+/* إطار الأيقونة (المعين الأصفر) - يبقى كما هو */
 .feature-icon {
-    width: 40px;  /* تصغير الحجم */
+    width: 40px; 
     height: 40px;
     min-width: 40px;
-    border: 2px solid #FFCC35; /* لون أصفر */
+    border: 2px solid #FFCC35;
     background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: rotate(45deg); /* صنع شكل المعين */
+    transform: rotate(45deg);
     border-radius: 6px;
 }
 
-/* الأيقونة نفسها بالداخل */
+/* الأيقونة نفسها بالداخل - هنا التعديل */
 .feature-icon i {
-    font-size: 18px; /* تصغير حجم الأيقونة */
-    color: #000066; /* لون كحلي */
-    transform: rotate(-45deg); /* تعديل ميلان الأيقونة لتبدو مستقيمة */
+    font-size: 12px; /* تم تصغيرها من 18px إلى 12px لتصبح أصغر داخل المعين */
+    color: #000066; 
+    transform: rotate(-45deg); /* الحفاظ على استقامة الأيقونة */
+    display: block;
 }
 
 
@@ -470,7 +472,7 @@ h4 {
 /* حاوية الصورة - تقريبها جداً من النص */
 .why-us-image {
     flex: 1;
-    margin-left: -200px; /* تقريب الصورة من جهة اليسار */
+    margin-left: -170px; /* تقريب الصورة من جهة اليسار */
     z-index: 1;
 }
 
