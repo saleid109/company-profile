@@ -400,7 +400,7 @@ h4 {
     top: -40px;
     bottom: -40px;
     right: 0;
-    width: 200px;/* عرض العمود الأزرق */
+    width: 100px;/* عرض العمود الأزرق */
     background: var(--color-secondary);
     z-index: 1;/* خلف البطاقات */
 }
@@ -470,7 +470,6 @@ h4 {
 /* حاوية الصورة - تقريبها جداً من النص */
 .why-us-image {
     flex: 1;
-    margin-left: -170px; /* تقريب الصورة من جهة اليسار */
     z-index: 1;
 }
 
