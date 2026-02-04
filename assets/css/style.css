@@ -455,6 +455,22 @@ h4 {
     line-height: 1;
 }
 
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: #ffffff; /* خلفية بيضاء */
+    border: 2px solid #FFCC33; /* الإطار الأصفر */
+    transform: rotate(45deg); /* تدوير الإطار ليعطي شكل المعين */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.feature-icon i {
+    transform: rotate(-45deg); /* إعادة تدوير الأيقونة لتبقى معتدلة */
+    color: #1a237e; /* اللون الكحلي للشركة */
+}
 /* تأثير عند المرور بالفأرة */
 .feature-item:hover .feature-icon {
     background: var(--color-primary);
