@@ -339,7 +339,7 @@ h4 {
 }
 
 .section-title {
-    font-size: 2.2rem;
+    font-size: 32px;
     color: var(--color-secondary);
     margin-top: 0; /* رفع العنوان للأعلى */
     margin-bottom: 15px;
