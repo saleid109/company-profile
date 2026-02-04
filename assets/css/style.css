@@ -360,15 +360,13 @@ h4 {
 }
 
 .features-list::before {
-    
     content: "";
     position: absolute;
     top: 10px;
     bottom: 10px;
     right: 0;
-    width: 60px; /* تصغير عرض العمود قليلاً */
+    width: 75px; /* تصغير عرض العمود قليلاً */
     background: var(--color-secondary);
-    border-radius: 10px;
     z-index: 1;
 }
 
