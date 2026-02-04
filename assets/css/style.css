@@ -360,6 +360,7 @@ h4 {
 }
 
 .features-list::before {
+    
     content: "";
     position: absolute;
     top: 10px;
