@@ -353,6 +353,8 @@ h4 {
 .why-us-content .btn-primary {
     padding: 12px 30px;
     font-size: 16px;
+    margin-top: 18px;
+    display: inline-block;
 }
 
 /* حاوية البطاقات */
@@ -460,6 +462,5 @@ h4 {
     transform: translateX(-4px);
     /* حركة بسيطة تجذب الانتباه */
 }
-
 
 /* ----- نهاية قسم عن الشركة (About Section) ----- */
