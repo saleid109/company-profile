@@ -330,113 +330,154 @@ h4 {
 }
 
 /* ----- تنسيق قسم عن الشركة (About Section) ----- */
-/* ----- تنسيق قسم عن الشركة (About Section) المطور ----- */
 
+/*  الحاوية العامة للقسم */
 .why-us-wrapper {
     display: flex;
+    justify-content: center; /* تمركز العناصر */
     align-items: center;
-    justify-content: space-between;
-
+    gap: 0; /* إلغاء الفراغ التلقائي للتحكم به يدوياً */
+    padding: 80px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    direction: rtl;
 }
-
-/* عمود النص والبطاقات */
+/* عمود النص */
 .why-us-content {
-    flex: 1.1;
-    z-index: 10; /* ليكون فوق الصورة */
-    position: relative;
+    flex: 1;
+    z-index: 2;
+    padding-left: 20px; 
+}
+/* عنوان القسم */
+.section-title {
+    font-size: 32px;
+    color: var(--color-secondary);
+    margin-top: 5px; /* رفع العنوان للأعلى */
+    margin-bottom: 15px;
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+}
+/* وصف القسم */
+.section-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 25px;
+    font-family: var(--font-main);
+    font-weight: var(--weight-bold);
+
 }
 
-.section-title {
-    font-size: 36px;
+.decide-more{
+    background-color: var(--color-primary);
     color: var(--color-secondary);
+    padding: 10px 23px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: var(--weight-bold);
+    transition: all 0.3s ease;
+    display: inline-block;
     margin-bottom: 20px;
 }
 
-/* حاوية البطاقات والعمود الخلفي */
-.features-list {
-    position: relative;
-    padding: 20px 0;
-    margin-top: 40px;
+.decide-more:hover {
+    background-color: var(--color-white);
+    box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
 }
 
-/* العمود الكحلي الخلفي للبطاقات */
+/* حاوية البطاقات والعمود الخلفي المرن */
+
+.features-list {
+    position: relative;
+    padding-right: 50px; /* زيادةالمسافةللعمودالأزرق*/
+    margin-top: 40px;
+    
+}
+/* العمود الأزرق الخلفي */
 .features-list::before {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: -30px; /* تحريكه خلف البطاقات من جهة اليمين */
-    width: 140px;
+    top: -40px;
+    bottom: -40px;
+    right: 0;
+    width: 200px;/* عرض العمود الأزرق */
     background: var(--color-secondary);
-    z-index: -1;
+    z-index: 1;/* خلف البطاقات */
+    margin-right: -200px; /* هذا سيجعل الصورة تزحف جهة اليمين لتقترب من النص */
 }
-
-/* تنسيق البطاقة الواحدة */
+/* تنسيق البطاقة الصغيرة */
 .feature-item {
-    background: var(--color-white);
-    padding: 20px 30px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    width: 110%; /* تمديد العرض ليتداخل مع الصورة */
-    max-width: 600px;
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: row; /* ترتيب أفقي */
+    align-items: center;
+    gap: 20px;
+    background: var(--color-white);
+    padding: 15px 30px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    color: var(--color-secondary);
+    margin-right: -120px;
+    width: 100%;
+    max-width: 500px;
+}
+/* تأثير التحويم على البطاقة */
+.feature-item:hover {
+    transform: translateX(-5px);
 }
 
-/* إطار الأيقونة المعين (الأصفر) */
+/* إطار الأيقونة (المعين الأصفر) */
 .feature-icon {
-    width: 45px;
-    height: 45px;
-    min-width: 45px;
-    border: 2px solid var(--color-primary);
-    background: var(--color-white);
+    width: 40px;  /* تصغير الحجم */
+    height: 40px;
+    min-width: 40px;
+    border: 2px solid #FFCC35; /* لون أصفر */
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: rotate(45deg);
-    border-radius: 8px;
+    transform: rotate(45deg); /* صنع شكل المعين */
+    border-radius: 6px;
 }
 
-/* الأيقونة بالداخل */
+/* الأيقونة نفسها بالداخل */
 .feature-icon i {
-    font-size: 8px;
-    color: var(--color-secondary);
-    transform: rotate(-45deg); /* تعديل الميلان لتصبح مستقيمة */
+    font-size: 18px; /* تصغير حجم الأيقونة */
+    color: #000066; /* لون كحلي */
+    transform: rotate(-45deg); /* تعديل ميلان الأيقونة لتبدو مستقيمة */
 }
 
+
+/* نص البطاقة */
 .feature-info h3 {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
     color: var(--color-secondary);
+    margin-bottom: 5px;
 }
-
+/* نص البطاقة */
 .feature-info p {
-    font-size: 0.95rem;
-    color: var(--color-text);
-    line-height: 1.5;
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    font-weight: var(--weight-bold);
     margin: 0;
 }
 
-/* حاوية الصورة وتداخلها */
+/* تنسيق الصورة */
+
+/* حاوية الصورة - تقريبها جداً من النص */
 .why-us-image {
     flex: 1;
-    margin-left: -150px; 
+    margin-left: -199px; /* تقريب الصورة من جهة اليسار */
     z-index: 1;
-
 }
 
 .why-us-image img {
     width: 100%;
-    max-width: 650px;
+    max-width: 650px; /* تحجيم الصورة لتناسب التصميم */
     height: auto;
-    display: block;
-    /* لإضفاء لمسة جمالية تتناسب مع الخلفية البيضاء */
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
 }
 
-/* -----نهاية (About Section) ----- */
-
+/* ----- نهاية قسم عن الشركة (About Section) ----- */
