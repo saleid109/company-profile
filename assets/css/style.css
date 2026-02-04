@@ -366,7 +366,7 @@ h4 {
 
 }
 
-.btn-primary {
+.decide-more{
     background-color: var(--color-primary);
     color: var(--color-secondary);
     padding: 10px 23px;
@@ -378,7 +378,7 @@ h4 {
     margin-bottom: 20px;
 }
 
-.btn-primary:hover {
+.decide-more:hover {
     background-color: var(--color-white);
     box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
 }
