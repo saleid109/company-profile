@@ -329,9 +329,11 @@ h4 {
 .why-us-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* توسيط عمودي ليتناسب مع طول العمود الأزرق */
+    align-items: center;
+    /* توسيط عمودي ليتناسب مع طول العمود الأزرق */
     gap: 60px;
-    padding: 100px 80px; /* زيادة الرقم 80 لإبعاد المحتوى عن الحواف الجانبية */
+    padding: 100px 80px;
+    /* زيادة الرقم 80 لإبعاد المحتوى عن الحواف الجانبية */
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -344,7 +346,8 @@ h4 {
 .section-title {
     font-size: 32px;
     color: var(--color-secondary);
-    margin-top: 0; /* رفع العنوان للأعلى */
+    margin-top: 0;
+    /* رفع العنوان للأعلى */
     margin-bottom: 15px;
 }
 
@@ -358,35 +361,41 @@ h4 {
 /* حاوية البطاقات والعمود الخلفي المرن */
 .features-list {
     position: relative;
-    padding-right: 30px; /* مسافة للعمود الأزرق */
+    padding-right: 30px;
+    /* مسافة للعمود الأزرق */
+    margin-top: 40px;
+}
+
+.features-list {
+    position: relative;
+    padding-right: 50px;
+    /* زيادة المسافة لإفساح مجال للعمود العريض */
     margin-top: 40px;
 }
 
 .features-list::before {
     content: "";
     position: absolute;
-    top: 10px;
-    bottom: 10px;
+    /*القيم السالبة تجعل العمود يبرز لأعلى ولأسفل البطاقات*/
+    top: -40px;
+    bottom: -40px;
     right: 0;
-    width: 75px; /* تصغير عرض العمود قليلاً */
+    width: 100px;
     background: var(--color-secondary);
     z-index: 1;
+
 }
 
 /* تنسيق البطاقة الصغيرة */
 .feature-item {
     position: relative;
     z-index: 2;
-    display: flex;
-    flex-direction: row; /* الأيقونة يمين ثم النص */
-    align-items: center;
-    gap: 25px;
+    margin-right: -20px; /* سحب البطاقة قليلاً لليمين لتغطي جزءاً من العمود */
     background: var(--color-white);
-    padding: 15px 20px;
+    padding: 25px 30px; /* زيادة الحشو الداخلي للبطاقة */
     border-radius: 12px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: var(--transition);
+    margin-bottom: 30px; /* مسافة أكبر بين البطاقتين */
+    box-shadow: -5px 5px 20px rgba(0,0,0,0.1); /* ظل خفيف لإبراز البطاقة */
 }
 
 .feature-item:hover {
@@ -403,14 +412,16 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: rotate(45deg); /* تدوير المربع */
+    transform: rotate(45deg);
+    /* تدوير المربع */
     border-radius: 8px;
 }
 
 .feature-icon i {
     font-size: 18px;
     color: var(--color-secondary);
-    transform: rotate(-45deg); /* عكس التدوير للأيقونة */
+    transform: rotate(-45deg);
+    /* عكس التدوير للأيقونة */
 }
 
 .feature-info h3 {
