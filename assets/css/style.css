@@ -373,7 +373,7 @@ h4 {
 
 /* تنسيق البطاقة الواحدة */
 .feature-item {
-    background: #fff;
+    background: var(--color-white);
     padding: 20px 30px;
     border-radius: 15px;
     margin-bottom: 25px;
