@@ -232,7 +232,7 @@
     padding: 0;
     border-bottom: none;
   }
-}
+
 
 .hero-section {
   position: relative;
@@ -355,7 +355,39 @@
 
 /*=====================================================*/
 
-.feature-icon i {
-    font-size: 40px;
-    color: var(--color-primary);
+.why-us-wrapper {
+        flex-direction: column-reverse; /* وضع الصورة فوق النصوص في الأجهزة اللوحية */
+        padding: 60px 30px;
+        gap: 40px;
+    }
+
+    .why-us-content, .why-us-image {
+        flex: none;
+        width: 100%;
+        text-align: center; /* توسيط النصوص لجمالية المظهر على التابلت */
+    }
+
+    .why-us-content {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* توسيط المحتوى داخلياً */
+    }
+
+    .feature-item {
+        margin-right: 0; /* إلغاء الإزاحة الجانبية */
+        max-width: 100%; /* تأخذ البطاقة كامل العرض المتاح */
+    }
+    
+    .features-list {
+        padding-right: 0; /* إلغاء المسافة المخصصة للعمود الأزرق */
+        width: 100%;
+    }
+
+    .features-list::before {
+        display: none; /* إخفاء العمود الأزرق في الشاشات الصغيرة لتبسيط التصميم */
+    }
+    .why-us-image {
+        margin-left: 0; /* إلغاء الإزاحة الجانبية */
+    }
 }
