@@ -139,7 +139,8 @@ h4 {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    height: 70px;/*  ارتفاع للهيدر يساعد في ضبط العناصر */
+    height: 70px;
+    /*  ارتفاع للهيدر يساعد في ضبط العناصر */
     background-color: var(--color-secondary);
     padding: 0 30px;
 }
@@ -336,9 +337,21 @@ h4 {
     padding: 80px 0;
 }
 
+.decorative-dots {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/decorative-dots.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
 /* عمود النصوص (اليمين) */
 .why-us-content {
-    flex: 1.2; /* نعطي مساحة أكبر قليلاً للنصوص */
+    flex: 1.2;
+    /* نعطي مساحة أكبر قليلاً للنصوص */
     text-align: right;
 }
 
