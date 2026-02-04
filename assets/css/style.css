@@ -442,7 +442,7 @@ h4 {
 }
 /* تنسيق الأيقونة داخل المعين */
 .feature-icon i {
-    font-size: 18px;
+    font-size: 14px;
     color: var(--color-secondary);
     transform: rotate(-45deg); /* عكس التدوير للأيقونة */
 }
