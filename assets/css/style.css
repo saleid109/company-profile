@@ -329,29 +329,22 @@ h4 {
 .why-us-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    /* توسيط عمودي ليتناسب مع طول العمود الأزرق */
+    align-items: center; /* توسيط عمودي ليتناسب مع طول العمود الأزرق */
     gap: 60px;
-    padding: 100px 80px;
-    /* زيادة الرقم 80 لإبعاد المحتوى عن الحواف الجانبية */
+    padding: 100px 80px; /* زيادة الرقم 80 لإبعاد المحتوى عن الحواف الجانبية */
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.why-us-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    gap: 40px; /* تقليل الفجوة لترك مساحة أكبر للصورة */
-    padding: 60px 5%; /* تقليل الهوامش الجانبية لاستغلال عرض الشاشة */
-    max-width: 1400px;
-    margin: 0 auto;
+.why-us-content {
+    flex: 1.2;
+    text-align: right;
 }
+
 .section-title {
     font-size: 32px;
     color: var(--color-secondary);
-    margin-top: 0;
-    /* رفع العنوان للأعلى */
+    margin-top: 0; /* رفع العنوان للأعلى */
     margin-bottom: 15px;
 }
 
@@ -365,49 +358,45 @@ h4 {
 /* حاوية البطاقات والعمود الخلفي المرن */
 .features-list {
     position: relative;
-    padding-right: 60px; /* توسيع المسافة للعمود */
-    margin-top: 50px;
+    padding-right: 30px; /* مسافة للعمود الأزرق */
+    margin-top: 40px;
+}
+
+.features-list {
+    position: relative;
+    padding-right: 50px; /* زيادة المسافة لإفساح مجال للعمود العريض */
+    margin-top: 40px;
 }
 
 .features-list::before {
     content: "";
     position: absolute;
-    top: 20px; /* ضبط البداية لتطابق صورة فيجما */
-    bottom: 20px;
+    /*القيمالسالبةتجعلالعموديبرزلأعلىولأسفلالبطاقات*/top: -40px;
+    bottom: -40px;
     right: 0;
-    width: 80px; /* عرض العمود المتناسق */
-    background: #000066; /* اللون الكحلي الداكن */
-    z-index: 1;
+    width: 100px;
+    /*زيادةالعرضكمافيالتصميم*/background: var(--color-secondary);
+    border-radius: 15px;
+    /*حوافدائريةللعمود*/z-index: 1;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
-/* تنسيق زر "اقرأ المزيد" ليكون بارزاً وأنيقاً */
-.btn-read-more {
-    align-self: flex-start;
-    display: inline-block;
-    background: linear-gradient(90deg, #FFC821, #FFCC33); /* التدرج الأصفر */
-    color: var(--color-secondary);
-    padding: 12px 35px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 25px; /* مسافة تحت البرقراف */
-    transition: 0.3s;
-}
-
-.btn-read-more:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(255, 204, 51, 0.3);
-}
-
 /* تنسيق البطاقة الصغيرة */
 .feature-item {
     position: relative;
     z-index: 2;
-    margin-right: -20px; /* سحب البطاقة قليلاً لليمين لتغطي جزءاً من العمود */
+    display: flex;
+    flex-direction: row; /* الأيقونة يمين ثم النص */
+    align-items: center;
+    gap: 25px;
     background: var(--color-white);
-    padding: 25px 30px; /* زيادة الحشو الداخلي للبطاقة */
+    padding: 15px 20px;
     border-radius: 12px;
-    margin-bottom: 30px; /* مسافة أكبر بين البطاقتين */
-    box-shadow: -5px 5px 20px rgba(0,0,0,0.1); /* ظل خفيف لإبراز البطاقة */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
 }
 
 .feature-item:hover {
@@ -424,16 +413,14 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: rotate(45deg);
-    /* تدوير المربع */
+    transform: rotate(45deg); /* تدوير المربع */
     border-radius: 8px;
 }
 
 .feature-icon i {
     font-size: 18px;
     color: var(--color-secondary);
-    transform: rotate(-45deg);
-    /* عكس التدوير للأيقونة */
+    transform: rotate(-45deg); /* عكس التدوير للأيقونة */
 }
 
 .feature-info h3 {
@@ -450,14 +437,14 @@ h4 {
 
 /* تنسيق الصورة */
 .why-us-image {
-    flex: 1.1; /* تكبير حاوية الصورة قليلاً */
-    display: flex;
-    justify-content: center;
+    flex: 1;
 }
+
 .why-us-image img {
     width: 100%;
-    max-width: 550px; /* تحديد حجم أقصى يطابق فيجما */
     height: auto;
-    object-fit: contain;
+    display: block;
+    border-radius: 20px;
 }
+
 /* ----- نهاية قسم عن الشركة (About Section) ----- */
