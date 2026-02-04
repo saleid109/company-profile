@@ -412,7 +412,7 @@ h4 {
     display: flex;
     flex-direction: row; /* ترتيب أفقي */
     align-items: center;
-    gap: 25px;
+    gap: 20px;
     background: var(--color-white);
     padding: 15px 30px;
     border-radius: 12px;
