@@ -361,29 +361,39 @@ h4 {
 /* حاوية البطاقات والعمود الخلفي المرن */
 .features-list {
     position: relative;
-    padding-right: 30px;
-    /* مسافة للعمود الأزرق */
-    margin-top: 40px;
-}
-
-.features-list {
-    position: relative;
-    padding-right: 50px;
-    /* زيادة المسافة لإفساح مجال للعمود العريض */
-    margin-top: 40px;
+    padding-right: 60px; /* توسيع المسافة للعمود */
+    margin-top: 50px;
 }
 
 .features-list::before {
     content: "";
     position: absolute;
-    /*القيم السالبة تجعل العمود يبرز لأعلى ولأسفل البطاقات*/
-    top: -40px;
+    /* قيم سالبة لتطويل العمود من الأعلى والأسفل ليبرز خلف البطاقات */
+    top: -40px; 
     bottom: -40px;
     right: 0;
-    width: 100px;
+    width: 90px; /* عرض العمود كما يظهر في التصميم */
     background: var(--color-secondary);
     z-index: 1;
+    right: 0;
+}
 
+/* تنسيق زر "اقرأ المزيد" ليكون بارزاً وأنيقاً */
+.btn-read-more {
+    display: inline-block;
+    background: linear-gradient(90deg, #FFC821, #FFCC33); /* التدرج الأصفر */
+    color: var(--color-secondary);
+    padding: 12px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 25px; /* مسافة تحت البرقراف */
+    transition: 0.3s;
+}
+
+.btn-read-more:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 204, 51, 0.3);
 }
 
 /* تنسيق البطاقة الصغيرة */
