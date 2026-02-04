@@ -366,20 +366,19 @@ h4 {
 }
 
 /* العمود الخلفي */
+/* العمود الخلفي المرن */
 .features-list::before {
     content: "";
     position: absolute;
-    top: 10%;
-    right: 0;
-    /* أو left: 0; لو تريد العمود على اليسار */
-    width: 80px;
-    /* عرض العمود */
-    height: 80%;
-    /* طول العمود */
+    /* بدلاً من تحديد الطول، نحدد البعد عن الحواف */
+    top: 20px;      /* يبدأ بعد 20px من أعلى أول بطاقة */
+    bottom: 20px;   /* ينتهي قبل 20px من أسفل آخر بطاقة */
+    right: 0;       /* يلتصق بالجهة اليمنى */
+    
+    width: 80px;    /* عرض ثابت للعمود */
     background: var(--color-secondary);
     border-radius: 12px;
-    z-index: 1;
-    /* خلف البطاقات */
+    z-index: 1;     /* خلف البطاقات */
     box-shadow: var(--shadow);
 }
 
