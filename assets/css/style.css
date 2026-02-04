@@ -421,6 +421,8 @@ h4 {
     transition: var(--transition);
     color: var(--color-secondary);
     margin-right: -120px;
+    width: 100%;
+    max-width: 500px;
 }
 /* تأثير التحويم على البطاقة */
 .feature-item:hover {
@@ -448,19 +450,7 @@ h4 {
     transform: rotate(-45deg); /* تعديل ميلان الأيقونة لتبدو مستقيمة */
 }
 
-/* البطاقة البيضاء */
-.feature-item {
-    background: #fff;
-    padding: 15px 25px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* ظل ناعم */
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 500px; /* تحديد عرض البطاقة لتبدو مثل الصورة */
-}
+
 /* نص البطاقة */
 .feature-info h3 {
     font-size: 1.2rem;
@@ -471,6 +461,7 @@ h4 {
 .feature-info p {
     font-size: 0.9rem;
     color: var(--color-gray-text);
+    font-weight: var(--weight-bold);
     margin: 0;
 }
 
