@@ -353,10 +353,30 @@ h4 {
 }
 
 /* حاوية البطاقات والعمود الخلفي المرن */
+/* حاوية البطاقات (المستطيل الأزرق الخلفي) */
 .features-list {
     position: relative;
-    padding-right: 30px; /* مسافة للعمود الأزرق */
-    margin-top: 40px;
+    padding: 40px 20px;
+    background-color: var(--color-secondary);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* البطاقة البيضاء */
+.feature-item {
+    background-color: var(--color-white);
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row-reverse; /* لضمان ترتيب: أيقونة (يمين) ثم نص (يسار) */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .features-list::before {
