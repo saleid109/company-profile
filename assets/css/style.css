@@ -338,13 +338,13 @@ h4 {
     margin: 0 auto;
 }
 
-.why-us-content {
+.why-us-wrapper {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* يضمن اصطفاف كل شيء لليمين في وضعية RTL */
-    text-align: right;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 40px; /* تقليل الفجوة لاستغلال عرض الشاشة للصورة */
+    padding: 80px 5%; /* تقليل الهوامش الجانبية قليلاً */
 }
-
 .section-title {
     font-size: 32px;
     color: var(--color-secondary);
@@ -370,16 +370,14 @@ h4 {
 .features-list::before {
     content: "";
     position: absolute;
-    /* قيم سالبة لتطويل العمود من الأعلى والأسفل ليبرز خلف البطاقات */
-    top: -40px; 
-    bottom: -40px;
+    top: 20px; /* ضبط البداية لتطابق صورة فيجما */
+    bottom: 20px;
     right: 0;
-    width: 90px; /* عرض العمود كما يظهر في التصميم */
-    background: var(--color-secondary);
+    width: 80px; /* عرض العمود المتناسق */
+    background: #000066; /* اللون الكحلي الداكن */
+    border-radius: 10px;
     z-index: 1;
-    right: 0;
 }
-
 /* تنسيق زر "اقرأ المزيد" ليكون بارزاً وأنيقاً */
 .btn-read-more {
     align-self: flex-start;
@@ -451,14 +449,14 @@ h4 {
 
 /* تنسيق الصورة */
 .why-us-image {
-    flex: 1;
+    flex: 1.1; /* تكبير حاوية الصورة قليلاً */
+    display: flex;
+    justify-content: center;
 }
-
 .why-us-image img {
     width: 100%;
+    max-width: 550px; /* تحديد حجم أقصى يطابق فيجما */
     height: auto;
-    display: block;
-    border-radius: 20px;
+    object-fit: contain;
 }
-
 /* ----- نهاية قسم عن الشركة (About Section) ----- */
