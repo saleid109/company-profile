@@ -311,7 +311,6 @@ h4 {
     color: var(--color-secondary);
 }
 
-
 /* زر استثمر معنا (الأصفر)   */
 .btn-outline {
     background: var(--color-primary);
@@ -430,16 +429,50 @@ h4 {
     text-align: right;
 }
 
-.feature-icon i {
-    font-size: 24px;
-    color: var(--color-secondary);
-    background: var(--color-primary);
-    width: 50px;
-    height: 50px;
+/* شكل الإيقونة بإطار ولون أساسي، والإيقونة بمحاذاة اليمين */
+.feature-icon {
+    width: 62px;
+    height: 62px;
+    min-width: 62px;
+    border-radius: 12px;
+    border: 2px solid var(--color-primary);
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 12px;
+    justify-content: flex-end;
+    /* يضع الأيقونة جهة اليمين داخل الشكل */
+    padding-right: 12px;
+    background: transparent;
+    color: var(--color-primary);
+    transition:
+        background 0.25s,
+        color 0.25s,
+        transform 0.2s;
+}
+
+.feature-icon i {
+    font-size: 24px;
+    line-height: 1;
+}
+
+/* تأثير عند المرور بالفأرة */
+.feature-item:hover .feature-icon {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    transform: translateX(-4px);
+    /* حركة بسيطة تجذب الانتباه */
+}
+
+/* تصغير للأجهزة الصغيرة */
+@media (max-width: 600px) {
+    .feature-icon {
+        width: 48px;
+        height: 48px;
+        padding-right: 8px;
+    }
+
+    .feature-icon i {
+        font-size: 20px;
+    }
 }
 
 /* ----- نهاية قسم عن الشركة (About Section) ----- */
