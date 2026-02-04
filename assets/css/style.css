@@ -435,8 +435,8 @@ h4 {
     width: 40px; 
     height: 40px;
     min-width: 40px;
-    border: 2px solid #FFCC35;
-    background: #fff;
+    border: 2px solid var(--color-primary);
+    background: var(--color-primary-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -446,8 +446,8 @@ h4 {
 
 /* الأيقونة نفسها بالداخل - هنا التعديل */
 .feature-icon i {
-    font-size: 12px; /* تم تصغيرها من 18px إلى 12px لتصبح أصغر داخل المعين */
-    color: #000066; 
+    font-size: 4px; /* تم تصغيرها من 18px إلى 12px لتصبح أصغر داخل المعين */
+    color: var(--color-secondary); 
     transform: rotate(-45deg); /* الحفاظ على استقامة الأيقونة */
     display: block;
 }
