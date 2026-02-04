@@ -392,8 +392,8 @@ h4 {
     width: 45px;
     height: 45px;
     min-width: 45px;
-    border: 2px solid #FFCC35;
-    background: #fff;
+    border: 2px solid var(--color-primary);
+    background: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -403,7 +403,7 @@ h4 {
 
 /* الأيقونة بالداخل */
 .feature-icon i {
-    font-size: 10px;
+    font-size: 8px;
     color: var(--color-secondary);
     transform: rotate(-45deg); /* تعديل الميلان لتصبح مستقيمة */
 }
@@ -416,7 +416,7 @@ h4 {
 
 .feature-info p {
     font-size: 0.95rem;
-    color: #555;
+    color: var(--color-text);
     line-height: 1.5;
     margin: 0;
 }
