@@ -274,16 +274,17 @@ h4 {
 }
 /* تنسيق الفقرة */
 .hero-content p {
-    font-size: 30px;
-    max-width: 700px;
-    margin: 0 auto 30px;
-    line-height: 1.10;
-    font-weight: var(--weight-bold);
+    font-size: 24px;
+    max-width: 850px;
+    margin: 0 auto 30px; 
+    line-height: 1.6;
+    font-weight: var(--weight-regular); 
     font-family: var(--font-main);
     color: var(--color-bg-light);
+    text-align: center;
 }
-
-.home-buttons {
+/* حاوية الأزرار */
+    .home-buttons {
     display: flex;
     justify-content: center;
     gap: 20px; 
@@ -367,7 +368,7 @@ h4 {
     font-weight: var(--weight-bold);
 
 }
-
+/* زر اقرأ المزيد */
 .decide-more{
     background-color: var(--color-primary);
     color: var(--color-secondary);
@@ -379,7 +380,7 @@ h4 {
     display: inline-block;
     margin-bottom: 20px;
 }
-
+/* تأثير التحويم على زر اقرأ المزيد */
 .decide-more:hover {
     background-color: var(--color-white);
     box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
@@ -467,15 +468,15 @@ h4 {
 
 /* تنسيق الصورة */
 
-/* حاوية الصورة - تقريبها جداً من النص */
+/*حاوية الصورة */
 .why-us-image {
     flex: 1;
     z-index: 1;
 }
-
+/* الصورة داخل الحاوية */
 .why-us-image img {
     width: 100%;
-    max-width: 650px; /* تحجيم الصورة لتناسب التصميم */
+    max-width: 650px; 
     height: auto;
 }
 
