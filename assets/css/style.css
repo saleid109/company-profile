@@ -596,9 +596,3 @@ h4 {
     color: var(--color-white);
 }
 
-/* تجاوب الجوال: تتحول لعمود واحد في الشاشات الصغيرة */
-@media (max-width: 768px) {
-    .fields-grid {
-        grid-template-columns: 1fr;
-    }
-}
