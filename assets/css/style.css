@@ -483,122 +483,90 @@ h4 {
 /* ----- نهاية قسم عن الشركة (About Section) ----- */
 
 /*قسم مجالاتنا*/
+/* --- قسم مجالاتنا (Fields Section) --- */
 
 .fields-section {
     position: relative;
     background-color: var(--color-bg-light);
     padding: 80px 20px;
-    /* تأكد من عدم وجود overflow: hidden هنا إذا كنت تريد للأسهم البروز للأعلى */
+    /* السماح للأسهم بالبروز للقسم العلوي كما في فيجما */
     overflow: visible; 
 }
-/* الحاوية الرئيسية */
+
 .fields-container {
     position: relative; 
     z-index: 1;
     max-width: 1400px;
     margin: 0 auto;
 }
-.fields-header{
+
+.fields-header {
     position: relative;
     width: 100%;
-    max-width: 1200px;
     margin-bottom: 60px;
     text-align: center;
 }
 
-
-.fields-title{
+.fields-title {
     font-size: 32px;
     color: var(--color-secondary);
-    text-align: center;
-    margin-bottom: 40px;
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
 }
 
-
-/* تعديل الأسهم لتصعد فوق حدود القسم */
+/* تنسيق الأسهم الصفراء (Group 10) - مطابقة لفيجما */
 .fields-icon-wrapper {
     position: absolute;
-    /* قيمة سالبة تجعل السهم "يهجم" على القسم الذي فوقه كما في فيجما */
-    top: -60px; 
+    /* قيمة سالبة لتتداخل مع قسم "عن الشركة" العلوي */
+    top: -100px; 
     right: 5%; 
-    z-index: 0; /* تأكد أنه خلف محتوى الأبوت وأمام خلفية الموقع */
+    z-index: -1; 
     pointer-events: none;
 }
 
 .fields-icon-wrapper img {
-    /* القياسات الدقيقة من فيجما */
-    width: 456px;
-    height: 452px;
+    width: 456px;  /* القياس من فيجما */
+    height: auto;
     opacity: 0.9;
-    display: block;
-}
-
-/* الشبكة والبطاقات */
-.fields-grid {
-    position: relative;
-    z-index: 2;         /* طبقة أمامية لتغطية جزء من الأسهم */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.field-card {
-    background-color: #ffffff; /* اللون الأبيض ضروري ليظهر "قص" السهم خلفه */
-    padding: 40px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* ظل خفيف كما في التصميم */
-}
-
-.field-card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-.fields-icon-wrapper {
-    position: absolute;
-    /* التموضع بناءً على قياسات Figma الموضحة في صورتك */
-    top: 120px;         /* لتبدأ الرؤوس من خلف أيقونات الصف الأول */
-    right: 5%;          /* إزاحة بسيطة جهة اليمين لتطابق التصميم */
-    z-index: -1;        /* خلف البطاقات */
-    pointer-events: none;
-}
-
-.fields-icon-wrapper img {
-    /* القياسات المأخوذة من واجهة Figma في صورتك */
-    width: 450px;       
-    height: auto;       /* للحفاظ على تناسق الأسهم */
-    opacity: 0.8;       /* درجة وضوح اللون الأصفر #FDCA30 */
     display: block;
 }
 
 /* شبكة البطاقات */
 .fields-grid {
     position: relative;
-    z-index: 2;         /* لضمان بقاء البطاقات فوق الأسهم */
+    z-index: 2;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-/* تنسيق البطاقة لضمان التباين */
+/* تنسيق البطاقة الموحد والتوسيط الكامل */
 .field-card {
     background-color: #ffffff;
     border-radius: 12px;
     padding: 40px 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    
+    /* توسيط المحتوى داخلياً */
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* توسيط الأيقونة والنص أفقياً */
+    justify-content: center;
     text-align: center;
+    
+    transition: all 0.3s ease;
 }
-/* تنسيق الأيقونة الدائرية (الكحلي) */
+
+/* حاوية الأيقونة الدائرية */
 .field-icon-box {
     width: 80px;
     height: 80px;
     border: 2px solid var(--color-secondary);
-    border-radius: 50%; /* شكل دائري */
+    border-radius: 50%;
     display: flex;
-    align-items: center;
+    align-items: center;   /* توسيط أيقونة الفونت أوسم داخل الدائرة */
     justify-content: center;
     margin-bottom: 20px;
     transition: all 0.3s ease;
@@ -606,10 +574,9 @@ h4 {
 
 .field-icon-box i {
     font-size: 30px;
-    color: var(--color-secondary); /* لون الأيقونة كحلي */
+    color: var(--color-secondary);
 }
 
-/* تنسيق النص (العنوان) */
 .field-card h3 {
     font-size: 1.1rem;
     color: var(--color-secondary);
@@ -618,7 +585,7 @@ h4 {
     margin: 0;
 }
 
-/* تأثير الهوفر كما في المواقع الاحترافية */
+/* تأثيرات التفاعل (Hover) */
 .field-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -631,4 +598,3 @@ h4 {
 .field-card:hover .field-icon-box i {
     color: var(--color-white);
 }
-
