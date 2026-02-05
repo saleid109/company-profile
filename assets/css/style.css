@@ -487,15 +487,25 @@ h4 {
 .fields-section{
     background-color: var(--color-bg-light);
     padding: 80px 20px;
+    overflow: hidden; /* لمنع ظهور شريط التمرير أثناء الحركة */
 }
 .fields-container{
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+    flex-direction: column; /* ترتيب عمودي للعنوان ثم الشبكة */
+    align-items: center;
 }
+
+.fields-header{
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+
 .fields-title{
     font-size: 32px;
     color: var(--color-secondary);
@@ -505,16 +515,7 @@ h4 {
     font-family: var(--font-main);
 }
 
-.fields-icon-wrapper::before {
-    content: "";
-    position: absolute;
-    top: -40px;
-    bottom: -40px;
-    right: 0;
-    width: 100px;
-    background: var(--color-secondary);
-    z-index: 1;/* خلف البطاقات */
-}
+
 .fields-icon-wrapper img {
     height: 120px;
     width: auto;
