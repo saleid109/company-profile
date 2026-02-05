@@ -230,24 +230,40 @@
         font-size: 1rem;
         padding: 0 10px;
     }
-
-    .feature-item {
-        flex-direction: column; /* في الجوال الصغير جداً، الأيقونة فوق النص */
+.why-us-wrapper {
+        flex-direction: column-reverse; /* وضع الصورة في الأعلى ثم النصوص */
+        padding: 40px 20px;
         text-align: center;
+        gap: 30px;
+    }
+
+    .why-us-content, .why-us-image {
+        width: 100%; /* تأخذ كامل العرض المتاح */
+    }
+
+    .why-us-image img {
+        max-width: 90%; /* منع الصورة من الالتصاق بالحواف */
+        margin: 0 auto;
+    }
+
+    /* البطاقات في الجوال */
+    .feature-item {
+        flex-direction: column; /* الأيقونة فوق النص لزيادة الوضوح */
+        max-width: 100%;
+        margin-right: 0; /* إلغاء الإزاحة الخاصة بالعمود الأزرق */
         padding: 20px;
     }
 
-    .feature-icon {
-        margin-bottom: 15px;
-        margin-left: 0; /* إلغاء المسافة الجانبية */
-    }
-
     .features-list {
-        padding-right: 0; /* إلغاء مسافة العمود الأزرق في الجوال لزيادة المساحة */
+        padding-right: 0; /* إلغاء مساحة العمود الأزرق لزيادة المساحة للبطاقة */
     }
 
     .features-list::before {
-        display: none; /* إخفاء العمود الأزرق في الجوال لتبدو البطاقات أنظف */
+        display: none; /* إخفاء العمود الأزرق في الجوال لتبسيط الواجهة */
+    }
+
+    .feature-icon i {
+        font-size: 18px; /* تكبير الأيقونة (كانت 4px في كودك) */
     }
 
   /* حركة ظهور القائمة */
