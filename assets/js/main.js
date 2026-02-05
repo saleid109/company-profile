@@ -106,3 +106,20 @@ function toggleMenu() {
         console.warn('Accessibility audit loader error', err);
     }
 })();
+const observeFields = () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // تفعيل الحركة للبطاقات داخل القسم
+                const cards = entry.target.querySelectorAll('.field-card');
+                cards.forEach(card => card.classList.add('show'));
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const section = document.querySelector('.fields-section');
+    if (section) observer.observe(section);
+};
+
+document.addEventListener('DOMContentLoaded', observeFields);

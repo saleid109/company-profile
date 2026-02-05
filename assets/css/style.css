@@ -568,4 +568,8 @@ img.field-icon{
     margin-bottom: 15px;
 }
 
+.field-card:nth-child(1) { transition-delay: 0.1s; }
+.field-card:nth-child(2) { transition-delay: 0.2s; }
+.field-card:nth-child(3) { transition-delay: 0.3s; }
+.field-card:nth-child(4) { transition-delay: 0.4s; }
 
