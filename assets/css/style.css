@@ -532,49 +532,60 @@ h4 {
 }
 
 /* شبكة البطاقات */
+/* 1. الحاوية الشبكية: لضمان توسط البطاقات داخل القسم */
 .fields-grid {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* التعديل هنا: استخدام auto-fit لضمان التوسط في كل الشاشات */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 1000px; /* العرض الأقصى للشبكة */
+    margin: 0 auto;    /* هذا السطر هو المسؤول عن توسيط الشبكة كاملة */
+    justify-content: center; 
+    align-content: center;
 }
 
-/* تنسيق البطاقة الموحد والتوسيط الكامل */
+/* 2. البطاقة نفسها: لضمان توسط المحتوى داخلها */
 .field-card {
     background-color: #ffffff;
     border-radius: 12px;
     padding: 40px 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     
-    /* توسيط المحتوى داخلياً */
+    /* إجبار المحتوى على التوسط */
     display: flex;
     flex-direction: column;
-    align-items: center;    /* توسيط الأيقونة والنص أفقياً */
-    justify-content: center;
-    text-align: center;
+    align-items: center;    /* توسيط أفقي */
+    justify-content: center; /* توسيط عمودي */
+    text-align: center;      /* توسيط النص */
     
+    width: 100%;
+    margin: 0 auto;
     transition: all 0.3s ease;
 }
 
-/* حاوية الأيقونة الدائرية */
+/* 3. صندوق الأيقونة: لضمان توسط الدائرة */
 .field-icon-box {
     width: 80px;
     height: 80px;
     border: 2px solid var(--color-secondary);
     border-radius: 50%;
+    
+    /* التوسيط داخل الدائرة */
     display: flex;
-    align-items: center;   /* توسيط أيقونة الفونت أوسم داخل الدائرة */
+    align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
+    
+    margin: 0 auto 20px auto; /* auto من اليمين واليسار لتتوسط البطاقة */
 }
 
+/* لضمان عدم وجود أي إزاحة للأيقونة */
 .field-icon-box i {
     font-size: 30px;
     color: var(--color-secondary);
+    display: block;
+    line-height: 0; /* يمنع الفراغات الإضافية تحت الأيقونة */
 }
 
 .field-card h3 {
