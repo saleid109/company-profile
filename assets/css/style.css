@@ -491,13 +491,14 @@ h4 {
 }
 /* الحاوية الرئيسية */
 .fields-container {
-    position: relative;
+    position: relative; /* ضروري لعمل absolute بالداخل */
     z-index: 1;
     max-width: 1400px;
     margin: 0 auto;
-    overflow: visible; /* لضمان عدم قطع رؤوس الأسهم إذا كانت طويلة */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 .fields-header{
     position: relative;
     width: 100%;
@@ -517,38 +518,38 @@ h4 {
 }
 
 
-/* ضبط الأسهم الصفراء خلف الأيقونات */
 .fields-icon-wrapper {
     position: absolute;
-    /* تحكم في هذا الرقم لرفع أو خفض الأسهم خلف الأيقونات */
-    top: 80px;         
-    right: 20px;        /* محاذاة لليمين كما في الصورة */
-    z-index: -1;       /* وضعها خلف البطاقات */
-    pointer-events: none;
+    /* تحكم في الارتفاع لتبدأ الأسهم من خلف العنوان أو الأيقونات */
+    top: 50px; 
+    right: 0; 
+    z-index: -1; /* خلف البطاقات */
+    pointer-events: none; /* لكي لا تمنع النقر على البطاقات */
 }
 
 .fields-icon-wrapper img {
-    /* تكبير الارتفاع ليمتد من خلف الأيقونات وحتى نهاية القسم */
-    height: 650px;     
+    /* تكبير الارتفاع ليغطي القسم بالكامل */
+    height: 650px; 
     width: auto;
-    opacity: 0.6;      /* درجة شفافية مناسبة لتبدو كخلفية ناعمة */
+    opacity: 0.6; /* شفافية هادئة لدمجها مع الخلفية */
     display: block;
 }
 
-/* ضمان ظهور البطاقات فوق الأسهم بوضوح */
+/* الشبكة والبطاقات */
 .fields-grid {
     position: relative;
-    z-index: 2;        /* طبقة أعلى من الأسهم */
+    z-index: 2; /* أمام الأسهم */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    gap: 30px;
+    margin-top: 40px;
 }
 
 .field-card {
-    background-color: var(--color-white);
-    border-radius: 15px;
-    padding: 40px 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff; /* تأكد من وجود خلفية بيضاء صلبة */
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .field-card.show {
