@@ -489,14 +489,15 @@ h4 {
     padding: 80px 20px;
     overflow: hidden; /* لمنع ظهور شريط التمرير أثناء الحركة */
 }
-.fields-container{
+.fields-container {
+    position: relative; /* ضروري لكي يعمل absolute الخاص بالأسهم داخله */
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column; /* ترتيب عمودي للعنوان ثم الشبكة */
+    flex-direction: column;
     align-items: center;
+    padding-bottom: 50px; /* مساحة إضافية في الأسفل لبروز الأسهم */
 }
-
 .fields-header{
     position: relative;
     width: 100%;
@@ -516,11 +517,20 @@ h4 {
 }
 
 
+.fields-icon-wrapper {
+    position: absolute; /* جعل الحاوية تسبح بحرية بالنسبة للقسم */
+    bottom: -20px;     /* إنزالها للأسفل قليلاً لتظهر من خلف البطاقات */
+    right: 0;          /* تثبيتها في أقصى اليمين */
+    z-index: 0;        /* خلف البطاقات (لأن البطاقات z-index: 1 تلقائياً) */
+    pointer-events: none; /* لكي لا تعيق الضغط على البطاقات */
+}
+
 .fields-icon-wrapper img {
-    height: 120px;
-    width: auto;
-    position: relative;
-    z-index: 1;
+    height: 450px;     /* تكبير الارتفاع بشكل ملحوظ كما في الصورة */
+    width: auto;       /* الحفاظ على التناسب */
+    opacity: 0.8;      /* جعل اللون أصفر ناعم كما في التصميم */
+    display: block;
+    object-fit: contain;
 }
 
 /* الحاوية الأساسية للشبكة */
