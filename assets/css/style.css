@@ -491,11 +491,10 @@ h4 {
 }
 /* الحاوية الرئيسية */
 .fields-container {
-    position: relative; /* لجعل الأسهم تتحرك داخل حدود هذا القسم فقط */
+    position: relative; 
     z-index: 1;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 60px 20px;
 }
 .fields-header{
     position: relative;
@@ -518,36 +517,38 @@ h4 {
 
 .fields-icon-wrapper {
     position: absolute;
-    /* تحكم في الارتفاع لتبدأ الأسهم من خلف العنوان أو الأيقونات */
-    top: 50px; 
-    right: 0; 
-    z-index: -1; /* خلف البطاقات */
-    pointer-events: none; /* لكي لا تمنع النقر على البطاقات */
+    /* في صورتك، الأسهم تبدأ خلف البطاقة الأولى من اليمين */
+    top: 150px;         /* ارفع أو انزل بناءً على موقع الأيقونة */
+    right: 0;           
+    z-index: -1;        /* طبقة خلفية */
+    pointer-events: none;
 }
 
 .fields-icon-wrapper img {
-    /* تكبير الارتفاع ليغطي القسم بالكامل */
-    height: 650px; 
-    width: auto;
-    opacity: 0.6; /* شفافية هادئة لدمجها مع الخلفية */
+    /* القياسات المأخوذة من نافذة Properties في صورتك */
+    width: 456px;       
+    height: 452px;      
+    opacity: 1;         /* استخدم اللون #FDCA30 الصريح كما في فيجما */
+    object-fit: contain;
     display: block;
 }
 
 /* الشبكة والبطاقات */
 .fields-grid {
     position: relative;
-    z-index: 2; /* أمام الأسهم */
+    z-index: 2;         /* طبقة أمامية لتغطية جزء من الأسهم */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .field-card {
-    background-color: #ffffff; /* تأكد من وجود خلفية بيضاء صلبة */
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    background-color: #ffffff; /* اللون الأبيض ضروري ليظهر "قص" السهم خلفه */
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* ظل خفيف كما في التصميم */
 }
 
 .field-card.show {
