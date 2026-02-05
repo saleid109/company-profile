@@ -217,53 +217,62 @@
 
   /*=====================================================*/
   /* تنسيق الأيقونات في بطاقات الرسالة والرؤية */
-
 #about {
-        padding: 40px 0; /* تقليل المسافات العلوية */
+        padding: 40px 0;
     }
 
-    .section-title {
-        font-size: 1.8rem; /* تصغير العنوان ليناسب شاشة الجوال */
-    }
-
-    .section-desc {
-        font-size: 1rem;
-        padding: 0 10px;
-    }
-.why-us-wrapper {
-        flex-direction: column-reverse; /* وضع الصورة في الأعلى ثم النصوص */
+    .why-us-wrapper {
+        /* وضع الصورة في الأعلى ثم النصوص كما طلبتِ */
+        flex-direction: column-reverse; 
         padding: 40px 20px;
         text-align: center;
         gap: 30px;
     }
 
     .why-us-content, .why-us-image {
-        width: 100%; /* تأخذ كامل العرض المتاح */
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .section-desc {
+        font-size: 1rem;
+        padding: 0 10px;
     }
 
     .why-us-image img {
-        max-width: 90%; /* منع الصورة من الالتصاق بالحواف */
+        max-width: 90%;
         margin: 0 auto;
+        border-radius: 15px;
     }
 
-    /* البطاقات في الجوال */
-    .feature-item {
-        flex-direction: column; /* الأيقونة فوق النص لزيادة الوضوح */
-        max-width: 100%;
-        margin-right: 0; /* إلغاء الإزاحة الخاصة بالعمود الأزرق */
-        padding: 20px;
-    }
-
+    /* تنسيق البطاقات في الجوال */
     .features-list {
-        padding-right: 0; /* إلغاء مساحة العمود الأزرق لزيادة المساحة للبطاقة */
+        padding-right: 0; /* إلغاء مساحة العمود الأزرق */
+        margin-top: 20px;
     }
 
     .features-list::before {
-        display: none; /* إخفاء العمود الأزرق في الجوال لتبسيط الواجهة */
+        display: none; /* إخفاء العمود الأزرق لتبسيط الواجهة */
     }
 
-    .feature-icon i {
-        font-size: 18px; /* تكبير الأيقونة (كانت 4px في كودك) */
+    .feature-item {
+        flex-direction: column; /* الأيقونة فوق النص لزيادة الوضوح */
+        max-width: 100%;
+        margin-right: 0;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .feature-icon {
+        margin: 0 auto 10px auto; /* توسيط الأيقونة */
+    }
+
+    .feature-info {
+        text-align: center; /* توسيط النصوص في الجوال */
     }
 
   /* حركة ظهور القائمة */
@@ -438,38 +447,28 @@
 
     /*=====================================================*/
     /* تنسيق الأيقونات في بطاقات الرسالة والرؤية */
-.why-us-wrapper {
-        flex-direction: row; /* العودة للوضع الأفقي */
+ .why-us-wrapper {
+        flex-direction: row; /* الحفاظ على الوضع الأفقي في الآيباد */
         gap: 20px;
         padding: 60px 30px;
     }
 
     .why-us-content {
-        flex: 1.1; /* موازنة المساحة مع الصورة */
+        flex: 1.1;
     }
 
     .why-us-image {
         flex: 0.9;
     }
 
+    .section-title {
+        font-size: 24px; /* تصغير العنوان ليناسب الشاشة المتوسطة */
+    }
+
     .feature-item {
         padding: 15px;
         gap: 15px;
-        margin-right: -15px; /* تقليل البروز ليناسب الشاشة المتوسطة */
-    }
-    
-    .section-title {
-        font-size: 24px; /* تصغير العنوان قليلاً للآيباد */
-    }
-
-
-    .feature-icon {
-      margin-bottom: 10px;
-    }
-
-    .why-us-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
+        /* تقليل البروز ليناسب الشاشة المتوسطة */
+        margin-right: -10px; 
     }
   }
