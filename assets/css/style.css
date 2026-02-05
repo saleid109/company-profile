@@ -401,7 +401,7 @@ h4 {
     top: -40px;
     bottom: -40px;
     right: 0;
-    width: 100px;/* عرض العمود الأزرق */
+    width: 100px;
     background: var(--color-secondary);
     z-index: 1;/* خلف البطاقات */
 }
@@ -483,4 +483,54 @@ h4 {
 /* ----- نهاية قسم عن الشركة (About Section) ----- */
 
 /*قسم مجالاتنا*/
+
+.fields-section{
+    background-color: var(--color-bg-light);
+    padding: 80px 20px;
+}
+.fields-container{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+.fields-title{
+    font-size: 32px;
+    color: var(--color-secondary);
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+}
+
+.fields-icon-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    bottom: -40px;
+    right: 0;
+    width: 100px;
+    background: var(--color-secondary);
+    z-index: 1;/* خلف البطاقات */
+}
+.fields-icon-wrapper img {
+    height: 50px;
+    width: auto;
+    z-index: var(--z-fixed);
+    display: block;
+    object-fit: contain;
+}
+
+/*بطاقات المجالات*/
+.field-card{
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: var(--transition);
+}
 
