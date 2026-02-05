@@ -438,31 +438,30 @@
 
     /*=====================================================*/
     /* تنسيق الأيقونات في بطاقات الرسالة والرؤية */
-    .why-us-wrapper {
-      flex-direction: column;
-      /* تحويل العمودين لصف واحد */
-      text-align: center;
-      gap: 40px;
+.why-us-wrapper {
+        flex-direction: row; /* العودة للوضع الأفقي */
+        gap: 20px;
+        padding: 60px 30px;
     }
 
-    .why-us-content,
+    .why-us-content {
+        flex: 1.1; /* موازنة المساحة مع الصورة */
+    }
+
     .why-us-image {
-      flex: none;
-      width: 100%;
-      /* تأخذ كامل عرض الشاشة */
-    }
-
-    .section-title {
-      text-align: center;
-      /* توسيط العنوان في الآيباد */
+        flex: 0.9;
     }
 
     .feature-item {
-      max-width: 500px;
-      /* تحديد عرض البطاقات لتبدو متناسقة */
-      margin: 0 auto 20px auto;
-      /* توسيط البطاقات */
+        padding: 15px;
+        gap: 15px;
+        margin-right: -15px; /* تقليل البروز ليناسب الشاشة المتوسطة */
     }
+    
+    .section-title {
+        font-size: 24px; /* تصغير العنوان قليلاً للآيباد */
+    }
+
 
     .feature-icon {
       margin-bottom: 10px;
