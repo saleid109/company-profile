@@ -490,14 +490,11 @@ h4 {
     overflow: hidden; /* لمنع ظهور شريط التمرير أثناء الحركة */
 }
 .fields-container {
-position: relative; /* لجعل تموضع الأسهم بالنسبة لهذه الحاوية */
+    position: relative; 
     z-index: 1;
     max-width: 1400px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 50px; /* مساحة إضافية في الأسفل لبروز الأسهم */
+    padding-bottom: 60px;
 }
 .fields-header{
     position: relative;
@@ -520,48 +517,41 @@ position: relative; /* لجعل تموضع الأسهم بالنسبة لهذه 
 
 .fields-icon-wrapper {
     position: absolute;
-    top: 50px;          /* المسافة من الأعلى لتبدأ خلف الأيقونات */
-    right: 0;           /* محاذاة لليمين */
-    z-index: -1;        /* طبقة خلفية خلف البطاقات */
-    pointer-events: none; /* لضمان عدم إعاقة النقر على البطاقات */
+    /* تحكم في الارتفاع من هنا لتبدأ خلف الصف الأول من الأيقونات */
+    top: 15%; 
+    right: -20px; /* دفعها قليلاً لليمين لتعطي توازناً بصرياً */
+    z-index: -1;  /* خلف البطاقات */
+    pointer-events: none;
 }
 
 
 .fields-icon-wrapper img {
-    height: 450px;     /* تكبير الارتفاع بشكل ملحوظ كما في الصورة */
-    width: auto;       /* الحفاظ على التناسب */
-    opacity: 0.8;      /* جعل اللون أصفر ناعم كما في التصميم */
+    /* تكبير الحجم ليغطي مساحة واسعة من القسم */
+    height: 550px; 
+    width: auto;
+    opacity: 0.7; /* شفافية ناعمة لتندمج مع لون الخلفية */
     display: block;
-    object-fit: contain;
 }
 
-/* الحاوية الأساسية للشبكة */
+/* الشبكة والبطاقات */
 .fields-grid {
+    position: relative;
+    z-index: 2; /* لضمان بقائها فوق الأسهم */
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* عمودين فقط */
-    gap: 20px; /* المسافة بين البطاقات */
-    max-width: 900px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* تنسيق البطاقة الأبيض */
+/* البطاقة مع خلفية بيضاء لضمان وضوح النص فوق الأسهم */
 .field-card {
-background-color: var(--color-white);
-    position: relative;
-    z-index: 2;
-    padding: 40px 20px;
-    border-radius: 8px; /* زوايا دائرية بسيطة */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: var(--color-white);
+    padding: 40px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    
-    /* للأنيميشن */
-    opacity: 0;
-    transform: translateY(30px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .field-card.show {
