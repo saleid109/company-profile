@@ -523,25 +523,31 @@ h4 {
     z-index: 1;
 }
 
-/*بطاقات المجالات*/
-.fields-grid{
+/* الحاوية الأساسية للشبكة */
+.fields-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-
+    grid-template-columns: repeat(2, 1fr); /* عمودين فقط */
+    gap: 20px; /* المسافة بين البطاقات */
+    max-width: 900px;
+    margin: 0 auto;
 }
+
+/* تنسيق البطاقة الأبيض */
 .field-card {
     background-color: var(--color-white);
-    padding: 30px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    color: var(--color-secondary);
+    padding: 40px 20px;
+    border-radius: 8px; /* زوايا دائرية بسيطة */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
     
-    /* الحالة الابتدائية قبل التمرير */
+    /* للأنيميشن */
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
 }
 
 .field-card.show {
@@ -549,27 +555,50 @@ h4 {
     transform: translateY(0);
 }
 
+/* تنسيق الأيقونة الدائرية (الكحلي) */
+.field-icon-box {
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--color-secondary); /* إطار كحلي */
+    border-radius: 50%; /* شكل دائري */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.field-icon-box i {
+    font-size: 30px;
+    color: var(--color-secondary); /* لون الأيقونة كحلي */
+}
+
+/* تنسيق النص (العنوان) */
+.field-card h3 {
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* تأثير الهوفر كما في المواقع الاحترافية */
 .field-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-    border-bottom: 4px solid var(--color-secondary); /* حركة جمالية عند الهوفر */
-}
-.field-card:hover{
     transform: translateY(-5px);
-}
-.field-card h3{
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-img.field-icon{
-    height: 40px;
-    width: 40px;
-    margin-bottom: 15px;
+.field-card:hover .field-icon-box {
+    background-color: var(--color-secondary);
 }
 
-.field-card:nth-child(1) { transition-delay: 0.1s; }
-.field-card:nth-child(2) { transition-delay: 0.2s; }
-.field-card:nth-child(3) { transition-delay: 0.3s; }
-.field-card:nth-child(4) { transition-delay: 0.4s; }
+.field-card:hover .field-icon-box i {
+    color: var(--color-white);
+}
 
+/* تجاوب الجوال: تتحول لعمود واحد في الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .fields-grid {
+        grid-template-columns: 1fr;
+    }
+}
