@@ -530,13 +530,29 @@ h4 {
     gap: 30px;
 
 }
-.field-card{
+.field-card {
     background-color: var(--color-white);
-    padding: 20px;
+    padding: 30px 20px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: var(--transition);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     color: var(--color-secondary);
+    text-align: center;
+    
+    /* الحالة الابتدائية قبل التمرير */
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.field-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.field-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    border-bottom: 4px solid var(--color-secondary); /* حركة جمالية عند الهوفر */
 }
 .field-card:hover{
     transform: translateY(-5px);
