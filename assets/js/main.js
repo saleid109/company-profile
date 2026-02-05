@@ -123,3 +123,18 @@ const observeFields = () => {
 };
 
 document.addEventListener('DOMContentLoaded', observeFields);
+function toggleMenu() {
+    const navLinks = document.querySelector('.navbar-links');
+    const menuIcon = document.querySelector('.mobile-menu-icon i');
+    const body = document.body; // إضافة إشارة للـ body
+
+    navLinks.classList.toggle('open');
+    
+    if (navLinks.classList.contains('open')) {
+        menuIcon.classList.replace('fa-bars', 'fa-times');
+        body.style.overflow = 'hidden'; // منع التمرير عند فتح القائمة
+    } else {
+        menuIcon.classList.replace('fa-times', 'fa-bars');
+        body.style.overflow = 'auto'; // إعادة التمرير عند الإغلاق
+    }
+}
