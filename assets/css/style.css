@@ -484,10 +484,12 @@ h4 {
 
 /*قسم مجالاتنا*/
 
-.fields-section{
+.fields-section {
+    position: relative;
     background-color: var(--color-bg-light);
     padding: 80px 20px;
-    overflow: hidden; /* لمنع ظهور شريط التمرير أثناء الحركة */
+    /* تأكد من عدم وجود overflow: hidden هنا إذا كنت تريد للأسهم البروز للأعلى */
+    overflow: visible; 
 }
 /* الحاوية الرئيسية */
 .fields-container {
@@ -515,21 +517,21 @@ h4 {
 }
 
 
+/* تعديل الأسهم لتصعد فوق حدود القسم */
 .fields-icon-wrapper {
     position: absolute;
-    /* في صورتك، الأسهم تبدأ خلف البطاقة الأولى من اليمين */
-    top: 150px;         /* ارفع أو انزل بناءً على موقع الأيقونة */
-    right: 0;           
-    z-index: -1;        /* طبقة خلفية */
+    /* قيمة سالبة تجعل السهم "يهجم" على القسم الذي فوقه كما في فيجما */
+    top: -60px; 
+    right: 5%; 
+    z-index: 0; /* تأكد أنه خلف محتوى الأبوت وأمام خلفية الموقع */
     pointer-events: none;
 }
 
 .fields-icon-wrapper img {
-    /* القياسات المأخوذة من نافذة Properties في صورتك */
-    width: 456px;       
-    height: 452px;      
-    opacity: 1;         /* استخدم اللون #FDCA30 الصريح كما في فيجما */
-    object-fit: contain;
+    /* القياسات الدقيقة من فيجما */
+    width: 456px;
+    height: 452px;
+    opacity: 0.9;
     display: block;
 }
 
