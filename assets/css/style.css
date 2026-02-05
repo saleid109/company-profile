@@ -518,8 +518,7 @@ h4 {
 
 .fields-icon-wrapper img {
     height: 120px;
-    width: ;
-
+    width: auto;
     position: relative;
     z-index: 1;
 }
