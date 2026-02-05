@@ -490,7 +490,8 @@ h4 {
     overflow: hidden; /* لمنع ظهور شريط التمرير أثناء الحركة */
 }
 .fields-container {
-    position: relative; /* ضروري لكي يعمل absolute الخاص بالأسهم داخله */
+position: relative; /* لجعل تموضع الأسهم بالنسبة لهذه الحاوية */
+    z-index: 1;
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
@@ -518,18 +519,19 @@ h4 {
 
 
 .fields-icon-wrapper {
-    position: absolute; /* جعل الحاوية تسبح بحرية بالنسبة للقسم */
-    bottom: -20px;     /* إنزالها للأسفل قليلاً لتظهر من خلف البطاقات */
-    right: 0;          /* تثبيتها في أقصى اليمين */
-    z-index: 0;        /* خلف البطاقات (لأن البطاقات z-index: 1 تلقائياً) */
-    pointer-events: none; /* لكي لا تعيق الضغط على البطاقات */
+    position: absolute;
+    top: 50px;          /* المسافة من الأعلى لتبدأ خلف الأيقونات */
+    right: 0;           /* محاذاة لليمين */
+    z-index: -1;        /* طبقة خلفية خلف البطاقات */
+    pointer-events: none; /* لضمان عدم إعاقة النقر على البطاقات */
 }
 
+
 .fields-icon-wrapper img {
-    height: 400px;     /* تكبير الارتفاع بشكل ملحوظ كما في الصورة */
-    width: 400px;       /* الحفاظ على التناسب */
+    height: 450px;     /* تكبير الارتفاع بشكل ملحوظ كما في الصورة */
+    width: auto;       /* الحفاظ على التناسب */
     opacity: 0.8;      /* جعل اللون أصفر ناعم كما في التصميم */
-    display: grid;
+    display: block;
     object-fit: contain;
 }
 
