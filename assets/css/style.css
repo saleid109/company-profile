@@ -489,13 +489,15 @@ h4 {
     padding: 80px 20px;
     overflow: hidden; /* لمنع ظهور شريط التمرير أثناء الحركة */
 }
+/* الحاوية الرئيسية */
 .fields-container {
-    position: relative; 
+    position: relative;
     z-index: 1;
     max-width: 1400px;
     margin: 0 auto;
-    padding-bottom: 60px;
+    overflow: visible; /* لضمان عدم قطع رؤوس الأسهم إذا كانت طويلة */
 }
+
 .fields-header{
     position: relative;
     width: 100%;
@@ -515,43 +517,38 @@ h4 {
 }
 
 
+/* ضبط الأسهم الصفراء خلف الأيقونات */
 .fields-icon-wrapper {
     position: absolute;
-    /* تحكم في الارتفاع من هنا لتبدأ خلف الصف الأول من الأيقونات */
-    top: 15%; 
-    right: -20px; /* دفعها قليلاً لليمين لتعطي توازناً بصرياً */
-    z-index: -1;  /* خلف البطاقات */
+    /* تحكم في هذا الرقم لرفع أو خفض الأسهم خلف الأيقونات */
+    top: 80px;         
+    right: 20px;        /* محاذاة لليمين كما في الصورة */
+    z-index: -1;       /* وضعها خلف البطاقات */
     pointer-events: none;
 }
 
-
 .fields-icon-wrapper img {
-    /* تكبير الحجم ليغطي مساحة واسعة من القسم */
-    height: 550px; 
+    /* تكبير الارتفاع ليمتد من خلف الأيقونات وحتى نهاية القسم */
+    height: 650px;     
     width: auto;
-    opacity: 0.7; /* شفافية ناعمة لتندمج مع لون الخلفية */
+    opacity: 0.6;      /* درجة شفافية مناسبة لتبدو كخلفية ناعمة */
     display: block;
 }
 
-/* الشبكة والبطاقات */
+/* ضمان ظهور البطاقات فوق الأسهم بوضوح */
 .fields-grid {
     position: relative;
-    z-index: 2; /* لضمان بقائها فوق الأسهم */
+    z-index: 2;        /* طبقة أعلى من الأسهم */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
+    gap: 25px;
 }
 
-/* البطاقة مع خلفية بيضاء لضمان وضوح النص فوق الأسهم */
 .field-card {
     background-color: var(--color-white);
-    padding: 40px 25px;
-    border-radius: 12px;
+    border-radius: 15px;
+    padding: 40px 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .field-card.show {
