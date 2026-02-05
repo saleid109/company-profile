@@ -468,3 +468,43 @@
   }
 
   /*=====================================================*/
+  /* Mobile: center features, full-width buttons */
+  .features-list {
+    width: 100%;
+    max-width: 640px;
+    margin: 20px auto 0;
+    padding-right: 0;
+  }
+
+  .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    margin-right: 0;
+    padding: 18px;
+    width: 100%;
+    box-shadow: 0 6px 18px rgba(5,10,40,0.06);
+  }
+
+  .feature-icon {
+    margin: 0;
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 10px;
+  }
+
+  .feature-icon i { transform: rotate(-45deg); font-size: 20px; }
+
+  /* hide decorative column on small screens for clarity */
+  .features-list::before { display: none !important; }
+
+  /* make hero buttons responsive */
+  .home-buttons a { width: 100%; max-width: 320px; }
