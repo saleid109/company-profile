@@ -491,13 +491,11 @@ h4 {
 }
 /* الحاوية الرئيسية */
 .fields-container {
-    position: relative; /* ضروري لعمل absolute بالداخل */
+    position: relative; /* لجعل الأسهم تتحرك داخل حدود هذا القسم فقط */
     z-index: 1;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 60px 20px;
 }
 .fields-header{
     position: relative;
@@ -556,12 +554,45 @@ h4 {
     opacity: 1;
     transform: translateY(0);
 }
+.fields-icon-wrapper {
+    position: absolute;
+    /* التموضع بناءً على قياسات Figma الموضحة في صورتك */
+    top: 120px;         /* لتبدأ الرؤوس من خلف أيقونات الصف الأول */
+    right: 5%;          /* إزاحة بسيطة جهة اليمين لتطابق التصميم */
+    z-index: -1;        /* خلف البطاقات */
+    pointer-events: none;
+}
 
+.fields-icon-wrapper img {
+    /* القياسات المأخوذة من واجهة Figma في صورتك */
+    width: 450px;       
+    height: auto;       /* للحفاظ على تناسق الأسهم */
+    opacity: 0.8;       /* درجة وضوح اللون الأصفر #FDCA30 */
+    display: block;
+}
+
+/* شبكة البطاقات */
+.fields-grid {
+    position: relative;
+    z-index: 2;         /* لضمان بقاء البطاقات فوق الأسهم */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* تنسيق البطاقة لضمان التباين */
+.field-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
 /* تنسيق الأيقونة الدائرية (الكحلي) */
 .field-icon-box {
     width: 80px;
     height: 80px;
-    border: 2px solid var(--color-secondary); /* إطار كحلي */
+    border: 2px solid var(--color-secondary);
     border-radius: 50%; /* شكل دائري */
     display: flex;
     align-items: center;
