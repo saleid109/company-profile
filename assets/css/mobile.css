@@ -143,7 +143,7 @@
 
   /* حل مشكلة ظهور الأيقونة في الجوال */
   .mobile-menu-icon {
-    color: #FFCC33 !important;
+    color: var(--color-primary);
     /* اللون الأصفر ليكون واضحاً */
     font-size: 24px;
   }
@@ -176,7 +176,7 @@
     justify-content: center;
     align-items: center;
   }
-
+/* تنسيق الأزرار */
   .home-buttons a {
     width: 260px;
     height: 70px;
@@ -186,13 +186,13 @@
     justify-content: center;
     font-weight: bold;
   }
-
+/* زر طلب خدمة (الأبيض) */
   .btn-servers {
     background-color: var(--color-bg-light);
     color: var(--color-secondary);
   }
 
-
+/* زر طلب خدمة عند المرور عليه */
 
   .btn-servers:hover {
     background-color: var(--color-primary);
@@ -200,12 +200,15 @@
 
   }
 
+  /* زر استثمر معنا (الأصفر)   */
   .btn-outline {
     background: var(--color-primary);
     color: var(--color-secondary);
     font-family: var(--font-main);
     font-weight: var(--weight-bold);
   }
+
+  /* زر استثمر معنا عند المرور عليه */
 
   .btn-outline:hover {
     background-color: var(--color-bg-light);
@@ -215,44 +218,37 @@
   /*=====================================================*/
   /* تنسيق الأيقونات في بطاقات الرسالة والرؤية */
 
-  .why-us-wrapper {
-    padding: 40px 20px;
-  }
+#about {
+        padding: 40px 0; /* تقليل المسافات العلوية */
+    }
 
-  .section-title {
-    font-size: 26px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--color-secondary);
-    font-size: 1.5rem;
-    font-family: var(--font-main);
-    font-weight: var(--weight-bold);
-    margin-top: 5px;
-    justify-items: center;
+    .section-title {
+        font-size: 1.8rem; /* تصغير العنوان ليناسب شاشة الجوال */
+    }
 
+    .section-desc {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
 
-  }
+    .feature-item {
+        flex-direction: column; /* في الجوال الصغير جداً، الأيقونة فوق النص */
+        text-align: center;
+        padding: 20px;
+    }
 
-  .section-desc {
-    font-size: 1rem;
-  }
+    .feature-icon {
+        margin-bottom: 15px;
+        margin-left: 0; /* إلغاء المسافة الجانبية */
+    }
 
-  .feature-item {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-    gap: 15px;
-  }
+    .features-list {
+        padding-right: 0; /* إلغاء مسافة العمود الأزرق في الجوال لزيادة المساحة */
+    }
 
-  .feature-icon {
-    margin-bottom: 10px;
-  }
-
-  .why-us-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
+    .features-list::before {
+        display: none; /* إخفاء العمود الأزرق في الجوال لتبدو البطاقات أنظف */
+    }
 
   /* حركة ظهور القائمة */
   @keyframes slideDown {
