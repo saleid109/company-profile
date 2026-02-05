@@ -484,92 +484,82 @@ h4 {
 
 /*قسم مجالاتنا*/
 
-.fields-section{
+/* --- قسم مجالاتنا (Fields Section) مع الأنيميشن المخصص --- */
+.fields-section {
     background-color: var(--color-bg-light);
     padding: 80px 20px;
-    overflow: hidden; /* لمنع ظهور شريط التمرير أثناء الحركة */
+    overflow: hidden;
+    direction: rtl;
 }
-.fields-container{
+
+.fields-container {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column; /* ترتيب عمودي للعنوان ثم الشبكة */
+    flex-direction: column;
     align-items: center;
 }
 
-.fields-header{
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin-bottom: 60px;
+.fields-header {
     text-align: center;
+    margin-bottom: 60px;
 }
 
-
-.fields-title{
+.fields-title {
     font-size: 32px;
     color: var(--color-secondary);
-    text-align: center;
-    margin-bottom: 40px;
     font-weight: var(--weight-bold);
-    font-family: var(--font-main);
+    margin-bottom: 20px;
 }
 
-
-.fields-icon-wrapper img {
-    height: 120px;
-    width: auto;
-    position: relative;
-    z-index: 1;
-}
-
-/*بطاقات المجالات*/
-.fields-grid{
+.fields-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-
+    width: 100%;
 }
+
+/* إعدادات البطاقة والحركة */
 .field-card {
     background-color: var(--color-white);
-    padding: 30px 20px;
+    padding: 40px 25px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     color: var(--color-secondary);
     text-align: center;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     
-    /* الحالة الابتدائية قبل التمرير */
+    /* الحالة المخفية */
     opacity: 0;
     transform: translateY(40px);
 }
 
+/* الكلاس الذي يتم إضافته بواسطة JS */
 .field-card.show {
     opacity: 1;
     transform: translateY(0);
 }
 
 .field-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* تم توحيد القيمة للأفضل بطلاقة */
     box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-    border-bottom: 4px solid var(--color-secondary); /* حركة جمالية عند الهوفر */
-}
-.field-card:hover{
-    transform: translateY(-5px);
-}
-.field-card h3{
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    border-bottom: 4px solid var(--color-primary); /* تغيير للون الأساسي لإبراز الهوية */
 }
 
-img.field-icon{
-    height: 40px;
-    width: 40px;
-    margin-bottom: 15px;
+.field-card h3 {
+    font-size: 1.3rem;
+    margin-top: 15px;
 }
 
+/* أيقونات المجالات */
+.field-icon-box i {
+    font-size: 40px;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+/* تأثير التوالي (Stagger) */
 .field-card:nth-child(1) { transition-delay: 0.1s; }
 .field-card:nth-child(2) { transition-delay: 0.2s; }
 .field-card:nth-child(3) { transition-delay: 0.3s; }
 .field-card:nth-child(4) { transition-delay: 0.4s; }
-
