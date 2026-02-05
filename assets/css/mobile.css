@@ -1,4 +1,5 @@
 @media screen and (max-width: 768px) {
+
   /*   شريط المعلومات العلوي (Top Bar) */
   .top-bar {
     height: auto;
@@ -28,8 +29,10 @@
 
   .nav-wrapper {
     display: flex;
-    flex-direction: row; /* التأكد من الاتجاه الأفقي */
-    justify-content: space-between; /* توزيع العناصر على الأطراف */
+    flex-direction: row;
+    /* التأكد من الاتجاه الأفقي */
+    justify-content: space-between;
+    /* توزيع العناصر على الأطراف */
     align-items: center;
     height: 65px;
     padding: 0 15px;
@@ -52,18 +55,21 @@
 
   /* ---أيقونة القائمة --- */
   .mobile-menu-icon {
-    order: 2; /* العنصر الثاني */
+    order: 2;
+    /* العنصر الثاني */
     display: block;
     font-size: 22px;
     color: var(--color-bg-light);
     background: none;
     border: none;
-    margin: 0 10px; /* مسافة بسيطة */
+    margin: 0 10px;
+    /* مسافة بسيطة */
   }
 
   /* --- زر الاستشارة في أقصى اليسار --- */
   .nav-actions {
-    order: 3; /* آخر عنصر جهة اليسار */
+    order: 3;
+    /* آخر عنصر جهة اليسار */
   }
 
   .nav-actions .btn-primary {
@@ -81,7 +87,8 @@
     width: 100%;
     background-color: var(--color-secondary);
     z-index: 1000;
-    display: none; /* تظهر بالجافا سكريبت */
+    display: none;
+    /* تظهر بالجافا سكريبت */
   }
 
   .navbar-links.open {
@@ -123,309 +130,329 @@
     padding: 0 20px;
   }
 
-.home-buttons a {
+  .home-buttons a {
     width: 260px;
     height: 70px;
-    border-radius: 10px; /* القيمة الصحيحة من التصميم */
+    border-radius: 10px;
+    /* القيمة الصحيحة من التصميم */
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-}
-
-/* حل مشكلة ظهور الأيقونة في الجوال */
-.mobile-menu-icon {
-    color: #FFCC33 !important; /* اللون الأصفر ليكون واضحاً */
-    font-size: 24px;
-}
-
-/* ضبط عرض المحتوى */
-.hero-content {
-    max-width: 1026px; /* مقاس فيجما المعتمد */
-    margin: 0 auto;
-}
-/* تنسيق النصوص */
-.hero-content h1 {
-  font-size: clamp(1.5rem, 5vw, 3.1rem);
-  margin-bottom: 20px;
-  color: var(--color-bg-light);
-}
-
-.hero-content p {
-  font-size: 1rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
-  line-height: 1.8;
-}
-
-/* تنسيق الأزرار */
-.home-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-buttons a {
-    width: 260px;         /* مقاس فيجما */
-    height: 70px;        /* مقاس فيجما */
-    border-radius: 10px; /* مقاس فيجما */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-.btn-servers {
-  background-color: var(--color-bg-light);
-  color: var(--color-secondary);
-}
-
-
-
-.btn-servers:hover{
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-
-}
-.btn-outline {
-    background: var(--color-primary);
-    color: var(--color-secondary);
-    font-family: var(--font-main);
-    font-weight: var(--weight-bold);
-}
-.btn-outline:hover{
-    background-color: var(--color-bg-light);
-
-}
-
-.why-us-wrapper {
-        padding: 40px 20px;
-    }
-
-    .section-title {
-        font-size: 26px; /* تصغير العنوان ليناسب شاشة الجوال */
-    }
-
-    .section-desc {
-        font-size: 1rem;
-    }
-
-    .feature-item {
-        flex-direction: column; /* جعل الأيقونة فوق النص في الجوال لزيادة المساحة */
-        text-align: center;
-        padding: 20px;
-        gap: 15px;
-    }
-
-    .feature-icon {
-        margin-bottom: 10px;
-    }
-
-    .why-us-image img {
-        max-width: 100%; /* ضمان عدم خروج الصورة عن حواف الشاشة */
-    }
-
-/* حركة ظهور القائمة */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-/*=====================================================*/
-/*الايباد*/
-/* Tablet/iPad size (768px - 1024px) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .nav-wrapper {
-    flex-wrap: nowrap;
   }
 
-  .logo {
-    flex: 0 0 auto;
-    margin-right: 20px;
-  }
-
+  /* حل مشكلة ظهور الأيقونة في الجوال */
   .mobile-menu-icon {
-    order: unset;
+    color: #FFCC33 !important;
+    /* اللون الأصفر ليكون واضحاً */
+    font-size: 24px;
   }
 
-  .navbar-links {
-    position: static;
-    display: block !important;
-    width: auto;
-    background-color: transparent;
-  }
-
-  .nav-menu {
-    flex-direction: row;
-    padding: 0;
-    gap: 15px;
-  }
-
-  .nav-menu li a {
-    padding: 0;
-    border-bottom: none;
-  }
-
-
-.hero-section {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--color-white);
-  overflow: hidden;
-}
-
-
-/* تنسيق الصورة لتغطي الخلفية */
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* لضمان عدم تمدد الصورة بشكل خاطئ */
-  filter: brightness(0.4); /* تعتيم الصورة لإبراز النص */
-}
-
-.hero-content {
-    max-width: 1026px; /* مقاس فيجما */
+  /* ضبط عرض المحتوى */
+  .hero-content {
+    max-width: 1026px;
+    /* مقاس فيجما المعتمد */
     margin: 0 auto;
-}
+  }
 
-/*=====================================================*/
+  /* تنسيق النصوص */
+  .hero-content h1 {
+    font-size: clamp(1.5rem, 5vw, 3.1rem);
+    margin-bottom: 20px;
+    color: var(--color-bg-light);
+  }
 
-/* تنسيق النصوص */
-.hero-content h1 {
-  font-size: clamp(1.5rem, 5vw, 3.1rem);
-  margin-bottom: 20px;
-  color: var(--color-bg-light);
-}
+  .hero-content p {
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+  }
 
-.hero-content p {
-  font-size: 1rem;
-  max-width: 400px;
-  margin: 0 auto 30px;
-  line-height: 1.8;
-}
-
-/* تنسيق الأزرار */
-.home-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.home-buttons a {
-    width: 260px;
-    height: 70px;
-    border-radius: 10px; 
+  /* تنسيق الأزرار */
+  .home-buttons {
     display: flex;
-    align-items: center;
+    gap: 20px;
     justify-content: center;
-    font-weight: bold;
-    text-decoration: none;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
-}
+    align-items: center;
+  }
 
-
-/* تنسيق الأزرار */
-.home-buttons .btn-servers, 
-.home-buttons .btn-outline {
+  .home-buttons a {
     width: 260px;
     height: 70px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    padding: 10px;
-    border: none;
-    transition: 0.3s;
-}
+    font-weight: bold;
+  }
 
-/* زر طلب خدمة (الأبيض) */
-.btn-servers {
-    background-color: var(--color-bg-light); 
+  .btn-servers {
+    background-color: var(--color-bg-light);
     color: var(--color-secondary);
-    font-weight: var(--weight-bold);
-    font-family: var(--font-main);
-}
+  }
 
-.btn-servers:hover{
+
+
+  .btn-servers:hover {
     background-color: var(--color-primary);
     color: var(--color-secondary);
-    
-}
 
-/* زر استثمر معنا (الأصفر)   */
-.btn-outline {
+  }
+
+  .btn-outline {
     background: var(--color-primary);
     color: var(--color-secondary);
     font-family: var(--font-main);
     font-weight: var(--weight-bold);
+  }
 
-}
-
-.btn-outline:hover{
+  .btn-outline:hover {
     background-color: var(--color-bg-light);
-    
-}
 
-/*=====================================================*/
-/* تنسيق الأيقونات في بطاقات الرسالة والرؤية */
+  }
+/*
+  .why-us-wrapper {
+    padding: 40px 20px;
+  }
 
-.why-us-wrapper {
-        flex-direction: column-reverse; /* وضع الصورة فوق النصوص في الأجهزة اللوحية */
-        padding: 60px 30px;
-        gap: 40px;
+  .section-title {
+    font-size: 26px;
+  }
+
+  .section-desc {
+    font-size: 1rem;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .feature-icon {
+    margin-bottom: 10px;
+  }
+
+  .why-us-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;}
+
+  /* حركة ظهور القائمة */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
     }
 
-    .why-us-content, .why-us-image {
-        flex: none;
-        width: 100%;
-        text-align: center; /* توسيط النصوص لجمالية المظهر على التابلت */
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+
+  /*=====================================================*/
+  /*الايباد*/
+  /* Tablet/iPad size (768px - 1024px) */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .nav-wrapper {
+      flex-wrap: nowrap;
+    }
+
+    .logo {
+      flex: 0 0 auto;
+      margin-right: 20px;
+    }
+
+    .mobile-menu-icon {
+      order: unset;
+    }
+
+    .navbar-links {
+      position: static;
+      display: block !important;
+      width: auto;
+      background-color: transparent;
+    }
+
+    .nav-menu {
+      flex-direction: row;
+      padding: 0;
+      gap: 15px;
+    }
+
+    .nav-menu li a {
+      padding: 0;
+      border-bottom: none;
+    }
+
+
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--color-white);
+      overflow: hidden;
+    }
+
+
+    /* تنسيق الصورة لتغطي الخلفية */
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* لضمان عدم تمدد الصورة بشكل خاطئ */
+      filter: brightness(0.4);
+      /* تعتيم الصورة لإبراز النص */
+    }
+
+    .hero-content {
+      max-width: 1026px;
+      /* مقاس فيجما */
+      margin: 0 auto;
+    }
+
+    /*=====================================================*/
+
+    /* تنسيق النصوص */
+    .hero-content h1 {
+      font-size: clamp(1.5rem, 5vw, 3.1rem);
+      margin-bottom: 20px;
+      color: var(--color-bg-light);
+    }
+
+    .hero-content p {
+      font-size: 1rem;
+      max-width: 400px;
+      margin: 0 auto 30px;
+      line-height: 1.8;
+    }
+
+    /* تنسيق الأزرار */
+    .home-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .home-buttons a {
+      width: 260px;
+      height: 70px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      text-decoration: none;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+
+    /* تنسيق الأزرار */
+    .home-buttons .btn-servers,
+    .home-buttons .btn-outline {
+      width: 260px;
+      height: 70px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      padding: 10px;
+      border: none;
+      transition: 0.3s;
+    }
+
+    /* زر طلب خدمة (الأبيض) */
+    .btn-servers {
+      background-color: var(--color-bg-light);
+      color: var(--color-secondary);
+      font-weight: var(--weight-bold);
+      font-family: var(--font-main);
+    }
+
+    .btn-servers:hover {
+      background-color: var(--color-primary);
+      color: var(--color-secondary);
+
+    }
+
+    /* زر استثمر معنا (الأصفر)   */
+    .btn-outline {
+      background: var(--color-primary);
+      color: var(--color-secondary);
+      font-family: var(--font-main);
+      font-weight: var(--weight-bold);
+
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-bg-light);
+
+    }
+
+    /*=====================================================*/
+    /* تنسيق الأيقونات في بطاقات الرسالة والرؤية */
+
+    .why-us-wrapper {
+      flex-direction: column-reverse;
+      /* وضع الصورة فوق النصوص في الأجهزة اللوحية */
+      padding: 60px 30px;
+      gap: 40px;
+    }
+
+    .why-us-content,
+    .why-us-image {
+      flex: none;
+      width: 100%;
+      text-align: center;
+      /* توسيط النصوص لجمالية المظهر على التابلت */
     }
 
     .why-us-content {
-        padding-left: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* توسيط المحتوى داخلياً */
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* توسيط المحتوى داخلياً */
     }
 
     .feature-item {
-        margin-right: 0; /* إلغاء الإزاحة الجانبية */
-        max-width: 100%; /* تأخذ البطاقة كامل العرض المتاح */
+      margin-right: 0;
+      /* إلغاء الإزاحة الجانبية */
+      max-width: 100%;
+      /* تأخذ البطاقة كامل العرض المتاح */
     }
-    
+
     .features-list {
-        padding-right: 0; /* إلغاء المسافة المخصصة للعمود الأزرق */
-        width: 100%;
+      padding-right: 0;
+      /* إلغاء المسافة المخصصة للعمود الأزرق */
+      width: 100%;
     }
 
     .features-list::before {
-        display: none; /* إخفاء العمود الأزرق في الشاشات الصغيرة لتبسيط التصميم */
+      display: none;
+      /* إخفاء العمود الأزرق في الشاشات الصغيرة لتبسيط التصميم */
     }
-}
-/*=====================================================*/
+  }
+
+  /*=====================================================*/
