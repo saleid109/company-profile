@@ -722,12 +722,47 @@ h4 {
 }
 
 .training-image img {
-    width: 100%;
-    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    height: auto;
     position: relative;
     z-index: 2;
-    box-shadow: var(--shadow);
-    animation: float 4s ease-in-out infinite; /* حركة عائمة */
 }
 
+.training-content {
+    flex: 1;
+    z-index: 2;
+    text-align: right;
+}
+.training-title {
+    font-size: 32px;
+    color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+    margin-bottom: 20px;
+}
+.training-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 25px;
+    font-family: var(--font-main);
+    font-weight: var(--weight-bold);
+}
+.training-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 10px 23px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: var(--weight-bold);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.training-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    transform: translateY(-3px);
+}
 
