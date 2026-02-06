@@ -833,7 +833,7 @@ h4 {
     height: 80px;
     object-fit: contain;
 }
-.technology-item h3 {
+.technology-item span {
     font-size: 1.2rem;
     color: var(--color-secondary);
     font-weight: var(--weight-bold);
