@@ -602,6 +602,9 @@ h4 {
 /* العنوان الرئيسي للقسم */
 .services-title {
     font-size:32px;
-    
+    color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+    margin-bottom: 60px;
+
 }
-32px;
