@@ -38,11 +38,8 @@ h4 {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* إجبارها على أخذ العرض الكامل */
     max-width: 100%;
-    /* إلغاء القيد المسبق 1280px */
     padding: 0 30px;
-    /* هامش بسيط جداً من اليمين واليسار لجمالية التصميم */
     margin: 0;
 }
 
@@ -94,9 +91,8 @@ h4 {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* توحيد المسافة بين الأيقونة والسعر */
     flex-direction: row;
-    /* التأكد من الترتيب الأفقي */
+    /*  الترتيب الأفقي */
 }
 
 /* الأيقونة  */
@@ -112,14 +108,11 @@ h4 {
     top: -10px;
     /* يرفع الدائرة للأعلى */
     right: -6px;
-    /* يحرك الدائرة لليسار/اليمين فوق الأيقونة */
     background-color: var(--color-accent);
     color: var(--color-white);
     font-size: 10px;
     width: 14px;
-    /* عرض للدائرة */
     height: 14px;
-    /* ارتفاع للدائرة */
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -169,7 +162,7 @@ h4 {
     margin: 0;
     padding: 0;
 }
-
+/* تنسيق الروابط داخل القائمة */
 .nav-menu a {
     color: var(--color-white);
     text-decoration: none;
@@ -177,12 +170,12 @@ h4 {
     font-size: 16px;
     transition: color 0.3s;
 }
-
+/* تأثير التحويم على الروابط */
 .nav-menu a:hover {
     color: var(--color-primary);
     transform: translateY(-2px);
 }
-
+/*  الرابط النشط */
 .nav-menu a.active {
     color: var(--color-primary);
     font-weight: var(--weight-bold);
@@ -289,7 +282,7 @@ h4 {
     justify-content: center;
     gap: 20px; 
     margin-top: 40px;
-    flex-wrap: wrap;         /* للسماح للأزرار بالنزول تحت بعضها في الجوال  */
+    flex-wrap: wrap; /* للسماح للأزرار بالنزول تحت بعضها في الجوال  */
 }
 
 /* تنسيق الأزرار المشترك */
@@ -305,7 +298,7 @@ h4 {
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
     transition: var(--transition);
-    text-decoration: none;   /* إزالة الخط تحت النص */
+    text-decoration: none;
 }
 
 /* زر طلب خدمة (الأبيض) */
@@ -335,9 +328,9 @@ h4 {
 /*  الحاوية العامة للقسم */
 .why-us-wrapper {
     display: flex;
-    justify-content: center; /* تمركز العناصر */
+    justify-content: center; 
     align-items: center;
-    gap: 0; /* إلغاء الفراغ التلقائي للتحكم به يدوياً */
+    gap: 0; 
     padding: 80px 40px;
     max-width: 1400px;
     margin: 0 auto;
@@ -353,7 +346,7 @@ h4 {
 .section-title {
     font-size: 32px;
     color: var(--color-secondary);
-    margin-top: 5px; /* رفع العنوان للأعلى */
+    margin-top: 5px; 
     margin-bottom: 15px;
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
@@ -410,7 +403,7 @@ h4 {
     position: relative;
     z-index: 2;
     display: flex;
-    flex-direction: row; /* ترتيب أفقي */
+    flex-direction: row; 
     align-items: center;
     gap: 20px;
     background: var(--color-white);
@@ -482,83 +475,77 @@ h4 {
 
 /* ----- نهاية قسم عن الشركة (About Section) ----- */
 
-/*قسم مجالاتنا*/
 /* --- قسم مجالاتنا (Fields Section) --- */
 
+/* الحاوية العامة للقسم */
 .fields-section {
     position: relative;
     background-color: var(--color-bg-light);
     padding: 80px 20px;
-    /* السماح للأسهم بالبروز للقسم العلوي كما في فيجما */
     overflow: visible; 
 }
-
+/* الحاوية الداخلية لتوسط المحتوى */
 .fields-container {
     position: relative; 
     z-index: 1;
     max-width: 1400px;
     margin: 0 auto;
 }
-
+/* تنسيق العنوان الرئيسي للقسم */
 .fields-header {
     position: relative;
     width: 100%;
     margin-bottom: 60px;
     text-align: center;
 }
-
+/* العنوان الرئيسي */
 .fields-title {
     font-size: 32px;
     color: var(--color-secondary);
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
 }
-
-/* تنسيق الأسهم الصفراء (Group 10) - مطابقة لفيجما */
+/*  الاسهم الصفراء)الحاوية الخاصة بالأيقونة الكبيرة )*/
 .fields-icon-wrapper {
     position: absolute;
-    top: -40px; /* لتبدأ من خلف العنوان قليلاً */
-    right: 50px; /* إزاحة جهة اليمين خلف البطاقات */
+    top: -40px; 
+    right: 50px; 
     z-index: -1;
     pointer-events: none;
 }
-
+/*  (الاسهم الصفراء )تنسيق الصورة داخل الحاوية */
 .fields-icon-wrapper img {
-    width: 456px; /* القياس الدقيق من صورتك في فيجما */
+    width: 456px; 
     height: auto;
     opacity: 0.8;
 }
 /* شبكة البطاقات */
-/* 1. الحاوية الشبكية: لضمان توسط البطاقات داخل القسم */
+/* 1. الحاوية الشبكية للبطاقات */
 .fields-grid {
     display: grid;
-    /* تحديد عمودين فقط بعرض متساوي كما في التصميم */
     grid-template-columns: repeat(2, 1fr); 
     gap: 30px;
-    max-width: 950px; /* العرض الكلي التقريبي للبطاقتين + الفراغ */
-    margin: 0 auto;    /* لتوسط الشبكة بالكامل تحت العنوان */
+    max-width: 950px; 
+    margin: 0 auto;
     position: relative;
     z-index: 2;
 }
-
-/* 2. تنسيق البطاقة - لضمان توسط المحتوى الداخلي */
+/* 2. تنسيق البطاقة الفردية */
 .field-card {
-    background-color: #ffffff;
+    background-color: var(--color-white);
     border-radius: 12px;
-    padding: 45px 30px; /* زيادة البادينج ليطابق فخامة التصميم */
+    padding: 45px 30px; 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    
-    /* التوسيط الداخلي الإجباري */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* 3. صندوق الأيقونة: لضمان توسط الدائرة */
-/* 3. تنسيق الدائرة والأيقونة */
+/* صندوق الأيقونة */
+
+/* تنسيق الدائرة والأيقونة */
 .field-icon-box {
     width: 90px;
     height: 90px;
@@ -571,14 +558,14 @@ h4 {
     transition: 0.3s;
 }
 
-/* لضمان عدم وجود أي إزاحة للأيقونة */
+/* للأيقونة */
 .field-icon-box i {
     font-size: 30px;
     color: var(--color-secondary);
     display: block;
-    line-height: 0; /* يمنع الفراغات الإضافية تحت الأيقونة */
+    line-height: 0; 
 }
-
+/* عنوان البطاقة */
 .field-card h3 {
     font-size: 1.1rem;
     color: var(--color-secondary);
@@ -592,11 +579,44 @@ h4 {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
-
+/*  للأيقونة والدائرة التحويم */
 .field-card:hover .field-icon-box {
     background-color: var(--color-secondary);
 }
-
+/* تغيير لون الأيقونة عند التحويم */
 .field-card:hover .field-icon-box i {
     color: var(--color-white);
+}
+
+/* ----- نهاية قسم مجالاتنا (Fields Section) ----- */
+
+/* --- قسم خدماتناا (Services Section) --- */
+
+/* الحاوية العامة للقسم */
+.services-section{
+    padding: 80px 20px;
+    background-color: var(--color-bg-light);
+}
+
+/* الحاوية الداخلية لتوسط المحتوى */
+.services-header {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.services-container {
+    position: relative; 
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* تنسيق العنوان الرئيسي للقسم */
+.services-title {
+    font-size: 32px;
+    color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+    text-align: center;
+    margin-bottom: 60px;
 }
