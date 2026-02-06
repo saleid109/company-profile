@@ -91,6 +91,38 @@
     /* تظهر بالجافا سكريبت */
   }
 
+    /* تطبيق الحركة عند فتح القائمة */
+  .navbar-links.open {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  /*=====================================================*/
+  /* تنسيق القائمة المنسدلة في الجوال */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-bg-light);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: none;
+    padding: 15px;
+    border-radius: var(--border-radius);
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+}
+
+/*=====================================================*/
+
   .navbar-links.open {
     display: block;
   }
@@ -296,36 +328,60 @@
     }
   }
 
-  /* تطبيق الحركة عند فتح القائمة */
-  .navbar-links.open {
-    animation: slideDown 0.3s ease-out;
-  }
 
-  /*=====================================================*/
-  /* تنسيق القائمة المنسدلة في الجوال */
-  .dropdown {
-    position: relative;
-  }
 
-  .dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--color-bg-light);
-    min-width: 200px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    display: none;
-    padding: 15px;
-    border-radius: var(--border-radius);
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
+/*=========================================================*/
+/* تنسيق قسم المجالات في الجوال */
+.fields-section {
+    padding: 60px 20px;
+    overflow: hidden; /* لمنع حدوث تمرير عرضي بسبب الصورة الخلفية */
 }
 
+.fields-header {
+    margin-bottom: 40px;
+}
+
+/* إخفاء أو تصغير الصورة الخلفية (الأسهم الصفراء) في الجوال */
+.fields-icon-wrapper {
+    top: 0;
+    right: -50px; 
+    opacity: 0.3; 
+}
+
+.fields-icon-wrapper img {
+    width: 250px; /* تصغير حجم الأسهم */
+}
+
+/* تحويل الشبكة إلى عمود واحد في الجوال */
+.fields-grid {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.field-card {
+    padding: 30px 20px;
+    flex-direction: row; /* جعل الأيقونة بجانب النص */
+    text-align: right;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.field-icon-box {
+    width: 60px; /* تصغير الدائرة قليلاً */
+    height: 60px;
+    min-width: 60px;
+    margin-bottom: 0; /* إلغاء الهامش السفلي لأن الترتيب أصبح أفقياً */
+}
+
+.field-icon-box i {
+    font-size: 24px;
+}
+
+.field-card h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+}
 /*=========================================================*/
 .container-training {
     flex-direction: column; /* الصورة فوق النص */
