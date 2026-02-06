@@ -610,31 +610,24 @@ h4 {
 }
 
 /* شبكة البطاقات */
-/* 1. تعديل الحاوية الكبرى للبطاقات */
+
+/*   الحاوية الكبرى للبطاقات */
 .services-grid {
     display: grid; 
-    /* توزيع البطاقات بشكل تلقائي */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    
-    /* السر هنا: إضافة مسافة بين البطاقات */
     gap: 30px; 
-    
     max-width: 1117px; 
     margin: 0 auto;
-    
-    /* إزالة الخلفية والارتفاع الثابت لكي تظهر البطاقات كعناصر منفصلة */
     background: transparent; 
     height: auto; 
-    overflow: visible; /* لضمان ظهور الظلال بشكل صحيح */
+    overflow: visible; /* لظهور الظلال */
 }
 
-/* 2. تعديل البطاقة الفردية */
+/*  تعديل البطاقة الفردية */
 .services-intro {
     background-color: var(--color-white);
     padding: 40px 30px;
-    border-radius: 20px; /* زوايا منحنية كما في الصورة */
-    
-    /* إضافة ظل ناعم ليعطي شعوراً بالانفصال عن الخلفية */
+    border-radius: 20px; 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     
     display: flex;
@@ -645,14 +638,12 @@ h4 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-
 /* تأثير عند مرور الماوس لزيادة التفاعل */
 .services-intro:hover {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
-
+/* تنسيق عنوان البطاقة */
 .services-intro-card h3{
     font-size: 1.2rem;
     color: var(--color-secondary);
@@ -666,16 +657,13 @@ h4 {
     align-items: center;
     justify-content: center;
     
-    width: 80px;           /* حجم الدائرة */
+    width: 80px;
     height: 80px;
-    margin: 0 auto 20px;   /* توسيط الدائرة مع مسافة سفلية */
-    
-    border: 2px solid var(--color-secondary); /* الدائرة الزرقاء */
-    border-radius: 50%;    /* جعلها دائرية */
-    
-    font-size: 35px;       /* حجم الأيقونة */
+    margin: 0 auto 20px; 
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%; 
+    font-size: 35px;
     color: var(--color-secondary);
-    
     background-color: var(--color-white);
     transition: all 0.3s ease;
 }
@@ -686,8 +674,7 @@ h4 {
     color: var(--color-white);
 }
 
-
-
+/* تنسيق زر اقرأ المزيد */
 .decide-services {
     background-color: var(--color-secondary);
     color: var(--color-white);
@@ -704,3 +691,4 @@ h4 {
     background-color: var(--color-white);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
