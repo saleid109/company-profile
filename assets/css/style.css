@@ -824,14 +824,14 @@ h4 {
 }
 
 .tech-logos {
-    display: flex; /* ترتيب الأيقونات بجانب بعضها */
-    justify-content: center; /* توسيط الأيقونات */
-    gap: 15px; /* المسافة بين كل أيقونة وأخرى */
-    margin-top: 20px; /* مسافة بين العنوان والأيقونات */
+    display: flex; 
+    justify-content: center;
+    gap: 15px; 
+    margin-top: 20px;
 }
 
 .tech-imageech-logos img {
-    width: 35px; /* حجم الأيقونة الواحدة كما يظهر في التصميم */
+    width: 35px;
     height: 35px;
     object-fit: contain;
 }

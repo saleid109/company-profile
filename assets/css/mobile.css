@@ -228,7 +228,7 @@
 
   }
 
-  /* زر استثمر معنا (الأصفر)   */
+  /* زر استثمر معنا  */
   .btn-outline {
     background: var(--color-primary);
     color: var(--color-secondary);
@@ -403,6 +403,11 @@
     padding: 30px 20px;
 }
 
+.technology-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .tech-logos {
     display: flex;
     justify-content: center;
@@ -412,10 +417,9 @@
 }
 
 .tech-logos img {
-    width: 60px !important; 
-    height: auto !important;
+    width: 38px; ; 
+    height: 38px;
     object-fit: contain;
-    filter: grayscale(0); /* التأكد من ظهور الألوان */
 }
 /*=========================================================*/
 /* تنسيق قسم لماذا تختارنا   */
