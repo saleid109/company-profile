@@ -326,8 +326,69 @@
 
 }
 
-/*==================================================================*/
+/*=========================================================*/
+.container-training {
+    flex-direction: column; /* الصورة فوق النص */
+    text-align: center;
+    padding: 40px 20px;
+    gap: 30px;
+}
 
+.training-content {
+    text-align: center; /* توسيط النص في الجوال */
+}
+
+.training-image img {
+    width: 100%;
+    max-width: 300px; /* تصغير حجم الرسم التوضيحي ليناسب الشاشة */
+}
+
+.technologies-grid {
+    grid-template-columns: 1fr; /* جعل البطاقات تحت بعضها في الجوال */
+    gap: 20px;
+}
+
+.technology-item {
+    padding: 30px 20px;
+}
+
+.tech-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tech-logos img {
+    /* زيادة الحجم قليلاً في الجوال ليكون واضحاً */
+    width: 60px !important; 
+    height: auto !important;
+    object-fit: contain;
+    filter: grayscale(0); /* التأكد من ظهور الألوان */
+}
+
+.why-choose-section {
+    padding: 40px 20px;
+}
+
+.container-choose {
+    flex-direction: column;
+}
+
+.choose-list li {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.choose-image img {
+    margin-top: 30px;
+    border-radius: 20px;
+}
 /*==================================================================*/
 /*الايباد*/
 /* Tablet/iPad size (768px - 1024px) */
