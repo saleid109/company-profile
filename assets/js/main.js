@@ -122,28 +122,7 @@ const observeFields = () => {
     if (section) observer.observe(section);
 };
 
-const observeTechnologies = () => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // إظهار عناصر التقنيات بتأخير متتابع لمظهر انسيابي
-                const items = entry.target.querySelectorAll('.technology-item');
-                items.forEach((item, i) => {
-                    setTimeout(() => item.classList.add('show'), i * 120);
-                });
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.12 });
-
-    const section = document.querySelector('.technologies-section');
-    if (section) observer.observe(section);
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    observeFields();
-    observeTechnologies();
-});
+document.addEventListener('DOMContentLoaded', observeFields);
 function toggleMenu() {
     const navLinks = document.querySelector('.navbar-links');
     const menuIcon = document.querySelector('.mobile-menu-icon i');

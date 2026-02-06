@@ -799,50 +799,46 @@ h4 {
 
 .technologies-grid {
     display: grid;
-    grid-template-columns: 1fr; /* عمود واحد تحت بعض */
-    gap: 20px;
-    max-width: 640px; /* ضبط العرض ليشبه مجالاتنا */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .technology-item {
+    
     background-color: var(--color-white);
-    padding: 25px 20px;
+    padding: 30px 20px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    transition: transform 0.4s cubic-bezier(.2,.9,.3,1), box-shadow 0.3s ease, opacity 0.5s ease;
-    /* الحالة الابتدائية للعنصر (مخفي ومتحرك لليمين) */
-    opacity: 0;
-    transform: translateX(50px);
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .technology-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
+.technology-item span {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    font-weight: var(--weight-bold);
+}
 .technology-item img {
-    width: 72px;
-    height: 72px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
 }
-
 .technology-item span {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--color-secondary);
     font-weight: var(--weight-bold);
     line-height: 1.5;
     margin: 0;
-}
-
-/* عند ظهور العنصر داخل الشاشة نضيف هذه الكلاس لتفعيل الحركة */
-.technology-item.show {
-    opacity: 1;
-    transform: translateX(0);
 }
 
 /* ----- نهاية قسم التقنيات (Technologies Section) ----- */
