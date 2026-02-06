@@ -608,3 +608,44 @@ h4 {
     margin-bottom: 60px;
 
 }
+
+/* شبكة البطاقات */
+.services-grid{
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    gap: 0px;
+    max-width: 1117px; 
+    height: 394px; /* الارتفاع من فيجما */
+    margin: 0 auto;
+    background: var(--color-bg-light);
+    border-radius: 15px;
+    overflow: hidden;
+}
+/* تنسيق البطاقة الفردية */
+.services-intro {
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.services-intro-card {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
