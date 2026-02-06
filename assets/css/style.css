@@ -610,33 +610,42 @@ h4 {
 }
 
 /* شبكة البطاقات */
-.services-grid{
+/* 1. تعديل الحاوية الكبرى للبطاقات */
+.services-grid {
     display: grid; 
+    /* توزيع البطاقات بشكل تلقائي */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-content: center;
-    gap: 0px;
+    
+    /* السر هنا: إضافة مسافة بين البطاقات */
+    gap: 30px; 
+    
     max-width: 1117px; 
-    height: 394px; /* الارتفاع من فيجما */
     margin: 0 auto;
-    background: var(--color-bg-light);
-    border-radius: 15px;
-    overflow: hidden;
+    
+    /* إزالة الخلفية والارتفاع الثابت لكي تظهر البطاقات كعناصر منفصلة */
+    background: transparent; 
+    height: auto; 
+    overflow: visible; /* لضمان ظهور الظلال بشكل صحيح */
 }
-/* تنسيق البطاقة الفردية */
+
+/* 2. تعديل البطاقة الفردية */
 .services-intro {
+    background-color: var(--color-white);
+    padding: 40px 30px;
+    border-radius: 20px; /* زوايا منحنية كما في الصورة */
+    
+    /* إضافة ظل ناعم ليعطي شعوراً بالانفصال عن الخلفية */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    
     display: flex;
-    flex:1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    position: relative;
-        padding: 30px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-        background-color: var(--color-white);
-
+    gap: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
 
 .services-intro-card {
     width: 100%;
@@ -651,10 +660,11 @@ h4 {
     border-radius: 20px;
 
 }
-
-.services-intro:hover .services-intro-card {
-    transform: translateX(0);
+/* تأثير عند مرور الماوس لزيادة التفاعل */
+.services-intro:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
+
 
 .services-intro-card h3{
     font-size: 1.2rem;
