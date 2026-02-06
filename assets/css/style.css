@@ -676,19 +676,21 @@ h4 {
 
 /* تنسيق زر اقرأ المزيد */
 .decide-services {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     background-color: var(--color-secondary);
     color: var(--color-white);
-    padding: 10px 23px;
+    padding: 12px 25px;
     border-radius: 8px;
-    text-decoration: none;
     font-weight: var(--weight-bold);
     transition: all 0.3s ease;
-    display: inline-block;
 }
 
-/* تأثير التحويم على زر اقرأ المزيد */
 .decide-services:hover {
-    background-color: var(--color-white);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    transform: translateY(-3px);
 }
 
