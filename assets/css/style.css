@@ -766,3 +766,43 @@ h4 {
     transform: translateY(-3px);
 }
 
+/* ----- نهاية قسم التدريب (Training Section) ----- */
+
+/* --- قسم التقنيات (Technologies Section) --- */
+
+.technologies-section {
+    padding: 80px 20px;
+    background-color: var(--color-bg-light);
+    text-align: center;
+}
+
+.container-technologies {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.technologies-header {
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.technologies-title {
+    font-size: 32px;
+    color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+    margin-bottom: 60px;
+}
+
+.technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
