@@ -517,67 +517,58 @@ h4 {
 /* تنسيق الأسهم الصفراء (Group 10) - مطابقة لفيجما */
 .fields-icon-wrapper {
     position: absolute;
-    /* قيمة سالبة لتتداخل مع قسم "عن الشركة" العلوي */
-    top: -100px; 
-    right: 5%; 
-    z-index: -1; 
+    top: -40px; /* لتبدأ من خلف العنوان قليلاً */
+    right: 50px; /* إزاحة جهة اليمين خلف البطاقات */
+    z-index: -1;
     pointer-events: none;
 }
 
 .fields-icon-wrapper img {
-    width: 456px;  /* القياس من فيجما */
+    width: 456px; /* القياس الدقيق من صورتك في فيجما */
     height: auto;
-    opacity: 0.9;
-    display: block;
+    opacity: 0.8;
 }
-
 /* شبكة البطاقات */
 /* 1. الحاوية الشبكية: لضمان توسط البطاقات داخل القسم */
 .fields-grid {
+    display: grid;
+    /* تحديد عمودين فقط بعرض متساوي كما في التصميم */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    max-width: 950px; /* العرض الكلي التقريبي للبطاقتين + الفراغ */
+    margin: 0 auto;    /* لتوسط الشبكة بالكامل تحت العنوان */
     position: relative;
     z-index: 2;
-    display: grid;
-    /* التعديل هنا: استخدام auto-fit لضمان التوسط في كل الشاشات */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px;
-    max-width: 1000px; /* العرض الأقصى للشبكة */
-    margin: 0 auto;    /* هذا السطر هو المسؤول عن توسيط الشبكة كاملة */
-    justify-content: center; 
-    align-content: center;
 }
 
-/* 2. البطاقة نفسها: لضمان توسط المحتوى داخلها */
+/* 2. تنسيق البطاقة - لضمان توسط المحتوى الداخلي */
 .field-card {
     background-color: #ffffff;
     border-radius: 12px;
-    padding: 40px 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 45px 30px; /* زيادة البادينج ليطابق فخامة التصميم */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     
-    /* إجبار المحتوى على التوسط */
+    /* التوسيط الداخلي الإجباري */
     display: flex;
     flex-direction: column;
-    align-items: center;    /* توسيط أفقي */
-    justify-content: center; /* توسيط عمودي */
-    text-align: center;      /* توسيط النص */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     
-    width: 100%;
-    margin: 0 auto;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 /* 3. صندوق الأيقونة: لضمان توسط الدائرة */
+/* 3. تنسيق الدائرة والأيقونة */
 .field-icon-box {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border: 2px solid var(--color-secondary);
     border-radius: 50%;
-    
-    /* التوسيط داخل الدائرة */
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    margin: 0 auto 20px auto; /* auto من اليمين واليسار لتتوسط البطاقة */
+    margin-bottom: 25px;
+    transition: 0.3s;
 }
 
 /* لضمان عدم وجود أي إزاحة للأيقونة */
