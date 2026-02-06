@@ -26,7 +26,7 @@
     z-index: 1000;
     background-color: var(--color-secondary);
   }
-
+/* تنسيق شريط التنقل  */
   .nav-wrapper {
     display: flex;
     flex-direction: row;
@@ -45,7 +45,7 @@
     transform: none;
     order: 1;
   }
-
+/* تنسيق الشعار  */
   .logo img {
     height: 50px;
     width: auto;
@@ -69,9 +69,8 @@
   /* --- زر الاستشارة في أقصى اليسار --- */
   .nav-actions {
     order: 3;
-    /* آخر عنصر جهة اليسار */
   }
-
+/* تنسيق زر الاستشارة  */
   .nav-actions .btn-primary {
     padding: 8px 15px;
     font-size: 12px;
@@ -88,20 +87,21 @@
     background-color: var(--color-secondary);
     z-index: 1000;
     display: none;
-    /* تظهر بالجافا سكريبت */
   }
 
     /* تطبيق الحركة عند فتح القائمة */
   .navbar-links.open {
+    display: block;
     animation: slideDown 0.3s ease-out;
   }
 
   /*=====================================================*/
   /* تنسيق القائمة المنسدلة في الجوال */
+  
   .dropdown {
     position: relative;
   }
-
+/* تنسيق محتوى القائمة المنسدلة */
   .dropdown-content {
     position: absolute;
     top: 100%;
@@ -114,24 +114,19 @@
     padding: 15px;
     border-radius: var(--border-radius);
   }
-
+/* إظهار القائمة  */
   .dropdown:hover .dropdown-content {
     display: block;
   }
 
-}
 
-/*=====================================================*/
 
-  .navbar-links.open {
-    display: block;
-  }
-
+/* تنسيق القائمة المنسدلة  */
   .nav-menu {
     flex-direction: column;
     padding: 10px 0;
   }
-
+/* تنسيق روابط القائمة  */
   .nav-menu li a {
     padding: 15px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -140,7 +135,7 @@
     text-align: right;
   }
 
-  /* تنسيق الـ H1 في الجوال */
+  /* تنسيق الـ H1*/
   .hero-content h1 {
     font-size: clamp(1rem, 4vw, 2rem);
     margin-bottom: 15px;
@@ -148,14 +143,14 @@
     letter-spacing: -0.5px;
     top: 12px;
   }
-
+/* تنسيق الفقرة  */
   .hero-content p {
     font-size: 1rem;
     max-width: 90%;
     margin: 0 auto 20px;
     line-height: 1.6;
   }
-
+/* تنسيق الأزرار  */
   .home-buttons {
     flex-direction: column;
     gap: 15px;
@@ -173,7 +168,7 @@
     font-weight: bold;
   }
 
-  /* حل مشكلة ظهور الأيقونة في الجوال */
+  /* ظهور الأيقونة ل */
   .mobile-menu-icon {
     color: var(--color-primary);
     /* اللون الأصفر ليكون واضحاً */
@@ -183,7 +178,6 @@
   /* ضبط عرض المحتوى */
   .hero-content {
     max-width: 1026px;
-    /* مقاس فيجما المعتمد */
     margin: 0 auto;
   }
 
@@ -256,7 +250,6 @@
   }
 
   .why-us-wrapper {
-    /* وضع الصورة في الأعلى ثم النصوص كما طلبتِ */
     flex-direction: column-reverse;
     padding: 40px 20px;
     text-align: center;
@@ -341,7 +334,7 @@
     margin-bottom: 40px;
 }
 
-/* إخفاء أو تصغير الصورة الخلفية (الأسهم الصفراء) في الجوال */
+/* لإخفاء الخلفية لـ(الأسهم الصفراء)  */
 .fields-icon-wrapper {
     top: 0;
     right: -50px; 
@@ -349,7 +342,7 @@
 }
 
 .fields-icon-wrapper img {
-    width: 250px; /* تصغير حجم الأسهم */
+    width: 250px; 
 }
 
 /* تحويل الشبكة إلى عمود واحد في الجوال */
@@ -361,14 +354,14 @@
 
 .field-card {
     padding: 30px 20px;
-    flex-direction: row; /* جعل الأيقونة بجانب النص */
+    flex-direction: row; /* يجعل الأيقونة بجانب النص */
     text-align: right;
     justify-content: flex-start;
     gap: 20px;
 }
 
 .field-icon-box {
-    width: 60px; /* تصغير الدائرة قليلاً */
+    width: 60px; 
     height: 60px;
     min-width: 60px;
     margin-bottom: 0; /* إلغاء الهامش السفلي لأن الترتيب أصبح أفقياً */
@@ -383,24 +376,26 @@
     line-height: 1.4;
 }
 /*=========================================================*/
+/* تنسيق قسم التدريب في الجوال */
 .container-training {
-    flex-direction: column; /* الصورة فوق النص */
+    flex-direction: column; 
     text-align: center;
     padding: 40px 20px;
     gap: 30px;
 }
 
 .training-content {
-    text-align: center; /* توسيط النص في الجوال */
+    text-align: center; 
 }
 
 .training-image img {
     width: 100%;
-    max-width: 300px; /* تصغير حجم الرسم التوضيحي ليناسب الشاشة */
+    max-width: 300px; 
 }
-
+/*=========================================================*/
+/* تنسيق قسم التقنيات   */
 .technologies-grid {
-    grid-template-columns: 1fr; /* جعل البطاقات تحت بعضها في الجوال */
+    grid-template-columns: 1fr; /* جعل البطاقات تحت بعضها   */
     gap: 20px;
 }
 
@@ -417,13 +412,13 @@
 }
 
 .tech-logos img {
-    /* زيادة الحجم قليلاً في الجوال ليكون واضحاً */
     width: 60px !important; 
     height: auto !important;
     object-fit: contain;
     filter: grayscale(0); /* التأكد من ظهور الألوان */
 }
-
+/*=========================================================*/
+/* تنسيق قسم لماذا تختارنا   */
 .why-choose-section {
     padding: 40px 20px;
 }
@@ -446,6 +441,7 @@
     border-radius: 20px;
 }
 /*==================================================================*/
+}
 /*الايباد*/
 /* Tablet/iPad size (768px - 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
