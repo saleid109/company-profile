@@ -568,7 +568,7 @@ h4 {
 /* عنوان البطاقة */
 .field-card h3 {
     font-size: 1.1rem;
-    color: var(--color-secondary);
+    color: var(--color-text);
     font-weight: 700;
     line-height: 1.5;
     margin: 0;
