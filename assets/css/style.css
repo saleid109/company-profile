@@ -593,14 +593,15 @@ h4 {
 /* --- قسم خدماتناا (Services Section) --- */
 
 /* الحاوية العامة للقسم */
-.services-section{
+.services-section {
     padding: 80px 20px;
     background-color: var(--color-bg-light);
+    text-align: center;
 }
 
-/* الحاوية الداخلية لتوسط المحتوى */
-.services-header {
-    max-width: 1400px;
-    margin: 0 auto;
+/* العنوان الرئيسي للقسم */
+.services-title {
+    font-size:32px;
+    
 }
-
+32px;
