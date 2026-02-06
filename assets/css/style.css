@@ -805,4 +805,40 @@ h4 {
     margin: 0 auto;
 }
 
+.technology-item {
+    
+    background-color: var(--color-white);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.technology-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
 
+.technology-item span {
+    font-size: 0.9rem;
+    color: var(--color-gray-text);
+    font-weight: var(--weight-bold);
+}
+.technology-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+.technology-item h3 {
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ----- نهاية قسم التقنيات (Technologies Section) ----- */
