@@ -630,6 +630,11 @@ h4 {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    position: relative;
+        padding: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        background-color: var(--color-white);
 
 }
 
@@ -654,3 +659,31 @@ h4 {
     transform: translateX(0);
 }
 
+.services-intro-card h3{
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    line-height: 1.5;
+}
+
+.services-intro-card i {
+    font-size: 40px;
+    color: var(--color-secondary);
+}
+
+.decide-services {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 10px 23px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: var(--weight-bold);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* تأثير التحويم على زر اقرأ المزيد */
+.decide-services:hover {
+    background-color: var(--color-white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
