@@ -637,6 +637,7 @@ h4 {
 /* ----- نهاية قسم مجالاتنا (Fields Section) ----- */
 
 /* --- قسم خدماتناا (Services Section) --- */
+
 /* تنسيق أزرار التبويب */
 .services-tabs {
     display: flex;
@@ -645,7 +646,7 @@ h4 {
     gap: 15px;
     margin-bottom: 50px;
 }
-
+/* تنسيق زر التبويب */
 .tab-btn {
     padding: 10px 25px;
     border: 2px solid var(--color-secondary);
@@ -657,7 +658,15 @@ h4 {
     transition: all 0.3s ease;
 }
 
-.tab-btn.active, .tab-btn:hover {
+/* تأثير التحويم على زر التبويب */
+.tab-btn:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    transform: translateY(-3px);
+}
+/* تنسيق زر التبويب النشط */
+
+.tab-btn.active {
     background-color: var(--color-secondary);
     color: var(--color-white);
 }
@@ -668,34 +677,35 @@ h4 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
-
+/* تنسيق كل عنصر في الشبكة */
 .gallery-item {
     text-align: center;
     transition: var(--transition);
 }
-
+/* تنسيق الصورة داخل العنصر */
 .gallery-image {
     overflow: hidden;
     border-radius: 20px;
     margin-bottom: 15px;
     box-shadow: var(--shadow);
 }
-
+/* تنسيق الصورة داخل الحاوية */
 .gallery-image img {
     width: 100%;
     display: block;
     transition: transform 0.5s ease;
 }
-
+/* تأثير التحويم على الصورة */
 .gallery-item:hover img {
     transform: scale(1.1); /* تأثير تكبير عند الهوفر */
 }
-
+/* تنسيق عنوان كل صورة */
 .gallery-item h3 {
     font-size: 1.2rem;
     color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    margin: 0;
 }
-
 
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
 
