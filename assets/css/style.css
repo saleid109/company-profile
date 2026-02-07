@@ -886,19 +886,21 @@ h4 {
     font-weight: var(--weight-bold);
     margin-bottom: 25px;
 }
-/* تنسيق  البطاقة */
 .tech-logos {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    gap: 15px;      /* مسافة مناسبة بين الشعارات */
+    margin-top: auto; /* يدفع الشعارات لأسفل البطاقة */
+    padding-top: 20px;
 }
 
 /* تنسيق الصور داخل البطاقة */
 .tech-logos img {
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
-    opacity: 0.7;
+    width: 32px;    /* الحجم المثالي لتكون واضحة كما في Figma */
+    height: 32px;   /* الحجم المثالي لتكون واضحة كما في Figma */
+    object-fit: contain; /* يمنع تشوه الصورة ويحافظ على أبعادها */
+    transition: transform 0.3s ease;
 }
 
 /* ----- نهاية قسم التقنيات (Technologies Section) ----- */
