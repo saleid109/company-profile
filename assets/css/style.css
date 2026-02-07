@@ -282,7 +282,7 @@ h4 {
     max-width: 850px;
     margin: 0 auto 30px;
     line-height: 1.6;
-    font-weight: var(--weight-regular);
+    font-weight: var(--weight-bold);
     font-family: var(--font-main);
     color: var(--color-bg-light);
     text-align: center;

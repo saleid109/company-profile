@@ -129,7 +129,7 @@ function toggleMenu() {
     const body = document.body; // إضافة إشارة للـ body
 
     navLinks.classList.toggle('open');
-    
+
     if (navLinks.classList.contains('open')) {
         menuIcon.classList.replace('fa-bars', 'fa-times');
         body.style.overflow = 'hidden'; // منع التمرير عند فتح القائمة
@@ -138,3 +138,29 @@ function toggleMenu() {
         body.style.overflow = 'auto'; // إعادة التمرير عند الإغلاق
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 1. تغيير الزر النشط
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // 2. فلترة المشاريع
+            const filterValue = button.getAttribute('data-filter');
+
+            galleryItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                    // إضافة تأثير ظهور ناعم
+                    item.style.animation = 'fadeIn 0.5s ease forwards';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
