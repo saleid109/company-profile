@@ -864,15 +864,14 @@ h4 {
 .technology-item {
     background-color: var(--color-white);
     border-radius: 12px;
-    padding: 40px;
+    padding: 40px 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: right;
     transition: all 0.3s ease;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* تأثير عند مرور الماوس لزيادة التفاعل */
@@ -881,12 +880,17 @@ h4 {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
+.tech-name {
+    color: var(--color-secondary);
+    font-size: 22px;
+    font-weight: var(--weight-bold);
+    margin-bottom: 25px;
+}
 /* تنسيق  البطاقة */
 .tech-logos {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
 }
 
 /* تنسيق الصور داخل البطاقة */
@@ -894,6 +898,7 @@ h4 {
     width: 35px;
     height: 35px;
     object-fit: contain;
+    opacity: 0.7;
 }
 
 /* ----- نهاية قسم التقنيات (Technologies Section) ----- */
