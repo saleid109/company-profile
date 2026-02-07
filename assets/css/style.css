@@ -913,7 +913,7 @@ h4 {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     display: flex;
-    flex-direction:row-reverse;
+    flex-direction: row;
     align-items: center;
     gap: 60px;
     direction: rtl;
@@ -929,11 +929,14 @@ h4 {
 /* تنسيق العنوان الرئيسي */
 .choose-title {
     font-size: 28px;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     /* الأصفر كما في التصميم */
     margin-bottom: 15px;
 }
-
+/* تمييز كلمة "لماذا" باللون الأصفر */
+.choose-title .highlight {
+    color: var(--color-primary);
+}
 /* تنسيق وصف القسم */
 .choose-main-desc {
     font-size: 1.8rem;
