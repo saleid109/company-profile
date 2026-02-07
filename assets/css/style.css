@@ -839,140 +839,52 @@ h4 {
 /* ----- نهاية قسم التقنيات (Technologies Section) ----- */
 
 /* --- قسم لماذا تختارنا (Why Choose Us Section) --- */
-/* --- لماذا تختارنا (Why Choose Us) --- */
-.why-choose-section {
+
+.why-choose-section{
+    padding: 80px 20px;
+    background-color: var(--color-bg-light);
+}
+
+.container-why-choose{
+    max-width: 1400px;
+    margin: 0 auto;
     padding: 80px 0;
     background-color: var(--color-white);
-}
-
-.why-choose-wrapper {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-    direction: rtl; /* لضمان الترتيب من اليمين لليسار */
 }
-
-/* تنسيق الصورة */
-.choose-image {
-    flex: 1;
-}
-
-.choose-image img {
-    width: 100%;
-    max-width: 550px;
-    border-radius: 20px;
-    display: block;
-}
-
-/* تنسيق المحتوى النصي */
 .choose-content {
-    flex: 1;
+    flex: 1.2;
     text-align: right;
+    max-width: 800px;
+    padding: 0 20px;
 }
 
 .choose-title {
-    font-size: 28px;
-    color: var(--color-primary); /* اللون الأصفر حسب التصميم */
-    margin-bottom: 15px;
-    font-weight: bold;
+    font-size: 32px;
+    color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+    margin-bottom: 20px;
+}
+.choose-title .highlight {
+    color: var(--color-primary);
 }
 
 .choose-main-desc {
-    font-size: 22px;
-    color: var(--color-secondary);
-    font-weight: bold;
-    margin-bottom: 40px;
-    line-height: 1.4;
+    font-size: 1.8rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 25px;
+    font-family: var(--font-main);
+    font-weight: var(--weight-bold);
 }
-
-/* القائمة والميزات */
 .choose-list {
-    list-style: none;
-    padding: 0;
-}
-
-.choose-list li {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 20px;
-    margin-bottom: 30px;
-    justify-content: flex-end; /* لتبدأ الأيقونة من اليسار والنص من اليمين */
-}
-
-.choose-text {
-    flex: 1;
-}
-
-.choose-text h4 {
-    font-size: 18px;
-    color: var(--color-secondary);
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.choose-text p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* أيقونة المعين (Diamond Icon) */
-.choose-icon-diamond {
-    width: 45px;
-    height: 45px;
-    min-width: 45px;
-    background-color: var(--color-secondary); /* الكحلي */
-    color: var(--color-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(45deg); /* تدوير المربع ليصبح معيناً */
-    border-radius: 6px;
-}
-
-.choose-icon-diamond i {
-    transform: rotate(-45deg); /* تدوير الأيقونة عكسياً لتعتدل داخل المعين */
-    font-size: 20px;
-}
-
-/* --- ضبط التجاوب (Responsive) --- */
-
-/* الايباد */
-@media screen and (max-width: 1024px) {
-    .why-choose-wrapper {
-        flex-direction: column;
-        padding: 0 30px;
-        text-align: center;
-    }
-    
-    .choose-content {
-        text-align: center;
-    }
-    
-    .choose-list li {
-        justify-content: center;
-    }
-}
-
-/* الجوال */
-@media screen and (max-width: 768px) {
-    .choose-main-desc {
-        font-size: 18px;
-    }
-    
-    .choose-list li {
-        flex-direction: column-reverse; /* الأيقونة فوق النص في الجوال الصغير */
-        align-items: center;
-    }
-    
-    .choose-text {
-        text-align: center;
-    }
-}
-or: var(--color-white);
-    font-size: 20px;
-    transform: rotate(-45deg); /* عكس التدوير للأيقونة */
+    margin-top: 30px;
 }
