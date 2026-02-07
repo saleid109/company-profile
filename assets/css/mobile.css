@@ -451,15 +451,14 @@
 .tech-logos {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 10px;
     flex-wrap: wrap;
     margin-top: 15px;
 }
 
 .tech-logos img {
-    width: 45px; ; 
-    height: 45px;
+    width: 188px; ; 
+    height: 55px;
     object-fit: contain;
 
 }
@@ -471,6 +470,9 @@
 
 .container-choose {
     flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    background-color: var(--color-white);
 }
 
 .choose-list li {
