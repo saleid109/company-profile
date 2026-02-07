@@ -493,6 +493,29 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
   }
+
+
+      .why-choose-wrapper {
+        flex-direction: column; /* تحويل العمودين لصف واحد */
+        text-align: center;
+        gap: 40px;
+        padding: 60px 20px;
+    }
+
+    .choose-content {
+        order: 1; /* النص يظهر أولاً */
+        width: 100%;
+    }
+
+    .choose-image {
+        order: 2; /* الصورة تظهر ثانياً */
+        width: 80%; /* تصغير الصورة قليلاً لتناسب الآيباد */
+        margin: 0 auto;
+    }
+
+    .choose-list li {
+        justify-content: center; /* توسيط البطاقات في الآيباد */
+    }
   /*==================================================================*/
 }
 /*الايباد*/
