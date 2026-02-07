@@ -465,56 +465,32 @@
   }
   /*=========================================================*/
   /* تنسيق قسم لماذا تختارنا   */
-  .why-choose-section {
-    padding: 40px 20px;
-  }
-
-  .container-choose {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-    background-color: var(--color-white);
-  }
-
-  .choose-list li {
-    font-size: 0.9rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    text-align: right;
-    margin-bottom: 15px;
-  }
-
-  .choose-image img {
-    margin-top: 30px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-  }
-
-
-      .why-choose-wrapper {
-        flex-direction: column; /* تحويل العمودين لصف واحد */
-        text-align: center;
-        gap: 40px;
-        padding: 60px 20px;
+.why-choose-section {
+        padding: 40px 0;
     }
 
-    .choose-content {
-        order: 1; /* النص يظهر أولاً */
-        width: 100%;
-    }
-
-    .choose-image {
-        order: 2; /* الصورة تظهر ثانياً */
-        width: 80%; /* تصغير الصورة قليلاً لتناسب الآيباد */
-        margin: 0 auto;
+    .choose-main-desc {
+        font-size: 1.4rem; /* تصغير العنوان الكبير ليناسب الجوال */
+        margin-bottom: 30px;
     }
 
     .choose-list li {
-        justify-content: center; /* توسيط البطاقات في الآيباد */
+        flex-direction: column-reverse; /* الأيقونة فوق النص في الجوال الصغير */
+        gap: 15px;
+        text-align: center;
+    }
+
+    .choose-text {
+        text-align: center;
+    }
+
+    .choose-icon-diamond {
+        margin: 0 auto; /* توسيط المعين الأزرق */
+    }
+
+    .choose-image img {
+        border-radius: 15px;
+        max-width: 100%;
     }
   /*==================================================================*/
 }
@@ -736,6 +712,28 @@
   .tech-logos {
     gap: 12px;
   }
+/* تنسيق قسم لماذا تختارنا في الآيباد */
+  .why-choose-wrapper {
+        flex-direction: column; /* تحويل العمودين لصف واحد */
+        text-align: center;
+        gap: 40px;
+        padding: 60px 20px;
+    }
+
+    .choose-content {
+        order: 1; /* النص يظهر أولاً */
+        width: 100%;
+    }
+
+    .choose-image {
+        order: 2; /* الصورة تظهر ثانياً */
+        width: 80%; /* تصغير الصورة قليلاً لتناسب الآيباد */
+        margin: 0 auto;
+    }
+
+    .choose-list li {
+        justify-content: center; /* توسيط البطاقات في الآيباد */
+    }
 }
 
 
