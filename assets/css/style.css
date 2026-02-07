@@ -853,10 +853,10 @@ h4 {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     display: flex;
-    flex-direction: row-reverse; /* يجعل الصورة يسار والمحتوى يمين */
+    flex-direction: row-reverse;
     align-items: center;
     gap: 60px;
-    direction: rtl; /* يضمن ترتيب العناصر من اليمين لليسار */
+    direction: rtl; */
 }
 
 .choose-content {
@@ -902,22 +902,23 @@ h4 {
     transform: rotate(45deg); 
     border-radius: 6px;
 }
-
+/* الأيقونة داخل المعين */
 .choose-icon-diamond i {
     color: var(--color-primary);
     font-size: 18px;
     transform: rotate(-45deg); /* تصحيح اتجاه الأيقونة */
 }
 
+/* نص كل نقطة في القائمة */
 .choose-text h4 {
     font-size: 1.2rem;
     margin-bottom: 5px;
     color: var(--color-secondary);
 }
-
+/* وصف كل نقطة في القائمة */
 .choose-text p {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--color-gray-text);
     margin: 0;
 }
 
