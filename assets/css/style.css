@@ -837,3 +837,104 @@ h4 {
 }
 
 /* ----- نهاية قسم التقنيات (Technologies Section) ----- */
+
+/* --- قسم لماذا تختارنا (Why Choose Us Section) --- */
+.why-choose-section {
+    padding: 80px 20px;
+    background-color: var(--color-bg-light);
+    text-align: center;
+}
+
+.container-choose {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 0;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.choose-header {
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+    text-align: center;
+}
+.choose-title {
+    font-size: 32px;
+    color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+    margin-bottom: 60px;
+}
+
+.choose-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.why-choose-title {
+    font-size: 32px;
+    color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+    margin-bottom: 20px;
+}
+
+.choose-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 25px;
+    font-family: var(--font-main);
+    font-weight: var(--weight-bold);
+    max-width: 800px;
+    text-align: center;
+}
+
+.choose-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.choose-list li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    font-family: var(--font-main);
+    font-weight: var(--weight-bold);
+    max-width: 800px;
+    text-align: center;
+}
+
+.choose-list li i {
+    color: var(--color-primary);
+    margin-left: 10px;
+}
+
+
+.choose-item-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--color-bg-light);
+    padding: 15px 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+.choose-item-title:hover {
+    transform: translateY(-5px);
+}
+
+
