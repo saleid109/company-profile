@@ -1,4 +1,5 @@
 @media screen and (max-width: 768px) {
+
   /*   شريط المعلومات العلوي (Top Bar) */
   .top-bar {
     height: auto;
@@ -25,6 +26,7 @@
     z-index: 1000;
     background-color: var(--color-secondary);
   }
+
   /* تنسيق شريط التنقل  */
   .nav-wrapper {
     display: flex;
@@ -44,6 +46,7 @@
     transform: none;
     order: 1;
   }
+
   /* تنسيق الشعار  */
   .logo img {
     height: 50px;
@@ -69,6 +72,7 @@
   .nav-actions {
     order: 3;
   }
+
   /* تنسيق زر الاستشارة  */
   .nav-actions .btn-primary {
     padding: 8px 15px;
@@ -100,6 +104,7 @@
   .dropdown {
     position: relative;
   }
+
   /* تنسيق محتوى القائمة المنسدلة */
   .dropdown-content {
     position: absolute;
@@ -113,6 +118,7 @@
     padding: 15px;
     border-radius: var(--border-radius);
   }
+
   /* إظهار القائمة  */
   .dropdown:hover .dropdown-content {
     display: block;
@@ -123,6 +129,7 @@
     flex-direction: column;
     padding: 10px 0;
   }
+
   /* تنسيق روابط القائمة  */
   .nav-menu li a {
     padding: 15px 20px;
@@ -140,6 +147,7 @@
     letter-spacing: -0.5px;
     top: 12px;
   }
+
   /* تنسيق الفقرة  */
   .hero-content p {
     font-size: 1rem;
@@ -147,6 +155,7 @@
     margin: 0 auto 20px;
     line-height: 1.6;
   }
+
   /* تنسيق الأزرار  */
   .home-buttons {
     flex-direction: column;
@@ -320,7 +329,8 @@
   /* تنسيق قسم المجالات في الجوال */
   .fields-section {
     padding: 60px 20px;
-    overflow: hidden; /* لمنع حدوث تمرير عرضي بسبب الصورة الخلفية */
+    overflow: hidden;
+    /* لمنع حدوث تمرير عرضي بسبب الصورة الخلفية */
   }
 
   .fields-header {
@@ -347,7 +357,8 @@
 
   .field-card {
     padding: 30px 20px;
-    flex-direction: row; /* يجعل الأيقونة بجانب النص */
+    flex-direction: row;
+    /* يجعل الأيقونة بجانب النص */
     text-align: right;
     justify-content: flex-start;
     gap: 20px;
@@ -357,7 +368,8 @@
     width: 60px;
     height: 60px;
     min-width: 60px;
-    margin-bottom: 0; /* إلغاء الهامش السفلي لأن الترتيب أصبح أفقياً */
+    margin-bottom: 0;
+    /* إلغاء الهامش السفلي لأن الترتيب أصبح أفقياً */
   }
 
   .field-icon-box i {
@@ -385,7 +397,8 @@
   }
 
   .service-card .service-icon img {
-    width: 80px; /* حجم الأيقونة الدائرية الكبيرة */
+    width: 80px;
+    /* حجم الأيقونة الدائرية الكبيرة */
     height: auto;
     margin-bottom: 20px;
   }
@@ -412,10 +425,12 @@
     width: 100%;
     max-width: 300px;
   }
+
   /*=========================================================*/
   /* تنسيق قسم التقنيات   */
   .technologies-grid {
-    grid-template-columns: 1fr; /* جعل البطاقات تحت بعضها   */
+    grid-template-columns: 1fr;
+    /* جعل البطاقات تحت بعضها   */
     gap: 25px;
     padding: 0 10px;
   }
@@ -455,6 +470,7 @@
     height: 55px;
     object-fit: contain;
   }
+
   /* تكبير صور التقنيات على الشاشات الصغيرة */
   .technology-item img,
   .tech-logos img {
@@ -463,37 +479,43 @@
     object-fit: contain;
     max-width: 100%;
   }
+
   /*=========================================================*/
   /* تنسيق قسم لماذا تختارنا   */
-.why-choose-section {
-        padding: 40px 0;
-    }
+  .why-choose-section {
+    padding: 40px 0;
+  }
 
-    .choose-main-desc {
-        font-size: 1.4rem; /* تصغير العنوان الكبير ليناسب الجوال */
-        margin-bottom: 30px;
-    }
+  .choose-main-desc {
+    font-size: 1.4rem;
+    /* تصغير العنوان الكبير ليناسب الجوال */
+    margin-bottom: 30px;
+  }
 
-    .choose-list li {
-        flex-direction: column-reverse; /* الأيقونة فوق النص في الجوال الصغير */
-        gap: 15px;
-        text-align: center;
-    }
+  .choose-list li {
+    flex-direction: column-reverse;
+    /* الأيقونة فوق النص في الجوال الصغير */
+    gap: 15px;
+    text-align: center;
+  }
 
-    .choose-text {
-        text-align: center;
-    }
+  .choose-text {
+    text-align: center;
+  }
 
-    .choose-icon-diamond {
-        margin: 0 auto; /* توسيط المعين الأزرق */
-    }
+  .choose-icon-diamond {
+    margin: 0 auto;
+    /* توسيط المعين الأزرق */
+  }
 
-    .choose-image img {
-        border-radius: 15px;
-        max-width: 100%;
-    }
+  .choose-image img {
+    border-radius: 15px;
+    max-width: 100%;
+  }
+
   /*==================================================================*/
 }
+
 /*الايباد*/
 /* Tablet/iPad size (768px - 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -672,7 +694,8 @@
 
   /* تنسيق قسم التقنيات في الآيباد */
   .technologies-grid {
-    grid-template-columns: repeat(2, 1fr); /* عمودين على الآيباد */
+    grid-template-columns: repeat(2, 1fr);
+    /* عمودين على الآيباد */
     gap: 30px;
     max-width: 900px;
     margin: 0 auto;
@@ -686,8 +709,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: transform 0.4s cubic-bezier(.2,.9,.3,1), box-shadow 0.3s ease, opacity 0.4s ease;
-    opacity: 0; /* مخفي افتراضياً لتمكين تأثير الظهور */
+    transition: transform 0.4s cubic-bezier(.2, .9, .3, 1), box-shadow 0.3s ease, opacity 0.4s ease;
+    opacity: 0;
+    /* مخفي افتراضياً لتمكين تأثير الظهور */
     transform: translateX(40px);
   }
 
@@ -698,7 +722,7 @@
 
   .technology-item:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
   }
 
   .technology-item img,
@@ -712,28 +736,32 @@
   .tech-logos {
     gap: 12px;
   }
-/* تنسيق قسم لماذا تختارنا في الآيباد */
+
+  /* تنسيق قسم لماذا تختارنا في الآيباد */
   .why-choose-wrapper {
-        flex-direction: column; /* تحويل العمودين لصف واحد */
-        text-align: center;
-        gap: 40px;
-        padding: 60px 20px;
-    }
+    flex-direction: column;
+    /* تحويل العمودين لصف واحد */
+    text-align: center;
+    gap: 40px;
+    padding: 60px 20px;
+  }
 
-    .choose-content {
-        order: 1; /* النص يظهر أولاً */
-        width: 100%;
-    }
+  .choose-content {
+    order: 1;
+    /* النص يظهر أولاً */
+    width: 100%;
+  }
 
-    .choose-image {
-        order: 2; /* الصورة تظهر ثانياً */
-        width: 80%; /* تصغير الصورة قليلاً لتناسب الآيباد */
-        margin: 0 auto;
-    }
+  .choose-image {
+    order: 2;
+    /* الصورة تظهر ثانياً */
+    width: 80%;
+    /* تصغير الصورة قليلاً لتناسب الآيباد */
+    margin: 0 auto;
+  }
 
-    .choose-list li {
-        justify-content: center; /* توسيط البطاقات في الآيباد */
-    }
+  .choose-list li {
+    justify-content: center;
+    /* توسيط البطاقات في الآيباد */
+  }
 }
-
-
