@@ -978,7 +978,7 @@ h4 {
     color: var(--color-primary);
     font-size: 18px;
     transform: rotate(-45deg);
-    /* تصحيح اتجاه الأيقونة */
+    display: block;
 }
 
 /* نص كل نقطة في القائمة */
@@ -993,6 +993,7 @@ h4 {
     font-size: 0.95rem;
     color: var(--color-gray-text);
     margin: 0;
+    font-weight: var(--weight-bold);
 }
 
 /* تنسيق الصورة */
