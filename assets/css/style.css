@@ -162,6 +162,7 @@ h4 {
     margin: 0;
     padding: 0;
 }
+
 /* تنسيق الروابط داخل القائمة */
 .nav-menu a {
     color: var(--color-white);
@@ -170,11 +171,13 @@ h4 {
     font-size: 16px;
     transition: color 0.3s;
 }
+
 /* تأثير التحويم على الروابط */
 .nav-menu a:hover {
     color: var(--color-primary);
     transform: translateY(-2px);
 }
+
 /*  الرابط النشط */
 .nav-menu a.active {
     color: var(--color-primary);
@@ -214,6 +217,7 @@ h4 {
     transition: all 0.3s ease;
     display: inline-block;
 }
+
 /*  تأثير التحويم على زر الاستشارة */
 .btn-primary:hover {
     background-color: var(--color-white);
@@ -242,6 +246,7 @@ h4 {
     height: 100%;
     z-index: -1;
 }
+
 /* تنسيق الصورة داخل الحاوية */
 .hero-bg img {
     width: 100%;
@@ -251,12 +256,14 @@ h4 {
     filter: brightness(0.4);
     /* تعتيم الصورة لإبراز النص */
 }
+
 /*  المحتوى النصي فوق الصورة */
 .hero-content {
     max-width: 900px;
     padding: 0 20px;
     margin: 0 auto;
 }
+
 /* تنسيق النصوص */
 .hero-content h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
@@ -265,31 +272,34 @@ h4 {
     font-family: var(--font-main);
     max-width: 800px;
 }
+
 /* تنسيق الفقرة */
 .hero-content p {
     font-size: 24px;
     max-width: 850px;
-    margin: 0 auto 30px; 
+    margin: 0 auto 30px;
     line-height: 1.6;
-    font-weight: var(--weight-regular); 
+    font-weight: var(--weight-regular);
     font-family: var(--font-main);
     color: var(--color-bg-light);
     text-align: center;
 }
+
 /* حاوية الأزرار */
-    .home-buttons {
+.home-buttons {
     display: flex;
     justify-content: center;
-    gap: 20px; 
+    gap: 20px;
     margin-top: 40px;
-    flex-wrap: wrap; /* للسماح للأزرار بالنزول تحت بعضها في الجوال  */
+    flex-wrap: wrap;
+    /* للسماح للأزرار بالنزول تحت بعضها في الجوال  */
 }
 
 /* تنسيق الأزرار المشترك */
 .home-buttons .btn-servers,
 .home-buttons .btn-outline {
-    width: 220px;            
-    height: 60px; 
+    width: 220px;
+    height: 60px;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -314,12 +324,14 @@ h4 {
 }
 
 /* تأثيرات الهوفر */
-.btn-servers:hover, 
+.btn-servers:hover,
 .btn-outline:hover {
-    transform: translateY(-5px); /* حركة بسيطة للأعلى */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    /* حركة بسيطة للأعلى */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     background-color: var(--color-white);
-    box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);}
+    box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
+}
 
 
 
@@ -328,29 +340,32 @@ h4 {
 /*  الحاوية العامة للقسم */
 .why-us-wrapper {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    gap: 0; 
+    gap: 0;
     padding: 80px 40px;
     max-width: 1400px;
     margin: 0 auto;
     direction: rtl;
 }
+
 /* عمود النص */
 .why-us-content {
     flex: 1;
     z-index: 2;
-    padding-left: 20px; 
+    padding-left: 20px;
 }
+
 /* عنوان القسم */
 .section-title {
     font-size: 32px;
     color: var(--color-secondary);
-    margin-top: 5px; 
+    margin-top: 5px;
     margin-bottom: 15px;
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
 }
+
 /* وصف القسم */
 .section-desc {
     font-size: 1.1rem;
@@ -361,8 +376,9 @@ h4 {
     font-weight: var(--weight-bold);
 
 }
+
 /* زر اقرأ المزيد */
-.decide-more{
+.decide-more {
     background-color: var(--color-primary);
     color: var(--color-secondary);
     padding: 10px 23px;
@@ -373,6 +389,7 @@ h4 {
     display: inline-block;
     margin-bottom: 20px;
 }
+
 /* تأثير التحويم على زر اقرأ المزيد */
 .decide-more:hover {
     background-color: var(--color-white);
@@ -383,10 +400,11 @@ h4 {
 
 .features-list {
     position: relative;
-    padding-right: 50px; 
+    padding-right: 50px;
     margin-top: 40px;
-    
+
 }
+
 /* العمود الأزرق الخلفي */
 .features-list::before {
     content: "";
@@ -396,26 +414,29 @@ h4 {
     right: 0;
     width: 100px;
     background: var(--color-secondary);
-    z-index: 1;/* خلف البطاقات */
+    z-index: 1;
+    /* خلف البطاقات */
 }
+
 /* تنسيق البطاقة الصغيرة */
 .feature-item {
     position: relative;
     z-index: 2;
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;
     gap: 20px;
     background: var(--color-white);
     padding: 15px 30px;
     border-radius: 12px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
     color: var(--color-secondary);
     width: 100%;
     max-width: 500px;
 }
+
 /* تأثير التحويم على البطاقة */
 .feature-item:hover {
     transform: translateX(-5px);
@@ -424,7 +445,7 @@ h4 {
 /* إطار الأيقونة (المعين الأصفر) */
 
 .feature-icon {
-    width: 40px; 
+    width: 40px;
     height: 40px;
     min-width: 40px;
     border: 2px solid var(--color-primary);
@@ -438,9 +459,10 @@ h4 {
 
 /* الأيقونة  بالداخل   */
 .feature-icon i {
-    font-size: 20px; 
+    font-size: 20px;
     color: var(--color-secondary);
-    transform: rotate(-45deg); /* الحفاظ على استقامة الأيقونة */
+    transform: rotate(-45deg);
+    /* الحفاظ على استقامة الأيقونة */
     display: block;
 }
 
@@ -451,6 +473,7 @@ h4 {
     color: var(--color-secondary);
     margin-bottom: 5px;
 }
+
 /* نص البطاقة */
 .feature-info p {
     font-size: 0.9rem;
@@ -466,10 +489,11 @@ h4 {
     flex: 1;
     z-index: 1;
 }
+
 /* الصورة داخل الحاوية */
 .why-us-image img {
     width: 100%;
-    max-width: 650px; 
+    max-width: 650px;
     height: auto;
 }
 
@@ -482,15 +506,17 @@ h4 {
     position: relative;
     background-color: var(--color-bg-light);
     padding: 80px 20px;
-    overflow: visible; 
+    overflow: visible;
 }
+
 /* الحاوية الداخلية لتوسط المحتوى */
 .fields-container {
-    position: relative; 
+    position: relative;
     z-index: 1;
     max-width: 1400px;
     margin: 0 auto;
 }
+
 /* تنسيق العنوان الرئيسي للقسم */
 .fields-header {
     position: relative;
@@ -498,6 +524,7 @@ h4 {
     margin-bottom: 60px;
     text-align: center;
 }
+
 /* العنوان الرئيسي */
 .fields-title {
     font-size: 32px;
@@ -505,36 +532,40 @@ h4 {
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
 }
+
 /*  الاسهم الصفراء)الحاوية الخاصة بالأيقونة الكبيرة )*/
 .fields-icon-wrapper {
     position: absolute;
-    top: -40px; 
-    right: 50px; 
+    top: -40px;
+    right: 50px;
     z-index: -1;
     pointer-events: none;
 }
+
 /*  (الاسهم الصفراء )تنسيق الصورة داخل الحاوية */
 .fields-icon-wrapper img {
-    width: 456px; 
+    width: 456px;
     height: auto;
     opacity: 0.8;
 }
+
 /* شبكة البطاقات */
 /* 1. الحاوية الشبكية للبطاقات */
 .fields-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    max-width: 950px; 
+    max-width: 950px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
 }
+
 /* 2. تنسيق البطاقة الفردية */
 .field-card {
     background-color: var(--color-white);
     border-radius: 12px;
-    padding: 45px 30px; 
+    padding: 45px 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
@@ -543,6 +574,7 @@ h4 {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 /* صندوق الأيقونة */
 
 /* تنسيق الدائرة والأيقونة */
@@ -563,8 +595,9 @@ h4 {
     font-size: 30px;
     color: var(--color-secondary);
     display: block;
-    line-height: 0; 
+    line-height: 0;
 }
+
 /* عنوان البطاقة */
 .field-card h3 {
     font-size: 1.1rem;
@@ -579,10 +612,12 @@ h4 {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
 /*  للأيقونة والدائرة التحويم */
 .field-card:hover .field-icon-box {
     background-color: var(--color-secondary);
 }
+
 /* تغيير لون الأيقونة عند التحويم */
 .field-card:hover .field-icon-box i {
     color: var(--color-white);
@@ -601,7 +636,7 @@ h4 {
 
 /* العنوان الرئيسي للقسم */
 .services-title {
-    font-size:32px;
+    font-size: 32px;
     color: var(--color-secondary);
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
@@ -613,23 +648,24 @@ h4 {
 
 /*   الحاوية الكبرى للبطاقات */
 .services-grid {
-    display: grid; 
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; 
-    max-width: 1117px; 
+    gap: 30px;
+    max-width: 1117px;
     margin: 0 auto;
-    background: transparent; 
-    height: auto; 
-    overflow: visible; /* لظهور الظلال */
+    background: transparent;
+    height: auto;
+    overflow: visible;
+    /* لظهور الظلال */
 }
 
 /*  تعديل البطاقة الفردية */
 .services-intro {
     background-color: var(--color-white);
     padding: 40px 30px;
-    border-radius: 20px; 
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -644,7 +680,7 @@ h4 {
 }
 
 /* تنسيق عنوان البطاقة */
-.services-intro-card h3{
+.services-intro-card h3 {
     font-size: 1.2rem;
     color: var(--color-secondary);
     font-weight: var(--weight-bold);
@@ -656,12 +692,12 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     width: 80px;
     height: 80px;
-    margin: 0 auto 20px; 
+    margin: 0 auto 20px;
     border: 2px solid var(--color-secondary);
-    border-radius: 50%; 
+    border-radius: 50%;
     font-size: 35px;
     color: var(--color-secondary);
     background-color: var(--color-white);
@@ -693,17 +729,19 @@ h4 {
     color: var(--color-secondary);
     transform: translateY(-3px);
 }
+
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
 
 /* --- قسم التدريب (Training Section) --- */
-
-.training-section{
+/* الحاوية العامة للقسم */
+.training-section {
     padding: 80px 20px;
     background-color: var(--color-bg-light);
     text-align: center;
 }
 
-.container-training{
+/* الحاوية الداخلية لتوسط المحتوى */
+.container-training {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
@@ -716,11 +754,13 @@ h4 {
     padding: 80px 0;
 }
 
+/* تنسيق العنوان الرئيسي للقسم */
 .training-image {
     flex: 1;
     z-index: 1;
 }
 
+/* تنسيق الصورة داخل الحاوية */
 .training-image img {
     width: 80%;
     max-width: 600px;
@@ -729,11 +769,14 @@ h4 {
     z-index: 2;
 }
 
+/* تنسيق المحتوى النصي */
 .training-content {
     flex: 1;
     z-index: 2;
     text-align: right;
 }
+
+/* تنسيق العنوان الرئيسي */
 .training-title {
     font-size: 32px;
     color: var(--color-secondary);
@@ -741,6 +784,8 @@ h4 {
     font-family: var(--font-main);
     margin-bottom: 20px;
 }
+
+/* تنسيق وصف التدريب */
 .training-desc {
     font-size: 1.1rem;
     line-height: 1.7;
@@ -749,6 +794,8 @@ h4 {
     font-family: var(--font-main);
     font-weight: var(--weight-bold);
 }
+
+/* تنسيق زر اقرأ المزيد */
 .training-btn {
     background-color: var(--color-secondary);
     color: var(--color-white);
@@ -760,6 +807,7 @@ h4 {
     display: inline-block;
 }
 
+/* تأثير التحويم على زر اقرأ المزيد */
 .training-btn:hover {
     background-color: var(--color-primary);
     color: var(--color-secondary);
@@ -769,18 +817,20 @@ h4 {
 /* ----- نهاية قسم التدريب (Training Section) ----- */
 
 /* --- قسم التقنيات (Technologies Section) --- */
-
+/* الحاوية العامة للقسم */
 .technologies-section {
     padding: 80px 20px;
     background-color: var(--color-bg-light);
 }
 
+/* الحاوية الداخلية لتوسط المحتوى */
 .container-technologies {
     max-width: 1400px;
     margin: 0 auto;
     padding: 80px 0;
 }
 
+/* تنسيق العنوان الرئيسي للقسم */
 .technologies-header {
     position: relative;
     width: 100%;
@@ -788,6 +838,7 @@ h4 {
     text-align: center;
 }
 
+/* العنوان الرئيسي */
 .technologies-title {
     font-size: 32px;
     color: var(--color-secondary);
@@ -797,18 +848,20 @@ h4 {
     text-align: center;
 }
 
+/* شبكة البطاقات */
 .technologies-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     max-width: 950px;
     margin: 0 auto;
 }
 
+/* تنسيق البطاقة الفردية */
 .technology-item {
     background-color: var(--color-white);
     border-radius: 12px;
-    padding: 40px; 
+    padding: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
@@ -818,19 +871,23 @@ h4 {
     transition: all 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* تأثير عند مرور الماوس لزيادة التفاعل */
 .technology-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
+/* تنسيق  البطاقة */
 .tech-logos {
-    display: flex; 
+    display: flex;
     justify-content: center;
-    gap: 15px; 
+    gap: 15px;
     margin-top: 20px;
 }
 
-.tech-imageech-logos img {
+/* تنسيق الصور داخل البطاقة */
+.tech-logos img {
     width: 35px;
     height: 35px;
     object-fit: contain;
@@ -840,11 +897,14 @@ h4 {
 
 /* --- قسم لماذا تختارنا (Why Choose Us Section) --- */
 /* --- قسم لماذا تختارنا (Why Choose Us Section) --- */
+
+/* الحاوية العامة للقسم */
 .why-choose-section {
     padding: 80px 20px;
     background-color: var(--color-bg-light);
 }
 
+/* الحاوية الداخلية لتوسط المحتوى */
 .container-why-choose {
     max-width: 1400px;
     margin: 0 auto;
@@ -856,20 +916,25 @@ h4 {
     flex-direction: row-reverse;
     align-items: center;
     gap: 60px;
-    direction: rtl; */
+    direction: rtl;
+    */
 }
 
+/* تنسيق المحتوى النصي */
 .choose-content {
     flex: 1.2;
     text-align: right;
 }
 
+/* تنسيق العنوان الرئيسي */
 .choose-title {
     font-size: 28px;
-    color: var(--color-primary); /* الأصفر كما في التصميم */
+    color: var(--color-primary);
+    /* الأصفر كما في التصميم */
     margin-bottom: 15px;
 }
 
+/* تنسيق وصف القسم */
 .choose-main-desc {
     font-size: 1.8rem;
     line-height: 1.4;
@@ -878,11 +943,13 @@ h4 {
     font-weight: 800;
 }
 
+/* تنسيق قائمة النقاط */
 .choose-list {
     list-style: none;
     padding: 0;
 }
 
+/* تنسيق كل نقطة في القائمة */
 .choose-list li {
     display: flex;
     align-items: flex-start;
@@ -899,14 +966,16 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: rotate(45deg); 
+    transform: rotate(45deg);
     border-radius: 6px;
 }
+
 /* الأيقونة داخل المعين */
 .choose-icon-diamond i {
     color: var(--color-primary);
     font-size: 18px;
-    transform: rotate(-45deg); /* تصحيح اتجاه الأيقونة */
+    transform: rotate(-45deg);
+    /* تصحيح اتجاه الأيقونة */
 }
 
 /* نص كل نقطة في القائمة */
@@ -915,6 +984,7 @@ h4 {
     margin-bottom: 5px;
     color: var(--color-secondary);
 }
+
 /* وصف كل نقطة في القائمة */
 .choose-text p {
     font-size: 0.95rem;
@@ -922,14 +992,17 @@ h4 {
     margin: 0;
 }
 
+/* تنسيق الصورة */
 .choose-image {
     flex: 1;
 }
 
+/* تنسيق الصورة داخل الحاوية */
 .choose-image img {
     width: 100%;
     max-width: 550px;
     height: auto;
-    border-radius: 20px; /* تدوير حواف الصورة حسب التصميم */
+    border-radius: 20px;
+    /* تدوير حواف الصورة حسب التصميم */
     object-fit: cover;
 }
