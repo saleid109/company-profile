@@ -897,16 +897,23 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;      /* مسافة مناسبة بين الشعارات */
-    margin-top: auto; /* يدفع الشعارات لأسفل البطاقة */
-    padding-top: 20px;
+    gap: 15px;      /* مسافة بين كل شعار والآخر */
+    margin-top: 20px;
+    flex-wrap: wrap; /* للسماح للشعارات بالنزول لسطر جديد إذا كانت كثيرة */
 }
 
+/* التنسيق الصحيح للصور لتبدو مثل Figma */
 .tech-logos img {
+    width: 45px;      /* هذا الحجم يجعلها واضحة جداً ومطابقة للتصميم */
+    height: auto;     /* لضمان عدم تمطط الصورة */
+    max-height: 40px; /* لتوحيد الارتفاع بين الشعارات المختلفة */
     object-fit: contain;
-    }
+    transition: transform 0.3s ease;
+}
 
-/* تنسيق الصور داخل البطاقة */
+.tech-logos img:hover {
+    transform: translateY(-3px); /* حركة بسيطة عند التمرير */
+}
 
 /* ----- نهاية قسم التقنيات (Technologies Section) ----- */
 
