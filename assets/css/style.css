@@ -512,10 +512,24 @@ h4 {
 .fields-section {
     position: relative;
     background-color: var(--color-bg-light);
+    overflow: hidden; 
     padding: 80px 20px;
-    overflow: visible;
 }
 
+/* إضافة الأسهم كخلفية */
+.fields-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%; /* وضعها في جهة اليسار خلف البطاقات */
+    width: 400px;
+    height: 100%;
+    background-image: url('./public/images/yellow-arrows.png'); /* مسار صورة الأسهم */
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0; /* لتبقى خلف البطاقات */
+    opacity: 0.2; /* جعلها خفيفة كما في التصميم */
+}
 
 /* الحاوية الداخلية لتوسط المحتوى */
 .fields-container {
@@ -548,13 +562,6 @@ h4 {
     right: 50px;
     z-index: -1;
     pointer-events: none;
-}
-
-/*  (الاسهم الصفراء )تنسيق الصورة داخل الحاوية */
-.fields-icon-wrapper img {
-    width: 456px;
-    height: auto;
-    opacity: 0.8;
 }
 
 /* شبكة البطاقات */
