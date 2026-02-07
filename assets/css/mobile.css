@@ -462,6 +462,14 @@
     object-fit: contain;
 
 }
+/* تكبير صور التقنيات على الشاشات الصغيرة */
+.technology-item img,
+.tech-logos img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+}
 /*=========================================================*/
 /* تنسيق قسم لماذا تختارنا   */
 .why-choose-section {
