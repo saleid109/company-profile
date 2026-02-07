@@ -1,5 +1,4 @@
 @media screen and (max-width: 768px) {
-
   /*   شريط المعلومات العلوي (Top Bar) */
   .top-bar {
     height: auto;
@@ -26,7 +25,7 @@
     z-index: 1000;
     background-color: var(--color-secondary);
   }
-/* تنسيق شريط التنقل  */
+  /* تنسيق شريط التنقل  */
   .nav-wrapper {
     display: flex;
     flex-direction: row;
@@ -45,7 +44,7 @@
     transform: none;
     order: 1;
   }
-/* تنسيق الشعار  */
+  /* تنسيق الشعار  */
   .logo img {
     height: 50px;
     width: auto;
@@ -70,7 +69,7 @@
   .nav-actions {
     order: 3;
   }
-/* تنسيق زر الاستشارة  */
+  /* تنسيق زر الاستشارة  */
   .nav-actions .btn-primary {
     padding: 8px 15px;
     font-size: 12px;
@@ -89,7 +88,7 @@
     display: none;
   }
 
-    /* تطبيق الحركة عند فتح القائمة */
+  /* تطبيق الحركة عند فتح القائمة */
   .navbar-links.open {
     display: block;
     animation: slideDown 0.3s ease-out;
@@ -97,11 +96,11 @@
 
   /*=====================================================*/
   /* تنسيق القائمة المنسدلة في الجوال */
-  
+
   .dropdown {
     position: relative;
   }
-/* تنسيق محتوى القائمة المنسدلة */
+  /* تنسيق محتوى القائمة المنسدلة */
   .dropdown-content {
     position: absolute;
     top: 100%;
@@ -114,19 +113,17 @@
     padding: 15px;
     border-radius: var(--border-radius);
   }
-/* إظهار القائمة  */
+  /* إظهار القائمة  */
   .dropdown:hover .dropdown-content {
     display: block;
   }
 
-
-
-/* تنسيق القائمة المنسدلة  */
+  /* تنسيق القائمة المنسدلة  */
   .nav-menu {
     flex-direction: column;
     padding: 10px 0;
   }
-/* تنسيق روابط القائمة  */
+  /* تنسيق روابط القائمة  */
   .nav-menu li a {
     padding: 15px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -143,14 +140,14 @@
     letter-spacing: -0.5px;
     top: 12px;
   }
-/* تنسيق الفقرة  */
+  /* تنسيق الفقرة  */
   .hero-content p {
     font-size: 1rem;
     max-width: 90%;
     margin: 0 auto 20px;
     line-height: 1.6;
   }
-/* تنسيق الأزرار  */
+  /* تنسيق الأزرار  */
   .home-buttons {
     flex-direction: column;
     gap: 15px;
@@ -225,7 +222,6 @@
   .btn-servers:hover {
     background-color: var(--color-primary);
     color: var(--color-secondary);
-
   }
 
   /* زر استثمر معنا  */
@@ -240,7 +236,6 @@
 
   .btn-outline:hover {
     background-color: var(--color-bg-light);
-
   }
 
   /*=====================================================*/
@@ -321,186 +316,184 @@
     }
   }
 
-
-
-/*=========================================================*/
-/* تنسيق قسم المجالات في الجوال */
-.fields-section {
+  /*=========================================================*/
+  /* تنسيق قسم المجالات في الجوال */
+  .fields-section {
     padding: 60px 20px;
     overflow: hidden; /* لمنع حدوث تمرير عرضي بسبب الصورة الخلفية */
-}
+  }
 
-.fields-header {
+  .fields-header {
     margin-bottom: 40px;
-}
+  }
 
-/* لإخفاء الخلفية لـ(الأسهم الصفراء)  */
-.fields-icon-wrapper {
+  /* لإخفاء الخلفية لـ(الأسهم الصفراء)  */
+  .fields-icon-wrapper {
     top: 0;
-    right: -50px; 
-    opacity: 0.3; 
-}
+    right: -50px;
+    opacity: 0.3;
+  }
 
-.fields-icon-wrapper img {
-    width: 250px; 
-}
+  .fields-icon-wrapper img {
+    width: 250px;
+  }
 
-/* تحويل الشبكة إلى عمود واحد في الجوال */
-.fields-grid {
-    grid-template-columns: 1fr; 
+  /* تحويل الشبكة إلى عمود واحد في الجوال */
+  .fields-grid {
+    grid-template-columns: 1fr;
     gap: 20px;
     padding: 0 10px;
-}
+  }
 
-.field-card {
+  .field-card {
     padding: 30px 20px;
     flex-direction: row; /* يجعل الأيقونة بجانب النص */
     text-align: right;
     justify-content: flex-start;
     gap: 20px;
-}
+  }
 
-.field-icon-box {
-    width: 60px; 
+  .field-icon-box {
+    width: 60px;
     height: 60px;
     min-width: 60px;
     margin-bottom: 0; /* إلغاء الهامش السفلي لأن الترتيب أصبح أفقياً */
-}
+  }
 
-.field-icon-box i {
+  .field-icon-box i {
     font-size: 24px;
-}
+  }
 
-.field-card h3 {
+  .field-card h3 {
     font-size: 1rem;
     line-height: 1.4;
-}
+  }
 
-/*=========================================================*/
-/* قسم خدماتنا*/
-.services-section {
+  /*=========================================================*/
+  /* قسم خدماتنا*/
+  .services-section {
     padding: 60px 20px;
-}
+  }
 
-.services-grid {
+  .services-grid {
     grid-template-columns: 1fr;
     gap: 20px;
-}
+  }
 
-.service-card {
+  .service-card {
     padding: 40px 20px;
-}
+  }
 
-.service-card .service-icon img {
+  .service-card .service-icon img {
     width: 80px; /* حجم الأيقونة الدائرية الكبيرة */
     height: auto;
     margin-bottom: 20px;
-}
+  }
 
-.service-card h3 {
+  .service-card h3 {
     font-size: 1.3rem;
     margin-bottom: 20px;
-}
+  }
 
-/*=========================================================*/
-/* تنسيق قسم التدريب في الجوال */
-.container-training {
-    flex-direction: column; 
+  /*=========================================================*/
+  /* تنسيق قسم التدريب في الجوال */
+  .container-training {
+    flex-direction: column;
     text-align: center;
     padding: 40px 20px;
     gap: 30px;
-}
+  }
 
-.training-content {
-    text-align: center; 
-}
+  .training-content {
+    text-align: center;
+  }
 
-.training-image img {
+  .training-image img {
     width: 100%;
-    max-width: 300px; 
-}
-/*=========================================================*/
-/* تنسيق قسم التقنيات   */
-.technologies-grid {
+    max-width: 300px;
+  }
+  /*=========================================================*/
+  /* تنسيق قسم التقنيات   */
+  .technologies-grid {
     grid-template-columns: 1fr; /* جعل البطاقات تحت بعضها   */
     gap: 25px;
     padding: 0 10px;
-}
+  }
 
-.technology-item {
+  .technology-item {
     padding: 30px 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+  }
 
-}
-
-.technology-item:hover {
+  .technology-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  }
 
-.technology-item h3 {
+  .technology-item h3 {
     font-size: 1.2rem;
     margin-bottom: 25px;
-}
+  }
 
-.tech-logos {
+  .tech-logos {
     display: flex;
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
     margin-top: 15px;
-}
+  }
 
-.tech-logos img {
-    width: 188px; ; 
+  .tech-logos img {
+    width: 188px;
     height: 55px;
     object-fit: contain;
-
-}
-/* تكبير صور التقنيات على الشاشات الصغيرة */
-.technology-item img,
-.tech-logos img {
-  width: 140px;
-  height: auto;
-  object-fit: contain;
-  max-width: 100%;
-}
-/*=========================================================*/
-/* تنسيق قسم لماذا تختارنا   */
-.why-choose-section {
+  }
+  /* تكبير صور التقنيات على الشاشات الصغيرة */
+  .technology-item img,
+  .tech-logos img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    max-width: 100%;
+  }
+  /*=========================================================*/
+  /* تنسيق قسم لماذا تختارنا   */
+  .why-choose-section {
     padding: 40px 20px;
-}
+  }
 
-.container-choose {
+  .container-choose {
     flex-direction: column;
     text-align: center;
     gap: 30px;
     background-color: var(--color-white);
-}
+  }
 
-.choose-list li {
+  .choose-list li {
     font-size: 0.9rem;
     display: flex;
     align-items: flex-start;
     gap: 10px;
     text-align: right;
     margin-bottom: 15px;
-}
+  }
 
-.choose-image img {
+  .choose-image img {
     margin-top: 30px;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-}
-/*==================================================================*/
+  }
+  /*==================================================================*/
 }
 /*الايباد*/
 /* Tablet/iPad size (768px - 1024px) */
@@ -536,7 +529,6 @@
     border-bottom: none;
   }
 
-
   .hero-section {
     position: relative;
     height: 100vh;
@@ -547,7 +539,6 @@
     color: var(--color-white);
     overflow: hidden;
   }
-
 
   /* تنسيق الصورة لتغطي الخلفية */
   .hero-bg {
@@ -596,7 +587,6 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
-
   }
 
   .home-buttons a {
@@ -611,7 +601,6 @@
     outline: none;
     -webkit-tap-highlight-color: transparent;
   }
-
 
   /* تنسيق الأزرار */
   .home-buttons .btn-servers,
@@ -639,7 +628,6 @@
   .btn-servers:hover {
     background-color: var(--color-primary);
     color: var(--color-secondary);
-
   }
 
   /* زر استثمر معنا (الأصفر)   */
@@ -648,12 +636,10 @@
     color: var(--color-secondary);
     font-family: var(--font-main);
     font-weight: var(--weight-bold);
-
   }
 
   .btn-outline:hover {
     background-color: var(--color-bg-light);
-
   }
 
   /*=====================================================*/
