@@ -258,31 +258,54 @@
     </section>
     <!--=====================================================-->
     <!-- ----- قسم خدماتنا ----- -->
-    <section id="services" class="services-section" aria-labelledby="services-titles">
-      <div class="services-header">
-        <div class="services-container">
-          <h2 id="services-titles" class="services-title">خدماتنا</h2>
+    <section id="services-portfolio" class="services-section">
+  <div class="container">
+    
+    <!-- عنوان القسم -->
+    <h2 class="section-title">خدماتنا</h2>
+
+    <!-- أزرار التبديل (Tabs/Filters) -->
+    <div class="services-tabs">
+      <button class="tab-btn active" data-filter="products">منتجات رقمية</button>
+      <button class="tab-btn" data-filter="service">خدمة رقمية</button>
+      <button class="tab-btn" data-filter="training">تأهيل لسوق العمل</button>
+      <button class="tab-btn" data-filter="web">تطوير الويب</button>
+      <button class="tab-btn" data-filter="apps">تطوير التطبيقات</button>
+      <button class="tab-btn" data-filter="marketing">التسويق</button>
+      <button class="tab-btn" data-filter="licenses">التراخيص</button>
+    </div>
+
+    <!-- شبكة عرض المشاريع (Gallery Grid) -->
+    <div class="services-gallery">
+      
+      <!-- مشروع 1 -->
+      <article class="gallery-item" data-category="web">
+        <div class="gallery-image">
+          <img src="./public/images/project1.png" alt="موقع تعريفي لجمعية">
         </div>
-      </div>
+        <h3>موقع تعريفي لجمعية</h3>
+      </article>
 
-      <div class="services-grid">
-        <article class="services-intro" aria-hidden="true">
-          <i class="fas fa-computer"></i>
-          <h3>منتجات رقمية</h3>
-          <a href="#digital-products" class="decide-services" aria-label="لمعرفة المزيد عن منتجاتنا الرقمية">
-            لمعرفة المزيد
-          </a>
-        </article>
+      <!-- مشروع 2 -->
+      <article class="gallery-item" data-category="products">
+        <div class="gallery-image">
+          <img src="./public/images/project2.png" alt="متجر إلكتروني">
+        </div>
+        <h3>متجر إلكتروني</h3>
+      </article>
 
-        <article class="services-intro" aria-hidden="true">
-          <i class="fas fa-user-graduate"></i>
-          <h3>تأهيل لسوق العمل</h3>
-          <a href="#training-programs" class="decide-services" aria-label="لمعرفة المزيد عن برامج التأهيل">
-            لمعرفة المزيد
-          </a>
-        </article>
-      </div>
-    </section>
+      <!-- مشروع 3 -->
+      <article class="gallery-item" data-category="service">
+        <div class="gallery-image">
+          <img src="./public/images/project3.png" alt="نظام إداري">
+        </div>
+        <h3>نظام إداري</h3>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- قسم منصة التدريب -->
     <section id="training-platform" class="training-section" aria-labelledby="training-title">
