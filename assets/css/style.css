@@ -509,6 +509,7 @@ h4 {
     overflow: visible;
 }
 
+
 /* الحاوية الداخلية لتوسط المحتوى */
 .fields-container {
     position: relative;
@@ -733,6 +734,7 @@ h4 {
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
 
 /* --- قسم التدريب (Training Section) --- */
+
 /* الحاوية العامة للقسم */
 .training-section {
     padding: 80px 20px;
