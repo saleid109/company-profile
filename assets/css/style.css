@@ -895,13 +895,11 @@ h4 {
     padding-top: 20px;
 }
 
-/* تنسيق الصور داخل البطاقة */
 .tech-logos img {
-    width: 32px;    /* الحجم المثالي لتكون واضحة كما في Figma */
-    height: 32px;   /* الحجم المثالي لتكون واضحة كما في Figma */
-    object-fit: contain; /* يمنع تشوه الصورة ويحافظ على أبعادها */
-    transition: transform 0.3s ease;
-}
+    object-fit: contain;
+    }
+
+/* تنسيق الصور داخل البطاقة */
 
 /* ----- نهاية قسم التقنيات (Technologies Section) ----- */
 
