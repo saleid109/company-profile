@@ -817,6 +817,7 @@ h4 {
 /* ----- نهاية قسم التدريب (Training Section) ----- */
 
 /* --- قسم التقنيات (Technologies Section) --- */
+
 /* الحاوية العامة للقسم */
 .technologies-section {
     padding: 80px 20px;
@@ -896,7 +897,6 @@ h4 {
 /* ----- نهاية قسم التقنيات (Technologies Section) ----- */
 
 /* --- قسم لماذا تختارنا (Why Choose Us Section) --- */
-/* --- قسم لماذا تختارنا (Why Choose Us Section) --- */
 
 /* الحاوية العامة للقسم */
 .why-choose-section {
@@ -913,11 +913,11 @@ h4 {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction:row-reverse;
     align-items: center;
     gap: 60px;
     direction: rtl;
-    */
+    
 }
 
 /* تنسيق المحتوى النصي */
