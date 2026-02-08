@@ -660,7 +660,8 @@ h4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    direction: rtl;
+    gap: 12px;
     margin-bottom: 50px;
 }
 /* تنسيق زر التبويب */
@@ -669,7 +670,8 @@ h4 {
     border: 2px solid var(--color-secondary);
     background: transparent;
     color: var(--color-secondary);
-    border-radius: 50px; /* شكل بيضاوي كما في الصورة */
+    border-radius: 50px; 
+    border: 1px solid #d1d1d1;;
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
     cursor: pointer;
