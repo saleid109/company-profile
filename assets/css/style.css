@@ -670,7 +670,8 @@ h4 {
     background: transparent;
     color: var(--color-secondary);
     border-radius: 50px; /* شكل بيضاوي كما في الصورة */
-    font-weight: bold;
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
     cursor: pointer;
     transition: all 0.3s ease;
 }
