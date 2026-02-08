@@ -1066,15 +1066,16 @@ h4 {
 .comparison-wrapper {
     flex: 1.2;
     text-align: right;
+    align-items: center;
 }
 /* تنسيق العنوان الرئيسي */
-.comparison-title {
+.comparison-text {
     font-size: 28px;
     color: var(--color-secondary);
     margin-bottom: 15px;
 }
 /* تمييز كلمة "مقارنة" باللون الأصفر */
-.comparison-title .highlight {
+.comparison-text .highlight {
     color: var(--color-primary);
 }
 
