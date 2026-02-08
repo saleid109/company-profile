@@ -1110,7 +1110,7 @@ h4 {
 
 }
 
-.featured-col{
+.featured-header{
     border: var(--color-secondary);
     background-color: var(--color-secondary);
     border-radius: 10px;
@@ -1118,13 +1118,16 @@ h4 {
 
 }
 
-
+.featured-col ,.gold-icon {
+    color:var(--color-primary-light);
+}
 
 
 th, td {
     padding: 15px 20px;
     text-align: center;
     border-bottom: 1px solid rgba(0,0,0,0.05);
+    background-color: var(--color-white);
 }
 
 
