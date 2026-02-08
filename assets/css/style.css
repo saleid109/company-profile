@@ -703,9 +703,12 @@ h4 {
 /* تنسيق الصورة داخل العنصر */
 .gallery-image {
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 12px;
     margin-bottom: 15px;
     box-shadow: var(--shadow);
+    background-color: var(--color-bg-light);
+    border: 1px solid #f0f0f0; /* إضافة إطار خفيف جداً يحدد البطاقة */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* ظل ناعم جداً وليس أسود حاد */
 }
 /* تنسيق الصورة داخل الحاوية */
 .gallery-image img {
