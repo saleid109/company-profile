@@ -674,7 +674,7 @@ h4 {
 /* تنسيق شبكة الصور */
 .services-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
     gap: 30px;
 }
 /* تنسيق كل عنصر في الشبكة */
