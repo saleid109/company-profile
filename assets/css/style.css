@@ -639,6 +639,23 @@ h4 {
 /* --- قسم خدماتناا (Services Section) --- */
 
 /* تنسيق أزرار التبويب */
+.services-section {
+    padding: 80px 20px;
+    background-color: var(--color-bg-light);
+}
+.container-services {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+.section-title {
+    font-size: 32px;
+    color: var(--color-secondary);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+    margin-bottom: 60px;
+    text-align: center;
+}
 .services-tabs {
     display: flex;
     flex-wrap: wrap;
