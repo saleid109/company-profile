@@ -1048,7 +1048,7 @@ h4 {
 /*قسم المقارنة*/
 .comparison-section {
     padding: 80px 0;
-    background-color: #f8f9fa;
+    background-color: var(--color-bg-light);
 }
 
 .container-comparison {
@@ -1058,17 +1058,17 @@ h4 {
 }
 
 .comparison-header {
-    text-align: right; /* العنوان لليمين كما في الصورة */
+    text-align: left; /* العنوان لليمين كما في الصورة */
     margin-bottom: 40px;
 }
 
 .comparison-header h2 {
     font-size: 2.2rem;
-    color: #000046;
+    color: var(--color-secondary);
 }
 
 .comparison-table-wrapper {
-    background: #fff;
+    background:var(--color-white);
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.05);
     overflow: hidden;
@@ -1081,28 +1081,37 @@ h4 {
 
 /* العمود الكحلي المميز */
 .featured-col {
-    background-color: #000046 !important;
-    color: white;
+    background-color: var(--color-secondary) !important;
+    color: var(--color-white);
     width: 200px;
     text-align: center;
     border: none;
 }
 
 /* تدوير حواف العمود الكحلي من الأعلى والأسفل */
-th.featured-col { border-radius: 15px 15px 0 0; padding: 25px 0; }
-tr:last-child td.featured-col { border-radius: 0 0 15px 15px; }
+th.featured-col {
+    border-radius: 15px 15px 0 0;
+    padding: 25px 0; 
+}
 
-.comparison-table td, .comparison-table th {
+tr:last-child 
+td
+.featured-col {
+    border-radius: 0 0 15px 15px; 
+}
+
+.comparison-table td, 
+.comparison-table th {
     padding: 20px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--color-bg-light);
 }
 
 .feature-name {
     text-align: right;
     font-weight: bold;
-    color: #333;
+    color: var(--color-gray-text);
     padding-right: 40px;
 }
 
-.gold-icon { color: #FFC107; font-size: 1.3rem; }
-.dark-icon { color: #333; font-size: 1.2rem; }
+.gold-icon { color: var(--color-primary); font-size: 1.3rem; }
+.dark-icon { color: var(--color-gray-text); font-size: 1.2rem; }
