@@ -714,7 +714,9 @@ h4 {
 /* تنسيق الصورة داخل الحاوية */
 .gallery-image img {
     width: 100%;
+    height: 250px;
     display: block;
+    object-fit: cover; /*لجعل الصور منسقة*/
     transition: transform 0.5s ease;
 }
 /* تأثير التحويم على الصورة */
