@@ -1086,6 +1086,16 @@ h4 {
     flex-grow: 1;
     background-color: var(--color-bg-light);
     border-radius: 20px;
-    
+    overflow: visible; /* ليظهر البروز */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead{
+    
 }
