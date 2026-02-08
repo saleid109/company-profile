@@ -1051,6 +1051,7 @@ h4 {
 }
 /* الحاوية الداخلية لتوسط المحتوى */
 .container-comparison {
+    display: flex;
     max-width: 1400px;
     margin: 0 auto;
     padding: 60px 40px;
@@ -1063,6 +1064,14 @@ h4 {
     gap: 60px;
 }
 
+.comparison-header{
+    display: flex;
+    order: 2;
+    text-align: left;
+    align-items: center;
+    
+
+}
 /* تنسيق المحتوى النصي */
 
 .comparison-wrapper {
