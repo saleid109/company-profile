@@ -145,26 +145,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // 1. تغيير الزر النشط
+            // 1. تحديث الزر النشط
             tabButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // 2. فلترة المشاريع
+            // 2. منطق الفلترة
             const filterValue = button.getAttribute('data-filter');
 
             galleryItems.forEach(item => {
-    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-        // بدلاً من 'block'، نتركها فارغة ليعود العنصر لحالته الطبيعية المحددة في CSS
-        item.style.display = ''; 
-        
-        // التأكد من أن الشفافية تعود للظهور
-        item.style.opacity = '1';
-        item.style.animation = 'fadeIn 0.5s ease forwards';
-    } else {
-        // إخفاء العنصر تماماً
-        item.style.display = 'none';
-    }
-});
+                // إذا اخترنا الكل (all) أو تطابقت الفئة مع الفلتر
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = ''; // يعيد عرض العنصر حسب تنسيق Grid الأصلي
+                    item.style.opacity = '1';
+                    item.style.animation = 'fadeIn 0.5s ease forwards';
+                } else {
+                    item.style.display = 'none'; // إخفاء العناصر غير المطلوبة
+                }
+            });
         });
     });
 });
