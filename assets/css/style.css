@@ -728,7 +728,16 @@ h4 {
     font-weight: var(--weight-bold);
     margin: 0;
 }
-
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
 
 /* --- قسم التدريب (Training Section) --- */
