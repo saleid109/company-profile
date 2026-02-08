@@ -1046,32 +1046,46 @@ h4 {
 /*===================*/
 
 /*قسم المقارنة*/
+/* 1. تنسيق القسم والحاوية */
 .comparison-section {
     padding: 80px 0;
     background-color: var(--color-bg-light);
 }
 
 .container-comparison {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    direction: rtl;
 }
 
+/* 2. تنسيق العنوان */
 .comparison-header {
-    text-align: left; /* العنوان لليمين كما في الصورة */
+    width: 100%;
+    text-align: right; /* محاذاة لليمين للغة العربية */
     margin-bottom: 40px;
 }
 
 .comparison-header h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: var(--color-secondary);
+    line-height: 1.3;
 }
 
+.highlight-yellow {
+    color: #FFC107; /* اللون الذهبي/الأصفر */
+}
+
+/* 3. تنسيق الجدول */
 .comparison-table-wrapper {
-    background:var(--color-white);
+    width: 100%;
+    background: #fff;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* لضمان انحناء الزوايا */
 }
 
 .comparison-table {
@@ -1079,39 +1093,59 @@ h4 {
     border-collapse: collapse;
 }
 
-/* العمود الكحلي المميز */
-.featured-col {
-    background-color: var(--color-secondary) !important;
-    color: var(--color-white);
-    width: 200px;
-    text-align: center;
-    border: none;
-}
-
-/* تدوير حواف العمود الكحلي من الأعلى والأسفل */
-th.featured-col {
-    border-radius: 15px 15px 0 0;
-    padding: 25px 0; 
-}
-
-tr:last-child 
-td
-.featured-col {
-    border-radius: 0 0 15px 15px; 
-}
-
-.comparison-table td, 
+/* تنسيق العناوين (Header) */
 .comparison-table th {
+    padding: 25px;
+    color: #888;
+    font-weight: normal;
+    border-bottom: 1px solid #eee;
+}
+
+/* تنسيق الخلايا (Cells) */
+.comparison-table td {
     padding: 20px;
-    border-bottom: 1px solid var(--color-bg-light);
+    border-bottom: 1px solid #f5f5f5;
+    vertical-align: middle;
 }
 
-.feature-name {
+/* 4. تمييز عمود "نقطة صعود" (العمود الأوسط) */
+.featured-col {
+    background-color: var(--color-secondary) !important; /* الكحلي */
+    color: #fff !important;
+    text-align: center;
+    width: 200px;
+}
+
+/* 5. تنسيق عمود المميزات (اليمين) */
+.feature-name-col, .feature-name {
     text-align: right;
+    padding-right: 40px !important;
     font-weight: bold;
-    color: var(--color-gray-text);
-    padding-right: 40px;
+    color: #444;
 }
 
-.gold-icon { color: var(--color-primary); font-size: 1.3rem; }
-.dark-icon { color: var(--color-gray-text); font-size: 1.2rem; }
+/* 6. تنسيق عمود شركات أخرى (اليسار) */
+.side-col, .comparison-table td:first-child {
+    text-align: center;
+    color: #555;
+}
+
+/* 7. تنسيق الأيقونات */
+.gold-icon {
+    color: #FFC107; /* ذهبي للعمود الكحلي */
+    font-size: 1.3rem;
+}
+
+.dark-icon {
+    color: #333; /* أسود غامق لبقية الأعمدة */
+    font-size: 1.3rem;
+}
+
+/* تحسينات إضافية */
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #fafafa;
+}
