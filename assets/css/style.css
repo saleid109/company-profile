@@ -1099,5 +1099,8 @@ table{
 th, td {
     padding: 15px 20px;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-white);
 }
+
+
+
