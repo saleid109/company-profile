@@ -1072,26 +1072,32 @@ h4 {
     
 
 }
-/* تنسيق المحتوى النصي */
 
-.comparison-wrapper {
-    flex: 1.2;
-    align-items: center;
-}
 /* تنسيق العنوان الرئيسي */
-.comparison-text h2 {
-    font-size: 28px;
+.comparison-header h2 {
+    font-size: 32px;
     color: var(--color-secondary);
+    font-family: var(--font-main);
     margin-bottom: 15px;
     line-height: 1.4;
     max-width: 300px;
     text-align:left;
+    text-align: center;
 
 }
 /* تمييز كلمة "مقارنة" باللون الأصفر */
 .highlight-yellow {
     color: var(--color-primary);
 }
+
+
+/* تنسيق المحتوى النصي */
+
+.comparison-table-wrapper {
+    flex: 1.2;
+    align-items: center;
+}
+
 
 .comparison-table{
     flex-grow: 1;
