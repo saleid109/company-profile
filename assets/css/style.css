@@ -1047,6 +1047,7 @@ h4 {
 .comparison-section {
     padding: 80px 0px;
     background-color: var(--color-bg-light);
+    direction: rtl;
 }
 /* الحاوية الداخلية لتوسط المحتوى */
 .container-comparison {
@@ -1060,14 +1061,12 @@ h4 {
     justify-content: space-between;
     align-items: center;
     gap: 60px;
-    direction: rtl;
 }
 
 /* تنسيق المحتوى النصي */
 
 .comparison-wrapper {
     flex: 1.2;
-    text-align: right;
     align-items: center;
 }
 /* تنسيق العنوان الرئيسي */
@@ -1077,9 +1076,11 @@ h4 {
     margin-bottom: 15px;
     line-height: 1.4;
     max-width: 300px;
+    text-align:left;
+
 }
 /* تمييز كلمة "مقارنة" باللون الأصفر */
-.comparison-text .highlight {
+.highlight-yellow {
     color: var(--color-primary);
 }
 
