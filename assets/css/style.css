@@ -935,7 +935,7 @@ h4 {
 
 /* الحاوية الداخلية لتوسط المحتوى */
 .container-why-choose {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 60px 40px;
     background-color: var(--color-white);
