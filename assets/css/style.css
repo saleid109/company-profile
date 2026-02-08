@@ -1051,44 +1051,40 @@ h4 {
 .comparison-section {
     padding: 80px 0px;
     background-color: var(--color-bg-light);
-}
-/* الحاوية الداخلية لتوسط المحتوى */
+}/* الحاوية الرئيسية - جعل العناصر تحت بعضها */
 .container-comparison {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 40px 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
+    flex-direction: column; /* العنوان فوق والجدول تحت */
     direction: rtl;
 }
+
 /* تنسيق العنوان في الأعلى جهة اليسار */
 .comparison-header {
-    text-align: left; /* كما يظهر في الصورة */
-    margin-bottom: 40px;
+    text-align: left; /* حسب طلبك */
+    margin-bottom: 30px;
+    width: 100%;
 }
 
 .comparison-header h2 {
     font-size: 2.5rem;
-    color: var(--color-secondary); /* الكحلي */
+    color: var(--color-secondary);
     line-height: 1.2;
 }
 
 .highlight-yellow {
-    color: #FFC107; /* اللون الأصفر الذهبي */
+    color: #FFC107;
 }
 
-/* تنسيق الجدول ليمتد بعرض الصفحة */
+/* تنسيق الجدول */
 .comparison-table {
     width: 100%;
     background: #fff;
-    border-radius: 15px;
-    padding: 20px;
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    overflow: hidden; /* لضمان عدم خروج لون العمود عن الحواف */
 }
 
 .comparison-table table {
@@ -1096,36 +1092,26 @@ h4 {
     border-collapse: collapse;
 }
 
-.comparison-table th {
-    color: #888; /* لون رمادي خفيف للعناوين كما في الصورة */
-    font-weight: normal;
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-    text-align: center;
+/* تمييز عمود "نقطة صعود" (العمود الثاني) */
+.comparison-table th:nth-child(2),
+.comparison-table td:nth-child(2) {
+    background-color: var(--color-secondary) !important; /* اللون الكحلي */
+    color: #fff !important; /* نص أبيض */
+    width: 200px;
 }
 
-.comparison-table th:first-child {
-    text-align: right; /* عمود المميزات لليمين */
+/* تلوين الأيقونات داخل العمود الكحلي بالذهبي */
+.comparison-table td:nth-child(2) .check-icon {
+    color: #FFC107 !important;
 }
 
-.comparison-table td {
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #f9f9f9;
-    color: #444;
-}
-
-.comparison-table td:first-child {
-    text-align: right; /* نصوص المميزات لليمين */
-}
-
-/* أيقونات الصح والخطأ باللون الأسود كما في الصورة */
-.check-icon {
-    color: #000; 
-    font-size: 1.2rem;
-}
-
-.times-icon {
+/* بقية الأيقونات (الخارجية) باللون الأسود كما طلبت */
+.check-icon, .times-icon {
     color: #000;
     font-size: 1.2rem;
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
 }
