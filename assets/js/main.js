@@ -153,14 +153,18 @@ document.addEventListener('DOMContentLoaded', function () {
             const filterValue = button.getAttribute('data-filter');
 
             galleryItems.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                    item.style.display = '';
-                    // إضافة تأثير ظهور ناعم
-                    item.style.animation = 'fadeIn 0.5s ease forwards';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+        // بدلاً من 'block'، نتركها فارغة ليعود العنصر لحالته الطبيعية المحددة في CSS
+        item.style.display = ''; 
+        
+        // التأكد من أن الشفافية تعود للظهور
+        item.style.opacity = '1';
+        item.style.animation = 'fadeIn 0.5s ease forwards';
+    } else {
+        // إخفاء العنصر تماماً
+        item.style.display = 'none';
+    }
+});
         });
     });
 });
