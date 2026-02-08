@@ -1105,13 +1105,12 @@ h4 {
     border-radius: 20px;
     overflow: visible; /* ليظهر البروز */
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-
-}
-
-table{
     width: 100%;
     border-collapse: collapse;
+
 }
+
+
 
 th, td {
     padding: 15px 20px;
