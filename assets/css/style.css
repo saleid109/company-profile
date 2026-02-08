@@ -1046,75 +1046,58 @@ h4 {
 /*===================*/
 
 /*قسم المقارنة*/
-
-
-.comparison-section {
-    padding: 80px 0px;
-    background-color: var(--color-bg-light);
-}/* الحاوية الرئيسية - جعل العناصر تحت بعضها */
+/* الحاوية الرئيسية */
 .container-comparison {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
     display: flex;
-    flex-direction: column; /* العنوان فوق والجدول تحت */
-    direction: rtl;
-}
-
-/* تنسيق العنوان في الأعلى جهة اليسار */
-.comparison-header {
-    text-align: left; /* حسب طلبك */
-    margin-bottom: 30px;
-    width: 100%;
-}
-
-.comparison-header h2 {
-    font-size: 2.5rem;
-    color: var(--color-secondary);
-    line-height: 1.2;
-}
-
-.highlight-yellow {
-    color: #FFC107;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
 }
 
 /* تنسيق الجدول */
-.comparison-table {
-    width: 100%;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    overflow: hidden; /* لضمان عدم خروج لون العمود عن الحواف */
-}
-
 .comparison-table table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate; /* مهم جداً للسماح ببروز العمود الأوسط */
+    border-spacing: 0;
 }
 
-/* تمييز عمود "نقطة صعود" (العمود الثاني) */
-.comparison-table th:nth-child(2),
-.comparison-table td:nth-child(2) {
-    background-color: var(--color-secondary) !important; /* اللون الكحلي */
-    color: #fff !important; /* نص أبيض */
-    width: 200px;
-}
-
-/* تلوين الأيقونات داخل العمود الكحلي بالذهبي */
-.comparison-table td:nth-child(2) .check-icon {
-    color: #FFC107 !important;
+/* تمييز عمود نقطة صعود (الوسط) */
+.featured-col {
+    background-color: #000046 !important; /* الكحلي الداكن */
+    color: #ffffff !important;
     text-align: center;
+    width: 220px;
+    position: relative;
+    /* إضافة ظل لجعل العمود يبدو بارزاً */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* بقية الأيقونات (الخارجية) باللون الأسود كما طلبت */
+/* جعل الزوايا العلوية والسفلية للعمود الكحلي دائرية */
+th.featured-col {
+    border-radius: 15px 15px 0 0;
+    padding: 30px 10px;
+}
+
+tr:last-child td.featured-col {
+    border-radius: 0 0 15px 15px;
+}
+
+/* أيقونات الصح الذهبية */
+.gold-icon {
+    color: #FFC107 !important;
+    font-size: 1.4rem;
+}
+
+/* محاذاة عمود المميزات لليمين */
+.text-right {
+    text-align: right !important;
+    padding-right: 40px !important;
+    font-weight: bold;
+    color: #333;
+}
+
+/* الأيقونات العادية (سوداء/رمادية) */
 .check-icon, .times-icon {
-    color: #000;
+    color: #444;
     font-size: 1.2rem;
-    align-items: center;
-    justify-content: center;
-}
-
-.comparison-table th, .comparison-table td {
-    padding: 20px;
-    border-bottom: 1px solid #eee;
 }
