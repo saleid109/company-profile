@@ -1101,6 +1101,18 @@ th, td {
     text-align: center;
     border-bottom: 1px solid var(--color-white);
 }
+.featured-column {
+    background-color:var(--color-secondary); /* لون كحلي داكن */
+    color: var(--color-white);
+    width: 200px;
+    position: relative;
+    border-radius: 15px; /* لجعل الزوايا دائرية */
+    border-bottom: none !important;
+}
+
+/* أيقونات الصح والخطأ */
+.fa-check-circle.gold { color:var(--color-primary); }
+.fa-check-circle.gray { color:var(--color-primary-light); }
 
 
 
