@@ -958,22 +958,23 @@ h4 {
 
 /* تنسيق العنوان الرئيسي */
 .choose-title {
-    font-size: 28px;
+    font-size: 32px;
     color: var(--color-secondary);
     /* الأصفر كما في التصميم */
     margin-bottom: 15px;
 }
+
 /* تمييز كلمة "لماذا" باللون الأصفر */
 .choose-title .highlight {
     color: var(--color-primary);
 }
 /* تنسيق وصف القسم */
 .choose-main-desc {
-    font-size: 1.8rem;
+    font-size: 28px;
     line-height: 1.4;
     color: var(--color-secondary);
     margin-bottom: 35px;
-    font-weight: 800;
+    font-weight: var(--weight-bold);
 }
 
 /* تنسيق قائمة النقاط */
@@ -1081,3 +1082,10 @@ h4 {
     color: var(--color-primary);
 }
 
+.comparison-table{
+    flex-grow: 1;
+    background-color: var(--color-bg-light);
+    border-radius: 20px;
+    
+
+}
