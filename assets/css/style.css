@@ -1043,64 +1043,7 @@ h4 {
 }
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
 /*قسم المقارنة*/
-.comparison-section {
-    padding: 80px 0px;
-    background-color: var(--color-bg-light);
+
+.comparison-section{
+    
 }
-/* الحاوية الداخلية لتوسط المحتوى */
-.container-comparison {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 60px 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-    direction: rtl;
-}
-
-/* تنسيق المحتوى النصي */
-
-.comparison-wrapper {
-    flex: 1.2;
-    text-align: right;
-    align-items: center;
-}
-/* تنسيق العنوان الرئيسي */
-.comparison-text h2 {
-    font-size: 28px;
-    color: var(--color-secondary);
-    margin-bottom: 15px;
-    line-height: 1.4;
-    max-width: 300px;
-}
-/* تمييز كلمة "مقارنة" باللون الأصفر */
-.comparison-text .highlight {
-    color: var(--color-primary);
-}
-
-.comparison-table{
-    flex-grow: 1;
-    background-color: var(--color-bg-light);
-    border-radius: 20px;
-    overflow: visible; /* ليظهر البروز */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-
-}
-
-table{
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 15px 20px;
-    text-align: center;
-    border-bottom: 1px solid var(--color-white);
-}
-
-
-
