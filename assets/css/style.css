@@ -643,11 +643,13 @@ h4 {
     padding: 60px 0px;
     background-color: var(--color-bg-light);
 }
+/* الحاوية الداخلية لتوسط المحتوى */
 .container-services {
     max-width: 1400px;
     margin: 0 auto;
     padding: 80px 0;
 }
+/* تنسيق العنوان الرئيسي للقسم */
 .section-title {
     font-size: 32px;
     color: var(--color-secondary);
@@ -656,6 +658,7 @@ h4 {
     margin-bottom: 60px;
     text-align: center;
 }
+/* حاوية أزرار التبويب */
 .services-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -730,6 +733,7 @@ h4 {
     font-weight: var(--weight-bold);
     margin: 0;
 }
+/* تأثير ظهور العناصر عند التصفية */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -889,22 +893,24 @@ h4 {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
+/* تنسيق العنوان داخل البطاقة */
 .tech-name {
     color: var(--color-secondary);
     font-size: 22px;
     font-weight: var(--weight-bold);
     margin-bottom: 25px;
 }
+/* حاوية الشعارات */
 .tech-logos {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;      /* مسافة بين كل شعار والآخر */
+    gap: 15px;
     margin-top: 20px;
-    flex-wrap: wrap; /* للسماح للشعارات بالنزول لسطر جديد إذا كانت كثيرة */
+    flex-wrap: wrap; 
 }
 
-/* التنسيق الصحيح للصور لتبدو مثل Figma */
+/* تنسيق كل شعار داخل الحاوية */
 .tech-logos img {
     width: 45px;      /* هذا الحجم يجعلها واضحة جداً ومطابقة للتصميم */
     height: auto;     /* لضمان عدم تمطط الصورة */
@@ -912,7 +918,7 @@ h4 {
     object-fit: contain;
     transition: transform 0.3s ease;
 }
-
+/* تأثير التحويم على الشعارات */
 .tech-logos img:hover {
     transform: translateY(-3px); /* حركة بسيطة عند التمرير */
 }
@@ -1034,3 +1040,6 @@ h4 {
     /* تدوير حواف الصورة حسب التصميم */
     object-fit: cover;
 }
+/* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
+
+/
