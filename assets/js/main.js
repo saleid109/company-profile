@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             galleryItems.forEach(item => {
                 if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                    item.style.display = 'block';
+                    item.style.display = '';
                     // إضافة تأثير ظهور ناعم
                     item.style.animation = 'fadeIn 0.5s ease forwards';
                 } else {
