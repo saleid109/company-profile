@@ -275,8 +275,7 @@ h4 {
     color: var(--color-bg-light);
     font-family: var(--font-main);
     max-width: 800px;
-
-    
+    margin-left: 0;
 }
 
 /* تنسيق الفقرة */
