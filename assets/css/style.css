@@ -357,7 +357,8 @@ h4 {
 .why-us-content {
     flex: 1;
     z-index: 2;
-    padding-left: 20px;
+    padding-right: 20px;
+    text-align: right;
 }
 
 /* عنوان القسم */
