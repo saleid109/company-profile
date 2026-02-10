@@ -357,8 +357,11 @@ h4 {
 .why-us-content {
     flex: 1;
     z-index: 2;
-    padding-right: 20px;
+    padding-right: 0; /* صفر المسافة القديمة */
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* هذا يضمن أن الزر والعناوين تبدأ من اليمين */
 }
 
 /* عنوان القسم */
