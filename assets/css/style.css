@@ -427,7 +427,7 @@ h4 {
     top: -40px;
     bottom: -40px;
     right: 0;
-    width: 80px;
+    width: 100px;
     background: var(--color-secondary);
     z-index: 1;
     /* خلف البطاقات */
