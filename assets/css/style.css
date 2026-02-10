@@ -367,13 +367,13 @@ h4 {
 /* عنوان القسم */
 .section-title {
     font-size: 32px;
+    width: 100%;
     color: var(--color-secondary);
     margin-top: 5px;
     margin-bottom: 15px;
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
     text-align: right; 
-    direction: rtl;
 
 }
 
@@ -386,8 +386,6 @@ h4 {
     font-family: var(--font-main);
     font-weight: var(--weight-bold);
     text-align: right;
-    width: 100%; /* لضمان توزيع النص من اليمين تماماً */
-    margin-right: 0;
 
 }
 
