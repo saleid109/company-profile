@@ -1114,6 +1114,8 @@ h4 {
 .comparison-table-wrapper {
     flex: 1.2;
     align-items: center;
+        overflow: hidden;
+    border-radius: 24px;
 }
 
 
@@ -1126,6 +1128,11 @@ h4 {
     width: 100%;
     border-collapse: collapse;
 
+}
+
+.comparison-table tbody tr:hover {
+    background-color: rgba(0,0,0,0.02);
+    transition: 0.3s ease;
 }
 
 .featured-header{
