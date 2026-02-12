@@ -357,7 +357,7 @@ h4 {
 .why-us-content {
     flex: 1;
     z-index: 2;
-    padding-right: 0; /* صفر المسافة القديمة */
+    padding-right: 0; 
     text-align: right;
     display: flex;
     flex-direction: column;
@@ -373,7 +373,8 @@ h4 {
     margin-bottom: 15px;
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
-    text-align: right; 
+    text-align: right;
+    width: 100%; 
 
 }
 
@@ -386,7 +387,7 @@ h4 {
     font-family: var(--font-main);
     font-weight: var(--weight-bold);
     text-align: right;
-    margin-right: 0;
+    width: 100%;
 
 }
 
