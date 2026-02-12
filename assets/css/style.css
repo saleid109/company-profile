@@ -1103,6 +1103,7 @@ h4 {
     text-align: center;
 
 }
+
 /* تمييز كلمة "مقارنة" باللون الأصفر */
 .highlight-yellow {
     color: var(--color-primary);
