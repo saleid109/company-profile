@@ -344,12 +344,11 @@ h4 {
 /*  الحاوية العامة للقسم */
 .why-us-wrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: row; /* الصورة يسار والنص يمين */
+    justify-content: space-between;
     align-items: center;
-    gap: 0;
+    gap: 50px; /* مسافة بين الصورة والنص */
     padding: 80px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
     direction: rtl;
 }
 
