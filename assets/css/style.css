@@ -386,6 +386,7 @@ h4 {
     font-family: var(--font-main);
     font-weight: var(--weight-bold);
     text-align: right;
+    margin-right: 0;
 
 }
 
