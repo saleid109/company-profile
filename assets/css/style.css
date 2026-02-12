@@ -1135,6 +1135,12 @@ h4 {
     color: var(--color-primary-light);
 
 }
+.featured-col {
+    background-color: rgba(12, 26, 75, 0.05);
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
 
 .featured-col ,.gold-icon {
     color:var(--color-primary-light);
