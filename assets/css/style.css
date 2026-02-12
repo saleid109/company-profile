@@ -374,6 +374,9 @@ h4 {
     font-family: var(--font-main);
     text-align: right;
     width: 100%; 
+    text-align: right;
+    margin: 0;
+    direction: rtl;
 
 }
 
@@ -387,6 +390,7 @@ h4 {
     font-weight: var(--weight-bold);
     text-align: right;
     width: 100%;
+    margin-right: 0;
 
 }
 
