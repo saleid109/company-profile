@@ -1070,18 +1070,12 @@ h4 {
 /* الحاوية الداخلية لتوسط المحتوى */
 .container-comparison {
     display: flex;
+    flex-direction: row-reverse;
     max-width: 1400px;
     margin: 0 auto;
     padding: 60px 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
     gap: 60px;
 }
-
 
 .comparison-header{
     display: flex;
@@ -1099,9 +1093,10 @@ h4 {
     margin-bottom: 15px;
     line-height: 1.4;
     max-width: 300px;
-    text-align:left;
-
+    text-align: right;
 }
+
+
 
 /* تمييز كلمة "مقارنة" باللون الأصفر */
 .highlight-yellow {
@@ -1150,7 +1145,7 @@ h4 {
 }
 
 .featured-col ,.gold-icon {
-    color:var(--color-primary-light);
+    color:var(--color-secondary);
 }
 
 
