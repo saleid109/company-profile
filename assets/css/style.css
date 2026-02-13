@@ -1156,11 +1156,7 @@ h4 {
     transition: 0.3s ease;
 }
 
-.omparison-table td, .comparison-table th {
-    padding: 15px;
-    background: transparent;
-    border-bottom: none;
-}
+
 
 .feature-name {
     text-align: right !important;
