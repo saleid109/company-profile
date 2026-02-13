@@ -1170,7 +1170,7 @@ h4 {
 
 
 .featured-header{
-    border: var(--color-secondary);
+    border: var(--color-gray-text);
     background-color: var(--color-secondary);
     border-radius: 10px;
     color: var(--color-primary-light);
