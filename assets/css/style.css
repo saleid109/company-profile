@@ -1061,30 +1061,6 @@ h4 {
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
 
 /*=================قسم المقارنة===============*/
-
-.comparison-section {
-    padding: 80px 0px;
-    background-color: var(--color-bg-light);
-    direction: rtl;
-}
-/* الحاوية الداخلية لتوسط المحتوى */
-.container-comparison {
-    display: flex;
-    flex-direction: row-reverse;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 60px 40px;
-    gap: 60px;
-}
-
-.comparison-header{
-    display: flex;
-    text-align: left;
-    align-items: center;
-    
-
-}
-/* الحاوية الرئيسية */
 .comparison-section {
     padding: 100px 0;
     background-color: #fcfcfc;
@@ -1093,6 +1069,7 @@ h4 {
 
 .container-comparison {
     display: flex;
+    flex-direction: row-reverse;
     max-width: 1300px;
     margin: 0 auto;
     align-items: center;
@@ -1100,37 +1077,18 @@ h4 {
     gap: 80px;
 }
 
-/* العنوان الجانبي */
-.comparison-header {
-    flex: 1;
-}
-
 .comparison-header h2 {
-    font-size: 42px;
+    font-size: 38px;
     font-weight: 800;
-    color: #0d1b3e; /* الكحلي الغامق من الصورة */
+    color: #0d1b3e;
     line-height: 1.4;
     text-align: right;
 }
 
-
-/* تنسيق العنوان الرئيسي */
-.comparison-header h2 {
-    font-size: 36px;
-    font-weight: bold;
-    color: var(--color-secondary); /* لون كحلي */
-    line-height: 1.3;
-    text-align: right; /* محاذاة لليمين كما في الصورة */
-}
-
-
-
-/* تمييز كلمة "مقارنة" باللون الأصفر */
 .highlight-yellow {
-    color: var(--color-primary);
+    color: #ffcc00;
 }
 
-/* تنسيق الجدول */
 .comparison-table-wrapper {
     flex: 2;
 }
@@ -1139,73 +1097,48 @@ h4 {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
+    position: relative;
 }
 
-/* تنسيق الخلايا العادية */
-.comparison-table th, 
+.comparison-table th,
 .comparison-table td {
     padding: 20px 15px;
     text-align: center;
     border-bottom: 1px solid #f0f0f0;
-    color: #777;
-    background: transparent;
 }
-
-.comparison-table tbody tr:hover {
-    background-color: rgba(0,0,0,0.02);
-    transition: 0.3s ease;
-}
-
-
 
 .feature-name {
     text-align: right !important;
     font-weight: 600;
-    width: 30%;
+    width: 35%;
 }
 
-
-.featured-header{
-    border: var(--color-gray-text);
-    background-color: var(--color-secondary);
-    border-radius: 10px;
-    color: var(--color-primary-light);
-
-}
 .featured-col {
-    background-color: #0d1b3e !important; /* الخلفية الكحلية */
+    background-color: #0d1b3e !important;
     color: #fff !important;
     width: 25%;
+    transform: translateY(-15px);
     position: relative;
-    z-index: 10;
-    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15); /* الظل الجانبي */
+    z-index: 2;
 }
 
-/* تدوير الحواف العلوية */
 th.featured-col {
     border-radius: 15px 15px 0 0;
-    padding-top: 35px !important;
     font-size: 20px;
     font-weight: bold;
-    color: #ffcc00 !important; /* نص العنوان ذهبي */
+    color: #ffcc00 !important;
 }
 
-/* تدوير الحواف السفلية */
 tr:last-child .featured-col {
     border-radius: 0 0 15px 15px;
-    padding-bottom: 35px !important;
-    border-bottom: none !important;
 }
 
-/* تنسيق الأيقونات */
 .gold-icon {
     color: #ffcc00;
     font-size: 22px;
 }
 
 .dark-icon {
-    color: #ccc; /* رمادي للأيقونات غير النشطة */
+    color: #ccc;
     font-size: 20px;
 }
-
