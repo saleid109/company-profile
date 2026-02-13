@@ -1173,45 +1173,39 @@ h4 {
 
 }
 .featured-col {
-    background-color: #0d1b3e !important; /* لون كحلي غامق جداً */
-    color: #ffffff;
-    width: 180px;
+    background-color: #0d1b3e !important; /* الخلفية الكحلية */
+    color: #fff !important;
+    width: 25%;
     position: relative;
-    z-index: 2;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15); /* الظل الجانبي */
 }
 
-
-.featured-col ,.gold-icon {
-    color:var(--color-secondary);
-}
-
-
-th, td {
-    padding: 15px 20px;
-    text-align: center;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-.feature-name,
-.feature-name-col {
-    text-align: right;
-}
-
-.gold-icon {
-    color: #f1c40f; /* اللون الأصفر/الذهبي */
+/* تدوير الحواف العلوية */
+th.featured-col {
+    border-radius: 15px 15px 0 0;
+    padding-top: 35px !important;
     font-size: 20px;
+    font-weight: bold;
+    color: #ffcc00 !important; /* نص العنوان ذهبي */
 }
 
-/* أيقونات الشركات الأخرى */
+/* تدوير الحواف السفلية */
+tr:last-child .featured-col {
+    border-radius: 0 0 15px 15px;
+    padding-bottom: 35px !important;
+    border-bottom: none !important;
+}
+
+/* تنسيق الأيقونات */
+.gold-icon {
+    color: #ffcc00;
+    font-size: 22px;
+}
+
 .dark-icon {
-    color: #bdc3c7; /* لون رمادي باهت */
-    font-size: 18px;
-}
-
-/* أسماء المميزات */
-.feature-name {
-    text-align: right;
-    font-weight: 500;
-    color: #555;
+    color: #ccc; /* رمادي للأيقونات غير النشطة */
+    font-size: 20px;
 }
 
