@@ -1059,67 +1059,116 @@ h4 {
     object-fit: cover;
 }
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
-.comparison-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: #ffffff;
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+.comparison-section{
+    padding:120px 0;
 }
 
-/* الصفوف المتناوبة */
-.comparison-table tbody tr:nth-child(odd) {
-    background: #eeeeee;
+.comparison-container{
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:0.9fr 1.8fr;
+    align-items:center;
+    gap:100px;
 }
-.comparison-table tbody tr:nth-child(even) {
-    background: #dddddd;
+
+/* ================= TEXT SIDE ================= */
+
+.comparison-text-side h2{
+    font-size:52px;
+    font-weight:900;
+    line-height:1.35;
+    margin:0;
+    color:#0d1b3e;
+}
+
+.highlight-yellow{
+    color:#f7b500;
+}
+
+/* ================= TABLE ================= */
+
+.comparison-table-wrapper{
+    position:relative;
+}
+
+.comparison-table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    background:#ffffff;
+    border-radius:45px;
+    overflow:hidden;
+    box-shadow:0 30px 60px rgba(0,0,0,0.08);
 }
 
 .comparison-table th,
-.comparison-table td {
-    padding: 24px;
-    text-align: center;
+.comparison-table td{
+    padding:18px 20px;
+    text-align:center;
 }
 
-/* عمود النص */
-.feature-text {
-    text-align: right;
-    font-weight: 600;
-    color: #222;
+.comparison-table thead th{
+    font-size:18px;
+    font-weight:700;
 }
 
-/* العمود المميز */
+/* alternating rows */
+.comparison-table tbody tr:nth-child(odd){
+    background:#eeeeee;
+}
+
+.comparison-table tbody tr:nth-child(even){
+    background:#dddddd;
+}
+
+/* feature text column */
+.feature-text{
+    text-align:right;
+    font-weight:600;
+    color:#222;
+}
+
+/* featured middle column */
 .featured,
-.featured-head {
-    background: #0d1b3e;
-    position: relative;
-    z-index: 2;
+.featured-head{
+    background:#081a4b;
+    position:relative;
+    z-index:2;
 }
 
-.featured-head {
-    color: #ffcc00;
-    font-weight: bold;
-    border-radius: 35px 35px 0 0;
+.featured-head{
+    color:#f7b500;
+    border-radius:45px 45px 0 0;
 }
 
-tbody tr:last-child .featured {
-    border-radius: 0 0 35px 35px;
+tbody tr:last-child .featured{
+    border-radius:0 0 45px 45px;
 }
 
-/* الأيقونات */
-.icon-gold {
-    color: #ffcc00;
-    font-size: 20px;
+/* subtle separator line */
+.featured::after{
+    content:"";
+    position:absolute;
+    right:-1px;
+    top:0;
+    height:100%;
+    width:2px;
+    background:rgba(255,255,255,0.2);
 }
 
-.icon-gray {
-    color: #999;
-    font-size: 18px;
+/* icons */
+.icon-gold{
+    color:#f7b500;
+    font-size:20px;
 }
 
-.icon-dark {
-    color: #111;
-    font-size: 18px;
+.icon-gray{
+    color:#9b9b9b;
+    font-size:18px;
+}
+
+.icon-dark{
+    color:#111;
+    font-size:18px;
 }
