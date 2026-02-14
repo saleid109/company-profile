@@ -460,7 +460,7 @@
 
 /* هذا الجزء هو الأهم للمطابقة مع فيجما */
 .tech-logos img {
-    width: 48px; 
+    width: 48px; /* الحجم المثالي للوضوح في الجوال */
     height: 48px;
     object-fit: contain;
     transition: transform 0.3s ease;
