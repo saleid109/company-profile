@@ -463,7 +463,7 @@
 }
 /*الصورة*/
 .tech-logos img {
-    width: 48px; /* الحجم المثالي للوضوح في الجوال */
+    width: 48px; 
     height: 48px;
     object-fit: contain;
     transition: transform 0.3s ease;
@@ -507,6 +507,37 @@
   }
 
   /*==================================================================*/
+
+  .comparison-section {
+    padding: 60px 0;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 12px 8px;
+    font-size: 14px;
+  }
+
+  .comparison-text-side h2 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  /* تصغير الأيقونات */
+  .comparison-table td i {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  /* تقليل بروز العمود المميز */
+  .featured-head {
+    transform: translateY(-5px);
+  }
+
+  tbody tr:last-child .featured {
+    transform: translateY(5px);
+  }
 }
 
 /*الايباد*/
