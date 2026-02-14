@@ -1093,86 +1093,152 @@ h4 {
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
 /*============= قسم المقارنة =======*/
 
-/* تنسيق القسم العام */
+
 .comparison-section {
+    padding: 100px 0;
     direction: rtl;
-    font-family: 'Tajawal', sans-serif; /* يفضل استخدام خط عربي حديث */
-    padding: 50px 20px;
-    background-color: #ffffff;
+    /* لضمان التنسيق العربي */
 }
 
 .comparison-container {
-    display: flex;
+    max-width: 1320px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* الجدول يمين والنص يسار */
     align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: 0 auto;
-    gap: 40px;
+    column-gap: 80px;
+    padding: 0 20px;
 }
 
-/* تنسيق الجدول */
+/* تنسيق النص الجانبي */
+.comparison-text-side h2 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.3;
+    /* لتقريب الأسطر من بعضها كما في التصميم */
+    color: var(--color-secondary);
+    max-width: 350px;
+    /* لتحديد عرض النص وضمان كسر السطر في المكان المناسب */
+    text-align: right;
+}
+
+.highlight-yellow {
+    color: var(--color-primary);
+    /* اللون الأصفر */
+}
+
+/* ================= الجدول ================= */
+
 .comparison-table-wrapper {
-    flex: 1;
+    position: relative;
+    width: 100%;
 }
 
 .comparison-table {
     width: 100%;
-    border-collapse: separate; /* مهم لتطبيق الزوايا المستديرة على العمود */
+    border-collapse: separate;
     border-spacing: 0;
+    background: var(--color-white);
+    border-radius: 45px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
 }
 
-/* تنسيق النصوص داخل الجدول */
-.comparison-table th, .comparison-table td {
-    padding: 15px;
+.comparison-table th,
+.comparison-table td {
+    padding: 20px;
     text-align: center;
-    border-bottom: 1px solid #f0f0f0;
+    border: none;
+    vertical-align: middle;
 }
 
+/* الصفوف المتبادلة (الرمادي الفاتح) */
+.comparison-table tbody tr:nth-child(odd) {
+    background: var(--color-white);
+}
+
+/* عمود الميزات (النص اليمين) */
 .feature-text {
     text-align: right !important;
-    color: #666;
-    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text);
+    width: 30%;
 }
 
-/* --- العمود العائم (نقطة صعود) --- */
-.featured, .featured-head {
-    background-color: #0a0a58; /* لون كحلي داكن كالموجود في الصورة */
-    color: white !important;
-    width: 180px; /* عرض ثابت للعمود العائم */
-}
-
-/* تصميم الجزء العلوي المستدير للعمود */
+/* العمود البارز (نقطة صعود - المنتصف) */
+.featured,
 .featured-head {
-    border-radius: 25px 25px 0 0;
-    padding: 25px 15px;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
+    /* استخدام التدرج اللوني المذكور في فيجما */
+    background: linear-gradient(180deg, rgba(25, 58, 106, 0.28) 0%, rgba(25, 58, 106, 0) 100%) !important;
 
-/* تصميم الجزء السفلي المستدير لآخر خلية في العمود */
-.comparison-table tbody tr:last-child td.featured {
-    border-radius: 0 0 25px 25px;
-    border-bottom: none;
-}
+    background: rgba(8, 26, 75, 0.9) !important;
 
-/* إزالة الحدود السفلية لعمود التميز ليظهر كقطعة واحدة */
-.featured {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-/* الأيقونات */
-.icon-gold { color: #ffcc00; } /* لون ذهبي */
-.icon-gray { color: #ccc; }
-.icon-dark { color: #333; }
-
-/* --- الجزء النصي الجانبي --- */
-.comparison-text-side h2 {
-    font-size: 2rem;
-    line-height: 1.4;
-    color: #0a0a58;
-}
-
-.highlight-yellow {
-    color: #f39c12;
+    color: var(--color-white) !important;
+    border: none !important;
     position: relative;
+    z-index: 10;
+}
+
+/* لضمان ظهور المحتوى بوضوح فوق الشفافية */
+.featured-head {
+    color: var(--color-white) !important;
+    font-weight: 800;
+    padding: 30px 0 !important;
+    border-radius: 30px 30px 0 0 !important;
+    transform: translateY(-10px);
+    /* إخلفية داكنة قليلاً خلف النص التدرج فاتح */
+    background: linear-gradient(180deg, #081a4b 0%, rgba(8, 26, 75, 0.9) 100%) !important;
+    font-size: 24px;
+    font-family: var(--font-main);
+}
+
+/* تعديل خلايا الجدول الكحلية */
+.featured {
+    background: rgba(8, 26, 75, 0.95) !important;
+    /* لون كحلي ثابت مع شفافية بسيطة جداً */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* بروز العمود من الأسفل */
+tbody tr:last-child .featured {
+    border-radius: 0 0 30px 30px !important;
+    transform: translateY(10px);
+    background: linear-gradient(180deg, rgba(8, 26, 75, 0.95) 0%, #081a4b 100%) !important;
+    height: 100%;
+}
+
+/* إزالة أي خلفيات بيضاء تحت العمود الكحلي */
+.comparison-table td.featured {
+    box-shadow: inset 0 0 0 1000px rgba(8, 26, 75, 0.1);
+    /* تعزيز اللون الداكن */
+}
+
+/* تنسيق الأيقونات */
+.comparison-table td i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+/* أيقونة الصح الذهبية */
+.icon-gold {
+    background: var(--color-primary) !important;
+    color: var(--color-secondary) !important;
+}
+
+/* أيقونة الصح الرمادية (شركات أخرى) */
+.icon-gray {
+    background: var(--color-text) !important;
+    color: #fff !important;
+}
+
+/* أيقونة الخطأ (X) */
+.icon-dark {
+    color: var(--color-text) !important;
+    font-size: 22px !important;
+    background: transparent !important;
 }
