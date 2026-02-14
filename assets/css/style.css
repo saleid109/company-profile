@@ -1068,12 +1068,12 @@ h4 {
 }
 
 .comparison-container{
-    max-width:1320px;        /* عرض أكبر قليلاً مثل الصورة */
+    max-width:1320px;
     margin:auto;
     display:grid;
-    grid-template-columns: 2fr 1fr;   /* الجدول أعرض بوضوح */
+    grid-template-columns: 2fr 1fr; /* جدول أعرض  */
     align-items:center;
-    column-gap:140px;        /* مسافة محسوبة بين الجدول والعنوان */
+    column-gap:140px;        /* مسافة بين الجدول والعنوان */
 }
 
 /*تنسيق العنوان*/
@@ -1177,8 +1177,8 @@ tbody tr:last-child .featured{
 }
 /* icons */
 .icon-gold{
-    background: rgba(247,181,0,0.15);
-    color: #f7b500;
+    background:  #f7b500;
+    color:var(--color-navy-light);
     font-size:20px;
 }
 
