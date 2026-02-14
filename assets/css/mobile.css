@@ -538,6 +538,15 @@
   tbody tr:last-child .featured {
     transform: translateY(5px);
   }
+
+  
+  .comparison-table-wrapper {
+    display: none;
+  }
+
+  .comparison-cards-mobile {
+    display: block;
+  }
 }
 
 /*الايباد*/
