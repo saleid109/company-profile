@@ -1142,21 +1142,18 @@ h4 {
 
 /* لضمان ظهور المحتوى بوضوح فوق الشفافية */
 .featured-head {
-    color: var(--color-primary);
+    color: var(--color-primary) !important;
     font-weight: 800;
-    padding: 30px 0;
-    border-radius: 30px 30px 0 0;
+    padding: 30px 0 !important;
+    border-radius: 30px 30px 0 0 !important;
     transform: translateY(-10px);
-    /*إضافةخلفيةداكنةقليلاًخلفالنصإذاكانالتدرجفاتحاًجداً*/background: linear-gradient(180deg, #081a4b 0%, rgba(8, 26, 75, 0.9) 100%) ;
-    -webkit-border-radius: 30px 30px 0 0;
-    -moz-border-radius: 30px 30px 0 0;
-    -ms-border-radius: 30px 30px 0 0;
-    -o-border-radius: 30px 30px 0 0;
+    /* إضافة خلفية داكنة قليلاً خلف النص إذا كان التدرج فاتحاً جداً */
+    background: linear-gradient(180deg, #081a4b 0%, rgba(8, 26, 75, 0.9) 100%) !important;
 }
 
 /* تعديل خلايا الجدول الكحلية */
 .featured {
-    background: rgba(8, 26, 75, 0.95) ; /* لون كحلي ثابت مع شفافية بسيطة جداً */
+    background: rgba(8, 26, 75, 0.95) !important; /* لون كحلي ثابت مع شفافية بسيطة جداً */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
@@ -1165,7 +1162,7 @@ tbody tr:last-child .featured {
     border-radius: 0 0 30px 30px !important;
     transform: translateY(10px);
     background: linear-gradient(180deg, rgba(8, 26, 75, 0.95) 0%, #081a4b 100%) !important;
-    
+    height: 100%;
 }
 
 /* إزالة أي خلفيات بيضاء تحت العمود الكحلي */
