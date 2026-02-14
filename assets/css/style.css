@@ -1128,8 +1128,8 @@ h4 {
 /* العمود البارز (نقطة صعود - المنتصف) */
 .featured,
 .featured-head {
-    background: var(--color-secondary) !important;
-    color: white !important;
+    background: var(--color-secondary) ;
+    color: var(--color-white);
     width: 35%;
     position: relative;
     z-index: 10;
