@@ -1142,18 +1142,21 @@ h4 {
 
 /* لضمان ظهور المحتوى بوضوح فوق الشفافية */
 .featured-head {
-    color: var(--color-primary) !important;
+    color: var(--color-primary);
     font-weight: 800;
-    padding: 30px 0 !important;
-    border-radius: 30px 30px 0 0 !important;
+    padding: 30px 0;
+    border-radius: 30px 30px 0 0;
     transform: translateY(-10px);
-    /* إضافة خلفية داكنة قليلاً خلف النص إذا كان التدرج فاتحاً جداً */
-    background: linear-gradient(180deg, #081a4b 0%, rgba(8, 26, 75, 0.9) 100%) !important;
+    /*إضافةخلفيةداكنةقليلاًخلفالنصإذاكانالتدرجفاتحاًجداً*/background: linear-gradient(180deg, #081a4b 0%, rgba(8, 26, 75, 0.9) 100%) ;
+    -webkit-border-radius: 30px 30px 0 0;
+    -moz-border-radius: 30px 30px 0 0;
+    -ms-border-radius: 30px 30px 0 0;
+    -o-border-radius: 30px 30px 0 0;
 }
 
 /* تعديل خلايا الجدول الكحلية */
 .featured {
-    background: rgba(8, 26, 75, 0.95) !important; /* لون كحلي ثابت مع شفافية بسيطة جداً */
+    background: rgba(8, 26, 75, 0.95) ; /* لون كحلي ثابت مع شفافية بسيطة جداً */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
