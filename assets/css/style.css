@@ -1188,13 +1188,13 @@ tbody tr:last-child .featured {
 
 /* أيقونة الصح الرمادية (شركات أخرى) */
 .icon-gray {
-    background: #333 !important;
+    background:var(--color-text)!important;
     color: #fff !important;
 }
 
 /* أيقونة الخطأ (X) */
 .icon-dark {
-    color: #333 !important;
+    color: var(--color-text) !important;
     font-size: 22px !important;
     background: transparent !important;
 }
