@@ -461,8 +461,7 @@
     flex-wrap: wrap; /* للسماح بالالتفاف إذا زاد العدد */
     gap: 15px; /* مسافة متساوية بين الشعارات */
 }
-
-/* هذا الجزء هو الأهم للمطابقة مع فيجما */
+/*الصورة*/
 .tech-logos img {
     width: 48px; /* الحجم المثالي للوضوح في الجوال */
     height: 48px;
@@ -757,5 +756,17 @@
   .choose-list li {
     justify-content: center;
     /* توسيط البطاقات في الآيباد */
+  }
+
+  /*المقارنة*/
+  .comparison-container {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+    text-align: center;
+  }
+
+  .comparison-text-side h2 {
+    max-width: 100%;
+    text-align: center;
   }
 }
