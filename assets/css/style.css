@@ -1091,6 +1091,7 @@ h4 {
 }
 
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
+
 /*============= قسم المقارنة =======*/
 
 
@@ -1137,108 +1138,67 @@ h4 {
 
 .comparison-table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: var(--color-white);
-    border-radius: 45px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+    border-collapse: collapse; /* تم التغيير لضمان تلاحم الخلايا */
+    background: transparent;
 }
 
+/* تنسيق عام للخلايا */
 .comparison-table th,
 .comparison-table td {
     padding: 20px;
     text-align: center;
-    border: none;
     vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0; /* خطوط أفقية خفيفة كما في الصورة */
 }
 
-/* الصفوف المتبادلة (الرمادي الفاتح) */
-.comparison-table tbody tr:nth-child(odd) {
-    background: var(--color-white);
-}
-
-/* عمود الميزات (النص اليمين) */
+/* عمود الميزات (أقصى اليسار) */
 .feature-text {
     text-align: right !important;
     font-weight: 700;
     color: var(--color-text);
     width: 30%;
+    border-bottom: 1px solid #f0f0f0 !important;
 }
 
-/* العمود البارز (نقطة صعود - المنتصف) */
+/* العمود البارز (نقطة صعود) - الإصلاح هنا */
 .featured,
 .featured-head {
-    /* استخدام التدرج اللوني المذكور في فيجما */
-    background: linear-gradient(180deg, rgba(25, 58, 106, 0.28) 0%, rgba(25, 58, 106, 0) 100%) !important;
-
-    background: rgba(8, 26, 75, 0.9) !important;
-
+    background: #081a4b !important; /* لون كحلي موحد */
     color: var(--color-white) !important;
-    border: none !important;
+    width: 180px; /* تحديد عرض ثابت ليعطي شكل العمود */
+    border: none !important; /* إزالة الحدود الداخلية */
     position: relative;
-    z-index: 10;
 }
 
-/* لضمان ظهور المحتوى بوضوح فوق الشفافية */
+/* الرأس الدائري (أعلى الكبسولة) */
 .featured-head {
-    color: var(--color-white) !important;
-    font-weight: 800;
-    padding: 30px 0 !important;
-    border-radius: 30px 30px 0 0 !important;
-    transform: translateY(-10px);
-    /* إخلفية داكنة قليلاً خلف النص التدرج فاتح */
-    background: linear-gradient(180deg, #081a4b 0%, rgba(8, 26, 75, 0.9) 100%) !important;
-    font-size: 24px;
-    font-family: var(--font-main);
+    border-radius: 25px 25px 0 0 !important; /* انحناء علوي فقط */
+    padding: 35px 0 !important;
+    font-size: 22px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1); /* ظل خفيف للأعلى */
 }
 
-/* تعديل خلايا الجدول الكحلية */
+/* الخلايا الوسطى في العمود */
 .featured {
-    background: rgba(8, 26, 75, 0.95) !important;
-    /* لون كحلي ثابت مع شفافية بسيطة جداً */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important; /* خطوط داخلية خفيفة جداً */
 }
 
-/* بروز العمود من الأسفل */
-tbody tr:last-child .featured {
-    border-radius: 0 0 30px 30px !important;
-    transform: translateY(10px);
-    background: linear-gradient(180deg, rgba(8, 26, 75, 0.95) 0%, #081a4b 100%) !important;
-    height: 100%;
+/* القاعدة الدائرية (أسفل الكبسولة) */
+.comparison-table tbody tr:last-child .featured {
+    border-radius: 0 0 25px 25px !important; /* انحناء سفلي فقط */
+    border-bottom: none !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* ظل للأسفل */
 }
 
-/* إزالة أي خلفيات بيضاء تحت العمود الكحلي */
-.comparison-table td.featured {
-    box-shadow: inset 0 0 0 1000px rgba(8, 26, 75, 0.1);
-    /* تعزيز اللون الداكن */
+/* تنسيق الأيقونات داخل الكبسولة */
+.featured i.icon-gold {
+    color: #ffcc00 !important; /* لون ذهبي للأيقونة */
+    background: transparent !important; /* إزالة الدائرة الخلفية إذا أردتها مثل الصورة */
+    font-size: 20px;
 }
 
-/* تنسيق الأيقونات */
-.comparison-table td i {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-}
-
-/* أيقونة الصح الذهبية */
-.icon-gold {
-    background: var(--color-primary) !important;
-    color: var(--color-secondary) !important;
-}
-
-/* أيقونة الصح الرمادية (شركات أخرى) */
-.icon-gray {
-    background: var(--color-text) !important;
-    color: #fff !important;
-}
-
-/* أيقونة الخطأ (X) */
-.icon-dark {
-    color: var(--color-text) !important;
-    font-size: 22px !important;
-    background: transparent !important;
+/* عمود شركات أخرى (الرمادي) */
+.comparison-table td:nth-child(2) {
+    color: #ccc;
+    font-size: 14px;
 }
