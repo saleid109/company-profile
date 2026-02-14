@@ -1060,136 +1060,129 @@ h4 {
 }
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
 
-/*======================قسم المقارنة=====================*/
-
-/*تنسيق الحاوية*/
-.comparison-section{
-    padding:120px 0;
+.comparison-section {
+    padding: 100px 0;
+    direction: rtl; /* لضمان التنسيق العربي */
 }
 
-.comparison-container{
-    max-width:1320px;
-    margin:auto;
-    display:grid;
-    grid-template-columns: 2fr 1fr; /* جدول أعرض  */
-    align-items:center;
-    column-gap:140px;        /* مسافة بين الجدول والعنوان */
+.comparison-container {
+    max-width: 1320px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* الجدول يمين والنص يسار */
+    align-items: center;
+    column-gap: 80px;
+    padding: 0 20px;
 }
 
-/*تنسيق العنوان*/
-
-.comparison-text-side h2{
-    font-size:32px;
-    font-weight:900;
-    line-height:1.35;
-    margin:0;
-    color:var(--color-secondary);
-    justify-self:start;
-    max-width:420px; 
+/* تنسيق النص الجانبي */
+.comparison-text-side h2 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.35;
+    color: var(--color-secondary);
+    max-width: 420px;
 }
 
-.highlight-yellow{
-    color:var(--color-primary);
+.highlight-yellow {
+    color: var(--color-primary);
 }
 
-/* ================= TABLE ================= */
+/* ================= الجدول ================= */
 
-.comparison-table-wrapper{
-    position:relative;
-    justify-self:end;
-    width:100%;
+.comparison-table-wrapper {
+    position: relative;
+    width: 100%;
 }
 
-.comparison-table{
-    width:100%;
-    border-collapse:separate;
-    border-spacing:0;
-    background:#ffffff;
-    border-radius:45px;
-    overflow:hidden;
-    box-shadow:0 30px 60px rgba(0,0,0,0.08);
+.comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    border-radius: 45px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
 }
 
 .comparison-table th,
-.comparison-table td{
-    padding:18px 20px;
-    text-align:center;
+.comparison-table td {
+    padding: 20px;
+    text-align: center;
+    border: none;
+    vertical-align: middle;
 }
 
-.comparison-table thead th{
-    font-size:18px;
-    font-weight:700;
+/* الصفوف المتبادلة (الرمادي الفاتح) */
+.comparison-table tbody tr:nth-child(odd) {
+    background: #f1f1f1;
 }
 
-/* alternating rows */
-.comparison-table tbody tr:nth-child(odd){
-    background:#eeeeee;
+/* عمود الميزات (النص اليمين) */
+.feature-text {
+    text-align: right !important;
+    font-weight: 700;
+    color: #222;
+    width: 30%;
 }
 
-.comparison-table tbody tr:nth-child(even){
-    background:#dddddd;
-}
-
-/* feature text column */
-.feature-text{
-    text-align:right;
-    font-weight:600;
-    color:#222;
-}
-
-/* featured middle column */
+/* العمود البارز (نقطة صعود - المنتصف) */
 .featured,
-.featured-head{
-    background:#081a4b;
-    position:relative;
-    z-index:2;
+.featured-head {
+    background: var(--color-secondary) !important;
+    color: white !important;
+    width: 35%;
+    position: relative;
+    z-index: 10;
 }
 
-.featured-head{
-    color:#f7b500;
-    border-radius:45px 45px 0 0;
+/* رأس العمود البارز (البروز للأعلى) */
+.featured-head {
+    color: var(--color-primary) !important;
+    border-radius: 30px 30px 0 0 !important;
+    transform: scaleY(1.15) translateY(-8px);
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.1);
+    font-size: 20px;
+    font-weight: 800;
 }
 
-tbody tr:last-child .featured{
-    border-radius:0 0 45px 45px;
+/* خلايا العمود البارز */
+.featured {
+    background: var(--color-secondary) !important;
 }
 
-/* subtle separator line */
-.featured::after{
-    content:"";
-    position:absolute;
-    right:-1px;
-    top:0;
-    height:100%;
-    width:2px;
-    background:rgba(255,255,255,0.2);
+/* نهاية العمود البارز (البروز للأسفل) */
+tbody tr:last-child .featured {
+    border-radius: 0 0 30px 30px !important;
+    transform: scaleY(1.15) translateY(8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-
+/* تنسيق الأيقونات */
 .comparison-table td i {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 17px;
-}
-/* icons */
-.icon-gold{
-    background:  #f7b500;
-    color:var(--color-navy-light);
-    font-size:20px;
+    font-size: 18px;
 }
 
-.icon-gray{
-    color:#9b9b9b;
-    font-size:18px;
+/* أيقونة الصح الذهبية */
+.icon-gold {
+    background: var(--color-primary) !important;
+    color: var(--color-secondary) !important;
 }
 
-.icon-dark{
+/* أيقونة الصح الرمادية (شركات أخرى) */
+.icon-gray {
+    background: #333 !important;
+    color: #fff !important;
+}
 
-    background: rgba(0,0,0,0.12);
-    color: #111;
-    font-size:18px;
+/* أيقونة الخطأ (X) */
+.icon-dark {
+    color: #333 !important;
+    font-size: 22px !important;
+    background: transparent !important;
 }
