@@ -1083,7 +1083,7 @@ h4 {
     font-weight:900;
     line-height:1.35;
     margin:0;
-    color:#0d1b3e;
+    color:var(--color-secondary);
     justify-self:start;
     max-width:420px; 
 }
