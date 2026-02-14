@@ -383,30 +383,34 @@
 
   /*=========================================================*/
   /* قسم خدماتنا*/
-  .services-section {
-    padding: 60px 20px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .service-card {
+/* --- تنسيق قسم خدماتنا (البطاقات) --- */
+.service-card {
+    background: #fff;
+    border-radius: 25px;
     padding: 40px 20px;
-  }
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-  .service-card .service-icon img {
-    width: 80px;
-    /* حجم الأيقونة الدائرية الكبيرة */
+/* الدائرة التي تحتوي الأيقونة كما في فيجما */
+.service-icon {
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--color-secondary); /* الإطار الكحلي */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.service-card .service-icon img {
+    width: 55px; /* حجم الأيقونة (القبعة/الكمبيوتر) داخل الدائرة */
     height: auto;
-    margin-bottom: 20px;
-  }
-
-  .service-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-  }
+    margin-bottom: 0; /* إلغاء الهامش لأننا استخدمنا Flex */
+}
 
   /*=========================================================*/
   /* تنسيق قسم التدريب في الجوال */
