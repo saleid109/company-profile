@@ -1060,23 +1060,23 @@ h4 {
 }
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
 
-/*=============قسم المقارنة===============================*/
+/*======================قسم المقارنة===============================*/
 
-
+/*تنسيق الحاوية*/
 .comparison-section{
     padding:120px 0;
 }
 
 .comparison-container{
-    max-width:1250px;
+    max-width:1320px;        /* عرض أكبر قليلاً مثل الصورة */
     margin:auto;
     display:grid;
-    grid-template-columns:0.9fr 1.8fr;
+    grid-template-columns: 2fr 1fr;   /* الجدول أعرض بوضوح */
     align-items:center;
-    gap:100px;
+    column-gap:140px;        /* مسافة محسوبة بين الجدول والعنوان */
 }
 
-/* ================= TEXT SIDE ================= */
+/*تنسيق العنوان*/
 
 .comparison-text-side h2{
     font-size:52px;
@@ -1084,16 +1084,20 @@ h4 {
     line-height:1.35;
     margin:0;
     color:#0d1b3e;
+    justify-self:start;
+    max-width:420px; 
 }
 
 .highlight-yellow{
-    color:#f7b500;
+    color:var(--color-primary);
 }
 
 /* ================= TABLE ================= */
 
 .comparison-table-wrapper{
     position:relative;
+    justify-self:end;
+    width:100%;
 }
 
 .comparison-table{
