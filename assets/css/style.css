@@ -1172,11 +1172,14 @@ tbody tr:last-child .featured{
 }
 
 .icon-gray{
-    color:#9b9b9b;
+    background: rgba(0,0,0,0.08);
+    color: #9b9b9b;
     font-size:18px;
 }
 
 .icon-dark{
-    color:#111;
+
+    background: rgba(0,0,0,0.12);
+    color: #111;
     font-size:18px;
 }
