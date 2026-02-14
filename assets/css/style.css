@@ -1216,3 +1216,31 @@ h4 {
     color: #ccc;
     font-size: 14px;
 }
+
+.comparison-table tr td.featured {
+    background-color: #081a4b !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important; /* خط داخلي خفيف جداً */
+}
+
+/* جعل جميع الأيقونات داخل دوائر منتظمة */
+.comparison-table td i {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+/* أيقونة نقطة صعود (ذهبية) */
+.icon-gold {
+    background-color: #ffcc00 !important;
+    color: #081a4b !important; /* علامة الصح بلون كحلي */
+}
+
+/* أيقونة الشركات الأخرى (سوداء) */
+.icon-dark, .icon-gray {
+    background-color: #333 !important;
+    color: #fff !important; /* علامة X أو الصح بلون أبيض */
+}
