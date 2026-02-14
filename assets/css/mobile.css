@@ -428,57 +428,47 @@
 
   /*=========================================================*/
   /* تنسيق قسم التقنيات   */
-  .technologies-grid {
-    grid-template-columns: 1fr;
-    /* جعل البطاقات تحت بعضها   */
-    gap: 25px;
-    padding: 0 10px;
-  }
+ .technologies-grid {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    padding: 0 15px;
+}
 
-  .technology-item {
-    padding: 30px 20px;
-    text-align: center;
+.technology-item {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    transition:
-      transform 0.3s,
-      box-shadow 0.3s;
-  }
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
 
-  .technology-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .technology-item h3 {
+.technology-item h3 {
     font-size: 1.2rem;
-    margin-bottom: 25px;
-  }
+    color: var(--color-secondary);
+    margin-bottom: 25px; /* مسافة بين العنوان والشعارات */
+}
 
-  .tech-logos {
+.tech-logos {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 15px;
-  }
+    align-items: center;
+    flex-wrap: wrap; /* للسماح بالالتفاف إذا زاد العدد */
+    gap: 15px; /* مسافة متساوية بين الشعارات */
+}
 
-  .tech-logos img {
-    width: 188px;
-    height: 55px;
+/* هذا الجزء هو الأهم للمطابقة مع فيجما */
+.tech-logos img {
+    width: 48px; /* الحجم المثالي للوضوح في الجوال */
+    height: 48px;
     object-fit: contain;
-  }
+    transition: transform 0.3s ease;
+}
 
-  /* تكبير صور التقنيات على الشاشات الصغيرة */
-  .technology-item img,
-  .tech-logos img {
-    width: 140px;
-    height: auto;
-    object-fit: contain;
-    max-width: 100%;
-  }
+.tech-logos img:hover {
+    transform: scale(1.1);
+}
 
   /*=========================================================*/
   /* تنسيق قسم لماذا تختارنا   */
