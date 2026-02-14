@@ -1167,47 +1167,47 @@ h4 {
 /* العمود البارز (نقطة صعود - المنتصف) */
 .featured,
 .featured-head {
-    /* استخدام التدرج اللوني المذكور في فيجما */
-    background: linear-gradient(180deg, rgba(25, 58, 106, 0.28) 0%, rgba(25, 58, 106, 0) 100%) !important;
-
-    background: rgba(8, 26, 75, 0.9) !important;
-
     color: var(--color-white) !important;
     border: none !important;
     position: relative;
-    z-index: 10;
+    z-index: 12;
 }
 
-/* لضمان ظهور المحتوى بوضوح فوق الشفافية */
+/* رأس العمود المميز: نصف شفاف، مرفوع، وبخلفية طمس */
 .featured-head {
     color: var(--color-primary) !important;
     font-weight: 800;
     padding: 30px 0 !important;
     border-radius: 30px 30px 0 0 !important;
-    transform: translateY(-10px);
-    /* إخلفية داكنة قليلاً خلف النص التدرج فاتح */
-    background: linear-gradient(180deg, #081a4b 0%, rgba(8, 26, 75, 0.9) 100%) !important;
+    transform: translateY(-18px);
+    background: linear-gradient(180deg, rgba(8,26,75,0.35) 0%, rgba(8,26,75,0.18) 100%) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
-/* تعديل خلايا الجدول الكحلية */
+/* خلايا العمود المميز: شفاف جزئياً، مرفوع، وظل خارجي لخلق تأثير الطفو */
 .featured {
-    background: rgba(8, 26, 75, 0.95) !important;
-    /* لون كحلي ثابت مع شفافية بسيطة جداً */
+    background: linear-gradient(180deg, rgba(8,26,75,0.25) 0%, rgba(8,26,75,0.18) 100%) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    transform: translateY(-20px);
+    box-shadow: 0 25px 45px rgba(8,26,75,0.12) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* بروز العمود من الأسفل */
+/* إذا كان العمود في آخر صف، نخفف الرفع لت الحفاظ على الانحناء السفلي */
 tbody tr:last-child .featured {
     border-radius: 0 0 30px 30px !important;
-    transform: translateY(10px);
-    background: linear-gradient(180deg, rgba(8, 26, 75, 0.95) 0%, #081a4b 100%) !important;
+    transform: translateY(-10px);
+    background: linear-gradient(180deg, rgba(8,26,75,0.22) 0%, rgba(8,26,75,0.14) 100%) !important;
     height: 100%;
 }
 
-/* إزالة أي خلفيات بيضاء تحت العمود الكحلي */
+/* استبدال inset box-shadow بظل خارجي لتعزيز الطفو دون تغطية الخلفية */
 .comparison-table td.featured {
-    box-shadow: inset 0 0 0 1000px rgba(8, 26, 75, 0.1);
-    /* تعزيز اللون الداكن */
+    box-shadow: 0 25px 45px rgba(8,26,75,0.12) !important;
+    background-clip: padding-box;
 }
 
 /* تنسيق الأيقونات */
