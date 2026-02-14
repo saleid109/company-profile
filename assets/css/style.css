@@ -1093,7 +1093,6 @@ h4 {
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
 /*============= قسم المقارنة =======*/
 
-
 .comparison-section {
     padding: 100px 0;
     direction: rtl;
@@ -1139,7 +1138,7 @@ h4 {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    background: var(--color-white);
+    background: #ffffff;
     border-radius: 45px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
 }
@@ -1154,14 +1153,14 @@ h4 {
 
 /* الصفوف المتبادلة (الرمادي الفاتح) */
 .comparison-table tbody tr:nth-child(odd) {
-    background: var(--color-white);
+    background: #f1f1f1;
 }
 
 /* عمود الميزات (النص اليمين) */
 .feature-text {
     text-align: right !important;
     font-weight: 700;
-    color: var(--color-text);
+    color: #222;
     width: 30%;
 }
 
@@ -1181,15 +1180,13 @@ h4 {
 
 /* لضمان ظهور المحتوى بوضوح فوق الشفافية */
 .featured-head {
-    color: var(--color-white) !important;
+    color: var(--color-primary) !important;
     font-weight: 800;
     padding: 30px 0 !important;
     border-radius: 30px 30px 0 0 !important;
     transform: translateY(-10px);
     /* إخلفية داكنة قليلاً خلف النص التدرج فاتح */
     background: linear-gradient(180deg, #081a4b 0%, rgba(8, 26, 75, 0.9) 100%) !important;
-    font-size: 24px;
-    font-family: var(--font-main);
 }
 
 /* تعديل خلايا الجدول الكحلية */
@@ -1228,19 +1225,17 @@ tbody tr:last-child .featured {
 .icon-gold {
     background: var(--color-primary) !important;
     color: var(--color-secondary) !important;
-    font-size: 18px;
 }
 
 /* أيقونة الصح الرمادية (شركات أخرى) */
 .icon-gray {
     background: var(--color-text) !important;
     color: #fff !important;
-    font-size: 18px;
 }
 
 /* أيقونة الخطأ (X) */
 .icon-dark {
     color: var(--color-text) !important;
-    font-size: 18px !important;
+    font-size: 22px !important;
     background: transparent !important;
 }
