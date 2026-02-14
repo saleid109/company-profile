@@ -428,7 +428,7 @@
 
   /*=========================================================*/
   /* تنسيق قسم التقنيات   */
- .technologies-grid {
+  .technologies-grid {
     grid-template-columns: 1fr; 
     gap: 20px;
     padding: 0 15px;
@@ -460,7 +460,7 @@
 
 /* هذا الجزء هو الأهم للمطابقة مع فيجما */
 .tech-logos img {
-    width: 48px; /* الحجم المثالي للوضوح في الجوال */
+    width: 48px; 
     height: 48px;
     object-fit: contain;
     transition: transform 0.3s ease;
