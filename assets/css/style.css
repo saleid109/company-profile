@@ -22,6 +22,9 @@ h4 {
     margin-bottom: 1rem;
 }
 
+
+
+
 /* تنسيق التوب بار */
 .top-bar {
     background-color: var(--color-secondary);
@@ -334,6 +337,8 @@ h4 {
     box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
 }
 
+
+
 /* ----- تنسيق قسم عن نقطة صعود  (About Section) ----- */
 
 /*  الحاوية العامة للقسم */
@@ -375,6 +380,7 @@ h4 {
     text-align: right;
     margin: 0;
     direction: rtl;
+
 }
 
 /* وصف القسم */
@@ -388,6 +394,7 @@ h4 {
     text-align: right;
     width: 100%;
     margin-right: 0;
+
 }
 
 /* زر اقرأ المزيد */
@@ -482,6 +489,7 @@ h4 {
     display: block;
 }
 
+
 /* نص البطاقة */
 .feature-info h3 {
     font-size: 1.2rem;
@@ -533,7 +541,7 @@ h4 {
     /* وضعها في جهة اليسار خلف البطاقات */
     width: 400px;
     height: 100%;
-    background-image: url("./public/images/yellow-arrows.png");
+    background-image: url('./public/images/yellow-arrows.png');
     /* مسار صورة الأسهم */
     background-repeat: no-repeat;
     background-size: contain;
@@ -599,9 +607,7 @@ h4 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* صندوق الأيقونة */
@@ -988,6 +994,7 @@ h4 {
     align-items: center;
     gap: 60px;
     direction: rtl;
+
 }
 
 /* تنسيق المحتوى النصي */
@@ -1161,9 +1168,7 @@ h4 {
 .featured,
 .featured-head {
     /* استخدام التدرج اللوني المذكور في فيجما */
-    background: linear-gradient(180deg,
-            rgba(25, 58, 106, 0.28) 0%,
-            rgba(25, 58, 106, 0) 100%) !important;
+    background: linear-gradient(180deg, rgba(25, 58, 106, 0.28) 0%, rgba(25, 58, 106, 0) 100%) !important;
 
     background: rgba(8, 26, 75, 0.9) !important;
 
@@ -1181,9 +1186,7 @@ h4 {
     border-radius: 30px 30px 0 0 !important;
     transform: translateY(-10px);
     /* إخلفية داكنة قليلاً خلف النص التدرج فاتح */
-    background: linear-gradient(180deg,
-            #081a4b 0%,
-            rgba(8, 26, 75, 0.9) 100%) !important;
+    background: linear-gradient(180deg, #081a4b 0%, rgba(8, 26, 75, 0.9) 100%) !important;
 }
 
 /* تعديل خلايا الجدول الكحلية */
@@ -1197,9 +1200,7 @@ h4 {
 tbody tr:last-child .featured {
     border-radius: 0 0 30px 30px !important;
     transform: translateY(10px);
-    background: linear-gradient(180deg,
-            rgba(8, 26, 75, 0.95) 0%,
-            #081a4b 100%) !important;
+    background: linear-gradient(180deg, rgba(8, 26, 75, 0.95) 0%, #081a4b 100%) !important;
     height: 100%;
 }
 
@@ -1237,11 +1238,4 @@ tbody tr:last-child .featured {
     color: var(--color-text) !important;
     font-size: 22px !important;
     background: transparent !important;
-}
-
-/* اجعل أيقونة نقطة الصعود (العمود المميز) لونها أبيض لسهولة القراءة */
-.comparison-table td.featured i,
-.comparison-table td.featured .icon-gold {
-    background: transparent !important;
-    color: var(--color-white) !important;
 }
