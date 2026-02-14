@@ -215,7 +215,7 @@ h4 {
     color: var(--color-secondary);
     padding: 10px 23px;
     border-radius: 8px;
-    border:var(--color-secondary);
+    border: var(--color-secondary);
     text-decoration: none;
     font-weight: var(--weight-bold);
     transition: all 0.3s ease;
@@ -344,10 +344,12 @@ h4 {
 /*  الحاوية العامة للقسم */
 .why-us-wrapper {
     display: flex;
-    flex-direction: row; /* الصورة يسار والنص يمين */
+    flex-direction: row;
+    /* الصورة يسار والنص يمين */
     justify-content: space-between;
     align-items: center;
-    gap: 50px; /* مسافة بين الصورة والنص */
+    gap: 50px;
+    /* مسافة بين الصورة والنص */
     padding: 80px 40px;
     direction: rtl;
 }
@@ -356,11 +358,12 @@ h4 {
 .why-us-content {
     flex: 1;
     z-index: 2;
-    padding-right: 0; 
+    padding-right: 0;
     text-align: right;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* هذا يضمن أن الزر والعناوين تبدأ من اليمين */
+    align-items: flex-start;
+    /* هذا يضمن أن الزر والعناوين تبدأ من اليمين */
 }
 
 /* عنوان القسم */
@@ -373,7 +376,7 @@ h4 {
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
     text-align: right;
-    width: 100%; 
+    width: 100%;
     text-align: right;
     margin: 0;
     direction: rtl;
@@ -417,12 +420,12 @@ h4 {
 
 .features-list {
     position: relative;
-    padding-right: 40px; 
+    padding-right: 40px;
     margin-top: 40px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start;
 }
 
 /* العمود الأزرق الخلفي */
@@ -525,7 +528,7 @@ h4 {
 .fields-section {
     position: relative;
     background-color: var(--color-bg-light);
-    overflow: hidden; 
+    overflow: hidden;
     padding: 80px 20px;
 }
 
@@ -534,14 +537,18 @@ h4 {
     content: "";
     position: absolute;
     top: 0;
-    left: 10%; /* وضعها في جهة اليسار خلف البطاقات */
+    left: 10%;
+    /* وضعها في جهة اليسار خلف البطاقات */
     width: 400px;
     height: 100%;
-    background-image: url('./public/images/yellow-arrows.png'); /* مسار صورة الأسهم */
+    background-image: url('./public/images/yellow-arrows.png');
+    /* مسار صورة الأسهم */
     background-repeat: no-repeat;
     background-size: contain;
-    z-index: 0; /* لتبقى خلف البطاقات */
-    opacity: 0.2; /* جعلها خفيفة كما في التصميم */
+    z-index: 0;
+    /* لتبقى خلف البطاقات */
+    opacity: 0.2;
+    /* جعلها خفيفة كما في التصميم */
 }
 
 /* الحاوية الداخلية لتوسط المحتوى */
@@ -660,12 +667,14 @@ h4 {
     padding: 60px 0px;
     background-color: var(--color-bg-light);
 }
+
 /* الحاوية الداخلية لتوسط المحتوى */
 .container-services {
     max-width: 1400px;
     margin: 0 auto;
     padding: 80px 0;
 }
+
 /* تنسيق العنوان الرئيسي للقسم */
 .section-title {
     font-size: 32px;
@@ -675,6 +684,7 @@ h4 {
     margin-bottom: 60px;
     text-align: center;
 }
+
 /* حاوية أزرار التبويب */
 .services-tabs {
     display: flex;
@@ -684,13 +694,14 @@ h4 {
     gap: 12px;
     margin-bottom: 50px;
 }
+
 /* تنسيق زر التبويب */
 .tab-btn {
     padding: 10px 25px;
     border: 2px solid var(--color-secondary);
     background: transparent;
     color: var(--color-secondary);
-    border-radius: 50px; 
+    border-radius: 50px;
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
     cursor: pointer;
@@ -703,6 +714,7 @@ h4 {
     color: var(--color-white);
     transform: translateY(-3px);
 }
+
 /* تنسيق زر التبويب النشط */
 
 .tab-btn.active {
@@ -716,11 +728,13 @@ h4 {
     grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
     gap: 30px;
 }
+
 /* تنسيق كل عنصر في الشبكة */
 .gallery-item {
     text-align: center;
     transition: var(--transition);
 }
+
 /* تنسيق الصورة داخل العنصر */
 .gallery-image {
     overflow: hidden;
@@ -728,21 +742,28 @@ h4 {
     margin-bottom: 15px;
     box-shadow: var(--shadow);
     background-color: var(--color-bg-light);
-    border: 1px solid #f0f0f0; /* إضافة إطار خفيف جداً يحدد البطاقة */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* ظل ناعم جداً وليس أسود حاد */
+    border: 1px solid #f0f0f0;
+    /* إضافة إطار خفيف جداً يحدد البطاقة */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    /* ظل ناعم جداً وليس أسود حاد */
 }
+
 /* تنسيق الصورة داخل الحاوية */
 .gallery-image img {
     width: 100%;
     height: 250px;
     display: block;
-    object-fit: cover; /*لجعل الصور منسقة*/
+    object-fit: cover;
+    /*لجعل الصور منسقة*/
     transition: transform 0.5s ease;
 }
+
 /* تأثير التحويم على الصورة */
 .gallery-item:hover img {
-    transform: scale(1.1); /* تأثير تكبير عند الهوفر */
+    transform: scale(1.1);
+    /* تأثير تكبير عند الهوفر */
 }
+
 /* تنسيق عنوان كل صورة */
 .gallery-item h3 {
     font-size: 1.2rem;
@@ -750,17 +771,20 @@ h4 {
     font-weight: var(--weight-bold);
     margin: 0;
 }
+
 /* تأثير ظهور العناصر عند التصفية */
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
 
 /* --- قسم التدريب (Training Section) --- */
@@ -917,6 +941,7 @@ h4 {
     font-weight: var(--weight-bold);
     margin-bottom: 25px;
 }
+
 /* حاوية الشعارات */
 .tech-logos {
     display: flex;
@@ -924,20 +949,25 @@ h4 {
     align-items: center;
     gap: 15px;
     margin-top: 20px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 /* تنسيق كل شعار داخل الحاوية */
 .tech-logos img {
-    width: 45px;      /* هذا الحجم يجعلها واضحة جداً ومطابقة للتصميم */
-    height: auto;     /* لضمان عدم تمطط الصورة */
-    max-height: 40px; /* لتوحيد الارتفاع بين الشعارات المختلفة */
+    width: 45px;
+    /* هذا الحجم يجعلها واضحة جداً ومطابقة للتصميم */
+    height: auto;
+    /* لضمان عدم تمطط الصورة */
+    max-height: 40px;
+    /* لتوحيد الارتفاع بين الشعارات المختلفة */
     object-fit: contain;
     transition: transform 0.3s ease;
 }
+
 /* تأثير التحويم على الشعارات */
 .tech-logos img:hover {
-    transform: translateY(-3px); /* حركة بسيطة عند التمرير */
+    transform: translateY(-3px);
+    /* حركة بسيطة عند التمرير */
 }
 
 /* ----- نهاية قسم التقنيات (Technologies Section) ----- */
@@ -964,7 +994,7 @@ h4 {
     align-items: center;
     gap: 60px;
     direction: rtl;
-    
+
 }
 
 /* تنسيق المحتوى النصي */
@@ -985,6 +1015,7 @@ h4 {
 .choose-title .highlight {
     color: var(--color-primary);
 }
+
 /* تنسيق وصف القسم */
 .choose-main-desc {
     font-size: 28px;
@@ -1058,18 +1089,21 @@ h4 {
     /* تدوير حواف الصورة حسب التصميم */
     object-fit: cover;
 }
+
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
 /*============= قسم المقارنة =======*/
 .comparison-section {
     padding: 100px 0;
-    direction: rtl; /* لضمان التنسيق العربي */
+    direction: rtl;
+    /* لضمان التنسيق العربي */
 }
 
 .comparison-container {
     max-width: 1320px;
     margin: auto;
     display: grid;
-    grid-template-columns: 2fr 1fr; /* الجدول يمين والنص يسار */
+    grid-template-columns: 2fr 1fr;
+    /* الجدول يمين والنص يسار */
     align-items: center;
     column-gap: 80px;
     padding: 0 20px;
@@ -1079,15 +1113,19 @@ h4 {
 .comparison-text-side h2 {
     font-size: 32px;
     font-weight: 900;
-    line-height: 1.3; /* لتقريب الأسطر من بعضها كما في التصميم */
+    line-height: 1.3;
+    /* لتقريب الأسطر من بعضها كما في التصميم */
     color: var(--color-secondary);
-    max-width: 350px; /* لتحديد عرض النص وضمان كسر السطر في المكان المناسب */
+    max-width: 350px;
+    /* لتحديد عرض النص وضمان كسر السطر في المكان المناسب */
     text-align: right;
 }
 
 .highlight-yellow {
-    color: var(--color-primary); /* اللون الأصفر */
+    color: var(--color-primary);
+    /* اللون الأصفر */
 }
+
 /* ================= الجدول ================= */
 
 .comparison-table-wrapper {
@@ -1099,9 +1137,9 @@ h4 {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    background: #ffffff;
+    background: var(--color-white);
     border-radius: 45px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
 }
 
 .comparison-table th,
@@ -1114,14 +1152,14 @@ h4 {
 
 /* الصفوف المتبادلة (الرمادي الفاتح) */
 .comparison-table tbody tr:nth-child(odd) {
-    background: #f1f1f1;
+    background: var(--color-white);
 }
 
 /* عمود الميزات (النص اليمين) */
 .feature-text {
     text-align: right !important;
     font-weight: 700;
-    color: #222;
+    color: var(--color-text);
     width: 30%;
 }
 
@@ -1130,11 +1168,10 @@ h4 {
 .featured-head {
     /* استخدام التدرج اللوني المذكور في فيجما */
     background: linear-gradient(180deg, rgba(25, 58, 106, 0.28) 0%, rgba(25, 58, 106, 0) 100%) !important;
-    
-    /* إذا كنت تريد اللون الكحلي الداكن مع الشفافية كما في الصورة السابقة */
-    /* background: rgba(8, 26, 75, 0.9) !important; */
-    
-    color: white !important;
+
+    background: rgba(8, 26, 75, 0.9) !important;
+
+    color: var(--color-white) !important;
     border: none !important;
     position: relative;
     z-index: 10;
@@ -1142,18 +1179,21 @@ h4 {
 
 /* لضمان ظهور المحتوى بوضوح فوق الشفافية */
 .featured-head {
-    color: var(--color-primary) !important;
+    color: var(--color-white) !important;
     font-weight: 800;
     padding: 30px 0 !important;
     border-radius: 30px 30px 0 0 !important;
     transform: translateY(-10px);
-    /* إضافة خلفية داكنة قليلاً خلف النص إذا كان التدرج فاتحاً جداً */
+    /* إخلفية داكنة قليلاً خلف النص التدرج فاتح */
     background: linear-gradient(180deg, #081a4b 0%, rgba(8, 26, 75, 0.9) 100%) !important;
+    font-size: 24px;
+    font-family: var(--font-main);
 }
 
 /* تعديل خلايا الجدول الكحلية */
 .featured {
-    background: rgba(8, 26, 75, 0.95) !important; /* لون كحلي ثابت مع شفافية بسيطة جداً */
+    background: rgba(8, 26, 75, 0.95) !important;
+    /* لون كحلي ثابت مع شفافية بسيطة جداً */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
@@ -1167,8 +1207,10 @@ tbody tr:last-child .featured {
 
 /* إزالة أي خلفيات بيضاء تحت العمود الكحلي */
 .comparison-table td.featured {
-    box-shadow: inset 0 0 0 1000px rgba(8, 26, 75, 0.1); /* تعزيز اللون الداكن */
+    box-shadow: inset 0 0 0 1000px rgba(8, 26, 75, 0.1);
+    /* تعزيز اللون الداكن */
 }
+
 /* تنسيق الأيقونات */
 .comparison-table td i {
     width: 40px;
@@ -1188,7 +1230,7 @@ tbody tr:last-child .featured {
 
 /* أيقونة الصح الرمادية (شركات أخرى) */
 .icon-gray {
-    background:var(--color-text)!important;
+    background: var(--color-text) !important;
     color: #fff !important;
 }
 
@@ -1198,5 +1240,3 @@ tbody tr:last-child .featured {
     font-size: 22px !important;
     background: transparent !important;
 }
-
-
