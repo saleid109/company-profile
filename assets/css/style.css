@@ -1059,7 +1059,7 @@ h4 {
     object-fit: cover;
 }
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
-
+/*============= قسم المقارنة =======*/
 .comparison-section {
     padding: 100px 0;
     direction: rtl; /* لضمان التنسيق العربي */
