@@ -1230,30 +1230,3 @@ tbody tr:last-child .featured {
     background: transparent !important;
 }
 
-/* إخفاء البطاقات في الديسكتوب */
-.comparison-cards-mobile {
-    display: none;
-}
-
-/* تصميم البطاقة */
-.comparison-card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-.comparison-card h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: var(--color-secondary);
-}
-
-.card-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
