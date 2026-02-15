@@ -831,6 +831,14 @@
     text-align: right;
   } 
 
+  .choose-icon-diamond {
+  background-color: var(--color-secondary) !important;
+}
+
+.choose-icon-diamond i {
+  color: var(--color-primary) !important;
+}
+/*=========================================*/
   .comparison-container {
     grid-template-columns: 1fr;
     row-gap: 50px;
