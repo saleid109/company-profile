@@ -790,7 +790,7 @@
   }
 
   /* تنسيق قسم لماذا تختارنا في الآيباد */
- .why-choose-wrapper {
+  .why-choose-wrapper {
     flex-direction: column;
     text-align: center;
     gap: 40px;
@@ -807,7 +807,7 @@
   }
 
   .choose-list li {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .comparison-container {
