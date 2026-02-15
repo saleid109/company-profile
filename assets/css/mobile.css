@@ -439,7 +439,7 @@
 }
 
 .technology-item {
-    background: #fff;
+    background: var(--color-white);
     border-radius: 20px;
     padding: 30px 15px;
     display: flex;
