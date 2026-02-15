@@ -481,15 +481,22 @@
     padding: 40px 20px;
   }
 
+  .container-why-choose {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+  }
+
   .choose-main-desc {
-    font-size: 1.4rem;
-    /* تصغير العنوان الكبير ليناسب الجوال */
+    font-size: 21px;
     margin-bottom: 30px;
   }
 
 
-  .choose-content h2 {
-    font-size: 22px;
+  .choose-title h2 {
+    font-size: 24px;
+    font-weight: var(--weight-bold);
+
   }
 
   .choose-content p {
