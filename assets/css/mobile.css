@@ -792,9 +792,10 @@
   /* تنسيق قسم لماذا تختارنا في الآيباد */
   .why-choose-wrapper {
     flex-direction: column;
-    text-align: center;
+    text-align: right;
     gap: 40px;
     padding: 60px 40px;
+    align-items: flex-start;
   }
 
   .choose-content,
@@ -807,8 +808,11 @@
   }
 
   .choose-list li {
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
-  }
+    text-align: right;
+  } 
 
   .comparison-container {
     grid-template-columns: 1fr;
