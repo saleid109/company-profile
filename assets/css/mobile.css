@@ -792,8 +792,7 @@
   /* تنسيق قسم لماذا تختارنا في الآيباد */
   .why-choose-wrapper {
     flex-direction: column;
-    /* تحويل العمودين لصف واحد */
-    text-align: center;
+    text-align: right;
     gap: 40px;
     padding: 60px 20px;
   }
