@@ -485,21 +485,38 @@
     margin-bottom: 30px;
   }
 
-  .choose-list li {
-    flex-direction: column-reverse;
-    /* الأيقونة فوق النص في الجوال الصغير */
-    gap: 15px;
-    text-align: center;
-  }
+.choose-list li {
+    flex-direction: row-reverse; /* أيقونة يمين ونص يسار */
+    align-items: flex-start;
+    gap: 20px;
+    text-align: right;
+    margin-bottom: 30px;
+}
 
-  .choose-text {
-    text-align: center;
-  }
 
-  .choose-icon-diamond {
-    margin: 0 auto;
-    /* توسيط المعين الأزرق */
-  }
+.choose-icon-diamond {
+    width: 45px;
+    height: 45px;
+    background-color: var(--color-primary); /* اللون المعتمد للمعين */
+    transform: rotate(45deg); /* تحويل المربع لمعين */
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 10px 0 0; /* موازنة المسافة */
+}
+
+.choose-icon-diamond i {
+    transform: rotate(-45deg); /* تعديل الأيقونة داخل المعين */
+    color: var(--color-secondary);
+    font-size: 16px;
+}
+
+.choose-text h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
 
   .choose-image img {
     border-radius: 15px;
