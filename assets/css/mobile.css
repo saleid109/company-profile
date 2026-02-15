@@ -790,38 +790,30 @@
   }
 
   /* تنسيق قسم لماذا تختارنا في الآيباد */
-  .why-choose-wrapper {
+ .why-choose-wrapper {
     flex-direction: column;
-    text-align: right;
+    text-align: center;
     gap: 40px;
-    padding: 60px 20px;
+    padding: 60px 40px;
   }
 
-  .choose-content {
-    order: 1;
+  .choose-content,
+  .choose-image {
     width: 100%;
   }
 
   .choose-image {
-    order: 2;
-    width: 80%;
     margin: 0 auto;
   }
 
   .choose-list li {
     justify-content: center;
-    /* توسيط البطاقات في الآيباد */
   }
 
-  /*المقارنة*/
   .comparison-container {
     grid-template-columns: 1fr;
     row-gap: 50px;
     text-align: center;
   }
 
-  .comparison-text-side h2 {
-    max-width: 100%;
-    text-align: center;
-  }
 }
