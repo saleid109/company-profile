@@ -1091,11 +1091,13 @@ h4 {
 }
 
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ////* ================================= */
-/* ================================= */
+//* ========================================
+   Comparison Section
+======================================== */
+
 .comparison-section {
     direction: rtl;
-    padding: 60px 0;
-    font-family: sans-serif;
+    padding: 80px 0;
 }
 
 .comparison-container {
@@ -1104,21 +1106,25 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 60px;
+}
+
+/* النص الجانبي */
+.comparison-text-side {
+    flex: 1;
 }
 
 .comparison-text-side h2 {
-    font-size: 36px;
+    font-size: 32px;
     color: var(--blue-dark);
     line-height: 1.4;
-    flex: 1;
 }
 
 .highlight-yellow {
     color: var(--gold);
 }
 
-/* تنسيق الجدول */
+/* الجدول */
 .comparison-table-wrapper {
     flex: 2;
 }
@@ -1127,47 +1133,44 @@ h4 {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    /* لمنع الفراغات بين الخلايا الزرقاء */
 }
 
-.comparison-table td,
-.comparison-table th {
+.comparison-table th,
+.comparison-table td {
     padding: 20px;
     text-align: center;
     vertical-align: middle;
 }
 
-/* صفوف رمادية متبادلة للخلفية فقط (باستثناء العمود الأزرق) */
+/* صفوف رمادية متبادلة */
 .comparison-table tbody tr:nth-child(even) td:not(.featured) {
     background-color: var(--bg-light);
 }
 
-/* عمود "نقطة صعود" المتميز */
+/* العمود المميز */
 .featured {
     background-color: var(--blue-dark);
     color: var(--gold);
     font-size: 20px;
-    width: 160px;
+    width: 150px;
 }
 
 .featured-head {
     background-color: var(--blue-dark);
     color: var(--gold);
-    border-radius: 25px 25px 0 0;
-    /* تدوير الجزء العلوي */
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
+    border-radius: 25px 25px 0 0;
 }
 
 .comparison-table tbody tr:last-child td.featured {
     border-radius: 0 0 25px 25px;
-    /* تدوير الجزء السفلي */
 }
 
-/* عمود الميزات (النص الأيمن) */
+/* عمود الميزات */
 .feature-text {
     text-align: right;
-    font-weight: bold;
+    font-weight: 600;
     color: var(--blue-dark);
     width: 180px;
 }
