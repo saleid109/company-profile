@@ -1093,7 +1093,7 @@ h4 {
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us /
 
 /*====================== قسم المقارنة ==============*/
-/* الحاوية الرئيسية */
+/* الحاوية */
 .comparison-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1114,9 +1114,11 @@ h4 {
     max-width: 300px;
 }
 
-.highlight-yellow { color: #f7b500; }
+.highlight-yellow { 
+    color: #f7b500; 
+}
 
-/* غلاف الجدول والحسابات الرياضية للعمود */
+/* غلاف الجدول */
 .comparison-table-wrapper {
     position: relative;
     flex: 1.2;
@@ -1124,31 +1126,32 @@ h4 {
 
 .comparison-table {
     width: 100%;
-    table-layout: fixed; /* لضمان تساوي الأعمدة */
+    table-layout: fixed;
     border-collapse: collapse;
     background: #fff;
     border-radius: 40px;
     position: relative;
     z-index: 1;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
 }
 
-/* الصندوق الكحلي العائم */
+/* الصندوق الكحلي */
 .featured-col-box {
     position: absolute;
-    top: -40px; 
-    bottom: -40px;
-    width: 33.333%; /* عرض العمود الأوسط بالضبط */
-    right: 33.333%; /* يبدأ بعد العمود الأول */
+    top: -50px; 
+    bottom: -50px;
+    width: 33.333%;
+    right: 33.333%;
     background: #051242;
-    border-radius: 45px; /* انحناء كامل كما في Figma */
+    border-radius: 45px;
     z-index: 2;
-    box-shadow: 0 25px 50px rgba(0, 2, 91, 0.3);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
     pointer-events: none;
 }
 
-/* تنسيق الخلايا */
-.comparison-table th, .comparison-table td {
+/* خلايا الجدول */
+.comparison-table th,
+.comparison-table td {
     height: 75px;
     text-align: center;
     vertical-align: middle;
@@ -1161,11 +1164,18 @@ h4 {
     color: #051242;
 }
 
-/* إبراز المحتوى فوق الصندوق الكحلي */
-.featured-header-text, .featured-cell {
+/* إبراز العمود الأوسط */
+.featured-header-text,
+.featured-cell {
     position: relative;
     z-index: 3;
-    color: #ffffff !important;
+}
+
+.featured-header-text {
+    color: #f7b500 !important;
+    font-size: 22px;
+    font-weight: 900;
+    padding-top: 20px;
 }
 
 /* الصفوف الرمادية */
@@ -1177,79 +1187,6 @@ h4 {
 .icon-gold-circle {
     background: #f7b500;
     color: #051242;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-/* --- تنسيق نص "نقطة صعود" في الهيدر --- */
-.comparison-table th.featured-header-text {
-    color: #ffffff !important;
-    font-size: 20px;
-    font-weight: 800;
-    text-align: center;
-    padding: 30px 10px; /* مساحة كافية للنص في أعلى الصندوق */
-    position: relative;
-    z-index: 3;
-}
-
-/* --- تنسيق الأيقونة الذهبية لتكون مطابقة للصور --- */
-.icon-gold-circle {
-    background: #f7b500; /* اللون الأصفر الذهبي المعتمد */
-    color: #051242;    /* لون علامة الصح كحلي داكن */
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 900;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف للأيقونة ليبرزها */
-    position: relative;
-    z-index: 3;
-}
-
-/* --- ضمان أن خلايا العمود الأوسط تأخذ المحاذاة الصحيحة --- */
-.featured-cell {
-    text-align: center;
-    vertical-align: middle;
-    position: relative;
-    z-index: 3;
-}
-
-/* --- تعديل الصندوق الكحلي ليكون خلفية للمحتوى فقط --- */
-.featured-col-box {
-    position: absolute;
-    top: -50px; 
-    bottom: -50px;
-    width: 33.333%;
-    right: 33.333%; 
-    background: #051242; 
-    border-radius: 45px; 
-    z-index: 2; /* تأكد أنه أقل من z-index الخاص بالأيقونات والنص */
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-    pointer-events: none;
-}
-
-.featured-header-text {
-    color: #f7b500 !important; /* اللون الذهبي كما في Figma */
-    font-size: 22px;
-    font-weight: 900;
-    padding-top: 20px; /* مسافة من أعلى الصندوق */
-    display: block;
-    text-align: center;
-}
-
-/* الأيقونة الذهبية المتكاملة */
-.icon-gold-circle {
-    background: #f7b500;
-    color: #051242; /* لون علامة الصح كحلي ليتباين مع الذهبي */
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -1258,12 +1195,11 @@ h4 {
     justify-content: center;
     font-size: 16px;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(247, 181, 0, 0.3); /* توهج ذهبي خفيف */
+    box-shadow: 0 4px 15px rgba(247, 181, 0, 0.3);
 }
 
-/* الأيقونة الرمادية للمنافسين */
 .icon-dark-circle {
-    background: #444; /* لون رمادي غامق احترافي */
+    background: #444;
     color: #fff;
     width: 30px;
     height: 30px;
