@@ -1095,114 +1095,109 @@ h4 {
 Comparison Section
 ======================================== */
 
-.comparison-section {
-    direction: rtl;
-    padding: 80px 0;
-}
+/*====================== قسم المقارنة النهائي =====================*/
 
-.comparison-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-}
-
-/* النص الجانبي */
-.comparison-text-side {
-    flex: 1;
-}
-
-.comparison-text-side h2 {
-    font-size: 32px;
-    color: var(--blue-dark);
-    line-height: 1.4;
-}
-
-.highlight-yellow {
-    color: var(--gold);
-}
-
-/* الجدول */
 .comparison-table-wrapper {
-    flex: 2;
+    position: relative;
+    width: 100%;
 }
 
 .comparison-table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    position: relative;
+    /* تم تغيير separate إلى collapse لإزالة الخطوط البيضاء بين الخلايا */
+    border-collapse: collapse; 
+    background: #ffffff;
+    border-radius: 45px;
+    /* لإظهار انحناء الزوايا مع collapse */
+    border-style: hidden; 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
 }
-
-
 
 .comparison-table th,
 .comparison-table td {
     padding: 20px;
     text-align: center;
+    border: none;
     vertical-align: middle;
 }
 
-/* صفوف رمادية متبادلة */
-.comparison-table tbody tr:nth-child(even) td:not(.featured) {
-    background-color: var(--bg-light);
+/* الصفوف المتبادلة (الرمادي الفاتح) - استثناء العمود البارز */
+.comparison-table tbody tr:nth-child(odd) td:not(.featured) {
+    background: #f1f1f1;
 }
 
-/* العمود المميز */
-.featured,
-.featured-head {
-    background-color: var(--blue-dark);
-    color: var(--gold);
-    position: relative;
-    z-index: 2;
-}
-
-/* جعل العمود بارز */
-.featured {
-    width: 160px;
-}
-
-/* تدوير أعلى العمود */
-.featured-head {
-    border-radius: 30px 30px 0 0;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-
-/* تدوير أسفل العمود */
-.comparison-table tbody tr:last-child td.featured {
-    border-radius: 0 0 30px 30px;
-}
-
-/* إضافة ظل خفيف */
-.featured,
-.featured-head {
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-}
-
-/* عمود الميزات */
+/* عمود الميزات (النص اليمين) */
 .feature-text {
-    text-align: right;
-    font-weight: 600;
-    color: var(--blue-dark);
-    width: 180px;
+    text-align: right !important;
+    font-weight: 700;
+    color: #222;
+    width: 30%;
 }
 
-.other-head {
-    color: #666;
-    font-weight: bold;
+/* العمود البارز (نقطة صعود) - كتلة واحدة */
+.featured,
+.featured-head {
+    background: #081a4b !important; /* لون كحلي أساسي داكن */
+    color: white !important;
+    border: none !important;
+    position: relative;
+    z-index: 10;
+}
+
+/* رأس العمود البارز */
+.featured-head {
+    color: var(--color-primary) !important;
+    font-weight: 800;
+    padding: 35px 0 !important;
+    border-radius: 30px 30px 0 0 !important;
+    /* البروز للأعلى */
+    transform: translateY(-10px);
+    background: linear-gradient(180deg, #081a4b 0%, #0a1f5a 100%) !important;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+}
+
+/* خلايا العمود البارز */
+.featured {
+    background: #081a4b !important;
+    /* خط فاصل داخلي خفيف جداً (اختياري) */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* بروز العمود من الأسفل */
+tbody tr:last-child .featured {
+    border-radius: 0 0 30px 30px !important;
+    transform: translateY(10px);
+    padding-bottom: 30px !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* تنسيق الأيقونات */
+.comparison-table td i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.icon-gold {
+    background: var(--color-primary) !important;
+    color: var(--color-secondary) !important;
 }
 
 .icon-gray {
-    color: #ccc;
+    background: #333 !important;
+    color: #fff !important;
 }
 
 .icon-dark {
-    color: #333;
+    color: #333 !important;
+    font-size: 22px !important;
+    background: transparent !important;
 }
+
 /*نهاية----------*
 
 /*----------قسم اعمالنا --------------------*/
