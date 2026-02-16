@@ -1155,7 +1155,7 @@ h4 {
 
 /* الصفوف الرمادية */
 .comparison-table tbody tr:nth-child(even) {
-    background: #f8f9fa;
+    background: #EDEDED;
 }
 
 /* نصوص الميزات */
@@ -1167,7 +1167,7 @@ h4 {
     width: 33.333%; /* تغطية عمود واحد بالضبط */
     /* بما أن الجدول RTL والعمود المطلوب هو الأوسط (الثاني) */
     right: 33.333%; 
-    background: #051242;
+    background: rgba(0, 2, 91, 0.718);
     border-radius: 40px; 
     z-index: 2; /* يقع فوق خلفية الجدول */
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
@@ -1181,12 +1181,6 @@ h4 {
     color: #ffffff !important; /* اللون الأبيض للنصوص فوق الكحلي */
 }
 
-.feature-text {
-    text-align: right !important;
-    font-weight: 700;
-    padding-right: 35px !important;
-    color: #051242;
-}
 /* الأيقونات */
 .icon-gold-circle {
     background: #f7b500;
