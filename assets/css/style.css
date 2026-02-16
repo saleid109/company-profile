@@ -1177,16 +1177,18 @@ h4 {
 }
 
 /* العمود الكحلي البارز - ضبط الموقع ليتناسب مع الجدول الصغير */
+/* --- العمود الكحلي: بارز وظلال قوية --- */
 .featured-col-box {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 23%; /* موقع دقيق فوق العمود الأوسط */
-    width: 35%; /* عرض العمود الكحلي */
+    top: -30px;    /* يبرز للأعلى بمقدار 30px */
+    bottom: -30px; /* يبرز للأسفل بمقدار 30px */
+    left: 20%;     /* ضبط الموقع ليتوسط عمود الصح */
+    width: 38%;    /* عرض العمود */
     background: #051242; 
-    border-radius: 40px; 
+    border-radius: 45px; /* زوايا دائرية قوية */
     z-index: 2;
-    box-shadow: 0 15px 45px rgba(5, 18, 66, 0.2);
+    /* ظل داكن وقوي خلف العمود الكحلي */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
     pointer-events: none;
 }
 
@@ -1209,13 +1211,14 @@ h4 {
 .icon-gold-circle {
     background: #f7b500;
     color: #051242;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
+    font-weight: bold;
 }
 
 .icon-dark-circle {
