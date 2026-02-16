@@ -1093,7 +1093,6 @@ h4 {
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us /
 
 /*====================== قسم المقارنة ==============*/
-/*====================== قسم المقارنة ==============*/
 .comparison-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1104,7 +1103,7 @@ h4 {
     gap: 80px; /* فجوة أكبر قليلاً كما في الصور */
     padding: 60px 20px; /* زيادة التباعد الرأسي */
 }
-
+/* --- ضبط المسافات بين النص والجدول --- */
 .comparison-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1112,8 +1111,8 @@ h4 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* تقليل الفجوة للاقتراب من التصميم */
-    padding: 0 20px;
+    gap: 40px; /* فجوة متوسطة توازن بين الصور المختلفة */
+    padding: 80px 20px;
 }
 
 /* العنوان في الجهة اليسرى - ضبط العرض للنزول لسطر جديد */
@@ -1127,7 +1126,7 @@ h4 {
     font-weight: 800;
     line-height: 1.3;
     color: #051242;
-    text-align: right;
+    text-align: center;
     max-width: 280px; /* لضمان التفاف النص */
 }
 
@@ -1177,18 +1176,17 @@ h4 {
 }
 
 /* العمود الكحلي البارز - ضبط الموقع ليتناسب مع الجدول الصغير */
-/* --- العمود الكحلي: بارز وظلال قوية --- */
+/* --- العمود الكحلي: ضبط العرض والموقع ليتطابق مع الأعمدة --- */
 .featured-col-box {
     position: absolute;
-    top: -30px;    /* يبرز للأعلى بمقدار 30px */
-    bottom: -30px; /* يبرز للأسفل بمقدار 30px */
-    left: 20%;     /* ضبط الموقع ليتوسط عمود الصح */
-    width: 38%;    /* عرض العمود */
+    top: -30px; 
+    bottom: -30px;
+    left: 23%;     /* تعديل بسيط للموقع ليتوسط الدوائر الذهبية */
+    width: 32%;    /* تقليل العرض قليلاً ليكون أنحف وأكثر أناقة */
     background: #051242; 
-    border-radius: 45px; /* زوايا دائرية قوية */
+    border-radius: 40px; 
     z-index: 2;
-    /* ظل داكن وقوي خلف العمود الكحلي */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35); /* ظل عميق لإبراز العمود */
     pointer-events: none;
 }
 
@@ -1230,4 +1228,12 @@ h4 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+.icon-x-mark {
+    color: #1a1716;
+    font-size: 22px;
+    font-weight: 900;
+    display: inline-block;
+    opacity: 0.8;
 }
