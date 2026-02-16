@@ -542,7 +542,71 @@
     width: 100%;
   }
 
-  /*==================================================================*/
+.comparison-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .comparison-text-side {
+        order: 1;
+    }
+
+    .comparison-text-side h2 {
+        max-width: 100%;
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .comparison-table-wrapper {
+        width: 100%;
+        order: 2;
+    }
+
+    /* إخفاء عمود شركات أخرى */
+    .comparison-table th:first-child,
+    .comparison-table td:first-child {
+        display: none;
+    }
+
+    /* جعل نقطة صعود بكامل العرض */
+    .comparison-table {
+        table-layout: fixed;
+    }
+
+    /* إلغاء العمود الكحلي المطلق */
+    .featured-col-box {
+        display: none;
+    }
+
+    /* تلوين عمود نقطة صعود مباشرة */
+    .comparison-table th.featured-header-text,
+    .comparison-table td.featured-cell {
+        background: #051242;
+        color: #fff;
+    }
+
+    .comparison-table td.featured-cell {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* تحسين المسافات */
+    .comparison-table td {
+        padding: 18px 10px;
+    }
+
+    .feature-text {
+        text-align: right !important;
+        padding-right: 15px !important;
+        font-size: 14px;
+    }
+
+    .icon-gold-circle {
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+    }
 
 
   }
