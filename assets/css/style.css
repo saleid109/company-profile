@@ -1111,8 +1111,8 @@ h4 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 40px; /* فجوة متوسطة توازن بين الصور المختلفة */
-    padding: 80px 20px;
+    gap: 60px; /* فجوة متوازنة بين النص والجدول */
+    padding: 100px 20px;
 }
 
 /* العنوان في الجهة اليسرى - ضبط العرض للنزول لسطر جديد */
