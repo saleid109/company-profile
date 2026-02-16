@@ -1186,3 +1186,53 @@ h4 {
     font-size: 14px;
     font-weight: bold;
 }
+
+/* --- تنسيق نص "نقطة صعود" في الهيدر --- */
+.comparison-table th.featured-header-text {
+    color: #ffffff !important;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    padding: 30px 10px; /* مساحة كافية للنص في أعلى الصندوق */
+    position: relative;
+    z-index: 3;
+}
+
+/* --- تنسيق الأيقونة الذهبية لتكون مطابقة للصور --- */
+.icon-gold-circle {
+    background: #f7b500; /* اللون الأصفر الذهبي المعتمد */
+    color: #051242;    /* لون علامة الصح كحلي داكن */
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف للأيقونة ليبرزها */
+    position: relative;
+    z-index: 3;
+}
+
+/* --- ضمان أن خلايا العمود الأوسط تأخذ المحاذاة الصحيحة --- */
+.featured-cell {
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    z-index: 3;
+}
+
+/* --- تعديل الصندوق الكحلي ليكون خلفية للمحتوى فقط --- */
+.featured-col-box {
+    position: absolute;
+    top: -50px; 
+    bottom: -50px;
+    width: 33.333%;
+    right: 33.333%; 
+    background: #051242; 
+    border-radius: 45px; 
+    z-index: 2; /* تأكد أنه أقل من z-index الخاص بالأيقونات والنص */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
