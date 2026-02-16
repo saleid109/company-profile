@@ -544,47 +544,41 @@
 
   /*==================================================================*/
 
-  .comparison-section {
-    padding: 60px 0;
+  20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   }
 
-  .comparison-table th,
-  .comparison-table td {
-    padding: 12px 8px;
-    font-size: 14px;
+  /* اسم الميزة */
+  .feature-text {
+    text-align: right !important;
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--color-secondary);
   }
 
-  .comparison-text-side h2 {
-    font-size: 24px;
-    line-height: 1.4;
+  /* خلايا المقارنة */
+  .comparison-table td:not(.feature-text) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border: none;
   }
 
-  /* تصغير الأيقونات */
-  .comparison-table td i {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
+  /* عنوان العمود يظهر قبل الأيقونة */
+  .comparison-table td:not(.feature-text)::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #555;
   }
 
-  /* تقليل بروز العمود المميز */
-  .featured-head {
-    transform: translateY(-5px);
+  /* إزالة الخلفية الداكنة في الجوال */
+  .featured {
+    background: transparent !important;
   }
 
-  tbody tr:last-child .featured {
-    transform: translateY(5px);
-  }
 
-  
-  .comparison-table-wrapper {
-    display: none;
-  }
-
-  .comparison-cards-mobile {
-    display: block;
-  }
-}
-/*=============================================*/
+/*============================================= @*/
 /*الايباد*/
 /* Tablet/iPad size (768px - 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -844,5 +838,8 @@
     row-gap: 50px;
     text-align: center;
   }
+
+
+  
 
 }
