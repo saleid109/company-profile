@@ -1168,6 +1168,11 @@ h4 {
     border-radius: 35px;
     z-index: 0;
 }
+.featured,
+.featured-head {
+    position: relative;
+    z-index: 2;
+}
 /* عمود الميزات (النص اليمين) */
 .feature-text {
     text-align: right !important;
