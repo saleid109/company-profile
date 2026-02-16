@@ -1091,14 +1091,13 @@ h4 {
 }
 
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ////* ================================= */
+/* ================================= */
 /*          قسم المقارنة             */
 /* ================================= */
 
 .comparison-section {
     padding: 100px 0;
     direction: rtl;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
 }
 
 /* الحاوية */
@@ -1106,152 +1105,107 @@ h4 {
     max-width: 1320px;
     margin: auto;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr; /* الجدول يمين - النص يسار */
     align-items: center;
-    gap: 80px;
+    column-gap: 80px;
     padding: 0 20px;
+}
+
+/* النص الجانبي */
+.comparison-text-side h2 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.3;
+    color: var(--color-secondary);
+    max-width: 350px;
+    text-align: right;
+}
+
+.highlight-yellow {
+    color: var(--color-primary);
 }
 
 /* ================================= */
 /*              الجدول               */
 /* ================================= */
+
 .comparison-table-wrapper {
     width: 100%;
-    background: transparent;
-    border-radius: 45px;
-    position: relative;
 }
 
 .comparison-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
+    background: transparent;
+    position: relative; /* مهم لعمل العمود البارز */
+}
+
+/* العمود الأوسط البارز (خلفية واحدة كاملة) */
+.comparison-table::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    bottom: -15px;
+    right: 33.33%;
+    width: 33.33%;
+    background: #081a4b;
+    border-radius: 35px;
+    z-index: 0;
+}
+
+/* الخلايا العامة */
+.comparison-table th,
+.comparison-table td {
+    padding: 18px 25px;
     text-align: center;
-    position: relative;
+    border: none;
+    vertical-align: middle;
 }
 
-/* ================================= */
-/*            رأس الجدول             */
-/* ================================= */
-
-.comparison-table thead tr {
-    background-color: transparent;
+/* صفوف رمادية متبادلة */
+.comparison-table tbody tr:nth-child(odd) {
+    background: #f1f1f1;
 }
 
-.comparison-table th {
-    padding: 28px 20px;
-    font-size: 20px;
+/* رأس الأعمدة الجانبية */
+.comparison-table thead th:not(.featured-head) {
+    background: #f5f5f5;
     font-weight: 700;
-    background-color: #f5f5f5;
-    border: none;
 }
 
-/* العمود الفارغ في الرأس */
-.comparison-table th:first-child {
-    background-color: transparent;
-    width: 35%;
-}
-
-/* رأس العمود الأوسط (نقطة صعود) */
-.comparison-table th.featured-head {
-    background-color: #081a4b !important;
-    color: #fdb813;
-    font-size: 22px;
-    font-weight: 800;
-    border-radius: 45px 45px 0 0;
-    padding: 32px 20px;
-    position: relative;
-    z-index: 3;
-    box-shadow: 0 15px 50px rgba(8, 26, 75, 0.2);
-}
-
-/* رأس العمود الثالث (شركات أخرى) */
-.comparison-table th:last-child {
-    background-color: #f5f5f5;
-    border-radius: 45px 45px 0 0;
-    color: #333;
-}
-
-/* ================================= */
-/*          جسم الجدول (tbody)       */
-/* ================================= */
-
-/* إزالة خلفيات الصفوف تماماً */
-.comparison-table tbody tr {
-    background-color: transparent !important;
-}
-
-/* الخلايا العادية */
-.comparison-table tbody td {
-    padding: 22px 20px;
-    border: none;
-    background-clip: padding-box;
-}
-
-/* ================================= */
-/*       تلوين الأعمدة الجانبية      */
-/* ================================= */
-
-/* الصفوف الفردية - رمادي فاتح */
-.comparison-table tbody tr:nth-child(odd) td:first-child,
-.comparison-table tbody tr:nth-child(odd) td:last-child {
-    background-color: #f8f8f8;
-}
-
-/* الصفوف الزوجية - أبيض */
-.comparison-table tbody tr:nth-child(even) td:first-child,
-.comparison-table tbody tr:nth-child(even) td:last-child {
-    background-color: #ffffff;
-}
-
-/* ================================= */
-/*      العمود الأوسط البارز         */
-/* ================================= */
-
-/* العمود الأوسط - خلفية زرقاء مستمرة */
-.comparison-table tbody td.featured {
-    background-color: #081a4b !important;
-    color: #ffffff;
-    padding: 22px 20px;
+/* رفع محتوى العمود الأوسط فوق الخلفية */
+.featured,
+.featured-head {
     position: relative;
     z-index: 2;
 }
 
-/* آخر خلية في العمود الأوسط */
-.comparison-table tbody tr:last-child td.featured {
-    border-radius: 0 0 45px 45px;
+/* رأس العمود الأوسط */
+.featured-head {
+    border-radius: 35px 35px 0 0;
+    color: #fdb813;
+    font-size: 20px;
+    padding: 30px 0;
+    font-weight: 800;
 }
 
-/* آخر خلية في العمود الثالث */
-.comparison-table tbody tr:last-child td:last-child {
-    border-radius: 0 0 45px 45px;
+/* خلايا العمود الأوسط */
+.featured {
+    color: #ffffff;
 }
 
-/* ظل للعمود الأوسط */
-.comparison-table tbody td.featured::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -100%;
-    bottom: -100%;
-    box-shadow: 0 15px 50px rgba(8, 26, 75, 0.2);
-    pointer-events: none;
-    z-index: -1;
+/* تدوير أسفل العمود الأوسط */
+tbody tr:last-child .featured {
+    border-radius: 0 0 35px 35px;
 }
 
-/* ================================= */
-/*         عمود الميزات (الأيمن)      */
-/* ================================= */
-
-.comparison-table td.feature-text {
+/* عمود الميزات (يمين) */
+.feature-text {
     text-align: right;
     font-weight: 600;
-    font-size: 18px;
     color: #222;
-    padding: 22px 0 22px 20px;
-    width: 35%;
-    background-color: transparent !important;
+    width: 30%;
 }
 
 /* ================================= */
@@ -1259,120 +1213,28 @@ h4 {
 /* ================================= */
 
 .comparison-table td i {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    font-size: 16px;
-    font-weight: 900;
+    font-size: 18px;
 }
 
-/* أيقونة الصح الذهبية - للعمود الأوسط */
-.comparison-table td.featured i.fa-check {
-    background-color: #fdb813;
-    color: #081a4b;
-}
-
-/* أيقونة الصح الرمادية - للعمود الآخر */
-.comparison-table td:not(.featured) i.fa-check {
-    background-color: #333333;
-    color: #ffffff;
-}
-
-/* أيقونة X - للعمود الآخر */
-.comparison-table td:not(.featured) i.fa-times {
-    background-color: transparent;
-    color: #333333;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-/* ================================= */
-/*            النص الجانبي           */
-/* ================================= */
-
-.comparison-text-side h2 {
-    font-size: 38px;
-    font-weight: 900;
-    line-height: 1.4;
-    color: #081a4b;
-    max-width: 400px;
-    text-align: right;
-    margin: 0;
-}
-
-.highlight-yellow {
+/* أيقونة الصح الذهبية */
+.icon-gold {
     color: #fdb813;
+    font-size: 20px;
 }
 
-/* ================================= */
-/*          تحسينات للاستجابة        */
-/* ================================= */
-
-@media (max-width: 992px) {
-    .comparison-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    
-    .comparison-text-side {
-        order: -1;
-    }
-    
-    .comparison-text-side h2 {
-        max-width: 100%;
-        text-align: center;
-        font-size: 32px;
-    }
+/* أيقونة الصح لشركات أخرى */
+.icon-gray {
+    color: #333;
+    font-size: 18px;
 }
 
-@media (max-width: 768px) {
-    .comparison-section {
-        padding: 60px 0;
-    }
-    
-    .comparison-table th,
-    .comparison-table td {
-        padding: 15px 10px;
-        font-size: 14px;
-    }
-    
-    .comparison-table th.featured-head {
-        font-size: 18px;
-        padding: 25px 10px;
-    }
-    
-    .comparison-table td.feature-text {
-        padding: 15px 5px 15px 15px;
-        font-size: 15px;
-    }
-    
-    .comparison-table td i {
-        width: 28px;
-        height: 28px;
-        font-size: 14px;
-    }
-    
-    .comparison-text-side h2 {
-        font-size: 28px;
-    }
-}
-
-@media (max-width: 480px) {
-    .comparison-table th.featured-head {
-        font-size: 16px;
-        padding: 20px 8px;
-    }
-    
-    .comparison-table td.feature-text {
-        font-size: 13px;
-    }
-    
-    .comparison-table td i {
-        width: 24px;
-        height: 24px;
-        font-size: 12px;
-    }
+/* أيقونة X */
+.icon-dark {
+    color: #000;
+    opacity: 0.8;
 }
