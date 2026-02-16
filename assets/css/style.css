@@ -1232,7 +1232,7 @@ h4 {
 
 /* تنسيق خاص لأيقونة X في العمود الأخير */
 .comparison-table tbody tr:last-child td:not(.featured) i.fa-times {
-    color: #e74c3c !important; /* لون أحمر لـ X */
+    color: #1a1716 !important; /* لون أحمر لـ X */
     font-size: 24px !important;
     background: transparent !important;
 }
