@@ -1124,10 +1124,11 @@ h4 {
 .comparison-text-side h2 {
     font-size: 38px;
     font-weight: 800;
-    line-height: 1.3;
+    line-height: 1.4;
     color: #051242;
-    text-align: center;
-    max-width: 280px; /* لضمان التفاف النص */
+    text-align: right; /* محاذاة لليمين كما في الصورة */
+    max-width: 280px; 
+    margin: 0;
 }
 
 .highlight-yellow {
