@@ -541,71 +541,41 @@
     border-radius: 15px;
     width: 100%;
   }
+/*====================================================*/
 
-.comparison-container {
+    .comparison-container {
         flex-direction: column;
         gap: 40px;
         padding: 60px 20px;
         text-align: center;
     }
 
-    .comparison-text-side {
-        order: 1;
-    }
-
     .comparison-text-side h2 {
-        max-width: 100%;
-        font-size: 28px;
         text-align: center;
+        max-width: 100%;
+        font-size: 26px;
     }
 
-    .comparison-table-wrapper {
-        width: 100%;
-        order: 2;
-    }
-
-    /* إخفاء عمود شركات أخرى */
-    .comparison-table th:first-child,
-    .comparison-table td:first-child {
-        display: none;
-    }
-
-    /* جعل نقطة صعود بكامل العرض */
-    .comparison-table {
-        table-layout: fixed;
-    }
-
-    /* إلغاء العمود الكحلي المطلق */
     .featured-col-box {
         display: none;
     }
 
-    /* تلوين عمود نقطة صعود مباشرة */
-    .comparison-table th.featured-header-text,
-    .comparison-table td.featured-cell {
+    /* نخفي شركات أخرى */
+    .comparison-table th:last-child,
+    .comparison-table td:last-child {
+        display: none;
+    }
+
+    /* نخلي نقطة صعود ملونة مباشرة */
+    .featured-header-text,
+    .featured-cell {
         background: #051242;
-        color: #fff;
-    }
-
-    .comparison-table td.featured-cell {
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* تحسين المسافات */
-    .comparison-table td {
-        padding: 18px 10px;
+        color: #fff !important;
     }
 
     .feature-text {
-        text-align: right !important;
-        padding-right: 15px !important;
+        padding-right: 20px !important;
         font-size: 14px;
-    }
-
-    .icon-gold-circle {
-        width: 28px;
-        height: 28px;
-        font-size: 13px;
     }
 
 
@@ -869,48 +839,37 @@
 /*=========================================*/
 
 
-
 .comparison-container {
-        gap: 40px;
-        padding: 70px 30px;
+        gap: 30px;
+        padding: 80px 20px;
     }
 
     .comparison-text-side h2 {
-        font-size: 32px;
-        max-width: 320px;
+        font-size: 30px;
+        max-width: 260px;
     }
 
     .comparison-table th,
     .comparison-table td {
-        padding: 14px 8px;
+        height: 65px;
         font-size: 14px;
     }
 
-    /* تصغير عرض العمود الكحلي */
     .featured-col-box {
-        top: -30px;
-        bottom: -30px;
-        width: 33.333%;
-        right: 33.333%;
-        border-radius: 30px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        top: -40px;
+        bottom: -40px;
+        border-radius: 35px;
     }
 
     .icon-gold-circle {
-        width: 28px;
-        height: 28px;
-        font-size: 13px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
     }
 
     .icon-dark-circle {
-        width: 24px;
-        height: 24px;
-        font-size: 12px;
-    }
-
-    .feature-text {
-        font-size: 14px;
-        padding-right: 20px !important;
+        width: 26px;
+        height: 26px;
     }
 
 }
