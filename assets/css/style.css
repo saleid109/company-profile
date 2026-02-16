@@ -1090,8 +1090,7 @@ h4 {
     object-fit: cover;
 }
 
-/* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ----- */
-/* ================================= */
+/* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) /* ================================= */
 /*          قسم المقارنة             */
 /* ================================= */
 
@@ -1111,7 +1110,6 @@ h4 {
     padding: 0 20px;
 }
 
-
 /* النص الجانبي */
 .comparison-text-side h2 {
     font-size: 32px;
@@ -1123,7 +1121,7 @@ h4 {
 }
 
 .highlight-yellow {
-    color: var(--color-primary);
+    color: var(--color-primary); /* أو golden اللون الأصفر */
 }
 
 /* ================================= */
@@ -1132,80 +1130,84 @@ h4 {
 .comparison-table-wrapper {
     width: 100%;
     background: #ffffff;
-    border-radius: 45px; /* زوايا الجدول الكبيرة كما في الصورة */
-    overflow: hidden; /* لقص الصفوف الملونة عند الحواف */
+    border-radius: 45px;
+    overflow: hidden; /* هذا ضروري لقص الزوايا الخارجية للجدول */
     box-shadow: 0 20px 50px rgba(0,0,0,0.05);
 }
 
 .comparison-table {
     width: 100%;
-    border-collapse: collapse; /* غيرها لـ collapse لضمان تلاصق الصفوف */
-    position: relative;
-}
-/* العمود الأوسط البارز (خلفية واحدة كاملة) */
-.comparison-table::before {
-    content: "";
-    position: absolute;
-    top: -10px; /* تبرز قليلاً للأعلى */
-    bottom: -10px; /* تبرز قليلاً للأسفل */
-    right: 35%; 
-    width: 30%;
-    background: #081a4b;
-    border-radius: 40px;
-    z-index: 1;
-    box-shadow: 0 15px 40px rgba(8, 26, 75, 0.3); /* الظل الذي يعطي العمق */
+    border-collapse: collapse; /* نستخدم collapse لنتحكم بالخلايا بدقة */
 }
 
-/* صفوف رمادية متبادلة */
+/* إزالة الحدود الافتراضية للجدول */
+.comparison-table th,
+.comparison-table td {
+    border: none;
+}
+
+/* تلوين خلفية الصفوف الفردية (الرمادي) */
 .comparison-table tbody tr:nth-child(odd) {
-    background: #f8f8f8;
+    background-color: #f8f8f8;
 }
 
-/* رأس الأعمدة الجانبية */
-.comparison-table thead th:not(.featured-head) {
-    background: #f5f5f5;
-    font-weight: 700;
+/* ================================= */
+/*      العمود الأوسط (البارز)       */
+/* ================================= */
+
+/* الخلية الخاصة بالعنوان "نقطة صعود" */
+.comparison-table thead th.featured-head {
+    background-color: #081a4b; /* الخلفية الزرقاء */
+    color: #fdb813; /* اللون الأصفر للنص */
+    font-size: 20px;
+    font-weight: 800;
+    padding: 30px 0;
+    text-align: center;
+    border-radius: 35px 35px 0 0; /* استدارة من الأعلى */
+    position: relative; /* للمحافظة على السياق */
+    z-index: 2;
+    border: none; /* إزالة أي حدود */
 }
 
-.comparison-table td, 
-.comparison-table th {
-    position: relative;
-    z-index: 2; /* لضمان ظهور المحتوى فوق الـ ::before */
+/* جميع خلايا العمود الأوسط في جسم الجدول (td) */
+.comparison-table tbody td.featured {
+    background-color: #081a4b; /* نفس الخلفية الزرقاء */
+    color: #ffffff; /* لون النص أو الأيقونات أبيض */
+    text-align: center;
     padding: 22px;
-}
-
-/* رفع محتوى العمود الأوسط فوق الخلفية */
-.featured,
-.featured-head {
+    border: none; /* إزالة أي حدود */
     position: relative;
     z-index: 2;
 }
 
-/* رأس العمود الأوسط */
-.featured-head {
-    border-radius: 35px 35px 0 0;
-    color: #fdb813;
-    font-size: 20px;
-    padding: 30px 0;
-    font-weight: 800;
+/* الخلية الأخيرة في العمود الأوسط */
+.comparison-table tbody tr:last-child td.featured {
+    border-radius: 0 0 35px 35px; /* استدارة من الأسفل */
 }
 
-/* خلايا العمود الأوسط */
-.featured {
-    color: #ffffff;
+/* إذا أردت إضافة ظل حول العمود الأوسط */
+.comparison-table thead th.featured-head,
+.comparison-table tbody td.featured {
+    box-shadow: 0 5px 20px rgba(8, 26, 75, 0.3); /* ظل خفيف حول الخلايا الزرقاء */
 }
 
-/* تدوير أسفل العمود الأوسط */
-tbody tr:last-child .featured {
-    border-radius: 0 0 35px 35px;
-}
+/* ================================= */
+/*            الأعمدة الأخرى         */
+/* ================================= */
 
-/* عمود الميزات (يمين) */
-.feature-text {
+/* محاذاة النص في عمود الميزات (الأول) */
+.comparison-table td.feature-text {
     text-align: right;
     font-weight: 600;
     color: #222;
-    width: 30%;
+    padding: 22px;
+    width: 35%; /* يمكنك تعديل العرض حسب الحاجة */
+}
+
+/* محاذاة أيقونات عمود "شركات أخرى" في المنتصف */
+.comparison-table td:last-child {
+    text-align: center;
+    padding: 22px;
 }
 
 /* ================================= */
@@ -1221,19 +1223,25 @@ tbody tr:last-child .featured {
     font-size: 18px;
 }
 
-/* أيقونة الصح الذهبية */
-.icon-gold {
-    color: #fdb813;
+/* أيقونة الصح الذهبية (خاصة بنقطة صعود) */
+td.featured i.icon-gold {
+    color: #fdb813; /* لون ذهبي */
     filter: drop-shadow(0 0 5px rgba(253, 184, 19, 0.2));
 }
-/* أيقونة الصح لشركات أخرى */
-.icon-gray {
+
+/* أيقونة الصح لشركات أخرى (رمادي) */
+td:not(.featured) i.icon-gray {
     color: #333;
     font-size: 18px;
 }
 
-/* أيقونة X */
-.icon-dark {
+/* أيقونة X (لشركات أخرى) */
+td:not(.featured) i.icon-dark {
     color: #000;
     opacity: 0.8;
+}
+
+/* تعديل بسيط: لو أيقونة X في العمود الأوسط؟ (لكن ليس منطقياً) */
+td.featured i.icon-dark {
+    color: #ffffff; /* أو أي لون يتناسب مع الخلفية الزرقاء */
 }
