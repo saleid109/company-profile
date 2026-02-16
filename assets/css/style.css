@@ -1131,27 +1131,23 @@ h4 {
 }
 
 /* الجدول في الجهة اليمنى */
-/* الحاوية الأساسية */
+
 .comparison-table-wrapper {
     position: relative;
-    padding: 60px 0; /* مساحة كافية للبروز العلوي والسفلي */
-    max-width: 1000px;
+    padding: 40px 0; /* مساحة للبروز العلوي والسفلي */
+    max-width: 900px;
     margin: auto;
 }
+
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
     background: #ffffff;
-    border-radius: 40px;
+    border-radius: 40px; /* زوايا الجدول الكبيرة */
+    overflow: hidden; /* لقص الصفوف الملونة داخل الزوايا */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
     position: relative;
-    z-index: 2; /* الجدول فوق الصندوق الكحلي */
-    background: transparent; /* جعل الجدول شفافاً ليظهر الصندوق الكحلي من تحته */
-}
-
-/* إضافة خلفية بيضاء للجدول باستثناء عمود "نقطة صعود" */
-.comparison-table td:not(.featured-cell), 
-.comparison-table th:not(.featured-header-text) {
-    background: #ffffff;
+    z-index: 1;
 }
 
 .comparison-table th, .comparison-table td {
@@ -1172,17 +1168,19 @@ h4 {
     color: #444;
     font-size: 15px;
 }
-/* الصندوق الكحلي الخلفي للعمود */
+
+/* العمود الكحلي البارز (نقطة صعود) */
 .featured-col-box {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 35%; /* ضبط الموقع ليكون تحت عمود "نقطة صعود" */
-    width: 25%; /* عرض العمود الكحلي */
-    background: #051242;
-    border-radius: 50px; /* شكل الكبسولة Pill Shape */
-    z-index: 1; /* طبقة خلفية للمحتوى */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    left: 33.33%; /* موقع العمود في المنتصف */
+    width: 30%; /* عرض العمود الكحلي */
+    background: #051242; /* اللون الكحلي العميق */
+    border-radius: 40px; /* زوايا دائرية بالكامل (Pill Shape) */
+    z-index: 2;
+    box-shadow: 0 15px 45px rgba(5, 18, 66, 0.3);
+    pointer-events: none; /* للسماح بالتفاعل مع ما تحته */
 }
 
 /* تنسيق النصوص داخل العمود الكحلي */
