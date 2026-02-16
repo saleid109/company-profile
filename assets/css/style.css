@@ -1132,40 +1132,41 @@ h4 {
 
 /* الجدول في الجهة اليمنى */
 .comparison-table-wrapper {
-    flex: 1.5;
+    flex: 1.2; /* تقليل المساحة التي يأخذها الجدول */
     order: 1;
     position: relative;
     width: 100%;
 }
-
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
     background: #ffffff;
-    border-radius: 45px;
-    border-style: hidden;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    border-radius: 40px; /* زوايا الجدول الكبيرة */
+    overflow: hidden; /* لقص الصفوف الملونة داخل الزوايا */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    position: relative;
+    z-index: 1;
 }
 
-.comparison-table th,
-.comparison-table td {
-    padding: 20px;
+.comparison-table th, .comparison-table td {
+    padding: 18px 25px;
     text-align: center;
     border: none;
-    vertical-align: middle;
 }
 
-/* الصفوف  (الرمادي الفاتح) -  العمود البارز */
-.comparison-table tbody tr:nth-child(odd) td:not(.featured) {
-    background: #f1f1f1;
+/* الصفوف الرمادية المتبادلة */
+.comparison-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
 }
 
 /* عمود الميزات (النص اليمين) */
+
+/* عمود الميزات (اليمين) */
 .feature-text {
     text-align: right !important;
-    font-weight: 700;
-    color: #222;
-    width: 25%;
+    font-weight: 600;
+    color: #444;
+    font-size: 15px;
 }
 
 /* العمود البارز (نقطة صعود) - كتلة واحدة */
