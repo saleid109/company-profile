@@ -1172,23 +1172,21 @@ h4 {
 
 .featured-col-box {
     position: absolute;
-    top: -40px;
-    bottom: -40px;
-
+    top: -45px;
+    bottom: -45px;
     width: 33.333%;
-    right: 39.333%; /* لأنه العمود الأوسط */
-
+    right: 33.333%;
     background: #051242;
-    border-radius: 40px;
+    border-radius: 45px;
     z-index: 2;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
     pointer-events: none;
 }
 
-
-
-/* تنسيق النصوص داخل العمود الكحلي */
-.comparison-table th.featured-header-text {
+.comparison-table th.featured-header-text,
+.comparison-table td.featured-cell {
+    position: relative;
+    z-index: 3;
     color: #ffffff;
     font-size: 18px;
     font-weight: 800;
@@ -1197,23 +1195,17 @@ h4 {
     padding-top: 25px;
 }
 
-.comparison-table td.featured-cell {
-    position: relative;
-    z-index: 3;
-}
-
 /* الأيقونات */
 .icon-gold-circle {
     background: #f7b500;
     color: #051242;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 16px;
 }
 
 .icon-dark-circle {
