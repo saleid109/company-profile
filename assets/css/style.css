@@ -1100,20 +1100,10 @@ h4 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 80px; /* فجوة أكبر قليلاً كما في الصور */
-    padding: 60px 20px; /* زيادة التباعد الرأسي */
-}
-/* --- ضبط المسافات بين النص والجدول --- */
-.comparison-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     gap: 60px; /* فجوة متوازنة بين النص والجدول */
     padding: 100px 20px;
 }
+
 
 /* العنوان في الجهة اليسرى - ضبط العرض للنزول لسطر جديد */
 .comparison-text-side {
@@ -1141,20 +1131,26 @@ h4 {
     flex: 1.2;
 }
 .comparison-table {
-    table-layout: fixed;
+    width: 100%;
+    table-layout: fixed; /* ضروري لضمان تساوي عرض الأعمدة */
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 40px;
+    overflow: visible; /* للسماح للصندوق الكحلي بالبروز */
+    box-shadow: 0 10px 50px rgba(0,0,0,0.03);
+    position: relative;
+    z-index: 1;
 }
 
 
-
-.comparison-table td {
-    padding: 20px 15px;
-}
 
 /* تصغير الخلايا لجعل الجدول أنحف */
-.comparison-table th,
+.comparison-table th, 
 .comparison-table td {
+    height: 70px; /* توحيد ارتفاع الصفوف */
     text-align: center;
     vertical-align: middle;
+    border: none;
 }
 
 /* الصفوف الرمادية */
@@ -1167,34 +1163,29 @@ h4 {
 .feature-text {
     text-align: right !important;
     font-weight: 700;
-    padding-right: 25px !important;
+    padding-right: 35px !important;
+    color: #051242;
 }
 
 .featured-col-box {
     position: absolute;
-    top: -45px;
-    bottom: -45px;
-    width: 33.333%;
-    right: 33.333%;
+    top: -45px;    /* بروز علوي واضح */
+    bottom: -45px; /* بروز سفلي واضح */
+    width: 33.33%; /* يغطي عموداً واحداً بالضبط من أصل ثلاثة */
+    right: 33.33%; /* يبدأ بعد العمود الأول (الذي يشغل 33.33% من اليمين) */
     background: #051242;
-    border-radius: 45px;
+    border-radius: 45px; /* زوايا دائرية قوية */
     z-index: 2;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
     pointer-events: none;
 }
-
+/* ضمان ظهور المحتوى فوق الصندوق */
 .comparison-table th.featured-header-text,
 .comparison-table td.featured-cell {
     position: relative;
     z-index: 3;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 800;
-    position: relative;
-    z-index: 3;
-    padding-top: 25px;
+    color: #fff !important;
 }
-
 /* الأيقونات */
 .icon-gold-circle {
     background: #f7b500;
