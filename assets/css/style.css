@@ -1091,8 +1091,8 @@ h4 {
 }
 
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ////* ================================= */
-//* ========================================
-   Comparison Section
+/* ========================================
+Comparison Section
 ======================================== */
 
 .comparison-section {
@@ -1133,7 +1133,10 @@ h4 {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
+    position: relative;
 }
+
+
 
 .comparison-table th,
 .comparison-table td {
@@ -1148,23 +1151,35 @@ h4 {
 }
 
 /* العمود المميز */
-.featured {
-    background-color: var(--blue-dark);
-    color: var(--gold);
-    font-size: 20px;
-    width: 150px;
-}
-
+.featured,
 .featured-head {
     background-color: var(--blue-dark);
     color: var(--gold);
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 25px 25px 0 0;
+    position: relative;
+    z-index: 2;
 }
 
+/* جعل العمود بارز */
+.featured {
+    width: 160px;
+}
+
+/* تدوير أعلى العمود */
+.featured-head {
+    border-radius: 30px 30px 0 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* تدوير أسفل العمود */
 .comparison-table tbody tr:last-child td.featured {
-    border-radius: 0 0 25px 25px;
+    border-radius: 0 0 30px 30px;
+}
+
+/* إضافة ظل خفيف */
+.featured,
+.featured-head {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* عمود الميزات */
