@@ -1194,6 +1194,18 @@ h4 {
     font-size: 16px;
 }
 
+.feature-text {
+    text-align: right !important;
+    font-weight: 700;
+    padding-right: 30px !important;
+    color: #051242;
+    font-size: 16px;
+}
+
+.cfeatured-header-text{
+    color: var(--color-white);
+}
+
 .icon-dark-circle {
     background: #333;
     color: #fff;
