@@ -1154,7 +1154,11 @@ h4 {
     vertical-align: middle;
     border: none;
 }
-
+.comparison-table td {
+    /* زيادة الارتفاع قليلاً ليعطي مساحة للأيقونات */
+    height: 80px; 
+    padding: 10px 0;
+}
 /* الصفوف الرمادية */
 .comparison-table tbody tr:nth-child(even) {
     background: #EDEDED;
@@ -1163,15 +1167,17 @@ h4 {
 /* نصوص الميزات */
 .featured-col-box {
     position: absolute;
-    top: -45px; 
-    bottom: -45px;
+    /* زيادة البروز ليعطي شكل المستطيل المستدير الطويل */
+    top: -50px; 
+    bottom: -50px;
     width: 33.333%;
     right: 33.333%; 
-    /* استخدم هذا اللون الكحلي الصريح والمصمت */
     background: #051242; 
-    border-radius: 45px; 
+    /* زوايا دائرية أكثر حدة لتطابق التصميم */
+    border-radius: 50px; 
     z-index: 2;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    /* تنعيم الظل ليكون ممتداً أكثر */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
     pointer-events: none;
 }
 /* --- ضمان ظهور النصوص والأيقونات فوق الصندوق الكحلي --- */
