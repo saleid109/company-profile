@@ -1131,19 +1131,22 @@ h4 {
 }
 
 /* الجدول في الجهة اليمنى */
+/* ================= الجدول الاحترافي المطابق للفريم ================= */
+
 .comparison-table-wrapper {
-    flex: 1.2; /* تقليل المساحة التي يأخذها الجدول */
-    order: 1;
     position: relative;
-    width: 100%;
+    padding: 40px 0; /* مساحة للبروز العلوي والسفلي */
+    max-width: 900px;
+    margin: auto;
 }
+
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
-    background:var(--color-white);
-    border-radius: 40px; 
+    background: #ffffff;
+    border-radius: 40px; /* زوايا الجدول الكبيرة */
     overflow: hidden; /* لقص الصفوف الملونة داخل الزوايا */
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
     position: relative;
     z-index: 1;
 }
@@ -1159,11 +1162,9 @@ h4 {
     background: #f8f9fa;
 }
 
-/* عمود الميزات (النص اليمين) */
-
 /* عمود الميزات (اليمين) */
 .feature-text {
-    text-align:right;
+    text-align: right !important;
     font-weight: 600;
     color: #444;
     font-size: 15px;
@@ -1226,72 +1227,4 @@ h4 {
     color: #000;
     font-size: 20px;
     font-weight: bold;
-}
-/* العمود البارز (نقطة صعود) - كتلة واحدة */
-.featured,
-.featured-head {
-    background:var(--color-secondary)!important;
-    color: white !important;
-    border: none !important;
-    position: relative;
-    z-index: 10;
-}
-
-/* رأس العمود البارز */
-.featured-head {
-    color: var(--color-white) !important;
-    font-weight: 800;
-    padding: 35px 0 !important;
-    border-radius: 30px 30px 0 0 !important;
-    transform: translateY(-10px);
-    background: linear-gradient(180deg, #081a4b 0%, #0a1f5a 100%) !important;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-}
-
-/* خلايا العمود البارز */
-.featured {
-    background: #081a4b !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-}
-
-/* بروز العمود من الأسفل */
-.comparison-table tbody tr:last-child .featured {
-    border-radius: 0 0 30px 30px !important;
-    transform: translateY(10px);
-    padding-bottom: 30px !important;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-/* تنسيق الأيقونات */
-.comparison-table td i {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-}
-
-.icon-gold {
-    background: #fdb813 !important;
-    color: #081a4b !important;
-}
-
-.icon-gray {
-    background: #333 !important;
-    color: #fff !important;
-}
-
-.icon-dark {
-    color: #333 !important;
-    font-size: 22px !important;
-    background: transparent !important;
-}
-
-/* تنسيق خاص لأيقونة X في العمود الأخير */
-.comparison-table tbody tr:last-child td:not(.featured) i.fa-times {
-    color: #1a1716 !important; /* لون أحمر لـ X */
-    font-size: 24px !important;
-    background: transparent !important;
 }

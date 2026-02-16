@@ -430,77 +430,39 @@
       <div class="comparison-container">
 
         <!-- الجدول - سيظهر في اليمين -->
-        <div class="comparison-table-wrapper">
+  <div class="comparison-table-wrapper">
+    <!-- هذا هو الصندوق الكحلي البارز الذي يغطي العمود -->
+    <div class="featured-col-box"></div>
 
-      <!-- هذا هو الصندوق الكحلي البارز الذي يغطي العمود -->
-          <div class="featured-col-box"></div>
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th class="featured-head">نقطة صعود</th> <!-- نقطة صعود في العمود الأوسط -->
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th class="feature-text"></th>
                 <th>شركات أخرى</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
+                <th class="featured-header-text">نقطة صعود</th>
+                <th></th> <!-- عمود فارغ للموازنة إذا لزم الأمر -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
                 <td class="feature-text">الدعم الفني</td>
-                <td class="featured"><i class="fas fa-check icon-gold"></i></td>
-                <td><i class="fas fa-check icon-gray"></i></td>
-                
-              </tr>
-
-              <tr>
+                <td><div class="icon-dark-circle">✓</div></td>
+                <td class="featured-cell"><div class="icon-gold-circle">✓</div></td>
+            </tr>
+            <tr>
                 <td class="feature-text">تقديم استشارات</td>
-                <td class="featured"><i class="fas fa-check icon-gold"></i></td>
-                <td><i class="fas fa-check icon-gray"></i></td>
-              </tr>
-
-              <tr>
-                <td class="feature-text">دراسة مشروع</td>
-                <td class="featured"><i class="fas fa-check icon-gold"></i></td>
-                <td><i class="fas fa-check icon-gray"></i></td>
-              </tr>
-
-              <tr>
+                <td><div class="icon-dark-circle">✓</div></td>
+                <td class="featured-cell"><div class="icon-gold-circle">✓</div></td>
+            </tr>
+            <tr>
                 <td class="feature-text">دعم تشغيل</td>
-                <td class="featured"><i class="fas fa-check icon-gold"></i></td>
-                <td><i class="fas fa-times icon-dark"></i></td>
-              </tr>
-
-              <tr>
-                <td class="feature-text">ميزة</td>
-                  <td class="featured"><i class="fas fa-check icon-gold"></i></td>
-                <td><i class="fas fa-times icon-dark"></i></td> 
-              </tr>
-
-              <tr>
-                <td class="feature-text">ميزة</td>
-                  <td class="featured"><i class="fas fa-check icon-gold"></i></td>
-                <td><i class="fas fa-times icon-dark"></i></td> 
-              </tr>
-
-              <tr>
-                <td class="feature-text">ميزة</td>
-                  <td class="featured"><i class="fas fa-check icon-gold"></i></td>
-                <td><i class="fas fa-times icon-dark"></i></td> 
-              </tr>
-
-              <tr>
-                <td class="feature-text">ميزة</td>
-                  <td class="featured"><i class="fas fa-check icon-gold"></i></td>
-                <td><i class="fas fa-times icon-dark"></i></td> 
-              </tr>
-
-              <tr>
-                <td class="feature-text">ميزة</td>
-                  <td class="featured"><i class="fas fa-check icon-gold"></i></td>
-                <td><i class="fas fa-times icon-dark"></i></td> 
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                <td><span class="icon-x-mark">✕</span></td>
+                <td class="featured-cell"><div class="icon-gold-circle">✓</div></td>
+            </tr>
+            <!-- كرر الصفوف حسب الحاجة -->
+        </tbody>
+    </table>
+</div>
 
         <!-- العنوان في الجهة اليسرى -->
         <div class="comparison-text-side">
