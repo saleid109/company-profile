@@ -1111,6 +1111,7 @@ h4 {
     padding: 0 20px;
 }
 
+
 /* النص الجانبي */
 .comparison-text-side h2 {
     font-size: 32px;
@@ -1128,50 +1129,49 @@ h4 {
 /* ================================= */
 /*              الجدول               */
 /* ================================= */
-
 .comparison-table-wrapper {
     width: 100%;
+    background: #ffffff;
+    border-radius: 45px; /* زوايا الجدول الكبيرة كما في الصورة */
+    overflow: hidden; /* لقص الصفوف الملونة عند الحواف */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
 }
 
 .comparison-table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: transparent;
-    position: relative; /* مهم لعمل العمود البارز */
+    border-collapse: collapse; /* غيرها لـ collapse لضمان تلاصق الصفوف */
+    position: relative;
 }
-
 /* العمود الأوسط البارز (خلفية واحدة كاملة) */
 .comparison-table::before {
     content: "";
     position: absolute;
-    top: -15px;
-    bottom: -15px;
-    right: 33.33%;
-    width: 33.33%;
+    top: -10px; /* تبرز قليلاً للأعلى */
+    bottom: -10px; /* تبرز قليلاً للأسفل */
+    right: 35%; 
+    width: 30%;
     background: #081a4b;
-    border-radius: 35px;
-    z-index: 0;
-}
-
-/* الخلايا العامة */
-.comparison-table th,
-.comparison-table td {
-    padding: 18px 25px;
-    text-align: center;
-    border: none;
-    vertical-align: middle;
+    border-radius: 40px;
+    z-index: 1;
+    box-shadow: 0 15px 40px rgba(8, 26, 75, 0.3); /* الظل الذي يعطي العمق */
 }
 
 /* صفوف رمادية متبادلة */
 .comparison-table tbody tr:nth-child(odd) {
-    background: #f1f1f1;
+    background: #f8f8f8;
 }
 
 /* رأس الأعمدة الجانبية */
 .comparison-table thead th:not(.featured-head) {
     background: #f5f5f5;
     font-weight: 700;
+}
+
+.comparison-table td, 
+.comparison-table th {
+    position: relative;
+    z-index: 2; /* لضمان ظهور المحتوى فوق الـ ::before */
+    padding: 22px;
 }
 
 /* رفع محتوى العمود الأوسط فوق الخلفية */
