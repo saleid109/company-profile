@@ -1116,7 +1116,7 @@ h4 {
     font-weight: 900; /* جعل الخط أعرض قليلاً ليطابق الصورة */
     line-height: 1.3;
     color: #051242;
-    text-align: right; 
+    text-align: center; 
     max-width: 290px; 
     margin: 0;
     /* إضافة هامش بسيط لإبعاد النص عن الجدول */
@@ -1155,9 +1155,8 @@ h4 {
     border: none;
 }
 .comparison-table td {
-    /* زيادة الارتفاع قليلاً ليعطي مساحة للأيقونات */
-    height: 80px; 
-    padding: 10px 0;
+    height: 85px; 
+    border-bottom: 1px solid rgba(0,0,0,0.02); /* خط فاصل وهمي خفيف جداً */
 }
 /* الصفوف الرمادية */
 .comparison-table tbody tr:nth-child(even) {
@@ -1183,17 +1182,14 @@ h4 {
 /* نصوص الميزات */
 .featured-col-box {
     position: absolute;
-    /* زيادة البروز ليعطي شكل المستطيل المستدير الطويل */
-    top: -50px; 
-    bottom: -50px;
+    top: -55px; 
+    bottom: -55px;
     width: 33.333%;
     right: 33.333%; 
     background: #051242; 
-    /* زوايا دائرية أكثر حدة لتطابق التصميم */
-    border-radius: 50px; 
+    border-radius: 55px; 
     z-index: 2;
-    /* تنعيم الظل ليكون ممتداً أكثر */
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
     pointer-events: none;
 }
 /* --- ضمان ظهور النصوص والأيقونات فوق الصندوق الكحلي --- */
