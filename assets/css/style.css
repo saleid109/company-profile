@@ -1171,6 +1171,7 @@ Comparison Section
     font-size: 20px;
 }
 
+
 /* تدوير أسفل العمود */
 .comparison-table tbody tr:last-child td.featured {
     border-radius: 0 0 30px 30px;
