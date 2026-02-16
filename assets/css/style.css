@@ -1205,6 +1205,10 @@ tbody tr:last-child .featured {
     background: linear-gradient(180deg, rgba(8, 26, 75, 0.95) 0%, #081a4b 100%) !important;
     height: 100%;
 }
+.comparison-table thead th:not(.featured-head) {
+    background: #f5f5f5;
+    font-weight: 700;
+}
 
 
 /* تنسيق الأيقونات */
