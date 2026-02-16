@@ -1090,7 +1090,7 @@ h4 {
     object-fit: cover;
 }
 
-/* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) //* ================================= */
+/* ----- نهاية قسم لماذا تختارنا (Why Choose Us Section) ///* ================================= */
 /*          قسم المقارنة             */
 /* ================================= */
 
@@ -1098,6 +1098,7 @@ h4 {
     padding: 100px 0;
     direction: rtl;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
 }
 
 /* الحاوية */
@@ -1119,45 +1120,96 @@ h4 {
     background: #ffffff;
     border-radius: 45px;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    position: relative;
 }
 
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+    position: relative;
 }
 
-/* رأس الجدول */
+/* رأس الجدول - إزالة الخلفية الرمادية */
 .comparison-table thead tr {
-    background-color: #f5f5f5;
+    background-color: transparent;
 }
 
 .comparison-table th {
     padding: 25px 15px;
     font-size: 18px;
     font-weight: 700;
+    background-color: #f5f5f5;
 }
 
-/* العمود الأوسط (نقطة صعود) */
+/* العمود الفارغ في الرأس */
+.comparison-table th:first-child {
+    background-color: #f5f5f5;
+}
+
+/* رأس العمود الأوسط (نقطة صعود) */
 .comparison-table th.featured-head {
-    background-color: #081a4b;
+    background-color: #081a4b !important;
     color: #fdb813;
     font-size: 20px;
     font-weight: 800;
-    border-radius: 35px 35px 0 0;
+    border-radius: 35px 0 0 0;
+    position: relative;
+    z-index: 3;
 }
 
-/* خلايا العمود الأوسط */
-.comparison-table td.featured {
-    background-color: #081a4b;
+/* رأس العمود الثالث (شركات أخرى) */
+.comparison-table th:last-child {
+    background-color: #f5f5f5;
+    border-radius: 0 35px 0 0;
+}
+
+/* ===== الحل السحري للعمود الأوسط المتصل ===== */
+
+/* إزالة خلفيات الصفوف تماماً */
+.comparison-table tbody tr {
+    background-color: transparent !important;
+}
+
+/* تلوين الصفوف بطريقة مختلفة - الخلفية للخلايا الجانبية فقط */
+.comparison-table tbody tr:nth-child(odd) td:first-child,
+.comparison-table tbody tr:nth-child(odd) td:last-child {
+    background-color: #f8f8f8;
+}
+
+.comparison-table tbody tr:nth-child(even) td:first-child,
+.comparison-table tbody tr:nth-child(even) td:last-child {
+    background-color: #ffffff;
+}
+
+/* العمود الأوسط - خلفية زرقاء مستمرة لجميع الخلايا */
+.comparison-table tbody td.featured {
+    background-color: #081a4b !important;
     color: #ffffff;
     padding: 20px 15px;
+    position: relative;
+    z-index: 2;
+}
+
+/* إزالة أي خلفيات متداخلة */
+.comparison-table tbody td {
+    background-clip: padding-box;
+}
+
+/* أول خلية في العمود الأوسط (بعد الرأس مباشرة) */
+.comparison-table tbody tr:first-child td.featured {
+    border-radius: 0;
 }
 
 /* آخر خلية في العمود الأوسط */
 .comparison-table tbody tr:last-child td.featured {
-    border-radius: 0 0 35px 35px;
+    border-radius: 0 0 0 35px;
+}
+
+/* آخر خلية في العمود الثالث */
+.comparison-table tbody tr:last-child td:last-child {
+    border-radius: 0 0 35px 0;
 }
 
 /* عمود الميزات (الأيمن) */
@@ -1167,11 +1219,6 @@ h4 {
     color: #222;
     padding: 20px 25px;
     width: 40%;
-}
-
-/* تلوين الصفوف الفردية */
-.comparison-table tbody tr:nth-child(odd) {
-    background-color: #f8f8f8;
 }
 
 /* ================================= */
@@ -1187,15 +1234,15 @@ h4 {
 
 /* أيقونة الصح - لون رمادي للعمود الآخر */
 .comparison-table td:not(.featured) i.fa-check {
-    color: #333;
+    color: #27ae60;
     font-size: 20px;
 }
 
 /* أيقونة X - للعمود الآخر */
 .comparison-table td:not(.featured) i.fa-times {
-    color: #000;
+    color: #e74c3c;
     font-size: 20px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 /* ================================= */
@@ -1237,12 +1284,17 @@ h4 {
     
     .comparison-table th,
     .comparison-table td {
-        padding: 15px 10px;
+        padding: 15px 8px;
         font-size: 14px;
     }
     
     .comparison-table th.featured-head {
         font-size: 16px;
-        padding: 20px 10px;
+        padding: 20px 8px;
+    }
+    
+    .comparison-table td.feature-text {
+        padding: 15px 15px;
+        font-size: 14px;
     }
 }
