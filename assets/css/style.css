@@ -1136,25 +1136,20 @@ h4 {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    background: #ffffff;
-    border-radius: 45px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+    background: transparent; /* جعل الخلفية شفافة ليبرز العمود الأوسط */
 }
 
 .comparison-table th,
 .comparison-table td {
-    padding: 20px;
+    padding: 15px 25px;
     text-align: center;
     border: none;
     vertical-align: middle;
 }
 
-/* الصفوف المتبادلة (الرمادي الفاتح) */
+/* الصفوف  (الرمادي الفاتح) */
 .comparison-table tbody tr:nth-child(odd) {
     background: #f1f1f1;
-}
-.comparison-table {
-    position: relative;
 }
 
 .comparison-table::before {
@@ -1173,29 +1168,23 @@ h4 {
     position: relative;
     z-index: 2;
 }
-/* عمود الميزات (النص اليمين) */
-.feature-text {
-    text-align: right !important;
-    font-weight: 700;
-    color: #222;
-    width: 30%;
-}
+
 
 /* العمود البارز (نقطة صعود - المنتصف) */
 .featured-head {
-    background: linear-gradient(180deg, #081a4b 0%, #0b235f 100%);
-    color: var(--color-primary);
-    font-weight: 800;
-    border-radius: 35px 35px 0 0;
+    border-radius: 30px 30px 0 0 !important;
+    color: #fdb813; /* اللون الأصفر الذهبي */
+    font-size: 20px;
     padding: 30px 0 !important;
-    position: relative;
 }
 
 
 
 .featured {
-    background: #081a4b;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: #081a4b !important; /* اللون الكحلي */
+    color: #fff;
+    width: 25%; /* تحديد عرض ثابت للعمود البارز */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* بروز العمود من الأسفل */
@@ -1204,6 +1193,15 @@ tbody tr:last-child .featured {
     transform: translateY(10px);
     background: linear-gradient(180deg, rgba(8, 26, 75, 0.95) 0%, #081a4b 100%) !important;
     height: 100%;
+}
+
+
+/* عمود الميزات (النص اليمين) */
+.feature-text {
+    text-align: right ;
+    font-weight: 500;
+    color: #222;
+    width: 30%;
 }
 .comparison-table thead th:not(.featured-head) {
     background: #f5f5f5;
@@ -1224,20 +1222,20 @@ tbody tr:last-child .featured {
 
 /* أيقونة الصح الذهبية */
 .icon-gold {
-    background: var(--color-primary) !important;
-    color: var(--color-secondary) !important;
+   color: #fdb813; /* لون أيقونة الصح */
+    font-size: 20px;
+    
 }
 
 /* أيقونة الصح الرمادية (شركات أخرى) */
 .icon-gray {
-    background: var(--color-text) !important;
-    color: #fff !important;
+    color: #333; /* لون الصح لشركات أخرى */
+    font-size: 18px;
 }
 
 /* أيقونة الخطأ (X) */
 .icon-dark {
-    color: var(--color-text) !important;
-    font-size: 22px !important;
-    background: transparent !important;
+color: #000;
+    opacity: 0.8;
 }
 
