@@ -1100,14 +1100,13 @@ h4 {
     background-color: var(--color-white);
 }
 
-/* --- تعديل الحاوية الأساسية --- */
 .comparison-container {
-    max-width: 1100px; /* تصغير العرض الكلي */
+    max-width: 1320px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 40px; 
+    gap: 60px;
     padding: 0 20px;
 }
 
@@ -1132,23 +1131,27 @@ h4 {
 }
 
 /* الجدول في الجهة اليمنى */
-
+/* الحاوية الأساسية */
 .comparison-table-wrapper {
     position: relative;
-    padding: 40px 0; /* مساحة للبروز العلوي والسفلي */
-    max-width: 900px;
+    padding: 60px 0; /* مساحة كافية للبروز العلوي والسفلي */
+    max-width: 1000px;
     margin: auto;
 }
-
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
     background: #ffffff;
-    border-radius: 40px; /* زوايا الجدول الكبيرة */
-    overflow: hidden; /* لقص الصفوف الملونة داخل الزوايا */
-    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    border-radius: 40px;
     position: relative;
-    z-index: 1;
+    z-index: 2; /* الجدول فوق الصندوق الكحلي */
+    background: transparent; /* جعل الجدول شفافاً ليظهر الصندوق الكحلي من تحته */
+}
+
+/* إضافة خلفية بيضاء للجدول باستثناء عمود "نقطة صعود" */
+.comparison-table td:not(.featured-cell), 
+.comparison-table th:not(.featured-header-text) {
+    background: #ffffff;
 }
 
 .comparison-table th, .comparison-table td {
@@ -1169,19 +1172,17 @@ h4 {
     color: #444;
     font-size: 15px;
 }
-
-/* العمود الكحلي البارز (نقطة صعود) */
+/* الصندوق الكحلي الخلفي للعمود */
 .featured-col-box {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 33.33%; /* موقع العمود في المنتصف */
-    width: 30%; /* عرض العمود الكحلي */
-    background: #051242; /* اللون الكحلي العميق */
-    border-radius: 40px; /* زوايا دائرية بالكامل (Pill Shape) */
-    z-index: 2;
-    box-shadow: 0 15px 45px rgba(5, 18, 66, 0.3);
-    pointer-events: none; /* للسماح بالتفاعل مع ما تحته */
+    left: 35%; /* ضبط الموقع ليكون تحت عمود "نقطة صعود" */
+    width: 25%; /* عرض العمود الكحلي */
+    background: #051242;
+    border-radius: 50px; /* شكل الكبسولة Pill Shape */
+    z-index: 1; /* طبقة خلفية للمحتوى */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 /* تنسيق النصوص داخل العمود الكحلي */
