@@ -1164,6 +1164,22 @@ h4 {
     background: #EDEDED;
 }
 
+.icon-gold-circle {
+    background: #f7b500;
+    color: #051242;
+    width: 36px; /* تكبير الدائرة قليلاً */
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px; /* تكبير علامة الصح */
+    font-weight: 900;
+}
+.featured-header-text{
+    color: var(--color-white);
+}
+
 /* نصوص الميزات */
 .featured-col-box {
     position: absolute;
@@ -1209,9 +1225,7 @@ h4 {
     font-size: 16px;
 }
 
-.cfeatured-header-text{
-    color: var(--color-white);
-}
+
 .icon-dark-circle {
     background: #4A4A4A; /* لون رمادي داكن بدلاً من الأسود الصريح */
     color: #fff;
