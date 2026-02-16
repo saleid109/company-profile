@@ -1149,10 +1149,10 @@ h4 {
 }
 
 /* تصغير الخلايا لجعل الجدول أنحف */
-.comparison-table th, .comparison-table td {
-    padding: 15px 10px; 
+.comparison-table th,
+.comparison-table td {
     text-align: center;
-    border: none;
+    vertical-align: middle;
 }
 
 /* الصفوف الرمادية */
@@ -1161,12 +1161,11 @@ h4 {
 }
 
 /* نصوص الميزات */
+
 .feature-text {
     text-align: right !important;
     font-weight: 700;
-    color: #333;
-    font-size: 16px;
-    padding-right: 30px !important;
+    padding-right: 25px !important;
 }
 
 
