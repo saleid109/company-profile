@@ -1153,7 +1153,21 @@ h4 {
 .comparison-table tbody tr:nth-child(odd) {
     background: #f1f1f1;
 }
+.comparison-table {
+    position: relative;
+}
 
+.comparison-table::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    bottom: -15px;
+    right: 33.33%;   /* لأن عندك 3 أعمدة */
+    width: 33.33%;
+    background: #081a4b;
+    border-radius: 35px;
+    z-index: 0;
+}
 /* عمود الميزات (النص اليمين) */
 .feature-text {
     text-align: right !important;
@@ -1163,20 +1177,6 @@ h4 {
 }
 
 /* العمود البارز (نقطة صعود - المنتصف) */
-.featured,
-.featured-head {
-    /* استخدام التدرج اللوني المذكور في فيجما */
-    background: linear-gradient(180deg, rgba(25, 58, 106, 0.28) 0%, rgba(25, 58, 106, 0) 100%) !important;
-
-    background: rgba(8, 26, 75, 0.9) !important;
-
-    color: var(--color-w) !important;
-    border: none !important;
-    position: relative;
-    z-index: 10;
-}
-
-/* لضمان ظهور المحتوى بوضوح فوق الشفافية */
 .featured-head {
     background: linear-gradient(180deg, #081a4b 0%, #0b235f 100%);
     color: var(--color-primary);
@@ -1185,6 +1185,8 @@ h4 {
     padding: 30px 0 !important;
     position: relative;
 }
+
+
 
 .featured {
     background: #081a4b;
