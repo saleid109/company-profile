@@ -1160,31 +1160,32 @@ h4 {
 
 /* نصوص الميزات */
 
+.featured-col-box {
+    position: absolute;
+    top: -40px;    /* بروز علوي كما في الصورة */
+    bottom: -40px; /* بروز سفلي كما في الصورة */
+    width: 33.333%; /* تغطية عمود واحد بالضبط */
+    /* بما أن الجدول RTL والعمود المطلوب هو الأوسط (الثاني) */
+    right: 33.333%; 
+    background: #051242;
+    border-radius: 40px; 
+    z-index: 2; /* يقع فوق خلفية الجدول */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+/* --- ضمان ظهور النصوص والأيقونات فوق الصندوق الكحلي --- */
+.comparison-table th.featured-header-text,
+.comparison-table td.featured-cell {
+    position: relative;
+    z-index: 3; /* أعلى من الصندوق الكحلي (z-index: 2) */
+    color: #ffffff !important; /* اللون الأبيض للنصوص فوق الكحلي */
+}
+
 .feature-text {
     text-align: right !important;
     font-weight: 700;
     padding-right: 35px !important;
     color: #051242;
-}
-
-.featured-col-box {
-    position: absolute;
-    top: -45px;    /* بروز علوي واضح */
-    bottom: -45px; /* بروز سفلي واضح */
-    width: 33.33%; /* يغطي عموداً واحداً بالضبط من أصل ثلاثة */
-    right: 33.33%; /* يبدأ بعد العمود الأول (الذي يشغل 33.33% من اليمين) */
-    background: #051242;
-    border-radius: 45px; /* زوايا دائرية قوية */
-    z-index: 2;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-    pointer-events: none;
-}
-/* ضمان ظهور المحتوى فوق الصندوق */
-.comparison-table th.featured-header-text,
-.comparison-table td.featured-cell {
-    position: relative;
-    z-index: 3;
-    color: #fff !important;
 }
 /* الأيقونات */
 .icon-gold-circle {
