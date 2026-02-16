@@ -1203,3 +1203,109 @@ Comparison Section
 .icon-dark {
     color: #333;
 }
+/*نهاية----------*
+/*----------قسم اعمالنا --------------------*/
+/* =================== تنسيقات قسم أعمالنا =================== */
+
+.portfolio-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+    direction: rtl;
+}
+
+.portfolio-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.portfolio-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+
+.portfolio-header p {
+    color: #666;
+    font-size: 18px;
+}
+
+/* الشبكة */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+}
+
+.portfolio-image {
+    position: relative;
+    aspect-ratio: 4/3;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* طبقة التفاصيل عند التمرير */
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--color-secondary) 0%, rgba(8, 26, 75, 0.4) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.overlay-content h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.overlay-content span {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.view-project {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 2px;
+}
+
+/* التجاوب */
+@media (max-width: 768px) {
+    
+}

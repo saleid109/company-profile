@@ -544,13 +544,10 @@
 
   /*==================================================================*/
 
-  20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  }
 
   /* اسم الميزة */
   .feature-text {
-    text-align: right !important;
+    text-align: right ;
     font-size: 18px;
     margin-bottom: 15px;
     color: var(--color-secondary);
@@ -575,6 +572,12 @@
   /* إزالة الخلفية الداكنة في الجوال */
   .featured {
     background: transparent !important;
+  }
+
+  .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
   }
 
 
