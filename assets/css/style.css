@@ -1138,10 +1138,27 @@ h4 {
 /* الجدول في الجهة اليمنى - تصغير العرض الكلي */
 .comparison-table-wrapper {
     position: relative;
-    flex: 0.9;
+    flex: 1.2;
 }
 .comparison-table {
-    table-layout: fixed;
+    width: 100%;
+    table-layout: fixed; /* ضروري لضمان تساوي عرض الأعمدة */
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 40px;
+    overflow: visible; /* للسماح للصندوق الكحلي بالبروز */
+    box-shadow: 0 10px 50px rgba(0,0,0,0.03);
+    position: relative;
+    z-index: 1;
+}
+
+/* تنسيق الخلايا */
+.comparison-table th, 
+.comparison-table td {
+    height: 70px; /* توحيد ارتفاع الصفوف */
+    text-align: center;
+    vertical-align: middle;
+    border: none;
 }
 
 
@@ -1150,12 +1167,7 @@ h4 {
     padding: 20px 15px;
 }
 
-/* تصغير الخلايا لجعل الجدول أنحف */
-.comparison-table th,
-.comparison-table td {
-    text-align: center;
-    vertical-align: middle;
-}
+
 
 /* الصفوف الرمادية */
 .comparison-table tbody tr:nth-child(even) {
@@ -1163,28 +1175,26 @@ h4 {
 }
 
 /* نصوص الميزات */
-
 .feature-text {
     text-align: right !important;
     font-weight: 700;
-    padding-right: 25px !important;
+    padding-right: 35px !important;
+    color: #051242;
 }
 
+/* الصندوق الكحلي البارز - الضبط الدقيق */
 .featured-col-box {
     position: absolute;
-    top: -40px;
-    bottom: -40px;
-
-    width: 33.333%;
-    right: 39.333%; /* لأنه العمود الأوسط */
-
+    top: -45px;    /* بروز علوي واضح */
+    bottom: -45px; /* بروز سفلي واضح */
+    width: 33.33%; /* يغطي عموداً واحداً بالضبط من أصل ثلاثة */
+    right: 33.33%; /* يبدأ بعد العمود الأول (الذي يشغل 33.33% من اليمين) */
     background: #051242;
-    border-radius: 40px;
+    border-radius: 45px; /* زوايا دائرية قوية */
     z-index: 2;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
     pointer-events: none;
 }
-
 
 
 /* تنسيق النصوص داخل العمود الكحلي */
