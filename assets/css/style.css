@@ -1215,7 +1215,6 @@ h4 {
 /*==============================================*
 
 /*========================قسم اعمالنا====================*/
-
 .projects-section {
     padding: 80px 0;
     background: var(--color-bg-light);
@@ -1240,10 +1239,12 @@ h4 {
     display: inline-block;
 }
 
-
+/* تحسين حاوية السلايدر لتوسيع مساحة الأسهم والنقاط */
 .projects-swiper {
     width: 100%;
-    padding: 0 0 29px !important;
+    position: relative;
+    /* إضافة padding جانبي 60px ليظهر السهم بوضوح خارج منطقة الصور */
+    padding: 0 60px 60px !important; 
 }
 
 .projects-swiper .swiper-slide {
@@ -1252,7 +1253,6 @@ h4 {
     justify-content: center;
     box-sizing: border-box;
 }
-
 
 .app-card {
     display: flex;
@@ -1263,26 +1263,50 @@ h4 {
     max-width: 350px;
 }
 
-.swiper-button-next, .swiper-button-prev {
+/* تنسيق الأسهم - دمج القديم مع التحسينات الجديدة */
+.swiper-button-next, 
+.swiper-button-prev {
     background-color: transparent; 
     box-shadow: none;
-    color:var(--color-gray-text) ;
+    color: var(--color-secondary) !important; /* تغيير اللون ليكون واضحاً */
+    top: 40%; /* ليتوسط الصور عمودياً */
+    transform: translateY(-50%);
+    z-index: 100; /* لضمان ظهوره فوق الصور دائماً */
+    transition: all 0.3s ease;
 }
 
-.swiper-button-next::after, .swiper-button-prev::after {
-    font-size: 30px; /* حجم السهم */
+.swiper-button-next::after, 
+.swiper-button-prev::after {
+    font-size: 24px !important; /* حجم متوازن للسهم */
+    font-weight: bold;
+}
+
+/* تحديد أماكن الأسهم بدقة */
+.swiper-button-next {
+    right: 10px !important;
+}
+
+.swiper-button-prev {
+    left: 10px !important;
+}
+
+/* تأثير عند المرور على الأسهم */
+.swiper-button-next:hover, 
+.swiper-button-prev:hover {
+    color: var(--color-primary) !important;
+    transform: translateY(-50%) scale(1.2);
 }
 
 .app-card img {
     width: 100%;
     height: auto;
-    border-radius: 20px; /* ليتناسب مع راديوس فيجما */
+    border-radius: 20px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
 .app-card:hover img {
-    transform: scale(1.03); /* تأثير بسيط عند التمرير */
+    transform: scale(1.03);
 }
 
 .app-title {
@@ -1290,6 +1314,17 @@ h4 {
     font-size: 20px;
     font-weight: 700;
     color: var(--color-secondary);
+}
+
+/* تنسيق النقاط السفلية (Pagination) */
+.swiper-pagination {
+    bottom: 0px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--color-primary) !important;
+    width: 25px; /* جعل النقطة النشطة أعرض قليلاً كشكل جمالي */
+    border-radius: 5px;
 }
 
 .view-all-container {
