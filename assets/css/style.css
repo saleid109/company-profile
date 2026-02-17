@@ -1246,11 +1246,21 @@ h4 {
     padding: 0 0 29px !important;
 }
 
+.projects-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+
 .app-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 33px; 
+    gap: 33px;
+    width: 100%;
+    max-width: 350px;
 }
 
 .swiper-button-next, .swiper-button-prev {
