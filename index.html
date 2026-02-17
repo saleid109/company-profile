@@ -497,32 +497,44 @@
     </section>
     <!-- ============= قسم أعمالنا     ============== -->
 
-    <section id="projects" class="projects-section">
-      <div class="container-projects">
+<section id="projects" class="projects-section">
+    <div class="container-projects">
         <div class="projects-text">
-          <h2>اعمالنا</h2>
+            <h2>أعمالنا</h2>
         </div>
 
-        <div class="projects-img">
-          <div class="application">
-            <a href="#projects" alt="تطبيق الخير">
-              <img src="./public/images/Frame37743.png" alt="تطبيق الخير">
-            </a>
-          </div>
-          <div class="application">
-            <a href="#projects" alt="تطبيق الخير">
-              <img src="./public/images/Frame37742.png" alt="تطبيق يوسف">
-            </a>
-          </div>
-          <div class="application">
-            <a href="#projects" alt="تطبيق الخير">
-              <img src="./public/images/Frame37744.png" alt="تطبيق تقنيون">
-            </a>
-          </div>
+        <div class="swiper projects-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide application">
+                    <div class="app-card">
+                        <img src="./public/images/Frame37743.png" alt="تطبيق الخير">
+                        <h3 class="app-title">تطبيق الخير</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide application">
+                    <div class="app-card">
+                        <img src="./public/images/Frame37742.png" alt="تطبيق يوسف">
+                        <h3 class="app-title">تطبيق يوسف</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide application">
+                    <div class="app-card">
+                        <img src="./public/images/Frame37744.png" alt="تطبيق تقنيون">
+                        <h3 class="app-title">تطبيق تقنيون</h3>
+                    </div>
+                </div>
+            </div>
 
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
-      </div>
-    </section>
+
+        <div class="view-all-container">
+            <a href="projects-page.html" class="btn-view-all">عرض كافة المشاريع</a>
+        </div>
+    </div>
+</section>
   </main>
   <script src="./assets/js/main.js"></script>
 </body>
