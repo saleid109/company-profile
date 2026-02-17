@@ -167,25 +167,33 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // تفعيل سلايدر الأعمال
-
 const swiper = new Swiper('.projects-swiper', {
-    slidesPerView: 1,
+    slidesPerView: 1, 
     spaceBetween: 20,
     loop: true,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
+    grabCursor: true, // يظهر يد السحب عند المرور بالماوس
+    
+    // تفعيل الأسهم
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+
+    // تفعيل النقاط السفلية
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
     },
+
+    // إعدادات الشاشات للمطابقة مع فيجما
     breakpoints: {
-        768: { slidesPerView: 2, spaceBetween: 30 },
-        1024: { slidesPerView: 3, spaceBetween: 40 }
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 33, // المسافة 33 بكسل كما في فيجما
+        }
     }
 });
