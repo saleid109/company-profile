@@ -1216,61 +1216,35 @@ h4 {
 
 /*========================قسم اعمالنا====================*/
 
-
-.projects-section{
-    padding: 60px 0px;
-    background: var(--color-bg-light);
+.container-projects {
+    max-width: 1200px;
+    margin: 0 auto; /* لتوسيط الحاوية في الشاشة */
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* جعل العنوان فوق السلايدر */
+    align-items: center;    /* توسيط العناصر أفقياً */
+    gap: 40px;             /* مسافة ثابتة بين العنوان والسلايدر */
 }
 
-.container-projects{
-max-width: 1200px;
-text-align: center;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-
-}
-
-.projects-text h2{
+.projects-text h2 {
     color: var(--color-secondary);
-    font-size:32px ;
+    font-size: 32px;
     font-weight: var(--weight-bold);
     font-family: var(--font-main);
-    justify-content: center;
-}
-.projects-swiper {
-    padding: 20px 50px; /* مساحة للأسهم الجانبية */
-}
-
-.app-card {
-    text-align: center;
-    transition: transform 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
 }
 
-.app-card img {
-    width: 100%;
-    max-width: 320px; /* التحكم في حجم عرض الموبايل داخل السلايدر */
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.app-title {
-    color: var(--color-secondary); /* اللون الكحلي */
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-/* تخصيص الأسهم لتكون دائرية وبيضاء */
-.swiper-button-next, .swiper-button-prev {
-    background-color:var(--color-white);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.swiper-button-next::after, .swiper-button-prev::after {
-    font-size: 18px; /* تصغير السهم الداخلي */
-    font-weight: bold;
-    color: var(--color-secondary);
+/* إضافة خط صغير تحت كلمة أعمالنا ليعطي لمسة جمالية (اختياري) */
+.projects-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-primary); /* اللون الأصفر */
 }
