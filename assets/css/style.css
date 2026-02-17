@@ -1157,6 +1157,7 @@ h4 {
     vertical-align: middle;
 }
 
+/*عنوان الصف*/
 .feature-text {
     text-align: right !important;
     padding-right: 40px !important;
@@ -1171,8 +1172,9 @@ h4 {
     z-index: 3;
 }
 
+/*انص العمود المميز*/
 .featured-header-text {
-    color: #f7b500 !important;
+    color: #f7b500 ;
     font-size: 22px;
     font-weight: 900;
     padding-top: 20px;
@@ -1212,7 +1214,7 @@ h4 {
 
 /*========================قسم اعمالنا====================*/
 .projects-section{
-    
+
 
 }
 
