@@ -1265,13 +1265,10 @@ h4 {
 /* تنسيق الأسهم - دمج القديم مع التحسينات الجديدة */
 .swiper-button-next, 
 .swiper-button-prev {
-    background-color: transparent; 
-    box-shadow: none;
-    color: var(--color-secondary) !important; /* تغيير اللون ليكون واضحاً */
-    top: 40%; /* ليتوسط الصور عمودياً */
+    color: var(--color-secondary) !important;
+    top: 45%;
     transform: translateY(-50%);
-    z-index: 100; /* لضمان ظهوره فوق الصور دائماً */
-    transition: all 0.3s ease;
+    z-index: 10;
 }
 
 .swiper-button-next::after, 
@@ -1282,11 +1279,11 @@ h4 {
 
 /* تحديد أماكن الأسهم بدقة */
 .swiper-button-next {
-    right: 10px !important;
+    left: -40px; 
 }
 
 .swiper-button-prev {
-    left: 10px !important;
+    right: -40px;
 }
 
 /* تأثير عند المرور على الأسهم */
