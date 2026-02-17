@@ -1243,8 +1243,7 @@ h4 {
 .projects-swiper {
     width: 100%;
     position: relative;
-    /* إضافة padding جانبي 60px ليظهر السهم بوضوح خارج منطقة الصور */
-    padding: 0 80px 100px !important; 
+    padding-bottom: 100px; /* فقط للنقاط السفلية */
 }
 
 .projects-swiper .swiper-slide {
