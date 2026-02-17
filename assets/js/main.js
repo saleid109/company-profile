@@ -167,37 +167,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // تفعيل سلايدر الأعمال
-const swiperProjects = new Swiper('.projects-swiper', {
-    slidesPerView: 1, // الافتراضي للجوال
-    spaceBetween: 20,
-    loop: true,
-    centeredSlides: true,
-
-    // تفعيل النقاط والأسهم
+var swiper = new Swiper(".projects-swiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
     pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
     },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    // استجابة الشاشات
     breakpoints: {
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-        },
-        1024: {
-            slidesPerView: 3,
-            spaceBetween: 40,
-        }
+        320: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
     }
 });
-
-// دالة فتح القائمة في الجوال (Toggle Menu)
-function toggleMenu() {
-    const navLinks = document.querySelector('.navbar-links');
-    navLinks.classList.toggle('active');
-}
