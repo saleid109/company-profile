@@ -1115,7 +1115,7 @@ h4 {
     text-align: right;
     max-width: 300px;
 }
-
+/*النص المميزر في العنوان*/
 .highlight-yellow { 
     color: #f7b500; 
 }
@@ -1125,7 +1125,7 @@ h4 {
     position: relative;
     flex: 1.2;
 }
-
+/*الجدول*/
 .comparison-table {
     width: 100%;
     table-layout: fixed;
@@ -1201,7 +1201,7 @@ h4 {
     font-weight: bold;
     box-shadow: 0 4px 15px rgba(247, 181, 0, 0.3);
 }
-
+/*الايقونة السوداء*/
 .icon-dark-circle {
     background: #444;
     color: #fff;
@@ -1221,5 +1221,10 @@ h4 {
 }
 
 .container-projects{
+max-width: 1200px;
+text-align: center;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
 
 }
