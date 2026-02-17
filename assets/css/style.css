@@ -1216,63 +1216,43 @@ h4 {
 
 /*========================قسم اعمالنا====================*/
 
+.projects-section {
+    padding: 80px 0;
+    background: var(--color-bg-light);
+}
+
 .container-projects {
     max-width: 1200px;
-    margin: 0 auto; /* لتوسيط الحاوية في الشاشة */
+    margin: 0 auto;
     padding: 0 20px;
-    text-align: center;
     display: flex;
-    flex-direction: column; /* جعل العنوان فوق السلايدر */
-    align-items: center;    /* توسيط العناصر أفقياً */
-    gap: 40px;             /* مسافة ثابتة بين العنوان والسلايدر */
+    flex-direction: column; /* ترتيب رأسي: العنوان ثم السلايدر */
+    align-items: center;    /* توسيط المحتوى أفقياً */
+    text-align: center;
 }
 
 .projects-text h2 {
     color: var(--color-secondary);
-    font-size: 32px;
-    font-weight: var(--weight-bold);
-    font-family: var(--font-main);
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px; /* مسافة تحت العنوان */
     position: relative;
     display: inline-block;
-    padding-bottom: 10px;
 }
 
-/* إضافة خط صغير تحت كلمة أعمالنا ليعطي لمسة جمالية (اختياري) */
+/* إضافة الخط الأصفر تحت "أعمالنا" كما في صور فيجما */
 .projects-text h2::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
+    width: 50px;
     height: 3px;
-    background-color: var(--color-primary); /* اللون الأصفر */
+    background-color: var(--color-primary);
 }
 
 .projects-swiper {
     width: 100%;
-    padding: 20px 0 60px; /* مساحة كافية للنقاط بالأسفل */
-    position: relative;
-}
-
-/* تحسين شكل بطاقة التطبيق */
-.app-card {
-    padding: 15px;
-    background: transparent; /* لتبدو الصور وكأنها تطفو كما في فيجما */
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.app-card:hover {
-    transform: translateY(-10px); /* تأثير حركة خفيف عند التمرير */
-}
-
-/* تخصيص موقع الأسهم في الشاشات الكبيرة فقط وإخفاؤها أو تصغيرها في الجوال */
-@media screen and (max-width: 768px) {
-    .swiper-button-next, .swiper-button-prev {
-        display: none; /* إخفاء الأسهم في الجوال والاعتماد على السحب بالإصبع */
-    }
-    
-    .projects-text h2 {
-        font-size: 26px;
-    }
+    padding: 20px 0 60px !important; /* مساحة للنقاط بالأسفل */
 }
