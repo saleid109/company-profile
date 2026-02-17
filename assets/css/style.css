@@ -1234,7 +1234,7 @@ h4 {
     color: var(--color-secondary);
     font-size: 40px; 
     font-weight: bold;
-    margin-bottom: 127px; 
+    margin-bottom: 80px; 
     position: relative;
     display: inline-block;
 }
@@ -1243,7 +1243,7 @@ h4 {
 .projects-swiper {
     width: 100%;
     position: relative;
-    padding-bottom: 100px; /* فقط للنقاط السفلية */
+    padding-bottom: 80px; 
 }
 
 .projects-swiper .swiper-slide {
@@ -1279,11 +1279,13 @@ h4 {
 
 /* تحديد أماكن الأسهم بدقة */
 .swiper-button-next {
-    left: -40px; 
+    right: -60px; 
+    left: auto;
 }
 
 .swiper-button-prev {
-    right: -40px;
+    left: -60px; 
+    right: auto;
 }
 
 /* تأثير عند المرور على الأسهم */
