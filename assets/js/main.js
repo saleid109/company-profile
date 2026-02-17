@@ -200,8 +200,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 spaceBetween: 20,
             },
             1024: {
-                slidesPerView: 3, // يظهر 3 تطبيقات معاً كما في فيجما
-                spaceBetween: 33, // المسافة 33px كما في القياسات
+                slidesPerView: 3, // يظهر 3 تطبيقات معاً   
+                spaceBetween: 33, // المسافة    
             }
         }
     });
