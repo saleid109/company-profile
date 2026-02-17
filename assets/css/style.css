@@ -1215,44 +1215,40 @@ h4 {
 /*==============================================*
 
 /*========================قسم اعمالنا====================*/
-
 .projects-section {
     padding: 80px 0;
     background: var(--color-bg-light);
 }
 
 .container-projects {
-    max-width: 1200px;
+    max-width: 1400px; /* العرض الموضح في فيجما */
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    flex-direction: column; /* ترتيب رأسي: العنوان ثم السلايدر */
-    align-items: center;    /* توسيط المحتوى أفقياً */
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
 .projects-text h2 {
     color: var(--color-secondary);
-    font-size: 40px;
+    font-size: 40px; /* الحجم المعتمد */
     font-weight: bold;
-    margin-bottom: 40px; /* مسافة تحت العنوان */
+    margin-bottom: 127px; /* المسافة الموضحة باللون الأحمر في فيجما */
     position: relative;
     display: inline-block;
 }
 
-/* إضافة الخط الأصفر تحت "أعمالنا" كما في صور فيجما */
-.projects-text h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background-color: var(--color-primary);
-}
+/* تم حذف الجزء الخاص بالخط الأصفر (::after) بناءً على طلبك */
 
 .projects-swiper {
     width: 100%;
-    padding: 20px 0 60px !important; /* مساحة للنقاط بالأسفل */
+    padding: 0 0 29px !important; /* المسافة السفلية الموضحة في فيجما 29px */
+}
+
+.app-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 33px; /* المسافة بين الصورة والنص كما في فيجما */
 }
