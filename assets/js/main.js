@@ -167,33 +167,42 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // تفعيل سلايدر الأعمال
-const swiper = new Swiper('.projects-swiper', {
-    slidesPerView: 1, 
-    spaceBetween: 20,
-    loop: true,
-    grabCursor: true, // يظهر يد السحب عند المرور بالماوس
-    
-    // تفعيل الأسهم
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
 
-    // تفعيل النقاط السفلية
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-
-    // إعدادات الشاشات للمطابقة مع فيجما
-    breakpoints: {
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
+document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.projects-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        grabCursor: true, // يظهر يد السحب للمستخدم
+        
+        // تفعيل التشغيل التلقائي
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
         },
-        1024: {
-            slidesPerView: 3,
-            spaceBetween: 33, // المسافة 33 بكسل كما في فيجما
+
+        // ربط الأسهم (هذا الجزء هو المسؤول عن إظهارها وعملها)
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // النقاط السفلية
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        // إعدادات الشاشات المختلفة (Figma Desktop)
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 3, // يظهر 3 تطبيقات معاً كما في فيجما
+                spaceBetween: 33, // المسافة 33px كما في القياسات
+            }
         }
-    }
+    });
 });
