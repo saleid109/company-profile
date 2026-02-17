@@ -1222,7 +1222,7 @@ h4 {
 }
 
 .container-projects {
-    max-width: 1400px; /* العرض الموضح في فيجما */
+    max-width: 1400px; 
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
@@ -1233,31 +1233,30 @@ h4 {
 
 .projects-text h2 {
     color: var(--color-secondary);
-    font-size: 40px; /* الحجم المعتمد */
+    font-size: 40px; 
     font-weight: bold;
-    margin-bottom: 127px; /* المسافة الموضحة باللون الأحمر في فيجما */
+    margin-bottom: 127px; 
     position: relative;
     display: inline-block;
 }
 
-/* تم حذف الجزء الخاص بالخط الأصفر (::after) بناءً على طلبك */
 
 .projects-swiper {
     width: 100%;
-    padding: 0 0 29px !important; /* المسافة السفلية الموضحة في فيجما 29px */
+    padding: 0 0 29px !important;
 }
 
 .app-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 33px; /* المسافة بين الصورة والنص كما في فيجما */
+    gap: 33px; 
 }
 
 .swiper-button-next, .swiper-button-prev {
-    background-color: transparent; /* إزالة الدائرة البيضاء */
+    background-color: transparent; 
     box-shadow: none;
-    color:var(--color-gray-text) ; /* لون أزرق صريح حسب الصورة */
+    color:var(--color-gray-text) ;
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
