@@ -1263,3 +1263,43 @@ h4 {
 .swiper-button-next::after, .swiper-button-prev::after {
     font-size: 30px; /* حجم السهم */
 }
+
+.app-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* ليتناسب مع راديوس فيجما */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.app-card:hover img {
+    transform: scale(1.03); /* تأثير بسيط عند التمرير */
+}
+
+.app-title {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-secondary);
+}
+
+.view-all-container {
+    margin-top: 50px;
+}
+
+.btn-view-all {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-view-all:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}

@@ -496,45 +496,56 @@
       </div>
     </section>
     <!-- ============= قسم أعمالنا     ============== -->
-
-<section id="projects" class="projects-section">
+<section id="projects" class="projects-section" aria-labelledby="projects-title">
     <div class="container-projects">
-        <div class="projects-text">
-            <h2>أعمالنا</h2>
-        </div>
+        <header class="projects-text">
+            <!-- استخدام id للربط مع aria-labelledby -->
+            <h2 id="projects-title">أعمالنا</h2>
+        </header>
 
-        <div class="swiper projects-swiper">
+        <!-- إضافة دور المنطقة للسلايدر -->
+        <div class="swiper projects-swiper" role="region" aria-label="معرض مشاريعنا">
             <div class="swiper-wrapper">
+                
+                <!-- مشروع 1: تطبيق الخير -->
                 <div class="swiper-slide application">
-                    <div class="app-card">
-                        <img src="./public/images/Frame37743.png" alt="تطبيق الخير">
+                    <article class="app-card">
+                        <!-- إضافة loading="lazy" لتحسين سرعة الصفحة -->
+                        <img src="./public/images/Frame37743.png" alt="واجهة تطبيق الخير للجوال" loading="lazy">
                         <h3 class="app-title">تطبيق الخير</h3>
-                    </div>
+                    </article>
                 </div>
+
+                <!-- مشروع 2: تطبيق يوسف -->
                 <div class="swiper-slide application">
-                    <div class="app-card">
-                        <img src="./public/images/Frame37742.png" alt="تطبيق يوسف">
+                    <article class="app-card">
+                        <img src="./public/images/Frame37742.png" alt="واجهة تطبيق يوسف الإلكتروني" loading="lazy">
                         <h3 class="app-title">تطبيق يوسف</h3>
-                    </div>
+                    </article>
                 </div>
+
+                <!-- مشروع 3: تطبيق تقنيون -->
                 <div class="swiper-slide application">
-                    <div class="app-card">
-                        <img src="./public/images/Frame37744.png" alt="تطبيق تقنيون">
+                    <article class="app-card">
+                        <img src="./public/images/Frame37744.png" alt="واجهة تطبيق تقنيون للخدمات التقنية" loading="lazy">
                         <h3 class="app-title">تطبيق تقنيون</h3>
-                    </div>
+                    </article>
                 </div>
+                
             </div>
 
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <!-- أزرار التنقل -->
+            <div class="swiper-button-next" role="button" aria-label="المشروع التالي"></div>
+            <div class="swiper-button-prev" role="button" aria-label="المشروع السابق"></div>
             <div class="swiper-pagination"></div>
         </div>
 
         <div class="view-all-container">
-            <a href="projects-page.html" class="btn-view-all">عرض كافة المشاريع</a>
+            <a href="projects-page.html" class="btn-view-all" aria-label="الانتقال لصفحة عرض كافة المشاريع">عرض كافة المشاريع</a>
         </div>
     </div>
 </section>
+
   </main>
   <script src="./assets/js/main.js"></script>
 </body>
