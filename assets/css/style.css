@@ -665,7 +665,88 @@ h4 {
 
 
 /* --- قسم خدماتنا (Services Section) --- */
+.services-section {
+    padding: 80px 0;
+    text-align: center;
+    direction: rtl;
+}
 
+/* القائمة الرئيسية - المسافات من Figma */
+.main-categories {
+    display: flex;
+    justify-content: center;
+    gap: 33px; /* القياس من Figma */
+    margin-bottom: 57px; /* المسافة من Figma */
+}
+
+.cat-btn {
+    padding: 12px 35px;
+    border: 2px solid #00015B;
+    border-radius: 40px;
+    background: transparent;
+    color: #00015B;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cat-btn.active {
+    background: #00015B;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 1, 91, 0.2);
+}
+
+/* القوائم الفرعية */
+.sub-categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.sub-btn {
+    padding: 8px 25px;
+    border: 1px solid #00015B;
+    border-radius: 20px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.sub-btn.active {
+    background: #00015B;
+    color: #fff;
+}
+
+/* إخفاء المحتوى غير النشط */
+.category-content {
+    display: none;
+}
+
+.category-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* شبكة الخدمات (3 أعمدة) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
 
