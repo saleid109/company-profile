@@ -689,7 +689,7 @@ h4 {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     direction: rtl;
 }
 
@@ -714,15 +714,16 @@ h4 {
 .sub-tabs {
     display: none;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 50px;
+    gap: 15px;
+    margin-bottom: 40px;
     direction: rtl;
     flex-wrap: wrap;
 }
 
 .sub-tabs.active {
-    display: flex;
-    animation: fadeIn 0.4s ease;
+    display: flex; 
+    justify-content: center;
+    animation: fadeIn 0.4s ease-in-out;
 }
 
 .sub-btn {
