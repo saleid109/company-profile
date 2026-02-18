@@ -664,7 +664,7 @@ h4 {
 /* ----- نهاية قسم مجالاتنا (Fields Section) ----- */
 
 /* --- قسم خدماتناا (Services Section) --- */
-/* --- قسم خدماتنا (Services Section) --- */
+
 .services-section {
     padding: 80px 0;
     background-color: var(--color-bg-light);
@@ -680,7 +680,7 @@ h4 {
     text-align: center;
     font-size: 32px;
     margin-bottom: 60px;
-    color: var(--color-primary);
+    color: #0a1b5b;
     font-weight: bold;
 }
 
@@ -689,54 +689,57 @@ h4 {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     direction: rtl;
-    flex-wrap: wrap; /* للسماح للأزرار بالانتقال إلى سطر جديد في الشاشات الصغيرة */
 }
 
 .main-btn {
     padding: 10px 28px;
-    border: 2px solid var(--color-primary);
+    border: 2px solid #0a1b5b;
     background: transparent;
-    color: var(--color-primary);
+    color: #0a1b5b;
     border-radius: 50px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    white-space: nowrap; /* منع تقسيم النص داخل الزر */
 }
 
 .main-btn:hover,
 .main-btn.active {
-    background: var(--color-primary);
+    background: #0a1b5b;
     color: #fff;
 }
 
-/* ===== التبويبات الفرعية (تطبق على sub-tabs داخل أي tab-panel) ===== */
-.tab-panel .sub-tabs {
-    display: flex; /* افتراضياً تكون مرئية في هذا الكود، يتم التحكم بها بـ JS */
+/* ===== التبويبات الفرعية ===== */
+.sub-tabs {
+    display: none;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 50px;
+    gap: 15px;
+    margin-bottom: 40px;
     direction: rtl;
     flex-wrap: wrap;
 }
 
+.sub-tabs.active {
+    display: flex; 
+    justify-content: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
 .sub-btn {
     padding: 8px 22px;
-    border: 2px solid var(--color-primary);
+    border: 2px solid #0a1b5b;
     background: transparent;
-    color: var(--color-primary);
+    color: #0a1b5b;
     border-radius: 50px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    white-space: nowrap;
 }
 
 .sub-btn:hover,
 .sub-btn.active {
-    background: var(--color-primary);
+    background: #0a1b5b;
     color: #fff;
 }
 
@@ -748,8 +751,12 @@ h4 {
 }
 
 .gallery-item {
-    display: none; /* يتم التحكم في العرض بواسطة JavaScript */
+    display: none;
     text-align: center;
+}
+
+.gallery-item.active {
+    display: block;
 }
 
 .gallery-item.show {
@@ -777,103 +784,10 @@ h4 {
 
 .gallery-item h3 {
     font-size: 18px;
-    color: var(--color-primary);
+    color: #0a1b5b;
     font-weight: bold;
 }
 
-/* ===== انيميشن ===== */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== تحسينات إمكانية الوصول (Accessibility Improvements) ===== */
-/* أنماط التركيز للعناصر التفاعلية */
-.main-btn:focus,
-.sub-btn:focus {
-    outline: 2px solid var(--color-focus); /* استخدام متغير للون التركيز */
-    outline-offset: 3px; /* إزاحة المؤشر خارج العنصر */
-    border-color: var(--color-focus); /* تغيير لون الحدود عند التركيز */
-}
-
-/* أنماط لوحات التبويب */
-.tab-panel {
-    display: none; /* افتراضياً مخفية */
-    outline: none; /* إزالة التركيز الافتراضي للمتصفح */
-}
-
-.tab-panel.active {
-    display: block;
-    animation: fadeIn 0.4s ease;
-}
-
-.tab-panel[hidden] {
-    display: none; /* التأكد من إخفاء اللوحات التي تحتوي على سمة hidden */
-}
-
-/* لجعل لوحات التبويب قابلة للتركيز بواسطة لوحة المفاتيح عند الحاجة */
-.tab-panel[tabindex="0"]:focus {
-    outline: 2px solid var(--color-focus);
-    outline-offset: 3px;
-}
-
-/* أنماط خاصة للتبويبات الفرعية داخل لوحات التبويب الرئيسية */
-/* هذا يضمن أن التبويبات الفرعية تظهر فقط عندما تكون لوحة التبويب الرئيسية نشطة */
-.tab-panel .sub-tabs {
-    display: none; /* إخفاء التبويبات الفرعية افتراضياً */
-}
-
-.tab-panel.active .sub-tabs {
-    display: flex; /* إظهار التبويبات الفرعية النشطة داخل اللوحة النشطة */
-}
-
-/* أنماط لوحات المحتوى الفرعية */
-.tab-panel .services-gallery.tab-panel {
-    display: none; /* إخفاء لوحات المحتوى الفرعية افتراضياً */
-}
-
-.tab-panel .services-gallery.tab-panel.active {
-    display: grid; /* إظهار لوحة المحتوى الفرعية النشطة كشبكة */
-}
-
-/* Media Queries للاستجابة */
-@media (max-width: 768px) {
-    .fields-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .section-title, .fields-title {
-        font-size: 28px;
-    }
-
-    .main-btn, .sub-btn {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-
-    .services-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    .fields-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .main-tabs, .sub-tabs {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .main-btn, .sub-btn {
-        width: 100%;
-    }
-
-    .services-gallery {
-        grid-template-columns: 1fr;
-    }
-}
 /* ===== انيميشن ===== */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(15px); }
