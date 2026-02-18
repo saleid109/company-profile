@@ -261,48 +261,41 @@
     </section>
     <!--=====================================================-->
     <!-- ----- قسم خدماتنا ----- -->
-    <section id="services" class="services-section">
-      <div class="container-services">
-        <h2 class="section-title">خدماتنا</h2>
+<section class="services-section" aria-labelledby="services-title">
+  <div class="container">
+    <h2 id="services-title" class="section-main-title">خدماتنا</h2>
 
-        <div class="main-tabs-grid" role="tablist">
+    <nav class="main-categories" aria-label="تصنيفات الخدمات الرئيسية">
+      <button class="cat-btn active" aria-expanded="true" onclick="toggleSub(this, 'digital-products')">منتجات رقمية</button>
+      <button class="cat-btn" aria-expanded="false" onclick="toggleSub(this, 'digital-service')">خدمة رقمية</button>
+      <button class="cat-btn" aria-expanded="false" onclick="toggleSub(this, 'job-ready')">تأهيل لسوق العمل</button>
+    </nav>
 
-          <div class="main-card active" data-main="products" role="tab">
-            <a href="products-page.html" class="page-link" title="انتقل للصفحة"><i class="fas fa-link"></i></a>
-            <div class="card-img-wrapper">
-              <img src="products-image.jpg" alt="منتجات رقمية">
-            </div>
-            <span class="card-label">منتجات رقمية</span>
-          </div>
-
-          <div class="main-card" data-main="service" role="tab">
-            <a href="service-page.html" class="page-link" title="انتقل للصفحة"><i class="fas fa-link"></i></a>
-            <div class="card-img-wrapper">
-              <img src="service-image.jpg" alt="خدمة رقمية">
-            </div>
-            <span class="card-label">خدمة رقمية</span>
-          </div>
-
-          <div class="main-card" data-main="training" role="tab">
-            <a href="training-page.html" class="page-link" title="انتقل للصفحة"><i class="fas fa-link"></i></a>
-            <div class="card-img-wrapper">
-              <img src="training-image.jpg" alt="تأهيل لسوق العمل">
-            </div>
-            <span class="card-label">تأهيل لسوق العمل</span>
-          </div>
-
-        </div>
-
-        <div id="products-sub" class="sub-tabs-wrapper active">
-          <button class="sub-btn" data-filter="web">تطوير الويب</button>
-          <button class="sub-btn" data-filter="apps">تطوير التطبيقات</button>
-          <button class="sub-btn" data-filter="marketing">التسويق</button>
-          <button class="sub-btn" data-filter="licenses">التراخيص</button>
-        </div>
-
+    <div id="digital-products" class="sub-categories-wrapper active">
+      <div class="sub-categories">
+        <button class="sub-btn active">تطوير الويب</button>
+        <button class="sub-btn">تطوير التطبيقات</button>
+        <button class="sub-btn">التسويق</button>
+        <button class="sub-btn">التراخيص</button>
       </div>
-    </section>
 
+      <div class="services-grid">
+        <article class="service-card">
+          <img src="path/to/img1.jpg" alt="واجهة نظام إداري متطور">
+          <h3>نظام إداري</h3>
+        </article>
+        <article class="service-card">
+          <img src="path/to/img2.jpg" alt="متجر إلكتروني متكامل الخدمات">
+          <h3>متجر إلكتروني</h3>
+        </article>
+        <article class="service-card">
+          <img src="path/to/img3.jpg" alt="موقع تعريفي لجمعية خيرية">
+          <h3>موقع تعريفي لجمعية</h3>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
     <!--==============================================-->
 
     <!-- قسم منصة التدريب -->
