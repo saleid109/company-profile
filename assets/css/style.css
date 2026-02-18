@@ -1362,17 +1362,20 @@ h4 {
 
 /*الحاوية الكبيرة*/
 .stats-section {
-    background-color: #050a44;
-    /* اللون الكحلي الداكن من الصورة */
+    background-color:var(--color-secondary);
     padding: 60px 0;
     text-align: center;
-    color: #fff;
+    color: var(--color-white);
     direction: rtl;
 }
 
-.stats-header h2 {
-    font-size: 2.5rem;
+.stats-title h2 {
+    font-size: 48px;
     margin-bottom: 15px;
+    color: var(--color-white);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-main);
+
 }
 
 .stats-header p {
@@ -1380,6 +1383,7 @@ h4 {
     margin: 0 auto 40px;
     font-size: 1rem;
     opacity: 0.9;
+    
 }
 
 .stats-grid {
