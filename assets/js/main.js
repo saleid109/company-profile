@@ -155,6 +155,71 @@ document.addEventListener("DOMContentLoaded", function () {
 ========================================================= */
 document.addEventListener("DOMContentLoaded", function () {
     if (typeof Swiper === "undefined") return;
+document.addEventListener('DOMContentLoaded', function () {
+
+    const mainBtns = document.querySelectorAll('.main-btn');
+    const subTabs = document.getElementById('digital-tabs');
+    const subBtns = document.querySelectorAll('.sub-btn');
+    const items = document.querySelectorAll('.gallery-item');
+
+    let currentMain = null;
+
+    // فلترة مزدوجة (رئيسي + فرعي)
+    function filterItems(main, sub) {
+        items.forEach(item => {
+            item.classList.remove('show');
+
+            if (
+                item.dataset.main === main &&
+                item.dataset.sub === sub
+            ) {
+                item.classList.add('show');
+            }
+        });
+    }
+
+    // عند الضغط على زر رئيسي
+    mainBtns.forEach(btn => {
+
+        btn.addEventListener('click', function () {
+
+            mainBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            currentMain = this.dataset.main;
+
+            // إظهار الأزرار الفرعية للمنتجات والخدمات فقط
+            if (currentMain === 'products' || currentMain === 'service') {
+                subTabs.classList.add('active');
+            } else {
+                subTabs.classList.remove('active');
+            }
+
+            // إخفاء جميع العناصر إلى أن يختار فرعي
+            items.forEach(item => item.classList.remove('show'));
+        });
+
+    });
+
+    // عند الضغط على زر فرعي
+    subBtns.forEach(btn => {
+
+        btn.addEventListener('click', function () {
+
+            subBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            const subType = this.dataset.sub;
+
+            if (currentMain) {
+                filterItems(currentMain, subType);
+            }
+
+        });
+
+    });
+
+});
 
     new Swiper(".projects-swiper", {
         slidesPerView: 1,
