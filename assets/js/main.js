@@ -93,55 +93,153 @@ document.addEventListener("DOMContentLoaded", function () {
 /* =========================================================
     قسم الخدمات (التبويبات الرئيسية + الفرعية)
 ========================================================= */
-document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mainTabsContainer = document.querySelector(".main-tabs");
     const mainBtns = document.querySelectorAll(".main-btn");
-    const subTabsContainers = document.querySelectorAll(".sub-tabs");
-    const galleryItems = document.querySelectorAll(".gallery-item");
-    const subBtns = document.querySelectorAll(".sub-btn");
+    const allTabPanels = document.querySelectorAll(".tab-panel");
 
-    // 1. تبديل التبويبات الرئيسية (المنتجات، الخدمات، التأهيل)
-    mainBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            // تغيير زر الحالة النشطة
-            mainBtns.forEach((b) => b.classList.remove("active"));
-            btn.classList.add("active");
+    // دالة لإظهار لوحة تبويب وإخفاء الأخرى
+    function showTabPanel(panelId) {
+        allTabPanels.forEach(panel => {
+            panel.classList.remove("active");
+            panel.setAttribute("hidden", "true");
+            panel.setAttribute("tabindex", "-1"); // جعل اللوحات غير النشطة غير قابلة للتركيز
+        });
+        const activePanel = document.getElementById(panelId);
+        if (activePanel) {
+            activePanel.classList.add("active");
+            activePanel.removeAttribute("hidden");
+            activePanel.setAttribute("tabindex", "0"); // جعل اللوحة النشطة قابلة للتركيز
+            activePanel.focus(); // نقل التركيز إلى لوحة التبويب النشطة
 
-            // إخفاء كل مجموعات الأزرار الفرعية
-            subTabsContainers.forEach((container) => container.classList.remove("active"));
+            // تفعيل أول تبويب فرعي إذا كانت اللوحة النشطة تحتوي على تبويبات فرعية
+            const subTabsContainer = activePanel.querySelector(".sub-tabs");
+            if (subTabsContainer) {
+                const firstSubBtn = subTabsContainer.querySelector(".sub-btn");
+                if (firstSubBtn && !firstSubBtn.classList.contains("active")) {
+                    firstSubBtn.click(); // تفعيل أول تبويب فرعي تلقائيًا
+                }
+            }
+        }
+    }
 
-            // إظهار المجموعة المناسبة بناءً على data-main
-            const targetId = `${btn.getAttribute("data-main")}-tabs`;
-            const targetContainer = document.getElementById(targetId);
-            if (targetContainer) {
-                targetContainer.classList.add("active");
+    // تهيئة التبويبات الرئيسية عند التحميل
+    const initialActiveMainBtn = document.querySelector(".main-btn.active");
+    if (initialActiveMainBtn) {
+        showTabPanel(initialActiveMainBtn.getAttribute("aria-controls"));
+    } else if (mainBtns.length > 0) {
+        mainBtns[0].classList.add("active");
+        mainBtns[0].setAttribute("aria-selected", "true");
+        showTabPanel(mainBtns[0].getAttribute("aria-controls"));
+    }
 
-                // اختيار أول زر فرعي تلقائياً في المجموعة المفتوحة (اختياري)
-                const firstSubBtn = targetContainer.querySelector(".sub-btn");
-                if (firstSubBtn) firstSubBtn.click();
+    // عند الضغط على زر تبويب رئيسي
+    mainTabsContainer.addEventListener("click", function (event) {
+        const clickedBtn = event.target.closest(".main-btn");
+        if (!clickedBtn) return;
+
+        mainBtns.forEach((btn) => {
+            btn.classList.remove("active");
+            btn.setAttribute("aria-selected", "false");
+        });
+
+        clickedBtn.classList.add("active");
+        clickedBtn.setAttribute("aria-selected", "true");
+
+        const targetPanelId = clickedBtn.getAttribute("aria-controls");
+        showTabPanel(targetPanelId);
+    });
+
+    // دعم التنقل بلوحة المفاتيح للتبويبات الرئيسية
+    mainTabsContainer.addEventListener("keydown", function (event) {
+        const currentActiveBtn = mainTabsContainer.querySelector(".main-btn.active");
+        let nextBtn = null;
+
+        if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+            event.preventDefault();
+            const btns = Array.from(mainBtns);
+            const currentIndex = btns.indexOf(currentActiveBtn);
+
+            if (event.key === "ArrowRight") {
+                nextBtn = btns[(currentIndex + 1) % btns.length];
+            } else if (event.key === "ArrowLeft") {
+                nextBtn = btns[(currentIndex - 1 + btns.length) % btns.length];
+            }
+
+            if (nextBtn) {
+                nextBtn.focus();
+                nextBtn.click();
+            }
+        }
+    });
+
+    // عند الضغط على زر تبويب فرعي (داخل لوحة تبويب رئيسية)
+    document.querySelectorAll(".tab-panel .sub-tabs").forEach(subTabsContainer => {
+        subTabsContainer.addEventListener("click", function (event) {
+            const clickedSubBtn = event.target.closest(".sub-btn");
+            if (!clickedSubBtn) return;
+
+            subTabsContainer.querySelectorAll(".sub-btn").forEach((btn) => {
+                btn.classList.remove("active");
+                btn.setAttribute("aria-selected", "false");
+            });
+
+            clickedSubBtn.classList.add("active");
+            clickedSubBtn.setAttribute("aria-selected", "true");
+
+            const targetSubPanelId = clickedSubBtn.getAttribute("aria-controls");
+            const parentPanel = clickedSubBtn.closest(".tab-panel"); // لوحة التبويب الرئيسية الحالية
+
+            if (parentPanel) {
+                // إخفاء جميع لوحات التبويب الفرعية داخل اللوحة الرئيسية
+                parentPanel.querySelectorAll(".services-gallery.tab-panel").forEach(panel => {
+                    panel.classList.remove("active");
+                    panel.setAttribute("hidden", "true");
+                    panel.setAttribute("tabindex", "-1");
+                });
+                // إظهار لوحة التبويب الفرعية المطابقة
+                const targetSubPanel = document.getElementById(targetSubPanelId);
+                if (targetSubPanel) {
+                    targetSubPanel.classList.add("active");
+                    targetSubPanel.removeAttribute("hidden");
+                    targetSubPanel.setAttribute("tabindex", "0");
+                    targetSubPanel.focus();
+                }
+            }
+        });
+
+        // دعم التنقل بلوحة المفاتيح للتبويبات الفرعية
+        subTabsContainer.addEventListener("keydown", function (event) {
+            const currentActiveSubBtn = subTabsContainer.querySelector(".sub-btn.active");
+            let nextSubBtn = null;
+
+            if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+                event.preventDefault();
+                const subBtns = Array.from(subTabsContainer.querySelectorAll(".sub-btn"));
+                const currentIndex = subBtns.indexOf(currentActiveSubBtn);
+
+                if (event.key === "ArrowRight") {
+                    nextSubBtn = subBtns[(currentIndex + 1) % subBtns.length];
+                } else if (event.key === "ArrowLeft") {
+                    nextSubBtn = subBtns[(currentIndex - 1 + subBtns.length) % subBtns.length];
+                }
+
+                if (nextSubBtn) {
+                    nextSubBtn.focus();
+                    nextSubBtn.click();
+                }
             }
         });
     });
 
-    // 2. فلترة المعرض عند الضغط على الأزرار الفرعية
-    subBtns.forEach((sBtn) => {
-        sBtn.addEventListener("click", () => {
-            // تغيير حالة الزر الفرعي النشط
-            subBtns.forEach((b) => b.classList.remove("active"));
-            sBtn.classList.add("active");
-
-            const filter = sBtn.getAttribute("data-filter");
-
-            galleryItems.forEach((item) => {
-                if (item.getAttribute("data-category") === filter) {
-                    item.style.display = "block";
-                    setTimeout(() => item.classList.add("show"), 10);
-                } else {
-                    item.classList.remove("show");
-                    item.style.display = "none";
-                }
-            });
-        });
+    // لجعل لوحات التبويب قابلة للتركيز بواسطة لوحة المفاتيح (عند الحاجة)
+    allTabPanels.forEach(panel => {
+        if (!panel.hasAttribute("tabindex")) {
+            panel.setAttribute("tabindex", "-1"); // افتراضياً غير قابلة للتركيز إلا إذا كانت نشطة
+        }
     });
+
 });
 
 /* =========================================================
