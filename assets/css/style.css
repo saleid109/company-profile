@@ -664,128 +664,138 @@ h4 {
 /* ----- نهاية قسم مجالاتنا (Fields Section) ----- */
 
 /* --- قسم خدماتناا (Services Section) --- */
-
-/* تنسيق أزرار التبويب */
 .services-section {
     padding: 80px 0;
-    background-color: var(--color-bg-light);
+    background-color: #f8f9fc;
 }
 
 .container-services {
     max-width: 1400px;
-    margin: 0 auto;
+    margin: auto;
     padding: 0 20px;
 }
 
-/* تنسيق العنوان الرئيسي للقسم */
 .section-title {
-    font-size: 32px;
-    color: var(--color-secondary);
-    font-weight: var(--weight-bold);
-    font-family: var(--font-main);
-    margin-bottom: 60px;
     text-align: center;
+    font-size: 32px;
+    margin-bottom: 60px;
+    color: #0a1b5b;
+    font-weight: bold;
 }
 
-/* حاوية أزرار التبويب */
-.services-tabs {
+/* ===== التبويبات الرئيسية ===== */
+.main-tabs {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
     direction: rtl;
+}
+
+.main-btn {
+    padding: 10px 28px;
+    border: 2px solid #0a1b5b;
+    background: transparent;
+    color: #0a1b5b;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-btn:hover,
+.main-btn.active {
+    background: #0a1b5b;
+    color: #fff;
+}
+
+/* ===== التبويبات الفرعية ===== */
+.sub-tabs {
+    display: none;
+    justify-content: center;
     gap: 12px;
     margin-bottom: 50px;
+    direction: rtl;
+    flex-wrap: wrap;
 }
 
-/* تنسيق زر التبويب */
-.tab-btn {
-    padding: 10px 25px;
-    border: 2px solid var(--color-secondary);
+.sub-tabs.active {
+    display: flex;
+    animation: fadeIn 0.4s ease;
+}
+
+.sub-btn {
+    padding: 8px 22px;
+    border: 2px solid #0a1b5b;
     background: transparent;
-    color: var(--color-secondary);
+    color: #0a1b5b;
     border-radius: 50px;
-    font-weight: var(--weight-bold);
-    font-family: var(--font-main);
+    font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-/* تأثير التحويم على زر التبويب */
-.tab-btn:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    transform: translateY(-3px);
+.sub-btn:hover,
+.sub-btn.active {
+    background: #0a1b5b;
+    color: #fff;
 }
 
-/* تنسيق زر التبويب النشط */
-
-.tab-btn.active {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-}
-
-/* تنسيق شبكة الصور */
+/* ===== المعرض ===== */
 .services-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* تنسيق كل عنصر في الشبكة */
 .gallery-item {
+    display: none;
     text-align: center;
-    transition: var(--transition);
 }
 
-/* تنسيق الصورة داخل العنصر */
+.gallery-item.show {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
 .gallery-image {
     overflow: hidden;
     border-radius: 12px;
     margin-bottom: 15px;
-    box-shadow: var(--shadow);
-    background-color: var(--color-bg-light);
-    border: 1px solid #f0f0f0;
-    /* إضافة إطار خفيف جداً يحدد البطاقة */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    /* ظل ناعم جداً وليس أسود حاد */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-/* تنسيق الصورة داخل الحاوية */
 .gallery-image img {
     width: 100%;
     height: 250px;
-    display: block;
     object-fit: cover;
-    /*لجعل الصور منسقة*/
-    transition: transform 0.5s ease;
+    transition: 0.5s;
 }
 
-/* تأثير التحويم على الصورة */
 .gallery-item:hover img {
     transform: scale(1.1);
-    /* تأثير تكبير عند الهوفر */
 }
 
-/* تنسيق عنوان كل صورة */
 .gallery-item h3 {
-    font-size: 1.2rem;
-    color: var(--color-secondary);
-    font-weight: var(--weight-bold);
-    margin: 0;
+    font-size: 18px;
+    color: #0a1b5b;
+    font-weight: bold;
 }
 
-/* تأثير ظهور العناصر عند التصفية */
+/* ===== انيميشن ===== */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+/* ===== موبايل ===== */
+@media (max-width: 768px) {
+    .main-tabs {
+        flex-direction: column;
+        align-items: center;
     }
 }
+
 
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
 
