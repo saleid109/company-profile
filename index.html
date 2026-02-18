@@ -216,81 +216,53 @@
     </section>
 
     <!--قسم مجالتنا-->
-<section id="services" class="services-section">
-  <div class="container-services">
-
-    <h2 class="section-title">خدماتنا</h2>
-
-    <!-- التبويبات الرئيسية -->
-    <div class="main-tabs">
-      <button class="main-btn active" data-main="products">منتجات رقمية</button>
-      <button class="main-btn" data-main="service">خدمة رقمية</button>
-      <button class="main-btn" data-main="training">تأهيل لسوق العمل</button>
-    </div>
-
-    <!-- التبويبات الفرعية -->
-    <div class="sub-tabs" data-parent="products">
-      <button class="sub-btn active" data-sub="website">موقع تعريفي</button>
-      <button class="sub-btn" data-sub="store">متجر إلكتروني</button>
-      <button class="sub-btn" data-sub="system">نظام إداري</button>
-    </div>
-
-    <div class="sub-tabs" data-parent="service">
-      <button class="sub-btn active" data-sub="website">موقع تعريفي</button>
-      <button class="sub-btn" data-sub="store">متجر إلكتروني</button>
-      <button class="sub-btn" data-sub="system">نظام إداري</button>
-    </div>
-
-    <div class="sub-tabs" data-parent="training">
-      <button class="sub-btn active" data-sub="management">إدارة</button>
-      <button class="sub-btn" data-sub="design">تصاميم</button>
-      <button class="sub-btn" data-sub="tech">تقنية</button>
-    </div>
-
-    <!-- المعرض -->
-    <div class="services-gallery">
-
-      <!-- منتجات رقمية -->
-      <article class="gallery-item" data-main="products" data-sub="website">
-        <div class="gallery-image">
-          <img src="./public/images/project1.png">
+    <section id="fields" class="fields-section" aria-labelledby="fields-titles">
+      <div class="fields-container">
+        <!-- العنوان الرئيسي للمجالات -->
+        <div class="fields-header">
+          <h2 id="fields-titles" class="fields-title">مجالاتنا</h2>
         </div>
-        <h3>موقع تعريفي - منتج</h3>
-      </article>
-
-      <article class="gallery-item" data-main="products" data-sub="store">
-        <div class="gallery-image">
-          <img src="./public/images/project1.png">
+        <!-- رسم توضيحي للمجالات -->
+        <div class="fields-icon-wrapper">
+          <img src="./public/images/yellow-arrows.png" alt="رسم توضيحي لمجالات عمل شركة نقطة صعود" />
         </div>
-        <h3>متجر إلكتروني - منتج</h3>
-      </article>
-
-      <!-- خدمة رقمية -->
-      <article class="gallery-item" data-main="service" data-sub="website">
-        <div class="gallery-image">
-          <img src="./public/images/project2.png">
+        <!-- شبكة البطاقات للمجالات -->
+        <div class="fields-grid">
+          <!-- بطاقة مجال تأهيل الكفاءات لسوق العمل -->
+          <article class="field-card">
+            <div class="field-icon-box" aria-hidden="true">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <h3>تأهيل الكفاءات لسوق العمل</h3>
+          </article>
+          <!-- بطاقة مجال تطوير الحلول الرقمية -->
+          <article class="field-card">
+            <div class="field-icon-box" aria-hidden="true">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>تطوير الحلول الرقمية</h3>
+          </article>
+          <!-- بطاقة مجال بناء فرق العمل -->
+          <article class="field-card">
+            <div class="field-icon-box" aria-hidden="true">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>بناء فرق العمل لتحقيق النجاح المشترك</h3>
+          </article>
+          <!-- بطاقة مجال تعزيز التعاون مع الأطراف الداعمة للنمو المستدام -->
+          <article class="field-card">
+            <div class="field-icon-box" aria-hidden="true">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>تعزيز التعاون مع الأطراف الداعمة للنمو المستدام</h3>
+          </article>
         </div>
-        <h3>موقع تعريفي - خدمة</h3>
-      </article>
-
-      <!-- تدريب -->
-      <article class="gallery-item" data-main="training" data-sub="management">
-        <div class="gallery-image">
-          <img src="./public/images/project2.png">
-        </div>
-        <h3>دورة إدارة مشاريع</h3>
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
+      </div>
+    </section>
     <!--=====================================================-->
     <!-- ----- قسم خدماتنا ----- -->
 <section id="services-portfolio" class="services-section">
   <div class="container-services">
-
     <h2 class="section-title">خدماتنا</h2>
 
     <!-- ===== التبويبات الرئيسية ===== -->
@@ -300,46 +272,57 @@
       <button class="main-btn" data-main="training">تأهيل لسوق العمل</button>
     </div>
 
-    <!-- ===== التبويبات الفرعية المشتركة (للمنتجات + الخدمات) ===== -->
-    <div class="sub-tabs" id="digital-tabs">
-      <button class="sub-btn" data-sub="website">موقع تعريفي</button>
-      <button class="sub-btn" data-sub="store">متجر إلكتروني</button>
-      <button class="sub-btn" data-sub="system">نظام إداري</button>
+    <!-- ===== تبويبات خدمة رقمية ===== -->
+    <div class="sub-tabs" id="service-tabs">
+      <button class="sub-btn" data-filter="web">تطوير الويب</button>
+      <button class="sub-btn" data-filter="apps">تطوير التطبيقات</button>
+      <button class="sub-btn" data-filter="marketing">التسويق</button>
+      <button class="sub-btn" data-filter="licenses">التراخيص</button>
     </div>
 
-    <!-- ===== تبويبات التأهيل ===== -->
-    <div class="sub-tabs" id="training-tabs">
-      <button class="sub-btn" data-sub="management">إدارة</button>
-      <button class="sub-btn" data-sub="design">تصاميم</button>
-      <button class="sub-btn" data-sub="tech">تقنية</button>
-    </div>
+    
 
-    <!-- ===== معرض الأعمال ===== -->
-<div class="services-gallery">
-
-  <!-- منتجات رقمية -->
-  <article class="gallery-item" data-main="products" data-sub="website">
-    <img src="./public/images/project1.png">
-    <h3>موقع تعريفي - منتج</h3>
-  </article>
-
-  <article class="gallery-item" data-main="products" data-sub="store">
-    <img src="./public/images/project1.png">
-    <h3>متجر إلكتروني - منتج</h3>
-  </article>
-
-  <!-- خدمات رقمية -->
-  <article class="gallery-item" data-main="service" data-sub="website">
-    <img src="./public/images/project2.png">
-    <h3>موقع تعريفي - خدمة</h3>
-  </article>
-
+    <!-- ===== التبويبات الفرعية المشتركة ===== -->
+<div class="sub-tabs" id="digital-tabs">
+  <button class="sub-btn" data-sub="website">موقع تعريفي</button>
+  <button class="sub-btn" data-sub="store">متجر إلكتروني</button>
+  <button class="sub-btn" data-sub="system">نظام إداري</button>
 </div>
 
 
+    <!-- ===== تبويبات التأهيل ===== -->
+    <div class="sub-tabs" id="training-tabs">
+      <button class="sub-btn" data-filter="management">إدارة</button>
+      <button class="sub-btn" data-filter="design">تصاميم</button>
+      <button class="sub-btn" data-filter="tech">تقنية</button>
+    </div>
+
+    <!-- ===== معرض الأعمال ===== -->
+    <div class="services-gallery">
+
+      <article class="gallery-item" data-category="web">
+        <img src="./public/images/project2.png" />
+        <h3>موقع تعريفي لجمعية</h3>
+      </article>
+
+      <article class="gallery-item" data-category="apps">
+        <img src="./public/images/project1.png" />
+        <h3>تطبيق جوال</h3>
+      </article>
+
+      <article class="gallery-item" data-category="products">
+        <img src="./public/images/project1.png" />
+        <h3>متجر إلكتروني</h3>
+      </article>
+
+      <article class="gallery-item" data-category="management">
+        <img src="./public/images/project2.png" />
+        <h3>دورة إدارة مشاريع</h3>
+      </article>
+
+    </div>
   </div>
 </section>
-
 
 
     <!--==============================================-->
