@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainTabsContainer = document.querySelector(".main-tabs");
     const mainBtns = document.querySelectorAll(".main-btn");
     const allTabPanels = document.querySelectorAll(".tab-panel");
+    const allSubTabsContainers = document.querySelectorAll(".sub-tabs");
 
     // دالة لإظهار لوحة تبويب وإخفاء الأخرى
     function showTabPanel(panelId) {
@@ -105,6 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
             panel.classList.remove("active");
             panel.setAttribute("hidden", "true");
             panel.setAttribute("tabindex", "-1"); // جعل اللوحات غير النشطة غير قابلة للتركيز
+        });
+        // إخفاء جميع حاويات التبويبات الفرعية بشكل صريح
+        allSubTabsContainers.forEach(subTabs => {
+            subTabs.classList.remove("active");
         });
         const activePanel = document.getElementById(panelId);
         if (activePanel) {
@@ -116,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // تفعيل أول تبويب فرعي إذا كانت اللوحة النشطة تحتوي على تبويبات فرعية
             const subTabsContainer = activePanel.querySelector(".sub-tabs");
             if (subTabsContainer) {
+                subTabsContainer.classList.add("active"); // إظهار حاوية التبويبات الفرعية
                 const firstSubBtn = subTabsContainer.querySelector(".sub-btn");
                 if (firstSubBtn && !firstSubBtn.classList.contains("active")) {
                     firstSubBtn.click(); // تفعيل أول تبويب فرعي تلقائيًا
@@ -192,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const parentPanel = clickedSubBtn.closest(".tab-panel"); // لوحة التبويب الرئيسية الحالية
 
             if (parentPanel) {
-                // إخفاء جميع لوحات التبويب الفرعية داخل اللوحة الرئيسية
+                // إخفاء جميع لوحات المحتوى الفرعية (gallery) داخل اللوحة الرئيسية
                 parentPanel.querySelectorAll(".services-gallery.tab-panel").forEach(panel => {
                     panel.classList.remove("active");
                     panel.setAttribute("hidden", "true");
@@ -207,38 +213,43 @@ document.addEventListener("DOMContentLoaded", function () {
                     targetSubPanel.focus();
                 }
             }
-        });
-
-        // دعم التنقل بلوحة المفاتيح للتبويبات الفرعية
-        subTabsContainer.addEventListener("keydown", function (event) {
-            const currentActiveSubBtn = subTabsContainer.querySelector(".sub-btn.active");
-            let nextSubBtn = null;
-
-            if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
-                event.preventDefault();
-                const subBtns = Array.from(subTabsContainer.querySelectorAll(".sub-btn"));
-                const currentIndex = subBtns.indexOf(currentActiveSubBtn);
-
-                if (event.key === "ArrowRight") {
-                    nextSubBtn = subBtns[(currentIndex + 1) % subBtns.length];
-                } else if (event.key === "ArrowLeft") {
-                    nextSubBtn = subBtns[(currentIndex - 1 + subBtns.length) % subBtns.length];
-                }
-
-                if (nextSubBtn) {
-                    nextSubBtn.focus();
-                    nextSubBtn.click();
-                }
+            // إظهار لوحة التبويب الفرعية المطابقة
+            const targetSubPanel = document.getElementById(targetSubPanelId);
+            if (targetSubPanel) {
+                targetSubPanel.classList.add("active");
+                targetSubPanel.removeAttribute("hidden");
+                targetSubPanel.setAttribute("tabindex", "0");
+                targetSubPanel.focus();
             }
-        });
-    });
-
-    // لجعل لوحات التبويب قابلة للتركيز بواسطة لوحة المفاتيح (عند الحاجة)
-    allTabPanels.forEach(panel => {
-        if (!panel.hasAttribute("tabindex")) {
-            panel.setAttribute("tabindex", "-1"); // افتراضياً غير قابلة للتركيز إلا إذا كانت نشطة
         }
     });
+
+    // دعم التنقل بلوحة المفاتيح للتبويبات الفرعية
+    subTabsContainer.addEventListener("keydown", function (event) {
+        const currentActiveSubBtn = subTabsContainer.querySelector(".sub-btn.active");
+        let nextSubBtn = null;
+
+        if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+            event.preventDefault();
+            const subBtns = Array.from(subTabsContainer.querySelectorAll(".sub-btn"));
+            const currentIndex = subBtns.indexOf(currentActiveSubBtn);
+
+            if (event.key === "ArrowRight") {
+                nextSubBtn = subBtns[(currentIndex + 1) % subBtns.length];
+            } else if (event.key === "ArrowLeft") {
+                nextSubBtn = subBtns[(currentIndex - 1 + subBtns.length) % subBtns.length];
+            }
+
+            if (nextSubBtn) {
+                nextSubBtn.focus();
+                nextSubBtn.click();
+            }
+        }
+    });
+});
+
+  // لجعل لوحات التبويب قابلة للتركيز بواسطة لوحة المفاتيح (عند الحاجة)
+  // هذا الجزء يتم التعامل معه الآن داخل دالة showTabPanel
 
 });
 
