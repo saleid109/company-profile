@@ -138,30 +138,29 @@ function toggleMenu() {
         body.style.overflow = 'auto'; // إعادة التمرير عند الإغلاق
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contentItems = document.querySelectorAll('.service-detail-item');
 
-document.addEventListener('DOMContentLoaded', function () {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // 1. إزالة الحالة النشطة من كل الأزرار
+            tabs.forEach(t => t.classList.remove('active'));
+            // 2. إضافة الحالة النشطة للزر الذي تم الضغط عليه
+            this.classList.add('active');
 
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // 1. تحديث الزر النشط
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            // 2. منطق الفلترة
-            const filterValue = button.getAttribute('data-filter');
-
-            galleryItems.forEach(item => {
-                // إذا اخترنا الكل (all) أو تطابقت الفئة مع الفلتر
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                    item.style.display = ''; // يعيد عرض العنصر حسب تنسيق Grid الأصلي
-                    item.style.opacity = '1';
-                    item.style.animation = 'fadeIn 0.5s ease forwards';
-                } else {
-                    item.style.display = 'none'; // إخفاء العناصر غير المطلوبة
-                }
+            // 3. إخفاء جميع أقسام المحتوى
+            contentItems.forEach(item => {
+                item.style.display = 'none';
             });
+
+            // 4. إظهار القسم المطلوب بناءً على data-target
+            const targetId = this.getAttribute('data-target');
+            const targetContent = document.getElementById('content-' + targetId);
+            
+            if (targetContent) {
+                targetContent.style.display = 'block';
+            }
         });
     });
 });
