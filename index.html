@@ -265,12 +265,12 @@
   <div class="container">
     <h2 id="services-title" class="section-main-title">خدماتنا</h2>
 
-    <nav class="main-categories" aria-label="تصنيفات الخدمات الرئيسية">
-      <button class="cat-btn active" aria-expanded="true" onclick="toggleSub(this, 'digital-products')">منتجات رقمية</button>
-      <button class="cat-btn" aria-expanded="false" onclick="toggleSub(this, 'digital-service')">خدمة رقمية</button>
-      <button class="cat-btn" aria-expanded="false" onclick="toggleSub(this, 'job-ready')">تأهيل لسوق العمل</button>
+    <nav class="main-categories" role="tablist">
+      <button class="cat-btn active" onclick="showCategory(event, 'digital-products')" role="tab" aria-selected="true">منتجات رقمية</button>
+      <button class="cat-btn" onclick="showCategory(event, 'digital-services')" role="tab" aria-selected="false">خدمة رقمية</button>
+      <button class="cat-btn" onclick="showCategory(event, 'job-ready')" role="tab" aria-selected="false">تأهيل لسوق العمل</button>
     </nav>
-<!--قائمة فرعية خدمة رقمية-->
+
     <div id="digital-products" class="sub-categories-wrapper active">
       <div class="sub-categories">
         <button class="sub-btn active">تطوير الويب</button>
@@ -278,67 +278,45 @@
         <button class="sub-btn">التسويق</button>
         <button class="sub-btn">التراخيص</button>
       </div>
-
       <div class="services-grid">
         <article class="service-card">
-          <img src="path/to/img1.jpg" alt="واجهة نظام إداري متطور">
+          <img src="img1.jpg" alt="نظام إداري متكامل">
           <h3>نظام إداري</h3>
         </article>
         <article class="service-card">
-          <img src="path/to/img2.jpg" alt="متجر إلكتروني متكامل الخدمات">
+          <img src="img2.jpg" alt="متجر إلكتروني احترافي">
           <h3>متجر إلكتروني</h3>
         </article>
         <article class="service-card">
-          <img src="path/to/img3.jpg" alt="موقع تعريفي لجمعية خيرية">
+          <img src="img3.jpg" alt="موقع تعريفي للجمعيات">
           <h3>موقع تعريفي لجمعية</h3>
         </article>
       </div>
     </div>
-<!--قائمة منتجات  رقمية-->
-    <div id="digital-products" class="sub-categories-wrapper active">
-      <div class="sub-categories">
-        <button class="sub-btn active">تطوير الويب</button>
-        <button class="sub-btn">تطوير التطبيقات</button>
-        <button class="sub-btn">التسويق</button>
-        <button class="sub-btn">التراخيص</button>
-      </div>
 
+    <div id="digital-services" class="sub-categories-wrapper">
+      <div class="sub-categories">
+        <button class="sub-btn active">استشارات تقنية</button>
+        <button class="sub-btn">تحليل بيانات</button>
+        <button class="sub-btn">أمن سيبراني</button>
+      </div>
       <div class="services-grid">
-        <article class="service-card">
-          <img src="path/to/img1.jpg" alt="واجهة نظام إداري متطور">
-          <h3>نظام إداري</h3>
-        </article>
-        <article class="service-card">
-          <img src="path/to/img2.jpg" alt="متجر إلكتروني متكامل الخدمات">
-          <h3>متجر إلكتروني</h3>
-        </article>
-        <article class="service-card">
-          <img src="path/to/img3.jpg" alt="موقع تعريفي لجمعية خيرية">
-          <h3>موقع تعريفي لجمعية</h3>
-        </article>
+        <article class="service-card"><img src="s1.jpg" alt="استشارة"><h3>استشارة تقنية</h3></article>
+        <article class="service-card"><img src="s2.jpg" alt="بيانات"><h3>تحليل بيانات</h3></article>
+        <article class="service-card"><img src="s3.jpg" alt="أمن"><h3>أمن المعلومات</h3></article>
       </div>
     </div>
-<!--قائمة تاهيل لسوق العمل -->
-    <div id="digital-products" class="sub-categories-wrapper active">
+
+    <div id="job-ready" class="sub-categories-wrapper">
       <div class="sub-categories">
-        <button class="sub-btn active">ادارة </button>
-        <button class="sub-btn">تقني </button>
+        <button class="sub-btn active">إدارة</button>
+        <button class="sub-btn">تقني</button>
         <button class="sub-btn">تصاميم</button>
       </div>
-
       <div class="services-grid">
-        <article class="service-card">
-          <img src="path/to/img1.jpg" alt="واجهة نظام إداري متطور">
-          <h3>نظام إداري</h3>
-        </article>
-        <article class="service-card">
-          <img src="path/to/img2.jpg" alt="متجر إلكتروني متكامل الخدمات">
-          <h3>متجر إلكتروني</h3>
-        </article>
-        <article class="service-card">
-          <img src="path/to/img3.jpg" alt="موقع تعريفي لجمعية خيرية">
-          <h3>موقع تعريفي لجمعية</h3>
-        </article>
+        <article class="service-card"><img src="j1.jpg" alt="تدريب إداري"><h3>تدريب إداري</h3></article>
+        <article class="service-card"><img src="j2.jpg" alt="تأهيل تقني"><h3>تأهيل تقني</h3></article>
+        <article class="service-card"><img src="j3.jpg" alt="دورات تصميم"><h3>دورات تصميم</h3></article>
       </div>
     </div>
   </div>

@@ -665,181 +665,7 @@ h4 {
 
 
 /* --- قسم خدماتنا (Services Section) --- */
-/* --- إعدادات عامة للقسم --- */
-/* --- القسم الرئيسي --- */
-.services-section {
-    padding: 80px 0;
-    background-color: var(--color-bg-light);
-    direction: rtl;
-    font-family: 'Tajawal', sans-serif; /* أو الخط المستخدم عندك */
-}
 
-.container-services {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
-    color: var(--color-primary);
-    font-weight: 800;
-}
-
-/* ===== الصف الأول: البطاقات الرئيسية (الصور) ===== */
-.main-tabs-grid {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
-
-.main-card {
-    width: 280px;
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    cursor: pointer;
-    border: 2px solid transparent;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    transition: all var(--transition-speed) ease;
-    position: relative;
-    text-align: center;
-}
-
-/* حالة البطاقة النشطة */
-.main-card.active {
-    border-color: var(--color-primary);
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(10, 27, 91, 0.15);
-}
-
-/* معالجة الصورة الطولية داخل البطاقة */
-.card-image-box {
-    width: 100%;
-    aspect-ratio: 16 / 10; /* لجعلها عرضية كما في "فيجما" */
-    overflow: hidden;
-}
-
-.card-image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* قص الأطراف الطولية لملء المساحة العرضية */
-}
-
-.card-title {
-    padding: 15px;
-    font-weight: bold;
-    color: var(--color-primary);
-    font-size: 18px;
-    display: block;
-}
-
-/* زر الرابط الخارجي الصغير على البطاقة */
-.external-link {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-primary);
-    font-size: 12px;
-    opacity: 0;
-    transition: 0.3s;
-}
-
-.main-card:hover .external-link {
-    opacity: 1;
-}
-
-/* ===== الصف الثاني: الأزرار الفرعية (نفس تبويب خدمة رقمية) ===== */
-.sub-tabs-row {
-    display: none; /* يتم إظهارها بالـ JS عند اختيار القسم الرئيسي */
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 50px;
-    flex-wrap: wrap;
-    animation: slideUp 0.4s ease-out;
-}
-
-.sub-tabs-row.active {
-    display: flex;
-}
-
-.sub-btn {
-    padding: 10px 25px;
-    border: 2px solid #e0e0e0;
-    background: #fff;
-    color: #555;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-    white-space: nowrap;
-}
-
-.sub-btn.active, .sub-btn:hover {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
-    color: #fff;
-}
-
-/* ===== الصف الثالث: معرض الأعمال (المحتوى النهائي) ===== */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.gallery-item {
-    display: none;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.gallery-item.show {
-    display: block;
-}
-
-.item-visual {
-    width: 100%;
-    aspect-ratio: 4 / 3; /* تناسق صور المعرض */
-    border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-.item-visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.gallery-item h3 {
-    text-align: center;
-    color: var(--color-primary);
-    font-weight: 700;
-    font-size: 19px;
-}
-
-/* ===== تأثيرات الحركة ===== */
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
 
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
 
@@ -862,7 +688,86 @@ h4 {
     padding: 80px 0;
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 60px;.services-section {
+    padding: 80px 0;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+}
+
+.main-categories {
+    display: flex;
+    justify-content: center;
+    gap: 33px; /* القياس من Figma */
+    margin-bottom: 57px; /* المسافة من Figma */
+}
+
+.cat-btn {
+    padding: 12px 35px;
+    border: 2px solid #00015B;
+    border-radius: 40px;
+    background: transparent;
+    color: #00015B;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.cat-btn.active {
+    background: #00015B;
+    color: #fff;
+}
+
+/* الأزرار الفرعية */
+.sub-categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.sub-btn {
+    padding: 8px 25px;
+    border: 1px solid #00015B;
+    border-radius: 15px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.sub-btn.active {
+    background: #00015B;
+    color: #fff;
+}
+
+/* شبكة الصور */
+.sub-categories-wrapper {
+    display: none; /* إخفاء الأقسام غير النشطة */
+}
+
+.sub-categories-wrapper.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 صور فقط */
+    gap: 30px;
+}
+
+.service-card {
+    text-align: center;
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
     padding: 80px 0;
 }
 

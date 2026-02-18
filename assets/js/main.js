@@ -68,37 +68,25 @@ function toggleMenu() {
 
 /* ========================================================= مراقبة قسم المجالات (IntersectionObserver)
 ========================================================= */
-document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".category-card");
-    const tabContainers = document.querySelectorAll(".sub-tabs-container");
+function showCategory(evt, categoryId) {
+    // 1. إخفاء جميع محتويات الأقسام
+    const tabContents = document.getElementsByClassName("sub-categories-wrapper");
+    for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove("active");
+    }
 
-    cards.forEach(card => {
-        card.addEventListener("click", () => {
-            // 1. تمييز البطاقة النشطة
-            cards.forEach(c => c.classList.remove("active"));
-            card.classList.add("active");
+    // 2. إزالة الحالة النشطة من جميع الأزرار
+    const tabLinks = document.getElementsByClassName("cat-btn");
+    for (let i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove("active");
+        tabLinks[i].setAttribute("aria-selected", "false");
+    }
 
-            // 2. إظهار الأزرار الفرعية المناسبة
-            const target = card.dataset.main;
-            tabContainers.forEach(container => {
-                container.style.display = container.id === `${target}-tabs` ? "flex" : "none";
-            });
-            
-            // تفعيل أول زر فرعي تلقائياً
-            const firstBtn = document.getElementById(`${target}-tabs`).querySelector('.sub-btn');
-            if(firstBtn) firstBtn.click();
-        });
-    });
-
-    // كود الفلترة للأزرار الفرعية (كما سبق)
-    document.querySelectorAll(".sub-btn").forEach(btn => {
-        btn.addEventListener("click", function() {
-            document.querySelectorAll(".sub-btn").forEach(b => b.classList.remove("active"));
-            this.classList.add("active");
-            // تنفيذ فلترة معرض الصور هنا...
-        });
-    });
-});
+    // 3. إظهار القسم المطلوب وتنشيط الزر الخاص به
+    document.getElementById(categoryId).classList.add("active");
+    evt.currentTarget.classList.add("active");
+    evt.currentTarget.setAttribute("aria-selected", "true");
+}
 /* =========================================================
     قسم الخدمات (التبويبات الرئيسية + الفرعية)
 ========================================================= */
