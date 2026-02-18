@@ -792,13 +792,6 @@ h4 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== موبايل ===== */
-@media (max-width: 768px) {
-    .main-tabs {
-        flex-direction: column;
-        align-items: center;
-    }
-}
 
 
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
