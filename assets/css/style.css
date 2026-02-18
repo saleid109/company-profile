@@ -667,15 +667,14 @@ h4 {
 
 /* تنسيق أزرار التبويب */
 .services-section {
-    padding: 60px 0px;
+    padding: 80px 0;
     background-color: var(--color-bg-light);
 }
 
-/* الحاوية الداخلية لتوسط المحتوى */
 .container-services {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 80px 0;
+    padding: 0 20px;
 }
 
 /* تنسيق العنوان الرئيسي للقسم */
