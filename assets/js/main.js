@@ -68,28 +68,37 @@ function toggleMenu() {
 
 /* ========================================================= مراقبة قسم المجالات (IntersectionObserver)
 ========================================================= */
-document.addEventListener("DOMContentLoaded", function () {
-    const section = document.querySelector(".fields-section");
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".category-card");
+    const tabContainers = document.querySelectorAll(".sub-tabs-container");
 
-    if (!section) return;
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            // 1. تمييز البطاقة النشطة
+            cards.forEach(c => c.classList.remove("active"));
+            card.classList.add("active");
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const cards = entry.target.querySelectorAll(".field-card");
-                    cards.forEach((card) => card.classList.add("show"));
-
-                    observer.unobserve(entry.target);
-                }
+            // 2. إظهار الأزرار الفرعية المناسبة
+            const target = card.dataset.main;
+            tabContainers.forEach(container => {
+                container.style.display = container.id === `${target}-tabs` ? "flex" : "none";
             });
-        },
-        { threshold: 0.1 },
-    );
+            
+            // تفعيل أول زر فرعي تلقائياً
+            const firstBtn = document.getElementById(`${target}-tabs`).querySelector('.sub-btn');
+            if(firstBtn) firstBtn.click();
+        });
+    });
 
-    observer.observe(section);
+    // كود الفلترة للأزرار الفرعية (كما سبق)
+    document.querySelectorAll(".sub-btn").forEach(btn => {
+        btn.addEventListener("click", function() {
+            document.querySelectorAll(".sub-btn").forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            // تنفيذ فلترة معرض الصور هنا...
+        });
+    });
 });
-
 /* =========================================================
     قسم الخدمات (التبويبات الرئيسية + الفرعية)
 ========================================================= */
