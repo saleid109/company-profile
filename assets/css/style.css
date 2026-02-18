@@ -666,7 +666,7 @@ h4 {
 /* --- قسم خدماتناا (Services Section) --- */
 .services-section {
     padding: 80px 0;
-    background-color: #f8f9fc;
+    background-color: var(--color-bg-light);
 }
 
 .container-services {
