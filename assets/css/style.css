@@ -198,6 +198,7 @@ h4 {
     height: 2px;
     background-color: var(--color-primary);
 }
+
 /*التحويم*/
 .nav-menu a.active:hover {
     color: var(--color-bg-light);
@@ -1115,9 +1116,10 @@ h4 {
     text-align: right;
     max-width: 300px;
 }
+
 /*النص المميزر في العنوان*/
-.highlight-yellow { 
-    color: #f7b500; 
+.highlight-yellow {
+    color: #f7b500;
 }
 
 /* غلاف الجدول */
@@ -1125,6 +1127,7 @@ h4 {
     position: relative;
     flex: 1.2;
 }
+
 /*الجدول*/
 .comparison-table {
     width: 100%;
@@ -1134,13 +1137,13 @@ h4 {
     border-radius: 40px;
     position: relative;
     z-index: 1;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
 }
 
 /* الصندوق الكحلي */
 .featured-col-box {
     position: absolute;
-    top: -50px; 
+    top: -50px;
     bottom: -50px;
     width: 33.333%;
     right: 33.333%;
@@ -1176,7 +1179,7 @@ h4 {
 
 /*انص العمود المميز*/
 .featured-header-text {
-    color: #f7b500 ;
+    color: #f7b500;
     font-size: 22px;
     font-weight: 900;
     padding-top: 20px;
@@ -1201,6 +1204,7 @@ h4 {
     font-weight: bold;
     box-shadow: 0 4px 15px rgba(247, 181, 0, 0.3);
 }
+
 /*الايقونة السوداء*/
 .icon-dark-circle {
     background: #444;
@@ -1212,6 +1216,7 @@ h4 {
     align-items: center;
     justify-content: center;
 }
+
 /*==============================================*
 
 /*========================قسم اعمالنا====================*/
@@ -1219,22 +1224,24 @@ h4 {
     padding: 80px 0;
     background: var(--color-bg-light);
 }
+
 /*حاوية*/
 .container-projects {
-    max-width: 1400px; 
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 ;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
+
 /*عنوان القسم*/
 .projects-text h2 {
     color: var(--color-secondary);
-    font-size: 40px; 
+    font-size: 40px;
     font-weight: bold;
-    margin-bottom: 80px; 
+    margin-bottom: 80px;
     position: relative;
     display: inline-block;
 }
@@ -1243,7 +1250,7 @@ h4 {
 .projects-swiper {
     width: 100%;
     position: relative;
-    padding-bottom: 80px; 
+    padding-bottom: 80px;
 }
 
 .projects-swiper .swiper-slide {
@@ -1265,7 +1272,7 @@ h4 {
 
 
 /*تنسيق الأسهم  */
-.swiper-button-next, 
+.swiper-button-next,
 .swiper-button-prev {
     color: var(--color-secondary) !important;
     top: 45%;
@@ -1273,25 +1280,26 @@ h4 {
     z-index: 10;
 }
 
-.swiper-button-next::after, 
+.swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 24px !important; /* حجم متوازن للسهم */
+    font-size: 24px !important;
+    /* حجم متوازن للسهم */
     font-weight: bold;
 }
 
 /* تحديد أماكن الأسهم بدقة */
 .swiper-button-next {
-    right: -60px; 
+    right: -60px;
     left: auto;
 }
 
 .swiper-button-prev {
-    left: -60px; 
+    left: -60px;
     right: auto;
 }
 
 /* تأثير عند المرور على الأسهم */
-.swiper-button-next:hover, 
+.swiper-button-next:hover,
 .swiper-button-prev:hover {
     color: var(--color-primary) !important;
     transform: translateY(-50%) scale(1.2);
@@ -1323,7 +1331,8 @@ h4 {
 
 .swiper-pagination-bullet-active {
     background: var(--color-primary) !important;
-    width: 25px; /* جعل النقطة النشطة أعرض قليلاً كشكل جمالي */
+    width: 25px;
+    /* جعل النقطة النشطة أعرض قليلاً كشكل جمالي */
     border-radius: 5px;
 }
 
@@ -1345,5 +1354,61 @@ h4 {
 .btn-view-all:hover {
     background-color: var(--color-primary);
     color: var(--color-secondary);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*==============================*/
+/*===================فسم الإحصائيات=======================*/
+
+/*الحاوية الكبيرة*/
+.stats-section {
+    background-color: #050a44;
+    /* اللون الكحلي الداكن من الصورة */
+    padding: 60px 0;
+    text-align: center;
+    color: #fff;
+    direction: rtl;
+}
+
+.stats-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.stats-header p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: #fff;
+    color: #050a44;
+    padding: 30px;
+    border-radius: 12px;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    color: #fdb813;
+    /* اللون الذهبي */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 10px;
 }
