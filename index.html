@@ -216,49 +216,96 @@
     </section>
 
     <!--قسم مجالتنا-->
-    <section id="fields" class="fields-section" aria-labelledby="fields-titles">
-      <div class="fields-container">
-        <!-- العنوان الرئيسي للمجالات -->
-        <div class="fields-header">
-          <h2 id="fields-titles" class="fields-title">مجالاتنا</h2>
+<section id="services" class="services-section" aria-labelledby="services-title">
+  <div class="container-services">
+    <h2 id="services-title" class="section-title">خدماتنا</h2>
+
+    <div class="main-tabs" role="tablist" aria-label="الخدمات الرئيسية">
+      <button id="main-tab-products" class="main-btn active" role="tab" aria-selected="true" aria-controls="main-panel-products" data-main="products">
+        منتجات رقمية
+      </button>
+      <button id="main-tab-service" class="main-btn" role="tab" aria-selected="false" aria-controls="main-panel-service" data-main="service">
+        خدمة رقمية
+      </button>
+      <button id="main-tab-training" class="main-btn" role="tab" aria-selected="false" aria-controls="main-panel-training" data-main="training">
+        تأهيل لسوق العمل
+      </button>
+    </div>
+
+    <div id="main-panel-products" class="tab-panel active" role="tabpanel" aria-labelledby="main-tab-products">
+      <div class="services-gallery">
+        <!-- أمثلة لعناصر المعرض، يجب أن تكون هنا -->
+        <div class="gallery-item show" data-category="products">
+          <div class="gallery-image">
+            <img src="/path/to/product-1.jpg" alt="وصف المنتج الرقمي الأول">
+          </div>
+          <h3>المنتج الرقمي الأول</h3>
         </div>
-        <!-- رسم توضيحي للمجالات -->
-        <div class="fields-icon-wrapper">
-          <img src="./public/images/yellow-arrows.png" alt="رسم توضيحي لمجالات عمل شركة نقطة صعود" />
-        </div>
-        <!-- شبكة البطاقات للمجالات -->
-        <div class="fields-grid">
-          <!-- بطاقة مجال تأهيل الكفاءات لسوق العمل -->
-          <article class="field-card">
-            <div class="field-icon-box" aria-hidden="true">
-              <i class="fas fa-user-graduate"></i>
-            </div>
-            <h3>تأهيل الكفاءات لسوق العمل</h3>
-          </article>
-          <!-- بطاقة مجال تطوير الحلول الرقمية -->
-          <article class="field-card">
-            <div class="field-icon-box" aria-hidden="true">
-              <i class="fas fa-laptop-code"></i>
-            </div>
-            <h3>تطوير الحلول الرقمية</h3>
-          </article>
-          <!-- بطاقة مجال بناء فرق العمل -->
-          <article class="field-card">
-            <div class="field-icon-box" aria-hidden="true">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3>بناء فرق العمل لتحقيق النجاح المشترك</h3>
-          </article>
-          <!-- بطاقة مجال تعزيز التعاون مع الأطراف الداعمة للنمو المستدام -->
-          <article class="field-card">
-            <div class="field-icon-box" aria-hidden="true">
-              <i class="fas fa-handshake"></i>
-            </div>
-            <h3>تعزيز التعاون مع الأطراف الداعمة للنمو المستدام</h3>
-          </article>
+        <div class="gallery-item show" data-category="products">
+          <div class="gallery-image">
+            <img src="/path/to/product-2.jpg" alt="وصف المنتج الرقمي الثاني">
+          </div>
+          <h3>المنتج الرقمي الثاني</h3>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div id="main-panel-service" class="tab-panel" role="tabpanel" aria-labelledby="main-tab-service">
+      <div class="sub-tabs active" role="tablist" aria-label="خدمات فرعية">
+        <button id="sub-tab-consulting" class="sub-btn active" role="tab" aria-selected="true" aria-controls="sub-panel-consulting" data-filter="consulting">
+          استشارات
+        </button>
+        <button id="sub-tab-development" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-development" data-filter="development">
+          تطوير
+        </button>
+      </div>
+      <div id="sub-panel-consulting" class="services-gallery tab-panel active" role="tabpanel" aria-labelledby="sub-tab-consulting">
+        <div class="gallery-item show" data-category="consulting">
+          <div class="gallery-image">
+            <img src="/path/to/consulting-1.jpg" alt="وصف خدمة الاستشارات الأولى">
+          </div>
+          <h3>خدمة استشارية 1</h3>
+        </div>
+      </div>
+      <div id="sub-panel-development" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-development">
+        <div class="gallery-item show" data-category="development">
+          <div class="gallery-image">
+            <img src="/path/to/development-1.jpg" alt="وصف خدمة التطوير الأولى">
+          </div>
+          <h3>خدمة تطوير 1</h3>
+        </div>
+      </div>
+    </div>
+
+    <div id="main-panel-training" class="tab-panel" role="tabpanel" aria-labelledby="main-tab-training">
+      <div class="sub-tabs active" role="tablist" aria-label="برامج تأهيل فرعية">
+        <button id="sub-tab-web" class="sub-btn active" role="tab" aria-selected="true" aria-controls="sub-panel-web" data-filter="web">
+          تطوير الويب
+        </button>
+        <button id="sub-tab-mobile" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-mobile" data-filter="mobile">
+          تطوير الموبايل
+        </button>
+      </div>
+      <div id="sub-panel-web" class="services-gallery tab-panel active" role="tabpanel" aria-labelledby="sub-tab-web">
+        <div class="gallery-item show" data-category="web">
+          <div class="gallery-image">
+            <img src="/path/to/web-training-1.jpg" alt="وصف برنامج تدريب الويب الأول">
+          </div>
+          <h3>تدريب تطوير الويب</h3>
+        </div>
+      </div>
+      <div id="sub-panel-mobile" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-mobile">
+        <div class="gallery-item show" data-category="mobile">
+          <div class="gallery-image">
+            <img src="/path/to/mobile-training-1.jpg" alt="وصف برنامج تدريب الموبايل الأول">
+          </div>
+          <h3>تدريب تطوير الموبايل</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
     <!--=====================================================-->
     <!-- ----- قسم خدماتنا ----- -->
 <section id="services-portfolio" class="services-section">
