@@ -1,74 +1,69 @@
+/* =========================================================
+   1️⃣ قائمة الموبايل (فتح / إغلاق + منع التمرير)
+========================================================= */
 function toggleMenu() {
     const navLinks = document.querySelector('.navbar-links');
     const menuIcon = document.querySelector('.mobile-menu-icon i');
+    const body = document.body;
 
-    // تبديل ظهور القائمة
+    // تبديل حالة القائمة
     navLinks.classList.toggle('open');
 
-    // تبديل شكل الأيقونة من (Bars) إلى (X) عند الفتح
+    // إذا كانت مفتوحة
     if (navLinks.classList.contains('open')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
+        menuIcon.classList.replace('fa-bars', 'fa-times');
+        body.style.overflow = 'hidden'; // منع التمرير
     } else {
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
+        menuIcon.classList.replace('fa-times', 'fa-bars');
+        body.style.overflow = 'auto'; // إعادة التمرير
     }
 }
 
-/* === Accessibility: keyboard support for dropdowns and nav === */
-(function () {
-    function initNavAccessibility() {
-        const dropdowns = document.querySelectorAll('.dropdown');
-        dropdowns.forEach(dd => {
-            const trigger = dd.querySelector('a');
-            const submenu = dd.querySelector('ul'); // if a submenu exists
 
-            // Ensure aria attributes exist
-            trigger.setAttribute('aria-expanded', trigger.getAttribute('aria-expanded') || 'false');
+/* =========================================================
+   2️⃣ دعم الوصول (Accessibility) للقائمة المنسدلة
+========================================================= */
+(function () {
+
+    function initNavAccessibility() {
+
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(dd => {
+
+            const trigger = dd.querySelector('a');
+            const submenu = dd.querySelector('ul');
+
+            if (!trigger) return;
+
+            trigger.setAttribute('aria-expanded', 'false');
             trigger.setAttribute('role', 'button');
 
-            // Click toggles (only if submenu exists)
+            // عند الضغط
             trigger.addEventListener('click', (e) => {
-                if (!submenu) return; // allow normal link behavior when no submenu
+
+                if (!submenu) return;
+
                 e.preventDefault();
-                const open = trigger.getAttribute('aria-expanded') === 'true';
-                trigger.setAttribute('aria-expanded', String(!open));
-                dd.classList.toggle('open', !open);
-                if (!open) {
-                    // focus first item in submenu
-                    const firstMenuItem = submenu.querySelector('a');
-                    if (firstMenuItem) firstMenuItem.focus();
-                }
+
+                const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+                trigger.setAttribute('aria-expanded', String(!isOpen));
+                dd.classList.toggle('open', !isOpen);
+
             });
 
-            // Keyboard handling
+            // دعم لوحة المفاتيح
             trigger.addEventListener('keydown', (e) => {
-                if (!submenu) return; // nothing to toggle
-                switch (e.key) {
-                    case 'Enter':
-                    case ' ':
-                        e.preventDefault();
-                        trigger.click();
-                        break;
-                    case 'ArrowDown':
-                        e.preventDefault();
-                        dd.classList.add('open');
-                        trigger.setAttribute('aria-expanded', 'true');
-                        const first = submenu.querySelector('a');
-                        if (first) first.focus();
-                        break;
-                    case 'Escape':
-                        dd.classList.remove('open');
-                        trigger.setAttribute('aria-expanded', 'false');
-                        trigger.focus();
-                        break;
-                }
-            });
 
-            // Close on focusout
-            dd.addEventListener('focusout', (e) => {
-                // if focus moved outside the dropdown
-                if (!dd.contains(e.relatedTarget)) {
+                if (!submenu) return;
+
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    trigger.click();
+                }
+
+                if (e.key === 'Escape') {
                     dd.classList.remove('open');
                     trigger.setAttribute('aria-expanded', 'false');
                 }
@@ -76,132 +71,155 @@ function toggleMenu() {
         });
     }
 
-    // Run on DOM ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initNavAccessibility);
-    } else {
-        initNavAccessibility();
-    }
+    document.addEventListener('DOMContentLoaded', initNavAccessibility);
+
 })();
 
-/* === Optional accessibility audit: run axe-core when '?audit=1' in URL (dev only) === */
-(function () {
-    try {
-        if (location.search.indexOf('audit=1') > -1) {
-            const script = document.createElement('script');
-            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.11.2/axe.min.js';
-            script.crossOrigin = 'anonymous';
-            script.onload = function () {
-                // run axe
-                if (window.axe) {
-                    window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2aa'] } })
-                        .then(results => console.log('Axe results:', results))
-                        .catch(err => console.error('Axe error:', err));
-                }
-            };
-            document.head.appendChild(script);
-        }
-    } catch (err) {
-        // ignore in production
-        console.warn('Accessibility audit loader error', err);
-    }
-})();
-const observeFields = () => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // تفعيل الحركة للبطاقات داخل القسم
-                const cards = entry.target.querySelectorAll('.field-card');
-                cards.forEach(card => card.classList.add('show'));
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
+
+/* =========================================================
+   3️⃣ مراقبة قسم المجالات (IntersectionObserver)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function () {
 
     const section = document.querySelector('.fields-section');
-    if (section) observer.observe(section);
-};
 
-document.addEventListener('DOMContentLoaded', observeFields);
-function toggleMenu() {
-    const navLinks = document.querySelector('.navbar-links');
-    const menuIcon = document.querySelector('.mobile-menu-icon i');
-    const body = document.body; // إضافة إشارة للـ body
+    if (!section) return;
 
-    navLinks.classList.toggle('open');
+    const observer = new IntersectionObserver((entries) => {
 
-    if (navLinks.classList.contains('open')) {
-        menuIcon.classList.replace('fa-bars', 'fa-times');
-        body.style.overflow = 'hidden'; // منع التمرير عند فتح القائمة
-    } else {
-        menuIcon.classList.replace('fa-times', 'fa-bars');
-        body.style.overflow = 'auto'; // إعادة التمرير عند الإغلاق
-    }
-}
-document.addEventListener('DOMContentLoaded', function() {
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contentItems = document.querySelectorAll('.service-detail-item');
+        entries.forEach(entry => {
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // 1. إزالة الحالة النشطة من كل الأزرار
-            tabs.forEach(t => t.classList.remove('active'));
-            // 2. إضافة الحالة النشطة للزر الذي تم الضغط عليه
-            this.classList.add('active');
+            if (entry.isIntersecting) {
 
-            // 3. إخفاء جميع أقسام المحتوى
-            contentItems.forEach(item => {
-                item.style.display = 'none';
-            });
+                const cards = entry.target.querySelectorAll('.field-card');
+                cards.forEach(card => card.classList.add('show'));
 
-            // 4. إظهار القسم المطلوب بناءً على data-target
-            const targetId = this.getAttribute('data-target');
-            const targetContent = document.getElementById('content-' + targetId);
-            
-            if (targetContent) {
-                targetContent.style.display = 'block';
+                observer.unobserve(entry.target);
             }
+
         });
-    });
+
+    }, { threshold: 0.1 });
+
+    observer.observe(section);
 });
 
-// تفعيل سلايدر الأعمال
 
+/* =========================================================
+   4️⃣ قسم الخدمات (التبويبات الرئيسية + الفرعية)
+========================================================= */
 document.addEventListener('DOMContentLoaded', function () {
-    const swiper = new Swiper('.projects-swiper', {
+
+    const mainBtns = document.querySelectorAll('.main-btn');
+    const subTabs = document.querySelectorAll('.sub-tabs');
+    const subBtns = document.querySelectorAll('.sub-btn');
+    const items = document.querySelectorAll('.gallery-item');
+
+    // دالة فلترة العناصر
+    function filterItems(category) {
+        items.forEach(item => {
+            item.classList.remove('show');
+            if (item.dataset.category === category) {
+                item.classList.add('show');
+            }
+        });
+    }
+
+    // دالة إخفاء جميع العناصر
+    function hideItems() {
+        items.forEach(item => item.classList.remove('show'));
+    }
+
+    // عند الضغط على زر رئيسي
+    mainBtns.forEach(btn => {
+
+        btn.addEventListener('click', function () {
+
+            // إزالة active من الجميع
+            mainBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // إخفاء كل التبويبات الفرعية
+            subTabs.forEach(tab => tab.classList.remove('active'));
+            subBtns.forEach(b => b.classList.remove('active'));
+
+            const type = this.dataset.main;
+
+            if (type === 'service') {
+                document.getElementById('service-tabs').classList.add('active');
+                hideItems();
+            }
+
+            else if (type === 'training') {
+                document.getElementById('training-tabs').classList.add('active');
+                hideItems();
+            }
+
+            else if (type === 'products') {
+                filterItems('products');
+            }
+
+        });
+
+    });
+
+    // عند الضغط على زر فرعي
+    subBtns.forEach(btn => {
+
+        btn.addEventListener('click', function () {
+
+            subBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            filterItems(this.dataset.filter);
+
+        });
+
+    });
+
+});
+
+
+/* =========================================================
+   5️⃣ تفعيل سلايدر المشاريع (Swiper)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function () {
+
+    if (typeof Swiper === "undefined") return;
+
+    new Swiper('.projects-swiper', {
+
         slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
-        grabCursor: true, // يظهر يد السحب للمستخدم
-        
-        // تفعيل التشغيل التلقائي
+        grabCursor: true,
+
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
         },
 
-        // ربط الأسهم (هذا الجزء هو المسؤول عن إظهارها وعملها)
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
 
-        // النقاط السفلية
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
 
-        // إعدادات الشاشات المختلفة (Figma Desktop)
         breakpoints: {
             768: {
                 slidesPerView: 2,
                 spaceBetween: 20,
             },
             1024: {
-                slidesPerView: 3, // يظهر 3 تطبيقات معاً   
-                spaceBetween: 33, // المسافة    
+                slidesPerView: 3,
+                spaceBetween: 33,
             }
         }
+
     });
+
 });
