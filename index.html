@@ -261,51 +261,125 @@
     </section>
     <!--=====================================================-->
     <!-- ----- قسم خدماتنا ----- -->
-<section id="services-portfolio" class="services-section">
+
+<!-- قسم الخدمات المحدث -->
+<section id="services" class="services-section" aria-labelledby="services-title">
   <div class="container-services">
-    <h2 class="section-title">خدماتنا</h2>
+    <h2 id="services-title" class="section-title">خدماتنا</h2>
 
-    <div class="main-tabs">
-      <button class="main-btn active" data-main="products">منتجات رقمية</button>
-      <button class="main-btn" data-main="service">خدمة رقمية</button>
-      <button class="main-btn" data-main="training">تأهيل لسوق العمل</button>
+    <div class="main-tabs" role="tablist" aria-label="الخدمات الرئيسية">
+      <button id="main-tab-products" class="main-btn active" role="tab" aria-selected="true" aria-controls="main-panel-products" data-main="products">
+        منتجات رقمية
+      </button>
+      <button id="main-tab-service" class="main-btn" role="tab" aria-selected="false" aria-controls="main-panel-service" data-main="service">
+        خدمة رقمية
+      </button>
+      <button id="main-tab-training" class="main-btn" role="tab" aria-selected="false" aria-controls="main-panel-training" data-main="training">
+        تأهيل لسوق العمل
+      </button>
     </div>
 
-    <div class="sub-tabs active" id="products-tabs">
-      <button class="sub-btn" data-filter="website">موقع تعريفي</button>
-      <button class="sub-btn" data-filter="store">متجر إلكتروني</button>
-      <button class="sub-btn" data-filter="system">نظام إداري</button>
+    <div id="main-panel-products" class="tab-panel active" role="tabpanel" aria-labelledby="main-tab-products">
+      <div class="sub-tabs" role="tablist" aria-label="منتجات رقمية فرعية">
+        <button id="sub-tab-website" class="sub-btn active" role="tab" aria-selected="true" aria-controls="sub-panel-website" data-filter="website">
+          موقع تعريفي
+        </button>
+        <button id="sub-tab-ecommerce" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-ecommerce" data-filter="ecommerce">
+          متجر إلكتروني
+        </button>
+        <button id="sub-tab-management" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-management" data-filter="management">
+          نظام إداري
+        </button>
+      </div>
+      <div id="sub-panel-website" class="services-gallery tab-panel active" role="tabpanel" aria-labelledby="sub-tab-website">
+        <!-- محتوى موقع تعريفي هنا -->
+        <div class="gallery-item show" data-category="website">
+          <div class="gallery-image">
+            <img src="/path/to/website-1.jpg" alt="صورة لموقع تعريفي">
+          </div>
+          <h3>موقع تعريفي احترافي</h3>
+        </div>
+        <div class="gallery-item show" data-category="website">
+          <div class="gallery-image">
+            <img src="/path/to/website-2.jpg" alt="صورة لموقع تعريفي آخر">
+          </div>
+          <h3>تصميم مواقع شخصية</h3>
+        </div>
+      </div>
+      <div id="sub-panel-ecommerce" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-ecommerce">
+        <!-- محتوى متجر إلكتروني هنا -->
+        <div class="gallery-item show" data-category="ecommerce">
+          <div class="gallery-image">
+            <img src="/path/to/ecommerce-1.jpg" alt="صورة لمتجر إلكتروني">
+          </div>
+          <h3>متجر إلكتروني متكامل</h3>
+        </div>
+      </div>
+      <div id="sub-panel-management" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-management">
+        <!-- محتوى نظام إداري هنا -->
+        <div class="gallery-item show" data-category="management">
+          <div class="gallery-image">
+            <img src="/path/to/management-1.jpg" alt="صورة لنظام إدارة">
+          </div>
+          <h3>نظام إدارة موارد</h3>
+        </div>
+      </div>
     </div>
 
-    <div class="sub-tabs" id="service-tabs">
-      <button class="sub-btn" data-filter="web">تطوير الويب</button>
-      <button class="sub-btn" data-filter="apps">تطوير التطبيقات</button>
-      <button class="sub-btn" data-filter="marketing">التسويق</button>
-      <button class="sub-btn" data-filter="licenses">التراخيص</button>
+    <div id="main-panel-service" class="tab-panel" role="tabpanel" aria-labelledby="main-tab-service">
+      <div class="sub-tabs" role="tablist" aria-label="خدمات فرعية">
+        <button id="sub-tab-consulting" class="sub-btn active" role="tab" aria-selected="true" aria-controls="sub-panel-consulting" data-filter="consulting">
+          استشارات
+        </button>
+        <button id="sub-tab-development" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-development" data-filter="development">
+          تطوير
+        </button>
+      </div>
+      <div id="sub-panel-consulting" class="services-gallery tab-panel active" role="tabpanel" aria-labelledby="sub-tab-consulting">
+        <div class="gallery-item show" data-category="consulting">
+          <div class="gallery-image">
+            <img src="/path/to/consulting-1.jpg" alt="وصف خدمة الاستشارات الأولى">
+          </div>
+          <h3>خدمة استشارية 1</h3>
+        </div>
+      </div>
+      <div id="sub-panel-development" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-development">
+        <div class="gallery-item show" data-category="development">
+          <div class="gallery-image">
+            <img src="/path/to/development-1.jpg" alt="وصف خدمة التطوير الأولى">
+          </div>
+          <h3>خدمة تطوير 1</h3>
+        </div>
+      </div>
     </div>
 
-    <div class="sub-tabs" id="training-tabs">
-      <button class="sub-btn" data-filter="management">إدارة</button>
-      <button class="sub-btn" data-filter="design">تصاميم</button>
-      <button class="sub-btn" data-filter="tech">تقنية</button>
+    <div id="main-panel-training" class="tab-panel" role="tabpanel" aria-labelledby="main-tab-training">
+      <div class="sub-tabs" role="tablist" aria-label="برامج تأهيل فرعية">
+        <button id="sub-tab-web" class="sub-btn active" role="tab" aria-selected="true" aria-controls="sub-panel-web" data-filter="web">
+          تطوير الويب
+        </button>
+        <button id="sub-tab-mobile" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-mobile" data-filter="mobile">
+          تطوير الموبايل
+        </button>
+      </div>
+      <div id="sub-panel-web" class="services-gallery tab-panel active" role="tabpanel" aria-labelledby="sub-tab-web">
+        <div class="gallery-item show" data-category="web">
+          <div class="gallery-image">
+            <img src="/path/to/web-training-1.jpg" alt="وصف برنامج تدريب الويب الأول">
+          </div>
+          <h3>تدريب تطوير الويب</h3>
+        </div>
+      </div>
+      <div id="sub-panel-mobile" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-mobile">
+        <div class="gallery-item show" data-category="mobile">
+          <div class="gallery-image">
+            <img src="/path/to/mobile-training-1.jpg" alt="وصف برنامج تدريب الموبايل الأول">
+          </div>
+          <h3>تدريب تطوير الموبايل</h3>
+        </div>
+      </div>
     </div>
 
-    <div class="services-gallery">
-      <article class="gallery-item show" data-category="store">
-        <div class="gallery-image"><img src="./public/images/project1.png" alt=""></div>
-        <h3>متجر إلكتروني احترافي</h3>
-      </article>
-
-      <article class="gallery-item" data-category="web">
-        <div class="gallery-image"><img src="./public/images/project2.png" alt=""></div>
-        <h3>موقع تعريفي لجمعية</h3>
-      </article>
-
-      <article class="gallery-item" data-category="management">
-        <div class="gallery-image"><img src="./public/images/project2.png" alt=""></div>
-        <h3>دورة إدارة مشاريع</h3>
-      </article>
-    </div>
   </div>
 </section>
 
