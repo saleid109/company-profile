@@ -68,68 +68,82 @@ function toggleMenu() {
 
 /* ========================================================= مراقبة قسم المجالات (IntersectionObserver)
 ========================================================= */
-const mainBtns = document.querySelectorAll(".main-btn");
-const subTabContainers = document.querySelectorAll(".sub-tabs");
-const items = document.querySelectorAll(".gallery-item");
+document.addEventListener("DOMContentLoaded", function () {
+    const section = document.querySelector(".fields-section");
 
-let currentMain = "products";
-let currentSub = "website";
+    if (!section) return;
 
-function activateMain(main) {
-    currentMain = main;
-    currentSub = null;
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const cards = entry.target.querySelectorAll(".field-card");
+                    cards.forEach((card) => card.classList.add("show"));
 
-    mainBtns.forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.main === main);
-    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1 },
+    );
 
-    subTabContainers.forEach(container => {
-        container.classList.toggle("active", container.dataset.parent === main);
+    observer.observe(section);
+});
 
-        if (container.dataset.parent === main) {
-            const firstSub = container.querySelector(".sub-btn");
-            if (firstSub) {
-                currentSub = firstSub.dataset.sub;
-                container.querySelectorAll(".sub-btn").forEach(b => b.classList.remove("active"));
-                firstSub.classList.add("active");
+/* =========================================================
+    قسم الخدمات (التبويبات الرئيسية + الفرعية)
+========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const mainBtns = document.querySelectorAll(".main-btn");
+    const subTabsContainers = document.querySelectorAll(".sub-tabs");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    const subBtns = document.querySelectorAll(".sub-btn");
+
+    // 1. تبديل التبويبات الرئيسية (المنتجات، الخدمات، التأهيل)
+    mainBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            // تغيير زر الحالة النشطة
+            mainBtns.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            // إخفاء كل مجموعات الأزرار الفرعية
+            subTabsContainers.forEach((container) => container.classList.remove("active"));
+
+            // إظهار المجموعة المناسبة بناءً على data-main
+            const targetId = `${btn.getAttribute("data-main")}-tabs`;
+            const targetContainer = document.getElementById(targetId);
+            if (targetContainer) {
+                targetContainer.classList.add("active");
+
+                // اختيار أول زر فرعي تلقائياً في المجموعة المفتوحة (اختياري)
+                const firstSubBtn = targetContainer.querySelector(".sub-btn");
+                if (firstSubBtn) firstSubBtn.click();
             }
-        }
+        });
     });
 
-    filterItems();
-}
+    // 2. فلترة المعرض عند الضغط على الأزرار الفرعية
+    subBtns.forEach((sBtn) => {
+        sBtn.addEventListener("click", () => {
+            // تغيير حالة الزر الفرعي النشط
+            subBtns.forEach((b) => b.classList.remove("active"));
+            sBtn.classList.add("active");
 
-function activateSub(sub) {
-    currentSub = sub;
+            const filter = sBtn.getAttribute("data-filter");
 
-    document.querySelectorAll(".sub-tabs.active .sub-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.sub === sub);
+            galleryItems.forEach((item) => {
+                if (item.getAttribute("data-category") === filter) {
+                    item.style.display = "block";
+                    setTimeout(() => item.classList.add("show"), 10);
+                } else {
+                    item.classList.remove("show");
+                    item.style.display = "none";
+                }
+            });
+        });
     });
-
-    filterItems();
-}
-
-function filterItems() {
-    items.forEach(item => {
-        const match =
-            item.dataset.main === currentMain &&
-            item.dataset.sub === currentSub;
-
-        item.classList.toggle("active", match);
-    });
-}
-
-mainBtns.forEach(btn => {
-    btn.addEventListener("click", () => activateMain(btn.dataset.main));
 });
 
-document.addEventListener("click", e => {
-    if (e.target.classList.contains("sub-btn")) {
-        activateSub(e.target.dataset.sub);
-    }
-});
-
-activateMain("products");
 /* =========================================================
     تفعيل سلايدر المشاريع (Swiper)
 ========================================================= */

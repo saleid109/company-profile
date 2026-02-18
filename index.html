@@ -265,14 +265,18 @@
   <div class="container-services">
     <h2 class="section-title">خدماتنا</h2>
 
-    <!-- ===== التبويبات الرئيسية ===== -->
     <div class="main-tabs">
       <button class="main-btn active" data-main="products">منتجات رقمية</button>
       <button class="main-btn" data-main="service">خدمة رقمية</button>
       <button class="main-btn" data-main="training">تأهيل لسوق العمل</button>
     </div>
 
-    <!-- ===== تبويبات خدمة رقمية ===== -->
+    <div class="sub-tabs active" id="products-tabs">
+      <button class="sub-btn" data-filter="website">موقع تعريفي</button>
+      <button class="sub-btn" data-filter="store">متجر إلكتروني</button>
+      <button class="sub-btn" data-filter="system">نظام إداري</button>
+    </div>
+
     <div class="sub-tabs" id="service-tabs">
       <button class="sub-btn" data-filter="web">تطوير الويب</button>
       <button class="sub-btn" data-filter="apps">تطوير التطبيقات</button>
@@ -280,50 +284,30 @@
       <button class="sub-btn" data-filter="licenses">التراخيص</button>
     </div>
 
-    
-
-    <!-- ===== التبويبات الفرعية المشتركة ===== -->
-<div class="sub-tabs" id="digital-tabs">
-  <button class="sub-btn" data-sub="website">موقع تعريفي</button>
-  <button class="sub-btn" data-sub="store">متجر إلكتروني</button>
-  <button class="sub-btn" data-sub="system">نظام إداري</button>
-</div>
-
-
-    <!-- ===== تبويبات التأهيل ===== -->
     <div class="sub-tabs" id="training-tabs">
       <button class="sub-btn" data-filter="management">إدارة</button>
       <button class="sub-btn" data-filter="design">تصاميم</button>
       <button class="sub-btn" data-filter="tech">تقنية</button>
     </div>
 
-    <!-- ===== معرض الأعمال ===== -->
     <div class="services-gallery">
+      <article class="gallery-item show" data-category="store">
+        <div class="gallery-image"><img src="./public/images/project1.png" alt=""></div>
+        <h3>متجر إلكتروني احترافي</h3>
+      </article>
 
       <article class="gallery-item" data-category="web">
-        <img src="./public/images/project2.png" />
+        <div class="gallery-image"><img src="./public/images/project2.png" alt=""></div>
         <h3>موقع تعريفي لجمعية</h3>
       </article>
 
-      <article class="gallery-item" data-category="apps">
-        <img src="./public/images/project1.png" />
-        <h3>تطبيق جوال</h3>
-      </article>
-
-      <article class="gallery-item" data-category="products">
-        <img src="./public/images/project1.png" />
-        <h3>متجر إلكتروني</h3>
-      </article>
-
       <article class="gallery-item" data-category="management">
-        <img src="./public/images/project2.png" />
+        <div class="gallery-image"><img src="./public/images/project2.png" alt=""></div>
         <h3>دورة إدارة مشاريع</h3>
       </article>
-
     </div>
   </div>
 </section>
-
 
     <!--==============================================-->
 
