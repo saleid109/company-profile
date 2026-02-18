@@ -1140,23 +1140,16 @@ h4 {
 /* الصندوق الكحلي */
 .featured-col-box {
     position: absolute;
-    top: -60px;
-    bottom: -60px;
+    top: -50px; 
+    bottom: -50px;
     width: 33.333%;
     right: 33.333%;
-    background: linear-gradient(
-        180deg,
-        #0a1f66 0%,
-        #051242 100%
-    );
+    background: #051242;
     border-radius: 45px;
     z-index: 2;
-    box-shadow: 
-        0 30px 80px rgba(5, 18, 66, 0.45),
-        0 0 40px rgba(247, 181, 0, 0.15);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
     pointer-events: none;
 }
-
 
 /* خلايا الجدول */
 .comparison-table th,
