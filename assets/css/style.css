@@ -666,190 +666,179 @@ h4 {
 
 /* --- قسم خدماتنا (Services Section) --- */
 /* --- إعدادات عامة للقسم --- */
+/* --- القسم الرئيسي --- */
 .services-section {
     padding: 80px 0;
     background-color: var(--color-bg-light);
-    direction: rtl; /* لضمان الترتيب العربي */
+    direction: rtl;
+    font-family: 'Tajawal', sans-serif; /* أو الخط المستخدم عندك */
 }
 
 .container-services {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: auto;
     padding: 0 20px;
 }
 
 .section-title {
     text-align: center;
-    font-size: 32px;
-    margin-bottom: 60px;
+    font-size: 36px;
+    margin-bottom: 50px;
     color: var(--color-primary);
-    font-weight: bold;
+    font-weight: 800;
 }
 
-/* ===== أولاً: شبكة البطاقات الرئيسية (الصف الأول) ===== */
-.main-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* ===== الصف الأول: البطاقات الرئيسية (الصور) ===== */
+.main-tabs-grid {
+    display: flex;
+    justify-content: center;
     gap: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .main-card {
-    position: relative;
+    width: 280px;
     background: #fff;
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    text-align: center;
 }
 
-/* تأثير عند اختيار البطاقة أو تمرير الماوس */
+/* حالة البطاقة النشطة */
 .main-card.active {
     border-color: var(--color-primary);
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(10, 27, 91, 0.15);
 }
 
-.main-card:hover:not(.active) {
-    transform: translateY(-5px);
-}
-
-/* --- معالجة الصور الطولية لتصبح عرضية --- */
-.card-img-wrapper {
+/* معالجة الصورة الطولية داخل البطاقة */
+.card-image-box {
     width: 100%;
-    aspect-ratio: 16 / 9; /* أهم سطر: يجبر الصورة على أن تكون عرضية */
+    aspect-ratio: 16 / 10; /* لجعلها عرضية كما في "فيجما" */
     overflow: hidden;
-    background-color: #f0f0f0;
 }
 
-.card-img-wrapper img {
+.card-image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* يقص الصورة الطولية من المنتصف لملء الإطار العرضي */
-    object-position: center;
-    transition: transform 0.6s ease;
+    object-fit: cover; /* قص الأطراف الطولية لملء المساحة العرضية */
 }
 
-.main-card:hover .card-img-wrapper img {
-    transform: scale(1.1);
+.card-title {
+    padding: 15px;
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 18px;
+    display: block;
 }
 
-/* رابط الصفحة المستقلة (الأيقونة) */
-.page-link-icon {
+/* زر الرابط الخارجي الصغير على البطاقة */
+.external-link {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.9);
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-primary);
-    text-decoration: none;
-    z-index: 5;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 12px;
+    opacity: 0;
     transition: 0.3s;
 }
 
-.page-link-icon:hover {
-    background: var(--color-primary);
-    color: #fff;
+.main-card:hover .external-link {
+    opacity: 1;
 }
 
-.card-info {
-    padding: 20px;
-    text-align: center;
-}
-
-.card-info h3 {
-    margin: 0;
-    font-size: 20px;
-    color: var(--color-primary);
-}
-
-/* ===== ثانياً: الأزرار الفرعية (الصف الثاني) ===== */
-.sub-tabs-container {
-    display: none; /* مخفية افتراضياً وتظهر بالـ JS */
+/* ===== الصف الثاني: الأزرار الفرعية (نفس تبويب خدمة رقمية) ===== */
+.sub-tabs-row {
+    display: none; /* يتم إظهارها بالـ JS عند اختيار القسم الرئيسي */
     justify-content: center;
     gap: 12px;
     margin-bottom: 50px;
     flex-wrap: wrap;
-    animation: fadeIn 0.5s ease forwards;
+    animation: slideUp 0.4s ease-out;
 }
 
-.sub-tabs-container.active {
+.sub-tabs-row.active {
     display: flex;
 }
 
 .sub-btn {
-    padding: 10px 24px;
-    border: 2px solid #ddd;
-    background: transparent;
-    color: #666;
+    padding: 10px 25px;
+    border: 2px solid #e0e0e0;
+    background: #fff;
+    color: #555;
     border-radius: 50px;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
     white-space: nowrap;
 }
 
-.sub-btn:hover,
-.sub-btn.active {
+.sub-btn.active, .sub-btn:hover {
     background: var(--color-primary);
     border-color: var(--color-primary);
     color: #fff;
 }
 
-/* ===== ثالثاً: معرض الأعمال بالأسفل ===== */
-.services-gallery {
+/* ===== الصف الثالث: معرض الأعمال (المحتوى النهائي) ===== */
+.gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .gallery-item {
-    display: none; /* يتم التحكم فيه بالـ JS بناءً على الفلتر */
-    text-align: center;
-    animation: fadeIn 0.4s ease;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .gallery-item.show {
     display: block;
 }
 
-.gallery-img-box {
+.item-visual {
     width: 100%;
-    aspect-ratio: 4 / 3; /* إطارات الصور في المعرض */
-    overflow: hidden;
+    aspect-ratio: 4 / 3; /* تناسق صور المعرض */
     border-radius: 15px;
+    overflow: hidden;
     margin-bottom: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
-.gallery-img-box img {
+.item-visual img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* ===== أنيميشن الظهور ===== */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+.gallery-item h3 {
+    text-align: center;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 19px;
+}
+
+/* ===== تأثيرات الحركة ===== */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== توافق الشاشات الصغيرة ===== */
-@media (max-width: 768px) {
-    .main-cards-grid {
-        grid-template-columns: 1fr;
-    }
-    .section-title {
-        font-size: 26px;
-    }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */

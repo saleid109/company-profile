@@ -261,60 +261,47 @@
     </section>
     <!--=====================================================-->
     <!-- ----- قسم خدماتنا ----- -->
-    <section id="services-portfolio" class="services-section">
-  <div class="container-services">
-    <h2 class="section-title">خدماتنا</h2>
+    <section id="services" class="services-section">
+      <div class="container-services">
+        <h2 class="section-title">خدماتنا</h2>
 
-    <div class="main-cards-grid">
-      <div class="category-card active" data-main="products">
-        <a href="products-page.html" class="card-link-icon"><i class="fas fa-external-link-alt"></i></a>
-        <div class="card-image">
-          <img src="products-main.jpg" alt="منتجات رقمية">
+        <div class="main-tabs-grid" role="tablist">
+
+          <div class="main-card active" data-main="products" role="tab">
+            <a href="products-page.html" class="page-link" title="انتقل للصفحة"><i class="fas fa-link"></i></a>
+            <div class="card-img-wrapper">
+              <img src="products-image.jpg" alt="منتجات رقمية">
+            </div>
+            <span class="card-label">منتجات رقمية</span>
+          </div>
+
+          <div class="main-card" data-main="service" role="tab">
+            <a href="service-page.html" class="page-link" title="انتقل للصفحة"><i class="fas fa-link"></i></a>
+            <div class="card-img-wrapper">
+              <img src="service-image.jpg" alt="خدمة رقمية">
+            </div>
+            <span class="card-label">خدمة رقمية</span>
+          </div>
+
+          <div class="main-card" data-main="training" role="tab">
+            <a href="training-page.html" class="page-link" title="انتقل للصفحة"><i class="fas fa-link"></i></a>
+            <div class="card-img-wrapper">
+              <img src="training-image.jpg" alt="تأهيل لسوق العمل">
+            </div>
+            <span class="card-label">تأهيل لسوق العمل</span>
+          </div>
+
         </div>
-        <h3>منتجات رقمية</h3>
-      </div>
 
-      <div class="category-card" data-main="service">
-        <a href="services-page.html" class="card-link-icon"><i class="fas fa-external-link-alt"></i></a>
-        <div class="card-image">
-          <img src="services-main.jpg" alt="خدمة رقمية">
+        <div id="products-sub" class="sub-tabs-wrapper active">
+          <button class="sub-btn" data-filter="web">تطوير الويب</button>
+          <button class="sub-btn" data-filter="apps">تطوير التطبيقات</button>
+          <button class="sub-btn" data-filter="marketing">التسويق</button>
+          <button class="sub-btn" data-filter="licenses">التراخيص</button>
         </div>
-        <h3>خدمة رقمية</h3>
+
       </div>
-
-      <div class="category-card" data-main="training">
-        <a href="training-page.html" class="card-link-icon"><i class="fas fa-external-link-alt"></i></a>
-        <div class="card-image">
-          <img src="training-main.jpg" alt="تأهيل لسوق العمل">
-        </div>
-        <h3>تأهيل لسوق العمل</h3>
-      </div>
-    </div>
-
-    <div class="sub-tabs-container" id="products-tabs">
-      <button class="sub-btn" data-filter="web">تطوير الويب</button>
-      <button class="sub-btn" data-filter="apps">تطوير التطبيقات</button>
-      <button class="sub-btn" data-filter="marketing">التسويق</button>
-      <button class="sub-btn" data-filter="licenses">التراخيص</button>
-    </div>
-
-    <div class="sub-tabs-container" id="service-tabs" style="display:none;">
-      <button class="sub-btn" data-filter="web">تطوير الويب</button>
-      <button class="sub-btn" data-filter="apps">تطوير التطبيقات</button>
-      <button class="sub-btn" data-filter="marketing">التسويق</button>
-      <button class="sub-btn" data-filter="licenses">التراخيص</button>
-    </div>
-
-    <div class="sub-tabs-container" id="training-tabs" style="display:none;">
-      <button class="sub-btn" data-filter="management">إدارة</button>
-      <button class="sub-btn" data-filter="design">تصاميم</button>
-      <button class="sub-btn" data-filter="tech">تقنية</button>
-    </div>
-
-    <div class="services-gallery">
-       </div>
-  </div>
-</section>
+    </section>
 
     <!--==============================================-->
 
@@ -502,90 +489,92 @@
       </div>
     </section>
     <!-- ============= قسم أعمالنا     ============== -->
-<section id="projects" class="projects-section" aria-labelledby="projects-title">
-    <div class="container-projects">
+    <section id="projects" class="projects-section" aria-labelledby="projects-title">
+      <div class="container-projects">
         <header class="projects-text">
-            <!-- استخدام id للربط مع aria-labelledby -->
-            <h2 id="projects-title">أعمالنا</h2>
+          <!-- استخدام id للربط مع aria-labelledby -->
+          <h2 id="projects-title">أعمالنا</h2>
         </header>
 
         <!-- إضافة دور المنطقة للسلايدر -->
         <div class="swiper projects-swiper" role="region" aria-label="معرض مشاريعنا">
-            <div class="swiper-wrapper">
-                
-                <!-- مشروع 1: تطبيق الخير -->
-                <div class="swiper-slide application">
-                    <article class="app-card">
-                        <!-- إضافة loading="lazy" لتحسين سرعة الصفحة -->
-                        <img src="./public/images/Frame37742.png" alt="واجهة تطبيق الخير للجوال" loading="lazy">
-                        <h3 class="app-title">تطبيق الخير</h3>
-                    </article>
-                </div>
+          <div class="swiper-wrapper">
 
-                <!-- مشروع 2: تطبيق يوسف -->
-                <div class="swiper-slide application">
-                    <article class="app-card">
-                        <img src="./public/images/Frame37743.png" alt="واجهة تطبيق يوسف الإلكتروني" loading="lazy">
-                        <h3 class="app-title">تطبيق يوسف</h3>
-                    </article>
-                </div>
-
-                <!-- مشروع 3: تطبيق تقنيون -->
-                <div class="swiper-slide application">
-                    <article class="app-card">
-                        <img src="./public/images/Frame37744.png" alt="واجهة تطبيق تقنيون للخدمات التقنية" loading="lazy">
-                        <h3 class="app-title">تطبيق تقنيون</h3>
-                    </article>
-                </div>
-                <!-- مشروع4: تطبيق  -->
-                <div class="swiper-slide application">
-                    <article class="app-card">
-                        <img src="./public/images/Frame37744.png" alt="واجهة تطبيق   " loading="lazy">
-                        <h3 class="app-title">تطبيق </h3>
-                    </article>
-                </div>
-                
+            <!-- مشروع 1: تطبيق الخير -->
+            <div class="swiper-slide application">
+              <article class="app-card">
+                <!-- إضافة loading="lazy" لتحسين سرعة الصفحة -->
+                <img src="./public/images/Frame37742.png" alt="واجهة تطبيق الخير للجوال" loading="lazy">
+                <h3 class="app-title">تطبيق الخير</h3>
+              </article>
             </div>
 
-            <!-- أزرار التنقل -->
-            <div class="swiper-button-next" role="button" aria-label="المشروع التالي"></div>
-            <div class="swiper-button-prev" role="button" aria-label="المشروع السابق"></div>
-            <div class="swiper-pagination"></div>
+            <!-- مشروع 2: تطبيق يوسف -->
+            <div class="swiper-slide application">
+              <article class="app-card">
+                <img src="./public/images/Frame37743.png" alt="واجهة تطبيق يوسف الإلكتروني" loading="lazy">
+                <h3 class="app-title">تطبيق يوسف</h3>
+              </article>
+            </div>
+
+            <!-- مشروع 3: تطبيق تقنيون -->
+            <div class="swiper-slide application">
+              <article class="app-card">
+                <img src="./public/images/Frame37744.png" alt="واجهة تطبيق تقنيون للخدمات التقنية" loading="lazy">
+                <h3 class="app-title">تطبيق تقنيون</h3>
+              </article>
+            </div>
+            <!-- مشروع4: تطبيق  -->
+            <div class="swiper-slide application">
+              <article class="app-card">
+                <img src="./public/images/Frame37744.png" alt="واجهة تطبيق   " loading="lazy">
+                <h3 class="app-title">تطبيق </h3>
+              </article>
+            </div>
+
+          </div>
+
+          <!-- أزرار التنقل -->
+          <div class="swiper-button-next" role="button" aria-label="المشروع التالي"></div>
+          <div class="swiper-button-prev" role="button" aria-label="المشروع السابق"></div>
+          <div class="swiper-pagination"></div>
         </div>
 
         <div class="view-all-container">
-            <a href="#projects-page.html" class="btn-view-all" aria-label="الانتقال لصفحة عرض كافة المشاريع">عرض كافة المشاريع</a>
+          <a href="#projects-page.html" class="btn-view-all" aria-label="الانتقال لصفحة عرض كافة المشاريع">عرض كافة
+            المشاريع</a>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!--========================قسم إحصائيات ================-->
+    <!--========================قسم إحصائيات ================-->
 
-<section class="stats-section" aria-labelledby="stats-title">
-  <div class="stats-container">
-    <h2 id="stats-title" class="stats-title">إحصائياتنا</h2>
-    <p class="stats-description">أرقامنا ليست مجرد إحصائيات، بل شواهد حقيقية على رؤيتنا، ونموّنا، وثقة عملائنا بنا في كل مشروع.</p>
-    
-    <div class="stats-grid" role="group" aria-label="إحصائيات الشركة">
-      <div class="stat-card">
-        <span class="number" aria-label="عدد المساهمين">150+</span>
-        <span class="label">مساهم</span>
+    <section class="stats-section" aria-labelledby="stats-title">
+      <div class="stats-container">
+        <h2 id="stats-title" class="stats-title">إحصائياتنا</h2>
+        <p class="stats-description">أرقامنا ليست مجرد إحصائيات، بل شواهد حقيقية على رؤيتنا، ونموّنا، وثقة عملائنا بنا
+          في كل مشروع.</p>
+
+        <div class="stats-grid" role="group" aria-label="إحصائيات الشركة">
+          <div class="stat-card">
+            <span class="number" aria-label="عدد المساهمين">150+</span>
+            <span class="label">مساهم</span>
+          </div>
+          <div class="stat-card">
+            <span class="number" aria-label="عدد العملاء">200+</span>
+            <span class="label">عميل</span>
+          </div>
+          <div class="stat-card">
+            <span class="number" aria-label="عدد المشاريع المنجزة">500+</span>
+            <span class="label">مشروع</span>
+          </div>
+          <div class="stat-card">
+            <span class="number" aria-label="عدد الأعضاء">300+</span>
+            <span class="label">عضو</span>
+          </div>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="number" aria-label="عدد العملاء">200+</span>
-        <span class="label">عميل</span>
-      </div>
-      <div class="stat-card">
-        <span class="number" aria-label="عدد المشاريع المنجزة">500+</span>
-        <span class="label">مشروع</span>
-      </div>
-      <div class="stat-card">
-        <span class="number" aria-label="عدد الأعضاء">300+</span>
-        <span class="label">عضو</span>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
   </main>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
