@@ -216,96 +216,76 @@
     </section>
 
     <!--قسم مجالتنا-->
-<section id="services" class="services-section" aria-labelledby="services-title">
+<section id="services" class="services-section">
   <div class="container-services">
-    <h2 id="services-title" class="section-title">خدماتنا</h2>
 
-    <div class="main-tabs" role="tablist" aria-label="الخدمات الرئيسية">
-      <button id="main-tab-products" class="main-btn active" role="tab" aria-selected="true" aria-controls="main-panel-products" data-main="products">
-        منتجات رقمية
-      </button>
-      <button id="main-tab-service" class="main-btn" role="tab" aria-selected="false" aria-controls="main-panel-service" data-main="service">
-        خدمة رقمية
-      </button>
-      <button id="main-tab-training" class="main-btn" role="tab" aria-selected="false" aria-controls="main-panel-training" data-main="training">
-        تأهيل لسوق العمل
-      </button>
+    <h2 class="section-title">خدماتنا</h2>
+
+    <!-- التبويبات الرئيسية -->
+    <div class="main-tabs">
+      <button class="main-btn active" data-main="products">منتجات رقمية</button>
+      <button class="main-btn" data-main="service">خدمة رقمية</button>
+      <button class="main-btn" data-main="training">تأهيل لسوق العمل</button>
     </div>
 
-    <div id="main-panel-products" class="tab-panel active" role="tabpanel" aria-labelledby="main-tab-products">
-      <div class="services-gallery">
-        <!-- أمثلة لعناصر المعرض، يجب أن تكون هنا -->
-        <div class="gallery-item show" data-category="products">
-          <div class="gallery-image">
-            <img src="/path/to/product-1.jpg" alt="وصف المنتج الرقمي الأول">
-          </div>
-          <h3>المنتج الرقمي الأول</h3>
-        </div>
-        <div class="gallery-item show" data-category="products">
-          <div class="gallery-image">
-            <img src="/path/to/product-2.jpg" alt="وصف المنتج الرقمي الثاني">
-          </div>
-          <h3>المنتج الرقمي الثاني</h3>
-        </div>
-      </div>
+    <!-- التبويبات الفرعية -->
+    <div class="sub-tabs" data-parent="products">
+      <button class="sub-btn active" data-sub="website">موقع تعريفي</button>
+      <button class="sub-btn" data-sub="store">متجر إلكتروني</button>
+      <button class="sub-btn" data-sub="system">نظام إداري</button>
     </div>
 
-    <div id="main-panel-service" class="tab-panel" role="tabpanel" aria-labelledby="main-tab-service">
-      <div class="sub-tabs active" role="tablist" aria-label="خدمات فرعية">
-        <button id="sub-tab-consulting" class="sub-btn active" role="tab" aria-selected="true" aria-controls="sub-panel-consulting" data-filter="consulting">
-          استشارات
-        </button>
-        <button id="sub-tab-development" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-development" data-filter="development">
-          تطوير
-        </button>
-      </div>
-      <div id="sub-panel-consulting" class="services-gallery tab-panel active" role="tabpanel" aria-labelledby="sub-tab-consulting">
-        <div class="gallery-item show" data-category="consulting">
-          <div class="gallery-image">
-            <img src="/path/to/consulting-1.jpg" alt="وصف خدمة الاستشارات الأولى">
-          </div>
-          <h3>خدمة استشارية 1</h3>
-        </div>
-      </div>
-      <div id="sub-panel-development" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-development">
-        <div class="gallery-item show" data-category="development">
-          <div class="gallery-image">
-            <img src="/path/to/development-1.jpg" alt="وصف خدمة التطوير الأولى">
-          </div>
-          <h3>خدمة تطوير 1</h3>
-        </div>
-      </div>
+    <div class="sub-tabs" data-parent="service">
+      <button class="sub-btn active" data-sub="website">موقع تعريفي</button>
+      <button class="sub-btn" data-sub="store">متجر إلكتروني</button>
+      <button class="sub-btn" data-sub="system">نظام إداري</button>
     </div>
 
-    <div id="main-panel-training" class="tab-panel" role="tabpanel" aria-labelledby="main-tab-training">
-      <div class="sub-tabs active" role="tablist" aria-label="برامج تأهيل فرعية">
-        <button id="sub-tab-web" class="sub-btn active" role="tab" aria-selected="true" aria-controls="sub-panel-web" data-filter="web">
-          تطوير الويب
-        </button>
-        <button id="sub-tab-mobile" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-mobile" data-filter="mobile">
-          تطوير الموبايل
-        </button>
-      </div>
-      <div id="sub-panel-web" class="services-gallery tab-panel active" role="tabpanel" aria-labelledby="sub-tab-web">
-        <div class="gallery-item show" data-category="web">
-          <div class="gallery-image">
-            <img src="/path/to/web-training-1.jpg" alt="وصف برنامج تدريب الويب الأول">
-          </div>
-          <h3>تدريب تطوير الويب</h3>
+    <div class="sub-tabs" data-parent="training">
+      <button class="sub-btn active" data-sub="management">إدارة</button>
+      <button class="sub-btn" data-sub="design">تصاميم</button>
+      <button class="sub-btn" data-sub="tech">تقنية</button>
+    </div>
+
+    <!-- المعرض -->
+    <div class="services-gallery">
+
+      <!-- منتجات رقمية -->
+      <article class="gallery-item" data-main="products" data-sub="website">
+        <div class="gallery-image">
+          <img src="./public/images/project1.png">
         </div>
-      </div>
-      <div id="sub-panel-mobile" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-mobile">
-        <div class="gallery-item show" data-category="mobile">
-          <div class="gallery-image">
-            <img src="/path/to/mobile-training-1.jpg" alt="وصف برنامج تدريب الموبايل الأول">
-          </div>
-          <h3>تدريب تطوير الموبايل</h3>
+        <h3>موقع تعريفي - منتج</h3>
+      </article>
+
+      <article class="gallery-item" data-main="products" data-sub="store">
+        <div class="gallery-image">
+          <img src="./public/images/project1.png">
         </div>
-      </div>
+        <h3>متجر إلكتروني - منتج</h3>
+      </article>
+
+      <!-- خدمة رقمية -->
+      <article class="gallery-item" data-main="service" data-sub="website">
+        <div class="gallery-image">
+          <img src="./public/images/project2.png">
+        </div>
+        <h3>موقع تعريفي - خدمة</h3>
+      </article>
+
+      <!-- تدريب -->
+      <article class="gallery-item" data-main="training" data-sub="management">
+        <div class="gallery-image">
+          <img src="./public/images/project2.png">
+        </div>
+        <h3>دورة إدارة مشاريع</h3>
+      </article>
+
     </div>
 
   </div>
 </section>
+
     <!--=====================================================-->
     <!-- ----- قسم خدماتنا ----- -->
 <section id="services-portfolio" class="services-section">
