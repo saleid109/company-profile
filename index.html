@@ -261,163 +261,54 @@
     </section>
     <!--=====================================================-->
     <!-- ----- قسم خدماتنا ----- -->
-<!-- قسم الخدمات المحدث -->
-<section id="services" class="services-section" aria-labelledby="services-title">
-  <div class="container-services">
-    <h2 id="services-title" class="section-title">خدماتنا</h2>
+    <section id="services-portfolio" class="services-section">
+      <div class="container-services">
+        <h2 class="section-title">خدماتنا</h2>
 
-    <div class="main-tabs" role="tablist" aria-label="الخدمات الرئيسية">
-      <button id="main-tab-products" class="main-btn active" role="tab" aria-selected="true" aria-controls="main-panel-products" data-main="products">
-        منتجات رقمية
-      </button>
-      <button id="main-tab-service" class="main-btn" role="tab" aria-selected="false" aria-controls="main-panel-service" data-main="service">
-        خدمة رقمية
-      </button>
-      <button id="main-tab-training" class="main-btn" role="tab" aria-selected="false" aria-controls="main-panel-training" data-main="training">
-        تأهيل لسوق العمل
-      </button>
-    </div>
+        <div class="services-tabs">
+          <button class="tab-btn" data-filter="products">منتجات رقمية</button>
+          <button class="tab-btn" data-filter="service">خدمة رقمية</button>
+          <button class="tab-btn" data-filter="training">
+            تأهيل لسوق العمل
+          </button>
+          <button class="tab-btn" data-filter="web">تطوير الويب</button>
+          <button class="tab-btn" data-filter="apps">تطوير التطبيقات</button>
+          <button class="tab-btn" data-filter="marketing">التسويق</button>
+          <button class="tab-btn" data-filter="licenses">التراخيص</button>
+          <button class="tab-btn active" data-filter="all">الكل</button>
+        </div>
 
-    <!-- لوحة محتوى المنتجات الرقمية -->
-    <div id="main-panel-products" class="tab-panel active" role="tabpanel" aria-labelledby="main-tab-products">
-      <div class="sub-tabs" role="tablist" aria-label="منتجات رقمية فرعية">
-        <button id="sub-tab-webdev" class="sub-btn active" role="tab" aria-selected="true" aria-controls="sub-panel-webdev" data-filter="webdev">
-          تطوير الويب
-        </button>
-        <button id="sub-tab-licenses" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-licenses" data-filter="licenses">
-          التراخيص
-        </button>
-        <button id="sub-tab-marketing" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-marketing" data-filter="marketing">
-          التسويق
-        </button>
-        <button id="sub-tab-appdev" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-appdev" data-filter="appdev">
-          تطوير التطبيقات
-        </button>
-      </div>
-      <!-- معرض تطوير الويب -->
-      <div id="sub-panel-webdev" class="services-gallery tab-panel active" role="tabpanel" aria-labelledby="sub-tab-webdev">
-        <div class="gallery-item show" data-category="webdev">
-          <div class="gallery-image">
-            <img src="/path/to/webdev-1.jpg" alt="صورة لموقع تعريفي لجمعية">
-          </div>
-          <h3>موقع تعريفي لجمعية</h3>
-        </div>
-        <div class="gallery-item show" data-category="webdev">
-          <div class="gallery-image">
-            <img src="/path/to/webdev-2.jpg" alt="صورة لمتجر إلكتروني">
-          </div>
-          <h3>متجر إلكتروني</h3>
-        </div>
-        <div class="gallery-item show" data-category="webdev">
-          <div class="gallery-image">
-            <img src="/path/to/webdev-3.jpg" alt="صورة لنظام إداري">
-          </div>
-          <h3>نظام إداري</h3>
-        </div>
-      </div>
-      <!-- معرض التراخيص -->
-      <div id="sub-panel-licenses" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-licenses">
-        <div class="gallery-item show" data-category="licenses">
-          <div class="gallery-image">
-            <img src="/path/to/licenses-1.jpg" alt="صورة لخدمة التراخيص">
-          </div>
-          <h3>خدمات التراخيص الرقمية</h3>
-        </div>
-      </div>
-      <!-- معرض التسويق -->
-      <div id="sub-panel-marketing" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-marketing">
-        <div class="gallery-item show" data-category="marketing">
-          <div class="gallery-image">
-            <img src="/path/to/marketing-1.jpg" alt="صورة لخدمة التسويق الرقمي">
-          </div>
-          <h3>حملات تسويقية</h3>
-        </div>
-      </div>
-      <!-- معرض تطوير التطبيقات -->
-      <div id="sub-panel-appdev" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-appdev">
-        <div class="gallery-item show" data-category="appdev">
-          <div class="gallery-image">
-            <img src="/path/to/appdev-1.jpg" alt="صورة لتطبيق جوال">
-          </div>
-          <h3>تطوير تطبيقات iOS و Android</h3>
-        </div>
-      </div>
-    </div>
+        <div class="services-gallery">
+          <article class="gallery-item" data-category="web">
+            <div class="gallery-image">
+              <img src="./public/images/project2.png" alt="موقع تعريفي لجمعية" />
+            </div>
+            <h3>موقع تعريفي لجمعية</h3>
+          </article>
 
-    <!-- لوحة محتوى خدمة رقمية -->
-    <div id="main-panel-service" class="tab-panel" role="tabpanel" aria-labelledby="main-tab-service">
-      <div class="sub-tabs" role="tablist" aria-label="خدمات فرعية">
-        <button id="sub-tab-consulting" class="sub-btn active" role="tab" aria-selected="true" aria-controls="sub-panel-consulting" data-filter="consulting">
-          استشارات تقنية
-        </button>
-        <button id="sub-tab-support" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-support" data-filter="support">
-          دعم فني
-        </button>
-      </div>
-      <!-- معرض استشارات تقنية -->
-      <div id="sub-panel-consulting" class="services-gallery tab-panel active" role="tabpanel" aria-labelledby="sub-tab-consulting">
-        <div class="gallery-item show" data-category="consulting">
-          <div class="gallery-image">
-            <img src="/path/to/consulting-1.jpg" alt="صورة لخدمة استشارات تقنية">
-          </div>
-          <h3>استشارات في التحول الرقمي</h3>
-        </div>
-      </div>
-      <!-- معرض دعم فني -->
-      <div id="sub-panel-support" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-support">
-        <div class="gallery-item show" data-category="support">
-          <div class="gallery-image">
-            <img src="/path/to/support-1.jpg" alt="صورة لخدمة دعم فني">
-          </div>
-          <h3>خدمات الدعم الفني</h3>
-        </div>
-      </div>
-    </div>
+          <article class="gallery-item" data-category="training">
+            <div class="gallery-image">
+              <img src="./public/images/project1.png" alt="تأهيل" />
+            </div>
+            <h3>دورة تأهيلية للمبرمجين</h3>
+          </article>
 
-    <!-- لوحة محتوى تأهيل لسوق العمل -->
-    <div id="main-panel-training" class="tab-panel" role="tabpanel" aria-labelledby="main-tab-training">
-      <div class="sub-tabs" role="tablist" aria-label="برامج تأهيل فرعية">
-        <button id="sub-tab-design" class="sub-btn active" role="tab" aria-selected="true" aria-controls="sub-panel-design" data-filter="design">
-          التصاميم
-        </button>
-        <button id="sub-tab-tech" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-tech" data-filter="tech">
-          التقني
-        </button>
-        <button id="sub-tab-management-training" class="sub-btn" role="tab" aria-selected="false" aria-controls="sub-panel-management-training" data-filter="management-training">
-          الإدارة
-        </button>
-      </div>
-      <!-- معرض التصاميم -->
-      <div id="sub-panel-design" class="services-gallery tab-panel active" role="tabpanel" aria-labelledby="sub-tab-design">
-        <div class="gallery-item show" data-category="design">
-          <div class="gallery-image">
-            <img src="/path/to/design-1.jpg" alt="صورة لدورة تدريبية في التصميم الجرافيكي">
-          </div>
-          <h3>دورة التصميم الجرافيكي</h3>
-        </div>
-      </div>
-      <!-- معرض التقني -->
-      <div id="sub-panel-tech" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-tech">
-        <div class="gallery-item show" data-category="tech">
-          <div class="gallery-image">
-            <img src="/path/to/tech-1.jpg" alt="صورة لدورة تدريبية في البرمجة">
-          </div>
-          <h3>برامج تدريب تقنية متقدمة</h3>
-        </div>
-      </div>
-      <!-- معرض الإدارة -->
-      <div id="sub-panel-management-training" class="services-gallery tab-panel" role="tabpanel" aria-labelledby="sub-tab-management-training">
-        <div class="gallery-item show" data-category="management-training">
-          <div class="gallery-image">
-            <img src="/path/to/management-training-1.jpg" alt="صورة لدورة تدريبية في الإدارة">
-          </div>
-          <h3>ورش عمل في الإدارة الاستراتيجية</h3>
-        </div>
-      </div>
-    </div>
+          <article class="gallery-item" data-category="products">
+            <div class="gallery-image">
+              <img src="./public/images/project1.png" alt="متجر إلكتروني" />
+            </div>
+            <h3>متجر إلكتروني</h3>
+          </article>
 
-  </div>
-</section>
+          <article class="gallery-item" data-category="service">
+            <div class="gallery-image">
+              <img src="./public/images/project2.png" alt="نظام إداري" />
+            </div>
+            <h3>نظام إداري</h3>
+          </article>
+        </div>
+      </div>
+    </section>ctio
 
     <!--==============================================-->
 
