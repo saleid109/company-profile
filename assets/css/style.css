@@ -1093,154 +1093,126 @@ h4 {
 }
 
 /* ----- نهاية قسم لماذا تختارنا (Why Choose Us /
+
 /*====================== قسم المقارنة ==============*/
-        .comparison-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 50px;
-            padding: 80px 20px;
-        }
+/* الحاوية */
+.comparison-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 120px 20px;
+}
 
-        /* النص الجانبي */
-        .comparison-text-side h2 {
-            font-size: 36px;
-            font-weight: 900;
-            line-height: 1.4;
-            color: #051242;
-            text-align: right;
-            max-width: 300px;
-        }
-        /*النص المميز في العنوان*/
-        .highlight-yellow { 
-            color: #f7b500; 
-        }
+/* النص الجانبي */
+.comparison-text-side h2 {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.4;
+    color: #051242;
+    text-align: right;
+    max-width: 300px;
+}
+/*النص المميزر في العنوان*/
+.highlight-yellow { 
+    color: #f7b500; 
+}
 
-        /* غلاف الجدول */
-        .comparison-table-wrapper {
-            position: relative;
-            flex: 1.5; /* تكبير مساحة الجدول قليلاً */
-        }
+/* غلاف الجدول */
+.comparison-table-wrapper {
+    position: relative;
+    flex: 1.2;
+}
+/*الجدول*/
+.comparison-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 40px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
 
-        /* الجدول */
-        .comparison-table {
-            width: 100%;
-            table-layout: fixed;
-            border-collapse: collapse;
-            background: #fff;
-            border-radius: 40px;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-            overflow: hidden; /* لإخفاء الحواف الزائدة للظل */
-        }
+/* الصندوق الكحلي */
+.featured-col-box {
+    position: absolute;
+    top: -50px; 
+    bottom: -50px;
+    width: 33.333%;
+    right: 33.333%;
+    background: #051242;
+    border-radius: 45px;
+    z-index: 2;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+}
 
-        /* الصندوق الكحلي - تم تعديل العرض والموقع */
-        .featured-col-box {
-            position: absolute;
-            top: -20px; /* تقليل المسافة من الأعلى */
-            bottom: -20px; /* تقليل المسافة من الأسفل */
-            width: 33.333%; /* نفس عرض العمود الثاني */
-            right: 33.333%; /* يبدأ من بداية العمود الثاني (بما أن العرض 33.333% والعرض الكلي 100%، هذا يضبطه في المنتصف) */
-            background: #051242;
-            border-radius: 45px;
-            z-index: 2;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-            pointer-events: none;
-        }
+/* خلايا الجدول */
+.comparison-table th,
+.comparison-table td {
+    height: 75px;
+    text-align: center;
+    vertical-align: middle;
+}
 
-        /* خلايا الجدول */
-        .comparison-table th,
-        .comparison-table td {
-            height: 70px;
-            text-align: center;
-            vertical-align: middle;
-            padding: 8px 5px;
-        }
+/*عنوان الصف*/
+.feature-text {
+    text-align: right !important;
+    padding-right: 40px !important;
+    font-weight: 700;
+    color: #051242;
+}
 
-        /* رؤوس الأعمدة */
-        .comparison-table thead th {
-            font-weight: 900;
-            font-size: 18px;
-            background-color: transparent;
-        }
-        .comparison-table thead th:first-child {
-            color: #051242;
-            font-size: 20px;
-        }
-        .comparison-table thead th:last-child {
-            color: #051242;
-            font-size: 20px;
-        }
+/* إبراز العمود الأوسط */
+.featured-header-text,
+.featured-cell {
+    position: relative;
+    z-index: 3;
+}
 
-        /* عنوان الصف (النصوص على اليمين) */
-        .feature-text {
-            text-align: right !important;
-            padding-right: 30px !important;
-            font-weight: 700;
-            color: #051242;
-            font-size: 16px;
-        }
+/*انص العمود المميز*/
+.featured-header-text {
+    color: #f7b500 ;
+    font-size: 22px;
+    font-weight: 900;
+    padding-top: 20px;
+}
 
-        /* إبراز العمود الأوسط (الرأس والخلايا) */
-        .featured-header-text,
-        .featured-cell {
-            position: relative;
-            z-index: 3;
-            color: #fff; /* لون النص في العمود الكحلي */
-        }
-        /* لون النص في رأس العمود المميز */
-        .featured-header-text {
-            color: #f7b500 !important;
-            font-size: 22px;
-            font-weight: 900;
-            padding-top: 20px;
-        }
+/* الصفوف الرمادية */
+.comparison-table tbody tr:nth-child(even) {
+    background: #f8f8f8;
+}
 
-        /* الصفوف ذات الخلفية الرمادية */
-        .comparison-table tbody tr:nth-child(even) {
-            background: #f8f8f8;
-        }
-
-        /* الأيقونات الذهبية */
-        .icon-gold-circle {
-            background: #f7b500;
-            color: #051242;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(247, 181, 0, 0.3);
-        }
-        /* الأيقونات السوداء */
-        .icon-dark-circle {
-            background: #444;
-            color: #fff;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        /* تعديل حجم الأيقونات داخل الخلايا المميزة */
-        .featured-cell .icon-gold-circle {
-            background: #f7b500;
-            color: #051242;
-        }
-        .featured-cell .icon-dark-circle {
-            background: #fff;
-            color: #051242;
-        }
-        
+/* الأيقونات */
+.icon-gold-circle {
+    background: #f7b500;
+    color: #051242;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(247, 181, 0, 0.3);
+}
+/*الايقونة السوداء*/
+.icon-dark-circle {
+    background: #444;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+/*==============================================*
 
 /*========================قسم اعمالنا====================*/
 .projects-section {
