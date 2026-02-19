@@ -1,4 +1,26 @@
 /* =========================================================
+   DESKTOP HOVER EFFECTS (يعمل فقط مع الماوس)
+   نضع هذه التأثيرات هنا لكي لا تسبب "تعليق" في الموبايل
+========================================================= */
+@media (hover: hover) {
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .home-buttons a:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+  }
+
+  .nav-menu li a:hover {
+    color: var(--color-primary);
+    background: rgba(0,0,0,0.02);
+  }
+}
+
+/* =========================================================
     MOBILE (0px - 768px)
 ========================================================= */
 @media (max-width: 768px) {
@@ -46,6 +68,11 @@
     display: block;
   }
 
+  /* تأثير اللمس للموبايل بدلاً من الهوفر */
+  .nav-menu li a:active {
+    background: rgba(0,0,0,0.1);
+  }
+
   /* ================== HERO ================== */
   .hero-section {
     height: auto;
@@ -76,6 +103,12 @@
     height: 60px;
   }
 
+  /* تأثير الضغط على الأزرار في الموبايل */
+  .home-buttons a:active {
+    transform: scale(0.96);
+    opacity: 0.9;
+  }
+
   /* ================== ABOUT ================== */
   .why-us-wrapper {
     flex-direction: column;
@@ -95,7 +128,6 @@
   }
 
   /* ================== SERVICES ================== */
-
   .main-categories {
     flex-wrap: wrap;
     gap: 10px;
@@ -117,6 +149,12 @@
 
   .service-card {
     padding: 25px;
+  }
+
+  /* تأثير اللمس لكرت الخدمة في الموبايل */
+  .service-card:active {
+    background-color: #fcfcfc;
+    transform: scale(0.98);
   }
 
   .card-image img {
@@ -158,6 +196,7 @@
   }
 
 }
+
 /* =========================================================
     TABLET (769px - 1024px)
 ========================================================= */
@@ -195,6 +234,11 @@
 
   .service-card {
     padding: 30px;
+  }
+
+  /* إضافة تأثير بسيط للتابلت عند اللمس */
+  .service-card:active {
+    transform: scale(0.99);
   }
 
   .card-image img {
