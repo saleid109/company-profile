@@ -319,7 +319,6 @@ function toggleMenu() {
     document.body.classList.toggle('menu-open');
 }
 
-/* إغلاق عند الضغط على الخلفية */
 document.querySelector('.overlay').addEventListener('click', function() {
     document.querySelector('.navbar-links').classList.remove('open');
     this.classList.remove('active');
