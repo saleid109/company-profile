@@ -310,4 +310,21 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+function toggleMenu() {
+    const navbar = document.querySelector('.navbar-links');
+    const overlay = document.querySelector('.overlay');
+
+    navbar.classList.toggle('open');
+    overlay.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+}
+
+/* إغلاق عند الضغط على الخلفية */
+document.querySelector('.overlay').addEventListener('click', function() {
+    document.querySelector('.navbar-links').classList.remove('open');
+    this.classList.remove('active');
+    document.body.classList.remove('menu-open');
+});
+
+
 
