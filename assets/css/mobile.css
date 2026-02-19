@@ -1,300 +1,257 @@
 /* =========================================================
-  DESKTOP HOVER EFFECTS (يعمل فقط مع الماوس)
-  نضع هذه التأثيرات هنا لكي لا تسبب "تعليق" في الموبايل
+   1. DESKTOP HOVER EFFECTS (يعمل فقط مع الماوس)
 ========================================================= */
 @media (hover: hover) {
-  .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-  .home-buttons a:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-  }
+    .home-buttons a:hover {
+        filter: brightness(1.1);
+        transform: translateY(-2px);
+    }
 
-  .nav-menu li a:hover {
-    color: var(--color-primary);
-    background: rgba(0,0,0,0.02);
-  }
+    .nav-menu li a:hover {
+        color: var(--color-primary);
+        background: rgba(0, 0, 0, 0.02);
+    }
 }
+
+/* =========================================================
+   2. MOBILE (0px - 768px) - النسخة المحسنة والموحدة
+========================================================= */
 @media (max-width: 768px) {
+
     /* منع التمرير الأفقي تماماً */
     html, body {
         overflow-x: hidden;
         width: 100%;
     }
 
-    /* تأثير الضغط السريع للأزرار (Active State) */
+    .container {
+        padding: 0 20px;
+    }
+
+    /* ================== NAV (Professional Drawer) ================== */
+    .nav-wrapper {
+        height: 65px;
+        padding: 0 15px;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* تحويل المنيو إلى Drawer ينزلق من الجانب */
+    .navbar-links {
+        position: fixed; /* تغيير من absolute لثبات أفضل */
+        top: 0;
+        right: -100%; /* يبدأ خارج الشاشة */
+        width: 80%;
+        height: 100vh;
+        background: var(--color-secondary);
+        display: flex; 
+        flex-direction: column;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 2000;
+        padding-top: 80px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    .navbar-links.open {
+        transform: translateX(-100%); /* سحب المنيو لليسار ليظهر */
+        display: flex;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-menu li a {
+        padding: 18px 25px;
+        display: block;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* تأثيرات الضغط السريع (Haptic Feedback) للموبايل */
     .home-buttons a:active,
     .btn-primary:active,
-    .service-card:active {
+    .service-card:active,
+    .nav-menu li a:active {
         transform: scale(0.96);
         transition: transform 0.1s ease;
         background-color: rgba(0, 0, 0, 0.05);
     }
 
-    /* تعديل القائمة المنسدلة لتكون Drawer احترافي */
-    .navbar-links {
-        position: fixed;
-        top: 0;
-        right: -100%; /* مخفية لليمين */
-        width: 80%;
-        height: 100vh;
-        background: var(--color-secondary);
-        transition: transform 0.4s ease-in-out;
-        display: flex; 
-        z-index: 2000;
-        padding-top: 80px;
+    /* ================== HERO ================== */
+    .hero-section {
+        height: auto;
+        padding: 120px 0 80px;
     }
 
-    .navbar-links.open {
-        transform: translateX(-100%); /* تسحب القائمة لليسار لتظهر */
-        display: flex;
+    .hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .home-buttons a {
+        width: 100%;
+        height: 60px;
+    }
+
+    /* ================== SECTIONS GRID ================== */
+    /* توحيد تحويل الشبكات إلى عمود واحد للموبايل */
+    .fields-grid, 
+    .services-grid, 
+    .technologies-grid, 
+    .why-us-wrapper, 
+    .container-training, 
+    .container-why-choose, 
+    .comparison-container {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .card-image img {
+        height: 180px;
+    }
+
+    /* ================== COMPARISON ================== */
+    .comparison-table th:last-child,
+    .comparison-table td:last-child {
+        display: none; /* إخفاء عمود لتوفير مساحة */
     }
 }
+
 /* =========================================================
-    MOBILE (0px - 768px)
+   3. TABLET (769px - 1024px)
 ========================================================= */
-@media (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container { padding: 0 40px; }
 
-  /* الحاوية العامة */
-  .container {
-    padding: 0 20px;
-  }
+    .hero-section { height: 85vh; }
 
-  /* ================== NAV ================== */
-  .nav-wrapper {
-    height: 65px;
-    padding: 0 15px;
-  }
+    .hero-content h1 { font-size: 2.4rem; }
 
-  .logo img {
-    height: 45px;
-  }
+    /* تحويل الشبكات إلى عمودين في التابلت */
+    .fields-grid, 
+    .services-grid, 
+    .technologies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
 
-  .mobile-menu-icon {
-    display: block;
-    font-size: 24px;
-  }
+    .service-card { padding: 30px; }
+    
+    .service-card:active { transform: scale(0.99); }
 
-  .navbar-links {
-    position: absolute;
-    top: 65px;
-    right: 0;
-    width: 100%;
-    background: var(--color-secondary);
-    display: none;
-    flex-direction: column;
-  }
-
-  .navbar-links.open {
-    display: flex;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-  }
-
-  .nav-menu li a {
-    padding: 18px 20px;
-    display: block;
-  }
-
-  /* تأثير اللمس للموبايل بدلاً من الهوفر */
-  .nav-menu li a:active {
-    background: rgba(0,0,0,0.1);
-  }
-
-  /* ================== HERO ================== */
-  .hero-section {
-    height: auto;
-    padding: 120px 0 80px;
-  }
-
-  .hero-content {
-    text-align: center;
-  }
-
-  .hero-content h1 {
-    font-size: 1.8rem;
-    line-height: 1.4;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-    margin-bottom: 25px;
-  }
-
-  .home-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .home-buttons a {
-    width: 100%;
-    height: 60px;
-  }
-
-  /* تأثير الضغط على الأزرار في الموبايل */
-  .home-buttons a:active {
-    transform: scale(0.96);
-    opacity: 0.9;
-  }
-
-  /* ================== ABOUT ================== */
-  .why-us-wrapper {
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .feature-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  /* ================== FIELDS ================== */
-  .fields-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  /* ================== SERVICES ================== */
-  .main-categories {
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .sub-categories {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-    margin-top: 30px;
-  }
-
-  .service-card {
-    padding: 25px;
-  }
-
-  /* تأثير اللمس لكرت الخدمة في الموبايل */
-  .service-card:active {
-    background-color: #fcfcfc;
-    transform: scale(0.98);
-  }
-
-  .card-image img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 15px;
-  }
-
-  /* ================== TRAINING ================== */
-  .container-training {
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-  }
-
-  /* ================== TECHNOLOGIES ================== */
-  .technologies-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  /* ================== WHY CHOOSE ================== */
-  .container-why-choose {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  /* ================== COMPARISON ================== */
-  .comparison-container {
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .comparison-table th:last-child,
-  .comparison-table td:last-child {
-    display: none;
-  }
-
+    .container-why-choose { flex-direction: column; }
 }
 
 /* =========================================================
-    TABLET (769px - 1024px)
+   TABLET (769px - 1024px) - تنسيق الايباد
 ========================================================= */
 @media (min-width: 769px) and (max-width: 1024px) {
 
-  .container {
-    padding: 0 40px;
-  }
+    /* ضبط الحاويات لتعطي مساحة تنفس */
+    .container, .container-training, .why-us-wrapper, .container-why-choose {
+        padding: 0 40px;
+        flex-direction: column; /* تحويل العناصر المتجاورة لعمودية إذا كانت مزدحمة */
+        text-align: center;
+        gap: 40px;
+    }
 
-  /* HERO */
-  .hero-section {
-    height: 85vh;
-  }
+    /* الهيرو سيكشن - تصغير النصوص لتناسب الشاشة */
+    .hero-section {
+        height: 70vh; /* تقليل الارتفاع قليلاً */
+    }
 
-  .hero-content h1 {
-    font-size: 2.4rem;
-  }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
 
-  .hero-content p {
-    max-width: 600px;
-  }
+    /* تحويل جميع الشبكات لعمودين (2 Columns) بدلاً من 4 أو 1 */
+    .fields-grid, 
+    .services-grid, 
+    .technologies-grid,
+    .stats-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px;
+        max-width: 100%;
+    }
 
-  /* FIELDS */
-  .fields-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
+    /* قسم الإحصائيات - تعديله ليناسب العرض */
+    .stats-section {
+        width: 100%;
+        height: auto;
+        padding: 60px 20px;
+    }
 
-  /* SERVICES */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
+    .stat-card {
+        width: 100%; /* تأخذ العرض المتاح في الجريد */
+    }
 
-  .service-card {
-    padding: 30px;
-  }
+    /* كروت الخدمات - ضبط الصور */
+    .service-card {
+        padding: 20px;
+    }
 
-  /* إضافة تأثير بسيط للتابلت عند اللمس */
-  .service-card:active {
-    transform: scale(0.99);
-  }
+    .card-image img {
+        height: 220px;
+    }
 
-  .card-image img {
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-  }
+    /* قسم المقارنة - تعديله لعدم خروج الجدول عن الشاشة */
+    .comparison-container {
+        flex-direction: column;
+        padding: 60px 20px;
+    }
 
-  /* TECHNOLOGIES */
-  .technologies-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .comparison-table-wrapper {
+        width: 100%;
+        overflow-x: auto; /* السماح بالتمرير داخل الجدول إذا كبر */
+    }
 
-  /* WHY CHOOSE */
-  .container-why-choose {
-    flex-direction: column;
-    gap: 50px;
-  }
+    /* تعديل القائمة العلوية لتجنب تداخل الروابط */
+    .nav-menu {
+        gap: 15px;
+    }
 
-  /* COMPARISON */
-  .comparison-container {
-    gap: 30px;
-  }
+    .nav-menu a {
+        font-size: 14px;
+    }
 
+    .btn-primary {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
 }
