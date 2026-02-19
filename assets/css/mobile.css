@@ -780,27 +780,26 @@
   }
 
   /* تنسيق قسم التقنيات في الآيباد */
-  .technologies-grid {
-    grid-template-columns: repeat(2, 1fr);
-    /* عمودين على الآيباد */
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
+ .technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* بطاقتين بجانب بعض للايباد */
+    gap: 30px; /* القياس من Figma image_f60c96 */
+    padding: 0 40px;
   }
 
   .technology-item {
-    padding: 30px 25px;
-    text-align: center;
+    height: 232px; /* الارتفاع الدقيق من Figma */
+    padding: 32px; /* التباعد من Figma */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: transform 0.4s cubic-bezier(.2, .9, .3, 1), box-shadow 0.3s ease, opacity 0.4s ease;
-    opacity: 0;
-    /* مخفي افتراضياً لتمكين تأثير الظهور */
-    transform: translateX(40px);
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   }
+
+
 
   .technology-item.show {
     opacity: 1;
@@ -812,12 +811,13 @@
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
   }
 
-  .technology-item img,
+  /* حل مشكلة صغر الصور في التقنيات */
   .tech-logos img {
-    width: 100px;
-    height: auto;
+    width: auto;
+    height: 45px; /* حجم واضح جداً للايباد */
+    max-width: 80px;
     object-fit: contain;
-    max-width: 100%;
+    margin: 0 10px;
   }
 
   .tech-logos {
