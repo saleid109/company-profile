@@ -92,15 +92,25 @@
 
     /* تحويل القائمة إلى درج جانبي متحرك */
 /* القائمة الجانبية */
+/* القائمة الجانبية */
 .navbar-links {
+    position: fixed;
+    top: 0;
     right: 0;
+    width: 280px;
+    height: 100vh;
+    background:var(--coloe-scondrey); /* أو اللون الأساسي عندك */
+    box-shadow: -5px 0 20px rgba(0,0,0,0.2);
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    z-index: 2000;
+    padding-top: 80px; /* حتى لا تغطي الهيدر */
 }
 
 .navbar-links.open {
     transform: translateX(0);
 }
+
 
 
 /* الخلفية الداكنة */
