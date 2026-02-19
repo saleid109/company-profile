@@ -283,6 +283,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//للتعرف على الكروت
 
+document.addEventListener("DOMContentLoaded", function() {
+    // إعداد مراقب الظهور (Intersection Observer)
+    const revealOption = {
+        threshold: 0.15 // يظهر العنصر عندما يظهر 15% منه على الشاشة
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, revealOption);
+
+    // العناصر التي نريد تطبيق الحركة عليها
+    const elementsToReveal = document.querySelectorAll(
+        '.service-card, .feature-item, .field-card, .stat-card, .hero-content'
+    );
+
+    elementsToReveal.forEach(el => {
+        el.classList.add('reveal'); // إضافة كلاس الإخفاء الأولي
+        revealObserver.observe(el);
+    });
+});
 
 
