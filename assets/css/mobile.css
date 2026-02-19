@@ -1,18 +1,56 @@
 /* =========================================================
-    . DESKTOP HOVER EFFECTS (يعمل فقط مع الماوس)
+   [1] الإعدادات العامة وتحسين الأداء
 ========================================================= */
+
+/* تحسين أداء كروت الخدمات */
+.service-card {
+    will-change: transform; /* تلميح للـ GPU لتحسين السلاسة */
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background-color 0.2s ease;
+}
+
+/* تحسين انتقالات الأزرار والروابط */
+.home-buttons a,
+.nav-menu li a,
+.btn-primary {
+    transition: transform 0.2s ease,
+                filter 0.2s ease,
+                background-color 0.2s ease;
+}
+
+/* تثبيت موضع شريط التنقل */
+.nav-wrapper {
+    position: relative;
+}
+
+/* دعم تقليل الحركة لذوي الحساسية للحركة */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* =========================================================
+   [2] تأثيرات سطح المكتب (تعمل فقط عند وجود ماوس)
+========================================================= */
+
 @media (hover: hover) {
+
+    /* رفع الكرت عند المرور */
     .service-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    /* تأثير خفيف للأزرار */
     .home-buttons a:hover {
         filter: brightness(1.1);
         transform: translateY(-2px);
     }
 
+    /* تمييز روابط القائمة */
     .nav-menu li a:hover {
         color: var(--color-primary);
         background: rgba(0, 0, 0, 0.02);
@@ -20,11 +58,12 @@
 }
 
 /* =========================================================
-        MOBILE (0px - 768px) - نسخة  الجوال
+   [3] الجوال (0px - 768px)
 ========================================================= */
+
 @media (max-width: 768px) {
 
-    /* منع التمرير الأفقي تماماً */
+    /* منع التمرير الأفقي */
     html, body {
         overflow-x: hidden;
         width: 100%;
@@ -34,11 +73,11 @@
         padding: 0 20px;
     }
 
-    /* ================= NAV (Professional Drawer========= */
+    /* ================= القائمة الجانبية (Drawer) ================= */
+
     .nav-wrapper {
         height: 65px;
         padding: 0 15px;
-        position: relative;
         z-index: 1001;
     }
 
@@ -52,25 +91,28 @@
         cursor: pointer;
     }
 
-    /* تحويل المنيو إلى Drawer ينزلق من الجانب */
+    /* تحويل القائمة إلى درج جانبي متحرك */
     .navbar-links {
-        position: fixed; /* تغيير من absolute لثبات أفضل */
+        position: fixed;
         top: 0;
-        right: -100%; /* يبدأ خارج الشاشة */
+        right: 0;
         width: 80%;
         height: 100vh;
         background: var(--color-secondary);
-        display: flex; 
+        display: flex;
         flex-direction: column;
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 2000;
         padding-top: 80px;
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        z-index: 2000;
+
+        /* إخفاء القائمة خارج الشاشة */
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    /* عند فتح القائمة */
     .navbar-links.open {
-        transform: translateX(-100%); /* سحب المنيو لليسار ليظهر */
-        display: flex;
+        transform: translateX(0);
     }
 
     .nav-menu {
@@ -84,17 +126,18 @@
         border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* تأثيرات الضغط السريع (Haptic Feedback) للموبايل */
+    /* تأثير استجابة سريعة عند اللمس */
     .home-buttons a:active,
     .btn-primary:active,
     .service-card:active,
     .nav-menu li a:active {
         transform: scale(0.96);
-        transition: transform 0.1s ease;
         background-color: rgba(0, 0, 0, 0.05);
+        transition: transform 0.1s ease;
     }
 
-    /* ================== HERO ================== */
+    /* ================= قسم الهيرو ================= */
+
     .hero-section {
         height: auto;
         padding: 120px 0 80px;
@@ -120,14 +163,14 @@
         height: 60px;
     }
 
-    /* ================== SECTIONS GRID ================== */
-    /* توحيد تحويل الشبكات إلى عمود واحد للموبايل */
-    .fields-grid, 
-    .services-grid, 
-    .technologies-grid, 
-    .why-us-wrapper, 
-    .container-training, 
-    .container-why-choose, 
+    /* ================= تحويل الشبكات لعمود واحد ================= */
+
+    .fields-grid,
+    .services-grid,
+    .technologies-grid,
+    .why-us-wrapper,
+    .container-training,
+    .container-why-choose,
     .comparison-container {
         grid-template-columns: 1fr;
         flex-direction: column;
@@ -145,72 +188,64 @@
         height: 180px;
     }
 
-    /* ================== COMPARISON ================== */
+    /* إخفاء عمود من جدول المقارنة لتوفير مساحة */
     .comparison-table th:last-child,
     .comparison-table td:last-child {
-        display: none; /* إخفاء عمود لتوفير مساحة */
+        display: none;
     }
 }
 
 /* =========================================================
-   3. TABLET (769px - 1024px)
+   [4] التابلت (769px - 1024px)
 ========================================================= */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .container { padding: 0 40px; }
 
-    .hero-section { height: 85vh; }
-
-    .hero-content h1 { font-size: 2.4rem; }
-
-    /* تحويل الشبكات إلى عمودين في التابلت */
-    .fields-grid, 
-    .services-grid, 
-    .technologies-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-
-    .service-card { padding: 30px; }
-    
-    .service-card:active { transform: scale(0.99); }
-
-    .container-why-choose { flex-direction: column; }
-}
-
-/* =========================================================
-   TABLET (769px - 1024px) - تنسيق الايباد
-========================================================= */
 @media (min-width: 769px) and (max-width: 1024px) {
 
-    /* ضبط الحاويات لتعطي مساحة تنفس */
-    .container, .container-training, .why-us-wrapper, .container-why-choose {
+    /* توسيع المساحات الجانبية */
+    .container,
+    .container-training,
+    .why-us-wrapper,
+    .container-why-choose {
         padding: 0 40px;
-        flex-direction: column; /* تحويل العناصر المتجاورة لعمودية إذا كانت مزدحمة */
+        flex-direction: column;
         text-align: center;
         gap: 40px;
     }
 
-    /* الهيرو سيكشن - تصغير النصوص لتناسب الشاشة */
+    /* ضبط ارتفاع الهيرو */
     .hero-section {
-        height: 70vh; /* تقليل الارتفاع قليلاً */
+        height: 75vh;
     }
 
     .hero-content h1 {
         font-size: 2.5rem;
     }
 
-    /* تحويل جميع الشبكات لعمودين (2 Columns) بدلاً من 4 أو 1 */
-    .fields-grid, 
-    .services-grid, 
+    /* تحويل الشبكات إلى عمودين */
+    .fields-grid,
+    .services-grid,
     .technologies-grid,
     .stats-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 25px;
         max-width: 100%;
     }
 
-    /* قسم الإحصائيات - تعديله ليناسب العرض */
+    .service-card {
+        padding: 25px;
+    }
+
+    /* تأثير لمس خفيف */
+    .service-card:active {
+        transform: scale(0.99);
+    }
+
+    .card-image img {
+        height: 220px;
+    }
+
+    /* تحسين عرض قسم الإحصائيات */
     .stats-section {
         width: 100%;
         height: auto;
@@ -218,19 +253,10 @@
     }
 
     .stat-card {
-        width: 100%; /* تأخذ العرض المتاح في الجريد */
+        width: 100%;
     }
 
-    /* كروت الخدمات - ضبط الصور */
-    .service-card {
-        padding: 20px;
-    }
-
-    .card-image img {
-        height: 220px;
-    }
-
-    /* قسم المقارنة - تعديله لعدم خروج الجدول عن الشاشة */
+    /* جعل جدول المقارنة قابل للتمرير عند الحاجة */
     .comparison-container {
         flex-direction: column;
         padding: 60px 20px;
@@ -238,10 +264,10 @@
 
     .comparison-table-wrapper {
         width: 100%;
-        overflow-x: auto; /* السماح بالتمرير داخل الجدول إذا كبر */
+        overflow-x: auto;
     }
 
-    /* تعديل القائمة العلوية لتجنب تداخل الروابط */
+    /* تقليل حجم عناصر القائمة */
     .nav-menu {
         gap: 15px;
     }
