@@ -91,33 +91,38 @@
     }
 
     /* تحويل القائمة إلى درج جانبي متحرك */
-    .navbar-links {
+/* القائمة الجانبية */
+.navbar-links {
     position: fixed;
     top: 0;
     right: -100%;
     width: 280px;
     height: 100vh;
     background: #fff;
-    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
     transition: right 0.3s ease;
     z-index: 2000;
 }
+
+.navbar-links.open {
+    right: 0;
+}
+
 /* الخلفية الداكنة */
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0,0,0,0.5);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
     z-index: 1500;
 }
 
-/* عند التفعيل */
 .overlay.active {
     opacity: 1;
     visibility: visible;
 }
+
 body.menu-open {
     overflow: hidden;
 }
