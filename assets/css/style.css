@@ -863,20 +863,6 @@ html, body {
     }
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    .main-categories {
-        gap: 15px;
-    }
-
-    .cat-btn {
-        padding: 10px 20px;
-    }
-
-    .services-section {
-        padding: 70px 0;
-    }
-}
 
 
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
@@ -1186,7 +1172,7 @@ background: #FFFFFF;
     object-fit: cover;
 }
 
-/* ----- نهاية قسم لماذا تختارنا (Why Choose Us /
+/* ----- نهاية قسم لماذا تختارنا (Why Choose Us /*/
 
 /*====================== قسم المقارنة ==============*/
 /* الحاوية */
@@ -1522,3 +1508,4 @@ background: #FFFFFF;
     font-weight: 700;
     margin-top: 10px;
 }
+
