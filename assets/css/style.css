@@ -26,7 +26,34 @@ html, body {
     overflow-x: hidden;
 }
 
+.service-card, 
+.home-buttons a, 
+.nav-menu li a, 
+.btn-primary, 
+.feature-item {
+    will-change: transform; /* تحسين أداء GPU */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.3s ease, 
+                background-color 0.2s ease,
+                filter 0.2s ease;
+}
 
+/* كلاس الظهور التدريجي (Scroll Reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* حماية من الاهتزاز أثناء الحركة */
+.nav-wrapper {
+    position: relative;
+    z-index: 1000;
+}
 
 /* تنسيق التوب بار */
 .top-bar {

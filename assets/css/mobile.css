@@ -1,6 +1,6 @@
 /* =========================================================
-   DESKTOP HOVER EFFECTS (يعمل فقط مع الماوس)
-   نضع هذه التأثيرات هنا لكي لا تسبب "تعليق" في الموبايل
+  DESKTOP HOVER EFFECTS (يعمل فقط مع الماوس)
+  نضع هذه التأثيرات هنا لكي لا تسبب "تعليق" في الموبايل
 ========================================================= */
 @media (hover: hover) {
   .service-card:hover {
@@ -19,7 +19,41 @@
     background: rgba(0,0,0,0.02);
   }
 }
+@media (max-width: 768px) {
+    /* منع التمرير الأفقي تماماً */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
 
+    /* تأثير الضغط السريع للأزرار (Active State) */
+    .home-buttons a:active,
+    .btn-primary:active,
+    .service-card:active {
+        transform: scale(0.96);
+        transition: transform 0.1s ease;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    /* تعديل القائمة المنسدلة لتكون Drawer احترافي */
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* مخفية لليمين */
+        width: 80%;
+        height: 100vh;
+        background: var(--color-secondary);
+        transition: transform 0.4s ease-in-out;
+        display: flex; 
+        z-index: 2000;
+        padding-top: 80px;
+    }
+
+    .navbar-links.open {
+        transform: translateX(-100%); /* تسحب القائمة لليسار لتظهر */
+        display: flex;
+    }
+}
 /* =========================================================
     MOBILE (0px - 768px)
 ========================================================= */
