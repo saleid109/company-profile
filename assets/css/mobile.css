@@ -93,19 +93,15 @@
     /* تحويل القائمة إلى درج جانبي متحرك */
 /* القائمة الجانبية */
 .navbar-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: #fff;
-    transition: right 0.3s ease;
-    z-index: 2000;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
 }
 
 .navbar-links.open {
-    right: 0;
+    transform: translateX(0);
 }
+
 
 /* الخلفية الداكنة */
 .overlay {
@@ -128,10 +124,7 @@ body.menu-open {
 }
 
 
-    /* عند فتح القائمة */
-    .navbar-links.open {
-    right: 0;
-}
+
 
     .nav-menu {
         flex-direction: column;
