@@ -664,7 +664,8 @@ h4 {
 /* ----- نهاية قسم مجالاتنا (Fields Section) ----- */
 
 
-/* ========== Services Section ========== */
+/* ==========  قسم خدماتنا Services Section ========== */
+
 .services-section {
     padding: 100px 0;
     text-align: center;
@@ -672,6 +673,7 @@ h4 {
 }
 
 /* ===== التبويبات الرئيسية ===== */
+
 .main-categories {
     display: flex;
     justify-content: center;

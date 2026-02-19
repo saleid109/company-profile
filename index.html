@@ -261,90 +261,73 @@
     </section>
     <!--=====================================================-->
     <!-- -- ==============قسم خدماتنا ============----- -->
-<section class="services-section" aria-labelledby="services-title">
-  <div class="container">
-    <h2 id="services-title" class="section-main-title">خدماتنا</h2>
+    <section class="services-section" aria-labelledby="services-title">
+      <div class="container">
+        <h2 id="services-title" class="section-main-title">خدماتنا</h2>
 
-    <!-- التبويبات الرئيسية -->
-    <nav class="main-categories" role="tablist">
-      <button class="cat-btn active"
-              data-main="products"
-              role="tab"
-              aria-selected="true">
-        منتجات رقمية
-      </button>
+        <!-- التبويبات الرئيسية -->
+        <nav class="main-categories" role="tablist">
+          <button class="cat-btn active" data-main="products" role="tab" aria-selected="true">
+            منتجات رقمية
+          </button>
 
-      <button class="cat-btn"
-              data-main="services"
-              role="tab"
-              aria-selected="false">
-        خدمة رقمية
-      </button>
+          <button class="cat-btn" data-main="services" role="tab" aria-selected="false">
+            خدمة رقمية
+          </button>
 
-      <button class="cat-btn"
-              data-main="job"
-              role="tab"
-              aria-selected="false">
-        تأهيل لسوق العمل
-      </button>
-    </nav>
+          <button class="cat-btn" data-main="job" role="tab" aria-selected="false">
+            تأهيل لسوق العمل
+          </button>
+        </nav>
 
-    <!-- التبويبات الفرعية -->
-    <div class="sub-categories-wrapper">
+        <!-- التبويبات الفرعية -->
+        <div class="sub-categories-wrapper">
 
-      <div class="sub-categories active" data-parent="products">
-        <button class="sub-btn active" data-sub="web">تطوير الويب</button>
-        <button class="sub-btn" data-sub="apps">تطوير التطبيقات</button>
-        <button class="sub-btn" data-sub="marketing">التسويق</button>
-        <button class="sub-btn" data-sub="licenses">التراخيص</button>
+          <div class="sub-categories active" data-parent="products">
+            <button class="sub-btn active" data-sub="web">تطوير الويب</button>
+            <button class="sub-btn" data-sub="apps">تطوير التطبيقات</button>
+            <button class="sub-btn" data-sub="marketing">التسويق</button>
+            <button class="sub-btn" data-sub="licenses">التراخيص</button>
+          </div>
+
+          <div class="sub-categories" data-parent="services">
+            <button class="sub-btn active" data-sub="consulting">استشارات تقنية</button>
+            <button class="sub-btn" data-sub="study">دراسة مشروع</button>
+          </div>
+
+          <div class="sub-categories" data-parent="job">
+            <button class="sub-btn active" data-sub="management">إدارة</button>
+            <button class="sub-btn" data-sub="technical">تقني</button>
+            <button class="sub-btn" data-sub="design">تصاميم</button>
+          </div>
+
+        </div>
+
+        <!-- الكروت -->
+        <div class="services-grid">
+
+          <!-- منتجات -->
+          <article class="service-card" data-main="products" data-sub="web">
+            <h3>موقع تعريفي</h3>
+          </article>
+
+          <article class="service-card" data-main="products" data-sub="apps">
+            <h3>تطبيق جوال</h3>
+          </article>
+
+          <!-- خدمات -->
+          <article class="service-card" data-main="services" data-sub="consulting">
+            <h3>استشارة تقنية</h3>
+          </article>
+
+          <!-- تدريب -->
+          <article class="service-card" data-main="job" data-sub="management">
+            <h3>تدريب إداري</h3>
+          </article>
+
+        </div>
       </div>
-
-      <div class="sub-categories" data-parent="services">
-        <button class="sub-btn active" data-sub="consulting">استشارات تقنية</button>
-        <button class="sub-btn" data-sub="study">دراسة مشروع</button>
-      </div>
-
-      <div class="sub-categories" data-parent="job">
-        <button class="sub-btn active" data-sub="management">إدارة</button>
-        <button class="sub-btn" data-sub="technical">تقني</button>
-        <button class="sub-btn" data-sub="design">تصاميم</button>
-      </div>
-
-    </div>
-
-    <!-- الكروت -->
-    <div class="services-grid">
-
-      <!-- منتجات -->
-      <article class="service-card"
-               data-main="products"
-               data-sub="web">
-        <h3>موقع تعريفي</h3>
-      </article>
-
-      <article class="service-card"
-               data-main="products"
-               data-sub="apps">
-        <h3>تطبيق جوال</h3>
-      </article>
-
-      <!-- خدمات -->
-      <article class="service-card"
-               data-main="services"
-               data-sub="consulting">
-        <h3>استشارة تقنية</h3>
-      </article>
-
-      <!-- تدريب -->
-      <article class="service-card"
-               data-main="job"
-               data-sub="management">
-        <h3>تدريب إداري</h3>
-      </article>
-
-    </div>
-  </div>
-</section>
+    </section>
 
     <!--==============================================-->
 
@@ -369,43 +352,43 @@
     </section>
 
     <!-- قسم التقنيات -->
-  <section id="technologies" class="technologies-section" aria-labelledby="technologies-title">
-  <div class="container-technologies">
-    <div class="technologies-header">
-      <h2 id="technologies-title" class="technologies-title">التقنيات</h2>
-    </div>
-
-    <div class="technologies-grid">
-      <article class="technology-item">
-        <h3 class="tech-name">تحليل أعمال</h3>
-        <div class="tech-logos">
-          <img src="./public/images/tech1.png" alt="أدوات تحليل الأعمال Trello و Power BI" />
+    <section id="technologies" class="technologies-section" aria-labelledby="technologies-title">
+      <div class="container-technologies">
+        <div class="technologies-header">
+          <h2 id="technologies-title" class="technologies-title">التقنيات</h2>
         </div>
-      </article>
 
-      <article class="technology-item">
-        <h3 class="tech-name">تصميم واجهات UI/UX</h3>
-        <div class="tech-logos">
-          <img src="./public/images/tech2.png" alt="أدوات التصميم Figma و Adobe XD" />
-        </div>
-      </article>
+        <div class="technologies-grid">
+          <article class="technology-item">
+            <h3 class="tech-name">تحليل أعمال</h3>
+            <div class="tech-logos">
+              <img src="./public/images/tech1.png" alt="أدوات تحليل الأعمال Trello و Power BI" />
+            </div>
+          </article>
 
-      <article class="technology-item">
-        <h3 class="tech-name">واجهة أمامية</h3>
-        <div class="tech-logos">
-          <img src="./public/images/tech3.png" alt="تقنيات الفرونت إند HTML, CSS, React" />
-        </div>
-      </article>
+          <article class="technology-item">
+            <h3 class="tech-name">تصميم واجهات UI/UX</h3>
+            <div class="tech-logos">
+              <img src="./public/images/tech2.png" alt="أدوات التصميم Figma و Adobe XD" />
+            </div>
+          </article>
 
-      <article class="technology-item">
-        <h3 class="tech-name">واجهة خلفية</h3>
-        <div class="tech-logos">
-          <img src="./public/images/tech4.png" alt="تقنيات الباك إند Node.js و PHP" />
+          <article class="technology-item">
+            <h3 class="tech-name">واجهة أمامية</h3>
+            <div class="tech-logos">
+              <img src="./public/images/tech3.png" alt="تقنيات الفرونت إند HTML, CSS, React" />
+            </div>
+          </article>
+
+          <article class="technology-item">
+            <h3 class="tech-name">واجهة خلفية</h3>
+            <div class="tech-logos">
+              <img src="./public/images/tech4.png" alt="تقنيات الباك إند Node.js و PHP" />
+            </div>
+          </article>
         </div>
-      </article>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
     <!--=====================================================-->
 
