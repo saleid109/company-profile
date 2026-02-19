@@ -83,16 +83,16 @@ document.addEventListener("DOMContentLoaded", () => {
             tabContainers.forEach(container => {
                 container.style.display = container.id === `${target}-tabs` ? "flex" : "none";
             });
-            
+
             // تفعيل أول زر فرعي تلقائياً
             const firstBtn = document.getElementById(`${target}-tabs`).querySelector('.sub-btn');
-            if(firstBtn) firstBtn.click();
+            if (firstBtn) firstBtn.click();
         });
     });
 
     // كود الفلترة للأزرار الفرعية (كما سبق)
     document.querySelectorAll(".sub-btn").forEach(btn => {
-        btn.addEventListener("click", function() {
+        btn.addEventListener("click", function () {
             document.querySelectorAll(".sub-btn").forEach(b => b.classList.remove("active"));
             this.classList.add("active");
             // تنفيذ فلترة معرض الصور هنا...
@@ -102,24 +102,81 @@ document.addEventListener("DOMContentLoaded", () => {
 /* =========================================================
     قسم الخدمات (التبويبات الرئيسية + الفرعية)
 ========================================================= */
+const mainTabs = document.querySelectorAll(".cat-btn");
+const subGroups = document.querySelectorAll(".sub-categories");
+const subTabs = document.querySelectorAll(".sub-btn");
+const cards = document.querySelectorAll(".service-card");
 
-function switchCategory(event, categoryId) {
-    // 1. إخفاء كل محتويات الأقسام
-    const contents = document.querySelectorAll('.category-content');
-    contents.forEach(content => content.classList.remove('active'));
+let currentMain = "products";
+let currentSub = "web";
 
-    // 2. إلغاء تفعيل كل أزرار القائمة الرئيسية
-    const buttons = document.querySelectorAll('.cat-btn');
-    buttons.forEach(btn => {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-selected', 'false');
+/* تفعيل التبويب الرئيسي */
+function activateMain(mainValue) {
+    currentMain = mainValue;
+
+    mainTabs.forEach(btn => {
+        const isActive = btn.dataset.main === mainValue;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-selected", isActive);
     });
 
-    // 3. تفعيل القسم والزر المختار
-    document.getElementById(categoryId).classList.add('active');
-    event.currentTarget.classList.add('active');
-    event.currentTarget.setAttribute('aria-selected', 'true');
+    subGroups.forEach(group => {
+        const match = group.dataset.parent === mainValue;
+        group.classList.toggle("active", match);
+
+        if (match) {
+            const firstSub = group.querySelector(".sub-btn");
+            currentSub = firstSub.dataset.sub;
+
+            group.querySelectorAll(".sub-btn").forEach(b =>
+                b.classList.remove("active")
+            );
+            firstSub.classList.add("active");
+        }
+    });
+
+    filterCards();
 }
+
+/* تفعيل التبويب الفرعي */
+function activateSub(subValue) {
+    currentSub = subValue;
+
+    document.querySelectorAll(".sub-categories.active .sub-btn")
+        .forEach(btn => {
+            btn.classList.toggle("active", btn.dataset.sub === subValue);
+        });
+
+    filterCards();
+}
+
+/* فلترة الكروت */
+function filterCards() {
+    cards.forEach(card => {
+        const match =
+            card.dataset.main === currentMain &&
+            card.dataset.sub === currentSub;
+
+        card.classList.toggle("active", match);
+    });
+}
+
+/* Events */
+mainTabs.forEach(btn => {
+    btn.addEventListener("click", () =>
+        activateMain(btn.dataset.main)
+    );
+});
+
+subTabs.forEach(btn => {
+    btn.addEventListener("click", () =>
+        activateSub(btn.dataset.sub)
+    );
+});
+
+/* تشغيل أولي */
+activateMain("products");
+
 
 /* =========================================================
     تفعيل سلايدر المشاريع (Swiper)
@@ -225,3 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 });
+
+
+
+
