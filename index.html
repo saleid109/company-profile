@@ -265,63 +265,87 @@
   <div class="container">
     <h2 id="services-title" class="section-main-title">خدماتنا</h2>
 
+    <!-- التبويبات الرئيسية -->
     <nav class="main-categories" role="tablist">
-      <button class="cat-btn active" onclick="switchCategory(event, 'products')" role="tab" aria-selected="true" aria-controls="products">منتجات رقمية</button>
-      <button class="cat-btn" onclick="switchCategory(event, 'services')" role="tab" aria-selected="false" aria-controls="services">خدمة رقمية</button>
-      <button class="cat-btn" onclick="switchCategory(event, 'job')" role="tab" aria-selected="false" aria-controls="job">تأهيل لسوق العمل</button>
+      <button class="cat-btn active"
+              data-main="products"
+              role="tab"
+              aria-selected="true">
+        منتجات رقمية
+      </button>
+
+      <button class="cat-btn"
+              data-main="services"
+              role="tab"
+              aria-selected="false">
+        خدمة رقمية
+      </button>
+
+      <button class="cat-btn"
+              data-main="job"
+              role="tab"
+              aria-selected="false">
+        تأهيل لسوق العمل
+      </button>
     </nav>
 
-    <div id="products" class="category-content active" role="tabpanel">
-      <div class="sub-categories">
-        <button class="sub-btn active">تطوير الويب</button>
-        <button class="sub-btn">تطوير التطبيقات</button>
-        <button class="sub-btn">التسويق</button>
-        <button class="sub-btn">التراخيص</button>
+    <!-- التبويبات الفرعية -->
+    <div class="sub-categories-wrapper">
+
+      <div class="sub-categories active" data-parent="products">
+        <button class="sub-btn active" data-sub="web">تطوير الويب</button>
+        <button class="sub-btn" data-sub="apps">تطوير التطبيقات</button>
+        <button class="sub-btn" data-sub="marketing">التسويق</button>
+        <button class="sub-btn" data-sub="licenses">التراخيص</button>
       </div>
-      <div class="services-grid">
-        <article class="service-card">
-          <img src="./public/images/project2.png" alt="نظام إداري رقمي">
-          <h3>نظام إداري</h3>
-        </article>
-        <article class="service-card">
-          <img src="./public/images/project2.png" alt="متجر إلكتروني متكامل">
-          <h3>متجر إلكتروني</h3>
-        </article>
-        <article class="service-card">
-          <img src="./public/images/project1.png" alt="موقع تعريفي للجمعيات">
-          <h3>موقع تعريفي لجمعية</h3>
-        </article>
+
+      <div class="sub-categories" data-parent="services">
+        <button class="sub-btn active" data-sub="consulting">استشارات تقنية</button>
+        <button class="sub-btn" data-sub="study">دراسة مشروع</button>
       </div>
+
+      <div class="sub-categories" data-parent="job">
+        <button class="sub-btn active" data-sub="management">إدارة</button>
+        <button class="sub-btn" data-sub="technical">تقني</button>
+        <button class="sub-btn" data-sub="design">تصاميم</button>
+      </div>
+
     </div>
 
-    <div id="services-category" class="category-content" role="tabpanel">
-      <div class="sub-categories">
-        <button class="sub-btn">استشارات تقنية</button>
-        <button class="sub-btn">دراسة مشروع</button>
-      </div>
-      <div class="services-grid">
-        <article class="service-card">
-          <img src="./public/images/project2.png" alt="استشارة رقمية">
-          <h3>استشارة تقنية</h3>
-        </article>
-        </div>
-    </div>
+    <!-- الكروت -->
+    <div class="services-grid">
 
-    <div id="job" class="category-content" role="tabpanel">
-      <div class="sub-categories">
-        <button class="sub-btn">إدارة</button>
-        <button class="sub-btn">تقني</button>
-        <button class="sub-btn">تصاميم</button>
-      </div>
-      <div class="services-grid">
-        <article class="service-card">
-          <img src="./public/images/project1.png "alt="تدريب مهني">
-          <h3>تدريب إداري</h3>
-        </article>
-        </div>
+      <!-- منتجات -->
+      <article class="service-card"
+               data-main="products"
+               data-sub="web">
+        <h3>موقع تعريفي</h3>
+      </article>
+
+      <article class="service-card"
+               data-main="products"
+               data-sub="apps">
+        <h3>تطبيق جوال</h3>
+      </article>
+
+      <!-- خدمات -->
+      <article class="service-card"
+               data-main="services"
+               data-sub="consulting">
+        <h3>استشارة تقنية</h3>
+      </article>
+
+      <!-- تدريب -->
+      <article class="service-card"
+               data-main="job"
+               data-sub="management">
+        <h3>تدريب إداري</h3>
+      </article>
+
     </div>
   </div>
 </section>
+
     <!--==============================================-->
 
     <!-- قسم منصة التدريب -->
