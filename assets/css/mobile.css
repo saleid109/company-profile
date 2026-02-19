@@ -75,10 +75,12 @@
     /* ================= القائمة الجانبية (Drawer) ================= */
 
     .nav-wrapper {
-        height: 65px;
-        padding: 0 15px;
-        z-index: 1001;
-    }
+    height: 65px;
+    padding: 0 15px;
+    z-index: 3000;
+    background-color: var(--color-secondary);
+}
+
 
     .logo img {
         height: 45px;
