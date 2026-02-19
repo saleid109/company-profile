@@ -570,7 +570,7 @@
     .featured-header-text,
     .featured-cell {
         background: #051242;
-        color: #fff !important;
+        color:var(--color-white) !important;
     }
 
     .feature-text {
