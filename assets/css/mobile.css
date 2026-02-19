@@ -1,41 +1,55 @@
-/* =========================================================
-   1. الإعدادات العامة وتحسين الأداء (للكل)
+/* ========================================================= الإعدادات العامة وتحسين الأداء
 ========================================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+/* تحسين أداء كروت الخدمات */
+.service-card {
+    will-change: transform; /* تلميح للـ GPU لتحسين السلاسة */
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background-color 0.2s ease;
 }
 
-body {
-    font-family: var(--font-main);
-    background-color: var(--color-bg-light);
-    overflow-x: hidden; /* منع التمرير الأفقي العام */
+/* تحسين انتقالات الأزرار والروابط */
+.home-buttons a,
+.nav-menu li a,
+.btn-primary {
+    transition: transform 0.2s ease,
+                filter 0.2s ease,
+                background-color 0.2s ease;
 }
 
-/* تحسين أداء العناصر التفاعلية باستخدام GPU */
-.service-card, .home-buttons a, .nav-menu li a, .btn-primary, .feature-item {
-    will-change: transform;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-                box-shadow 0.3s ease, 
-                background-color 0.2s ease,
-                filter 0.2s ease;
+/* تثبيت موضع شريط التنقل */
+.nav-wrapper {
+    position: relative;
+}
+
+/* دعم تقليل الحركة لذوي الحساسية للحركة */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
 }
 
 /* =========================================================
-   2. تأثيرات سطح المكتب (Desktop Hover)
+  تأثيرات سطح المكتب (تعمل فقط عند وجود ماوس)
 ========================================================= */
+
 @media (hover: hover) {
+
+    /* رفع الكرت عند المرور */
     .service-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
+    /* تأثير خفيف للأزرار */
     .home-buttons a:hover {
         filter: brightness(1.1);
         transform: translateY(-2px);
     }
 
+    /* تمييز روابط القائمة */
     .nav-menu li a:hover {
         color: var(--color-primary);
         background: rgba(0, 0, 0, 0.02);
@@ -43,76 +57,250 @@ body {
 }
 
 /* =========================================================
-   3. الجوال (Mobile - 0px to 768px)
+  الجوال (0px - 768px)
 ========================================================= */
+
 @media (max-width: 768px) {
-    .container { padding: 0 20px; }
 
-    /* القائمة الجانبية (Drawer Mode) */
-    .navbar-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 280px;
-        height: 100vh;
-        background: var(--color-secondary);
-        transform: translateX(100%); /* مخفي جهة اليمين */
-        transition: transform 0.4s ease;
-        z-index: 2000;
-        padding-top: 80px;
-        display: flex;
+    /* منع التمرير الأفقي */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    /* ================= القائمة الجانبية (Drawer) ================= */
+
+    .nav-wrapper {
+    height: 65px;
+    padding: 0 15px;
+    z-index: 3000;
+    background-color: var(--color-secondary);
+}
+
+
+    .logo img {
+        height: 45px;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* تحويل القائمة إلى درج جانبي متحرك */
+/* القائمة الجانبية */
+/* القائمة الجانبية */
+.navbar-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--color-secondary); /* أو اللون الأساسي عندك */
+    box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 2000;
+    padding-top: 80px; /* حتى لا تغطي الهيدر */
+}
+
+.navbar-links.open {
+    transform: translateX(0);
+}
+
+
+
+/* الخلفية الداكنة */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1500;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+
+
+
+    .nav-menu {
         flex-direction: column;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+        gap: 0;
     }
 
-    .navbar-links.open {
-        transform: translateX(0); /* يظهر عند إضافة كلاس open */
+    .nav-menu li a {
+        padding: 18px 25px;
+        display: block;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* تأثير اللمس السريع */
-    .service-card:active, .home-buttons a:active, .btn-primary:active {
+    /* تأثير استجابة سريعة عند اللمس */
+    .home-buttons a:active,
+    .btn-primary:active,
+    .service-card:active,
+    .nav-menu li a:active {
         transform: scale(0.96);
         background-color: rgba(0, 0, 0, 0.05);
+        transition: transform 0.1s ease;
     }
 
-    /* تحويل الشبكات لعمود واحد */
-    .fields-grid, .services-grid, .technologies-grid, .why-us-wrapper, 
-    .container-training, .container-why-choose, .comparison-container {
-        grid-template-columns: 1fr !important;
+    /* ================= قسم الهيرو ================= */
+
+    .hero-section {
+        height: auto;
+        padding: 120px 0 80px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .home-buttons {
         flex-direction: column;
+        gap: 15px;
+    }
+
+    .home-buttons a {
+        width: 100%;
+        height: 60px;
+    }
+
+    /* ================= تحويل الشبكات لعمود واحد ================= */
+
+    .fields-grid,
+    .services-grid,
+    .technologies-grid,
+    .why-us-wrapper,
+    .container-training,
+    .container-why-choose,
+    .comparison-container {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 40px;
         text-align: center;
     }
 
-    .hero-content h1 { font-size: 1.8rem; }
-    .home-buttons { flex-direction: column; }
-    .home-buttons a { width: 100%; height: 55px; }
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .card-image img {
+        height: 180px;
+    }
+
+    /* إخفاء عمود من جدول المقارنة لتوفير مساحة */
+    .comparison-table th:last-child,
+    .comparison-table td:last-child {
+        display: none;
+    }
 }
 
 /* =========================================================
-   4. التابلت والايباد (Tablet - 769px to 1024px)
+  التابلت (769px - 1024px)
 ========================================================= */
+
 @media (min-width: 769px) and (max-width: 1024px) {
-    .container { padding: 0 40px; }
 
-    /* الشبكات تصبح عمودين فقط */
-    .fields-grid, .services-grid, .technologies-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 25px;
-    }
-
-    .hero-section { height: 75vh; }
-    .hero-content h1 { font-size: 2.5rem; }
-
-    /* ضبط الحاويات المتداخلة */
-    .why-us-wrapper, .container-training, .container-why-choose {
+    /* توسيع المساحات الجانبية */
+    .container,
+    .container-training,
+    .why-us-wrapper,
+    .container-why-choose {
+        padding: 0 40px;
         flex-direction: column;
         text-align: center;
         gap: 40px;
     }
 
-    /* جعل جدول المقارنة قابلاً للتمرير لعدم خروجه عن الشاشة */
+    /* ضبط ارتفاع الهيرو */
+    .hero-section {
+        height: 75vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    /* تحويل الشبكات إلى عمودين */
+    .fields-grid,
+    .services-grid,
+    .technologies-grid,
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        max-width: 100%;
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+
+    /* تأثير لمس خفيف */
+    .service-card:active {
+        transform: scale(0.99);
+    }
+
+    .card-image img {
+        height: 220px;
+    }
+
+    /* تحسين عرض قسم الإحصائيات */
+    .stats-section {
+        width: 100%;
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .stat-card {
+        width: 100%;
+    }
+
+    /* جعل جدول المقارنة قابل للتمرير عند الحاجة */
+    .comparison-container {
+        flex-direction: column;
+        padding: 60px 20px;
+    }
+
     .comparison-table-wrapper {
         width: 100%;
         overflow-x: auto;
+    }
+
+    /* تقليل حجم عناصر القائمة */
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        padding: 8px 15px;
+        font-size: 14px;
     }
 }
