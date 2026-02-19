@@ -769,87 +769,10 @@ h4 {
     padding: 80px 0;
     display: flex;
     align-items: center;
-    gap: 60px;.services-section {
+    gap: 60px;
     padding: 80px 0;
     direction: rtl;
     font-family: 'Cairo', sans-serif;
-}
-
-.main-categories {
-    display: flex;
-    justify-content: center;
-    gap: 33px; /* القياس من Figma */
-    margin-bottom: 57px; /* المسافة من Figma */
-}
-
-.cat-btn {
-    padding: 12px 35px;
-    border: 2px solid #00015B;
-    border-radius: 40px;
-    background: transparent;
-    color: #00015B;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.cat-btn.active {
-    background: #00015B;
-    color: #fff;
-}
-
-/* الأزرار الفرعية */
-.sub-categories {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-.sub-btn {
-    padding: 8px 25px;
-    border: 1px solid #00015B;
-    border-radius: 15px;
-    background: #fff;
-    cursor: pointer;
-}
-
-.sub-btn.active {
-    background: #00015B;
-    color: #fff;
-}
-
-/* شبكة الصور */
-.sub-categories-wrapper {
-    display: none; /* إخفاء الأقسام غير النشطة */
-}
-
-.sub-categories-wrapper.active {
-    display: block;
-    animation: fadeIn 0.5s ease;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 صور فقط */
-    gap: 30px;
-}
-
-.service-card {
-    text-align: center;
-}
-
-.service-card img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-    padding: 80px 0;
 }
 
 /* تنسيق العنوان الرئيسي للقسم */
