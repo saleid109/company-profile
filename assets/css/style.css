@@ -664,20 +664,20 @@ h4 {
 /* ----- نهاية قسم مجالاتنا (Fields Section) ----- */
 
 
-/* --- قسم خدماتنا (Services Section) --- */
+/* ========== Services Section ========== */
 .services-section {
-    padding: 80px 0;
+    padding: 100px 0;
     text-align: center;
     direction: rtl;
 }
 
-/* القائمة الرئيسية - المسافات من Figma */
-
+/* ===== التبويبات الرئيسية ===== */
 .main-categories {
     display: flex;
     justify-content: center;
-    gap: 33px; /* القياس من Figma */
-    margin-bottom: 57px; /* المسافة من Figma */
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
 }
 
 .cat-btn {
@@ -686,9 +686,14 @@ h4 {
     border-radius: 40px;
     background: transparent;
     color: #00015B;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
+}
+
+.cat-btn:hover {
+    background: #00015B;
+    color: #fff;
 }
 
 .cat-btn.active {
@@ -697,21 +702,32 @@ h4 {
     box-shadow: 0 4px 15px rgba(0, 1, 91, 0.2);
 }
 
-/* القوائم الفرعية */
+/* ===== التبويبات الفرعية ===== */
 .sub-categories {
-    display: flex;
+    display: none;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+}
+
+.sub-categories.active {
+    display: flex;
 }
 
 .sub-btn {
-    padding: 8px 25px;
+    padding: 8px 22px;
     border: 1px solid #00015B;
-    border-radius: 20px;
+    border-radius: 25px;
     background: #fff;
     cursor: pointer;
     font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.sub-btn:hover {
+    background: #00015B;
+    color: #fff;
 }
 
 .sub-btn.active {
@@ -719,35 +735,67 @@ h4 {
     color: #fff;
 }
 
-/* إخفاء المحتوى غير النشط */
-.category-content {
-    display: none;
-}
-
-.category-content.active {
-    display: block;
-    animation: fadeIn 0.4s ease-in-out;
-}
-
-/* شبكة الخدمات (3 أعمدة) */
+/* ===== شبكة الكروت ===== */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* ===== كرت الخدمة ===== */
+.service-card {
+    display: none; /* يتم التحكم به عبر JS */
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.service-card.active {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+}
+
 .service-card img {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 15px;
     margin-bottom: 15px;
 }
 
+/* ===== أنيميشن ===== */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .main-categories {
+        gap: 15px;
+    }
+
+    .cat-btn {
+        padding: 10px 20px;
+    }
+
+    .services-section {
+        padding: 70px 0;
+    }
+}
+
 
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
 
