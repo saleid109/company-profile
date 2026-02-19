@@ -770,6 +770,56 @@ h4 {
     border-radius: 15px;
     margin-bottom: 15px;
 }
+/* صورة الكرت */
+.card-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    background: #f3f4f8;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* نص الكرت */
+.service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #00015B;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+/* زر الكرت */
+.card-btn {
+    display: inline-block;
+    padding: 8px 22px;
+    background: #00015B;
+    color: #fff;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.card-btn:hover {
+    background: #1d23a3;
+}
 
 /* ===== أنيميشن ===== */
 @keyframes fadeIn {
