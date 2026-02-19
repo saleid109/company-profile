@@ -280,15 +280,42 @@ body.menu-open {
     }
 
     /* جعل جدول المقارنة قابل للتمرير عند الحاجة */
-    .comparison-container {
-        flex-direction: column;
-        padding: 60px 20px;
+    .featured-col-box {
+        display: none !important; /* إخفاء الكتلة السوداء التي تغطي الجدول */
     }
 
     .comparison-table-wrapper {
-        width: 100%;
-        overflow-x: auto;
+        overflow-x: auto; /* السماح بالتمرير الجانبي بدلاً من التداخل */
+        -webkit-overflow-scrolling: touch;
+        margin: 20px 0;
+        border-radius: 15px;
     }
+
+    .comparison-table {
+        min-width: 600px; /* ضمان عدم انضغاط الجدول بشكل مبالغ فيه */
+        border-radius: 15px;
+    }
+
+    .comparison-container {
+        flex-direction: column !important;
+        padding: 40px 15px;
+    }
+
+    .comparison-text-side h2 {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+}
+
+/* تحسين شكل الجدول العام لمنع ركوب النصوص */
+.comparison-table th, 
+.comparison-table td {
+    padding: 15px 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
 
     /* تقليل حجم عناصر القائمة */
     .nav-menu {
