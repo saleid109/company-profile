@@ -435,7 +435,7 @@
   .technologies-grid {
     grid-template-columns: 1fr; 
     gap: 20px;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 .technology-item {
