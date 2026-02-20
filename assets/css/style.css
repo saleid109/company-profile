@@ -1594,7 +1594,6 @@ body {
 /*==============================*/
 
 /*===================قسم الإحصائيات=======================*/
-/*===================قسم الإحصائيات=======================*/
 
 /*الحاوية الكبيرة*/
 .stats-section {
@@ -1606,22 +1605,23 @@ body {
     flex-direction: column;
     align-items: center;
     /* التأكد من أن أي عنصر يخرج عن حدود القسم يظل مرئياً */
-    overflow: hidden; /* تغيير إلى hidden لمنع ظهور شريط التمرير الأفقي غير المرغوب فيه */
+    overflow: visible; /* تم التأكد من أن هذا هو المطلوب لبروز الأسهم */
 }
 
 .stats-section::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0; /* تم التعديل ليتناسب مع الصورة المرفقة */
-    width: 300px;
-    height: 100%;
-    background-image: url('../images/bg-arrows.svg'); /* أيقونة الأسهم الصفراء */
+    top: 0; /* بدء من أعلى القسم */
+    left: 0; /* بدء من يسار القسم */
+    width: 300px; /* عرض الأسهم */
+    height: 100%; /* ارتفاع الأسهم */
+    background-image: url("../images/bg-arrows.svg"); /* أيقونة الأسهم الصفراء */
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0.15;
     pointer-events: none;
-    transform: rotate(180deg); /* تدوير الأسهم لتكون في الاتجاه الصحيح إذا كانت الصورة الأصلية معكوسة */
+    /* قد تحتاج إلى تعديل transform: translateY أو translateX أو rotate بناءً على الصورة الأصلية للأسهم */
+    /* transform: translateY(-50px) translateX(-50px); */ /* مثال لتحريك الأسهم خارج القسم قليلاً */
 }
 
   /* العرض الداخلي للمحتوى */
@@ -1725,6 +1725,8 @@ body {
     .stats-section::before {
         width: 200px; /* تصغير حجم الأسهم */
         height: 80%;
+        top: -20px; /* تعديل الموضع ليناسب الشاشات الصغيرة */
+        left: -20px;
     }
     .stats-section {
         padding-bottom: 60px; /* ضبط الحشوة السفلية للقسم */
