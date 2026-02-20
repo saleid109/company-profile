@@ -1600,105 +1600,70 @@ body {
 
 /*==============================*/
 /*==================== قسم الإحصائيات ====================*/
+/* ================== Section ================== */
 
 .stats-section {
-    position: relative;
-    background: #050A44; /* أزرق داكن مطابق للصورة */
-    padding: 80px 0 120px; /* مساحة سفلية أكبر للكروت */
-    overflow: hidden;
+    background: #050A44;
+    padding: 100px 0 120px;
 }
 
-/* الأسهم الخلفية */
-.stats-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 420px;
-    height: 100%;
-    background-image: url('./public/images/yellow-arrows.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top left;
-    opacity: 0.15;
-    z-index: 0;
-}
-
-/* المحتوى */
 .stats-container {
-    position: relative;
-    z-index: 1;
     max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
+    padding: 0 24px;
     text-align: center;
 }
 
-/* العنوان */
+/* Title */
+
 .stats-title {
     color: #fff;
-    font-family: "Tajawal", sans-serif;
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-/* الوصف */
 .stats-description {
     color: #fff;
-    font-family: "Tajawal", sans-serif;
     font-size: 20px;
-    font-weight: 400;
-    max-width: 900px;
-    margin: 0 auto 60px;
     line-height: 1.8;
+    margin-bottom: 80px;
 }
 
-/* شبكة الكروت */
+/* ================== GRID ================== */
+
 .stats-grid {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 60px; /* عمودي ثم أفقي */
 }
 
-/* الكرت */
+/* ================== CARD ================== */
+
 .stat-card {
-    width: 260px;
-    height: 170px;
-    background: #ffffff;
-    border-radius: 20px;
+    background: #EDEDED;
+    border-radius: 28px;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 15px;
-
-    box-shadow:
-        0 12px 16px -4px rgba(16, 24, 40, 0.08),
-        0 4px 6px -2px rgba(16, 24, 40, 0.03);
-
-    transition: all 0.3s ease;
+    justify-content: center;
+    transition: 0.3s ease;
 }
 
-/* الرقم */
 .stat-card .number {
-    font-size: 40px;
+    font-size: 48px;
     font-weight: 700;
-    color: #FBBF24; /* الأصفر */
+    color: #FBBF24;
+    margin-bottom: 15px;
 }
 
-/* النص */
 .stat-card .label {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     color: #050A44;
 }
 
-/* Hover مطابق للتصميم الاحترافي */
 .stat-card:hover {
-    transform: translateY(-10px);
-    box-shadow:
-        0 20px 25px -5px rgba(0,0,0,0.15),
-        0 10px 10px -5px rgba(0,0,0,0.05);
+    transform: translateY(-8px);
 }
