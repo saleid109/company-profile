@@ -1600,85 +1600,75 @@ body {
 
 /*==============================*/
 /*===================قسم الإحصائيات=======================*/
-
-:root {
-    --primary-blue: #000066;
-    /* اللون الكحلي في الصورة */
-    --accent-gold: #ffcc00;
-    /* لون الأرقام والأسهم */
-    --white: #ffffff;
-}
-
 .stats-section {
+    direction: rtl;
+    font-family: sans-serif;
+    background-color: #fff;
+    /* خلفية الصفحة بيضاء */
+}
+
+.blue-header {
+    background-color: #000051;
+    /* اللون الكحلي الغامق */
+    color: white;
     text-align: center;
-    font-family: 'Tajawal', sans-serif;
-    /* يفضل استخدام هذا الخط */
-    padding-bottom: 50px;
-}
-
-/* الجزء العلوي (الخلفية الفاتحة مع الأسهم) */
-.stats-container {
-    background-color: #f9f9f9;
     padding: 60px 20px 100px;
-    /* مساحة كافية قبل اللون الكحلي */
-    position: relative;
+    /* بادينج سفلي كبير ليسمح للكروت بالتداخل */
 }
 
-/* الجزء الكحلي */
-.stats-content-wrapper {
-    background-color: var(--primary-blue);
-    color: var(--white);
-    padding: 60px 20px 120px;
-    /* زيادة Padding السفلي ليظهر الكرت فوقه */
-}
-
-.stats-title {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.stats-description {
-    max-width: 700px;
-    margin: 0 auto 40px;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-/* شبكة الإحصائيات */
-.stats-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: -80px;
-    /* سحب الكروت للأعلى لتتداخل مع اللون الكحلي */
-}
-
-/* تصميم الكرت الأبيض */
-.stat-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 12px;
-    width: 200px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    /* الظل الناعم */
-    transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-10px);
-}
-
-.number {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--accent-gold);
+.arrows-bg {
+    color: #f3e5ab;
+    /* لون الأسهم الباهت */
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
-.label {
-    font-size: 1.5rem;
+.stats-title {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.stats-desc {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* توزيع الكروت */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: -60px auto 0;
+    /* الرقم السالب -60 هو ما يرفع الكروت فوق اللون الأزرق */
+    padding: 0 20px;
+}
+
+.stat-card {
+    background: white;
+    flex: 1;
+    /* تجعل الكروت متساوية العرض */
+    min-width: 150px;
+    padding: 30px 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    /* الظل الذي يعطي العمق */
+}
+
+.num {
+    display: block;
+    color: #ffcc00;
+    /* اللون الذهبي */
+    font-size: 28px;
     font-weight: bold;
-    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.txt {
+    color: #000051;
+    font-weight: bold;
+    font-size: 18px;
 }
