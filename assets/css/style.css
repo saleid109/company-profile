@@ -1613,7 +1613,7 @@ body {
     right: 50px;
     width: 250px;
     height: 250px;
-    background-image: url('./public/images/yellow-arrows.png'); /* تأكد من المسار */
+    background-image: url('./public/images/'); /* تأكد من المسار */
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0.2; /* شفافية خفيفة كما في التصميم */
