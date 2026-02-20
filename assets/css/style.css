@@ -1600,88 +1600,90 @@ body {
 
 /*==============================*/
 /*===================قسم الإحصائيات=======================*/
-/*=================== قسم الإحصائيات =======================*/
-
 /* الحاوية الكبرى للقسم */
 .stats-section {
     position: relative;
     background-color: #fff;
-    padding-bottom: 100px; 
+    padding-bottom: 100px; /* مساحة كافية تحت الكروت */
     direction: rtl;
-    overflow: visible; 
+    overflow: visible; /* لضمان ظهور الأسهم التي تخرج للأعلى */
 }
 
 /* الهيدر الكحلي */
 .blue-header {
-    background-color: #00004d; /* لون الهوية الكحلي */
+    background-color: #00004d;
     position: relative; 
     text-align: center;
-    padding: 80px 20px 140px; 
+    padding: 80px 20px 140px; /* بادينج سفلي كبير ليغطي نصف الكروت */
     color: #fff;
     z-index: 1;
 }
 
-/* الأسهم الصفراء في الخلفية */
+/* الأسهم الصفراء (تم الإصلاح هنا) */
 .blue-header::before {
-    content: ""; 
+    content: ""; /* ضروري لظهور العنصر */
     position: absolute;
-    top: -60px; 
+    top: -60px; /* لرفع الأسهم للأعلى كما في التصميم */
     left: 10%;
     width: 300px;
     height: 250px;
-    background-image: url('../public/images/Grou109.png'); /* تأكد من مسار الصورة */
-    background-size: contain;
+    background-image: url('../public/images/Grou109.png');
     background-repeat: no-repeat;
+    background-size: contain;
     opacity: 0.3;
-    z-index: -1;
+    z-index: -1; /* تجعل الأسهم خلف النص الكحلي */
+    display: block;
 }
 
-/* عنوان القسم */
-.blue-header h2 {
-    font-size: 32px;
-    font-weight: bold;
+/* تنسيق النصوص داخل الهيدر */
+.stats-title {
+    font-size: 36px;
     margin-bottom: 20px;
     color: #fff;
 }
 
-/* شبكة كروت الإحصائيات (تأثير الطفو) */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+.stats-desc {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* حاوية الكروت (إصلاح مشكلة التداخل) */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
     max-width: 1200px;
-    margin: -80px auto 0; /* لرفع الكروت فوق الهيدر الكحلي */
+    margin: -80px auto 0; /* رفع الكروت للأعلى لتتداخل مع الهيدر الكحلي */
     padding: 0 20px;
     position: relative;
-    z-index: 10;
+    z-index: 2; /* لتكون فوق الهيدر الكحلي */
 }
 
 /* الكرت الفردي */
 .stat-card {
     background: #fff;
     padding: 40px 20px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    flex: 1;
+    max-width: 250px;
     text-align: center;
-    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.stat-card:hover {
-    transform: translateY(-10px);
-}
-
-.stat-card .number {
-    font-size: 40px;
-    font-weight: 900;
+.stat-card .num {
+    font-size: 32px;
+    font-weight: bold;
     color: #ffcc00; /* اللون الأصفر للأرقام */
-    display: block;
-    margin-bottom: 10px;
 }
 
-.stat-card .label {
+.stat-card .txt {
     font-size: 18px;
     color: #00004d;
     font-weight: bold;
 }
-
-/*================ نهاية الملف ================*/
