@@ -1603,42 +1603,49 @@ body {
 /*===================قسم الإحصائيات=======================*/
 
 /*الحاوية الكبيرة*/
+/*===================قسم الإحصائيات=======================*/
+
 .stats-section {
     background: var(--primary, #00015B);
+    position: relative;
+    /* مرجعية للخلفية */
+    overflow: hidden;
     display: flex;
-    height: 358px;
     padding: 40px 32px;
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    align-self: stretch;
-    position: relative;   /* مهم جدًا */
-    overflow: hidden;     /* يمنع خروج الصورة خارج السكشن */
 }
 
-/* إضافة الأسهم كخلفية */
+/* الأسهم كخلفية */
 .stats-section::after {
     content: "";
     position: absolute;
     top: 0;
-    left: 10%;
-    /* وضعها في جهة اليسار خلف البطاقات */
+    left: 0;
     width: 400px;
     height: 100%;
     background-image: url('./public/images/yellow-arrows.png');
-    /* مسار صورة الأسهم */
     background-repeat: no-repeat;
     background-size: contain;
-    z-index: 0;
-    /* لتبقى خلف البطاقات */
+    background-position: left top;
     opacity: 0.2;
-    /* جعلها خفيفة كما في التصميم */
+    z-index: 0;
+}
+
+/* المحتوى فوق الخلفية */
+.stats-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
 }
 
 /* العرض الداخلي للمحتوى */
 .stats-container {
     width: 1440px;
-    height: 10130px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -1713,7 +1720,7 @@ body {
 }
 
 .stat-card:hover {
-    transform: translateY(50px) scale(1.02);
+    transform: translateY(-10px) scale(1.02);
     box-shadow: 0px 16px 24px -8px rgba(16, 24, 40, 0.15);
     /* ظل أكبر عند التحويم */
 }
