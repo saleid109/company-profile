@@ -1592,31 +1592,34 @@ body {
 }
 
 /*==============================*/
+
+
 /*===================فسم الإحصائيات=======================*/
 
 /*الحاوية الكبيرة*/
 .stats-section {
-    position: relative;
     background-color: #050a44;
-    width: 100%; /* اجعلها 100% لضمان التجاوب، مع استخدام max-width */
-    min-height: 450px;
+    padding-top: 60px;
+    padding-bottom: 0; /* نلغي الحشوة السفلية لترك المجال للبطاقات بالبروز */
+    position: relative;
     display: flex;
-    align-items: flex-start; /* ليكون النص في الأعلى والكروت تتدلى للأسفل */
-    padding-top: 80px;
-    overflow: visible; /* مهم جداً لتظهر الكروت وهي تخرج من الحاوية */
+    flex-direction: column;
+    align-items: center;
+    /* التأكد من أن أي عنصر يخرج عن حدود القسم يظل مرئياً */
+    overflow: visible; 
 }
-/* إضافة الأسهم الصاعدة */
+
 .stats-section::before {
     content: "";
     position: absolute;
-    top: 20px;
-    right: 50px;
-    width: 250px;
-    height: 250px;
-    background-image: url('./public/images/'); /* تأكد من المسار */
+    top: 0;
+    right: 10%; /* ضبط الموقع حسب الحاجة */
+    width: 300px;
+    height: 100%;
+    background-image: url('../images/bg-arrows.svg'); /* أيقونة الأسهم الصفراء */
     background-repeat: no-repeat;
     background-size: contain;
-    opacity: 0.2; /* شفافية خفيفة كما في التصميم */
+    opacity: 0.15;
     pointer-events: none;
 }
 
@@ -1642,51 +1645,40 @@ body {
     margin-bottom: 50px;
     opacity: 0.9;
 }
-
 .stats-grid {
     display: flex;
-    justify-content: space-between;
-    /* لتوزيع البطاقات الأربع بالتساوي */
-    gap: 20px;
+    justify-content: center;
+    gap: 24px;
+    /* هذا هو السر: تحريك الشبكة بالكامل للأسفل لتتداخل مع القسم التالي */
+    transform: translateY(85px); 
+    z-index: 10;
 }
 
-.stat-card {
-    background: var(--color-white);
-    border-radius: 12px;
-    width: 270px;
-    padding: 30px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.stat-card .number {
-    color: var(--color-primary-light);
-    font-size: 36px;
-    font-weight: 800;
-}
-
-.stat-card .label {
-    color: var(--color-secondary);
-    font-size: 20px;
-    font-weight: 700;
-    margin-top: 10px;
-}/* تحسين كرت الإحصائيات ليطابق Figma */
 .stat-card {
     background: #FFFFFF;
-    border-radius: 12px;
-    width: 270px;
-    padding: 35px 20px;
-    /* الظل في التصميم ناعم جداً وممتد */
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.08); 
+    border-radius: 20px; /* كما في صورة Figma */
+    width: 266px; /* القياس الدقيق من Figma */
+    height: 171px; /* القياس الدقيق من Figma */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* لإعطاء تأثير البروز فوق الخلفية */
-    transform: translateY(60px); 
-    transition: transform 0.3s ease;
+    padding: 24px;
+    gap: 20px;
+    /* الظل المذكور في Figma */
+    box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08); 
+}
+
+.stat-card .number {
+    color: #FBBF24; /* اللون الأصفر من التصميم */
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.stat-card .label {
+    color: #050A44;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .stat-card:hover {
@@ -1705,4 +1697,10 @@ body {
     color: #050A44; 
     font-size: 22px;
     font-weight: 700;
+}
+
+/* مثال للقسم الذي يلي الإحصائيات */
+.clients-section {
+    padding-top: 120px; /* مساحة كافية لأن المربعات نازلة بمقدار 85px */
+    background-color: #F9FAFB; /* أو أي لون خلفية فاتح */
 }
