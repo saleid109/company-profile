@@ -1602,42 +1602,47 @@ body {
 
 
 /*===================قسم الإحصائيات=======================*/
-/* ==================== تنسيق قسم الإحصائيات النهائي ==================== */
 .stats-section {
-    padding: 100px 0; /* مساحة حول القسم بالكامل */
-    background-color: #f8f9fa; /* لون خلفية الموقع الفاتح */
+    padding: 100px 0;
+    background-color: #f8f9fa;
     direction: rtl;
-    display: flex;
-    justify-content: center;
-}
-
-.stats-blue-box {
-    background-color: #00004d; /* الكحلي الغامق جداً */
-    width: 90%;
-    max-width: 1200px;
-    padding: 60px 40px 0 40px; /* لا نضع بادينج سفلي كبير لأن الكروت ستبرز */
-    border-radius: 15px;
     position: relative;
-    text-align: center;
-    /* لإظهار الأسهم في الخلفية أو الزاوية */
+    overflow: hidden; /* لمنع ظهور شريط تمرير عرضي بسبب الأسهم */
 }
 
-/* أيقونة الأسهم الصفراء في الزاوية */
-.top-decoration {
+.stats-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 15px;
+}
+
+/* --- ضبط الأسهم لليسار --- */
+.stats-arrows-left {
     position: absolute;
-    top: -30px;
-    right: 20px;
-    width: 120px;
-    opacity: 0.6;
+    top: -30px; /* تبرز قليلاً للأعلى */
+    left: -20px; /* أقصى اليسار */
+    width: 160px;
+    z-index: 1; /* خلف الصندوق الكحلي */
+    opacity: 0.8;
 }
-.top-decoration img { width: 100%; }
 
-.stats-header {
-    margin-bottom: 50px;
+.stats-arrows-left img {
+    width: 100%;
+}
+
+/* --- الصندوق الكحلي --- */
+.stats-main-box {
+    background-color: #00004d;
+    border-radius: 20px;
+    padding: 60px 20px 0 20px;
+    position: relative;
+    z-index: 2; /* فوق الأسهم */
+    text-align: center;
 }
 
 .stats-title {
-    color: #ffffff !important; /* اللون الأبيض للعنوان */
+    color: #fff !important;
     font-size: 32px;
     margin-bottom: 15px;
 }
@@ -1646,43 +1651,52 @@ body {
     color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
     max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
+    margin: 0 auto 50px auto;
 }
 
-/* حاوية الكروت وتمركزها */
-.stats-cards-wrapper {
+/* --- الكروت والبروز السفلي --- */
+.stats-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    transform: translateY(60px); /* هذا ما يجعل الكروت تبرز خارج الصندوق الكحلي */
+    transform: translateY(60px); /* دفع الكروت للأسفل لتبرز خارج الصندوق */
+    position: relative;
+    z-index: 3;
 }
 
-.stat-item-card {
-    background: #ffffff;
-    padding: 30px 10px;
-    border-radius: 12px;
+.stat-card {
+    background: #fff;
+    padding: 35px 15px;
+    border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     transition: 0.3s ease;
 }
 
-.stat-item-card:hover {
+.stat-card:hover {
     transform: translateY(-5px);
 }
 
-.stat-item-card .num {
+.stat-num {
+    display: block;
     font-size: 32px;
     font-weight: 800;
-    color: #ffcc00; /* الأصفر الذهبي للأرقام */
+    color: #ffcc00; /* الأصفر الذهبي */
     margin-bottom: 5px;
-    font-family: 'Montserrat', sans-serif;
 }
 
-.stat-item-card .txt {
+.stat-label {
     font-size: 16px;
-    color: #00004d; /* لون النص كحلي */
+    color: #00004d;
     font-weight: 700;
+}
+
+/* للتجاوب مع الجوال */
+@media (max-width: 992px) {
+    .stats-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        transform: translateY(40px);
+    }
+    .stats-main-box {
+        margin-bottom: 60px;
+    }
 }
