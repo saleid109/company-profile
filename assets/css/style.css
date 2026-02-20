@@ -1613,29 +1613,42 @@ body {
     z-index: 2;
 }
 .blue-header {
-    background-color: #00004d;
-    /* اللون الكحلي الغامق */
+    background-color: #00004d; /* اللون الكحلي الغامق من الكود الخاص بك */
     color: white;
     text-align: center;
-    padding: 80px 20px 120px;
+    padding: 80px 20px 140px; /* زيادة Padding السفلي ليعطي مساحة للكروت */
     position: relative;
-
-    /* إضافة الأسهم كصورة خلفية */
-    background-image: url('arrows.png');
-    /* ضع مسار صورتك هنا */
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: 100px;
-    /* تحكم في حجم الأسهم */
+    /* أزلنا background-image من هنا لنضعها في الـ pseudo-element للتحكم الأفضل */
 }
 
-.blue-header {
-    background-color: #00004d; /* اللون الكحلي الغامق */
-    color: white;
-    text-align: center;
-    padding: 80px 20px 120px;
-    position: relative; /* ضروري لعمل الأسهم بالداخل */
-    /* overflow: visible;  تأكد أن الأوفرفلو مسموح لتظهر الأسهم الخارجة للأعلى */
+/* إضافة الأسهم كخلفية في أعلى اليسار */
+.blue-header::before {
+    content: "";
+    position: absolute;
+    
+    /* التموضع: يرفع الأسهم فوق الصندوق الكحلي قليلاً */
+    top: -60px; 
+    left: 5%; 
+    
+    /* الأبعاد */
+    width: 350px; 
+    height: 300px; 
+    
+    /* الصورة */
+    background-image: url('./p'); /* نفس مسار الصورة في كودك */
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    /* الخصائص الجمالية */
+    opacity: 0.3; /* شفافية خفيفة كما في الصورة */
+    z-index: 1;   /* خلف النص */
+    pointer-events: none; /* لكي لا تعيق النقر */
+}
+
+/* لضمان ظهور العنوان والوصف فوق الأسهم */
+.stats-title, .stats-desc {
+    position: relative;
+    z-index: 2;
 }
 
 /* إضافة الأسهم في أعلى اليسار */
