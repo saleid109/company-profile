@@ -1660,7 +1660,7 @@ body {
     width: 266px; /* القياس الدقيق من Figma */
     height: 171px; /* القياس الدقيق من Figma */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 24px;
@@ -1685,19 +1685,6 @@ body {
     transform: translateY(50px) scale(1.02);
 }
 
-.stat-card .number {
-    color: #F7B500; 
-    font-size: 48px; 
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 5px;
-}
-
-.stat-card .label {
-    color: #050A44; 
-    font-size: 22px;
-    font-weight: 700;
-}
 
 /* مثال للقسم الذي يلي الإحصائيات */
 .clients-section {
