@@ -1593,8 +1593,7 @@ body {
 
 /*==============================*/
 
-
-/*===================فسم الإحصائيات=======================*/
+/*===================قسم الإحصائيات=======================*/
 
 /*الحاوية الكبيرة*/
 .stats-section {
@@ -1606,14 +1605,14 @@ body {
     flex-direction: column;
     align-items: center;
     /* التأكد من أن أي عنصر يخرج عن حدود القسم يظل مرئياً */
-    overflow: visible; 
+    overflow: hidden; /* تغيير إلى hidden لمنع ظهور شريط التمرير الأفقي غير المرغوب فيه */
 }
 
 .stats-section::before {
     content: "";
     position: absolute;
     top: 0;
-    right: 10%; /* ضبط الموقع حسب الحاجة */
+    left: 0; /* تم التعديل ليتناسب مع الصورة المرفقة */
     width: 300px;
     height: 100%;
     background-image: url('../images/bg-arrows.svg'); /* أيقونة الأسهم الصفراء */
@@ -1621,6 +1620,7 @@ body {
     background-size: contain;
     opacity: 0.15;
     pointer-events: none;
+    transform: rotate(180deg); /* تدوير الأسهم لتكون في الاتجاه الصحيح إذا كانت الصورة الأصلية معكوسة */
 }
 
   /* العرض الداخلي للمحتوى */
@@ -1628,6 +1628,7 @@ body {
     max-width: 1200px; 
     margin: 0 auto;
     padding: 0 20px;
+    text-align: center; /* لتوسيط العنوان والوصف */
 }
 
 .stats-title {
@@ -1635,12 +1636,12 @@ body {
     font-weight: 700;
     font-size: 40px;
     line-height: 48px;
-    color: var(--color-white);
+    color: var(--color-white, #FFFFFF); /* استخدام متغير مع قيمة احتياطية */
     margin-bottom: 16px;
 }
 
 .stats-description {
-    color: var(--color-white);
+    color: var(--color-white, #FFFFFF); /* استخدام متغير مع قيمة احتياطية */
     font-size: 18px;
     margin-bottom: 50px;
     opacity: 0.9;
@@ -1674,6 +1675,7 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* إضافة انتقال للظل */
 }
 
 .stat-card .number {
@@ -1690,11 +1692,60 @@ body {
 
 .stat-card:hover {
     transform: translateY(50px) scale(1.02);
+    box-shadow: 0px 16px 24px -8px rgba(16, 24, 40, 0.15); /* ظل أكبر عند التحويم */
 }
 
+/* تحسينات إمكانية الوصول: أنماط التركيز */
+.stat-card:focus-within {
+    outline: 2px solid #FBBF24; /* إطار أصفر واضح عند التركيز */
+    outline-offset: 4px;
+    box-shadow: 0px 0px 0px 4px rgba(251, 191, 36, 0.5); /* ظل إضافي للتركيز */
+}
 
 /* مثال للقسم الذي يلي الإحصائيات */
 .clients-section {
     padding-top: 120px; /* مساحة كافية لأن المربعات نازلة بمقدار 85px */
     background-color: #F9FAFB; /* أو أي لون خلفية فاتح */
+}
+
+/* Media Queries للاستجابة */
+@media (max-width: 768px) {
+    .stats-grid {
+        flex-wrap: wrap; /* السماح للبطاقات بالنزول لسطر جديد في الشاشات الصغيرة */
+        transform: translateY(0); /* إلغاء التحريك العمودي في الشاشات الصغيرة */
+        margin-top: 20px;
+        padding-bottom: 80px; /* إضافة حشوة سفلية عند عدم وجود تحريك */
+    }
+    .stat-card {
+        width: calc(50% - 12px); /* عرض بطاقتين في الصف مع مسافة */
+        height: auto; /* السماح بالارتفاع التلقائي */
+        padding: 20px 0;
+    }
+    .stats-section::before {
+        width: 200px; /* تصغير حجم الأسهم */
+        height: 80%;
+    }
+    .stats-section {
+        padding-bottom: 60px; /* ضبط الحشوة السفلية للقسم */
+    }
+    .stat-card:hover {
+        transform: translateY(0) scale(1.02); /* تعديل تأثير التحويم */
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        flex-direction: column; /* بطاقة واحدة في كل صف */
+        gap: 15px;
+    }
+    .stat-card {
+        width: 90%; /* عرض أكبر للبطاقة الواحدة */
+    }
+    .stats-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .stats-description {
+        font-size: 16px;
+    }
 }
