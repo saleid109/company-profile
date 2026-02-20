@@ -1599,93 +1599,90 @@ body {
 }
 
 /*==============================*/
+
+
 /*===================قسم الإحصائيات=======================*/
-/* ==================== تنسيق قسم الإحصائيات ==================== */
 /* ==================== تنسيق قسم الإحصائيات المطور ==================== */
 .stats-section {
-    padding: 120px 0 60px 0; /* مساحة علوية للسماح بظهور الأسهم */
-    background-color: #f9f9f9; 
+    padding: 60px 0;
+    background-color: var(--color-bg-light);
     direction: rtl;
     position: relative;
     text-align: center;
 }
 
-/* زخرفة الأسهم الصفراء */
+/* حل مشكلة الأسهم: إذا لم تظهر الصورة، نستخدم أيقونات FontAwesome كبديل خلفي */
 .stats-decor-arrows {
     position: absolute;
-    top: 40px;
-    right: 15%; /* تحكم في مكانها لتكون خلف العنوان */
+    top: -20px;
+    right: 10%;
     width: 200px;
-    height: 150px;
-    background-image: url('public/images/Grou109.png'); /* استبدل برابط صورة الأسهم لديك */
+    height: 120px;
+    background-image: url('../images/yellow-arrows.png'); /* تأكد من مسار الصورة */
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.5;
     z-index: 1;
+    opacity: 0.6;
 }
 
 .blue-header {
-    background-color: #00004d; /* اللون الكحلي العميق */
-    padding: 80px 20px 140px 20px; /* بادينج سفلي كبير لخلق مساحة خلف الكروت */
-    color: #ffffff;
+    background-color: var(--color-secondary); /* الكحلي */
+    padding: 80px 20px 140px 20px; /* بادينج سفلي كبير جداً ليظهر خلف الكروت */
+    color: var(--color-white);
     position: relative;
     z-index: 2;
+    border-radius: 10px; /* اختياري حسب التصميم */
+    max-width: 1250px;
+    margin: 0 auto;
 }
 
 .stats-title {
-    font-size: 38px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 20px;
+    font-size: 36px;
+    color: var(--color-white) !important; /* اللون الأبيض في الصورة */
+    margin-bottom: 15px;
 }
 
 .stats-desc {
-    font-size: 1rem;
-    max-width: 650px;
+    font-size: 1.1rem;
+    max-width: 700px;
     margin: 0 auto;
-    line-height: 1.8;
-    opacity: 0.9;
+    line-height: 1.6;
+    opacity: 0.8;
 }
 
-/* حاوية الكروت مع خاصية الـ Overlap */
+/* حاوية الكروت - سر الـ Overlap */
 .cards-container {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    max-width: 1200px;
-    margin: -80px auto 0; /* رفع الكروت للأعلى لتغطية جزء من الصندوق الكحلي */
+    gap: 20px;
+    max-width: 1150px;
+    margin: -80px auto 0; /* القيمة السالبة ترفع الكروت فوق الصندوق الكحلي */
     padding: 0 20px;
     position: relative;
-    z-index: 3;
+    z-index: 3; /* لضمان ظهور الكروت فوق الهيدر */
 }
 
-/* تنسيق الكرت الأبيض */
 .stat-card {
-    background: #ffffff;
+    background: var(--color-white);
     flex: 1;
-    max-width: 240px;
-    padding: 40px 20px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); /* ظل ناعم كما في الصورة */
+    padding: 35px 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-10px);
+    border-bottom: none; /* إزالة البوردر القديم ليطابق الصورة */
 }
 
 .stat-card .num {
     font-size: 38px;
-    font-weight: 900;
-    color: #ffcc00; /* اللون الأصفر الذهبي للأرقام */
-    margin-bottom: 10px;
+    font-weight: 800;
+    color: var(--color-primary); /* اللون الأصفر الذهبي */
+    margin-bottom: 8px;
 }
 
 .stat-card .txt {
-    font-size: 1.2rem;
-    color: #00004d; /* نص كحلي */
+    font-size: 1.1rem;
+    color: var(--color-secondary); /* النص كحلي */
     font-weight: bold;
 }
