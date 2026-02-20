@@ -1667,7 +1667,7 @@ body {
 }
 
 .txt {
-    color: #000051;
+    color:var(--color-white);
     font-weight: bold;
     font-size: 18px;
 }
