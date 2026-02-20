@@ -1620,8 +1620,7 @@ body {
     background-size: contain;
     opacity: 0.15;
     pointer-events: none;
-    /* قد تحتاج إلى تعديل transform: translateY أو translateX أو rotate بناءً على الصورة الأصلية للأسهم */
-    /* transform: translateY(-50px) translateX(-50px); */ /* مثال لتحريك الأسهم خارج القسم قليلاً */
+
 }
 
   /* العرض الداخلي للمحتوى */
