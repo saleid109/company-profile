@@ -1645,25 +1645,6 @@ body {
 }
 
 
-/* إضافة الأسهم كخلفية */
-.stats-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 10%;
-    /* وضعها في جهة اليسار خلف البطاقات */
-    width: 400px;
-    height: 100%;
-    background-image: url('./public/images/yellow-arrows.png');
-    /* مسار صورة الأسهم */
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: 0;
-    /* لتبقى خلف البطاقات */
-    opacity: 0.2;
-    /* جعلها خفيفة كما في التصميم */
-}
-
 
 .stats-title {
     color: var(--Base-White, #FFF);
