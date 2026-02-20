@@ -224,6 +224,21 @@ body.menu-open {
 
 @media (min-width: 769px) and (max-width: 1024px) {
 
+  
+    /* تقليل حجم عناصر القائمة */
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
     /* توسيع المساحات الجانبية */
     .container,
     .container-training,
@@ -317,17 +332,15 @@ body.menu-open {
     border-bottom: 1px solid #eee;
 }
 
-    /* تقليل حجم عناصر القائمة */
-    .nav-menu {
-        gap: 15px;
-    }
 
-    .nav-menu a {
-        font-size: 14px;
+    /*احصائيات*/
+.stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* كرتين في كل صف للجوال */
+        gap: 20px;
+        justify-items: center;
     }
-
-    .btn-primary {
-        padding: 8px 15px;
-        font-size: 14px;
+    .stat-card {
+        width: 100%;
+        transform: translateY(30px);
     }
-}

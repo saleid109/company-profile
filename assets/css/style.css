@@ -1596,25 +1596,35 @@ body {
 
 /*الحاوية الكبيرة*/
 .stats-section {
+    position: relative;
     background-color: #050a44;
-    /* اللون الكحلي الداكن من التصميم */
-    width: 1440px;
-    /* العرض الثابت كما في الصورة */
-    height: 408px;
-    /* الارتفاع الكلي للقسم */
+    width: 100%; /* اجعلها 100% لضمان التجاوب، مع استخدام max-width */
+    min-height: 450px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    direction: rtl;
-    padding: 40px 32px;
-    /* المسافات العلوية والجانبية من Figma */
-    margin: 0 auto;
+    align-items: flex-start; /* ليكون النص في الأعلى والكروت تتدلى للأسفل */
+    padding-top: 80px;
+    overflow: visible; /* مهم جداً لتظهر الكروت وهي تخرج من الحاوية */
+}
+/* إضافة الأسهم الصاعدة */
+.stats-section::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 250px;
+    height: 250px;
+    background-image: url('./public/images/yellow-arrows.png'); /* تأكد من المسار */
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.2; /* شفافية خفيفة كما في التصميم */
+    pointer-events: none;
 }
 
+  /* العرض الداخلي للمحتوى */
 .stats-container {
-    width: 1376px;
-    /* العرض الداخلي للمحتوى */
-    text-align: center;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .stats-title {
@@ -1662,4 +1672,37 @@ body {
     font-size: 20px;
     font-weight: 700;
     margin-top: 10px;
+}/* تحسين كرت الإحصائيات ليطابق Figma */
+.stat-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    width: 270px;
+    padding: 35px 20px;
+    /* الظل في التصميم ناعم جداً وممتد */
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.08); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* لإعطاء تأثير البروز فوق الخلفية */
+    transform: translateY(60px); 
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(50px) scale(1.02);
+}
+
+.stat-card .number {
+    color: #F7B500; 
+    font-size: 48px; 
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.stat-card .label {
+    color: #050A44; 
+    font-size: 22px;
+    font-weight: 700;
 }
