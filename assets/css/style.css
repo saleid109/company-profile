@@ -1607,25 +1607,6 @@ body {
     /* خلفية الصفحة بيضاء */
 }
 
-/* إضافة الأسهم في الخلفية جهة اليسار */
-.blue-header::after {
-    content: "";
-    position: absolute;
-    /* نضعها في أعلى اليسار */
-    top: -50px; 
-    left: 5%; 
-    
-    width: 400px;
-    height: 100%;
-    
-    background-image: url('./public/images/yellow-arrows.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    
-    /* الشفافية والطبقة */
-    opacity: 0.2;
-    z-index: 1; /* ستكون خلف المحتوى إذا كان المحتوى z-index: 2 */
-}
 
 .stats-container {
     position: relative;
@@ -1646,6 +1627,42 @@ body {
     background-position: top center;
     background-size: 100px;
     /* تحكم في حجم الأسهم */
+}
+
+.blue-header {
+    background-color: #00004d; /* اللون الكحلي الغامق */
+    color: white;
+    text-align: center;
+    padding: 80px 20px 120px;
+    position: relative; /* ضروري لعمل الأسهم بالداخل */
+    /* overflow: visible;  تأكد أن الأوفرفلو مسموح لتظهر الأسهم الخارجة للأعلى */
+}
+
+/* إضافة الأسهم في أعلى اليسار */
+.blue-header::before {
+    content: "";
+    position: absolute;
+    
+    /* التموضع: أعلى اليسار */
+    top: -60px;  /* قيمة سالبة لرفع الأسهم فوق الخط الكحلي كما في الصورة */
+    left: 5%;    /* مسافة بسيطة من الحافة اليسرى */
+    
+    width: 350px; /* حجم يتناسب مع مساحة القسم */
+    height: 100%;
+    
+    background-image: url('./public/images/yellow-arrows.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    opacity: 0.3; /* درجة الشفافية المطلوبة */
+    z-index: 1;   /* لضمان بقائها خلف النص */
+    pointer-events: none; /* لكي لا تعيق النقر على أي روابط خلفها */
+}
+
+/* تأكد أن محتوى الهيدر (العنوان والوصف) يظهر فوق الأسهم */
+.stats-title, .stats-desc {
+    position: relative;
+    z-index: 2;
 }
 
 .arrows-bg {
