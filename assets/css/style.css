@@ -1614,27 +1614,23 @@ body {
     align-self: stretch;
 }
 
-.stats-section::before {
+/* إضافة الأسهم كخلفية */
+.stats-section::after {
     content: "";
     position: absolute;
     top: 0;
-    /* بدء من أعلى القسم */
-    left: 0;
-    /* بدء من يسار القسم */
-    width: 300px;
-    /* عرض الأسهم */
+    left: 10%;
+    /* وضعها في جهة اليسار خلف البطاقات */
+    width: 400px;
     height: 100%;
-    /* ارتفاع الأسهم */
-    background-image: url("../images/bg-arrows.svg");
-    /* أيقونة الأسهم الصفراء */
+    background-image: url('./public/images/yellow-arrows.png');
+    /* مسار صورة الأسهم */
     background-repeat: no-repeat;
     background-size: contain;
-    opacity: 0.15;
-    pointer-events: none;
-    /* تعديل موضع الأسهم ليتناسب مع الصورة المرفقة */
-    transform: translateY(-50px) translateX(-50px);
-    /* مثال: تحريك الأسهم لأعلى ويسار قليلاً */
-    /* إذا كانت صورة الأسهم تحتاج لتدوير، يمكن إضافة: transform: rotate(زاوية); */
+    z-index: 0;
+    /* لتبقى خلف البطاقات */
+    opacity: 0.2;
+    /* جعلها خفيفة كما في التصميم */
 }
 
 /* العرض الداخلي للمحتوى */
