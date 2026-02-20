@@ -1608,12 +1608,20 @@ body {
 }
 
 .blue-header {
-    background-color: #000051;
+    background-color: #00004d;
     /* اللون الكحلي الغامق */
     color: white;
     text-align: center;
-    padding: 60px 20px 100px;
-    /* بادينج سفلي كبير ليسمح للكروت بالتداخل */
+    padding: 80px 20px 120px;
+    position: relative;
+
+    /* إضافة الأسهم كصورة خلفية */
+    background-image: url('arrows.png');
+    /* ضع مسار صورتك هنا */
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100px;
+    /* تحكم في حجم الأسهم */
 }
 
 .arrows-bg {
@@ -1648,13 +1656,15 @@ body {
 
 .stat-card {
     background: white;
-    flex: 1 1 220px;
-    /* مرن + حد أدنى منطقي */
-    max-width: 250px;
-    padding: 30px 15px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    padding: 40px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    /* ظل واضح كالصورة */
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px); /* حركة بسيطة عند التمرير */
 }
 
 .num {
@@ -1667,7 +1677,7 @@ body {
 }
 
 .txt {
-    color:var(--color-white);
+    color: var(--color-secondary);
     font-weight: bold;
     font-size: 18px;
 }
