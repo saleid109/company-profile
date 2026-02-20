@@ -1674,7 +1674,7 @@ body {
 /* حاوية الشبكة - تأكد أنها Flex */
 .stats-grid {
     display: flex;
-    flex-direction: ;
+    justify-content: space-between;
     padding: 0 24px;
     justify-content: center;
     align-items: center;
