@@ -870,7 +870,7 @@ body {
 .cat-btn.active {
     color: #fff;
     box-shadow: 0 4px 15px rgba(0, 1, 91, 0.2);
-    transform: scale(1.05); /* تكبير بسيط جداً للزر النشط */
+    transform: scale(1.05); 
     background: linear-gradient(45deg, #00015B, #1d23a3); /* تدرج لوني خفيف */
 }
 
