@@ -291,10 +291,10 @@ html, body {
 /* تنسيق الكرت الفردي */
 .mega-card {
     display: flex;
-    flex-direction: row-reverse; /* أيقونة يسار، نص يمين */
+    flex-direction: row; /* أيقونة يسار، نص يمين */
     align-items: center;
     padding: 20px;
-    background: #ffffff;
+    background: var(--color-white);
     border: 1px solid #f0f0f0;
     border-radius: 15px;
     text-decoration: none;
@@ -309,6 +309,7 @@ html, body {
 .card-info {
     text-align: right;
     margin-right: 15px;
+    order: 2;
 }
 
 .card-info h4 {
@@ -330,10 +331,15 @@ html, body {
     font-weight: bold;
     font-size: 12px;
 }
-
+.card-icon-wrapper {
+    flex-shrink: 0; 
+    margin-left: 15px; 
+    order: 1;
+}
 .card-icon-wrapper img {
     width: 44px;
     height: 44px;
+    object-fit: contain;
 }
 /*ايقونة المنسدلة للجوال*/
 .mobile-menu-icon {
