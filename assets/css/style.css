@@ -1612,6 +1612,8 @@ body {
     align-items: center;
     gap: 24px;
     align-self: stretch;
+    position: relative;   /* مهم جدًا */
+    overflow: hidden;     /* يمنع خروج الصورة خارج السكشن */
 }
 
 /* إضافة الأسهم كخلفية */
