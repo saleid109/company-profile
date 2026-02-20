@@ -184,3 +184,51 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- و. التشغيل الأولي للفلترة ---
     activateMain("products");
 });
+
+//احصائيات
+
+document.addEventListener("DOMContentLoaded", () => {
+    const statsSection = document.querySelector('.stats-section');
+    const statsNumbers = document.querySelectorAll('.stat-number');
+    let started = false; // لضمان تشغيل العداد مرة واحدة فقط
+
+    const revealOnScroll = () => {
+        const reveals = document.querySelectorAll('.reveal');
+        const windowHeight = window.innerHeight;
+
+        reveals.forEach(el => {
+            const revealTop = el.getBoundingClientRect().top;
+            if (revealTop < windowHeight - 100) {
+                el.classList.add('active');
+                
+                // تشغيل عداد الأرقام عند ظهور القسم
+                if (!started && el.closest('.stats-section')) {
+                    startCount();
+                    started = true;
+                }
+            }
+        });
+    };
+
+    // وظيفة عداد الأرقام
+    function startCount() {
+        statsNumbers.forEach(num => {
+            const target = +num.getAttribute('data-target');
+            const increment = target / 50; // سرعة العداد
+
+            const updateCount = () => {
+                const value = +num.innerText.replace('+', '');
+                if (value < target) {
+                    num.innerText = "+" + Math.ceil(value + increment);
+                    setTimeout(updateCount, 30);
+                } else {
+                    num.innerText = "+" + target;
+                }
+            };
+            updateCount();
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // تشغيل التحقق عند تحميل الصفحة
+});
