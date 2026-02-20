@@ -1600,13 +1600,39 @@ body {
 
 /*==============================*/
 /*===================قسم الإحصائيات=======================*/
+/* تأكد أن القسم الرئيسي له position relative */
 .stats-section {
-    direction: rtl;
-    font-family: sans-serif;
-    background-color: #fff;
-    /* خلفية الصفحة بيضاء */
+    position: relative;
+    overflow: hidden; /* لمنع ظهور شريط تمرير إذا كانت الصورة كبيرة */
+    background-color: #00004d; /* لون الخلفية الكحلي */
+    padding: 100px 0;
 }
 
+/* إضافة الأسهم في الخلفية جهة اليسار */
+.stats-section::before {
+    content: "";
+    position: absolute;
+    /* نضعها في أعلى اليسار */
+    top: -50px; 
+    left: 5%; 
+    
+    width: 400px;
+    height: 100%;
+    
+    background-image: url('./public/images/yellow-arrows.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    /* الشفافية والطبقة */
+    opacity: 0.2;
+    z-index: 1; /* ستكون خلف المحتوى إذا كان المحتوى z-index: 2 */
+}
+
+/* تأكد أن الحاوية التي بها النصوص والكروت فوق الأسهم */
+.stats-container {
+    position: relative;
+    z-index: 2;
+}
 .blue-header {
     background-color: #00004d;
     /* اللون الكحلي الغامق */
