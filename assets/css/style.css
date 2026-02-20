@@ -1618,7 +1618,7 @@ body {
     right: 10%;
     width: 200px;
     height: 120px;
-    background-image: url('../images/yellow-arrows.png'); /* تأكد من مسار الصورة */
+    background-image: url('../images/.png'); /* تأكد من مسار الصورة */
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
