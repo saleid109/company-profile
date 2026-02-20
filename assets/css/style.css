@@ -874,6 +874,8 @@ body {
     background: linear-gradient(45deg, #00015B, #1d23a3); /* تدرج لوني خفيف */
 }
 
+
+
 /* ===== التبويبات الفرعية ===== */
 .sub-categories {
     display: none;
@@ -927,9 +929,10 @@ body {
     transition: 0.3s ease;
 }
 
+
 .service-card.active {
     display: block;
-    animation: fadeIn 0.4s ease-in-out;
+    animation: fadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
 .service-card:hover {
@@ -996,15 +999,17 @@ body {
 }
 
 /* ===== أنيميشن ===== */
+/* تحسين أنيميشن الظهور للكروت */
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(20px) scale(0.98);
+        filter: blur(5px); /* تأثير ضبابي خفيف عند البداية */
     }
-
-    to {
+    100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
+        filter: blur(0);
     }
 }
 
