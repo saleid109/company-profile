@@ -1599,71 +1599,123 @@ body {
 }
 
 /*==============================*/
-/*==================== قسم الإحصائيات ====================*/
-/* ================== Section ================== */
+/*===================قسم الإحصائيات=======================*/
 
 .stats-section {
-    background: #050A44;
-    padding: 100px 0 120px;
+    background: var(--primary, #00015B);
+    position: relative;
+    /* السماح للعناصر بالبروز خارج حدود القسم */
+    overflow: visible; 
+    display: flex;
+    padding: 40px 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
 }
 
+/* الأسهم كخلفية */
+.stats-section::after {
+    content: "";
+    position: absolute;
+    /* ضبط موضع الأسهم لتظهر في الزاوية العلوية اليسرى وتبرز */
+    top: -50px; /* تعديل القيمة حسب الحاجة لبروز الأسهم للأعلى */
+    left: -50px; /* تعديل القيمة حسب الحاجة لبروز الأسهم لليسار */
+    width: 400px;
+    height: 100%;
+    background-image: url('./public/images/yellow-arrows.png'); /* تأكد من صحة المسار */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none; /* لضمان عدم حجب التفاعل مع العناصر الأخرى */
+}
+
+/* المحتوى فوق الخلفية */
 .stats-container {
+    position: relative;
+    z-index: 1;
     max-width: 1200px;
-    margin: auto;
-    padding: 0 24px;
+    margin: 0 auto;
+    padding: 0 20px;
     text-align: center;
+    /* إزالة تكرار تعريف width: 1440px; هنا */
 }
-
-/* Title */
 
 .stats-title {
-    color: #fff;
+    color: var(--Base-White, #FFF);
+    text-align: center;
+    font-family: Tajawal;
     font-size: 48px;
+    font-style: normal;
     font-weight: 700;
-    margin-bottom: 20px;
+    line-height: 48px;
+    align-self: stretch;
 }
 
 .stats-description {
-    color: #fff;
-    font-size: 20px;
-    line-height: 1.8;
-    margin-bottom: 80px;
+    color: var(--Base-White, #FFF);
+    text-align: center;
+    font-family: Tajawal;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px;
 }
 
-/* ================== GRID ================== */
-
+/* حاوية الشبكة - تأكد أنها Flex */
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 60px; /* عمودي ثم أفقي */
+    display: flex;
+    justify-content: center; /* لتوسيط المربعات في المنتصف */
+    align-items: center;
+    gap: 80px; /* المسافة بين المربعات */
+    align-self: stretch;
+    
+    /* التعديل الرئيسي: لضمان بقاء البطاقات في صف واحد وبروزها */
+    flex-wrap: nowrap; /* يمنع البطاقات من الالتفاف إلى صف جديد */
+    transform: translateY(85px); /* هذا يحركهم للاسفل ليتداخلوا مع القسم التالي */
+    margin-top: 40px; /* لتعويض التحريك وتوفير مساحة */
+    /* إضافة حد أدنى للعرض لضمان عدم الالتفاف المبكر على الشاشات الكبيرة */
+    min-width: fit-content; /* أو قيمة ثابتة مثل 1100px إذا كان هناك عدد ثابت من البطاقات */
 }
 
-/* ================== CARD ================== */
-
+/* تعديل عرض الكرت ليتناسب مع الصف الواحد */
 .stat-card {
-    background: #EDEDED;
-    border-radius: 28px;
-    padding: 60px 20px;
     display: flex;
+    width: 266px;
+    height: 171px;
+    padding: 24px;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    transition: 0.3s ease;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    background: var(--Base-White, #FFF);
+    box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    flex-shrink: 0; /* يمنع البطاقات من الانكماش */
 }
 
 .stat-card .number {
-    font-size: 48px;
-    font-weight: 700;
     color: #FBBF24;
-    margin-bottom: 15px;
+    font-size: 40px;
+    font-weight: 700;
 }
 
 .stat-card .label {
+    color: #050A44;
     font-size: 24px;
     font-weight: 700;
-    color: #050A44;
 }
 
 .stat-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0px 16px 24px -8px rgba(16, 24, 40, 0.15);
+}
+
+/* تحسينات إمكانية الوصول: أنماط التركيز */
+.stat-card:focus-within {
+    outline: 2px solid #FBBF24; /* إطار أصفر واضح عند التركيز */
+    outline-offset: 4px;
+    box-shadow: 0px 0px 0px 4px rgba(251, 191, 36, 0.5); /* ظل إضافي للتركيز */
 }
