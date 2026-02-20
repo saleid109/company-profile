@@ -1600,47 +1600,40 @@ body {
 
 /*==============================*/
 /*===================قسم الإحصائيات=======================*/
+/* الحاوية الكبرى للقسم */
 .stats-section {
-    direction: rtl;
-    font-family: sans-serif;
-    background-color: #fff;
-    /* خلفية الصفحة بيضاء */
-}
-
-
-.stats-container {
     position: relative;
-    z-index: 2;
+    padding: 100px 0; /* مساحة كافية للأسهم في الأعلى */
+    background-color: #fff;
+    overflow: visible; /* تأكد أنها مرئية */
 }
 .blue-header {
-    background-color: #00004d; /* اللون الكحلي الغامق من الكود الخاص بك */
-    color: white;
-    text-align: center;
-    padding: 80px 20px 200px;
-    position: relative;
-    /* أزلنا background-image من هنا لنضعها في الـ pseudo-element للتحكم الأفضل */
+    background-color: #00004d;
+    position: relative; /* ضروري لعمل الأسهم بالداخل */
+    padding: 80px 0;
+    overflow: visible; /* لضمان عدم قص الأسهم الخارجة للأعلى */
+    z-index: 1;
 }
 
-
-/* إضافة الأسهم في أعلى اليسار */
 .blue-header::before {
-    content: "";
+    content: ""; /* لا تحذف هذا السطر */
     position: absolute;
-    
-    /* التموضع: أعلى اليسار */
-    top: -60px;  /* قيمة سالبة لرفع الأسهم فوق الخط الكحلي كما في الصورة */
-    left: 5%;    /* مسافة بسيطة من الحافة اليسرى */
-    
-    width: 350px; /* حجم يتناسب مع مساحة القسم */
-    height: 100%;
-    
+    top: -60px; /* لرفع الأسهم خارج الصندوق الكحلي كما في التصميم */
+    left: 10%;
+    width: 300px;
+    height: 300px; /* تأكد من وجود طول كافٍ للصورة */
     background-image: url('./public/images/yellow-arrows.png');
     background-repeat: no-repeat;
     background-size: contain;
-    
-    opacity: 0.3; /* درجة الشفافية المطلوبة */
-    z-index: 1;   /* لضمان بقائها خلف النص */
-    pointer-events: none; /* لكي لا تعيق النقر على أي روابط خلفها */
+    opacity: 0.3;
+    z-index: -1; /* تجعلها خلف النص تماماً */
+    pointer-events: none;
+}
+
+/* لضمان ظهور النصوص بوضوح فوق الأسهم */
+.stats-container {
+    position: relative;
+    z-index: 2;
 }
 
 /* تأكد أن محتوى الهيدر (العنوان والوصف) يظهر فوق الأسهم */
@@ -1678,6 +1671,11 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+    transform: translateY(-60px);
+    -webkit-transform: translateY(-60px);
+    -moz-transform: translateY(-60px);
+    -ms-transform: translateY(-60px);
+    -o-transform: translateY(-60px);
 }
 
 .stat-card {
