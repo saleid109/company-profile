@@ -318,7 +318,7 @@ html, body {
 }
 
 .card-info p {
-    color: #888;
+    color:var(--color-gray-text);
     font-size: 13px;
     line-height: 1.4;
 }
@@ -332,8 +332,8 @@ html, body {
 }
 
 .card-icon-wrapper img {
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
 }
 /*ايقونة المنسدلة للجوال*/
 .mobile-menu-icon {
