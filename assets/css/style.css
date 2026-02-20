@@ -1602,93 +1602,92 @@ body {
 
 
 /*===================قسم الإحصائيات=======================*/
+/* القسم الرئيسي */
 .stats-section {
-    padding: 100px 0 150px 0; /* زيادة البادينج السفلي لإعطاء مساحة للكروت البارزة */
-    background-color: #f9f9f9;
-    position: relative;
+    padding: 80px 0 160px 0; /* مساحة كافية للبروز السفلي */
+    background-color: var(--color-bg-light);
     direction: rtl;
-    overflow: hidden; /* لمنع ظهور هوامش الأسهم خارج الشاشة */
+    position: relative;
 }
 
 .stats-container {
     max-width: 1200px;
     margin: 0 auto;
-    position: relative; /* مرجع للأسهم */
-    padding: 0 15px;
+    padding: 0 20px;
+    position: relative;
 }
 
-/* --- تنسيق الأسهم في أقصى اليسار خلف الصندوق --- */
-.stats-bg-arrows {
+/* --- استخدام العنصر الزائف للأسهم الصفراء --- */
+.stats-dark-card::before {
+    content: "";
     position: absolute;
-    top: -40px;      /* تبرز قليلاً للأعلى خلف الصندوق */
-    left: 0;         /* أقصى اليسار */
-    width: 150px;    /* حجم الأسهم */
-    z-index: 1;      /* تحت الصندوق الكحلي */
-    opacity: 0.7;
+    top: -50px;       /* تبرز للأعلى قليلاً */
+    left: -30px;      /* تخرج جهة اليسار قليلاً لتظهر بشكل جمالي */
+    width: 220px;     /* حجم كبير للصورة كما طلبت */
+    height: 220px;
+    background-image: url('./public/images/yellow-arrows.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;      /* خلف الصندوق الكحلي */
+    opacity: 0.9;
 }
 
-.stats-bg-arrows img {
-    width: 100%;
-}
-
-/* --- الصندوق الكحلي --- */
+/* الصندوق الكحلي (تم تصغير الارتفاع عبر التحكم في Padding) */
 .stats-dark-card {
-    background-color: #00004d; /* اللون الكحلي الغامق من الصورة */
+    background-color: var(--color-secondary); /* اللون الكحلي */
     border-radius: 20px;
-    padding: 60px 40px 0 40px; /* بادينج سفلي 0 للسماح للكروت بالخروج */
+    padding: 50px 30px 40px 30px; /* بادينج مدروس لتصغير الارتفاع */
     text-align: center;
     position: relative;
-    z-index: 2; /* فوق الأسهم */
+    z-index: 2;
 }
 
 .stats-title {
-    color: #ffffff !important;
+    color: var(--color-white) !important;
     font-size: 32px;
-    margin-bottom: 15px;
-    font-weight: 800;
+    margin-bottom: 10px;
 }
 
 .stats-desc {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
     max-width: 600px;
-    margin: 0 auto 50px auto;
-    line-height: 1.7;
+    margin: 0 auto 40px auto;
 }
 
-/* --- الكروت والبروز السفلي --- */
+/* --- الكروت والبروز --- */
 .stats-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    transform: translateY(60px); /* دفع الكروت للأسفل لتبرز خارج حدود الصندوق الكحلي */
+    margin-bottom: -110px; /* رفع الكروت بقوة للخارج ليبرز نصفها تقريباً */
 }
 
 .stat-item {
     background: #ffffff;
-    padding: 30px 10px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 35px 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .stat-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 
 .stat-number {
-    font-size: 34px;
-    font-weight: 900;
-    color: #ffcc00; /* الأصفر المستخدم في الصورة */
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--color-primary); /* اللون الأصفر */
     margin-bottom: 5px;
+    font-family: sans-serif;
 }
 
 .stat-text {
     font-size: 16px;
-    color: #00004d;
-    font-weight: 700;
+    color: var(--color-secondary);
+    font-weight: bold;
 }
-
