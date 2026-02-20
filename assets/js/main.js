@@ -1,6 +1,10 @@
 /* =========================================================
-    1. إدارة القائمة (الجوال والطبقة الظليلة)
+    1. إدارة القائمة والملاحة (Navigation & Menu)
 ========================================================= */
+
+/**
+ * دالة فتح وإغلاق قائمة الجوال والتحكم في الطبقة الظليلة
+ */
 function toggleMenu() {
     const navLinks = document.querySelector(".navbar-links");
     const menuIcon = document.querySelector(".mobile-menu-icon i");
@@ -9,46 +13,71 @@ function toggleMenu() {
 
     navLinks.classList.toggle("open");
     
-    // دعم الطبقة الظليلة إذا وجدت
+    // دعم الطبقة الظليلة (Overlay) إذا وجدت
     if (overlay) overlay.classList.toggle('active');
 
-    // تغيير شكل الأيقونة ومنع التمرير
+    // تبديل الأيقونة والتحكم في تمرير الصفحة
     if (navLinks.classList.contains("open")) {
         if (menuIcon) menuIcon.classList.replace("fa-bars", "fa-times");
-        body.style.overflow = "hidden";
+        body.style.overflow = "hidden"; // منع التمرير عند فتح القائمة
         body.classList.add('menu-open');
     } else {
         if (menuIcon) menuIcon.classList.replace("fa-times", "fa-bars");
-        body.style.overflow = "auto";
+        body.style.overflow = "auto"; // إعادة التمرير عند الإغلاق
         body.classList.remove('menu-open');
     }
 }
 
 /* =========================================================
-    2. وظائف الخدمات والفلترة (الرئيسية والفرعية)
+    2. وظائف فلترة الخدمات (Digital Services Filter)
 ========================================================= */
+
+// متغيرات التحكم الافتراضية
 let currentMain = "products";
 let currentSub = "web";
 
+/**
+ * فلترة كروت الخدمات بناءً على القسم الرئيسي والفرعي المختتار
+ * تم إضافة تأثير ظهور متتابع (Delay) لتحسين تجربة المستخدم
+ */
 function filterCards() {
     const cards = document.querySelectorAll(".service-card");
+    let delay = 0;
+
     cards.forEach(card => {
         const match = card.dataset.main === currentMain && card.dataset.sub === currentSub;
-        card.classList.toggle("active", match);
+        
+        if (match) {
+            card.style.display = "block";
+            // إزالة الكلاس ثم إضافته بعد تأخير لتفعيل الأنيميشن
+            card.classList.remove("active"); 
+            setTimeout(() => {
+                card.classList.add("active");
+            }, delay);
+            delay += 100; // زيادة التأخير لكل كرت تالٍ
+        } else {
+            card.classList.remove("active");
+            card.style.display = "none";
+        }
     });
 }
 
+/**
+ * تفعيل التبويب الرئيسي وإظهار مجموعته الفرعية
+ */
 function activateMain(mainValue) {
     currentMain = mainValue;
     const mainTabs = document.querySelectorAll(".cat-btn");
     const subGroups = document.querySelectorAll(".sub-categories");
 
+    // تحديث حالة الأزرار الرئيسية
     mainTabs.forEach(btn => {
         const isActive = btn.dataset.main === mainValue;
         btn.classList.toggle("active", isActive);
         btn.setAttribute("aria-selected", isActive);
     });
 
+    // إظهار المجموعات الفرعية المناسبة
     subGroups.forEach(group => {
         const match = group.dataset.parent === mainValue;
         group.classList.toggle("active", match);
@@ -65,6 +94,9 @@ function activateMain(mainValue) {
     filterCards();
 }
 
+/**
+ * تفعيل التبويب الفرعي داخل المجموعة النشطة
+ */
 function activateSub(subValue) {
     currentSub = subValue;
     document.querySelectorAll(".sub-categories.active .sub-btn").forEach(btn => {
@@ -74,11 +106,12 @@ function activateSub(subValue) {
 }
 
 /* =========================================================
-    3. تهيئة الأحداث عند تحميل الصفحة (DOMContentLoaded)
+    3. تهيئة الأحداث (Initializations & Event Listeners)
 ========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- إغلاق القائمة عند الضغط على الطبقة الظليلة ---
+    // --- أ. إدارة إغلاق القائمة عبر الـ Overlay ---
     const overlay = document.querySelector('.overlay');
     if (overlay) {
         overlay.addEventListener('click', () => {
@@ -87,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- دعم الوصول (Accessibility) للمنسدلات ---
+    // --- ب. دعم الوصول للقوائم المنسدلة (Dropdown Accessibility) ---
     const dropdowns = document.querySelectorAll(".dropdown");
     dropdowns.forEach((dd) => {
         const trigger = dd.querySelector("a");
@@ -99,15 +132,15 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger.addEventListener("click", (e) => {
             const submenu = dd.querySelector(".mega-menu-content") || dd.querySelector("ul");
             if (!submenu) return;
+            
             e.preventDefault();
             const isOpen = trigger.getAttribute("aria-expanded") === "true";
             trigger.setAttribute("aria-expanded", String(!isOpen));
             dd.classList.toggle("open", !isOpen);
         });
     });
-//====================================================
 
-    // --- تشغيل Swiper (سلايدر المشاريع) ---
+    // --- ج. تهيئة سلايدر المشاريع (Swiper Slider) ---
     if (typeof Swiper !== "undefined") {
         new Swiper(".projects-swiper", {
             slidesPerView: 1,
@@ -124,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- نظام ظهور العناصر عند التمرير (Intersection Observer) ---
+    // --- د. مراقب الظهور للحركات (Intersection Observer) ---
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -139,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
         revealObserver.observe(el);
     });
 
-    // --- ربط أزرار التبويبات (Tabs) ---
+    // --- هـ. ربط أزرار التبويبات بالوظائف ---
     document.querySelectorAll(".cat-btn").forEach(btn => {
         btn.addEventListener("click", () => activateMain(btn.dataset.main));
     });
@@ -148,6 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => activateSub(btn.dataset.sub));
     });
 
-    // تشغيل أولي للخدمات
+    // --- و. التشغيل الأولي للفلترة ---
     activateMain("products");
 });
