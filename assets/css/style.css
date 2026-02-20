@@ -1603,48 +1603,49 @@ body {
 
 /*===================قسم الإحصائيات=======================*/
 .stats-section {
-    padding: 100px 0;
-    background-color: #f8f9fa;
-    direction: rtl;
+    padding: 100px 0 150px 0; /* زيادة البادينج السفلي لإعطاء مساحة للكروت البارزة */
+    background-color: #f9f9f9;
     position: relative;
-    overflow: hidden; /* لمنع ظهور شريط تمرير عرضي بسبب الأسهم */
+    direction: rtl;
+    overflow: hidden; /* لمنع ظهور هوامش الأسهم خارج الشاشة */
 }
 
 .stats-container {
-    max-width: 1140px;
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative;
+    position: relative; /* مرجع للأسهم */
     padding: 0 15px;
 }
 
-/* --- ضبط الأسهم لليسار --- */
-.stats-arrows-left {
+/* --- تنسيق الأسهم في أقصى اليسار خلف الصندوق --- */
+.stats-bg-arrows {
     position: absolute;
-    top: -30px; /* تبرز قليلاً للأعلى */
-    left: -20px; /* أقصى اليسار */
-    width: 160px;
-    z-index: 1; /* خلف الصندوق الكحلي */
-    opacity: 0.8;
+    top: -40px;      /* تبرز قليلاً للأعلى خلف الصندوق */
+    left: 0;         /* أقصى اليسار */
+    width: 150px;    /* حجم الأسهم */
+    z-index: 1;      /* تحت الصندوق الكحلي */
+    opacity: 0.7;
 }
 
-.stats-arrows-left img {
+.stats-bg-arrows img {
     width: 100%;
 }
 
 /* --- الصندوق الكحلي --- */
-.stats-main-box {
-    background-color: #00004d;
+.stats-dark-card {
+    background-color: #00004d; /* اللون الكحلي الغامق من الصورة */
     border-radius: 20px;
-    padding: 60px 20px 0 20px;
+    padding: 60px 40px 0 40px; /* بادينج سفلي 0 للسماح للكروت بالخروج */
+    text-align: center;
     position: relative;
     z-index: 2; /* فوق الأسهم */
-    text-align: center;
 }
 
 .stats-title {
-    color: #fff !important;
+    color: #ffffff !important;
     font-size: 32px;
     margin-bottom: 15px;
+    font-weight: 800;
 }
 
 .stats-desc {
@@ -1652,6 +1653,7 @@ body {
     font-size: 14px;
     max-width: 600px;
     margin: 0 auto 50px auto;
+    line-height: 1.7;
 }
 
 /* --- الكروت والبروز السفلي --- */
@@ -1659,44 +1661,46 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    transform: translateY(60px); /* دفع الكروت للأسفل لتبرز خارج الصندوق */
-    position: relative;
-    z-index: 3;
+    transform: translateY(60px); /* دفع الكروت للأسفل لتبرز خارج حدود الصندوق الكحلي */
 }
 
-.stat-card {
-    background: #fff;
-    padding: 35px 15px;
-    border-radius: 15px;
+.stat-item {
+    background: #ffffff;
+    padding: 30px 10px;
+    border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: 0.3s ease;
 }
 
-.stat-card:hover {
+.stat-item:hover {
     transform: translateY(-5px);
 }
 
-.stat-num {
-    display: block;
-    font-size: 32px;
-    font-weight: 800;
-    color: #ffcc00; /* الأصفر الذهبي */
+.stat-number {
+    font-size: 34px;
+    font-weight: 900;
+    color: #ffcc00; /* الأصفر المستخدم في الصورة */
     margin-bottom: 5px;
 }
 
-.stat-label {
+.stat-text {
     font-size: 16px;
     color: #00004d;
     font-weight: 700;
 }
 
-/* للتجاوب مع الجوال */
+/* التجاوب مع الجوال */
 @media (max-width: 992px) {
     .stats-cards-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 40px 20px;
         transform: translateY(40px);
     }
-    .stats-main-box {
-        margin-bottom: 60px;
+    .stats-bg-arrows {
+        width: 100px;
+        left: -10px;
     }
 }
