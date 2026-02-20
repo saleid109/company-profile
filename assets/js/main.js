@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
             dd.classList.toggle("open", !isOpen);
         });
     });
+//====================================================
 
     // --- تشغيل Swiper (سلايدر المشاريع) ---
     if (typeof Swiper !== "undefined") {
