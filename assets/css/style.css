@@ -1666,34 +1666,30 @@ body {
 /* حاوية الشبكة - تأكد أنها Flex */
 .stats-grid {
     display: flex;
-    justify-content: center; /* لتوسيط المربعات في المنتصف */
-    align-items: center;
-    gap: 80px; /* المسافة بين المربعات */
-    align-self: stretch;
-    
-    /* التعديل الرئيسي: لضمان بقاء البطاقات في صف واحد وبروزها */
-    flex-wrap: nowrap; /* يمنع البطاقات من الالتفاف إلى صف جديد */
-    transform: translateY(85px); /* هذا يحركهم للاسفل ليتداخلوا مع القسم التالي */
-    margin-top: 40px; /* لتعويض التحريك وتوفير مساحة */
-    /* إضافة حد أدنى للعرض لضمان عدم الالتفاف المبكر على الشاشات الكبيرة */
-    min-width: fit-content; /* أو قيمة ثابتة مثل 1100px إذا كان هناك عدد ثابت من البطاقات */
+    justify-content: center;
+    gap: 60px;
+    margin-top: 80px;
+    flex-wrap: wrap; /* مهم للاستجابة */
 }
-
 /* تعديل عرض الكرت ليتناسب مع الصف الواحد */
 .stat-card {
     display: flex;
-    width: 266px;
-    height: 171px;
+    width: 320px;
+    height: 200px;
+    border-radius: 28px;
     padding: 24px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    border-radius: 20px;
     background: var(--Base-White, #FFF);
     box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    flex-shrink: 0; /* يمنع البطاقات من الانكماش */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 .stat-card .number {
