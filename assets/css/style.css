@@ -291,50 +291,52 @@ html, body {
 /* تنسيق الكرت الفردي */
 .mega-card {
     display: flex;
-    flex-direction: row; /* أيقونة يسار، نص يمين */
-    align-items: center;
+    flex-direction: row; /* الترتيب الطبيعي في RTL يبدأ من اليمين */
+    align-items: flex-start; /* محاذاة العناصر للأعلى لجعل العنوان في الأعلى */
     padding: 20px;
     background: var(--color-white);
     border: 1px solid #f0f0f0;
     border-radius: 15px;
     text-decoration: none;
     transition: 0.3s ease;
+    direction: rtl; /* تأكيد اتجاه اليمين لليسار */
 }
 
 .mega-card:hover {
     border-color: var(--color-primary);
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
-
+/* محتوى المعلومات - يسار الأيقونة */
 .card-info {
     text-align: right;
-    margin-right: 15px;
-    order: 2;
+    order: 2; /* تأتي بعد الأيقونة */
+    flex-grow: 1;
 }
 
 .card-info h4 {
     color: var(--color-secondary);
     font-size: 17px;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .card-info p {
-    color:var(--color-gray-text);
+    color: var(--color-gray-text);
     font-size: 13px;
     line-height: 1.4;
+    margin-bottom: 8px;
 }
 
 .read-more {
-    display: block;
-    margin-top: 10px;
+    display: inline-block;
     color: var(--color-primary);
     font-weight: bold;
     font-size: 12px;
 }
 .card-icon-wrapper {
-    flex-shrink: 0; 
-    margin-left: 15px; 
-    order: 1;
+    flex-shrink: 0; /* منع تصغير الأيقونة */
+    margin-left: 15px; /* إزاحة النص لليسار قليلاً */
+    order: 1; /* تأكيد ظهورها كأول عنصر يميناً */
 }
 .card-icon-wrapper img {
     width: 44px;
