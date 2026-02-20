@@ -1607,29 +1607,31 @@ body {
     /* خلفية الصفحة بيضاء */
 }
 
-
-.stats-container {
-    position: relative;
-    z-index: 2;
-}
 .blue-header {
     background-color: #00004d;
-    position: relative; /* ضروري جداً لكي تعمل Absolute بالداخل */
-    /* نلغي الـ overflow: hidden هنا لكي تظهر الأسهم الخارجة للأعلى */
+    position: relative; /* لجعل الأسهم تتحاذى بالنسبة لهذا الصندوق */
+    padding: 60px 0;
+    /* تأكد من عدم وجود overflow: hidden هنا */
 }
 
 .blue-header::before {
     content: "";
     position: absolute;
-    top: -50px; /* لرفع الأسهم للأعلى قليلاً خارج اللون الكحلي */
-    left: 5%;   /* جهة اليسار كما في صورتك */
-    width: 350px;
-    height: 100%; /* تأخذ طول الهيدر الكحلي */
+    top: -60px; /* لرفعها فوق المساحة الكحلية قليلاً */
+    left: 10%;
+    width: 300px;
+    height: 200px;
     background-image: url('./public/images/yellow-arrows.png');
     background-repeat: no-repeat;
     background-size: contain;
-    opacity: 0.3;
-    z-index: 1; /* لتكون خلف النص (العناوين) */
+    opacity: 0.2;
+    z-index: 1; /* خلف النص */
+    pointer-events: none; /* لكي لا تعيق الضغط على أي زر */
+}
+
+.stats-container {
+    position: relative;
+    z-index: 2; /* النص فوق الأسهم */
 }
 
 /* لضمان أن النص فوق الأسهم */
