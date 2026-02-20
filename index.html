@@ -96,73 +96,126 @@
           <!--القوائم المنسدلة-->
 <!-- روابط التنقل مع دعم القوائم المنسدلة للخدمات والفريق -->
       <div class="navbar-links">
-  <ul class="nav-menu">
-    <li>
-      <a href="#hero" class="active" aria-current="page">الرئيسية</a>
-    </li>
 
-    <li class="dropdown has-mega">
-      <a href="#about" aria-haspopup="true" aria-expanded="false">
-        عن نقطة صعود
-        <i class="fas fa-chevron-down mr-1 text-xs"></i>
-      </a>
+        <ul class="nav-menu">
+          <li>
+            <a href="#hero" class="active" aria-current="page">الرئيسية</a>
+          </li>
 
-      <div class="mega-menu-content">
-        <div class="mega-grid">
-          <a href="#" class="mega-card">
-            <div class="card-icon-wrapper">
-              <img src="./public/images/Frame.png" alt="icon">
-            </div>
-            <div class="card-info">
-              <h4>عن نقطة صعود</h4>
-              <p>نبذة عن نقطة صعود أهدافنا ورؤيتنا</p>
-              <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-            </div>
-          </a>
+<li class="dropdown has-mega">
+  <a href="#about" aria-haspopup="true" aria-expanded="false">
+    عن نقطة صعود
+    <i class="fas fa-chevron-down mr-1 text-xs"></i>
+  </a>
 
-          <a href="#" class="mega-card">
-            <div class="card-icon-wrapper">
-              <img src="./public/images/Frame.png" alt="icon">
-            </div>
-            <div class="card-info">
-              <h4>قصتنا</h4>
-              <p>تعرف على قصتنا وبدايتنا</p>
-              <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-            </div>
-          </a>
+  <div class="mega-menu-content">
+    <div class="mega-grid">
+      
+      <a href="#" class="mega-card">
+  <div class="card-icon-wrapper">
+    <img src="./public/images/Frame.png" alt="icon">
+  </div>
+  
+  <div class="card-info">
+    <h4>عن نقطة صعود</h4>
+    <p>نبذة عن نقطة صعود أهدافنا ورؤيتنا</p>
+    <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+  </div>
+</a>
 
-          <a href="#" class="mega-card">
-            <div class="card-icon-wrapper">
-              <img src="./public/images/Frame.png" alt="icon">
-            </div>
-            <div class="card-info">
-              <h4>أخبارنا</h4>
-              <p>آخر المستجدات والأخبار والإعلانات</p>
-              <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-            </div>
-          </a>
+      <a href="#" class="mega-card">
+        <div class="card-icon-wrapper">
+    <img src="./public/images/Frame.png" alt="icon">
+  </div>
+  
+        <div class="card-info">
+          <h4>قصتنا</h4>
+          <p>تعرف على قصتنا وبدايتنا</p>
+          <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
         </div>
-      </div>
-    </li>
-
-    <li class="dropdown">
-      <a href="#services" aria-haspopup="true" aria-expanded="false">
-        خدماتنا
-        <i class="fas fa-chevron-down mr-1 text-xs" aria-hidden="true"></i>
       </a>
-    </li>
-    ```
 
----
+      <a href="#" class="mega-card">
+        <div class="card-icon-wrapper">
+          <img src="./public/images/Frame.png" alt="icon">
+        </div>
+        <div class="card-info">
+          <h4>أخبارنا</h4>
+          <p>آخر المستجدات والأخبار والإعلانات</p>
+          <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+        </div>
+        
+      </a>
 
-### ملاحظات إضافية لتحسين الجودة:
-1.  **رابط "عرض كافة المشاريع"**: في وسم الـ `<a>` كتبتي `href="#projects-page.html"`. إذا كانت هذه صفحة منفصلة، احذفي علامة الهاش `#` لتصبح `href="projects-page.html"`.
-2.  **الصور**: تأكدي أن مسار الصور `./public/images/` صحيح بالنسبة لموقع ملف الـ HTML. إذا كان ملف الـ HTML في المجلد الرئيسي ومجلد الصور بجانبه، فالمسار الصحيح هو `public/images/` بدون الـ `.` الأولى في بعض الأنظمة.
-3.  **التكرار في المشاريع**: في قسم "أعمالنا"، كرت المشروع الرابع فارغ العنوان `<h3 class="app-title">تطبيق </h3>`. يفضل وضع اسم تجريبي له.
+    </div>
+  </div>
+</li>
 
+          <li class="dropdown">
+            <a href="#services" aria-haspopup="true" aria-expanded="false">
+              خدماتنا
+              <i class="fas fa-chevron-down mr-1 text-xs" aria-hidden="true"></i>
+            </a>
+          </li>
 
+          <li><a href="#portfolio">أعمالنا</a></li>
 
-**هل ترغبين في مساعدتك بكود الـ JavaScript الخاص بتبديل (Tabs) في قسم "خدماتنا" ليعمل بشكل تفاعلي؟**
+          <li class="dropdown has-mega">
+  <a href="#team" aria-haspopup="true" aria-expanded="false">
+    طاقم العمل
+    <i class="fas fa-chevron-down mr-1 text-xs"></i>
+  </a>
+
+  <div class="mega-menu-content">
+    <div class="mega-grid">
+      
+      <a href="#" class="mega-card">
+        <div class="card-icon-wrapper">
+          <img src="./public/images/Frame.png" alt="icon">
+        </div>
+        <div class="card-info">
+          <h4>اعضاء المجلس</h4>
+          <p>الهيكل الاداري لنقطة صعود</p>
+          <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+        </div>
+      </a>
+
+      <a href="#" class="mega-card">
+        <div class="card-icon-wrapper">
+          <img src="./public/images/Frame.png" alt="icon">
+        </div>
+        <div class="card-info">
+          <h4>الفرق</h4>
+          <p>تعرف على فرق نقطة صعود</p>
+          <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+        </div>
+      </a>
+
+      <a href="#" class="mega-card">
+        <div class="card-icon-wrapper">
+          <img src="./public/images/Frame.png" alt="icon">
+        </div>
+        <div class="card-info">
+          <h4>اعلانات التوظيف</h4>
+          <p>اعلانات التوظيف في نقطة صعود</p>
+          <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</li>
+
+          <li><a href="#clients-partners">شركاء النجاح</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <!--زر الاستشارة-->
+      <div class="nav-actions">
+        <a href="#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
+      </div>
+    </div>
   </nav>
   <!-- طبقة التظليل الخلفية عند تفعيل قائمة الجوال -->
         <div class="overlay"></div>
