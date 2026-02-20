@@ -829,15 +829,19 @@ body {
     text-align: center;
     direction: rtl;
 }
+
 .section-main-title {
-    color: #00015B !important; /* لون الهوية الكحلي */
+    color: #00015B !important;
+    /* لون الهوية الكحلي */
     text-align: center;
     font-family: 'Tajawal', sans-serif;
-    font-size: 48px !important; /* تكبير العنوان */
-    font-weight: 800; 
+    font-size: 48px !important;
+    /* تكبير العنوان */
+    font-weight: 800;
     margin-bottom: 50px;
     position: relative;
-    display: block; /* لضمان التوسط */
+    display: block;
+    /* لضمان التوسط */
     width: 100%;
 }
 
@@ -870,8 +874,9 @@ body {
 .cat-btn.active {
     color: #fff;
     box-shadow: 0 4px 15px rgba(0, 1, 91, 0.2);
-    transform: scale(1.05); 
-    background: linear-gradient(45deg, #00015B, #1d23a3); /* تدرج لوني خفيف */
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #00015B, #1d23a3);
+    /* تدرج لوني خفيف */
 }
 
 
@@ -968,7 +973,7 @@ body {
 
 /* نص الكرت */
 .service-card h3 {
-    font-size: 24px ; 
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 15px;
     color: #00015B;
@@ -976,7 +981,7 @@ body {
 }
 
 .service-card p {
-    font-size: 16px ; 
+    font-size: 16px;
     color: #555;
     line-height: 1.8;
     margin-bottom: 25px;
@@ -1004,8 +1009,10 @@ body {
     0% {
         opacity: 0;
         transform: translateY(20px) scale(0.98);
-        filter: blur(5px); /* تأثير ضبابي خفيف عند البداية */
+        filter: blur(5px);
+        /* تأثير ضبابي خفيف عند البداية */
     }
+
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -1597,38 +1604,46 @@ body {
 
 /*الحاوية الكبيرة*/
 .stats-section {
-    background-color: #050a44;
-    padding-top: 60px;
-    padding-bottom: 0; /* نلغي الحشوة السفلية لترك المجال للبطاقات بالبروز */
-    position: relative;
+    background: var(--primary, #00015B);
     display: flex;
+    height: 358px;
+    padding: 40px 32px;
     flex-direction: column;
     align-items: center;
-    /* التأكد من أن أي عنصر يخرج عن حدود القسم يظل مرئياً */
-    overflow: visible; /* تم التأكد من أن هذا هو المطلوب لبروز الأسهم */
+    gap: 24px;
+    align-self: stretch;
 }
 
 .stats-section::before {
     content: "";
     position: absolute;
-    top: 0; /* بدء من أعلى القسم */
-    left: 0; /* بدء من يسار القسم */
-    width: 300px; /* عرض الأسهم */
-    height: 100%; /* ارتفاع الأسهم */
-    background-image: url("../images/bg-arrows.svg"); /* أيقونة الأسهم الصفراء */
+    top: 0;
+    /* بدء من أعلى القسم */
+    left: 0;
+    /* بدء من يسار القسم */
+    width: 300px;
+    /* عرض الأسهم */
+    height: 100%;
+    /* ارتفاع الأسهم */
+    background-image: url("../images/bg-arrows.svg");
+    /* أيقونة الأسهم الصفراء */
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0.15;
     pointer-events: none;
-
+    /* تعديل موضع الأسهم ليتناسب مع الصورة المرفقة */
+    transform: translateY(-50px) translateX(-50px);
+    /* مثال: تحريك الأسهم لأعلى ويسار قليلاً */
+    /* إذا كانت صورة الأسهم تحتاج لتدوير، يمكن إضافة: transform: rotate(زاوية); */
 }
 
-  /* العرض الداخلي للمحتوى */
+/* العرض الداخلي للمحتوى */
 .stats-container {
-    max-width: 1200px; 
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    text-align: center; /* لتوسيط العنوان والوصف */
+    text-align: center;
+    /* لتوسيط العنوان والوصف */
 }
 
 .stats-title {
@@ -1636,50 +1651,65 @@ body {
     font-weight: 700;
     font-size: 40px;
     line-height: 48px;
-    color: var(--color-white, #FFFFFF); /* استخدام متغير مع قيمة احتياطية */
+    color: var(--color-white, #FFFFFF);
+    /* استخدام متغير مع قيمة احتياطية */
     margin-bottom: 16px;
 }
 
 .stats-description {
-    color: var(--color-white, #FFFFFF); /* استخدام متغير مع قيمة احتياطية */
+    color: var(--color-white, #FFFFFF);
+    /* استخدام متغير مع قيمة احتياطية */
     font-size: 18px;
     margin-bottom: 50px;
     opacity: 0.9;
 }
+
 /* حاوية الشبكة - تأكد أنها Flex */
 .stats-grid {
-    display: flex; 
-    flex-direction: row; /* لضمان الصف الواحد */
-    justify-content: center; /* لتوسيط المربعات في المنتصف */
+    display: flex;
+    flex-direction: row;
+    /* لضمان الصف الواحد */
+    justify-content: center;
+    /* لتوسيط المربعات في المنتصف */
     align-items: center;
-    gap: 24px; /* المسافة بين المربعات كما في Figma */
-    
+    gap: 24px;
+    /* المسافة بين المربعات كما في Figma */
+
     /* لجعلهم ينزلون عن العمود الكحلي */
-    margin-top: 40px; 
-    transform: translateY(85px); /* هذا يحركهم للاسفل ليتداخلوا مع القسم التالي */
-    
+    margin-top: 40px;
+    transform: translateY(85px);
+    /* هذا يحركهم للاسفل ليتداخلوا مع القسم التالي */
+
     width: 100%;
-    flex-wrap: nowrap; /* يمنعهم من النزول لسطر جديد */
+    /* التأكيد على عدم الالتفاف على الشاشات الكبيرة */
+    flex-wrap: nowrap;
+    /* إضافة حد أدنى للعرض لضمان عدم الالتفاف المبكر */
+    min-width: fit-content;
+    /* أو قيمة ثابتة مثل 1100px */
 }
 
 /* تعديل عرض الكرت ليتناسب مع الصف الواحد */
 .stat-card {
     background: #FFFFFF;
     border-radius: 20px;
-    width: 266px; /* العرض حسب Figma */
+    width: 266px;
+    /* العرض حسب Figma */
     height: 171px;
-    flex-shrink: 0; /* يمنع المربعات من الصغر إذا ضاق المتصفح */
-    
+    flex-shrink: 0;
+    /* يمنع المربعات من الصغر إذا ضاق المتصفح */
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* إضافة انتقال للظل */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* إضافة انتقال للظل */
 }
 
 .stat-card .number {
-    color: #FBBF24; /* اللون الأصفر من التصميم */
+    color: #FBBF24;
+    /* اللون الأصفر من التصميم */
     font-size: 40px;
     font-weight: 700;
 }
@@ -1692,62 +1722,23 @@ body {
 
 .stat-card:hover {
     transform: translateY(50px) scale(1.02);
-    box-shadow: 0px 16px 24px -8px rgba(16, 24, 40, 0.15); /* ظل أكبر عند التحويم */
+    box-shadow: 0px 16px 24px -8px rgba(16, 24, 40, 0.15);
+    /* ظل أكبر عند التحويم */
 }
 
 /* تحسينات إمكانية الوصول: أنماط التركيز */
 .stat-card:focus-within {
-    outline: 2px solid #FBBF24; /* إطار أصفر واضح عند التركيز */
+    outline: 2px solid #FBBF24;
+    /* إطار أصفر واضح عند التركيز */
     outline-offset: 4px;
-    box-shadow: 0px 0px 0px 4px rgba(251, 191, 36, 0.5); /* ظل إضافي للتركيز */
+    box-shadow: 0px 0px 0px 4px rgba(251, 191, 36, 0.5);
+    /* ظل إضافي للتركيز */
 }
 
 /* مثال للقسم الذي يلي الإحصائيات */
 .clients-section {
-    padding-top: 120px; /* مساحة كافية لأن المربعات نازلة بمقدار 85px */
-    background-color: #F9FAFB; /* أو أي لون خلفية فاتح */
-}
-
-/* Media Queries للاستجابة */
-@media (max-width: 768px) {
-    .stats-grid {
-        flex-wrap: wrap; /* السماح للبطاقات بالنزول لسطر جديد في الشاشات الصغيرة */
-        transform: translateY(0); /* إلغاء التحريك العمودي في الشاشات الصغيرة */
-        margin-top: 20px;
-        padding-bottom: 80px; /* إضافة حشوة سفلية عند عدم وجود تحريك */
-    }
-    .stat-card {
-        width: calc(50% - 12px); /* عرض بطاقتين في الصف مع مسافة */
-        height: auto; /* السماح بالارتفاع التلقائي */
-        padding: 20px 0;
-    }
-    .stats-section::before {
-        width: 200px; /* تصغير حجم الأسهم */
-        height: 80%;
-        top: -20px; /* تعديل الموضع ليناسب الشاشات الصغيرة */
-        left: -20px;
-    }
-    .stats-section {
-        padding-bottom: 60px; /* ضبط الحشوة السفلية للقسم */
-    }
-    .stat-card:hover {
-        transform: translateY(0) scale(1.02); /* تعديل تأثير التحويم */
-    }
-}
-
-@media (max-width: 480px) {
-    .stats-grid {
-        flex-direction: column; /* بطاقة واحدة في كل صف */
-        gap: 15px;
-    }
-    .stat-card {
-        width: 90%; /* عرض أكبر للبطاقة الواحدة */
-    }
-    .stats-title {
-        font-size: 32px;
-        line-height: 40px;
-    }
-    .stats-description {
-        font-size: 16px;
-    }
+    padding-top: 120px;
+    /* مساحة كافية لأن المربعات نازلة بمقدار 85px */
+    background-color: #F9FAFB;
+    /* أو أي لون خلفية فاتح */
 }
