@@ -1600,17 +1600,9 @@ body {
 
 /*==============================*/
 /*===================قسم الإحصائيات=======================*/
-
 .stats-section {
     background: var(--primary, #00015B);
-    position: relative;
-    /* السماح للعناصر بالبروز خارج حدود القسم */
-    overflow: visible; 
-    display: flex;
-    padding: 40px 32px;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
+    padding: 120px 32px 140px; /* مساحة سفلية كافية بدل التحريك */
 }
 
 /* الأسهم كخلفية */
