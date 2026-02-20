@@ -1616,7 +1616,7 @@ body {
     background-color: #00004d; /* اللون الكحلي الغامق من الكود الخاص بك */
     color: white;
     text-align: center;
-    padding: 80px 20px 140px; /* زيادة Padding السفلي ليعطي مساحة للكروت */
+    padding: 80px 20px 200px;
     position: relative;
     /* أزلنا background-image من هنا لنضعها في الـ pseudo-element للتحكم الأفضل */
 }
@@ -1678,7 +1678,6 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
-    transform: translateY(-60px);
 }
 
 .stat-card {
