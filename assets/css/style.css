@@ -1637,25 +1637,24 @@ body {
 
 /* توزيع الكروت */
 .cards-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
-    max-width: 1000px;
-    margin: -60px auto 0;
-    /* الرقم السالب -60 هو ما يرفع الكروت فوق اللون الأزرق */
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 0 20px;
+    transform: translateY(-60px);
 }
 
 .stat-card {
     background: white;
-    flex: 1;
-    /* تجعل الكروت متساوية العرض */
-    min-width: 150px;
-    padding: 30px 10px;
-    border-radius: 10px;
+    flex: 1 1 220px;
+    /* مرن + حد أدنى منطقي */
+    max-width: 250px;
+    padding: 30px 15px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    /* الظل الذي يعطي العمق */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
 .num {
