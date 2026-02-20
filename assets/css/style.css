@@ -1692,15 +1692,3 @@ body {
     font-weight: 700;
 }
 
-/* التجاوب مع الجوال */
-@media (max-width: 992px) {
-    .stats-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px 20px;
-        transform: translateY(40px);
-    }
-    .stats-bg-arrows {
-        width: 100px;
-        left: -10px;
-    }
-}
