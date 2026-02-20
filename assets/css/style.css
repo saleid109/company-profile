@@ -1602,72 +1602,101 @@ body {
 /*===================قسم الإحصائيات=======================*/
 /* ==================== تنسيق قسم الإحصائيات ==================== */
 .stats-section {
-    padding: 80px 20px;
-    background-color: var(--color-bg-light);
+    padding: 100px 0;
+    background-color: #f9f9f9; /* لون خلفية الصفحة الفاتح */
     direction: rtl;
-    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* الأسهم الصفراء في الخلفية */
+.stats-bg-arrows {
+    position: absolute;
+    top: 20px;
+    right: 15%;
+    width: 250px;
+    height: 150px;
+    background-image:  url('./public/images/Grou109.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    z-index: 0;
 }
 
 .blue-header {
-    background-color: var(--color-secondary); /* اللون الكحلي */
-    padding: 60px 40px;
-    border-radius: 20px 20px 0 0;
-    color: var(--color-white);
-    max-width: 1200px;
-    margin: 0 auto;
+    background-color: #000051; /* الكحلي الغامق جداً حسب الصورة */
+    padding: 80px 20px 120px 20px; /* زيادة البادينج السفلي لترك مساحة للكروت */
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .stats-title {
-    font-size: 36px;
-    color: var(--color-primary); /* اللون الأصفر/الذهبي */
-    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff; /* العنوان باللون الأبيض في الصورة */
+    margin-bottom: 20px;
 }
 
 .stats-desc {
-    font-size: 1.1rem;
-    max-width: 700px;
+    font-size: 0.95rem;
+    max-width: 600px;
     margin: 0 auto;
-    line-height: 1.6;
-    opacity: 0.9;
+    line-height: 1.8;
+    opacity: 0.8;
 }
 
 /* حاوية الكروت */
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: -40px auto 0; /* لرفع الكروت قليلاً فوق الهيدر الكحلي */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: -60px auto 0; /* رفع الكروت لتغطية جزء من القسم الكحلي */
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 /* تنسيق الكرت الفردي */
 .stat-card {
-    background: var(--color-white);
-    padding: 40px 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+    background: #ffffff;
+    flex: 1;
+    max-width: 220px;
+    padding: 35px 15px;
+    border-radius: 15px; /* حواف دائرية واضحة */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 4px solid var(--color-primary);
+    transition: transform 0.3s ease;
 }
 
 .stat-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 
 .stat-card .num {
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 800;
-    color: var(--color-secondary);
-    margin-bottom: 10px;
-    font-family: 'Arial', sans-serif; /* أو الخط المعتمد للأرقام */
+    color: #ffcc00; /* اللون الأصفر للأرقام حسب الصورة */
+    margin-bottom: 5px;
 }
 
 .stat-card .txt {
     font-size: 1.1rem;
-    color: var(--color-gray-text);
-    font-weight: 600;
+    color: #000051; /* لون النص كحلي ليطابق الهوية */
+    font-weight: bold;
+}
+
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .cards-container {
+        flex-wrap: wrap;
+        margin-top: -40px;
+    }
+    .stat-card {
+        flex: 1 1 40%; /* كرتين في كل صف على الجوال */
+    }
 }
