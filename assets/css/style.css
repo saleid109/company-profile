@@ -1603,105 +1603,87 @@ body {
 /* الحاوية الكبرى للقسم */
 .stats-section {
     position: relative;
-    padding: 100px 0; /* مساحة كافية للأسهم في الأعلى */
     background-color: #fff;
-    overflow: visible; /* تأكد أنها مرئية */
+    padding-bottom: 100px; /* مساحة كافية تحت الكروت */
+    direction: rtl;
+    overflow: visible; /* لضمان ظهور الأسهم التي تخرج للأعلى */
 }
+
+/* الهيدر الكحلي */
 .blue-header {
     background-color: #00004d;
-    position: relative; /* ضروري لعمل الأسهم بالداخل */
-    padding: 80px 0;
-    overflow: visible; /* لضمان عدم قص الأسهم الخارجة للأعلى */
+    position: relative; 
+    text-align: center;
+    padding: 80px 20px 140px; /* بادينج سفلي كبير ليغطي نصف الكروت */
+    color: #fff;
     z-index: 1;
 }
 
+/* الأسهم الصفراء (تم الإصلاح هنا) */
 .blue-header::before {
-    content: ""; /* لا تحذف هذا السطر */
+    content: ""; /* ضروري لظهور العنصر */
     position: absolute;
-    top: -60px; /* لرفع الأسهم خارج الصندوق الكحلي كما في التصميم */
+    top: -60px; /* لرفع الأسهم للأعلى كما في التصميم */
     left: 10%;
     width: 300px;
-    height: 300px; /* تأكد من وجود طول كافٍ للصورة */
+    height: 250px;
     background-image: url('./public/images/yellow-arrows.png');
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0.3;
-    z-index: -1; /* تجعلها خلف النص تماماً */
-    pointer-events: none;
+    z-index: -1; /* تجعل الأسهم خلف النص الكحلي */
+    display: block;
 }
 
-/* لضمان ظهور النصوص بوضوح فوق الأسهم */
-.stats-container {
-    position: relative;
-    z-index: 2;
-}
-
-/* تأكد أن محتوى الهيدر (العنوان والوصف) يظهر فوق الأسهم */
-.stats-title, .stats-desc {
-    position: relative;
-    z-index: 2;
-}
-
-.arrows-bg {
-    color: #f3e5ab;
-    /* لون الأسهم الباهت */
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
+/* تنسيق النصوص داخل الهيدر */
 .stats-title {
-    font-size: 32px;
-    margin-bottom: 15px;
-    color: var(--color-white);
-    font-family: var(--font-main);
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
 }
 
 .stats-desc {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-/* توزيع الكروت */
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-    transform: translateY(-60px);
-    -webkit-transform: translateY(-60px);
-    -moz-transform: translateY(-60px);
-    -ms-transform: translateY(-60px);
-    -o-transform: translateY(-60px);
-}
-
-.stat-card {
-    background: white;
-    border-radius: 15px;
-    padding: 40px 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    /* ظل واضح كالصورة */
-    transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px); /* حركة بسيطة عند التمرير */
-}
-
-.num {
-    display: block;
-    color: #ffcc00;
-    /* اللون الذهبي */
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.txt {
-    color: var(--color-secondary);
-    font-weight: bold;
     font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* حاوية الكروت (إصلاح مشكلة التداخل) */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: -80px auto 0; /* رفع الكروت للأعلى لتتداخل مع الهيدر الكحلي */
+    padding: 0 20px;
+    position: relative;
+    z-index: 2; /* لتكون فوق الهيدر الكحلي */
+}
+
+/* الكرت الفردي */
+.stat-card {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    flex: 1;
+    max-width: 250px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-card .num {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffcc00; /* اللون الأصفر للأرقام */
+}
+
+.stat-card .txt {
+    font-size: 18px;
+    color: #00004d;
+    font-weight: bold;
 }
