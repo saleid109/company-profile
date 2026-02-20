@@ -831,16 +831,15 @@ body {
 }
 
 .services-title h2 {
-    color: var(--text, #1B2D45);
+    color:var(--color-secondary); /* لون الهوية الكحلي */
     text-align: center;
-    font-family: Tajawal;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 40px;
-    /* 83.333% */
+    font-family:var(--font-main);
+    font-size: 42px; 
+    font-weight: 800; 
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
 }
-
 /* ===== التبويبات الرئيسية ===== */
 
 .main-categories {
