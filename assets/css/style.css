@@ -1700,18 +1700,3 @@ body {
     height: 130px;
     background-color: var(--color-bg-light);
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .stats-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        margin-bottom: -60px;
-    }
-    .stats-arrows {
-        padding-left: 20px;
-        height: 120px;
-    }
-    .stats-dark-card {
-        padding: 40px 20px 30px 20px;
-    }
-}
