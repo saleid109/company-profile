@@ -378,31 +378,3 @@ body.menu-open {
     .stats-title {
         font-size: 28px;
     }
-/* Media Queries للاستجابة */
-@media (max-width: 1150px) { /* تعديل نقطة التوقف للسماح بالالتفاف مبكراً */
-    .stats-grid {
-        flex-wrap: wrap; /* السماح للبطاقات بالنزول لسطر جديد في الشاشات الصغيرة */
-        transform: translateY(0); /* إلغاء التحريك العمودي في الشاشات الصغيرة */
-        margin-top: 20px;
-        padding-bottom: 80px; /* إضافة حشوة سفلية عند عدم وجود تحريك */
-        min-width: unset; /* إلغاء min-width للسماح بالالتفاف */
-    }
-    .stat-card {
-        width: calc(50% - 12px); /* عرض بطاقتين في الصف مع مسافة */
-        height: auto; /* السماح بالارتفاع التلقائي */
-        padding: 20px 0;
-    }
-    .stats-section::before {
-        width: 200px; /* تصغير حجم الأسهم */
-        height: 80%;
-        top: -20px; /* تعديل الموضع ليناسب الشاشات الصغيرة */
-        left: -20px;
-        transform: translateY(0) translateX(0); /* إلغاء التحريك في الشاشات الصغيرة */
-    }
-    .stats-section {
-        padding-bottom: 60px; /* ضبط الحشوة السفلية للقسم */
-    }
-    .stat-card:hover {
-        transform: translateY(0) scale(1.02); /* تعديل تأثير التحويم */
-    }
-}
