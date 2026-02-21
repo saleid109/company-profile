@@ -218,19 +218,17 @@ body.menu-open {
     }
 
     /*الاحصائيات*/
-    .stats-grid {
-        flex-direction: column; /* بطاقة واحدة في كل صف */
-        gap: 15px;
+
+    .stats-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: -60px;
     }
-    .stat-card {
-        width: 90%; /* عرض أكبر للبطاقة الواحدة */
+    .stats-arrows {
+        padding-left: 20px;
+        height: 120px;
     }
-    .stats-title {
-        font-size: 32px;
-        line-height: 40px;
-    }
-    .stats-description {
-        font-size: 16px;
+    .stats-dark-card {
+        padding: 40px 20px 30px 20px;
     }
 }
 
