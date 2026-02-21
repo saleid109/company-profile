@@ -220,27 +220,20 @@ body.menu-open {
     /*===================لاحصائيات=========================*/
 /* جعل الكروت صفين (كرتين في كل صف) */
     .stats-cards-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 15px; /* تقليل المسافة لتوفير مساحة */
-        margin-bottom: -70px; /* تقليل البروز السالب */
-        padding: 0 10px;
+        grid-template-columns: 1fr; /* كرت واحد في كل صف لسهولة القراءة */
+        margin-bottom: -50px;
+    }
+
+    .stats-title {
+        font-size: 24px;
     }
 
     .stat-item {
-        padding: 25px 10px; /* تصغير الحشوة الداخلية للكروت */
+        padding: 20px;
     }
 
-    .stat-number {
-        font-size: 28px; /* تصغير حجم الرقم ليتناسب مع الشاشة */
-    }
-
-    .stats-arrows {
-        padding-right: 20px; /* ضبط موضع الأسهم للجوال */
-        height: 100px;
-    }
-
-    .stats-dark-card {
-        padding: 40px 15px 30px 15px;
+    .stats-spacer {
+        height: 80px; /* تقليل الفراغ التعويضي بما يتناسب مع بروز الكروت الأصغر */
     }
 }
 
