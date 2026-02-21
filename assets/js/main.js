@@ -232,3 +232,35 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // تشغيل التحقق عند تحميل الصفحة
 });
+
+// ======= عداد الأرقام + ظهور الكروت عند التمرير =======
+const statItems = document.querySelectorAll('.stat-item');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const item = entry.target;
+            item.classList.add('revealed');
+
+            // تشغيل العداد
+            const numberEl = item.querySelector('.stat-number');
+            const target = parseInt(numberEl.getAttribute('data-target'));
+            let current = 0;
+            const duration = 1500;
+            const increment = target / (duration / 16);
+
+            const counter = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(counter);
+                }
+                numberEl.textContent = Math.floor(current).toLocaleString('ar');
+            }, 16);
+
+            observer.unobserve(item);
+        }
+    });
+}, { threshold: 0.3 });
+
+statItems.forEach(item => observer.observe(item));
