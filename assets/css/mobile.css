@@ -348,7 +348,7 @@ body.menu-open {
         margin-bottom: 30px;
         font-size: 24px;
     }
-}
+
 
 /* تحسين شكل الجدول العام لمنع ركوب النصوص */
 .comparison-table th, 
@@ -360,21 +360,14 @@ body.menu-open {
 
 
     /*احصائيات*/
-
 .stats-cards-grid {
-        grid-template-columns: repeat(4, 1fr); /* الحفاظ على 4 كروت إذا كانت المساحة تسمح */
+        grid-template-columns: repeat(2, 1fr); /* كرتين في كل صف */
+        margin-bottom: -80px; 
         gap: 15px;
-        max-width: 95%; /* جعل الشبكة تأخذ مساحة أكبر من العرض */
-        margin-bottom: -90px;
     }
-
-
-    @media (max-width: 900px) {
-        .stats-cards-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
+    
+    .stats-arrows {
+        height: 120px;
+        padding: 0 20px;
     }
-
-    .stats-title {
-        font-size: 28px;
-    }
+}
