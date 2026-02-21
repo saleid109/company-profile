@@ -1599,12 +1599,9 @@ body {
 }
 
 /*==============================*/
-
-
 /*===================قسم الإحصائيات=======================*/
-/* القسم الرئيسي */
 .stats-section {
-    padding: 80px 0 160px 0; /* مساحة كافية للبروز السفلي */
+    padding: 80px 0 160px 0;
     background-color: var(--color-bg-light);
     direction: rtl;
     position: relative;
@@ -1617,26 +1614,34 @@ body {
     position: relative;
 }
 
-/* --- استخدام العنصر الزائف للأسهم الصفراء --- */
-.stats-dark-card::before {
-    content: "";
-    position: absolute;
-    top: -50px;       /* تبرز للأعلى قليلاً */
-    left: -30px;      /* تخرج جهة اليسار قليلاً لتظهر بشكل جمالي */
-    width: 220px;     /* حجم كبير للصورة كما طلبت */
-    height: 220px;
-    background-image: url('./public/images/yellow-arrows.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: -1;      /* خلف الصندوق الكحلي */
-    opacity: 0.9;
+/* الأسهم SVG فوق الصندوق */
+.stats-arrows {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    padding-right: 20px;
+    margin-bottom: 0;
+    height: 120px;
 }
 
-/* الصندوق الكحلي (تم تصغير الارتفاع عبر التحكم في Padding) */
+.stats-arrows svg {
+    animation: floatUp 2s ease-in-out infinite;
+}
+
+.stats-arrows svg:nth-child(1) { animation-delay: 0s; }
+.stats-arrows svg:nth-child(2) { animation-delay: 0.3s; }
+.stats-arrows svg:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes floatUp {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+}
+
+/* الصندوق الكحلي */
 .stats-dark-card {
-    background-color: var(--color-secondary); /* اللون الكحلي */
+    background-color: var(--color-secondary);
     border-radius: 20px;
-    padding: 50px 30px 40px 30px; /* بادينج مدروس لتصغير الارتفاع */
+    padding: 50px 30px 40px 30px;
     text-align: center;
     position: relative;
     z-index: 2;
@@ -1655,12 +1660,12 @@ body {
     margin: 0 auto 40px auto;
 }
 
-/* --- الكروت والبروز --- */
+/* الكروت البيضاء */
 .stats-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    margin-bottom: -110px; /* رفع الكروت بقوة للخارج ليبرز نصفها تقريباً */
+    margin-bottom: -110px;
 }
 
 .stat-item {
@@ -1672,16 +1677,24 @@ body {
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.stat-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .stat-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) !important;
 }
 
 .stat-number {
     font-size: 36px;
     font-weight: 800;
-    color: var(--color-primary); /* اللون الأصفر */
+    color: var(--color-primary);
     margin-bottom: 5px;
     font-family: sans-serif;
 }
@@ -1690,4 +1703,10 @@ body {
     font-size: 16px;
     color: var(--color-secondary);
     font-weight: bold;
+}
+
+/* Spacer بعد القسم ليظهر البروز */
+.stats-spacer {
+    height: 130px;
+    background-color: var(--color-bg-light);
 }
