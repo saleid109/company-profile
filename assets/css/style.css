@@ -1682,11 +1682,11 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-
+/*التحويم*/
 .stat-item:hover {
     transform: translateY(-10px) !important;
 }
-
+/*الارقام على الكروت*/
 .stat-number {
     font-size: 36px;
     font-weight: 800;
@@ -1694,14 +1694,17 @@ body {
     margin-bottom: 5px;
     font-family: sans-serif;
 }
-
+/*النص في الكرت*/
 .stat-text {
     font-size: 16px;
     color: var(--color-secondary);
     font-weight: bold;
 }
-
+/* --- الفراغ التعويضي --- */
 .stats-spacer {
     height: 130px;
     background-color: var(--color-bg-light);
 }
+
+/*===========================================*/
+
