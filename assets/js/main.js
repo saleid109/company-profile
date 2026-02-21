@@ -206,7 +206,53 @@ document.addEventListener("DOMContentLoaded", () => {
                     startCount();
                     started = true;
                 }
+            }document.addEventListener("DOMContentLoaded", () => {
+    const statItems = document.querySelectorAll('.stat-item');
+
+    const observerOptions = {
+        threshold: 0.3 // يبدأ التأثير عندما يظهر 30% من الكرت
+    };
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const item = entry.target;
+                
+                // 1. تفعيل تأثير الظهور (الـ Reveal)
+                item.classList.add('revealed');
+
+                // 2. تشغيل عداد الأرقام للكرت الحالي فقط
+                const numberEl = item.querySelector('.stat-number');
+                const target = parseInt(numberEl.getAttribute('data-target'));
+                animateNumber(numberEl, target);
+
+                // التوقف عن مراقبة هذا الكرت بعد ظهوره لمرة واحدة
+                statsObserver.unobserve(item);
             }
+        });
+    }, observerOptions);
+
+    // وظيفة تحريك الأرقام
+    function animateNumber(element, target) {
+        let current = 0;
+        const duration = 2000; // مدة العداد (2 ثانية)
+        const frameRate = 1000 / 60; // 60 إطار في الثانية
+        const totalFrames = duration / frameRate;
+        const increment = target / totalFrames;
+
+        const counter = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(counter);
+            }
+            // إضافة علامة + قبل الرقم وتنسيقه
+            element.textContent = "+" + Math.floor(current).toLocaleString('ar-EG');
+        }, frameRate);
+    }
+
+    statItems.forEach(item => statsObserver.observe(item));
+});
         });
     };
 
@@ -264,3 +310,5 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 statItems.forEach(item => observer.observe(item));
+
+//=============
