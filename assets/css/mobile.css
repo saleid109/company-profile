@@ -509,19 +509,16 @@
 /* --- تعديلات الجوال الصغير (أقل من 576px) --- */
 @media (max-width: 576px) {
     .stat-item {
-        flex: 1 1 100%; /* كرت واحد في كل سطر لسهولة القراءة */
-    }
-
-    .stats-dark-card {
-        padding-bottom: 120px;
-    }
-
-    .stats-cards-grid {
-        margin-top: -70px; /* تقليل البروز قليلاً ليناسب الشاشة الصغيرة */
+        flex: 1 1 calc(50% - 20px); /* كرتين في كل سطر كما في الصورة */
+        min-width: 250px;
     }
     
-    .stats-title {
-        font-size: 26px;
+    .stats-dark-card {
+        padding-bottom: 150px; /* زيادة المساحة لتغطية خلفية الكروت */
+    }
+
+    .stats-section {
+        padding-bottom: 80px;
     }
 }
 }
