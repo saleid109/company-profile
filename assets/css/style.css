@@ -1667,13 +1667,11 @@ body {
 
 /*===================قسم الإحصائيات=======================*/
 
-
-
+/* ========== القسم الرئيسي ========== */
 .stats-section {
     position: relative;
-    padding-bottom: 100px;
+    padding-bottom: 0;
 }
-
 
 .stats-container {
     max-width: 100%;
@@ -1682,32 +1680,23 @@ body {
     position: relative;
 }
 
-.stats-arrows {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    gap: 10px;
-    padding-right: 60px;
-    height: 160px;
-    background-color: var(--color-bg-light);
-}
-
 .stats-dark-card {
     background-color: var(--color-secondary);
-    padding: 80px 60px 260px;
+    padding: 80px 60px 240px; /* ← الديسكتوب */
     text-align: center;
     position: relative;
     z-index: 1;
+    border-radius: 15px;
 }
 
 .stats-title {
-    color: var(--color-white) !important;
+    color: var(--color-white);
     font-size: 40px;
     margin-bottom: 30px;
 }
 
 .stats-desc {
-    color:var(--color-bg-light);
+    color: var(--color-bg-light);
     font-size: 22px;
     max-width: 900px;
     margin: 0 auto 20px auto;
@@ -1716,13 +1705,15 @@ body {
 
 .stats-cards-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 كروت في الصف */
     gap: 25px;
     max-width: 1100px;
-    margin: -90px auto 0 auto;
+    margin: -120px auto 0; /* ← التداخل العصري في الديسكتوب */
+    padding: 0 20px 40px;
     position: relative;
-    z-index: 2;
+    z-index: 5; /* ظهور فوق الخلفية */
 }
+
 .stat-item {
     background: #ffffff;
     padding: 35px 15px;
@@ -1753,7 +1744,7 @@ body {
     color: var(--color-primary);
     margin-bottom: 5px;
     font-family: 'Cairo', sans-serif;
-    direction: ltr; /* ← مهم جداً لعرض الأرقام صح */
+    direction: ltr;
 }
 
 .stat-text {
@@ -1761,5 +1752,68 @@ body {
     color: var(--color-secondary);
     font-weight: bold;
 }
-/*===========================================*/
 
+/* --- الأسهم في الديسكتوب --- */
+.stats-arrows {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 60px;
+    height: 160px;
+    background-color: var(--color-bg-light);
+}
+
+/* ==================== شاشات الجوال والآيباد ==================== */
+@media (max-width: 991px) {
+
+    .stats-dark-card {
+        padding: 60px 20px 40px; /* أقل padding للسفلية لتجنب القص */
+    }
+
+    .stats-title {
+        font-size: 28px;
+    }
+
+    .stats-desc {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .stats-cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* كرتين في الصف */
+        gap: 15px;
+        margin: 30px auto 0; /* بدون تداخل سلبي */
+        padding: 0 15px 40px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .stat-item {
+        padding: 30px 10px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .stat-text {
+        font-size: 16px;
+    }
+
+    .stats-arrows {
+        right: 20px;
+        top: -40px;
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-cards-grid {
+        grid-template-columns: 1fr; /* كرت واحد في كل صف */
+        margin-top: 20px;
+    }
+}
