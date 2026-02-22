@@ -388,22 +388,19 @@
     }
 
     /* ===== الإحصائيات ===== */
+.stats-section {
+        padding-bottom: 300px;  /* ← زد أكثر */
+    }
 
-
-
-    .stats-section {
-        padding-bottom: 220px; 
+    .stats-dark-card {
+        padding: 70px 40px 200px 40px;  /* ← زد الـ padding-bottom */
     }
 
     .stats-cards-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 0 20px;
-        margin: -90px 20px 0 20px;
+        margin: -120px 20px 0 20px;  /* ← زد الـ margin السالب */
         gap: 15px;
-    }
-
-    .stats-dark-card {
-        padding: 70px 40px 140px 40px;
     }
 
 }
