@@ -394,12 +394,11 @@
 
     /* ===== الإحصائيات ===== */
 .stats-section {
-    padding-bottom: 280px;
-    overflow: visible;
+    position: relative;
+    padding-bottom: 0;
 }
-
 .stats-dark-card {
-    padding: 70px 40px 280px 40px;
+    padding: 80px 60px 220px; /* بدل 160px */
 }
 
 .stats-cards-grid {
