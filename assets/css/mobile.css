@@ -305,10 +305,10 @@
 /* الصندوق الكحلي */
 .stats-dark-card {
     background-color: #000051;
-    padding: 60px 20px 140px 20px; /* حشوة سفلية تسمح للكروت بالاستقرار بداخلها جزئياً */
+    padding: 60px 20px 140px 20px; 
     text-align: center;
     border-radius: 10px;
-    padding-bottom: 150px;
+    padding-bottom: 120px;
 }
 
 /* شبكة الكروت (الأهم للتوافق) */
@@ -318,7 +318,8 @@
     justify-content: center;
     gap: 20px;
     max-width: 1100px;
-    margin: -90px auto 0; /* رفع الكروت بمقدار 90px فوق الخلفية الكحلية */
+    margin: -90px auto 0;
+    margin-top: -60px;
     position: relative;
     z-index: 10;
     padding: 0 15px;
@@ -328,7 +329,8 @@
 .stat-item {
     background: #ffffff;
     flex: 1 1 100%;
-    margin: 0 10px;    min-width: 200px;
+    margin: 0 10px;
+    min-width: 200px;
     padding: 40px 10px;
     border-radius: 15px;
     text-align: center;
