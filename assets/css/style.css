@@ -1666,14 +1666,18 @@ body {
 /*==============================*/
 
 /*===================قسم الإحصائيات=======================*/
-
-/* الحاوية الكبيرة */
-.stats-section {
-    position: relative;
-    padding-bottom: 160px; /* مساحة للكروت */
+:root {
+    --color-primary: #f5c842;
+    --color-secondary: #0d1b5e;
+    --color-white: #ffffff;
+    --color-bg-light: #f0f2fa;
 }
 
-/* حاوية المحتوى */
+.stats-section {
+    position: relative;
+    padding-bottom: 160px;
+}
+
 .stats-container {
     max-width: 100%;
     margin: 0;
@@ -1681,7 +1685,6 @@ body {
     position: relative;
 }
 
-/* الأسهم */
 .stats-arrows {
     display: flex;
     align-items: flex-end;
@@ -1692,8 +1695,6 @@ body {
     background-color: var(--color-bg-light);
 }
 
-/* الصندوق الكحلي */
-
 .stats-dark-card {
     background-color: var(--color-secondary);
     padding: 80px 60px 160px;
@@ -1701,14 +1702,13 @@ body {
     position: relative;
     z-index: 1;
 }
-/* العنوان */
+
 .stats-title {
     color: var(--color-white) !important;
     font-size: 32px;
     margin-bottom: 10px;
 }
 
-/* الفقرة */
 .stats-desc {
     color: rgba(255, 255, 255, 0.7);
     font-size: 15px;
@@ -1716,58 +1716,49 @@ body {
     margin: 0 auto 40px auto;
 }
 
-/* شبكة الكروت */
-
 .stats-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     max-width: 1100px;
-
-    margin: -90px auto 0 auto; /* رفع الكروت فوق الأزرق */
+    margin: -90px auto 0 auto;
     position: relative;
     z-index: 2;
 }
 
-/* الكرت */
 .stat-item {
     background: #ffffff;
     padding: 35px 15px;
     border-radius: 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     opacity: 0;
     transform: translateY(30px);
-
     transition: opacity 0.8s ease,
                 transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-/*عند الظهور*/
+
 .stat-item.revealed {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* التحويم */
 .stat-item:hover {
-    transform: translateY(-10px);  /* رفع بسيط */
+    transform: translateY(-10px);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
-/* الأرقام */
 .stat-number {
     font-size: 36px;
     font-weight: 800;
     color: var(--color-primary);
     margin-bottom: 5px;
-    font-family: sans-serif;
+    font-family: 'Cairo', sans-serif;
+    direction: ltr; /* ← مهم جداً لعرض الأرقام صح */
 }
 
-/* النص */
 .stat-text {
     font-size: 16px;
     color: var(--color-secondary);
