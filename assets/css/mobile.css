@@ -308,6 +308,7 @@
     padding: 60px 20px 140px 20px; /* حشوة سفلية تسمح للكروت بالاستقرار بداخلها جزئياً */
     text-align: center;
     border-radius: 10px;
+    padding-bottom: 150px;
 }
 
 /* شبكة الكروت (الأهم للتوافق) */
@@ -326,12 +327,13 @@
 /* الكرت الفردي */
 .stat-item {
     background: #ffffff;
-    flex: 1 1 calc(25% - 20px); /* الافتراضي: 4 كروت في السطر */
-    min-width: 200px;
+    flex: 1 1 100%;
+    margin: 0 10px;    min-width: 200px;
     padding: 40px 10px;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    font-size: 25px;
 }
 
 
