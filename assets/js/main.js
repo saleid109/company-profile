@@ -186,129 +186,53 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //احصائيات
+// ======= إحصائيات: ظهور + عداد احترافي =======
 
 document.addEventListener("DOMContentLoaded", () => {
-    const statsSection = document.querySelector('.stats-section');
-    const statsNumbers = document.querySelectorAll('.stat-number');
-    let started = false; // لضمان تشغيل العداد مرة واحدة فقط
 
-    const revealOnScroll = () => {
-        const reveals = document.querySelectorAll('.reveal');
-        const windowHeight = window.innerHeight;
-
-        reveals.forEach(el => {
-            const revealTop = el.getBoundingClientRect().top;
-            if (revealTop < windowHeight - 100) {
-                el.classList.add('active');
-                
-                // تشغيل عداد الأرقام عند ظهور القسم
-                if (!started && el.closest('.stats-section')) {
-                    startCount();
-                    started = true;
-                }
-            }document.addEventListener("DOMContentLoaded", () => {
     const statItems = document.querySelectorAll('.stat-item');
 
-    const observerOptions = {
-        threshold: 0.3 // يبدأ التأثير عندما يظهر 30% من الكرت
-    };
-
-    const statsObserver = new IntersectionObserver((entries) => {
+    const statsObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
+
             if (entry.isIntersecting) {
+
                 const item = entry.target;
-                
-                // 1. تفعيل تأثير الظهور (الـ Reveal)
                 item.classList.add('revealed');
 
-                // 2. تشغيل عداد الأرقام للكرت الحالي فقط
                 const numberEl = item.querySelector('.stat-number');
-                const target = parseInt(numberEl.getAttribute('data-target'));
+                const target = parseInt(numberEl.dataset.target);
+
                 animateNumber(numberEl, target);
 
-                // التوقف عن مراقبة هذا الكرت بعد ظهوره لمرة واحدة
-                statsObserver.unobserve(item);
+                observer.unobserve(item); // يعمل مرة واحدة فقط
             }
-        });
-    }, observerOptions);
 
-    // وظيفة تحريك الأرقام
+        });
+    }, { threshold: 0.3 });
+
+    statItems.forEach(item => statsObserver.observe(item));
+
     function animateNumber(element, target) {
+
         let current = 0;
-        const duration = 2000; // مدة العداد (2 ثانية)
-        const frameRate = 1000 / 60; // 60 إطار في الثانية
+        const duration = 1800;
+        const frameRate = 1000 / 60;
         const totalFrames = duration / frameRate;
         const increment = target / totalFrames;
 
         const counter = setInterval(() => {
             current += increment;
+
             if (current >= target) {
                 current = target;
                 clearInterval(counter);
             }
-            // إضافة علامة + قبل الرقم وتنسيقه
-            element.textContent = "+" + Math.floor(current).toLocaleString('ar-EG');
+
+            element.textContent =
+                "+" + Math.floor(current).toLocaleString('ar-SA');
+
         }, frameRate);
     }
 
-    statItems.forEach(item => statsObserver.observe(item));
 });
-        });
-    };
-
-    // وظيفة عداد الأرقام
-    function startCount() {
-        statsNumbers.forEach(num => {
-            const target = +num.getAttribute('data-target');
-            const increment = target / 50; // سرعة العداد
-
-            const updateCount = () => {
-                const value = +num.innerText.replace('+', '');
-                if (value < target) {
-                    num.innerText = "+" + Math.ceil(value + increment);
-                    setTimeout(updateCount, 30);
-                } else {
-                    num.innerText = "+" + target;
-                }
-            };
-            updateCount();
-        });
-    }
-
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // تشغيل التحقق عند تحميل الصفحة
-});
-
-// ======= عداد الأرقام + ظهور الكروت عند التمرير =======
-const statItems = document.querySelectorAll('.stat-item');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const item = entry.target;
-            item.classList.add('revealed');
-
-            // تشغيل العداد
-            const numberEl = item.querySelector('.stat-number');
-            const target = parseInt(numberEl.getAttribute('data-target'));
-            let current = 0;
-            const duration = 1500;
-            const increment = target / (duration / 16);
-
-            const counter = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(counter);
-                }
-                numberEl.textContent = Math.floor(current).toLocaleString('ar');
-            }, 16);
-
-            observer.unobserve(item);
-        }
-    });
-}, { threshold: 0.3 });
-
-statItems.forEach(item => observer.observe(item));
-
-//=============
