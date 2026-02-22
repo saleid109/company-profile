@@ -1670,7 +1670,7 @@ body {
 
 .stats-section {
     position: relative;
-    padding-bottom: 0;  /* ← غيّر إلى 0 */
+    padding-bottom: 160px;
 }
 
 .stats-container {
@@ -1692,12 +1692,11 @@ body {
 
 .stats-dark-card {
     background-color: var(--color-secondary);
-    padding: 80px 60px 260px;
+    padding: 80px 60px 160px;
     text-align: center;
     position: relative;
     z-index: 1;
 }
-
 
 .stats-title {
     color: var(--color-white) !important;
@@ -1722,7 +1721,7 @@ body {
     padding: 0 20px 40px;
     position: relative;
     z-index: 2;
-    margin-top: 0px;       /* ← اتركه هنا فقط */
+    margin-top: -90px;       /* ← اتركه هنا فقط */
 }
 .stat-item {
     background: #ffffff;
