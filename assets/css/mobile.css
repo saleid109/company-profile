@@ -190,40 +190,31 @@
     }
 
     /* ===== المقارنة ===== */
-    .compare-section {
-        padding: 60px 20px;
+ .compare-table thead {
+        display: none;
     }
 
-    .compare-container {
-        flex-direction: column;
-        gap: 30px;
-        padding: 0 15px;
-    }
-
-    .compare-side-text {
-        order: 1;
-        flex: unset;
+    .compare-table,
+    .compare-table tbody,
+    .compare-table tr,
+    .compare-table td {
+        display: block;
         width: 100%;
-        text-align: center;
     }
 
-    .compare-side-text h2 {
-        font-size: 26px;
-        line-height: 1.5;
+    .compare-table tr {
+        background: #fff;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        padding: 15px;
     }
 
-    .compare-table-wrapper {
-        order: 2;
-        flex: unset;
-        width: 100%;
-        overflow-x: auto;
+    .compare-table td {
+        text-align: right;
+        padding: 8px 0;
     }
 
-    .compare-table {
-        min-width: 480px;
-    }
 
-    
 
     /* ===== الإحصائيات ===== */
     .stats-cards-grid {
