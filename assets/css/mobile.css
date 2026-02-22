@@ -294,22 +294,24 @@
         padding-bottom: 6px !important;
     }
 /* ===== الإحصائيات ===== */
+
+.stats-section {
+    padding: 100px 20px;
+    overflow: hidden;
+}
+.stats-dark-card {
+    padding: 40px 20px;
+}
+
+.stats-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 30px;
+}
+
     .stats-arrows {
         height: 80px;
         padding-right: 20px;
-    }
-
-    .stats-dark-card {
-        padding: 40px 15px 120px; /* زيادة padding-bottom لإظهار الكروت */
-    }
-
-    .stats-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        margin-bottom: 0; /* إلغاء السالب */
-        padding: 0 10px;
-        position: relative;
-        z-index: 3;
     }
 
     .stat-item {
@@ -319,11 +321,6 @@
     .stat-number {
         font-size: 26px;
     }
-
-    .stats-spacer {
-        height: 30px; /* تقليل الفراغ */
-    }
-}
 
 /* =========================================================
     التابلت (769px - 1024px)
