@@ -1682,11 +1682,11 @@ body {
 
 .stats-dark-card {
     background-color: var(--color-secondary);
-    padding: 80px 60px 240px; /* ← الديسكتوب */
-    text-align: center;
+    padding: 80px 60px 240px;
+    /*←الديسكتوب*/text-align: center;
     position: relative;
     z-index: 1;
-    border-radius: 15px;
+
 }
 
 .stats-title {
