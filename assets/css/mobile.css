@@ -295,7 +295,14 @@
     }
 /* ===== الإحصائيات ===== */
     .stats-dark-card {
-        padding: 60px 20px 40px; /* أقل padding للسفلية لتجنب القص */
+        padding: 60px 20px 80px;  /* ← زد padding-bottom */
+    }
+
+    .stats-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 20px 15px 40px;  /* ← بدون تداخل */
+        padding: 0;
     }
 
     .stats-title {
@@ -305,15 +312,6 @@
     .stats-desc {
         font-size: 14px;
         line-height: 1.6;
-    }
-
-    .stats-cards-grid {
-        grid-template-columns: repeat(2, 1fr); /* كرتين في الصف */
-        gap: 15px;
-        margin: 30px auto 0; /* بدون تداخل سلبي */
-        padding: 0 15px 40px;
-        position: relative;
-        z-index: 2;
     }
 
     .stat-item {
