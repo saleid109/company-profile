@@ -55,7 +55,8 @@
 
 @media (max-width: 768px) {
 
-    html, body {
+    html,
+    body {
         overflow-x: hidden;
         width: 100%;
     }
@@ -190,30 +191,51 @@
     }
 
     /* ===== المقارنة ===== */
- .compare-table thead {
+
+    .comparison-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .comparison-text-side {
+        order: -1;
+    }
+
+    .comparison-table thead {
         display: none;
     }
 
-    .compare-table,
-    .compare-table tbody,
-    .compare-table tr,
-    .compare-table td {
+    .comparison-table,
+    .comparison-table tbody,
+    .comparison-table tr {
         display: block;
         width: 100%;
     }
 
-    .compare-table tr {
-        background: #fff;
+    .comparison-table tr {
+        background: #ffffff;
         margin-bottom: 20px;
-        border-radius: 12px;
-        padding: 15px;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     }
 
-    .compare-table td {
-        text-align: right;
+    .comparison-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 8px 0;
+        border: none;
     }
 
+    .feature-text {
+        font-weight: 700;
+    }
+
+    .featured-col-box {
+        display: none;
+    }
 
 
     /* ===== الإحصائيات ===== */
