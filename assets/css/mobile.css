@@ -389,25 +389,20 @@
 
     /* ===== الإحصائيات ===== */
 .stats-section {
-        padding-bottom: 0;
-        margin-bottom: 200px;  /* ← بدل padding-bottom */
+        padding-bottom: 50px;
     }
 
     .stats-dark-card {
-        padding: 70px 40px 280px 40px;  /* ← زد أكثر */
+        padding: 70px 40px 250px 40px;
     }
 
     .stats-cards-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 0 20px;
-        margin: -100px 20px 0 20px;
+        margin: -120px 20px 0 20px;
         gap: 15px;
-        position: absolute;  /* ← أضف هذا */
-        width: calc(100% - 40px);  /* ← أضف هذا */
-        left: 20px;
-    }
-
-    .stats-container {
-        position: relative;
+        position: static;  /* ← إلغاء absolute */
+        width: auto;
+        left: auto;
     }
 }
