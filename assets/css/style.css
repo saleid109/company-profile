@@ -1666,112 +1666,128 @@ body {
 /*==============================*/
 
 /*===================قسم الإحصائيات=======================*/
-
-/* الحاوية الكبيرة */
+/* الحاوية الرئيسية للقسم بالكامل */
 .stats-section {
     position: relative;
-    padding-bottom: 160px; /* مساحة للكروت */
+    padding: 100px 0; /* مساحة كافية للأسهم العلوية */
+    background-color: #fcfcfc; /* خلفية الصفحة الفاتحة جدًا */
+    direction: rtl;
 }
 
-/* حاوية المحتوى */
+/* حاوية المحتوى المركزية */
 .stats-container {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     position: relative;
 }
 
-/* الأسهم */
+/* الأسهم الذهبية في الخلفية */
 .stats-arrows {
+    position: absolute;
+    top: -60px; /* لتظهر بارزة فوق الصندوق الكحلي */
+    right: 40px;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
-    gap: 10px;
-    padding-right: 60px;
-    height: 160px;
-    background-color: var(--color-bg-light);
+    gap: 8px;
+    z-index: 0;
 }
 
-/* الصندوق الكحلي */
+.stats-arrows svg polygon {
+    fill: #f5e9b8; /* اللون الذهبي الباهت للأسهم */
+}
 
+/* الصندوق الكحلي الرئيسي */
 .stats-dark-card {
-    background-color: var(--color-secondary);
-    padding: 80px 60px 160px;
+    background-color: #000051; /* الكحلي العميق الظاهر في الصورة */
+    padding: 80px 40px 140px 40px; /* حشوة سفلية كبيرة لترك مساحة لبروز الكروت */
     text-align: center;
+    border-radius: 12px;
     position: relative;
     z-index: 1;
 }
-/* العنوان */
+
 .stats-title {
-    color: var(--color-white) !important;
-    font-size: 32px;
-    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
 
-/* الفقرة */
 .stats-desc {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 15px;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.8;
 }
 
-/* شبكة الكروت */
-
+/* شبكة الكروت البيضاء */
 .stats-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     max-width: 1100px;
-
-    margin: -90px auto 0 auto; /* رفع الكروت فوق الأزرق */
+    margin: -80px auto 0; /* رفع الكروت بمقدار 80 بكسل فوق الإطار الكحلي */
     position: relative;
     z-index: 2;
 }
 
-/* الكرت */
+/* تصميم الكرت الأبيض الفردي */
 .stat-item {
     background: #ffffff;
-    padding: 35px 15px;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    opacity: 0;
-    transform: translateY(30px);
-
-    transition: opacity 0.8s ease,
-                transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-/*عند الظهور*/
-.stat-item.revealed {
-    opacity: 1;
-    transform: translateY(0);
+    padding: 45px 20px;
+    border-radius: 20px; /* انحناء دائري واضح كما في الصورة */
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); /* ظل ناعم وعميق */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* التحويم */
 .stat-item:hover {
-    transform: translateY(-10px);  /* رفع بسيط */
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
 }
 
-/* الأرقام */
+/* الأرقام الذهبية +ليس رقماً */
 .stat-number {
+    display: block;
+    color: #ffcc33; /* اللون الذهبي المشرق */
     font-size: 36px;
-    font-weight: 800;
-    color: var(--color-primary);
-    margin-bottom: 5px;
-    font-family: sans-serif;
+    font-weight: 900;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
 }
 
-/* النص */
+/* النصوص تحت الأرقام (عضو، مشروع، إلخ) */
 .stat-text {
-    font-size: 16px;
-    color: var(--color-secondary);
-    font-weight: bold;
+    display: block;
+    color: #000051;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+/* تحسين التجاوب مع الجوال */
+@media (max-width: 992px) {
+    .stats-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .stats-dark-card {
+        padding-bottom: 120px;
+    }
+    .stats-arrows {
+        right: 20px;
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-cards-grid {
+        grid-template-columns: 1fr;
+        margin-top: -60px;
+    }
+    .stats-title {
+        font-size: 28px;
+    }
 }
 /*===========================================*/
 
