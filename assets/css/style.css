@@ -1754,7 +1754,8 @@ body {
 
 /* التحويم */
 .stat-item:hover {
-    transform: translateY(70px);
+    transform: translateY(-10px);  /* رفع بسيط */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
 /* الأرقام */
