@@ -1,29 +1,26 @@
-/* ========================================================= الإعدادات العامة وتحسين الأداء
+/* ========================================================= 
+   الإعدادات العامة وتحسين الأداء
 ========================================================= */
 
-/* تحسين أداء كروت الخدمات */
 .service-card {
-    will-change: transform; /* تلميح للـ GPU لتحسين السلاسة */
+    will-change: transform;
     transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                background-color 0.2s ease;
+        box-shadow 0.3s ease,
+        background-color 0.2s ease;
 }
 
-/* تحسين انتقالات الأزرار والروابط */
 .home-buttons a,
 .nav-menu li a,
 .btn-primary {
     transition: transform 0.2s ease,
-                filter 0.2s ease,
-                background-color 0.2s ease;
+        filter 0.2s ease,
+        background-color 0.2s ease;
 }
 
-/* تثبيت موضع شريط التنقل */
 .nav-wrapper {
     position: relative;
 }
 
-/* دعم تقليل الحركة لذوي الحساسية للحركة */
 @media (prefers-reduced-motion: reduce) {
     * {
         transition: none !important;
@@ -32,24 +29,20 @@
 }
 
 /* =========================================================
-  تأثيرات سطح المكتب (تعمل فقط عند وجود ماوس)
+   تأثيرات سطح المكتب
 ========================================================= */
 
 @media (hover: hover) {
-
-    /* رفع الكرت عند المرور */
     .service-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
-    /* تأثير خفيف للأزرار */
     .home-buttons a:hover {
         filter: brightness(1.1);
         transform: translateY(-2px);
     }
 
-    /* تمييز روابط القائمة */
     .nav-menu li a:hover {
         color: var(--color-primary);
         background: rgba(0, 0, 0, 0.02);
@@ -57,12 +50,11 @@
 }
 
 /* =========================================================
-  الجوال (0px - 768px)
+   الجوال (0px - 768px)
 ========================================================= */
 
 @media (max-width: 768px) {
 
-    /* منع التمرير الأفقي */
     html, body {
         overflow-x: hidden;
         width: 100%;
@@ -72,15 +64,13 @@
         padding: 0 20px;
     }
 
-    /* ================= القائمة الجانبية (Drawer) ================= */
-
+    /* ===== القائمة الجانبية ===== */
     .nav-wrapper {
-    height: 65px;
-    padding: 0 15px;
-    z-index: 3000;
-    background-color: var(--color-secondary);
-}
-
+        height: 65px;
+        padding: 0 15px;
+        z-index: 3000;
+        background-color: var(--color-secondary);
+    }
 
     .logo img {
         height: 45px;
@@ -92,51 +82,42 @@
         cursor: pointer;
     }
 
-    /* تحويل القائمة إلى درج جانبي متحرك */
-/* القائمة الجانبية */
-/* القائمة الجانبية */
-.navbar-links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 280px;
-    height: 100vh;
-    background: var(--color-secondary); /* أو اللون الأساسي عندك */
-    box-shadow: -5px 0 20px rgba(0,0,0,0.2);
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 2000;
-    padding-top: 80px; /* حتى لا تغطي الهيدر */
-}
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+        background: var(--color-secondary);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 2000;
+        padding-top: 80px;
+    }
 
-.navbar-links.open {
-    transform: translateX(0);
-}
+    .navbar-links.open {
+        transform: translateX(0);
+    }
 
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+        z-index: 1500;
+    }
 
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
 
-/* الخلفية الداكنة */
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 1500;
-}
-
-.overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-body.menu-open {
-    overflow: hidden;
-}
-
-
-
+    body.menu-open {
+        overflow: hidden;
+    }
 
     .nav-menu {
         flex-direction: column;
@@ -146,10 +127,9 @@ body.menu-open {
     .nav-menu li a {
         padding: 18px 25px;
         display: block;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    /* تأثير استجابة سريعة عند اللمس */
     .home-buttons a:active,
     .btn-primary:active,
     .service-card:active,
@@ -159,8 +139,7 @@ body.menu-open {
         transition: transform 0.1s ease;
     }
 
-    /* ================= قسم الهيرو ================= */
-
+    /* ===== الهيرو ===== */
     .hero-section {
         height: auto;
         padding: 120px 0 80px;
@@ -186,8 +165,7 @@ body.menu-open {
         height: 60px;
     }
 
-    /* ============ تحويل الشبكات لعمود واحد ============== */
-
+    /* ===== الشبكات ===== */
     .fields-grid,
     .services-grid,
     .technologies-grid,
@@ -211,40 +189,78 @@ body.menu-open {
         height: 180px;
     }
 
-    /* إخفاء عمود من جدول المقارنة لتوفير مساحة */
-    .comparison-table th:last-child,
-    .comparison-table td:last-child {
-        display: none;
+    /* ===== المقارنة ===== */
+    .compare-section {
+        padding: 60px 20px;
     }
 
-    /*===================لاحصائيات=========================*/
-/* جعل الكروت صفين (كرتين في كل صف) */
+    .compare-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .compare-side-text {
+        order: 1;
+        flex: unset;
+        width: 100%;
+        text-align: center;
+    }
+
+    .compare-side-text h2 {
+        font-size: 26px;
+        line-height: 1.5;
+    }
+
+    .compare-table-wrapper {
+        order: 2;
+        flex: unset;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .compare-table {
+        min-width: 480px;
+    }
+
+    
+
+    /* ===== الإحصائيات ===== */
     .stats-cards-grid {
-        grid-template-columns: 1fr; /* كرت واحد في كل صف لسهولة القراءة */
-        margin-bottom: -50px;
-    }
-
-    .stats-title {
-        font-size: 24px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-bottom: -70px;
+        padding: 0 10px;
     }
 
     .stat-item {
-        padding: 20px;
+        padding: 25px 10px;
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .stats-arrows {
+        padding-right: 20px;
+        height: 100px;
+    }
+
+    .stats-dark-card {
+        padding: 40px 15px 30px;
     }
 
     .stats-spacer {
-        height: 80px; /* تقليل الفراغ التعويضي بما يتناسب مع بروز الكروت الأصغر */
+        height: 90px;
     }
 }
 
 /* =========================================================
-  التابلت (769px - 1024px)
+   التابلت (769px - 1024px)
 ========================================================= */
 
 @media (min-width: 769px) and (max-width: 1024px) {
 
-  
-    /* تقليل حجم عناصر القائمة */
     .nav-menu {
         gap: 15px;
     }
@@ -258,7 +274,6 @@ body.menu-open {
         font-size: 14px;
     }
 
-    /* توسيع المساحات الجانبية */
     .container,
     .container-training,
     .why-us-wrapper,
@@ -269,7 +284,6 @@ body.menu-open {
         gap: 40px;
     }
 
-    /* ضبط ارتفاع الهيرو */
     .hero-section {
         height: 75vh;
     }
@@ -278,11 +292,9 @@ body.menu-open {
         font-size: 2.5rem;
     }
 
-    /* تحويل الشبكات إلى عمودين */
     .fields-grid,
     .services-grid,
-    .technologies-grid,
-    .stats-grid {
+    .technologies-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
@@ -293,7 +305,6 @@ body.menu-open {
         padding: 25px;
     }
 
-    /* تأثير لمس خفيف */
     .service-card:active {
         transform: scale(0.99);
     }
@@ -302,65 +313,43 @@ body.menu-open {
         height: 220px;
     }
 
-    /* تحسين عرض قسم الإحصائيات */
-    .stats-section {
+    /* ===== المقارنة ===== */
+    .compare-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 30px;
+    }
+
+    .compare-side-text {
+        flex: unset;
         width: 100%;
-        height: auto;
-        padding: 60px 20px;
-    }
-
-    .stat-card {
-        width: 100%;
-    }
-
-    /* جعل جدول المقارنة قابل للتمرير عند الحاجة */
-    .featured-col-box {
-        display: none !important; /* إخفاء الكتلة السوداء التي تغطي الجدول */
-    }
-
-    .comparison-table-wrapper {
-        overflow-x: auto; /* السماح بالتمرير الجانبي بدلاً من التداخل */
-        -webkit-overflow-scrolling: touch;
-        margin: 20px 0;
-        border-radius: 15px;
-    }
-
-    .comparison-table {
-        min-width: 600px; /* ضمان عدم انضغاط الجدول بشكل مبالغ فيه */
-        border-radius: 15px;
-    }
-
-    .comparison-container {
-        flex-direction: column !important;
-        padding: 40px 15px;
-    }
-
-    .comparison-text-side h2 {
-        max-width: 100%;
         text-align: center;
-        margin-bottom: 30px;
-        font-size: 24px;
+        order: 1;
     }
 
-
-/* تحسين شكل الجدول العام لمنع ركوب النصوص */
-.comparison-table th, 
-.comparison-table td {
-    padding: 15px 10px;
-    font-size: 14px;
-    border-bottom: 1px solid #eee;
-}
-
-
-    /*احصائيات*/
-.stats-cards-grid {
-        grid-template-columns: repeat(2, 1fr); /* كرتين في كل صف */
-        margin-bottom: -80px; 
-        gap: 15px;
+    .compare-side-text h2 {
+        font-size: 32px;
     }
-    
-    .stats-arrows {
-        height: 120px;
+
+    .compare-table-wrapper {
+        flex: unset;
+        width: 100%;
+        order: 2;
+    }
+
+    /* ===== الإحصائيات ===== */
+    .stats-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: -90px;
         padding: 0 20px;
+    }
+
+    .stats-dark-card {
+        padding: 50px 30px 40px;
+    }
+
+    .stats-spacer {
+        height: 110px;
     }
 }
