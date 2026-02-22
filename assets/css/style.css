@@ -1669,10 +1669,8 @@ body {
 
 /* الحاوية الكبيرة */
 .stats-section {
-    padding: 0;
-    background-color: var(--color-bg-light);
-    direction: rtl;
     position: relative;
+    padding-bottom: 160px; /* مساحة للكروت */
 }
 
 /* حاوية المحتوى */
@@ -1695,14 +1693,14 @@ body {
 }
 
 /* الصندوق الكحلي */
+
 .stats-dark-card {
     background-color: var(--color-secondary);
-    padding: 80px 60px 140px;
+    padding: 80px 60px 160px;
     text-align: center;
     position: relative;
     z-index: 1;
 }
-
 /* العنوان */
 .stats-title {
     color: var(--color-white) !important;
@@ -1719,15 +1717,19 @@ body {
 }
 
 /* شبكة الكروت */
-
 .stats-cards-grid {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+
+    width: 100%;
+    max-width: 1100px;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
-    max-width: 1100px;
 
-    margin: -90px auto 0 auto; /* رفع الكروت فوق الأزرق */
-    position: relative;
     z-index: 2;
 }
 
