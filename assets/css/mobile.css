@@ -302,7 +302,7 @@
     .stats-dark-card {
         padding: 60px 20px 120px 20px;
     }
-
+}
 /* =========================================================
     التابلت (769px - 1024px)
 ========================================================= */
@@ -388,17 +388,9 @@
     /* ===== الإحصائيات ===== */
     .stats-cards-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        margin-bottom: -90px;
-        padding: 0 20px;
     }
 
     .stats-dark-card {
-        padding: 50px 30px 40px;
+        padding: 70px 40px 140px 40px;
     }
-
-    .stats-spacer {
-        height: 110px;
-    }
-}
 }
