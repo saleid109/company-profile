@@ -1399,7 +1399,7 @@ body {
     min-width: 160px;
     white-space: nowrap;
     border-radius: 40px 40px 0 0;
-    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.1);
     position: relative;
     z-index: 3;
 }
@@ -1407,7 +1407,7 @@ body {
 .compare-table thead th.us-col {
     padding-top: 30px;
     border-radius: 40px 40px 0 0;
-
+    
 }
 
 .others-col {
@@ -1416,7 +1416,7 @@ body {
     width: 160px;
     min-width: 160px;
     white-space: nowrap;
-
+    
 
 }
 
@@ -1453,7 +1453,7 @@ body {
     background-color: #00015B !important;
     text-align: center;
     padding: 20px 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     position: relative;
     z-index: 2;
     width: 160px;
@@ -1462,7 +1462,7 @@ body {
 
 .featured-us.last-us {
     border-radius: 0 0 40px 40px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     padding-bottom: 30px;
 
 }
@@ -1667,370 +1667,111 @@ body {
 
 /*===================قسم الإحصائيات=======================*/
 
-:root {
-    --stats-primary: #000051;
-    --stats-gold: #ffcc33;
-    --stats-white: #ffffff;
-    --stats-light-bg: #fcfcfc;
-    --stats-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-    --stats-shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.12);
-    --stats-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
+/* الحاوية الكبيرة */
 .stats-section {
     position: relative;
-    padding: 100px 0;
-    background-color: var(--stats-light-bg);
-    direction: rtl;
-    overflow: hidden;
-    will-change: contents;
+    padding-bottom: 160px; /* مساحة للكروت */
 }
 
-/* تأثير الضوء الخفيف */
-.stats-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 204, 51, 0.03) 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* ============================================
-   3. حاوية المحتوى
-   ============================================ */
-
+/* حاوية المحتوى */
 .stats-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
     position: relative;
-    z-index: 1;
-    contain: layout style paint;
 }
 
-/* ============================================
-   4. الأسهم الذهبية
-   ============================================ */
-
+/* الأسهم */
 .stats-arrows {
-    position: absolute;
-    top: -60px;
-    right: 40px;
     display: flex;
     align-items: flex-end;
-    gap: 8px;
-    z-index: 0;
-    will-change: transform;
-    animation: arrowsSlideIn 0.8s ease-out 0.2s both;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 60px;
+    height: 160px;
+    background-color: var(--color-bg-light);
 }
 
-@keyframes arrowsSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.stats-arrows svg {
-    width: 40px;
-    height: 40px;
-    animation: arrowBounce 2s ease-in-out infinite;
-    will-change: transform;
-}
-
-.stats-arrows svg:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.stats-arrows svg:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.stats-arrows svg:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-@keyframes arrowBounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-.stats-arrows svg polygon {
-    fill: #f5e9b8;
-    transition: fill 0.3s ease;
-}
-
-.stats-arrows svg:hover polygon {
-    fill: var(--stats-gold);
-}
-
-/* ============================================
-   5. الصندوق الأزرق الداكن
-   ============================================ */
+/* الصندوق الكحلي */
 
 .stats-dark-card {
-    background: linear-gradient(135deg, var(--stats-primary) 0%, #000a3d 100%);
-    padding: 80px 40px 140px 40px;
+    background-color: var(--color-secondary);
+    padding: 80px 60px 160px;
     text-align: center;
-    border-radius: 12px;
     position: relative;
     z-index: 1;
-    animation: slideInDown 0.8s ease-out;
-    contain: layout style paint;
 }
-
-@keyframes slideInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* تأثير الضوء على الصندوق */
-.stats-dark-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 204, 51, 0.08) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
-    border-radius: 12px;
-}
-
-/* ============================================
-   6. العنوان
-   ============================================ */
-
+/* العنوان */
 .stats-title {
-    color: var(--stats-white);
-    font-size: 38px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    animation: fadeInUp 0.8s ease-out 0.1s both;
-    letter-spacing: -1px;
-    line-height: 1.2;
+    color: var(--color-white) !important;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ============================================
-   7. الوصف
-   ============================================ */
-
+/* الفقرة */
 .stats-desc {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 16px;
-    max-width: 750px;
-    margin: 0 auto;
-    line-height: 1.8;
-    animation: fadeInUp 0.8s ease-out 0.2s both;
-    letter-spacing: 0.3px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
 }
 
-/* ============================================
-   8. شبكة الكروت
-   ============================================ */
+/* شبكة الكروت */
 
 .stats-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     max-width: 1100px;
-    margin: -80px auto 0 auto;
+
+    margin: -90px auto 0 auto; /* رفع الكروت فوق الأزرق */
     position: relative;
     z-index: 2;
-    padding: 0 20px;
-    animation: fadeIn 0.6s ease-out 0.3s both;
-    contain: layout style paint;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* ============================================
-   9. الكرت الفردي
-   ============================================ */
-
+/* الكرت */
 .stat-item {
-    background: var(--stats-white);
-    padding: 45px 20px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: var(--stats-shadow);
+    background: #ffffff;
+    padding: 35px 15px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
 
-    /* Animations */
     opacity: 0;
     transform: translateY(30px);
-    animation: slideUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 
-    /* Performance */
-    will-change: transform, box-shadow;
-    transition: var(--stats-transition);
-    contain: layout style paint;
-
-    /* Accessibility */
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    transition: opacity 0.8s ease,
+                transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/*عند الظهور*/
+.stat-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Stagger Animation */
-.stat-item:nth-child(1) {
-    animation-delay: 0.1s;
+/* التحويم */
+.stat-item:hover {
+    transform: translateY(-10px);  /* رفع بسيط */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
-.stat-item:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.stat-item:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.stat-item:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hover Effect */
-@media (hover: hover) {
-    .stat-item:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--stats-shadow-hover);
-    }
-
-    .stat-item:hover .stat-number {
-        color: #ffdd66;
-    }
-
-    .stat-item:hover::after {
-        opacity: 1;
-    }
-}
-
-/* Active State للأجهزة اللمسية */
-@media (hover: none) and (pointer: coarse) {
-    .stat-item:active {
-        transform: scale(0.98);
-    }
-}
-
-/* تأثير الضوء عند الـ Hover */
-.stat-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 204, 51, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: -1;
-    border-radius: 20px;
-}
-
-/* ============================================
-. الأرقام
-   ============================================ */
-
+/* الأرقام */
 .stat-number {
-    display: block;
-    color: var(--stats-gold);
     font-size: 36px;
-    font-weight: 900;
-    margin-bottom: 12px;
-    letter-spacing: -1px;
-    font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s ease;
-    will-change: color;
-
-    /* Counter Animation */
-    animation: countUp 1.5s ease-out 0.5s forwards;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+    font-family: sans-serif;
 }
 
-@keyframes countUp {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* ============================================
-. النصوص
-   ============================================ */
-
+/* النص */
 .stat-text {
-    display: block;
-    color: var(--stats-primary);
-    font-size: 19px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
-    will-change: color;
+    font-size: 16px;
+    color: var(--color-secondary);
+    font-weight: bold;
 }
-
 /*===========================================*/
+
