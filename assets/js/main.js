@@ -229,8 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 clearInterval(counter);
             }
 
-            element.textContent =
-                "+" + Math.floor(current).toLocaleString('ar-SA');
+            element.textContent = "+" + Math.floor(current).toLocaleString('en-US');
 
         }, frameRate);
     }

@@ -1666,12 +1666,7 @@ body {
 /*==============================*/
 
 /*===================قسم الإحصائيات=======================*/
-:root {
-    --color-primary: #f5c842;
-    --color-secondary: #0d1b5e;
-    --color-white: #ffffff;
-    --color-bg-light: #f0f2fa;
-}
+
 
 .stats-section {
     position: relative;
