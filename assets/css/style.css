@@ -1697,12 +1697,10 @@ body {
 /* الصندوق الكحلي */
 .stats-dark-card {
     background-color: var(--color-secondary);
-    border-radius: 0;
-    padding: 80px 60px 100px 60px; /* نقلل البوتوم */
+    padding: 80px 60px 140px;
     text-align: center;
     position: relative;
     z-index: 1;
-    width: 100%;
 }
 
 /* العنوان */
@@ -1721,16 +1719,15 @@ body {
 }
 
 /* شبكة الكروت */
+
 .stats-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     max-width: 1100px;
 
-    margin: 60px auto 0 auto;
-
+    margin: -90px auto 0 auto; /* رفع الكروت فوق الأزرق */
     position: relative;
-    transform: translateY(70px); /* خروج فعلي */
     z-index: 2;
 }
 
