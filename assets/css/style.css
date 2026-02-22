@@ -1692,12 +1692,11 @@ body {
 
 .stats-dark-card {
     background-color: var(--color-secondary);
-    padding: 80px 60px 240px;
+    padding: 80px 60px 260px;
     text-align: center;
     position: relative;
     z-index: 1;
 }
-
 
 
 .stats-title {
