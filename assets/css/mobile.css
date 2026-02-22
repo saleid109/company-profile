@@ -294,46 +294,79 @@
         padding-bottom: 6px !important;
     }
 /* ===== الإحصائيات ===== */
+/* --- التنسيق الأساسي لضمان التباعد --- */
+.stats-section {
+    position: relative;
+    /* مساحة سفلية إضافية لتعويض بروز الكروت ومنع تداخلها مع قسم "عملائنا" */
+    padding-bottom: 120px; 
+    background-color: #fcfcfc;
+}
+
+/* الصندوق الكحلي */
+.stats-dark-card {
+    background-color: #000051;
+    padding: 60px 20px 140px 20px; /* حشوة سفلية تسمح للكروت بالاستقرار بداخلها جزئياً */
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* شبكة الكروت (الأهم للتوافق) */
+.stats-cards-grid {
+    display: flex;
+    flex-wrap: wrap; /* للسماح بنزول الكروت لسطر جديد في الجوال */
+    justify-content: center;
+    gap: 20px;
+    max-width: 1100px;
+    margin: -90px auto 0; /* رفع الكروت بمقدار 90px فوق الخلفية الكحلية */
+    position: relative;
+    z-index: 10;
+    padding: 0 15px;
+}
+
+/* الكرت الفردي */
+.stat-item {
+    background: #ffffff;
+    flex: 1 1 calc(25% - 20px); /* الافتراضي: 4 كروت في السطر */
+    min-width: 200px;
+    padding: 40px 10px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* --- تعديلات iPad والأجهزة المتوسطة (768px - 1024px) --- */
+@media (max-width: 1024px) {
+    .stat-item {
+        flex: 1 1 calc(50% - 20px); /* كرتين في كل سطر كما في صورة iPad */
+    }
+    
     .stats-dark-card {
-        padding: 60px 20px 80px;  /* ← زد padding-bottom */
+        padding-bottom: 180px; /* زيادة المساحة لاستيعاب سطرين من الكروت */
+    }
+
+    .stats-section {
+        padding-bottom: 150px; /* مساحة أكبر قبل قسم "عملائنا" */
+    }
+}
+
+/* --- تعديلات الجوال الصغير (أقل من 576px) --- */
+@media (max-width: 576px) {
+    .stat-item {
+        flex: 1 1 100%; /* كرت واحد في كل سطر لسهولة القراءة */
+    }
+
+    .stats-dark-card {
+        padding-bottom: 120px;
     }
 
     .stats-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        margin: 20px 15px 40px;  /* ← بدون تداخل */
-        padding: 0;
+        margin-top: -70px; /* تقليل البروز قليلاً ليناسب الشاشة الصغيرة */
     }
-
+    
     .stats-title {
-        font-size: 28px;
+        font-size: 26px;
     }
-
-    .stats-desc {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    .stat-item {
-        padding: 30px 10px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .stat-number {
-        font-size: 28px;
-    }
-
-    .stat-text {
-        font-size: 16px;
-    }
-
-    .stats-arrows {
-        right: 20px;
-        top: -40px;
-        transform: scale(0.6);
-        opacity: 0.5;
-    }
+}
 }
 /* =========================================================
     التابلت (769px - 1024px)
@@ -418,46 +451,77 @@
     }
 
     /* ===== الإحصائيات ===== */
- .stats-dark-card {
-        padding: 60px 20px 40px; /* أقل padding للسفلية لتجنب القص */
+    /* --- التنسيق الأساسي لضمان التباعد --- */
+.stats-section {
+    position: relative;
+    /* مساحة سفلية إضافية لتعويض بروز الكروت ومنع تداخلها مع قسم "عملائنا" */
+    padding-bottom: 120px; 
+    background-color: #fcfcfc;
+}
+
+/* الصندوق الكحلي */
+.stats-dark-card {
+    background-color: #000051;
+    padding: 60px 20px 140px 20px; /* حشوة سفلية تسمح للكروت بالاستقرار بداخلها جزئياً */
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* شبكة الكروت (الأهم للتوافق) */
+.stats-cards-grid {
+    display: flex;
+    flex-wrap: wrap; /* للسماح بنزول الكروت لسطر جديد في الجوال */
+    justify-content: center;
+    gap: 20px;
+    max-width: 1100px;
+    margin: -90px auto 0; /* رفع الكروت بمقدار 90px فوق الخلفية الكحلية */
+    position: relative;
+    z-index: 10;
+    padding: 0 15px;
+}
+
+/* الكرت الفردي */
+.stat-item {
+    background: #ffffff;
+    flex: 1 1 calc(25% - 20px); /* الافتراضي: 4 كروت في السطر */
+    min-width: 200px;
+    padding: 40px 10px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* --- تعديلات iPad والأجهزة المتوسطة (768px - 1024px) --- */
+@media (max-width: 1024px) {
+    .stat-item {
+        flex: 1 1 calc(50% - 20px); /* كرتين في كل سطر كما في صورة iPad */
+    }
+    
+    .stats-dark-card {
+        padding-bottom: 180px; /* زيادة المساحة لاستيعاب سطرين من الكروت */
     }
 
-    .stats-title {
-        font-size: 28px;
+    .stats-section {
+        padding-bottom: 150px; /* مساحة أكبر قبل قسم "عملائنا" */
+    }
+}
+
+/* --- تعديلات الجوال الصغير (أقل من 576px) --- */
+@media (max-width: 576px) {
+    .stat-item {
+        flex: 1 1 100%; /* كرت واحد في كل سطر لسهولة القراءة */
     }
 
-    .stats-desc {
-        font-size: 14px;
-        line-height: 1.6;
+    .stats-dark-card {
+        padding-bottom: 120px;
     }
 
     .stats-cards-grid {
-        grid-template-columns: repeat(2, 1fr); /* كرتين في الصف */
-        gap: 15px;
-        margin: 30px auto 0; /* بدون تداخل سلبي */
-        padding: 0 15px 40px;
-        position: relative;
-        z-index: 2;
+        margin-top: -70px; /* تقليل البروز قليلاً ليناسب الشاشة الصغيرة */
     }
-
-    .stat-item {
-        padding: 30px 10px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    
+    .stats-title {
+        font-size: 26px;
     }
-
-    .stat-number {
-        font-size: 28px;
-    }
-
-    .stat-text {
-        font-size: 16px;
-    }
-
-    .stats-arrows {
-        right: 20px;
-        top: -40px;
-        transform: scale(0.6);
-        opacity: 0.5;
-    }
+}
 }
