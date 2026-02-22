@@ -419,45 +419,19 @@
     }
 
     /* ===== الإحصائيات ===== */
-/* --- التنسيق الأساسي لضمان التباعد --- */
-.stats-section {
-    position: relative;
-    /* مساحة سفلية إضافية لتعويض بروز الكروت ومنع تداخلها مع قسم "عملائنا" */
-    padding-bottom: 120px; 
-    background-color: #fcfcfc;
-}
+    .stat-item {
+        /* كرتين في كل سطر كما في صورة الـ iPad التي أرفقتها */
+        flex: 1 1 calc(50% - 30px); 
+    }
 
-/* الصندوق الكحلي */
-.stats-dark-card {
-    background-color: #000051;
-    padding: 60px 20px 140px 20px; /* حشوة سفلية تسمح للكروت بالاستقرار بداخلها جزئياً */
-    text-align: center;
-    border-radius: 10px;
-}
+    .stats-dark-card {
+        /* زيادة الحشوة السفلية لمنع خروج الكروت تماماً من الخلفية الكحلية */
+        padding-bottom: 220px; 
+    }
 
-/* شبكة الكروت (الأهم للتوافق) */
-.stats-cards-grid {
-    display: flex;
-    flex-wrap: wrap; /* للسماح بنزول الكروت لسطر جديد في الجوال */
-    justify-content: center;
-    gap: 20px;
-    max-width: 1100px;
-    margin: -90px auto 0; /* رفع الكروت بمقدار 90px فوق الخلفية الكحلية */
-    position: relative;
-    z-index: 10;
-    padding: 0 15px;
-}
-
-/* الكرت الفردي */
-.stat-item {
-    background: #ffffff;
-    flex: 1 1 calc(25% - 20px); /* الافتراضي: 4 كروت في السطر */
-    min-width: 200px;
-    padding: 40px 10px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
+    .stats-section {
+        /* زيادة المساحة السفلية لتعويض نزول الكروت لسطرين */
+        padding-bottom: 160px; 
+    }
 
 }
