@@ -390,11 +390,11 @@
     /* ===== الإحصائيات ===== */
 .stats-section {
         padding-bottom: 0;
-        margin-bottom: 180px;  /* ← بدل padding-bottom */
+        margin-bottom: 200px;  /* ← بدل padding-bottom */
     }
 
     .stats-dark-card {
-        padding: 70px 40px 180px 40px;
+        padding: 70px 40px 280px 40px;  /* ← زد أكثر */
     }
 
     .stats-cards-grid {
