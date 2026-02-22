@@ -1670,7 +1670,7 @@ body {
 
 .stats-section {
     position: relative;
-    padding-bottom: 160px;
+    padding-bottom: 0; 
 }
 
 .stats-container {
@@ -1692,11 +1692,13 @@ body {
 
 .stats-dark-card {
     background-color: var(--color-secondary);
-    padding: 80px 60px 160px;
+    padding: 80px 60px 260px;  /* ← غيّر من 160px إلى 260px */
     text-align: center;
     position: relative;
     z-index: 1;
 }
+
+
 
 .stats-title {
     color: var(--color-white) !important;
