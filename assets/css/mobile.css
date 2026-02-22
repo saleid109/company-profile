@@ -395,10 +395,10 @@
     /* ===== الإحصائيات ===== */
 .stats-section {
     position: relative;
-    padding-bottom: 0;
+    padding-bottom: 260px; /* زيدي القيمة */
 }
 .stats-dark-card {
-    padding: 80px 60px 220px; /* بدل 160px */
+    padding: 70px 40px 280px 40px;
 }
 
 .stats-cards-grid {
