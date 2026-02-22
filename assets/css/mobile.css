@@ -294,16 +294,22 @@
         padding-bottom: 6px !important;
     }
 /* ===== الإحصائيات ===== */
-    .stats-dark-card {
-        padding: 60px 20px 130px;
+.stats-dark-card {
+        padding: 60px 20px 40px;
     }
+
+    .stats-section {
+        padding-bottom: 0;
+    }
+
     .stats-cards-grid {
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 15px 40px;
-        margin-top: -80px;
-    }
-    .stats-section {
-        padding-bottom: 40px;
+        gap: 15px;
+        margin-top: 30px;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 40px;
+        padding: 0;
     }
 }
 /* =========================================================
@@ -390,13 +396,20 @@
 
     /* ===== الإحصائيات ===== */
 .stats-dark-card {
-        padding-bottom: 130px;
+        padding: 60px 20px 40px;
     }
+
+    .stats-section {
+        padding-bottom: 0;
+    }
+
     .stats-cards-grid {
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 20px 40px;
-    }
-    .stats-section {
-        padding-bottom: 40px;
+        gap: 15px;
+        margin-top: 30px;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 40px;
+        padding: 0;
     }
 }
