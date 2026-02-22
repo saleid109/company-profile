@@ -1399,7 +1399,7 @@ body {
     min-width: 160px;
     white-space: nowrap;
     border-radius: 40px 40px 0 0;
-    box-shadow: 0 -10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 3;
 }
@@ -1407,7 +1407,7 @@ body {
 .compare-table thead th.us-col {
     padding-top: 30px;
     border-radius: 40px 40px 0 0;
-    
+
 }
 
 .others-col {
@@ -1416,7 +1416,7 @@ body {
     width: 160px;
     min-width: 160px;
     white-space: nowrap;
-    
+
 
 }
 
@@ -1453,7 +1453,7 @@ body {
     background-color: #00015B !important;
     text-align: center;
     padding: 20px 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     position: relative;
     z-index: 2;
     width: 160px;
@@ -1462,7 +1462,7 @@ body {
 
 .featured-us.last-us {
     border-radius: 0 0 40px 40px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     padding-bottom: 30px;
 
 }
@@ -1666,53 +1666,180 @@ body {
 /*==============================*/
 
 /*===================قسم الإحصائيات=======================*/
-/* الحاوية الرئيسية للقسم بالكامل */
+
 .stats-section {
     position: relative;
-    padding: 100px 0; /* مساحة كافية للأسهم العلوية */
-    background-color: #fcfcfc; /* خلفية الصفحة الفاتحة جدًا */
+    padding: 100px 0;
+    background-color: var(--stats-light-bg);
     direction: rtl;
+    overflow: hidden;
+    will-change: contents;
 }
 
-/* حاوية المحتوى المركزية */
+/* تأثير الضوء الخفيف */
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 204, 51, 0.03) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ============================================
+   3. حاوية المحتوى
+   ============================================ */
+
 .stats-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
+    z-index: 1;
+    contain: layout style paint;
 }
 
-/* الأسهم الذهبية في الخلفية */
+/* ============================================
+   4. الأسهم الذهبية
+   ============================================ */
+
 .stats-arrows {
     position: absolute;
-    top: -60px; /* لتظهر بارزة فوق الصندوق الكحلي */
+    top: -60px;
     right: 40px;
     display: flex;
     align-items: flex-end;
     gap: 8px;
     z-index: 0;
+    will-change: transform;
+    animation: arrowsSlideIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes arrowsSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stats-arrows svg {
+    width: 40px;
+    height: 40px;
+    animation: arrowBounce 2s ease-in-out infinite;
+    will-change: transform;
+}
+
+.stats-arrows svg:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.stats-arrows svg:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.stats-arrows svg:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes arrowBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 .stats-arrows svg polygon {
-    fill: #f5e9b8; /* اللون الذهبي الباهت للأسهم */
+    fill: #f5e9b8;
+    transition: fill 0.3s ease;
 }
 
-/* الصندوق الكحلي الرئيسي */
+.stats-arrows svg:hover polygon {
+    fill: var(--stats-gold);
+}
+
+/* ============================================
+   5. الصندوق الأزرق الداكن
+   ============================================ */
+
 .stats-dark-card {
-    background-color: #000051; /* الكحلي العميق الظاهر في الصورة */
-    padding: 80px 40px 140px 40px; /* حشوة سفلية كبيرة لترك مساحة لبروز الكروت */
+    background: linear-gradient(135deg, var(--stats-primary) 0%, #000a3d 100%);
+    padding: 80px 40px 140px 40px;
     text-align: center;
     border-radius: 12px;
     position: relative;
     z-index: 1;
+    animation: slideInDown 0.8s ease-out;
+    contain: layout style paint;
 }
 
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تأثير الضوء على الصندوق */
+.stats-dark-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 204, 51, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+    border-radius: 12px;
+}
+
+/* ============================================
+   6. العنوان
+   ============================================ */
+
 .stats-title {
-    color: #ffffff;
+    color: var(--stats-white);
     font-size: 38px;
     font-weight: 800;
     margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease-out 0.1s both;
+    letter-spacing: -1px;
+    line-height: 1.2;
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   7. الوصف
+   ============================================ */
 
 .stats-desc {
     color: rgba(255, 255, 255, 0.85);
@@ -1720,74 +1847,180 @@ body {
     max-width: 750px;
     margin: 0 auto;
     line-height: 1.8;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    letter-spacing: 0.3px;
 }
 
-/* شبكة الكروت البيضاء */
+/* ============================================
+   8. شبكة الكروت
+   ============================================ */
+
 .stats-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     max-width: 1100px;
-    margin: -80px auto 0; /* رفع الكروت بمقدار 80 بكسل فوق الإطار الكحلي */
+    margin: -80px auto 0 auto;
     position: relative;
     z-index: 2;
+    padding: 0 20px;
+    animation: fadeIn 0.6s ease-out 0.3s both;
+    contain: layout style paint;
 }
 
-/* تصميم الكرت الأبيض الفردي */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   9. الكرت الفردي
+   ============================================ */
+
 .stat-item {
-    background: #ffffff;
+    background: var(--stats-white);
     padding: 45px 20px;
-    border-radius: 20px; /* انحناء دائري واضح كما في الصورة */
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); /* ظل ناعم وعميق */
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--stats-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    /* Animations */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
+    /* Performance */
+    will-change: transform, box-shadow;
+    transition: var(--stats-transition);
+    contain: layout style paint;
+
+    /* Accessibility */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.stat-item:hover {
-    transform: translateY(-10px);
+/* Stagger Animation */
+.stat-item:nth-child(1) {
+    animation-delay: 0.1s;
 }
 
-/* الأرقام الذهبية +ليس رقماً */
+.stat-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stat-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.stat-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Effect */
+@media (hover: hover) {
+    .stat-item:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--stats-shadow-hover);
+    }
+
+    .stat-item:hover .stat-number {
+        color: #ffdd66;
+    }
+
+    .stat-item:hover::after {
+        opacity: 1;
+    }
+}
+
+/* Active State للأجهزة اللمسية */
+@media (hover: none) and (pointer: coarse) {
+    .stat-item:active {
+        transform: scale(0.98);
+    }
+}
+
+/* تأثير الضوء عند الـ Hover */
+.stat-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 204, 51, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+    border-radius: 20px;
+}
+
+/* ============================================
+. الأرقام
+   ============================================ */
+
 .stat-number {
     display: block;
-    color: #ffcc33; /* اللون الذهبي المشرق */
+    color: var(--stats-gold);
     font-size: 36px;
     font-weight: 900;
     margin-bottom: 12px;
     letter-spacing: -1px;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s ease;
+    will-change: color;
+
+    /* Counter Animation */
+    animation: countUp 1.5s ease-out 0.5s forwards;
 }
 
-/* النصوص تحت الأرقام (عضو، مشروع، إلخ) */
-.stat-text {
-    display: block;
-    color: #000051;
-    font-size: 19px;
-    font-weight: 700;
-}
-
-/* تحسين التجاوب مع الجوال */
-@media (max-width: 992px) {
-    .stats-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    .stats-dark-card {
-        padding-bottom: 120px;
-    }
-    .stats-arrows {
-        right: 20px;
+@keyframes countUp {
+    from {
+        opacity: 0;
         transform: scale(0.8);
     }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-@media (max-width: 576px) {
-    .stats-cards-grid {
-        grid-template-columns: 1fr;
-        margin-top: -60px;
-    }
-    .stats-title {
-        font-size: 28px;
-    }
+/* ============================================
+. النصوص
+   ============================================ */
+
+.stat-text {
+    display: block;
+    color: var(--stats-primary);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    will-change: color;
 }
+
 /*===========================================*/
-
