@@ -1717,11 +1717,12 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     max-width: 1100px;
-    margin: -90px auto 0 auto;
+    margin: 0 auto;          /* ← أزل الـ margin السالب */
+    padding: 0 20px 40px;
     position: relative;
     z-index: 2;
+    margin-top: -90px;       /* ← اتركه هنا فقط */
 }
-
 .stat-item {
     background: #ffffff;
     padding: 35px 15px;
