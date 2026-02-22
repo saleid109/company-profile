@@ -294,16 +294,21 @@
         padding-bottom: 6px !important;
     }
 /* ===== الإحصائيات ===== */
-.stats-cards-grid {
-        grid-template-columns: repeat(2, 1fr);  /* ← كرتين بالصف */
-        padding: 0 15px;
-        margin: -90px 15px 0 15px;  /* ← أضف margin جانبي */
-        gap: 15px;
-    }
+.stats-section {
+    padding-bottom: 180px;
+    overflow: visible;
+}
 
-    .stats-dark-card {
-        padding: 60px 20px 120px 20px;
-    }
+.stats-dark-card {
+    padding: 60px 20px 150px 20px;
+}
+
+.stats-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 15px;
+    margin: -80px 15px 0 15px;
+    gap: 15px;
+}
 }
 /* =========================================================
     التابلت (769px - 1024px)
@@ -389,18 +394,18 @@
 
     /* ===== الإحصائيات ===== */
 .stats-section {
-        padding-bottom: 220px;
-        overflow: visible;
-    }
+    padding-bottom: 220px;
+    overflow: visible;
+}
 
-    .stats-dark-card {
-        padding: 70px 40px 200px 40px;
-    }
+.stats-dark-card {
+    padding: 70px 40px 200px 40px;
+}
 
-    .stats-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 20px;
-        margin: -100px 20px 0 20px;
-        gap: 15px;
-    }
+.stats-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+    margin: -100px 20px 0 20px;
+    gap: 15px;
+}
 }
