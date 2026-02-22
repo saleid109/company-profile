@@ -295,8 +295,10 @@
     }
 /* ===== الإحصائيات ===== */
 .stats-cards-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);  /* ← كرتين بالصف */
+        padding: 0 15px;
+        margin: -90px 15px 0 15px;  /* ← أضف margin جانبي */
+        gap: 15px;
     }
 
     .stats-dark-card {
@@ -386,10 +388,11 @@
     }
 
     /* ===== الإحصائيات ===== */
-    .stats-cards-grid {
+.stats-cards-grid {
         grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;  /* ← أضف هذا */
+        margin: -90px 20px 0 20px;  /* ← غيّر هذا */
     }
-
     .stats-dark-card {
         padding: 70px 40px 140px 40px;
     }
