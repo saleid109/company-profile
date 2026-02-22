@@ -1667,7 +1667,7 @@ body {
 
 /*===================قسم الإحصائيات=======================*/
 
-/*الحاوية الكبيرة*/
+/* الحاوية الكبيرة */
 .stats-section {
     padding: 0;
     background-color: var(--color-bg-light);
@@ -1675,44 +1675,44 @@ body {
     position: relative;
 }
 
-/*حاوية المحتوى*/
+/* حاوية المحتوى */
 .stats-container {
-    max-width: 100%; 
+    max-width: 100%;
     margin: 0;
     padding: 0;
     position: relative;
 }
 
-/* الأسهم - يسار وثابتة */
+/* الأسهم */
 .stats-arrows {
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     gap: 10px;
-    padding-right: 60px; 
-    padding-left: 0;
-    margin-bottom: 0;
+    padding-right: 60px;
     height: 160px;
     background-color: var(--color-bg-light);
 }
 
-/* الصندوق الكحلي ممتد */
+/* الصندوق الكحلي */
 .stats-dark-card {
     background-color: var(--color-secondary);
-    border-radius: 0; /* بدون حواف دائرية */
-    padding: 50px 60px 40px 60px;
+    border-radius: 0;
+    padding: 80px 60px 160px 60px; /* مساحة لخروج الكروت */
     text-align: center;
     position: relative;
-    z-index: 2;
+    z-index: 1;
     width: 100%;
 }
-/*العنوان*/
+
+/* العنوان */
 .stats-title {
     color: var(--color-white) !important;
     font-size: 32px;
     margin-bottom: 10px;
 }
-/*الفقرة*/
+
+/* الفقرة */
 .stats-desc {
     color: rgba(255, 255, 255, 0.7);
     font-size: 15px;
@@ -1720,38 +1720,48 @@ body {
     margin: 0 auto 40px auto;
 }
 
-/* الكروت البيضاء */
+/* شبكة الكروت */
 .stats-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 25px;
     max-width: 1100px;
-    margin: 0 auto;
-    margin-bottom: -110px;
+    margin: 60px auto 0 auto;
+    position: relative;
+    z-index: 2;
 }
-/* --- حالة الظهور الافتراضية  --- */
+
+/* الكرت */
 .stat-item {
     background: #ffffff;
     padding: 35px 15px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    position: relative;
+    transform: translateY(80px); /* خروج احترافي */
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    transition: opacity 0.8s ease,
+                transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-/*   JavaScript بمجرد تمرير المستخدم للقسم */
+
+/* عند الظهور */
 .stat-item.revealed {
     opacity: 1;
     transform: translateY(0);
 }
-/*التحويم*/
+
+/* التحويم */
 .stat-item:hover {
-    transform: translateY(-10px) !important;
+    transform: translateY(70px);
 }
-/*الارقام على الكروت*/
+
+/* الأرقام */
 .stat-number {
     font-size: 36px;
     font-weight: 800;
@@ -1759,17 +1769,12 @@ body {
     margin-bottom: 5px;
     font-family: sans-serif;
 }
-/*النص في الكرت*/
+
+/* النص */
 .stat-text {
     font-size: 16px;
     color: var(--color-secondary);
     font-weight: bold;
 }
-/* --- الفراغ التعويضي --- */
-.stats-spacer {
-    height: 130px;
-    background-color: var(--color-bg-light);
-}
-
 /*===========================================*/
 

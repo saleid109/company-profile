@@ -294,32 +294,13 @@
         padding-bottom: 6px !important;
     }
 /* ===== الإحصائيات ===== */
-
-.stats-section {
-    padding: 100px 20px;
-    overflow: hidden;
-}
-.stats-dark-card {
-    padding: 40px 20px;
-}
-
 .stats-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-    .stats-arrows {
-        height: 80px;
-        padding-right: 20px;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .stat-item {
-        padding: 20px 10px;
-    }
-
-    .stat-number {
-        font-size: 26px;
+    .stats-dark-card {
+        padding: 60px 20px 120px 20px;
     }
 
 /* =========================================================
@@ -419,4 +400,5 @@
     .stats-spacer {
         height: 110px;
     }
+}
 }
