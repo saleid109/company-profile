@@ -12,7 +12,7 @@ function toggleMenu() {
     const body = document.body;
 
     navLinks.classList.toggle("open");
-    
+
     // دعم الطبقة الظليلة (Overlay) إذا وجدت
     if (overlay) overlay.classList.toggle('active');
 
@@ -46,11 +46,11 @@ function filterCards() {
 
     cards.forEach(card => {
         const match = card.dataset.main === currentMain && card.dataset.sub === currentSub;
-        
+
         if (match) {
             card.style.display = "block";
             // إزالة الكلاس ثم إضافته بعد تأخير لتفعيل الأنيميشن
-            card.classList.remove("active"); 
+            card.classList.remove("active");
             setTimeout(() => {
                 card.classList.add("active");
             }, delay);
@@ -110,7 +110,7 @@ function activateSub(subValue) {
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // --- أ. إدارة إغلاق القائمة عبر الـ Overlay ---
     const overlay = document.querySelector('.overlay');
     if (overlay) {
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger.addEventListener("click", (e) => {
             const submenu = dd.querySelector(".mega-menu-content") || dd.querySelector("ul");
             if (!submenu) return;
-            
+
             e.preventDefault();
             const isOpen = trigger.getAttribute("aria-expanded") === "true";
             trigger.setAttribute("aria-expanded", String(!isOpen));
@@ -234,4 +234,41 @@ document.addEventListener("DOMContentLoaded", () => {
         }, frameRate);
     }
 
+});
+
+/* --- فريق العمل --- */
+const teamSwiper = new Swiper('.team-swiper', {
+    slidesPerView: 4,       /* 4 كروت في نفس الوقت */
+    spaceBetween: 24,       /* مسافة بين الكروت */
+    direction: 'horizontal',
+    loop: true,             /* تكرار لا نهائي */
+    rtl: true,              /* دعم العربية */
+    navigation: {
+        nextEl: '.team-swiper .swiper-button-next',
+        prevEl: '.team-swiper .swiper-button-prev',
+    },
+    breakpoints: {
+        0: { slidesPerView: 1 },
+        480: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+    }
+});
+
+/* --- الفرق --- */
+const groupsSwiper = new Swiper('.groups-swiper', {
+    slidesPerView: 3,       /* 3 كروت في نفس الوقت */
+    spaceBetween: 24,
+    direction: 'horizontal',
+    loop: true,
+    rtl: true,
+    navigation: {
+        nextEl: '.groups-swiper .swiper-button-next',
+        prevEl: '.groups-swiper .swiper-button-prev',
+    },
+    breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+    }
 });
