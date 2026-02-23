@@ -677,53 +677,74 @@
       </div>
     </section>
 
-<!--====================قسم إحصائيات ================-->
-<section class="stats-section">
+<!--====================================-->
+
+<!-- ================= قسم الإحصائيات ================== -->
+
+<section class="stats-section" aria-labelledby="stats-heading">
   <div class="stats-container">
 
-    <!--  الأسهم الصفراء الثلاثة-->
-    <div class="stats-arrows">
-      <svg width="50" height="140" viewBox="0 0 50 140">
+    <!-- الأسهم الزخرفية — مخفية عن قارئ الشاشة -->
+    <div class="stats-arrows" aria-hidden="true">
+      <svg width="50" height="140" viewBox="0 0 50 140" focusable="false">
         <polygon points="25,0 50,60 33,60 33,140 17,140 17,60 0,60" fill="#f5e9b8" />
       </svg>
-      <svg width="65" height="160" viewBox="0 0 65 160">
+      <svg width="65" height="160" viewBox="0 0 65 160" focusable="false">
         <polygon points="32,0 65,70 43,70 43,160 22,160 22,70 0,70" fill="#f5e9b8" />
       </svg>
-      <svg width="50" height="130" viewBox="0 0 50 130">
+      <svg width="50" height="130" viewBox="0 0 50 130" focusable="false">
         <polygon points="25,0 50,55 33,55 33,130 17,130 17,55 0,55" fill="#f5e9b8" />
       </svg>
     </div>
 
     <!-- الصندوق الكحلي -->
     <div class="stats-dark-card">
-      <h2 class="stats-title">إحصائياتنا</h2>
+      <h2 class="stats-title" id="stats-heading">إحصائياتنا</h2>
       <p class="stats-desc">
         أرقامنا ليست مجرد إحصائيات، بل شواهد حقيقية على رؤيتنا ونموّنا وثقة عملائنا بنا.
       </p>
     </div>
 
-    <!-- الكروت -->
-  <div class="stats-cards-grid"> 
-<div class="stat-item" role="listitem">
-    <span class="stat-number" data-target="300">0</span>
-    <span class="stat-text">عضو</span>
-</div>
+    <!-- الكروت — ul/li الأصح دلالياً -->
+    <ul class="stats-cards-grid" role="list" aria-label="إحصائيات الشركة">
 
-<div class="stat-item" role="listitem">
-    <span class="stat-number" data-target="500">0</span>
-    <span class="stat-text">مشروع</span>
-</div>
+      <li class="stat-item">
+        <span
+          class="stat-number"
+          data-target="300"
+          aria-live="polite"
+          aria-label="300 عضو">0</span>
+        <span class="stat-text" aria-hidden="true">عضو</span>
+      </li>
 
-<div class="stat-item" role="listitem">
-    <span class="stat-number" data-target="200">0</span>
-    <span class="stat-text">عميل</span>
-</div>
+      <li class="stat-item">
+        <span
+          class="stat-number"
+          data-target="500"
+          aria-live="polite"
+          aria-label="500 مشروع">0</span>
+        <span class="stat-text" aria-hidden="true">مشروع</span>
+      </li>
 
-<div class="stat-item" role="listitem">
-    <span class="stat-number" data-target="150">0</span>
-    <span class="stat-text">مساهم</span>
-</div>
-</div> 
+      <li class="stat-item">
+        <span
+          class="stat-number"
+          data-target="200"
+          aria-live="polite"
+          aria-label="200 عميل">0</span>
+        <span class="stat-text" aria-hidden="true">عميل</span>
+      </li>
+
+      <li class="stat-item">
+        <span
+          class="stat-number"
+          data-target="150"
+          aria-live="polite"
+          aria-label="150 مساهم">0</span>
+        <span class="stat-text" aria-hidden="true">مساهم</span>
+      </li>
+
+    </ul>
   </div>
 </section>
 <!--===========================================-->
