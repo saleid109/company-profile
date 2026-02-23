@@ -1766,7 +1766,48 @@ body {
 /*==========================================*/
 /*==========عملائنا=======================*/
 
-.clients-section{
+/* تنسيق القسم العام */
+.clients-section {
     width: 100%;
+    max-width: 1284px; /* العرض المحدد في فيجما */
     margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    direction: rtl; /* لضمان محاذاة النص العربي */
+}
+
+.clients-container{
+    
+}
+
+/* تنسيق العنوان */
+.section-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* تنسيق شبكة الشعارات   */
+.logos-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* للسماح بنزول العناصر في الشاشات الصغيرة */
+    gap: 30px;
+}
+
+/* تنسيق الشعار الفردي */
+.logo-item img {
+    max-width: 150px; 
+    height: auto;
+    filter: grayscale(100%); 
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+/* تأثير عند تمرير الماوس */
+.logo-item img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
 }
