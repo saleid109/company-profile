@@ -1800,7 +1800,6 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 100px;
-    /* ← 100px من فيجما */
     list-style: none;
     margin: 0;
     padding: 0;
