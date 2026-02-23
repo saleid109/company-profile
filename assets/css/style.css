@@ -1792,6 +1792,7 @@ body {
     font-weight: bold;
     margin-bottom: 60px;
     color: var(--color-secondary);
+    text-align: center;
 }
 
 /* --- شبكة الشعارات --- */
@@ -1822,9 +1823,7 @@ body {
 /* --- تنسيق صورة الشعار --- */
 .logo-item img {
     max-width: 180px;
-    /* تكبير الشعار ليتناسب مع التصميم */
     height: auto;
-    /* بدون grayscale لأن التصميم يظهر الألوان الطبيعية */
     filter: none;
     opacity: 1;
     transition: transform 0.3s ease;
