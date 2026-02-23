@@ -1652,7 +1652,7 @@ body {
     display: inline-block;
     padding: 12px 35px;
     background-color: var(--color-secondary);
-    color:var(--color-white);
+    color: var(--color-white);
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
@@ -1722,7 +1722,7 @@ body {
 }
 
 .stat-item {
-    background:var(--color-white);
+    background: var(--color-white);
     padding: 35px 15px;
     border-radius: 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
@@ -1855,7 +1855,7 @@ body {
     padding: 64px 40px;
     text-align: center;
     direction: rtl;
-    background-color:var(--color-bg-light);
+    background-color: var(--color-bg-light);
 }
 
 /* --- تنسيق العنوان --- */
@@ -1920,3 +1920,215 @@ body {
     outline-offset: 4px;
 }
 
+/* =============================================
+   قسم فريق العمل - Team Section
+   ============================================= */
+
+/* --- تنسيق القسم العام --- */
+.team-section {
+    width: 100%;
+    max-width: 1284px;
+    margin: 0 auto;
+    padding: 64px 40px;
+    text-align: center;
+    direction: rtl;
+    background-color: var(--color-bg-light);
+}
+
+/* --- الكونتينر --- */
+.team-container {
+    width: 100%;
+    position: relative;
+}
+
+/* --- العنوان --- */
+.team-section .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 48px;
+    color: var(--color-secondary);
+    text-align: center;
+}
+
+/* --- كارت العضو --- */
+.team-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* --- الصورة الدائرية --- */
+.team-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #eef1f6;
+    /* خلفية رمادية فاتحة خلف الصورة */
+    margin: 0 auto 16px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* يحافظ على نسبة الصورة */
+    filter: none;
+}
+
+/* --- اسم العضو --- */
+.team-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-secondary);
+    margin-bottom: 6px;
+}
+
+/* --- المنصب --- */
+.team-role {
+    font-size: 14px;
+    color: #888;
+}
+
+/* --- أزرار Swiper --- */
+.team-swiper .swiper-button-prev,
+.team-swiper .swiper-button-next {
+    color: var(--color-secondary);
+    background: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-swiper .swiper-button-prev::after,
+.team-swiper .swiper-button-next::after {
+    font-size: 16px;
+    /* تصغير السهم الافتراضي */
+}
+
+
+/* =============================================
+   قسم الفرق - Groups Section
+   ============================================= */
+
+/* --- تنسيق القسم العام --- */
+.groups-section {
+    width: 100%;
+    max-width: 1284px;
+    margin: 0 auto;
+    padding: 64px 40px;
+    text-align: center;
+    direction: rtl;
+    background-color: var(--color-bg-light);
+}
+
+/* --- الكونتينر --- */
+.groups-container {
+    width: 100%;
+    position: relative;
+}
+
+/* --- العنوان --- */
+.groups-section .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 48px;
+    color: var(--color-secondary);
+    text-align: center;
+}
+
+/* --- كارت الفريق --- */
+.group-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: right;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.group-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* --- شعار الفريق --- */
+.group-logo {
+    margin-bottom: 16px;
+}
+
+.group-logo img {
+    max-width: 140px;
+    height: auto;
+    filter: none;
+}
+
+/* --- اسم الفريق --- */
+.group-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-secondary);
+    margin-bottom: 8px;
+}
+
+/* --- وصف الفريق --- */
+.group-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* --- تفاصيل الفريق (موقع، تخصص، أعضاء) --- */
+.group-meta {
+    display: flex;
+    flex-direction: row-reverse;
+    /* RTL */
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+}
+
+.group-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #555;
+}
+
+.group-meta span img {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- أزرار Swiper --- */
+.groups-swiper .swiper-button-prev,
+.groups-swiper .swiper-button-next {
+    color: var(--color-secondary);
+    background: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.groups-swiper .swiper-button-prev::after,
+.groups-swiper .swiper-button-next::after {
+    font-size: 16px;
+}
