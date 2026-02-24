@@ -1776,7 +1776,7 @@ body {
 /*====================قسم عملائنا  =====================*/
 
 /* --- تنسيق القسم العام --- */
-.clients-section {
+.clietsn-section {
     width: 100%;
     max-width: 1284px;
     margin: 0 auto;
@@ -1787,7 +1787,7 @@ body {
 }
 
 /* --- تنسيق العنوان --- */
-.section-title {
+.clietsn-title {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 60px;
@@ -1859,7 +1859,7 @@ body {
 }
 
 /* --- تنسيق العنوان --- */
-.partners-section .section-title {
+.partners-section .partners-title {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 60px;
@@ -1942,7 +1942,7 @@ body {
 }
 
 /* --- العنوان --- */
-.team-section .section-title {
+.team-section .team-title {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 48px;
@@ -2041,7 +2041,7 @@ body {
 }
 
 /* --- العنوان --- */
-.groups-section .section-title {
+.groups-section .groups-title {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 48px;
