@@ -2028,7 +2028,7 @@ body {
 .team-swiper .swiper-button-prev,
 .team-swiper .swiper-button-next {
     color: var(--color-secondary);
-    background: #ffffff;
+    background: var(--color-white);
     width: 40px;
     height: 40px;
     border-radius: 50%;
