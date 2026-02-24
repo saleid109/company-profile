@@ -1883,7 +1883,9 @@ body {
     align-items: center;
     padding: 16px;
     border-radius: 12px;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    /* إضافة transform  سلاسة حركة البداية والنهاية */
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 /* --- تنسيق صورة الشعار --- */
@@ -1898,13 +1900,15 @@ body {
 /* --- تأثير hover --- */
 
 .partners-section .logo-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.08); /* تكبير الحاوية بالكامل */
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     background: #f5f5f5;
 }
 
-.partners-section .logo-item:hover img {
-    transform: scale(1.05);
+.partners-section .logo-item img {
+    max-width: 180px;
+    height: auto;
+    transition: opacity 0.3s ease;
 }
 
 /* --- دعم مستخدمي الكيبورد --- */
