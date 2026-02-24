@@ -1990,6 +1990,26 @@ body {
     filter: none;
 }
 
+.team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- العنوان والمسافات --- */
+.team-swiper {
+    width: 100%;
+    max-width: 1377px; /* من لقطة الشاشة */
+    margin: 0 auto;
+}
+
+.team-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 64px; /* من قيمة الـ Gap في فيجما */
+    color: var(--color-secondary);
+}
+
 /* --- اسم العضو --- */
 .team-name {
     font-size: 16px;
