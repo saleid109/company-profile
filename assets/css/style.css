@@ -1684,22 +1684,22 @@ body {
     position: relative;
 }
 
+/*الكارد الرئيسي*/
 .stats-dark-card {
     background-color: var(--color-secondary);
     padding: 80px 60px 240px;
-    /*←الديسكتوب*/
     text-align: center;
     position: relative;
     z-index: 1;
 
 }
-
+/*العنوان*/
 .stats-title {
     color: var(--color-white);
     font-size: 40px;
     margin-bottom: 30px;
 }
-
+/*الفقرة*/
 .stats-desc {
     color: var(--color-bg-light);
     font-size: 22px;
@@ -1707,7 +1707,7 @@ body {
     margin: 0 auto 20px auto;
     font-weight: var(--weight-regular);
 }
-
+/*شبكة الكروت*/
 .stats-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1721,7 +1721,7 @@ body {
     z-index: 5;
     /* ظهور فوق الخلفية */
 }
-
+/*الكرت الابيض*/
 .stat-item {
     background: var(--color-white);
     padding: 35px 15px;
@@ -1811,7 +1811,6 @@ body {
 /* --- تنسيق عنصر الشعار --- */
 .logo-item {
     flex: 1;
-    /* كل شعار يأخذ مساحة متساوية */
     display: flex;
     justify-content: center;
     align-items: center;
