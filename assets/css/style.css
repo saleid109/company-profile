@@ -1790,9 +1790,10 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     text-align: center;
+    line-height: 45px;
 }
 
-/* العنوان - تم تعديل المحدد هنا */
+/*العنوان*/
 .clients-section .clients-title {
     font-size: 48px;
     font-weight: 700;
