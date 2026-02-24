@@ -1784,7 +1784,7 @@ body {
 }
 
 /* الحاوية الداخلية */
-.clients-section .stats-container {
+.clients-section  {
     max-width: 1284px;
     margin: 0 auto;
     padding: 0 80px; 
@@ -1792,12 +1792,12 @@ body {
 }
 
 /* العنوان */
-.section-title {
+.clients-section {
     font-size: 48px;
     font-weight: 700;
     line-height: 40px;
     margin-bottom: 120px; 
-    color: #000;
+    color: var(--color-secondary);
 }
 
 /* شبكة الشعارات */
