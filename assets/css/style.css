@@ -1999,14 +1999,14 @@ body {
 /* --- العنوان والمسافات --- */
 .team-swiper {
     width: 100%;
-    max-width: 1377px; /* من لقطة الشاشة */
+    max-width: 1377px; 
     margin: 0 auto;
 }
 
 .team-title {
     font-size: 32px;
     font-weight: 800;
-    margin-bottom: 64px; /* من قيمة الـ Gap في فيجما */
+    margin-bottom: 64px;
     color: var(--color-secondary);
 }
 
