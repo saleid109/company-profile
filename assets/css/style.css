@@ -1951,15 +1951,21 @@ body {
     text-align: center;
 }
 
+.swiper-slide {
+    height: auto !important;
+}
+
 /* --- كارت العضو --- */
 .team-card {
     background-color: var(--color-white);
     border-radius: 10px;
-    padding: 80px 24px 32px;
+    padding: 80px 24px 32px; /* 80px علشان الأفاتار */
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     position: relative;
-    margin-top: 60px;
+    margin-top: 0; /* احذف margin-top من هنا */
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .team-card:hover {
