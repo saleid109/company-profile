@@ -1778,49 +1778,50 @@ body {
 
 
 .clients-section {
-    width: 100%;
     background-color: var(--color-bg-light);
-    padding: 120px 0; /* أعلى وأسفل مطابق */
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
 
 /* الحاوية الداخلية */
-.clients-section  {
+.clients-section .stats-container {
     max-width: 1284px;
     margin: 0 auto;
-    padding: 0 80px; 
+    padding-left: 78px; 
+    padding-right: 78px;
     text-align: center;
 }
 
 /* العنوان */
 .clients-section {
+    font-family: var(--font-main);
     font-size: 48px;
     font-weight: 700;
     line-height: 40px;
-    margin-bottom: 120px; 
+    margin-bottom: 177px;
     color: var(--color-secondary);
 }
 
 /* شبكة الشعارات */
 .logos-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 140px; 
-    align-items: center;
-    justify-items: center;
+    display: flex;
+    justify-content: flex-start;
+    gap: 80px; 
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* إزالة التمدد */
+/* عنصر الشعار */
 .logo-item {
+    width: 180px; /* عرض ثابت لمنع التمدد */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .logo-item img {
-    width: 160px; 
+    width: 160px;
     height: auto;
 }
 
