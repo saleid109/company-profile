@@ -1889,7 +1889,7 @@ body {
     align-items: center;
     padding: 16px;
     border-radius: 12px;
-    /* إضافة transform  سلاسة حركة البداية والنهاية */
+    /* لسلاسة حركة البداية والنهاية */
     transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
