@@ -1954,12 +1954,12 @@ body {
 /* --- كارت العضو --- */
 .team-card {
     background-color: var(--color-white);
-    border-radius: 16px;
-    padding: 80px 24px 32px; 
+    border-radius: 10px;
+    padding: 80px 24px 32px;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     position: relative;
-    margin-top: 60px; 
+    margin-top: 60px;
 }
 
 .team-card:hover {
