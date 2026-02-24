@@ -1977,16 +1977,15 @@ body {
     left: 50%;
     transform: translateX(-50%);
     
-    background-color: #eef1f6;
     overflow: hidden;
-    border: 4px solid #ffffff; 
+    border: 4px solid varbg-light(--color-); 
 }
 
 .team-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* يحافظ على نسبة الصورة */
+    /* للحافظ على نسبة الصورة */
     filter: none;
 }
 
