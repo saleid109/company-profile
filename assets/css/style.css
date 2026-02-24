@@ -1775,70 +1775,43 @@ body {
 /*==========================================*/
 
 /*====================قسم عملائنا  =====================*/
-
 .clients-section {
-    background-color: var(--color-bg-light);
-    padding-top: 220px;
-    padding-bottom: 120px;
-    font-family: var(--font-main);
-    
-}
-
-/* الحاوية الداخلية */
-.clients-section {
-    max-width: 1284px;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    /* اللون المستخرج من صورة فيجما */
+    background-color: #F8F8F8; 
+    padding: 100px 0; /* مسافات عمودية متوازنة */
     text-align: center;
-    line-height: 45px;
 }
 
-/*العنوان*/
-.clients-section .clients-title {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 80px;
-    color: var(--color-secondary);
+.clients-title {
+    font-family: 'Tajawal', sans-serif; /* تأكد من استدعاء الخط */
+    font-size: 40px; /* حجم تقريبي بناءً على فيجما */
+    font-weight: 800;
+    color: #000080; /* اللون الكحلي الظاهر في الصورة */
+    margin-bottom: 60px; /* مسافة معقولة */
 }
 
-/* شبكة الشعارات */
 .logos-grid {
-    display: flex;
-    justify-content: center; 
-    flex-wrap: wrap;
-    gap: 60px; 
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* عنصر الشعار */
-.logo-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease;
-}
-
-.logo-item:hover {
-    transform: translateY(-5px); 
+    gap: 100px; 
+    list-style: none;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .logo-item img {
-    max-width: 160px;
+    width: 150px; 
     height: auto;
-    filter: grayscale(100%); 
-    opacity: 0.7;
-    transition: all 0.3s ease;
+    opacity: 0.6; 
+    transition: opacity 0.3s ease;
 }
 
 .logo-item img:hover {
-    filter: grayscale(0%);
     opacity: 1;
 }
-
 /*=========================================*/
 
 /*=================   قسم شركاء النجاح ================*/
