@@ -1775,20 +1775,26 @@ body {
 /*==========================================*/
 
 /*====================قسم عملائنا  =====================*/
+
+/* الحاوية العامة */
 .clients-section {
-    /* اللون المستخرج من صورة فيجما */
-    background-color: #F8F8F8; 
-    padding: 100px 0; /* مسافات عمودية متوازنة */
+    background-color: var(--color-bg-light); 
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*العنوان*/
+.clients-title {
+    font-family:var(--font-main);
+    font-size: 40px; 
+    font-weight: 800;
+    color: var(--color-secondary); 
+    margin-bottom: 60px;
     text-align: center;
 }
 
-.clients-title {
-    font-family: 'Tajawal', sans-serif; /* تأكد من استدعاء الخط */
-    font-size: 40px; /* حجم تقريبي بناءً على فيجما */
-    font-weight: 800;
-    color: #000080; /* اللون الكحلي الظاهر في الصورة */
-    margin-bottom: 60px; /* مسافة معقولة */
-}
+/* شبكة الشعارات */
 
 .logos-grid {
     display: flex;
@@ -1802,13 +1808,15 @@ body {
     flex-wrap: wrap;
 }
 
+/* صورة الشعار */
+
 .logo-item img {
     width: 150px; 
     height: auto;
     opacity: 0.6; 
     transition: opacity 0.3s ease;
 }
-
+/*الحركة*/
 .logo-item img:hover {
     opacity: 1;
 }
