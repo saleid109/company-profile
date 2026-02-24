@@ -1944,7 +1944,7 @@ body {
 
 /* --- العنوان --- */
 .team-section .team-title {
-    font-size: 32px;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 48px;
     color: var(--color-secondary);
