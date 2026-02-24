@@ -1808,6 +1808,22 @@ body {
     flex-wrap: wrap;
 }
 
+
+.logo-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* مساحة داخلية للخلفية التي ستظهر */
+    border-radius: 12px;
+    transition: all 0.3s ease; /* سلاسة لكل الخصائص */
+    cursor: pointer;
+}
+.logo-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    background-color: #f5f5f5;
+}
+
 /* صورة الشعار */
 
 .logo-item img {
