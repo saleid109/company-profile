@@ -1780,11 +1780,12 @@ body {
     background-color: var(--color-bg-light);
     padding-top: 220px;
     padding-bottom: 120px;
-    font-family: var(--font-main); 
+    font-family: var(--font-main);
+    
 }
 
 /* الحاوية الداخلية */
-.clients-section .stats-container {
+.clients-section {
     max-width: 1284px;
     margin: 0 auto;
     padding-left: 20px;
