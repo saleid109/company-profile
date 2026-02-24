@@ -1777,11 +1777,11 @@ body {
 /*====================قسم عملائنا  =====================*/
 
 /* --- تنسيق القسم العام --- */
-.clietsn-section {
+.clients-section {
     width: 100%;
     max-width: 1284px;
     margin: 0 auto;
-    padding: 64px 40px;
+    padding: 96px 40px; 
     text-align: center;
     direction: rtl;
     background-color: var(--color-bg-light);
@@ -1810,7 +1810,6 @@ body {
 
 /* --- تنسيق عنصر الشعار --- */
 .logo-item {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
