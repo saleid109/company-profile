@@ -1953,12 +1953,13 @@ body {
 
 /* --- كارت العضو --- */
 .team-card {
-    background-color: #ffffff;
+    background-color: var(--color-white);
     border-radius: 16px;
-    padding: 24px 16px;
+    padding: 80px 24px 32px; /* مساحة علوية أكبر لتناسب الصورة */
     text-align: center;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    margin-top: 60px; /* للسماح ببروز الصورة للأعلى */
 }
 
 .team-card:hover {
