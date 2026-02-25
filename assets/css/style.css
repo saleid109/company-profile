@@ -2002,6 +2002,9 @@ body {
     overflow: visible !important; /* ← المفتاح الأساسي */
 }
 
+.team-swiper .swiper-wrapper {
+    overflow: visible !important;
+}
 .team-title {
     font-size: 32px;
     font-weight: 800;
