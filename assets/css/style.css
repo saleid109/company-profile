@@ -1988,12 +1988,13 @@ body {
     height: 120px;
     border-radius: 50%;
     position: absolute;
-    top: -60px;
+    top: -50px; 
     left: 50%;
     transform: translateX(-50%);
     overflow: hidden;
     border: 6px solid var(--color-bg-light);
-    background: #fff;
+    background: var(--color-bg-light);
+    z-index: 1;
 }
 
 .team-avatar img {
