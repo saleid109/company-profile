@@ -2031,19 +2031,20 @@ body {
 }
 
 .team-swiper .swiper-button-prev {
-    right: -55px;   /* داخل الـ padding=55px */
+    right: 10px; /* نضعه داخل الـ padding الجانبي للـ container */
     left: auto;
 }
 
+/* السهم الأيسر (التالي في RTL) */
 .team-swiper .swiper-button-next {
-    left: -55px;    /* داخل الـ padding=55px */
+    left: 10px; /* نضعه داخل الـ padding الجانبي للـ container */
     right: auto;
 }
 
 .team-swiper .swiper-button-prev::after,
 .team-swiper .swiper-button-next::after {
-    font-size: 14px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: bold;
 }
 /*==============قسم الفرق - Groups Sectio=============== */
 
