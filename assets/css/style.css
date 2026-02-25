@@ -1924,134 +1924,126 @@ body {
 }
 /* ================= TEAM SECTION ================= */
 
+/* الإعدادات الأساسية للحاوية */
+.team-section {
+    width: 100%;
+    max-width: 1284px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+    direction: rtl;
+    background-color: var(--color-bg-light);
+}
 
-        /* --- تطبيق تعديلاتك على Team Section --- */
-        .team-section {
-            width: 100%;
-            max-width: 1284px;
-            margin: 0 auto;
-            padding: 80px 40px; /* تقليل البادنج الجانبي قليلاً لإعطاء مساحة للأزرار */
-            text-align: center;
-            direction: rtl;
-            background-color: var(--color-bg-light);
-            overflow: visible; /* مهم جداً لبروز الأفاتار والأزرار */
-        }
+.team-container {
+    position: relative;
+    width: 100%;
+    padding: 0 60px; /* مساحة آمنة للأسهم الجانبية */
+    box-sizing: border-box;
+}
 
-        .team-container {
-            position: relative;
-            width: 100%;
-        }
+.team-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 72px;
+    color: var(--color-secondary);
+}
 
-        .team-title {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 72px;
-            color: var(--color-secondary);
-        }
+/* إعدادات Swiper */
+.team-swiper {
+    width: 100%;
+    padding-top: 60px !important;    /* مساحة لبروز الأفاتار */
+    padding-bottom: 40px !important;
+    padding-left: 5px !important;     /* حماية ظل الكروت من القص */
+    padding-right: 5px !important;
+    overflow: hidden !important;      /* عودة للوضع الآمن */
+    margin: 0 !important;
+}
 
-        /* Swiper Base */
-        .team-swiper {
-            width: 100%;
-            padding-top: 60px !important; /* مساحة كافية لبروز الأفاتار */
-            padding-bottom: 40px !important;
-            overflow: visible !important; /* للسماح للأزرار بالخروج عن حدود السلايدر */
-        }
+/* تصميم البطاقة */
+.team-card {
+    position: relative;
+    background: var(--color-white);
+    border-radius: 16px;
+    padding: 80px 24px 32px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    overflow: visible; /* يسمح للأفاتار بالخروج من حدود الكارت */
+}
 
-        .team-swiper .swiper-wrapper {
-            overflow: visible !important;
-        }
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
 
-        .swiper-slide {
-            display: flex;
-            height: auto;
-        }
+/* تصميم الأفاتار */
+.team-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border: 6px solid var(--color-bg-light);
+    background: #eee;
+    z-index: 5;
+}
 
-        /* Card - مع تحسين الظل كما اقترحنا */
-        .team-card {
-            position: relative;
-            background: var(--color-white);
-            border-radius: 16px;
-            padding: 80px 20px 35px; /* تعديل البادنج العلوي ليناسب حجم الأفاتار */
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04); /* ظل أنعم وأكثر عصرية */
-            transition: all 0.3s ease;
-        }
+.team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .team-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
-        }
+/* النصوص */
+.team-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 8px;
+}
 
-        /* Avatar */
-        .team-avatar {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            position: absolute;
-            top: -55px; /* نصف القطر للخارج */
-            left: 50%;
-            transform: translateX(-50%);
-            overflow: hidden;
-            border: 6px solid var(--color-bg-light);
-            background: #eee;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
+.team-role {
+    font-size: 14px;
+    color: #888;
+}
 
-        .team-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+/* أزرار التنقل */
+.team-swiper .swiper-button-prev,
+.team-swiper .swiper-button-next {
+    width: 42px;
+    height: 42px;
+    background: var(--color-white);
+    border-radius: 50%;
+    color: var(--color-secondary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    top: calc(50% + 30px); /* موازنة مع بروز الأفاتار */
+    transform: translateY(-50%);
+    z-index: 10;
+}
 
-        /* Text */
-        .team-name {
-            font-size: 19px;
-            font-weight: 700;
-            color: var(--color-secondary);
-            margin-bottom: 8px;
-        }
+.team-swiper .swiper-button-prev {
+    right: -50px; /* التموضع داخل منطقة الـ padding الجانبي */
+    left: auto;
+}
 
-        .team-role {
-            font-size: 14px;
-            color: var(--color-text-muted);
-        }
+.team-swiper .swiper-button-next {
+    left: -50px;
+    right: auto;
+}
 
-        /* Navigation - تعديل التموضع لمنع التداخل */
-        .team-swiper .swiper-button-prev,
-        .team-swiper .swiper-button-next {
-            width: 45px;
-            height: 45px;
-            background: var(--color-white);
-            border-radius: 50%;
-            color: var(--color-secondary);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            top: 55%; /* توسيط بالنسبة للكارت */
-            z-index: 10;
-        }
+.team-swiper .swiper-button-prev::after,
+.team-swiper .swiper-button-next::after {
+    font-size: 14px;
+    font-weight: 900;
+}
 
-        /* إبعاد الأزرار للخارج لمنع تغطية الكروت */
-        .team-swiper .swiper-button-prev {
-            right: -25px; 
-        }
 
-        .team-swiper .swiper-button-next {
-            left: -25px;
-        }
-
-        /* تصغير حجم أيقونة السهم */
-        .team-swiper .swiper-button-prev:after,
-        .team-swiper .swiper-button-next:after {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        /* تحسين للشاشات الصغيرة */
-        @media (max-width: 768px) {
-            .team-section { padding: 60px 20px; }
-            .team-swiper .swiper-button-prev { right: 0; }
-            .team-swiper .swiper-button-next { left: 0; }
-        }
 /*==============قسم الفرق - Groups Sectio=============== */
 
 /* --- تنسيق القسم العام --- */

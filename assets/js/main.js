@@ -238,33 +238,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* --- فريق العمل --- */
 const teamSwiper = new Swiper('.team-swiper', {
-    slidesPerView: 4,
-    spaceBetween: 32,
-    speed: 600,
-    loop: false,
+    slidesPerView: 1,
+    spaceBetween: 25,
+    loop: true,
+    rtl: true, // تفعيل الاتجاه من اليمين لليسار
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-        0: {
-            slidesPerView: 1.2,
-            spaceBetween: 16,
-        },
-        576: {
+        640: {
             slidesPerView: 2,
-            spaceBetween: 20,
         },
-        992: {
-            slidesPerView: 3,
-            spaceBetween: 24,
-        },
-        1200: {
+        1024: {
             slidesPerView: 4,
-            spaceBetween: 32,
         }
     }
 });
+
 
 /* --- الفرق --- */
 const groupsSwiper = new Swiper('.groups-swiper', {
