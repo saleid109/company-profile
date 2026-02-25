@@ -1952,7 +1952,8 @@ body {
 }
 
 .swiper-slide {
-    height: auto !important;
+    height: auto;
+    display: flex;
 }
 
 /* --- كارت العضو --- */
