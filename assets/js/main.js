@@ -240,19 +240,26 @@ document.addEventListener("DOMContentLoaded", () => {
 const teamSwiper = new Swiper('.team-swiper', {
     slidesPerView: 4,
     spaceBetween: 24,
-    loop: true,
-    dir: 'rtl',
+    loop: false,
+    speed: 600,
     navigation: {
-        nextEl: '.team-swiper .swiper-button-next',
-        prevEl: '.team-swiper .swiper-button-prev',
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
-    // ← هذا السطر مهم جداً لمنع قطع الأفاتار
-    watchOverflow: true,
     breakpoints: {
-        0:    { slidesPerView: 1, spaceBetween: 16 },
-        576:  { slidesPerView: 2, spaceBetween: 16 },
-        768:  { slidesPerView: 3, spaceBetween: 20 },
-        1024: { slidesPerView: 4, spaceBetween: 24 },
+        0: {
+            slidesPerView: 1.2,
+            spaceBetween: 16,
+        },
+        576: {
+            slidesPerView: 2,
+        },
+        992: {
+            slidesPerView: 3,
+        },
+        1200: {
+            slidesPerView: 4,
+        }
     }
 });
 
