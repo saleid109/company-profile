@@ -1938,7 +1938,7 @@ body {
 .team-container {
     position: relative;
     width: 100%;
-    padding: 0 60px; /* مساحة آمنة للأسهم الجانبية */
+    padding: 0 55px;
     box-sizing: border-box;
 }
 
@@ -1952,12 +1952,16 @@ body {
 /* إعدادات Swiper */
 .team-swiper {
     width: 100%;
-    padding-top: 60px !important;    /* مساحة لبروز الأفاتار */
-    padding-bottom: 40px !important;
-    padding-left: 5px !important;     /* حماية ظل الكروت من القص */
-    padding-right: 5px !important;
-    overflow: hidden !important;      /* عودة للوضع الآمن */
+    padding-top: 60px !important;
+    padding-bottom: 20px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: visible !important;
     margin: 0 !important;
+}
+
+.team-swiper .swiper-wrapper {
+    overflow: visible !important;
 }
 
 /* تصميم البطاقة */
@@ -2022,18 +2026,17 @@ body {
     border-radius: 50%;
     color: var(--color-secondary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    top: calc(50% + 30px); /* موازنة مع بروز الأفاتار */
+    top: 55%;
     transform: translateY(-50%);
     z-index: 10;
 }
-
 .team-swiper .swiper-button-prev {
-    right: -50px; /* التموضع داخل منطقة الـ padding الجانبي */
+    right: -55px;   /* داخل الـ padding=55px */
     left: auto;
 }
 
 .team-swiper .swiper-button-next {
-    left: -50px;
+    left: -55px;    /* داخل الـ padding=55px */
     right: auto;
 }
 
@@ -2042,8 +2045,6 @@ body {
     font-size: 14px;
     font-weight: 900;
 }
-
-
 /*==============قسم الفرق - Groups Sectio=============== */
 
 /* --- تنسيق القسم العام --- */
