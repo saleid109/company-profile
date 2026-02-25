@@ -1923,28 +1923,37 @@ body {
     outline-offset: 4px;
 }
 /* ================= TEAM SECTION ================= */
-/* 1. منع القطع من الـ section الأب */
+/* ================= TEAM SECTION ================= */
+
 .team-section {
     width: 100%;
     max-width: 1284px;
     margin: 0 auto;
-    padding: 80px 0;        /* ← أزل الـ padding الجانبي من هنا */
+    padding: 80px 60px;
     text-align: center;
     direction: rtl;
     background-color: var(--color-bg-light);
-    overflow: visible;      /* ← مهم */
 }
 
-/* 2. الكونتينر يحمل الـ padding ويحتوي الأسهم */
 .team-container {
     position: relative;
-    padding: 0 70px;        /* ← مساحة للأسهم على الجانبين */
 }
 
-/* 3. الـ Swiper */
+.team-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 72px;
+    color: var(--color-secondary);
+}
+
+/* Swiper Base */
 .team-swiper {
     width: 100%;
-    padding: 50px 0 30px !important;   /* ← بدون padding جانبي */
+    padding: 100px 40px 40px;
+    overflow: visible !important;
+}
+
+.team-swiper.swiper {
     overflow: visible !important;
 }
 
@@ -1952,7 +1961,62 @@ body {
     overflow: visible !important;
 }
 
-/* 4. الأسهم خارج الـ swiper تماماً */
+.swiper-slide {
+    display: flex;
+    height: auto;
+}
+
+/* Card */
+.team-card {
+    position: relative;
+    background: var(--color-white);
+    border-radius: 16px;
+    padding: 96px 28px 40px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+}
+
+/* Avatar */
+.team-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border: 6px solid var(--color-bg-light);
+    background: #fff;
+}
+
+.team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text */
+.team-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 8px;
+}
+
+.team-role {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Navigation */
 .team-swiper .swiper-button-prev,
 .team-swiper .swiper-button-next {
     width: 42px;
@@ -1960,38 +2024,18 @@ body {
     background: var(--color-white);
     border-radius: 50%;
     color: var(--color-secondary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    top: 55%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    top: 50%;
     transform: translateY(-50%);
-    margin: 0;
 }
 
-/* RTL: الأسهم معكوسة */
 .team-swiper .swiper-button-prev {
-    right: -55px;   /* ← خارج الـ swiper لليمين */
-    left: auto;
+    right: -30px;
 }
 
 .team-swiper .swiper-button-next {
-    left: -55px;    /* ← خارج الـ swiper لليسار */
-    right: auto;
+    left: -30px;
 }
-
-@media (max-width: 768px) {
-    .team-container {
-        padding: 0 50px;
-    }
-    
-    .team-swiper .swiper-button-prev {
-        right: -40px;
-    }
-    
-    .team-swiper .swiper-button-next {
-        left: -40px;
-    }
-}
-
-
 /*==============قسم الفرق - Groups Sectio=============== */
 
 /* --- تنسيق القسم العام --- */
