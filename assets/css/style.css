@@ -1997,8 +1997,9 @@ body {
 /* --- العنوان والمسافات --- */
 .team-swiper {
     width: 100%;
-    padding: 80px 0 20px !important;
+    padding: 80px 16px 20px !important; /* padding جانبي يمنع قطع الكروت */
     margin: 0 auto;
+    overflow: visible !important; /* ← المفتاح الأساسي */
 }
 
 .team-title {
