@@ -239,9 +239,9 @@ document.addEventListener("DOMContentLoaded", () => {
 /* --- فريق العمل --- */
 const teamSwiper = new Swiper('.team-swiper', {
     slidesPerView: 4,
-    spaceBetween: 24,
-    loop: false,
+    spaceBetween: 32,
     speed: 600,
+    loop: false,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -253,12 +253,15 @@ const teamSwiper = new Swiper('.team-swiper', {
         },
         576: {
             slidesPerView: 2,
+            spaceBetween: 20,
         },
         992: {
             slidesPerView: 3,
+            spaceBetween: 24,
         },
         1200: {
             slidesPerView: 4,
+            spaceBetween: 32,
         }
     }
 });
