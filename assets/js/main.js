@@ -238,20 +238,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* --- فريق العمل --- */
 const teamSwiper = new Swiper('.team-swiper', {
-    slidesPerView: 4,       /* 4 كروت في نفس الوقت */
-    spaceBetween: 24,       /* مسافة بين الكروت */
-    direction: 'horizontal',
-    loop: true,             /* تكرار لا نهائي */
-    rtl: true,              /* دعم العربية */
+    slidesPerView: 4,
+    spaceBetween: 24,
+    loop: true,
+    dir: 'rtl',
     navigation: {
         nextEl: '.team-swiper .swiper-button-next',
         prevEl: '.team-swiper .swiper-button-prev',
     },
+    // ← هذا السطر مهم جداً لمنع قطع الأفاتار
+    watchOverflow: true,
     breakpoints: {
-        0: { slidesPerView: 1 },
-        480: { slidesPerView: 2 },
-        768: { slidesPerView: 3 },
-        1024: { slidesPerView: 4 },
+        0:    { slidesPerView: 1, spaceBetween: 16 },
+        576:  { slidesPerView: 2, spaceBetween: 16 },
+        768:  { slidesPerView: 3, spaceBetween: 20 },
+        1024: { slidesPerView: 4, spaceBetween: 24 },
     }
 });
 
