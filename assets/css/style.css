@@ -1963,7 +1963,7 @@ body {
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     position: relative;
-    margin-top: 0; /* احذف margin-top من هنا */
+    margin-top: 0; 
     height: 100%;
     box-sizing: border-box;
 }
