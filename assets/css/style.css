@@ -1928,14 +1928,16 @@ body {
     width: 100%;
     max-width: 1284px;
     margin: 0 auto;
-    padding: 80px 60px;
+    padding: 80px 80px;          /* ← padding جانبي للكارتات */
     text-align: center;
     direction: rtl;
     background-color: var(--color-bg-light);
+    overflow: visible;
 }
 
 .team-container {
     position: relative;
+    width: 100%;
 }
 
 .team-title {
@@ -1948,15 +1950,13 @@ body {
 /* Swiper Base */
 .team-swiper {
     width: 100%;
-    padding: 100px 40px 40px;
+    padding-top: 50px !important;    /* ← مساحة للأفاتار فقط */
+    padding-bottom: 20px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     overflow: visible !important;
 }
-
-.team-swiper.swiper {
-    overflow: visible !important;
-}
-
-.team-swiper .swiper-wrapper {
+.t.team-swiper .swiper-wrapper {
     overflow: visible !important;
 }
 
