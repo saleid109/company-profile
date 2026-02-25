@@ -1938,8 +1938,9 @@ body {
 .team-container {
     position: relative;
     width: 100%;
-    padding: 0 55px;
+    padding: 0 80px; /* زيادة المسافة من 60 إلى 80 لضمان عدم اللمس */
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .team-title {
@@ -1953,11 +1954,8 @@ body {
 .team-swiper {
     width: 100%;
     padding-top: 60px !important;
-    padding-bottom: 20px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    overflow: visible !important;
-    margin: 0 !important;
+    padding-bottom: 40px !important;
+    overflow: hidden !important; /* نعود للوضع الآمن لمنع قص الكروت */
 }
 
 .team-swiper .swiper-wrapper {
@@ -2020,16 +2018,18 @@ body {
 /* أزرار التنقل */
 .team-swiper .swiper-button-prev,
 .team-swiper .swiper-button-next {
-    width: 42px;
-    height: 42px;
-    background: var(--color-white);
+    width: 45px;
+    height: 45px;
+    background: #fff;
     border-radius: 50%;
-    color: var(--color-secondary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    top: 55%;
+    border: 1px solid #eee; /* إضافة إطار خفيف كما في الصورة */
+    color: #001a4d;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
+    z-index: 20; /* رفع الطبقة لتكون فوق كل شيء */
 }
+
 .team-swiper .swiper-button-prev {
     right: -55px;   /* داخل الـ padding=55px */
     left: auto;
