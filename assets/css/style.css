@@ -1946,9 +1946,10 @@ body {
 }
 
 /* Swiper Base */
+/* الجزء الخارج من الأفاتار فوق الكارت */
 .team-swiper {
     width: 100%;
-    padding: 100px 40px 40px;
+    padding: 50px 40px 30px !important; /* ← 50px = الجزء اللي فوق الكارت */
     overflow: visible !important;
 }
 
@@ -1970,11 +1971,12 @@ body {
     position: relative;
     background: var(--color-white);
     border-radius: 16px;
-    padding: 96px 28px 40px;
+    padding: 84px 28px 32px;  /* ← 84px = 70px جزء الأفاتار + 14px مسافة */
     width: 100%;
     text-align: center;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .team-card:hover {
