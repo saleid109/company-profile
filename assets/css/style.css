@@ -1939,7 +1939,7 @@ body {
 .team-container {
     position: relative;
     width: 100%;
-    padding: 0 60px; /* مساحة 60 بكسل من كل جانب للأسهم */
+    padding: 0 65px;
     box-sizing: border-box;
 }
 
@@ -2028,12 +2028,12 @@ body {
 }
 
 .team-swiper .swiper-button-prev {
-    right: -54px;
+    right: -62px;
     left: auto;
 }
 
 .team-swiper .swiper-button-next {
-    left: -54px;
+    left: -62px;
     right: auto;
 }
 
