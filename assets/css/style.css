@@ -1944,48 +1944,47 @@ body {
     padding: 80px 0;
     text-align: center;
     direction: rtl;
-    background: var(--color-bg-light);
 }
 
 .team-container {
     width: 100%;
     padding: 0 65px;
-    box-sizing: border-box;
 }
 
 .team-title {
     font-size: 36px;
     font-weight: 800;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
     color: #001a4d;
 }
 
-/* ===== Slider Wrapper ===== */
-.team-slider-wrapper {
+/* ===== Slider Row ===== */
+.team-slider-row {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-/* ===== Swiper ===== */
-.team-swiper {
+/*
+      The clip box:
+      - overflow: hidden  → clips cards left/right
+      - padding-top       → opens space ABOVE so avatars (position:absolute top:-50px) are visible
+      - margin-top        → compensate padding so outer layout stays flush
+    */
+.team-track-clip {
     flex: 1;
-    width: 0;
-    /* critical: prevents swiper from expanding beyond flex container */
-    overflow: visible !important;
-    padding-top: 70px !important;
+    min-width: 0;
+    overflow: hidden;
+    padding-top: 60px;
+    margin-top: -60px;
 }
 
-.swiper-wrapper {
+/* The moving track */
+.team-track {
     display: flex;
-    flex-direction: row !important;
-    /* override any RTL row-reverse */
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    flex-shrink: 0;
+    gap: 24px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
 /* ===== Card ===== */
@@ -1993,9 +1992,9 @@ body {
     position: relative;
     background: #fff;
     border-radius: 12px;
-    padding: 70px 24px 32px;
-    width: 100%;
-    max-width: 260px;
+    padding: 65px 24px 32px;
+    /* 4 cards: (100% - 3*24px gap) / 4 */
+    flex: 0 0 calc(25% - 18px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2012,21 +2011,17 @@ body {
 /* ===== Avatar ===== */
 .team-avatar {
     position: absolute;
-    top: -55px;
+    top: -50px;
     left: 50%;
     transform: translateX(-50%);
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid #f2f3f7;
     background: #dde1ea;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
 }
 
-/* Placeholder silhouette */
 .team-avatar .avatar-placeholder {
     width: 100%;
     height: 100%;
@@ -2034,12 +2029,6 @@ body {
     align-items: flex-end;
     justify-content: center;
     overflow: hidden;
-}
-
-.team-avatar .avatar-placeholder svg {
-    width: 75%;
-    height: auto;
-    margin-bottom: -2px;
 }
 
 .team-avatar img {
@@ -2052,44 +2041,39 @@ body {
 .team-name {
     font-size: 20px;
     font-weight: 700;
-    color: var(--color-text);
-    margin-top: 4px;
+    color: #1B2D45;
 }
 
 .team-role {
     font-size: 14px;
-    color: var(--color-muted);
+    color: #777;
 }
 
-/* ===== Buttons ===== */
-.team-btn-prev,
-.team-btn-next {
+/* ===== Nav Buttons ===== */
+.team-btn {
     flex-shrink: 0;
     width: 42px;
     height: 42px;
     border-radius: 50%;
     border: 1px solid #e0e0e0;
     background: #fff;
-    color: var(--color-text);
+    color: #1B2D45;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s, opacity 0.2s;
 }
 
-.team-btn-prev:hover,
-.team-btn-next:hover {
+.team-btn:hover:not(:disabled) {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     transform: scale(1.05);
 }
 
-.team-btn-prev.swiper-button-disabled,
-.team-btn-next.swiper-button-disabled {
-    opacity: 0.4;
+.team-btn:disabled {
+    opacity: 0.35;
     cursor: default;
-    pointer-events: none;
 }
 
 /*==============قسم الفرق - Groups Sectio=============== */

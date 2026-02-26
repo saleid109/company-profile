@@ -237,23 +237,64 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
-const teamSwiper = new Swiper('.team-swiper', {
-    slidesPerView: 4,
-    spaceBetween: 24,
-    dir: 'rtl',
-    navigation: {
-        nextEl: '.team-btn-next',
-        prevEl: '.team-btn-prev',
-        disabledClass: 'swiper-button-disabled',
-    },
-    breakpoints: {
-        0: { slidesPerView: 1 },
-        480: { slidesPerView: 2 },
-        768: { slidesPerView: 3 },
-        1024: { slidesPerView: 4 },
-    },
+const track = document.getElementById('team-track');
+const btnPrev = document.getElementById('btn-prev');
+const btnNext = document.getElementById('btn-next');
+
+let currentIndex = 0;
+
+function getVisibleCount() {
+    const w = window.innerWidth;
+    if (w >= 1024) return 4;
+    if (w >= 768) return 3;
+    if (w >= 480) return 2;
+    return 1;
+}
+
+function getStepWidth() {
+    const card = track.querySelector('.team-card');
+    if (!card) return 0;
+    // getBoundingClientRect gives actual rendered width
+    return card.getBoundingClientRect().width + 24; // +gap
+}
+
+function totalCards() {
+    return track.querySelectorAll('.team-card').length;
+}
+
+function maxIndex() {
+    return Math.max(0, totalCards() - getVisibleCount());
+}
+
+function updateSlider() {
+    const step = getStepWidth();
+    const offset = currentIndex * step;
+    // RTL: sliding forward means moving track in positive X direction
+    track.style.transform = `translateX(${offset}px)`;
+    btnPrev.disabled = currentIndex === 0;
+    btnNext.disabled = currentIndex >= maxIndex();
+}
+
+btnPrev.addEventListener('click', () => {
+    if (currentIndex > 0) { currentIndex--; updateSlider(); }
 });
 
+btnNext.addEventListener('click', () => {
+    if (currentIndex < maxIndex()) { currentIndex++; updateSlider(); }
+});
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        currentIndex = Math.min(currentIndex, maxIndex());
+        updateSlider();
+    }, 100);
+});
+
+// Wait for fonts/layout to settle
+window.addEventListener('load', updateSlider);
+updateSlider();
 
 
 /* --- الفرق --- */
