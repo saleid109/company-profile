@@ -1935,12 +1935,12 @@ body {
     background-color: var(--color-bg-light);
 }
 
+/* الحاوية التي تضمن وجود مساحة للأسهم */
 .team-container {
     position: relative;
     width: 100%;
-    padding: 0 80px; /* زيادة المسافة من 60 إلى 80 لضمان عدم اللمس */
+    padding: 0 60px; /* هذه المساحة هي "المنطقة الآمنة" للأسهم */
     box-sizing: border-box;
-    margin: 0 auto;
 }
 
 .team-title {
