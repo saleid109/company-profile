@@ -1953,9 +1953,12 @@ body {
 /* إعدادات Swiper */
 .team-swiper {
     width: 100%;
-    padding-top: 60px !important;
+    padding-top: 60px !important;    /* لبروز الأفاتار */
     padding-bottom: 40px !important;
-    overflow: hidden !important; /* نعود للوضع الآمن لمنع قص الكروت */
+    padding-left: 10px !important;   /* لحماية ظل الكروت */
+    padding-right: 10px !important;
+    overflow: hidden !important;      /* يمنع الكروت من الخروج لمنطقة الأسهم */
+    margin: 0 !important;
 }
 
 .team-swiper .swiper-wrapper {
@@ -1965,15 +1968,12 @@ body {
 /* تصميم البطاقة */
 .team-card {
     position: relative;
-    background: var(--color-white);
+    background: #fff;
     border-radius: 16px;
     padding: 80px 24px 32px;
     width: 100%;
-    text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
     box-sizing: border-box;
-    overflow: visible; /* يسمح للأفاتار بالخروج من حدود الكارت */
 }
 
 .team-card:hover {
@@ -1981,7 +1981,7 @@ body {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* تصميم الأفاتار */
+/* الأفاتار */
 .team-avatar {
     width: 110px;
     height: 110px;
@@ -1990,11 +1990,11 @@ body {
     top: -55px;
     left: 50%;
     transform: translateX(-50%);
-    overflow: hidden;
     border: 6px solid var(--color-bg-light);
+    overflow: hidden;
     background: #eee;
-    z-index: 5;
 }
+
 
 .team-avatar img {
     width: 100%;
@@ -2018,34 +2018,34 @@ body {
 /* أزرار التنقل */
 .team-swiper .swiper-button-prev,
 .team-swiper .swiper-button-next {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     background: #fff;
     border-radius: 50%;
-    border: 1px solid #eee; /* إضافة إطار خفيف كما في الصورة */
-    color: #001a4d;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    top: 50%;
+    color: var(--color-secondary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    top: 50%; /* توسيط عمودي بالنسبة للسلايدر */
     transform: translateY(-50%);
-    z-index: 20; /* رفع الطبقة لتكون فوق كل شيء */
+    z-index: 10;
 }
-
 .team-swiper .swiper-button-prev {
-    right: 10px; /* نضعه داخل الـ padding الجانبي للـ container */
+    right: -50px; /* يخرج عن السلايدر ويدخل في بادنج الـ container */
     left: auto;
 }
 
 /* السهم الأيسر (التالي في RTL) */
 .team-swiper .swiper-button-next {
-    left: 10px; /* نضعه داخل الـ padding الجانبي للـ container */
+    left: -50px; /* يخرج عن السلايدر ويدخل في بادنج الـ container */
     right: auto;
 }
 
+/* أيقونة السهم */
 .team-swiper .swiper-button-prev::after,
 .team-swiper .swiper-button-next::after {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 900;
 }
+
 /*==============قسم الفرق - Groups Sectio=============== */
 
 /* --- تنسيق القسم العام --- */
