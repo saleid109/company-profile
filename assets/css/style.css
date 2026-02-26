@@ -1987,19 +1987,19 @@ body {
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    position: absolute;
-    top: -55px;
-    left: 0 !important;
-    right: 0 !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    transform: none !important;
-    direction: ltr;
+    
+    /* ← تمركز بدون position absolute */
+    display: block;
+    margin: -55px auto 16px auto;  /* -55px يرفعه فوق الكارت */
+    position: relative;             /* relative بدل absolute */
+    
     overflow: hidden;
     border: 6px solid var(--color-bg-light, #f8f9fa);
     background: #eee;
     z-index: 5;
+    flex-shrink: 0;
 }
+
 .team-avatar img {
     width: 100%;
     height: 100%;
