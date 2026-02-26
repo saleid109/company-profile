@@ -1955,7 +1955,9 @@ body {
     font-size: 36px;
     font-weight: 800;
     margin-bottom: 70px;
-    color: #001a4d;
+    color: var(--color-secondary);
+    line-height: 40px; 
+
 }
 
 /* ===== Slider Row ===== */
@@ -1988,7 +1990,6 @@ body {
     background: #fff;
     border-radius: 12px;
     padding: 65px 24px 32px;
-    /* 4 cards: (100% - 3*24px gap) / 4 */
     flex: 0 0 calc(25% - 18px);
     display: flex;
     flex-direction: column;
@@ -2003,7 +2004,7 @@ body {
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== Avatar ===== */
+/* ===== افتار ===== */
 .team-avatar {
     position: absolute;
     top: -50px;
