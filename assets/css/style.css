@@ -1957,7 +1957,10 @@ body {
     padding-right: 4px !important;
     overflow: hidden !important;
     flex: 1;
-    margin-top: 0;  /* ← احذف margin-top السلبي */
+    
+    /* ← هذا السطر هو المفتاح */
+    clip-path: inset(-60px -10px -10px -10px);
+    /* يسمح بالخروج 60px للأعلى فقط، ويقطع الجانبين */
 }
 
 /* إعدادات السلايدر */
@@ -1967,10 +1970,10 @@ body {
     gap: 16px;
 }
 
-/* أضف wrapper للكارت يتجاوز حدود الـ swiper */
+/*  wrapper للكارت الـ  */
 .swiper-slide {
     overflow: visible !important;
-    padding-top: 55px;
+    padding-top: 0;  /* ← احذفه */
 }
 
 /* تصميم البطاقة */
