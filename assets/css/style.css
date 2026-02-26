@@ -1952,9 +1952,10 @@ body {
 
 /* إعدادات السلايدر */
 .team-swiper {
-    padding-top: 55px !important;   /* مساحة للجزء الخارج من الأفاتار */
+    padding-top: 55px !important;
     padding-bottom: 20px !important;
     overflow: hidden !important;
+    clip-path: inset(-55px 0 0 0); /* ← يسمح بالخروج للأعلى فقط */
     flex: 1;
 }
 
@@ -1989,12 +1990,9 @@ body {
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    
-    /* ← تمركز بدون position absolute */
     display: block;
-    margin: -55px auto 16px auto;  /* -55px يرفعه فوق الكارت */
-    position: relative;             /* relative بدل absolute */
-    
+    margin: -55px auto 16px auto;
+    position: relative;
     overflow: hidden;
     border: 6px solid var(--color-bg-light, #f8f9fa);
     background: #eee;
