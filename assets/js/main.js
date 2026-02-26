@@ -237,18 +237,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
-
 const teamSwiper = new Swiper('.team-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 25,
+    slidesPerView: 4,
+    spaceBetween: 24,
     loop: true,
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.team-btn-next',
+        prevEl: '.team-btn-prev',
     },
     breakpoints: {
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 4 }
+        0:    { slidesPerView: 1, spaceBetween: 16 },
+        640:  { slidesPerView: 2, spaceBetween: 20 },
+        1024: { slidesPerView: 4, spaceBetween: 24 },
     }
 });
 

@@ -1952,13 +1952,16 @@ body {
 
 /* إعدادات السلايدر */
 .team-swiper {
-    width: 100%;
-    padding-top: 60px !important;    /* لبروز الأفاتار */
-    padding-bottom: 40px !important;
-    padding-left: 5px !important;     /* لحماية ظل الكروت */
-    padding-right: 5px !important;
-    overflow: hidden !important;      /* يمنع تداخل الكروت مع الأسهم */
-    margin: 0 !important;
+    flex: 1;
+    padding-top: 60px !important;
+    padding-bottom: 20px !important;
+    overflow: hidden !important;
+}
+
+.team-slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 /* تصميم البطاقة */
@@ -2043,6 +2046,28 @@ body {
     font-weight: 900;
 }
 
+.team-btn-prev,
+.team-btn-next {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    color: var(--color-secondary);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+
+.team-btn-prev:hover,
+.team-btn-next:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
 
 /*==============قسم الفرق - Groups Sectio=============== */
 
