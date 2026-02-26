@@ -2030,21 +2030,6 @@ body {
     z-index: 10;
 }
 
-.team-swiper .swiper-button-prev {
-    right: -62px;
-    left: auto;
-}
-
-.team-swiper .swiper-button-next {
-    left: -62px;
-    right: auto;
-}
-
-.team-swiper .swiper-button-prev::after,
-.team-swiper .swiper-button-next::after {
-    font-size: 14px;
-    font-weight: 900;
-}
 
 .team-btn-prev,
 .team-btn-next {

@@ -242,7 +242,7 @@ const teamSwiper = new Swiper('.team-swiper', {
     spaceBetween: 24,
     loop: true,
     navigation: {
-        nextEl: '.team-btn-next',
+        nextEl: '.team-btn-next',   /* ← الأزرار الجديدة */
         prevEl: '.team-btn-prev',
     },
     breakpoints: {
