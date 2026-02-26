@@ -1989,8 +1989,11 @@ body {
     border-radius: 50%;
     position: absolute;
     top: -55px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transform: none;
     overflow: hidden;
     border: 6px solid var(--color-bg-light, #f8f9fa);
     background: #eee;
@@ -2016,7 +2019,7 @@ body {
     color: #888;
 }
 
-/* أزرار التنقل - تموضعها في المنطقة الآمنة */
+/* أزرار التنقل  */
 .team-swiper .swiper-button-prev,
 .team-swiper .swiper-button-next {
     width: 42px;
