@@ -1950,49 +1950,51 @@ body {
     color: var(--color-secondary, #001a4d);
 }
 
-/* إعدادات السلايدر الرئيسية */
 .team-swiper {
     padding-top: 0 !important;
     padding-bottom: 20px !important;
     padding-left: 4px !important;
     padding-right: 4px !important;
-    overflow: visible !important;
+    overflow: hidden !important;
+    
+    /* ← زيادة القطع الجانبي أكثر */
     clip-path: inset(-60px -100px -20px -100px);
+    
     flex: 1;
-    /* margin-top: -55px; ←◀◀ احذف هذه الخاصية */
+    margin-top: -55px;
 }
 
 /* إعدادات السلايدر */
 .team-slider-wrapper {
     display: flex;
-    align-items: center;
+    align-items: center;   /* ← غيّري flex-end إلى center */
     gap: 16px;
 }
 
-/* شريحة السلايدر */
+/*  wrapper للكارت الـ  */
 .swiper-slide {
     overflow: visible !important;
-    padding-top: 55px;  /* ◀◀ أضف padding-top بدلاً من margin في الكارد */
-    height: auto !important;
+    padding-top: 0;  /* ← احذفه */
 }
 
 /* تصميم البطاقة */
 .team-card {
-    position: relative;
+    position: relative;          /* ← مهم للأفاتار */
     background: #ffffff;
     border-radius: 10px;
     padding: 32px 24px;
-    display: flex;
+    display: flex;               /* ← flex وليس inline-flex */
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    width: 100%;
+    width: 100%;                 /* ← مهم */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     box-sizing: border-box;
-    /* margin-top: 55px; ←◀◀ احذف هذه الخاصية */
-    overflow: visible;
+    margin-top: 55px;            /* ← مهم للأفاتار */
 }
+
+
 
 .team-card:hover {
     transform: translateY(-8px);
@@ -2000,18 +2002,19 @@ body {
 }
 
 /* تصميم الأفاتار */
+
 .team-avatar {
     width: 123px;
     height: 119px;
     border-radius: 100px;
     position: absolute;
-    top: -55px;  /* هذا يعوض الـ padding-top في swiper-slide */
+    top: -55px;
     left: 0;
     right: 0;
     margin: 0 auto;
     overflow: hidden;
     border: 6px solid var(--color-bg-light, #f8f9fa);
-    background: #eee;
+    background: #eee;            /* ← احذف url(<path-to-image>) */
     z-index: 5;
 }
 
@@ -2027,7 +2030,6 @@ body {
     text-align: center;
     font-size: 24px;
     font-weight: 700;
-    /* margin-top: 50px; ←◀◀ احذف هذه الخاصية */
 }
 
 .team-role {
@@ -2037,7 +2039,7 @@ body {
     font-weight: 500;
 }
 
-/* أزرار التنقل */
+/* أزرار التنقل  */
 .team-btn-prev,
 .team-btn-next {
     flex-shrink: 0;
@@ -2053,14 +2055,19 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
-    margin-top: 0;
-    align-self: center;
+    margin-top: 0;  /* ← احذف margin-top */
+    align-self: center; /* ← يتوسط مع الكارت */
 }
+
+
 
 .team-btn-prev:hover,
 .team-btn-next:hover {
-    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
+
+/*==============قسم الفرق - Groups Sectio=============== */
+
 /* --- تنسيق القسم العام --- */
 .groups-section {
     width: 100%;
