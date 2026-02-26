@@ -2028,12 +2028,12 @@ body {
 }
 
 .team-swiper .swiper-button-prev {
-    right: -50px; /* خارج السلايدر داخل منطقة الـ padding */
+    right: -54px;
     left: auto;
 }
 
 .team-swiper .swiper-button-next {
-    left: -50px; /* خارج السلايدر داخل منطقة الـ padding */
+    left: -54px;
     right: auto;
 }
 

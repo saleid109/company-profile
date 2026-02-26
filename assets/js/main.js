@@ -242,7 +242,6 @@ const teamSwiper = new Swiper('.team-swiper', {
     slidesPerView: 1,
     spaceBetween: 25,
     loop: true,
-    rtl: true,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
