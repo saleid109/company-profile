@@ -268,8 +268,13 @@ function maxIndex() {
 
 function updateSlider() {
     const step = getStepWidth();
-    const offset = currentIndex * step;
-    // RTL: sliding forward means moving track in positive X direction
+    const visible = getVisibleCount();
+    const cards = totalCards();
+    // In RTL flex, cards are laid out right-to-left.
+    // The track starts shifted right by the total overflow amount.
+    // index=0 → show rightmost cards; increasing index slides left.
+    const totalOverflow = (cards - visible) * step;
+    const offset = totalOverflow - currentIndex * step;
     track.style.transform = `translateX(${offset}px)`;
     btnPrev.disabled = currentIndex === 0;
     btnNext.disabled = currentIndex >= maxIndex();
