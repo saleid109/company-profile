@@ -1965,12 +1965,7 @@ body {
     gap: 16px;
 }
 
-/*
-      The clip box:
-      - overflow: hidden  → clips cards left/right
-      - padding-top       → opens space ABOVE so avatars (position:absolute top:-50px) are visible
-      - margin-top        → compensate padding so outer layout stays flush
-    */
+
 .team-track-clip {
     flex: 1;
     min-width: 0;
