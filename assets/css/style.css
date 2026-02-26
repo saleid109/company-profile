@@ -1951,17 +1951,14 @@ body {
 }
 
 .team-swiper {
-    padding-top: 0 !important;
+    padding-top: 0 !important;     /* ← لا padding علوي */
     padding-bottom: 20px !important;
     padding-left: 4px !important;
     padding-right: 4px !important;
     overflow: hidden !important;
-    
-    /* ← زيادة القطع الجانبي أكثر */
-    clip-path: inset(-60px -100px -20px -100px);
-    
+    clip-path: inset(-60px -10px -10px -10px);
     flex: 1;
-    margin-top: -55px;
+    margin-top: -55px;             /* ← يعوض margin-top الكارت */
 }
 
 /* إعدادات السلايدر */
@@ -1979,21 +1976,19 @@ body {
 
 /* تصميم البطاقة */
 .team-card {
-    position: relative;
+    position: relative;          /* ← مهم للأفاتار */
     background: #ffffff;
     border-radius: 10px;
     padding: 32px 24px;
-    display: flex;
+    display: flex;               /* ← flex وليس inline-flex */
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    width: 100%;
+    width: 100%;                 /* ← مهم */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     box-sizing: border-box;
-    overflow: visible;
-    /* حساب دقيق للمسافة */
-    padding-top: calc(55px + 20px); /* 55px ارتفاع نصف الأفاتار + 20px مسافة إضافية */
+    margin-top: 55px;            /* ← مهم للأفاتار */
 }
 
 
@@ -2010,13 +2005,13 @@ body {
     height: 119px;
     border-radius: 100px;
     position: absolute;
-    top: -55px;  /* نصف ارتفاع الأفاتار تقريباً */
+    top: -55px;
     left: 0;
     right: 0;
     margin: 0 auto;
     overflow: hidden;
     border: 6px solid var(--color-bg-light, #f8f9fa);
-    background: #eee;
+    background: #eee;            /* ← احذف url(<path-to-image>) */
     z-index: 5;
 }
 
@@ -2032,8 +2027,8 @@ body {
     text-align: center;
     font-size: 24px;
     font-weight: 700;
-    margin-top: 0; /* لا نحتاج margin إضافي هنا */
 }
+
 .team-role {
     color: #888;
     text-align: center;

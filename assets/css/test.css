@@ -1,268 +1,145 @@
-/* قسم فريق العمل */
+
+/* ================= TEAM SECTION ================= */
+/* الحاوية الرئيسية للقسم */
 .team-section {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e9edf5 100%);
-    overflow: hidden;
+    width: 100%;
+    max-width: 1284px;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
     direction: rtl;
+    background-color: var(--color-bg-light, #f8f9fa);
 }
 
+/* الحاوية التي توفر مساحة للأسهم الجانبية */
 .team-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+    position: relative;
+    width: 100%;
+    padding: 0 65px;
+    box-sizing: border-box;
 }
 
 .team-title {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 3rem;
-    text-align: center;
-    font-weight: 600;
-    position: relative;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 72px;
+    color: var(--color-secondary, #001a4d);
 }
 
-.team-title::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: #0078d7;
-    border-radius: 2px;
+.team-swiper {
+    padding-top: 0 !important;
+    padding-bottom: 20px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    overflow: hidden !important;
+    
+    /* ← زيادة القطع الجانبي أكثر */
+    clip-path: inset(-60px -100px -20px -100px);
+    
+    flex: 1;
+    margin-top: -55px;
 }
 
-/* Wrapper للسلايدر */
+/* إعدادات السلايدر */
 .team-slider-wrapper {
     display: flex;
     align-items: center;
-    gap: 20px;
-    position: relative;
-    margin: 0 auto;
+    gap: 16px;
 }
 
-/* أزرار التنقل */
-.team-btn-prev,
-.team-btn-next {
-    background: white;
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    color: #0078d7;
-    flex-shrink: 0;
-    z-index: 10;
-}
-
-.team-btn-prev:hover,
-.team-btn-next:hover {
-    background: #0078d7;
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 120, 215, 0.3);
-}
-
-.team-btn-prev:active,
-.team-btn-next:active {
-    transform: scale(0.95);
-}
-
-/* Swiper */
-.team-swiper {
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 0;
-}
-
-.swiper-wrapper {
-    display: flex;
-    align-items: stretch;
-}
-
+/*  wrapper للكارت الـ  */
 .swiper-slide {
-    height: auto;
-    display: flex;
+    overflow: visible !important;
+    padding-top: 0;  /* ← احذفه */
 }
 
-/* بطاقة العضو */
+/* تصميم البطاقة */
 .team-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
-    text-align: center;
-    width: 100%;
-    padding-bottom: 25px;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    overflow: visible;
+    /* حساب دقيق للمسافة */
+    padding-top: calc(55px + 20px); /* 55px ارتفاع نصف الأفاتار + 20px مسافة إضافية */
 }
+
+
 
 .team-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 120, 215, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* تصميم الأفاتار */
+
 .team-avatar {
-    width: 100%;
-    aspect-ratio: 1;
+    width: 123px;
+    height: 119px;
+    border-radius: 100px;
+    position: absolute;
+    top: -55px;  /* نصف ارتفاع الأفاتار تقريباً */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     overflow: hidden;
-    background: linear-gradient(135deg, #0078d7, #00c6ff);
-    padding: 5px;
+    border: 6px solid var(--color-bg-light, #f8f9fa);
+    background: #eee;
+    z-index: 5;
 }
 
 .team-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-    border-radius: 15px 15px 0 0;
 }
 
-.team-card:hover .team-avatar img {
-    transform: scale(1.05);
-}
-
+/* نصوص البطاقة */
 .team-name {
-    font-size: 1.4rem;
-    color: #333;
-    margin: 20px 0 5px;
-    font-weight: 600;
-    padding: 0 15px;
+    color: var(--color-secondary, #1B2D45);
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 0; /* لا نحتاج margin إضافي هنا */
 }
-
 .team-role {
-    font-size: 1rem;
-    color: #0078d7;
-    margin: 0 0 15px;
+    color: #888;
+    text-align: center;
+    font-size: 16px;
     font-weight: 500;
-    padding: 0 15px;
-    position: relative;
-    display: inline-block;
 }
 
-.team-role::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 2px;
-    background: #0078d7;
-    opacity: 0.5;
+/* أزرار التنقل  */
+.team-btn-prev,
+.team-btn-next {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    color: var(--color-secondary);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    margin-top: 0;  /* ← احذف margin-top */
+    align-self: center; /* ← يتوسط مع الكارت */
 }
 
-/* تصميم متجاوب */
-@media (max-width: 1024px) {
-    .team-container {
-        max-width: 95%;
-    }
-    
-    .team-title {
-        font-size: 2.2rem;
-    }
-}
 
-@media (max-width: 768px) {
-    .team-section {
-        padding: 3rem 0;
-    }
-    
-    .team-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    
-    .team-btn-prev,
-    .team-btn-next {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .team-btn-prev svg,
-    .team-btn-next svg {
-        width: 8px;
-        height: 14px;
-    }
-    
-    .team-name {
-        font-size: 1.2rem;
-    }
-    
-    .team-role {
-        font-size: 0.9rem;
-    }
-}
 
-@media (max-width: 480px) {
-    .team-title {
-        font-size: 1.8rem;
-    }
-    
-    .team-card {
-        border-radius: 15px;
-    }
-}
-
-/* دعم المتصفحات القديمة */
-@supports not (backdrop-filter: blur(5px)) {
-    .team-card {
-        background: white;
-    }
-}
-
-/* تخصيص Swiper */
-.swiper-button-disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.swiper-button-disabled:hover {
-    background: white;
-    color: #0078d7;
-    transform: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* تأثيرات إضافية */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.team-card {
-    animation: fadeIn 0.6s ease-out forwards;
-}
-
-.swiper-slide:nth-child(2) .team-card {
-    animation-delay: 0.1s;
-}
-
-.swiper-slide:nth-child(3) .team-card {
-    animation-delay: 0.2s;
-}
-
-.swiper-slide:nth-child(4) .team-card {
-    animation-delay: 0.3s;
-}
-
-.swiper-slide:nth-child(5) .team-card {
-    animation-delay: 0.4s;
+.team-btn-prev:hover,
+.team-btn-next:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
