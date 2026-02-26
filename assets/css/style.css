@@ -1952,10 +1952,10 @@ body {
 
 /* إعدادات السلايدر */
 .team-swiper {
-    flex: 1;
-    padding-top: 60px !important;
+    padding-top: 55px !important;   /* مساحة للجزء الخارج من الأفاتار */
     padding-bottom: 20px !important;
     overflow: hidden !important;
+    flex: 1;
 }
 
 .team-slider-wrapper {
@@ -1969,12 +1969,14 @@ body {
     position: relative;
     background: #ffffff;
     border-radius: 16px;
-    padding: 80px 24px 32px;
+    padding: 0 24px 32px;    /* ← احذف padding-top، الأفاتار سيتكفل بالمسافة */
+    padding-top: 0 !important;
     width: 100%;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     box-sizing: border-box;
+    overflow: visible;
 }
 
 .team-card:hover {
