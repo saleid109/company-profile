@@ -1952,10 +1952,10 @@ body {
 
 /* إعدادات السلايدر */
 .team-swiper {
-    padding-top: 55px !important;
+    padding-top: 55px !important;   /* ← مساحة للأفاتار الخارج */
     padding-bottom: 20px !important;
-    overflow: hidden !important;
-    clip-path: inset(-55px 0 0 0); /* ← يسمح بالخروج للأعلى فقط */
+    overflow: visible !important;
+    clip-path: none !important;
     flex: 1;
 }
 
@@ -1963,18 +1963,17 @@ body {
     display: flex;
     align-items: center;
     gap: 16px;
-    overflow: hidden;   /* ← يقطع الجانبين */
-    padding-top: 55px;  /* ← يعطي مساحة للأفاتار فوق */
-    margin-top: -55px;  /* ← يعوض الـ padding */
+    overflow: visible;
+    padding-top: 0;
+    margin-top: 0;
 }
-
 /* تصميم البطاقة */
 .team-card {
     position: relative;
     background: #ffffff;
     border-radius: 16px;
-    padding: 0 24px 32px;    /* ← احذف padding-top، الأفاتار سيتكفل بالمسافة */
-    padding-top: 0 !important;
+    padding: 32px 24px;          /* ← 32px من الأعلى كما في Figma */
+    padding-top: 32px !important;
     width: 100%;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -1993,14 +1992,15 @@ body {
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    display: block;
-    margin: -55px auto 16px auto;
-    position: relative;
+    position: absolute;         /* ← عودة لـ absolute */
+    top: -55px;                 /* ← يخرج نصفه فوق الكارت */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     overflow: hidden;
     border: 6px solid var(--color-bg-light, #f8f9fa);
     background: #eee;
     z-index: 5;
-    flex-shrink: 0;
 }
 
 .team-avatar img {
