@@ -1394,7 +1394,7 @@ body {
 
 /* عمود نقطة صعود */
 .us-col {
-    background-color: var(--color-secondary);
+    background-color:var(--color-secondary);
     color: var(--color-white);
     width: 160px;
     min-width: 160px;
@@ -1693,14 +1693,12 @@ body {
     z-index: 1;
 
 }
-
 /*العنوان*/
 .stats-title {
     color: var(--color-white);
     font-size: 40px;
     margin-bottom: 30px;
 }
-
 /*الفقرة*/
 .stats-desc {
     color: var(--color-bg-light);
@@ -1709,7 +1707,6 @@ body {
     margin: 0 auto 20px auto;
     font-weight: var(--weight-regular);
 }
-
 /*شبكة الكروت*/
 .stats-cards-grid {
     display: grid;
@@ -1724,7 +1721,6 @@ body {
     z-index: 5;
     /* ظهور فوق الخلفية */
 }
-
 /*الكرت الابيض*/
 .stat-item {
     background: var(--color-white);
@@ -1782,19 +1778,18 @@ body {
 
 /* الحاوية العامة */
 .clients-section {
-    background-color: var(--color-bg-light);
+    background-color: var(--color-bg-light); 
     padding: 100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 /*العنوان*/
 .clients-title {
-    font-family: var(--font-main);
-    font-size: 40px;
+    font-family:var(--font-main);
+    font-size: 40px; 
     font-weight: 800;
-    color: var(--color-secondary);
+    color: var(--color-secondary); 
     margin-bottom: 60px;
     text-align: center;
 }
@@ -1805,7 +1800,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 100px; 
     list-style: none;
     padding: 0;
     max-width: 1200px;
@@ -1818,29 +1813,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    /* مساحة داخلية للخلفية التي ستظهر */
+    padding: 20px; /* مساحة داخلية للخلفية التي ستظهر */
     border-radius: 12px;
-    transition: all 0.3s ease;
-    /* سلاسة لكل الخصائص */
+    transition: all 0.3s ease; /* سلاسة لكل الخصائص */
     cursor: pointer;
 }
-
 .logo-item:hover {
     transform: translateY(-6px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     background-color: #f5f5f5;
 }
 
 /* صورة الشعار */
 
 .logo-item img {
-    width: 150px;
+    width: 150px; 
     height: auto;
-    opacity: 0.6;
+    opacity: 0.6; 
     transition: opacity 0.3s ease;
 }
-
 /*الحركة*/
 .logo-item img:hover {
     opacity: 1;
@@ -1848,12 +1839,9 @@ body {
 
 /* --- دعم مستخدمي الكيبورد (وصولية) --- */
 .logo-item img:focus-visible {
-    outline: 2px solid #005fcc;
-    /* إطار ظاهر عند التنقل بالكيبورد */
-    outline-offset: 4px;
-    /* مسافة بين الإطار والصورة */
+  outline: 2px solid #005fcc; /* إطار ظاهر عند التنقل بالكيبورد */
+  outline-offset: 4px;        /* مسافة بين الإطار والصورة */
 }
-
 /*=========================================*/
 
 /*=================   قسم شركاء النجاح ================*/
@@ -1963,42 +1951,46 @@ body {
 }
 
 .team-swiper {
-    padding-top: 0 !important;
+    padding-top: 0 !important;     /* ← لا padding علوي */
     padding-bottom: 20px !important;
     padding-left: 4px !important;
     padding-right: 4px !important;
     overflow: hidden !important;
-    /* ← زيادة القطع الجانبي لإظهار النص كاملاً */
-    clip-path: inset(-60px -20px -20px -20px);
+    clip-path: inset(-60px -10px -10px -10px);
     flex: 1;
-    margin-top: -55px;
+    margin-top: -55px;             /* ← يعوض margin-top الكارت */
 }
 
 /* إعدادات السلايدر */
 .team-slider-wrapper {
     display: flex;
-    align-items: center;
-    /* ← غيّري flex-end إلى center */
+    align-items: center;   /* ← غيّري flex-end إلى center */
     gap: 16px;
 }
 
 /*  wrapper للكارت الـ  */
 .swiper-slide {
     overflow: visible !important;
-    padding-top: 0;
-    /* ← احذفه */
+    padding-top: 0;  /* ← احذفه */
 }
 
 /* تصميم البطاقة */
 .team-card {
-    display: inline-flex;
-    padding: 32px 8px;
+    position: relative;          /* ← مهم للأفاتار */
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 32px 24px;
+    display: flex;               /* ← flex وليس inline-flex */
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    border-radius: 10px;
-    background: var(--Base-White, #FFF);
+    width: 100%;                 /* ← مهم */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    margin-top: 55px;            /* ← مهم للأفاتار */
 }
+
 
 
 .team-card:hover {
@@ -2011,7 +2003,7 @@ body {
 .team-avatar {
     width: 123px;
     height: 119px;
-    border-radius: 50%;
+    border-radius: 100px;
     position: absolute;
     top: -55px;
     left: 0;
@@ -2019,10 +2011,8 @@ body {
     margin: 0 auto;
     overflow: hidden;
     border: 6px solid var(--color-bg-light, #f8f9fa);
-    background: #eee;
+    background: #eee;            /* ← احذف url(<path-to-image>) */
     z-index: 5;
-    border-radius: 100px;
-    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 }
 
 .team-avatar img {
@@ -2033,23 +2023,17 @@ body {
 
 /* نصوص البطاقة */
 .team-name {
-    color: var(--text, #1B2D45);
+    color: var(--color-secondary, #1B2D45);
     text-align: center;
-    font-family: Tajawal;
     font-size: 24px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
 }
 
 .team-role {
-    color: var(--text, #1B2D45);
+    color: #888;
     text-align: center;
-    font-family: Tajawal;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
-    line-height: normal;
 }
 
 /* أزرار التنقل  */
@@ -2062,23 +2046,21 @@ body {
     border: 1px solid #e0e0e0;
     background: #fff;
     color: var(--color-secondary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
-    margin-top: 0;
-    /* ← احذف margin-top */
-    align-self: center;
-    /* ← يتوسط مع الكارت */
+    margin-top: 0;  /* ← احذف margin-top */
+    align-self: center; /* ← يتوسط مع الكارت */
 }
 
 
 
 .team-btn-prev:hover,
 .team-btn-next:hover {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
 /*==============قسم الفرق - Groups Sectio=============== */
