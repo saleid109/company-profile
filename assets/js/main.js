@@ -239,16 +239,16 @@ document.addEventListener("DOMContentLoaded", () => {
 /* --- فريق العمل --- */
 const teamSwiper = new Swiper('.team-swiper', {
     slidesPerView: 4,
-    spaceBetween: 24,
+    spaceBetween: 24, // المسافة الوردية في الصورة الثانية
     loop: true,
     navigation: {
-        nextEl: '.team-btn-next',   /* ← الأزرار الجديدة */
+        nextEl: '.team-btn-next',
         prevEl: '.team-btn-prev',
     },
     breakpoints: {
-        0:    { slidesPerView: 1, spaceBetween: 16 },
-        640:  { slidesPerView: 2, spaceBetween: 20 },
-        1024: { slidesPerView: 4, spaceBetween: 24 },
+        0:    { slidesPerView: 1.2, centeredSlides: true },
+        640:  { slidesPerView: 2 },
+        1024: { slidesPerView: 4 },
     }
 });
 

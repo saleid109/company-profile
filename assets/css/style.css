@@ -1936,124 +1936,120 @@ body {
 }
 
 /* ================= TEAM SECTION ================= */
-
+/* ================= TEAM SECTION ================= */
 .team-section {
     width: 100%;
-    max-width: 1284px;
+    max-width: 1320px; /* زيادة قليلاً لتناسب الحواف */
     margin: 0 auto;
-    padding: 80px 0;
-    text-align: center;
+    padding: 80px 20px;
     direction: rtl;
-    background: var(--color-bg-light);
-}
-
-.team-container {
-    width: 100%;
-    padding: 0 65px;
-    box-sizing: border-box;
+    background-color: #F9FAFB; /* لون الخلفية حسب الصورة */
 }
 
 .team-title {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 800;
-    margin-bottom: 60px;
+    margin-bottom: 80px; /* مساحة كافية قبل الكروت */
     color: #001a4d;
+    text-align: center;
 }
 
-/* ===== Slider Wrapper ===== */
-
-.team-slider-wrapper {
+.team-container {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
 }
 
-/* ===== Swiper ===== */
-
+/* حل مشكلة اختفاء الصور العلوية */
 .team-swiper {
-    flex: 1;
-    overflow: hidden;
+    width: 100%;
+    padding-top: 60px !important; /* مساحة لنصف الأفاتار العلوي */
+    padding-bottom: 30px !important;
+    overflow: visible !important; /* للسماح بالظل والأفاتار بالظهور */
 }
 
 .swiper-slide {
-    overflow: visible;
+    height: auto; /* ليتناسب طول الكروت */
 }
 
-/* ===== Card ===== */
+/* تصميم البطاقة */
 .team-card {
     position: relative;
-    background: #fff;
+    background: #ffffff;
     border-radius: 12px;
-    padding: 90px 24px 32px;
-    width: 100%;
-    max-width: 260px;
+    padding: 32px 24px; /* التزام بمقاسات الصورة 32px */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    transition: 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease;
+    text-align: center;
+    margin-top: 0; 
 }
 
-.team-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-}
-
-/* ===== Avatar ===== */
+/* تصميم الأفاتار الدائري خلف الصورة */
 .team-avatar {
+    width: 110px;
+    height: 110px;
+    background: #F1F3F5; /* الدائرة الرمادية خلف الصورة */
+    border-radius: 50%;
     position: absolute;
-    top: -60px;
+    top: -55px; /* نصف الارتفاع للخروج للأعلى */
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 6px solid #f8f9fa;
-    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid #F9FAFB; /* نفس لون خلفية السكشن لتبدو مقصوصة */
+    z-index: 10;
 }
 
 .team-avatar img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    border-radius: 50%;
 }
 
-/* ===== Text ===== */
-
+/* النصوص */
 .team-name {
+    color: #1B2D45;
     font-size: 22px;
     font-weight: 700;
-    color: #1B2D45;
+    margin-top: 40px; /* مساحة لتعويض مكان الأفاتار */
+    margin-bottom: 8px;
 }
 
 .team-role {
-    font-size: 15px;
-    color: #777;
+    color: #8E9BAE;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
 }
 
-/* ===== Buttons ===== */
-
+/* أزرار التنقل */
 .team-btn-prev,
 .team-btn-next {
-    width: 42px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #E5E7EB;
     background: #fff;
     color: #1B2D45;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: 0.2s;
+    z-index: 20;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
 }
 
 .team-btn-prev:hover,
 .team-btn-next:hover {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    background: #1B2D45;
+    color: #fff;
 }
 
 /*==============قسم الفرق - Groups Sectio=============== */
