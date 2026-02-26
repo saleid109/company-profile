@@ -1950,6 +1950,16 @@ body {
     color: var(--color-secondary, #001a4d);
 }
 
+.team-swiper {
+    padding-top: 55px !important;
+    padding-bottom: 20px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    overflow: hidden !important;
+    flex: 1;
+    margin-top: 0;  /* ← احذف margin-top السلبي */
+}
+
 /* إعدادات السلايدر */
 .team-slider-wrapper {
     display: flex;
