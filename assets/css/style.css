@@ -1394,7 +1394,7 @@ body {
 
 /* عمود نقطة صعود */
 .us-col {
-    background-color:var(--color-secondary);
+    background-color: var(--color-secondary);
     color: var(--color-white);
     width: 160px;
     min-width: 160px;
@@ -1693,12 +1693,14 @@ body {
     z-index: 1;
 
 }
+
 /*العنوان*/
 .stats-title {
     color: var(--color-white);
     font-size: 40px;
     margin-bottom: 30px;
 }
+
 /*الفقرة*/
 .stats-desc {
     color: var(--color-bg-light);
@@ -1707,6 +1709,7 @@ body {
     margin: 0 auto 20px auto;
     font-weight: var(--weight-regular);
 }
+
 /*شبكة الكروت*/
 .stats-cards-grid {
     display: grid;
@@ -1721,6 +1724,7 @@ body {
     z-index: 5;
     /* ظهور فوق الخلفية */
 }
+
 /*الكرت الابيض*/
 .stat-item {
     background: var(--color-white);
@@ -1778,18 +1782,19 @@ body {
 
 /* الحاوية العامة */
 .clients-section {
-    background-color: var(--color-bg-light); 
+    background-color: var(--color-bg-light);
     padding: 100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 /*العنوان*/
 .clients-title {
-    font-family:var(--font-main);
-    font-size: 40px; 
+    font-family: var(--font-main);
+    font-size: 40px;
     font-weight: 800;
-    color: var(--color-secondary); 
+    color: var(--color-secondary);
     margin-bottom: 60px;
     text-align: center;
 }
@@ -1800,7 +1805,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px; 
+    gap: 100px;
     list-style: none;
     padding: 0;
     max-width: 1200px;
@@ -1813,25 +1818,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* مساحة داخلية للخلفية التي ستظهر */
+    padding: 20px;
+    /* مساحة داخلية للخلفية التي ستظهر */
     border-radius: 12px;
-    transition: all 0.3s ease; /* سلاسة لكل الخصائص */
+    transition: all 0.3s ease;
+    /* سلاسة لكل الخصائص */
     cursor: pointer;
 }
+
 .logo-item:hover {
     transform: translateY(-6px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     background-color: #f5f5f5;
 }
 
 /* صورة الشعار */
 
 .logo-item img {
-    width: 150px; 
+    width: 150px;
     height: auto;
-    opacity: 0.6; 
+    opacity: 0.6;
     transition: opacity 0.3s ease;
 }
+
 /*الحركة*/
 .logo-item img:hover {
     opacity: 1;
@@ -1839,9 +1848,12 @@ body {
 
 /* --- دعم مستخدمي الكيبورد (وصولية) --- */
 .logo-item img:focus-visible {
-  outline: 2px solid #005fcc; /* إطار ظاهر عند التنقل بالكيبورد */
-  outline-offset: 4px;        /* مسافة بين الإطار والصورة */
+    outline: 2px solid #005fcc;
+    /* إطار ظاهر عند التنقل بالكيبورد */
+    outline-offset: 4px;
+    /* مسافة بين الإطار والصورة */
 }
+
 /*=========================================*/
 
 /*=================   قسم شركاء النجاح ================*/
@@ -1924,7 +1936,7 @@ body {
 }
 
 /* ================= TEAM SECTION ================= */
-/* الحاوية الرئيسية للقسم */
+
 .team-section {
     width: 100%;
     max-width: 1284px;
@@ -1932,12 +1944,10 @@ body {
     padding: 80px 0;
     text-align: center;
     direction: rtl;
-    background-color: var(--color-bg-light, #f8f9fa);
+    background: var(--color-bg-light);
 }
 
-/* الحاوية التي توفر مساحة للأسهم الجانبية */
 .team-container {
-    position: relative;
     width: 100%;
     padding: 0 65px;
     box-sizing: border-box;
@@ -1946,73 +1956,63 @@ body {
 .team-title {
     font-size: 36px;
     font-weight: 800;
-    margin-bottom: 72px;
-    color: var(--color-secondary, #001a4d);
+    margin-bottom: 60px;
+    color: #001a4d;
 }
 
-.team-swiper {
-    padding-top: 0 !important;     /* ← لا padding علوي */
-    padding-bottom: 20px !important;
-    padding-left: 4px !important;
-    padding-right: 4px !important;
-    overflow: hidden !important;
-    clip-path: inset(-60px -10px -10px -10px);
-    flex: 1;
-    margin-top: -55px;             /* ← يعوض margin-top الكارت */
-}
+/* ===== Slider Wrapper ===== */
 
-/* إعدادات السلايدر */
 .team-slider-wrapper {
     display: flex;
-    align-items: center;   /* ← غيّري flex-end إلى center */
+    align-items: center;
     gap: 16px;
 }
 
-/*  wrapper للكارت الـ  */
-.swiper-slide {
-    overflow: visible !important;
-    padding-top: 0;  /* ← احذفه */
+/* ===== Swiper ===== */
+
+.team-swiper {
+    flex: 1;
+    overflow: hidden;
 }
 
-/* تصميم البطاقة */
+.swiper-slide {
+    overflow: visible;
+}
+
+/* ===== Card ===== */
 .team-card {
-    position: relative;          /* ← مهم للأفاتار */
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 32px 24px;
-    display: flex;               /* ← flex وليس inline-flex */
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    padding: 90px 24px 32px;
+    width: 100%;
+    max-width: 260px;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    width: 100%;                 /* ← مهم */
+    gap: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-    margin-top: 55px;            /* ← مهم للأفاتار */
+    transition: 0.3s ease;
 }
-
-
 
 .team-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
 }
 
-/* تصميم الأفاتار */
+/* ===== Avatar ===== */
 
 .team-avatar {
-    width: 123px;
-    height: 119px;
-    border-radius: 100px;
     position: absolute;
-    top: -55px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     overflow: hidden;
-    border: 6px solid var(--color-bg-light, #f8f9fa);
-    background: #eee;            /* ← احذف url(<path-to-image>) */
-    z-index: 5;
+    border: 6px solid #f8f9fa;
+    background: #eee;
 }
 
 .team-avatar img {
@@ -2021,46 +2021,40 @@ body {
     object-fit: cover;
 }
 
-/* نصوص البطاقة */
+/* ===== Text ===== */
+
 .team-name {
-    color: var(--color-secondary, #1B2D45);
-    text-align: center;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
+    color: #1B2D45;
 }
 
 .team-role {
-    color: #888;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 15px;
+    color: #777;
 }
 
-/* أزرار التنقل  */
+/* ===== Buttons ===== */
+
 .team-btn-prev,
 .team-btn-next {
-    flex-shrink: 0;
     width: 42px;
     height: 42px;
     border-radius: 50%;
     border: 1px solid #e0e0e0;
     background: #fff;
-    color: var(--color-secondary);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    color: #1B2D45;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s;
-    margin-top: 0;  /* ← احذف margin-top */
-    align-self: center; /* ← يتوسط مع الكارت */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.2s;
 }
-
-
 
 .team-btn-prev:hover,
 .team-btn-next:hover {
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 /*==============قسم الفرق - Groups Sectio=============== */
