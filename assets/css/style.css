@@ -1957,7 +1957,7 @@ body {
     font-size: 36px;
     font-weight: 800;
     margin-bottom: 60px;
-    color: var(--color-primary);
+    color: #001a4d;
 }
 
 /* ===== Slider Wrapper ===== */
@@ -1970,13 +1970,22 @@ body {
 /* ===== Swiper ===== */
 .team-swiper {
     flex: 1;
+    width: 0;
+    /* critical: prevents swiper from expanding beyond flex container */
     overflow: visible !important;
     padding-top: 70px !important;
+}
+
+.swiper-wrapper {
+    display: flex;
+    flex-direction: row !important;
+    /* override any RTL row-reverse */
 }
 
 .swiper-slide {
     display: flex;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 /* ===== Card ===== */
