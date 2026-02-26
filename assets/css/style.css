@@ -1957,6 +1957,11 @@ body {
     gap: 16px;
 }
 
+/* أضف wrapper للكارت يتجاوز حدود الـ swiper */
+.swiper-slide {
+    overflow: visible !important;
+    padding-top: 55px;
+}
 .team-slider-wrapper {
     display: flex;
     align-items: flex-end; /* ← محاذاة للأسفل حتى تتوسط الأسهم مع الكارت */
@@ -1967,20 +1972,22 @@ body {
     position: relative;
     background: #ffffff;
     border-radius: 16px;
-    padding: 32px 18px 63px;  /* ← القيم الحقيقية من Figma */
+    padding: 70px 18px 40px;  /* ← 70px للأفاتار + مسافة كافية */
     width: 100%;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     box-sizing: border-box;
 }
-
 .team-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* تصميم الأفاتار */
+
+
+
 .team-avatar {
     width: 110px;
     height: 110px;
@@ -2016,20 +2023,6 @@ body {
 }
 
 /* أزرار التنقل  */
-.team-swiper .swiper-button-prev,
-.team-swiper .swiper-button-next {
-    width: 42px;
-    height: 42px;
-    background: #ffffff;
-    border-radius: 50%;
-    color: var(--color-secondary, #001a4d);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-
 .team-btn-prev,
 .team-btn-next {
     flex-shrink: 0;
@@ -2045,7 +2038,10 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
+    margin-top: 55px; /* ← يعوض الأفاتار ليتوسط مع الكارت */
 }
+
+
 
 
 .team-btn-prev:hover,
