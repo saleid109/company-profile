@@ -1950,59 +1950,57 @@ body {
     color: var(--color-secondary, #001a4d);
 }
 
+/* إعدادات السلايدر الرئيسية */
 .team-swiper {
     padding-top: 0 !important;
     padding-bottom: 20px !important;
     padding-left: 4px !important;
     padding-right: 4px !important;
-    overflow: hidden !important;
-    
-    /* ← زيادة القطع الجانبي أكثر */
-    clip-path: inset(-60px -100px -20px -100px);
-    
+    overflow: visible !important; /* ◀◀ مهم جداً: لرؤية الجزء الزائد من الأفاتار */
+    clip-path: inset(-60px -100px -20px -100px); /* هذا يساعد أيضاً */
     flex: 1;
-    margin-top: -55px;
+    margin-top: -55px; /* هذا لتعويض المسافة العلوية التي سيأخذها الـ card */
 }
 
 /* إعدادات السلايدر */
 .team-slider-wrapper {
     display: flex;
-    align-items: center;   /* ← غيّري flex-end إلى center */
+    align-items: center;
     gap: 16px;
 }
 
-/*  wrapper للكارت الـ  */
+/*  ✨ التعديل الأهم هنا: شريحة السلايدر */
 .swiper-slide {
-    overflow: visible !important;
-    padding-top: 0;  /* ← احذفه */
+    overflow: visible !important;  /* ◀◀ مهم جداً: لرؤية الجزء الزائد من الأفاتار */
+    padding-top: 0;
+    height: auto !important; /* لضبط الارتفاع تلقائياً */
 }
 
 /* تصميم البطاقة */
 .team-card {
-    position: relative;          /* ← مهم للأفاتار */
+    position: relative;
     background: #ffffff;
     border-radius: 10px;
     padding: 32px 24px;
-    display: flex;               /* ← flex وليس inline-flex */
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    width: 100%;                 /* ← مهم */
+    width: 100%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     box-sizing: border-box;
-    margin-top: 55px;            /* ← مهم للأفاتار */
+    margin-top: 55px; /* يخلق مساحة للأفاتار */
+    /* ◀◀ تأكد أن overflow غير موجود أو قيمته visible */
+    overflow: visible;
 }
-
-
 
 .team-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* تصميم الأفاتار */
-
+/* تصميم الأفاتار - يبقى كما هو */
 .team-avatar {
     width: 123px;
     height: 119px;
@@ -2012,9 +2010,9 @@ body {
     left: 0;
     right: 0;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: hidden; /* ◀◀ هذا overflow يخص الصورة داخل الدائرة، ويجب بقاؤه */
     border: 6px solid var(--color-bg-light, #f8f9fa);
-    background: #eee;            /* ← احذف url(<path-to-image>) */
+    background: #eee;
     z-index: 5;
 }
 
@@ -2030,6 +2028,8 @@ body {
     text-align: center;
     font-size: 24px;
     font-weight: 700;
+    /* إضافة مسافة علوية لدفع النص لأسفل تحت الأفاتار */
+    margin-top: 50px; /* ◀◀ أضف هذا */
 }
 
 .team-role {
@@ -2039,7 +2039,7 @@ body {
     font-weight: 500;
 }
 
-/* أزرار التنقل  */
+/* أزرار التنقل */
 .team-btn-prev,
 .team-btn-next {
     flex-shrink: 0;
@@ -2055,19 +2055,14 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
-    margin-top: 0;  /* ← احذف margin-top */
-    align-self: center; /* ← يتوسط مع الكارت */
+    margin-top: 0;
+    align-self: center;
 }
-
-
 
 .team-btn-prev:hover,
 .team-btn-next:hover {
     box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
-
-/*==============قسم الفرق - Groups Sectio=============== */
-
 /* --- تنسيق القسم العام --- */
 .groups-section {
     width: 100%;
