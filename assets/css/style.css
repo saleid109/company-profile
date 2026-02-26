@@ -1963,6 +1963,9 @@ body {
     display: flex;
     align-items: center;
     gap: 16px;
+    overflow: hidden;   /* ← يقطع الجانبين */
+    padding-top: 55px;  /* ← يعطي مساحة للأفاتار فوق */
+    margin-top: -55px;  /* ← يعوض الـ padding */
 }
 
 /* تصميم البطاقة */
