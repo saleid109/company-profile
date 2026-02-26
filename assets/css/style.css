@@ -1951,16 +1951,10 @@ body {
 }
 
 /* إعدادات السلايدر */
-.team-swiper {
-    padding-top: 60px !important;
-    padding-bottom: 20px !important;
-    padding-left: 4px !important;
-    padding-right: 4px !important;
-    overflow: hidden !important;
-    flex: 1;
-    /* السر: نسمح للـ overflow بالخروج للأعلى فقط */
-    margin-top: -60px;
-    padding-top: 120px !important; /* 60 للتعويض + 60 للأفاتار */
+.team-slider-wrapper {
+    display: flex;
+    align-items: center;  /* ← من flex-end إلى center */
+    gap: 16px;
 }
 
 .team-slider-wrapper {
