@@ -1936,7 +1936,7 @@ body {
 }
 
 /* ================= TEAM SECTION ================= */
-
+/* ===== Section ===== */
 .team-section {
     width: 100%;
     max-width: 1284px;
@@ -1957,11 +1957,10 @@ body {
     font-size: 36px;
     font-weight: 800;
     margin-bottom: 60px;
-    color: #001a4d;
+    color: var(--color-primary);
 }
 
 /* ===== Slider Wrapper ===== */
-
 .team-slider-wrapper {
     display: flex;
     align-items: center;
@@ -1969,14 +1968,15 @@ body {
 }
 
 /* ===== Swiper ===== */
-
 .team-swiper {
     flex: 1;
-    overflow: hidden;
+    overflow: visible !important;
+    padding-top: 70px !important;
 }
 
 .swiper-slide {
-    overflow: visible;
+    display: flex;
+    justify-content: center;
 }
 
 /* ===== Card ===== */
@@ -1984,7 +1984,7 @@ body {
     position: relative;
     background: #fff;
     border-radius: 12px;
-    padding: 90px 24px 32px;
+    padding: 70px 24px 32px;
     width: 100%;
     max-width: 260px;
     display: flex;
@@ -1992,7 +1992,7 @@ body {
     align-items: center;
     gap: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    transition: 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-card:hover {
@@ -2003,15 +2003,34 @@ body {
 /* ===== Avatar ===== */
 .team-avatar {
     position: absolute;
-    top: -60px;
+    top: -55px;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     overflow: hidden;
-    border: 6px solid #f8f9fa;
-    background: #eee;
+    border: 5px solid #f2f3f7;
+    background: #dde1ea;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* Placeholder silhouette */
+.team-avatar .avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.team-avatar .avatar-placeholder svg {
+    width: 75%;
+    height: auto;
+    margin-bottom: -2px;
 }
 
 .team-avatar img {
@@ -2021,39 +2040,47 @@ body {
 }
 
 /* ===== Text ===== */
-
 .team-name {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
-    color: #1B2D45;
+    color: var(--color-text);
+    margin-top: 4px;
 }
 
 .team-role {
-    font-size: 15px;
-    color: #777;
+    font-size: 14px;
+    color: var(--color-muted);
 }
 
 /* ===== Buttons ===== */
-
 .team-btn-prev,
 .team-btn-next {
+    flex-shrink: 0;
     width: 42px;
     height: 42px;
     border-radius: 50%;
     border: 1px solid #e0e0e0;
     background: #fff;
-    color: #1B2D45;
+    color: var(--color-text);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .team-btn-prev:hover,
 .team-btn-next:hover {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: scale(1.05);
+}
+
+.team-btn-prev.swiper-button-disabled,
+.team-btn-next.swiper-button-disabled {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
 }
 
 /*==============قسم الفرق - Groups Sectio=============== */

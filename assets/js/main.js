@@ -240,16 +240,18 @@ document.addEventListener("DOMContentLoaded", () => {
 const teamSwiper = new Swiper('.team-swiper', {
     slidesPerView: 4,
     spaceBetween: 24,
-    loop: true,
+    dir: 'rtl',
     navigation: {
         nextEl: '.team-btn-next',
         prevEl: '.team-btn-prev',
+        disabledClass: 'swiper-button-disabled',
     },
     breakpoints: {
-        0:    { slidesPerView: 1, spaceBetween: 16 },
-        640:  { slidesPerView: 2, spaceBetween: 20 },
-        1024: { slidesPerView: 4, spaceBetween: 24 },
-    }
+        0: { slidesPerView: 1 },
+        480: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+    },
 });
 
 
