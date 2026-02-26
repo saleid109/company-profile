@@ -1963,7 +1963,7 @@ body {
 /* إعدادات السلايدر */
 .team-slider-wrapper {
     display: flex;
-    align-items: center;  /* ← من flex-end إلى center */
+    align-items: flex-end; /* ← محاذاة للأسفل حتى تتوسط الأسهم مع الكارت */
     gap: 16px;
 }
 
@@ -1972,11 +1972,7 @@ body {
     overflow: visible !important;
     padding-top: 55px;
 }
-.team-slider-wrapper {
-    display: flex;
-    align-items: flex-end; /* ← محاذاة للأسفل حتى تتوسط الأسهم مع الكارت */
-    gap: 16px;
-}
+
 /* تصميم البطاقة */
 .team-card {
     position: relative;
@@ -2048,9 +2044,9 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
-    margin-top: 55px; /* ← يعوض الأفاتار ليتوسط مع الكارت */
+    margin-top: 0;  /* ← احذف margin-top */
+    align-self: center; /* ← يتوسط مع الكارت */
 }
-
 
 
 
