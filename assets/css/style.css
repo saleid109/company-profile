@@ -1929,57 +1929,69 @@ body {
     width: 100%;
     max-width: 1284px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
     direction: rtl;
     background-color: var(--color-bg-light, #f8f9fa);
 }
+
 /* الحاوية التي توفر مساحة للأسهم الجانبية */
 .team-container {
     position: relative;
     width: 100%;
-    padding: 0 60px; /* مساحة للأسهم الجانبية */
+    padding: 0 65px;
     box-sizing: border-box;
 }
+
 .team-title {
     font-size: 36px;
     font-weight: 800;
-    margin-bottom: 80px; /* مساحة إضافية لبروز الأفاتار */
-    color: var(--color-secondary, #1B2D45);
+    margin-bottom: 72px;
+    color: var(--color-secondary, #001a4d);
 }
 
+.team-swiper {
+    padding-top: 0 !important;
+    padding-bottom: 20px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    overflow: hidden !important;
+    
+    /* ← زيادة القطع الجانبي أكثر */
+    clip-path: inset(-60px -100px -20px -100px);
+    
+    flex: 1;
+    margin-top: -55px;
+}
+
+/* إعدادات السلايدر */
 .team-slider-wrapper {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    align-items: center;   /* ← غيّري flex-end إلى center */
+    gap: 16px;
 }
 
-/* حل مشكلة قص الأفاتار والظلال */
-.team-swiper {
-    width: 100%;
-    overflow: visible !important; /* للسماح ببروز الأفاتار والظلال */
-    padding-bottom: 30px !important;
-}
 /*  wrapper للكارت الـ  */
 .swiper-slide {
-    height: auto !important;
     overflow: visible !important;
+    padding-top: 0;  /* ← احذفه */
 }
 
-/* تصميم البطاقة بناءً على فيجما */
+/* تصميم البطاقة */
 .team-card {
-    position: relative;
+    position: relative;          /* ← مهم للأفاتار */
     background: #ffffff;
     border-radius: 10px;
-    padding: 60px 20px 30px; /* بادينج علوي كبير لترك مساحة للأفاتار */
-    display: flex;
+    padding: 32px 24px;
+    display: flex;               /* ← flex وليس inline-flex */
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    width: 100%;
+    gap: 12px;
+    width: 100%;                 /* ← مهم */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     box-sizing: border-box;
+    margin-top: 55px;            /* ← مهم للأفاتار */
 }
 
 
@@ -1992,18 +2004,18 @@ body {
 /* تصميم الأفاتار */
 
 .team-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 123px;
+    height: 119px;
+    border-radius: 100px;
     position: absolute;
-    top: -60px; /* نصف القطر ليكون بارزاً للخارج */
-    left: 50%;
-    transform: translateX(-50%);
+    top: -55px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     overflow: hidden;
-    border: 6px solid var(--color-bg-light, #f8f9fa); /* الإطار السميك من فيجما */
-    background: #eee;
+    border: 6px solid var(--color-bg-light, #f8f9fa);
+    background: #eee;            /* ← احذف url(<path-to-image>) */
     z-index: 5;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .team-avatar img {
@@ -2012,38 +2024,41 @@ body {
     object-fit: cover;
 }
 
-/* نصوص البطاقة بناءً على خصائص فيجما */
+/* نصوص البطاقة */
 .team-name {
-    color: #1B2D45; /* اللون من كود فيجما الظاهر */
-    font-size: 24px; /* من فيجما image_7e433b.png */
+    color: var(--color-secondary, #1B2D45);
+    text-align: center;
+    font-size: 24px;
     font-weight: 700;
-    margin: 0;
 }
 
 .team-role {
     color: #888;
+    text-align: center;
     font-size: 16px;
     font-weight: 500;
-    margin: 0;
 }
 
-/* أزرار التنقل الدائرية */
+/* أزرار التنقل  */
 .team-btn-prev,
 .team-btn-next {
-    width: 45px;
-    height: 45px;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    border: 1px solid #eee;
+    border: 1px solid #e0e0e0;
     background: #fff;
-    color: #1B2D45;
+    color: var(--color-secondary);
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    transition: 0.3s;
-    z-index: 10;
+    transition: all 0.2s;
+    margin-top: 0;  /* ← احذف margin-top */
+    align-self: center; /* ← يتوسط مع الكارت */
 }
+
 
 
 .team-btn-prev:hover,
