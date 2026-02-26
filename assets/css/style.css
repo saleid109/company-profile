@@ -1956,10 +1956,10 @@ body {
     padding-bottom: 20px !important;
     padding-left: 4px !important;
     padding-right: 4px !important;
-    overflow: visible !important; /* ◀◀ مهم جداً: لرؤية الجزء الزائد من الأفاتار */
-    clip-path: inset(-60px -100px -20px -100px); /* هذا يساعد أيضاً */
+    overflow: visible !important;
+    clip-path: inset(-60px -100px -20px -100px);
     flex: 1;
-    margin-top: -55px; /* هذا لتعويض المسافة العلوية التي سيأخذها الـ card */
+    /* margin-top: -55px; ←◀◀ احذف هذه الخاصية */
 }
 
 /* إعدادات السلايدر */
@@ -1969,11 +1969,11 @@ body {
     gap: 16px;
 }
 
-/*  ✨ التعديل الأهم هنا: شريحة السلايدر */
+/* شريحة السلايدر */
 .swiper-slide {
-    overflow: visible !important;  /* ◀◀ مهم جداً: لرؤية الجزء الزائد من الأفاتار */
-    padding-top: 0;
-    height: auto !important; /* لضبط الارتفاع تلقائياً */
+    overflow: visible !important;
+    padding-top: 55px;  /* ◀◀ أضف padding-top بدلاً من margin في الكارد */
+    height: auto !important;
 }
 
 /* تصميم البطاقة */
@@ -1990,8 +1990,7 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     box-sizing: border-box;
-    margin-top: 55px; /* يخلق مساحة للأفاتار */
-    /* ◀◀ تأكد أن overflow غير موجود أو قيمته visible */
+    /* margin-top: 55px; ←◀◀ احذف هذه الخاصية */
     overflow: visible;
 }
 
@@ -2000,17 +1999,17 @@ body {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* تصميم الأفاتار - يبقى كما هو */
+/* تصميم الأفاتار */
 .team-avatar {
     width: 123px;
     height: 119px;
     border-radius: 100px;
     position: absolute;
-    top: -55px;
+    top: -55px;  /* هذا يعوض الـ padding-top في swiper-slide */
     left: 0;
     right: 0;
     margin: 0 auto;
-    overflow: hidden; /* ◀◀ هذا overflow يخص الصورة داخل الدائرة، ويجب بقاؤه */
+    overflow: hidden;
     border: 6px solid var(--color-bg-light, #f8f9fa);
     background: #eee;
     z-index: 5;
@@ -2028,8 +2027,7 @@ body {
     text-align: center;
     font-size: 24px;
     font-weight: 700;
-    /* إضافة مسافة علوية لدفع النص لأسفل تحت الأفاتار */
-    margin-top: 50px; /* ◀◀ أضف هذا */
+    /* margin-top: 50px; ←◀◀ احذف هذه الخاصية */
 }
 
 .team-role {
@@ -2061,7 +2059,7 @@ body {
 
 .team-btn-prev:hover,
 .team-btn-next:hover {
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 /* --- تنسيق القسم العام --- */
 .groups-section {
