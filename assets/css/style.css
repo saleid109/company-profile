@@ -1936,120 +1936,101 @@ body {
 }
 
 /* ================= TEAM SECTION ================= */
-/* ================= TEAM SECTION ================= */
+/* الحاوية الكبرى */
 .team-section {
     width: 100%;
-    max-width: 1320px; /* زيادة قليلاً لتناسب الحواف */
-    margin: 0 auto;
-    padding: 80px 20px;
+    padding: 80px 0;
+    background-color: #F9FAFB;
     direction: rtl;
-    background-color: #F9FAFB; /* لون الخلفية حسب الصورة */
+    overflow: hidden; /* لمنع أي سكرول عرضي ناتج عن البروز */
 }
 
-.team-title {
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 80px; /* مساحة كافية قبل الكروت */
-    color: #001a4d;
-    text-align: center;
-}
-
+/* حاوية السلايدر والأزرار */
 .team-container {
-    position: relative;
+    max-width: 1284px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px; /* المسافة بين الأزرار والسلايدر */
 }
 
-/* حل مشكلة اختفاء الصور العلوية */
+/* السلايدر نفسه - الأهم هنا هو الـ overflow */
 .team-swiper {
-    width: 100%;
-    padding-top: 60px !important; /* مساحة لنصف الأفاتار العلوي */
+    flex: 1; /* ليأخذ كل المساحة المتبقية بين الأزرار */
+    padding-top: 70px !important; /* مساحة لبروز الصورة للأعلى */
     padding-bottom: 30px !important;
-    overflow: visible !important; /* للسماح بالظل والأفاتار بالظهور */
+    overflow: visible !important; /* للسماح بظهور الصور والظلال */
+    width: 100%;
 }
 
-.swiper-slide {
-    height: auto; /* ليتناسب طول الكروت */
+/* ضروري جداً لضمان عدم قص الصور داخل السلايدر */
+.team-swiper .swiper-wrapper {
+    overflow: visible !important;
 }
 
-/* تصميم البطاقة */
+/* الكارت */
 .team-card {
     position: relative;
     background: #ffffff;
-    border-radius: 12px;
-    padding: 32px 24px; /* التزام بمقاسات الصورة 32px */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s ease;
+    border-radius: 15px;
+    padding: 60px 24px 32px; /* 60px من الأعلى لترك مساحة للصورة */
     text-align: center;
-    margin-top: 0; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease;
 }
 
-/* تصميم الأفاتار الدائري خلف الصورة */
+/* الصورة (الأفاتار) */
 .team-avatar {
+    position: absolute;
+    top: -55px; /* نصف قطر الصورة للخروج للأعلى */
+    left: 50%;
+    transform: translateX(-50%); /* لتوسيط الصورة تماماً */
     width: 110px;
     height: 110px;
-    background: #F1F3F5; /* الدائرة الرمادية خلف الصورة */
     border-radius: 50%;
-    position: absolute;
-    top: -55px; /* نصف الارتفاع للخروج للأعلى */
-    left: 50%;
-    transform: translateX(-50%);
+    background-color: #f1f1f1; /* لون الدائرة خلف الصورة */
+    border: 6px solid #F9FAFB; /* نفس لون خلفية السكشن لإعطاء تأثير القطع */
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 6px solid #F9FAFB; /* نفس لون خلفية السكشن لتبدو مقصوصة */
-    z-index: 10;
 }
 
 .team-avatar img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 50%;
 }
 
 /* النصوص */
 .team-name {
-    color: #1B2D45;
     font-size: 22px;
     font-weight: 700;
-    margin-top: 40px; /* مساحة لتعويض مكان الأفاتار */
-    margin-bottom: 8px;
+    color: #1B2D45;
+    margin-bottom: 5px;
 }
 
 .team-role {
-    color: #8E9BAE;
     font-size: 16px;
-    font-weight: 500;
-    margin: 0;
+    color: #8E9BAE;
 }
 
-/* أزرار التنقل */
-.team-btn-prev,
-.team-btn-next {
+/* الأزرار الجانبية */
+.team-btn-prev, .team-btn-next {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 1px solid #E5E7EB;
     background: #fff;
-    color: #1B2D45;
+    border: 1px solid #eee;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 20;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-
-.team-btn-prev:hover,
-.team-btn-next:hover {
-    background: #1B2D45;
-    color: #fff;
+    z-index: 100;
+    flex-shrink: 0; /* لمنع تقلص حجم الأزرار */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 /*==============قسم الفرق - Groups Sectio=============== */
