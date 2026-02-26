@@ -237,24 +237,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
+
 const teamSwiper = new Swiper('.team-swiper', {
     slidesPerView: 1,
     spaceBetween: 25,
     loop: true,
-    rtl: true, // تفعيل الاتجاه من اليمين لليسار
+    rtl: true,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-        640: {
-            slidesPerView: 2,
-        },
-        1024: {
-            slidesPerView: 4,
-        }
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 4 }
     }
 });
+
 
 
 /* --- الفرق --- */

@@ -1923,8 +1923,7 @@ body {
     outline-offset: 4px;
 }
 /* ================= TEAM SECTION ================= */
-
-/* الإعدادات الأساسية للحاوية */
+/* الحاوية الرئيسية للقسم */
 .team-section {
     width: 100%;
     max-width: 1284px;
@@ -1932,14 +1931,14 @@ body {
     padding: 80px 0;
     text-align: center;
     direction: rtl;
-    background-color: var(--color-bg-light);
+    background-color: var(--color-bg-light, #f8f9fa);
 }
 
-/* الحاوية التي تضمن وجود مساحة للأسهم */
+/* الحاوية التي توفر مساحة للأسهم الجانبية */
 .team-container {
     position: relative;
     width: 100%;
-    padding: 0 60px; /* هذه المساحة هي "المنطقة الآمنة" للأسهم */
+    padding: 0 60px; /* مساحة 60 بكسل من كل جانب للأسهم */
     box-sizing: border-box;
 }
 
@@ -1947,32 +1946,30 @@ body {
     font-size: 36px;
     font-weight: 800;
     margin-bottom: 72px;
-    color: var(--color-secondary);
+    color: var(--color-secondary, #001a4d);
 }
 
-/* إعدادات Swiper */
+/* إعدادات السلايدر */
 .team-swiper {
     width: 100%;
     padding-top: 60px !important;    /* لبروز الأفاتار */
     padding-bottom: 40px !important;
-    padding-left: 10px !important;   /* لحماية ظل الكروت */
-    padding-right: 10px !important;
-    overflow: hidden !important;      /* يمنع الكروت من الخروج لمنطقة الأسهم */
+    padding-left: 5px !important;     /* لحماية ظل الكروت */
+    padding-right: 5px !important;
+    overflow: hidden !important;      /* يمنع تداخل الكروت مع الأسهم */
     margin: 0 !important;
-}
-
-.team-swiper .swiper-wrapper {
-    overflow: visible !important;
 }
 
 /* تصميم البطاقة */
 .team-card {
     position: relative;
-    background: #fff;
+    background: #ffffff;
     border-radius: 16px;
     padding: 80px 24px 32px;
     width: 100%;
+    text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
     box-sizing: border-box;
 }
 
@@ -1981,7 +1978,7 @@ body {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* الأفاتار */
+/* تصميم الأفاتار */
 .team-avatar {
     width: 110px;
     height: 110px;
@@ -1990,11 +1987,11 @@ body {
     top: -55px;
     left: 50%;
     transform: translateX(-50%);
-    border: 6px solid var(--color-bg-light);
     overflow: hidden;
+    border: 6px solid var(--color-bg-light, #f8f9fa);
     background: #eee;
+    z-index: 5;
 }
-
 
 .team-avatar img {
     width: 100%;
@@ -2002,11 +1999,11 @@ body {
     object-fit: cover;
 }
 
-/* النصوص */
+/* نصوص البطاقة */
 .team-name {
     font-size: 18px;
     font-weight: 700;
-    color: var(--color-secondary);
+    color: var(--color-secondary, #001a4d);
     margin-bottom: 8px;
 }
 
@@ -2015,36 +2012,36 @@ body {
     color: #888;
 }
 
-/* أزرار التنقل */
+/* أزرار التنقل - تموضعها في المنطقة الآمنة */
 .team-swiper .swiper-button-prev,
 .team-swiper .swiper-button-next {
     width: 42px;
     height: 42px;
-    background: #fff;
+    background: #ffffff;
     border-radius: 50%;
-    color: var(--color-secondary);
+    color: var(--color-secondary, #001a4d);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    top: 50%; /* توسيط عمودي بالنسبة للسلايدر */
+    top: 50%;
     transform: translateY(-50%);
     z-index: 10;
 }
+
 .team-swiper .swiper-button-prev {
-    right: -50px; /* يخرج عن السلايدر ويدخل في بادنج الـ container */
+    right: -50px; /* خارج السلايدر داخل منطقة الـ padding */
     left: auto;
 }
 
-/* السهم الأيسر (التالي في RTL) */
 .team-swiper .swiper-button-next {
-    left: -50px; /* يخرج عن السلايدر ويدخل في بادنج الـ container */
+    left: -50px; /* خارج السلايدر داخل منطقة الـ padding */
     right: auto;
 }
 
-/* أيقونة السهم */
 .team-swiper .swiper-button-prev::after,
 .team-swiper .swiper-button-next::after {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 900;
 }
+
 
 /*==============قسم الفرق - Groups Sectio=============== */
 
