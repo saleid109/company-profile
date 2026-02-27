@@ -250,11 +250,9 @@ function getVisibleCount() {
     if (w >= 480) return 2;
     return 1;
 }
-
 function getStepWidth() {
     const card = track.querySelector('.team-card');
     if (!card) return 0;
-    // getBoundingClientRect gives actual rendered width
     return card.getBoundingClientRect().width + 24; // +gap
 }
 
