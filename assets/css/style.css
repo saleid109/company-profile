@@ -2032,15 +2032,20 @@ body {
 */
 .team-avatar {
     position: absolute;
-    top: -35px; /* رفع الأفاتار للأعلى قليلاً */
-    left: 50%;
+    top: -35px;
+    /*رفعالأفاتارللأعلىقليلاً*/left: 50%;
     transform: translateX(-50%);
-    width: 70px;  /* تصغير الحجم قليلاً ليتناسق مع ارتفاع المستطيل */
-    height: 70px;
+    width: 88px;
+    
+    height:88px;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid #f2f3f7;
     background: #dde1ea;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 /* حاوية بديلة في حال عدم وجود صورة */
@@ -2062,15 +2067,18 @@ body {
 
 /* اسم العضو */
 .team-name {
-    font-size: 20px;
+    font-size: 16px; /* تصغير الخط */
     font-weight: 700;
     color: #1B2D45;
+    margin-top: 5px;
 }
 
 /* المسمى الوظيفي */
 .team-role {
-    font-size: 14px;
+    font-size: 12px;
     color: #777;
+
+    
 }
 
 /* أزرار التنقل (السلايدر) 
