@@ -1954,9 +1954,18 @@ body {
     gap: 16px;
 }
 
+.team-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 70px;
+    color: var(--color-secondary);
+    text-align: center;  /* ← أضف هذا */
+    width: 100%;
+}
+
 .team-track-clip {
     flex: 1;
-    overflow: visible; /* للسماح ببروز الصورة للأعلى دون اختفائها */
+    overflow: hidden;   /* ← hidden لقطع الكروت الزائدة */
     padding-top: 60px; 
     margin-top: -60px;
 }
