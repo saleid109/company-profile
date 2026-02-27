@@ -237,40 +237,33 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
-const track = document.getElementById('groups-track');
-const btnPrev = document.getElementById('groups-btn-prev');
-const btnNext = document.getElementById('groups-btn-next');
+const track = document.querySelector('.carousel-track');
+const prevBtn = document.querySelector('.carousel-nav-button.prev');
+const nextBtn = document.querySelector('.carousel-nav-button.next');
 
-const CARDS_VISIBLE = 3;
 let currentIndex = 0;
+const cards = document.querySelectorAll('.team-card');
+const visibleCount = 3;
+const maxIndex = cards.length - visibleCount;
 
-function getCardWidth() {
-    const card = track.querySelector('.group-card');
-    if (!card) return 0;
-    const gap = parseInt(getComputedStyle(track).gap) || 24;
-    return card.offsetWidth + gap;
-}
-
-function totalCards() {
-    return track.querySelectorAll('.group-card').length;
-}
-
-function updateSlider() {
-    const offset = currentIndex * getCardWidth();
-    track.style.transform = `translateX(${offset}px)`;
-
-    btnPrev.disabled = currentIndex === 0;
-    btnNext.disabled = currentIndex >= totalCards() - CARDS_VISIBLE;
-}
-
-btnPrev.addEventListener('click', () => {
-    if (currentIndex > 0) { currentIndex--; updateSlider(); }
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateCarousel();
+    }
 });
 
-btnNext.addEventListener('click', () => {
-    if (currentIndex < totalCards() - CARDS_VISIBLE) { currentIndex++; updateSlider(); }
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+    }
 });
 
-// Init
-updateSlider();
-window.addEventListener('resize', updateSlider);
+function updateCarousel() {
+    const cardWidth = cards[0].offsetWidth + 20;
+    track.style.transform = `translateX(${currentIndex * cardWidth}px)`;
+    
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
+}
