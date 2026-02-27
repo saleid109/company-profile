@@ -1933,11 +1933,8 @@ body {
     outline: 2px solid #005fcc;
     outline-offset: 4px;
 }
-
 /* ============= فريق العمل/ TEAM SECTION =============== */
 
-/* الحاوية الرئيسية للقسم  تتحكم في العرض الأقصى، الهوامش الداخلية، واتجاه النص (من اليمين لليسار)
-*/
 .team-section {
     width: 100%;
     max-width: 1284px;
@@ -1945,173 +1942,119 @@ body {
     padding: 80px 0;
     text-align: center;
     direction: rtl;
-    /* اتجاه المحتوى للعربية */
 }
 
-/* تنسيق المساحة الداخلية للمحتوى  يضيف حواف جانبية لحماية العناصر من الالتصاق بجوانب الشاشة
-*/
 .team-container {
     width: 100%;
     padding: 0 65px;
 }
 
-/* تنسيق عنوان القسم    يحدد حجم الخط، الوزن، واللون المستمد من المتغيرات
-*/
-.team-title {
-    font-size: 36px;
-    font-weight: 800;
-    margin-bottom: 70px;
-    color: var(--color-secondary);
-}
-
-/* تنسيق صف السلايدر (المتحرك) 
-استخدام Flexbox لترتيب العناصر (الأزرار والمحتوى) في صف واحد
-*/
-.team-slider-row {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-/* منطقة قص المحتوى (Clip) 
-تعمل كإطار يخفي العناصر الخارجة عن حدود العرض أثناء التحريك
-*/
-.team-track-clip {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-    padding-top: 38px;
-    /* مساحة علوية للسماح ببروز الأفاتار */
-    margin-top: -38px;
-}
-
-/* المسار الفعلي للعناصر 
-هو الجزء الذي يتم تحريكه بواسطة CSS Transform (التحريك الأفقي)
-*/
-.team-track {
-    display: flex;
-    gap: 24px;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    /* حركة ناعمة */
-    will-change: transform;
-}
-
-/* بطاقة العضو (Card)  تنسيق البطاقة الفردية، العرض المحسوب، وتأثيرات الظل والظهور
-*/
+/* التعديل هنا: البطاقة (المستطيل) */
 .team-card {
     position: relative;
-    background: var(--color-white);
+    background: #ffffff;
     border-radius: 12px;
     
-    /* المقاسات المطلوبة */
+    /* المقاسات المطلوبة بدقة */
     width: 287px; 
     height: 124px;
-    
-    /* إلغاء الحسابات التلقائية لضمان تثبيت العرض */
     flex: 0 0 287px; 
     
-    /* تقليل الهوامش الداخلية لأن الارتفاع 124px يعتبر صغيراً جداً */
-    padding: 45px 15px 10px; 
-    
+    /* توزيع المحتوى: دفع العناصر للأسفل لترك مساحة للصورة */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    justify-content: flex-end; /* لمحاذاة النصوص في النصف السفلي */
+    padding-bottom: 20px; /* مسافة من الأسفل */
+    
+    gap: 4px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box; /* لضمان أن العرض يشمل الحواف */
+    box-sizing: border-box;
 }
 
-/* تأثير التمرير (Hover) على البطاقة لرفعها قليلاً وزيادة الظل */
+/* تأثير الـ Hover كما في الصور */
 .team-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* صورة العضو (Avatar)  تحديد موضع الصورة بحيث تكون بارزة خارج حدود البطاقة العلوية
-*/
+/* صورة العضو (Avatar) - ضبط الحجم والموقع بناءً على Figma */
 .team-avatar {
     position: absolute;
-    top: -35px;
-    /*رفعالأفاتارللأعلىقليلاً*/left: 50%;
+    top: -44px; /* رفع الصورة للأعلى لتبرز خارج المستطيل */
+    left: 50%;
     transform: translateX(-50%);
     width: 88px;
-    
-    height:88px;
+    height: 88px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #f2f3f7;
+    border: 6px solid #f2f3f7; /* الإطار الفاتح حول الصورة */
     background: #dde1ea;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
+    z-index: 2;
 }
 
-/* حاوية بديلة في حال عدم وجود صورة */
-.team-avatar .avatar-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* تنسيق الصورة داخل الدائرة لتملأ المساحة بالكامل */
 .team-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* اسم العضو */
+/* اسم العضو - مطابق للصور */
 .team-name {
-    font-size: 16px; /* تصغير الخط */
+    font-size: 18px; 
     font-weight: 700;
     color: #1B2D45;
-    margin-top: 5px;
+    margin: 0;
 }
 
 /* المسمى الوظيفي */
 .team-role {
-    font-size: 12px;
-    color: #777;
-
-    
+    font-size: 13px;
+    color: #999; /* لون باهت كما في الصورة */
+    margin: 0;
 }
 
-/* أزرار التنقل (السلايدر) 
-    تنسيق أزرار الأسهم يمين ويسار
-*/
+/* أزرار التنقل الدائرية */
 .team-btn {
     flex-shrink: 0;
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #eee;
     background: #fff;
     color: #1B2D45;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 0.2s, transform 0.2s, opacity 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
-/* تأثير التفاعل مع الأزرار */
 .team-btn:hover:not(:disabled) {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    transform: scale(1.05);
+    background: #f8f9fa;
+    transform: scale(1.1);
 }
 
-/* حالة الزر عند التعطيل (البداية أو النهاية) */
-.team-btn:disabled {
-    opacity: 0.35;
-    cursor: default;
+/* منطقة السلايدر */
+.team-slider-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
+.team-track-clip {
+    flex: 1;
+    overflow: hidden;
+    padding-top: 50px; /* مساحة كافية لبروز الصور دون اختفائها */
+    margin-top: -50px;
+}
+
+.team-track {
+    display: flex;
+    gap: 24px;
+}
 /*==============قسم الفرق - Groups Sectio=============== */
 
 /* --- تنسيق القسم العام --- */
