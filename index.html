@@ -899,76 +899,191 @@
 
     <!-- ================ قسم الفرق ================ -->
 
-    <section class="groups-section" aria-labelledby="groups-heading">
-      <div class="groups-container">
 
-        <h2 class="groups-title" id="groups-heading">الفرق</h2>
+<section class="groups-section" aria-labelledby="groups-heading">
+  <div class="groups-container">
+    <h2 class="groups-title" id="groups-heading">الفرق</h2>
 
-        <!-- Swiper -->
-        <div class="swiper groups-swiper">
-          <div class="swiper-wrapper">
+    <div class="groups-slider-row">
 
-            <!-- كارت فريق -->
-            <!--الفريق  1-->
-            <div class="swiper-slide">
-              <div class="group-card">
-                <div class="group-logo">
-                  <img src="./public/images/Frame37804.png" alt="شعار نقطة صعود" loading="lazy" />
-                </div>
-                <h3 class="group-name">فريق ابتكار</h3>
-                <p class="group-desc">فريق ابتكار فريق برمجي يركز على تطوير حلول تقنية ....</p>
-                <div class="group-meta" aria-label="تفاصيل الفريق">
-                  <span><img src="./public/images/mdi_location.png" alt="" aria-hidden="true" /> الرياض</span>
-                  <span><img src="./public/images/ant-design_project-filled.png" alt="" aria-hidden="true" />
-                    برمجة</span>
-                  <span><img src="./public/images/Vector.png" alt="" aria-hidden="true" /> 5 أعضاء</span>
-                </div>
+      <button class="groups-btn" id="groups-btn-prev" aria-label="السابق">
+        <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
+          <path d="M1 1l8 7-8 7" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="groups-track-clip">
+        <div class="groups-track" id="groups-track">
+
+          <!-- كارت 1 -->
+          <div class="group-card">
+            <div class="group-logo">
+              <div class="group-logo-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <div class="group-logo-text">
+                <strong>نقطة صعود</strong>
+                <span>Nuqta Suud</span>
               </div>
             </div>
-            <!--الفريق  2-->
-
-            <div class="swiper-slide">
-              <div class="group-card">
-                <div class="group-logo">
-                  <img src="./public/images/Frame37804.png" alt="شعار نقطة صعود" loading="lazy" />
-                </div>
-                <h3 class="group-name">فريق ابتكار</h3>
-                <p class="group-desc">فريق ابتكار فريق برمجي يركز على تطوير حلول تقنية ....</p>
-                <div class="group-meta" aria-label="تفاصيل الفريق">
-                  <span><img src="./public/images/mdi_location.png" alt="" aria-hidden="true" /> الرياض</span>
-                  <span><img src="./public/images/ant-design_project-filled.png" alt="" aria-hidden="true" />
-                    برمجة</span>
-                  <span><img src="./public/images/Vector.png" alt="" aria-hidden="true" /> 5 أعضاء</span>
-                </div>
-              </div>
+            <h3 class="group-name">فريق ابتكار</h3>
+            <p class="group-desc">فريق ابتكار فريق برمجي يركز على تطوير حلول تقنية ....</p>
+            <div class="group-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                الرياض
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                برمجة
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                5 أعضاء
+              </span>
             </div>
-            <!--الفريق  3-->
-
-            <div class="swiper-slide">
-              <div class="group-card">
-                <div class="group-logo">
-                  <img src="./public/images/Frame37804.png" alt="شعار نقطة صعود" loading="lazy" />
-                </div>
-                <h3 class="group-name">فريق ابتكار</h3>
-                <p class="group-desc">فريق ابتكار فريق برمجي يركز على تطوير حلول تقنية ....</p>
-                <div class="group-meta" aria-label="تفاصيل الفريق">
-                  <span><img src="./public/images/mdi_location.png" alt="" aria-hidden="true" /> الرياض</span>
-                  <span><img src="./public/images/ant-design_project-filled.png" alt="" aria-hidden="true" />
-                    برمجة</span>
-                  <span><img src="./public/images/Vector.png" alt="" aria-hidden="true" /> 5 أعضاء</span>
-                </div>
-              </div>
-            </div>
-
           </div>
 
-          <!-- أزرار التنقل -->
-          <button class="swiper-button-prev" aria-label="السابق"></button>
-          <button class="swiper-button-next" aria-label="التالي"></button>
-        </div>
+          <!-- كارت 2 -->
+          <div class="group-card">
+            <div class="group-logo">
+              <div class="group-logo-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <div class="group-logo-text">
+                <strong>نقطة صعود</strong>
+                <span>Nuqta Suud</span>
+              </div>
+            </div>
+            <h3 class="group-name">فريق ابتكار</h3>
+            <p class="group-desc">فريق ابتكار فريق برمجي يركز على تطوير حلول تقنية ....</p>
+            <div class="group-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                الرياض
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                برمجة
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                5 أعضاء
+              </span>
+            </div>
+          </div>
 
+          <!-- كارت 3 -->
+          <div class="group-card">
+            <div class="group-logo">
+              <div class="group-logo-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <div class="group-logo-text">
+                <strong>نقطة صعود</strong>
+                <span>Nuqta Suud</span>
+              </div>
+            </div>
+            <h3 class="group-name">فريق ابتكار</h3>
+            <p class="group-desc">فريق ابتكار فريق برمجي يركز على تطوير حلول تقنية ....</p>
+            <div class="group-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                الرياض
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                برمجة
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                5 أعضاء
+              </span>
+            </div>
+          </div>
+
+          <!-- كارت 4 -->
+          <div class="group-card">
+            <div class="group-logo">
+              <div class="group-logo-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <div class="group-logo-text">
+                <strong>نقطة صعود</strong>
+                <span>Nuqta Suud</span>
+              </div>
+            </div>
+            <h3 class="group-name">فريق ابتكار</h3>
+            <p class="group-desc">فريق ابتكار فريق برمجي يركز على تطوير حلول تقنية ....</p>
+            <div class="group-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                الرياض
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                برمجة
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                5 أعضاء
+              </span>
+            </div>
+          </div>
+
+          <!-- كارت 5 -->
+          <div class="group-card">
+            <div class="group-logo">
+              <div class="group-logo-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <div class="group-logo-text">
+                <strong>نقطة صعود</strong>
+                <span>Nuqta Suud</span>
+              </div>
+            </div>
+            <h3 class="group-name">فريق ابتكار</h3>
+            <p class="group-desc">فريق ابتكار فريق برمجي يركز على تطوير حلول تقنية ....</p>
+            <div class="group-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                الرياض
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                برمجة
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                5 أعضاء
+              </span>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </section>
+
+      <button class="groups-btn" id="groups-btn-next" aria-label="التالي">
+        <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
+          <path d="M9 1L1 8l8 7" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+</section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
