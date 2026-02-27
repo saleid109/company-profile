@@ -1968,8 +1968,8 @@ body {
     flex: 1;
     min-width: 0;
     overflow: hidden;
-    padding-top: 38px;   /* ← كان 60px */
-    margin-top: -38px;   /* ← كان -60px */
+    padding-top: 55px;   /* ← زيادة لإظهار الأفاتار */
+    margin-top: -55px;
 }
 
 /* The moving track */
@@ -1985,7 +1985,7 @@ body {
     position: relative;
     background: #fff;
     border-radius: 12px;
-    padding: 100px 24px 36px;  /* ← كان 65px */
+    padding: 65px 24px 36px;  /* ← تقليل padding-top */
     flex: 0 0 calc(25% - 18px);
     display: flex;
     flex-direction: column;
@@ -2003,11 +2003,11 @@ body {
 /* ===== Avatar ===== */
 .team-avatar {
     position: absolute;
-    top: -30px;          /* ← كان -50px */
+    top: -55px;          /* ← نصف الأفاتار يخرج فوق الكارت */
     left: 50%;
     transform: translateX(-50%);
-    width: 110px;        /* ← كان 100px */
-    height: 110px;       /* ← كان 100px */
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid #f2f3f7;
