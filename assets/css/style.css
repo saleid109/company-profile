@@ -1985,7 +1985,7 @@ body {
     position: relative;
     background: #fff;
     border-radius: 12px;
-    padding: 65px 24px 36px;  /* ← تقليل padding-top */
+    padding: 70px 24px 36px;  /* 70px = 55px أفاتار + 15px مسافة للنص */
     flex: 0 0 calc(25% - 18px);
     display: flex;
     flex-direction: column;
@@ -1993,8 +1993,8 @@ body {
     gap: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 55px;  /* ← هذا هو المفتاح — يخلق مساحة للأفاتار فوق الكارت */
 }
-
 .team-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
