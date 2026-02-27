@@ -1965,9 +1965,12 @@ body {
 
 .team-track-clip {
     flex: 1;
-    overflow: hidden;   /* ← hidden لقطع الكروت الزائدة */
-    padding-top: 60px; 
+    overflow: hidden;
+    padding-top: 60px;
     margin-top: -60px;
+    /* ← أضف هذا لمنع قطع الكرت الأول */
+    padding-right: 4px;
+    padding-left: 4px;
 }
 
 .team-track {
