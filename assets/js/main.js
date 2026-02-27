@@ -265,13 +265,17 @@ function totalCards() {
 function maxIndex() {
     return Math.max(0, totalCards() - getVisibleCount());
 }
+
 function updateSlider() {
     const step = getStepWidth();
-    // في RTL: index=0 → offset=0 (بدون إزاحة)
-    // كل ضغطة على Next تزيد الإزاحة
-    const offset = currentIndex * step;
+    const visible = getVisibleCount();
+    const cards = totalCards();
+    // In RTL flex, cards are laid out right-to-left.
+    // The track starts shifted right by the total overflow amount.
+    // index=0 → show rightmost cards; increasing index slides left.
+    const totalOverflow = (cards - visible) * step;
+    const offset = totalOverflow - currentIndex * step;
     track.style.transform = `translateX(${offset}px)`;
-    
     btnPrev.disabled = currentIndex === 0;
     btnNext.disabled = currentIndex >= maxIndex();
 }
@@ -284,6 +288,16 @@ btnNext.addEventListener('click', () => {
     if (currentIndex < maxIndex()) { currentIndex++; updateSlider(); }
 });
 
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        currentIndex = Math.min(currentIndex, maxIndex());
+        updateSlider();
+    }, 100);
+});
+
+// Wait for fonts/layout to settle
 window.addEventListener('load', updateSlider);
 updateSlider();
 
