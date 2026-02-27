@@ -1978,8 +1978,10 @@ body {
     gap: 24px;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
-    overflow: visible;  /* ← أضف هذا */
+    overflow: visible;
+    /* ← أضف هذا */
 }
+
 /* ===== Card ===== */
 .team-card {
     position: relative;
@@ -2069,17 +2071,34 @@ body {
     cursor: default;
 }
 
-/*==============قسم الفرق - Groups Sectio=============== */
+/* ============================================================
+   قسم الفرق — Groups Section
+   ============================================================ */
+
+/* ==== Variables ==== */
+:root {
+    --groups-primary: #001a4d;
+    --groups-accent: #3b5bdb;
+    --groups-bg: #f2f3f7;
+    --groups-card-bg: #ffffff;
+    --groups-border: #e8eaef;
+    --groups-text: #1a1a2e;
+    --groups-muted: #666b80;
+    --groups-subtle: #9397a8;
+    --groups-radius: 16px;
+    --groups-gap: 24px;
+    --groups-transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* ==== Section ==== */
 .groups-section {
     width: 100%;
     max-width: 1284px;
     margin: 0 auto;
-    padding: 64px 40px;
+    padding: 72px 40px;
     text-align: center;
     direction: rtl;
-    background-color: #f2f3f7;
+    background-color: var(--groups-bg);
 }
 
 .groups-container {
@@ -2088,11 +2107,12 @@ body {
 }
 
 .groups-title {
-    font-size: 32px;
+    font-size: clamp(24px, 3vw, 32px);
     font-weight: 800;
     margin-bottom: 48px;
-    color: #001a4d;
+    color: var(--groups-primary);
     text-align: center;
+    letter-spacing: -0.5px;
 }
 
 /* ==== Slider Row ==== */
@@ -2102,7 +2122,7 @@ body {
     gap: 16px;
 }
 
-/* Clip box — hides overflow left/right only */
+/* Clip — hides overflow only on inline axis */
 .groups-track-clip {
     flex: 1;
     min-width: 0;
@@ -2112,135 +2132,231 @@ body {
 /* Moving track */
 .groups-track {
     display: flex;
-    gap: 24px;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: var(--groups-gap);
+    transition: transform var(--groups-transition);
     will-change: transform;
 }
 
 /* ==== Card ==== */
 .group-card {
-    background-color: #ffffff;
-    border-radius: 16px;
+    /* FIX: صحيح لـ 3 كروت مع gap × 2 */
+    flex: 0 0 calc((100% - var(--groups-gap) * 2) / 3);
+    min-width: 0;
+
+    background-color: var(--groups-card-bg);
+    border-radius: var(--groups-radius);
+    border: 1px solid transparent;
     padding: 24px;
     text-align: right;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* 3 visible cards */
-    flex: 0 0 calc(33.333% - 16px);
+    box-shadow: 0 2px 8px rgba(0, 26, 77, 0.06);
+    transition:
+        transform var(--groups-transition),
+        box-shadow var(--groups-transition),
+        border-color var(--groups-transition);
+    cursor: pointer;
 }
 
 .group-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 32px rgba(0, 26, 77, 0.12);
+    border-color: rgba(59, 91, 219, 0.15);
 }
 
-/* ==== Logo ==== */
+/* ==== Logo area ==== */
 .group-logo {
-    margin-bottom: 16px;
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 16px;
 }
 
-/* Placeholder logo */
+/* Placeholder circle */
 .group-logo-placeholder {
+    flex-shrink: 0;
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: #001a4d;
+    background: linear-gradient(135deg, var(--groups-primary), var(--groups-accent));
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 26, 77, 0.2);
 }
 
 .group-logo-placeholder svg {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
+}
+
+/* Logo image (when real logo is available) */
+.group-logo-img {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--groups-border);
 }
 
 .group-logo-text {
     display: flex;
     flex-direction: column;
     text-align: right;
+    gap: 2px;
 }
 
 .group-logo-text strong {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
-    color: #001a4d;
+    color: var(--groups-primary);
+    line-height: 1.3;
 }
 
 .group-logo-text span {
-    font-size: 12px;
-    color: #888;
+    font-size: 11px;
+    color: var(--groups-subtle);
+    letter-spacing: 0.3px;
+}
+
+/* ==== Image placeholder (header area) ==== */
+.group-image {
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #e8edf5 0%, #d0d8ea 100%);
+    margin-bottom: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+.group-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ==== Name ==== */
 .group-name {
     font-size: 18px;
     font-weight: 700;
-    color: #001a4d;
+    color: var(--groups-text);
     margin-bottom: 8px;
+    line-height: 1.4;
 }
 
-/* ==== Desc ==== */
+/* ==== Description ==== */
 .group-desc {
     font-size: 14px;
-    color: #666;
-    line-height: 1.7;
+    color: var(--groups-muted);
+    line-height: 1.75;
     margin-bottom: 16px;
+
+    /* Clamp to 2 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-/* ==== Meta ==== */
+/* ==== Meta row ==== */
 .group-meta {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px 16px;
     justify-content: flex-end;
     align-items: center;
-    border-top: 1px solid #eee;
-    padding-top: 12px;
+    border-top: 1px solid var(--groups-border);
+    padding-top: 14px;
+    margin-top: auto;
 }
 
 .group-meta span {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
     font-size: 13px;
-    color: #555;
+    color: var(--groups-muted);
+    white-space: nowrap;
 }
 
 .group-meta span svg {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
     flex-shrink: 0;
-    color: #001a4d;
+    color: var(--groups-accent);
 }
 
-/* ==== Nav Buttons ==== */
+/* ==== Navigation Buttons ==== */
 .groups-btn {
     flex-shrink: 0;
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    border: 1px solid #e0e0e0;
-    background: #fff;
-    color: #1B2D45;
+    border: 1.5px solid var(--groups-border);
+    background: var(--groups-card-bg);
+    color: var(--groups-primary);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 0.2s, transform 0.2s, opacity 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 26, 77, 0.08);
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        background-color 0.2s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .groups-btn:hover:not(:disabled) {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    transform: scale(1.05);
+    background: var(--groups-primary);
+    color: #fff;
+    border-color: var(--groups-primary);
+    box-shadow: 0 6px 18px rgba(0, 26, 77, 0.18);
+    transform: scale(1.07);
+}
+
+.groups-btn:active:not(:disabled) {
+    transform: scale(0.97);
 }
 
 .groups-btn:disabled {
-    opacity: 0.35;
-    cursor: default;
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+    /* يمنع الـ click فعلياً */
+}
+
+/* ==== Responsive ==== */
+
+/* Tablet: 2 cards */
+@media (max-width: 900px) {
+    .groups-section {
+        padding: 48px 24px;
+    }
+
+    .group-card {
+        flex: 0 0 calc((100% - var(--groups-gap)) / 2);
+    }
+}
+
+/* Mobile: 1 card */
+@media (max-width: 560px) {
+    .groups-section {
+        padding: 40px 16px;
+    }
+
+    .groups-slider-row {
+        gap: 10px;
+    }
+
+    .group-card {
+        flex: 0 0 100%;
+    }
+
+    .groups-btn {
+        width: 36px;
+        height: 36px;
+    }
 }
