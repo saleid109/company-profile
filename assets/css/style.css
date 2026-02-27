@@ -2083,14 +2083,14 @@ body {
     margin: 0 auto;
     padding: 72px 40px;
     direction: rtl;
-    background: var(c)
+    background: var(--color-bg-light)
 }
 
 .groups-title {
     font-size: clamp(24px, 3vw, 32px);
     font-weight: 800;
     margin-bottom: 48px;
-    color: var(--primary);
+    color: var(--color-secondary);
     text-align: center;
     letter-spacing: -0.5px;
 }
