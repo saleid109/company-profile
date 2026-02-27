@@ -2002,15 +2002,24 @@ body {
     position: relative;
     background: var(--color-white);
     border-radius: 12px;
-    padding: 100px 24px 36px;
-    flex: 0 0 calc(25% - 18px);
-    /* عرض ربع المسافة تقريباً لظهور 4 بطاقات */
+    
+    /* المقاسات المطلوبة */
+    width: 287px; 
+    height: 124px;
+    
+    /* إلغاء الحسابات التلقائية لضمان تثبيت العرض */
+    flex: 0 0 287px; 
+    
+    /* تقليل الهوامش الداخلية لأن الارتفاع 124px يعتبر صغيراً جداً */
+    padding: 45px 15px 10px; 
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* لضمان أن العرض يشمل الحواف */
 }
 
 /* تأثير التمرير (Hover) على البطاقة لرفعها قليلاً وزيادة الظل */
@@ -2023,14 +2032,14 @@ body {
 */
 .team-avatar {
     position: absolute;
-    top: -30px;
+    top: -35px; /* رفع الأفاتار للأعلى قليلاً */
     left: 50%;
     transform: translateX(-50%);
-    width: 110px;
-    height: 110px;
+    width: 70px;  /* تصغير الحجم قليلاً ليتناسق مع ارتفاع المستطيل */
+    height: 70px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #f2f3f7;
+    border: 4px solid #f2f3f7;
     background: #dde1ea;
 }
 
