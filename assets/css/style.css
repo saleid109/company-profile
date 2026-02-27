@@ -1964,18 +1964,12 @@ body {
     gap: 16px;
 }
 
-/*
-      The clip box:
-      - overflow: hidden  → clips cards left/right
-      - padding-top       → opens space ABOVE so avatars (position:absolute top:-50px) are visible
-      - margin-top        → compensate padding so outer layout stays flush
-    */
 .team-track-clip {
     flex: 1;
     min-width: 0;
     overflow: hidden;
-    padding-top: 38px;
-    margin-top: -38px;
+    padding-top: 38px;   /* ← كان 60px */
+    margin-top: -38px;   /* ← كان -60px */
 }
 
 /* The moving track */
@@ -1991,8 +1985,7 @@ body {
     position: relative;
     background: #fff;
     border-radius: 12px;
-    padding: 100px 24px 36px;
-    /* 4 cards: (100% - 3*24px gap) / 4 */
+    padding: 100px 24px 36px;  /* ← كان 65px */
     flex: 0 0 calc(25% - 18px);
     display: flex;
     flex-direction: column;
@@ -2010,11 +2003,11 @@ body {
 /* ===== Avatar ===== */
 .team-avatar {
     position: absolute;
-    top: -30px;
+    top: -30px;          /* ← كان -50px */
     left: 50%;
     transform: translateX(-50%);
-    width: 110px;
-    height: 110px;
+    width: 110px;        /* ← كان 100px */
+    height: 110px;       /* ← كان 100px */
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid #f2f3f7;
