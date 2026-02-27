@@ -2360,5 +2360,74 @@ body {
         height: 36px;
     }
 }
+/*=========================================*/
+/*========-قسم تذييل الصفحة -footer=========*/
+/* التنسيقات العامة */
+.main-footer {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 40px 0 20px 0;
+    font-family: 'Arial', sans-serif;
+    direction: rtl;
+}
 
-/**/
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    margin-bottom: 30px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #00aaff; /* تأثير عند مرور الماوس */
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons i {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* شريط الحقوق السفلي */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
