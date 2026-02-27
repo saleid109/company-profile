@@ -2362,71 +2362,92 @@ body {
 }
 /*=========================================*/
 /*========-قسم تذييل الصفحة -footer=========*/
-/* التنسيقات العامة */
 .main-footer {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    padding: 40px 0 20px 0;
-    font-family: var(--font-main);
+    background-color: #000045; /* لون كحلي مطابق للصورة */
+    color: white;
+    padding: 60px 0 20px 0;
     direction: rtl;
+    font-family: 'Arial', sans-serif;
 }
 
 .footer-container {
-    display: flex; /* تفعيل نظام الصفوف */
-    flex-direction: row; /* جعل العناصر تصطف بجانب بعضها */
-    justify-content: space-between; /* هذا الإعداد هو السر: يوزع العناصر بحيث يكون الأول في أقصى اليمين والأخير في أقصى اليسار */
-    direction: rtl; /* التأكد من أن الترتيب يبدأ من اليمين */
-    align-items: flex-start; /* محاذاة النصوص من الأعلى */
+    display: flex;
+    justify-content: space-between; /* دفع العناصر للأطراف */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .footer-section {
-    margin-bottom: 30px;
-    min-width: 200px;
+    flex: 1; /* توزيع متساوي للمساحة */
 }
 
-.footer-section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.footer-section ul {
+/* تنسيق الروابط */
+.footer-links {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.footer-section ul li {
-    margin-bottom: 10px;
+.footer-links li {
+    margin-bottom: 12px;
 }
 
-.footer-section a {
-    color: var(--color-white);
+.footer-links a {
+    color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-.footer-section a:hover {
-    color: #00aaff; /* تأثير عند مرور الماوس */
+.footer-links a:hover {
+    opacity: 0.7;
+}
+
+/* تنسيق قسم التواصل (اليسار) */
+.left-section {
+    text-align: left; /* محاذاة النص لليسار لتتناسب مع مكانه */
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* ليبقى الرمز بجانب الرقم */
+    gap: 10px;
 }
 
 .social-icons {
-    margin-top: 20px;
     display: flex;
     gap: 15px;
+    justify-content: flex-end; /* دفع الأيقونات لأقصى اليسار */
+    margin-top: 15px;
 }
 
-.social-icons i {
-    font-size: 1.2rem;
-    cursor: pointer;
+.social-icons a {
+    color:var(--color-primary);
+    font-size: 18px;
 }
 
-/* شريط الحقوق السفلي */
+/* شريط الحقوق */
 .footer-bottom {
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 20px;
+    margin-top: 50px;
     padding-top: 20px;
-    font-size: 0.9rem;
-    opacity: 0.8;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 14px;
 }
 
+/* التجاوب مع الجوال */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .left-section, .social-icons, .contact-info p {
+        text-align: center;
+        justify-content: center;
+    }
+}
