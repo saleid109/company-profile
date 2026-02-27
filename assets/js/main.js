@@ -268,9 +268,7 @@ function updateSlider() {
     const step = getStepWidth();
     const visible = getVisibleCount();
     const cards = totalCards();
-    // In RTL flex, cards are laid out right-to-left.
-    // The track starts shifted right by the total overflow amount.
-    // index=0 → show rightmost cards; increasing index slides left.
+
     const totalOverflow = (cards - visible) * step;
     const offset = totalOverflow - currentIndex * step;
     track.style.transform = `translateX(${offset}px)`;
