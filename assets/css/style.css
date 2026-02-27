@@ -1968,7 +1968,7 @@ body {
     flex: 1;
     min-width: 0;
     overflow: hidden;
-    padding-top: 55px;   /* ← زيادة لإظهار الأفاتار */
+    padding-top: 55px;
     margin-top: -55px;
 }
 
@@ -2003,7 +2003,7 @@ body {
 /* ===== Avatar ===== */
 .team-avatar {
     position: absolute;
-    top: -55px;          /* ← نصف الأفاتار يخرج فوق الكارت */
+    top: -55px;
     left: 50%;
     transform: translateX(-50%);
     width: 110px;
