@@ -65,7 +65,7 @@ body {
     /* إخفاء الرابط بعيداً فوق الشاشة */
     right: 50%;
     transform: translateX(50%);
-    background: #ffcc00;
+    background:var(--color-primary);
     color: #000;
     padding: 10px 20px;
     z-index: 9999;
@@ -2383,6 +2383,12 @@ body {
     flex: 1; /* توزيع متساوي للمساحة */
 }
 
+.footer-logo {
+    width: auto; /* تحكم في حجم اللوجو */
+    height: 50px;
+    margin-bottom: 20px;
+    display: block;
+}
 /* تنسيق الروابط */
 .footer-links {
     list-style: none;
