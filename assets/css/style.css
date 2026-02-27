@@ -2356,14 +2356,14 @@ body {
 }
 
 .footer-links a {
-    color: white;
+    color:var(--color-white);
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #ffcc00;
+    color:var(--color-primary);
     /* تغيير اللون للذهبي عند التمرير */
 }
 
@@ -2385,7 +2385,7 @@ body {
 
 /* تلوين أيقونات الاتصال (الهاتف والإيميل) */
 .contact-info i {
-    color: #ffcc00;
+    color:var(--color-primary);
     /* اللون الذهبي الذي اخترته */
     font-size: 18px;
 }
@@ -2399,7 +2399,7 @@ body {
 }
 
 .social-icons a {
-    color: #ffcc00;
+    color:var(--color-primary);
     /* اللون الذهبي للأيقونات */
     font-size: 20px;
     transition: transform 0.3s ease;
@@ -2408,7 +2408,7 @@ body {
 .social-icons a:hover {
     transform: scale(1.2);
     /* تكبير بسيط عند التمرير */
-    color: white;
+    color:var(--color-white);
 }
 
 /* شريط الحقوق */
