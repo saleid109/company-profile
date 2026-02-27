@@ -276,6 +276,17 @@ function updateSlider() {
     btnNext.disabled = currentIndex >= maxIndex();
 }
 
+btnPrev.addEventListener('click', () => {
+    if (currentIndex > 0) { currentIndex--; updateSlider(); }
+});
+
+btnNext.addEventListener('click', () => {
+    if (currentIndex < maxIndex()) { currentIndex++; updateSlider(); }
+});
+
+window.addEventListener('load', updateSlider);
+updateSlider();
+
 /* --- الفرق --- */
 const groupsSwiper = new Swiper('.groups-swiper', {
     slidesPerView: 3,       /* 3 كروت في نفس الوقت */
