@@ -2083,7 +2083,7 @@ body {
     margin: 0 auto;
     padding: 72px 40px;
     direction: rtl;
-    background: var(--bg);
+    background: var(;
 }
 
 .groups-title {
