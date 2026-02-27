@@ -1978,8 +1978,8 @@ body {
     gap: 24px;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    overflow: visible;  /* ← أضف هذا */
 }
-
 /* ===== Card ===== */
 .team-card {
     position: relative;
@@ -1993,7 +1993,6 @@ body {
     gap: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 55px;
     /* ← هذا هو المفتاح — يخلق مساحة للأفاتار فوق الكارت */
 }
 
