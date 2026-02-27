@@ -237,17 +237,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
-const groupsSwiper = new Swiper('.groups-swiper', {
-    rtl: true,
-    slidesPerView: 3, // أو حسب حاجتك
-    spaceBetween: 24, // المسافة الوردية في فيجما
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-        0: { slidesPerView: 1.1, spaceBetween: 16 },
-        768: { slidesPerView: 2, spaceBetween: 20 },
-        1024: { slidesPerView: 3, spaceBetween: 24 }
-    }
+const track = document.getElementById('groups-track');
+const btnPrev = document.getElementById('groups-btn-prev');
+const btnNext = document.getElementById('groups-btn-next');
+
+const CARDS_VISIBLE = 3;
+let currentIndex = 0;
+
+function getCardWidth() {
+    const card = track.querySelector('.group-card');
+    if (!card) return 0;
+    const gap = parseInt(getComputedStyle(track).gap) || 24;
+    return card.offsetWidth + gap;
+}
+
+function totalCards() {
+    return track.querySelectorAll('.group-card').length;
+}
+
+function updateSlider() {
+    const offset = currentIndex * getCardWidth();
+    track.style.transform = `translateX(${offset}px)`;
+
+    btnPrev.disabled = currentIndex === 0;
+    btnNext.disabled = currentIndex >= totalCards() - CARDS_VISIBLE;
+}
+
+btnPrev.addEventListener('click', () => {
+    if (currentIndex > 0) { currentIndex--; updateSlider(); }
 });
+
+btnNext.addEventListener('click', () => {
+    if (currentIndex < totalCards() - CARDS_VISIBLE) { currentIndex++; updateSlider(); }
+});
+
+// Init
+updateSlider();
+window.addEventListener('resize', updateSlider);
