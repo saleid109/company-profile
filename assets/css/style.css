@@ -2383,22 +2383,21 @@ body {
 /* تنسيق قسم الشعار والروابط في اليمين */
 .right-section {
     display: flex;
-    flex-direction: column; /* ترتيب العناصر عمودياً */
-    align-items: flex-start; /* محاذاة كل شيء لليمين */
+    flex-direction: column; /* ترتيب الشعار ثم القائمة عمودياً */
+    align-items: flex-start; /* محاذاة كل شيء لليمين (بداية السطر في RTL) */
 }
 
 .logo-wrapper {
-    margin-bottom: 25px; /* مساحة كافية بين الشعار والقائمة */
-    width: 100%; /* لضمان ثبات المساحة */
+    margin-bottom: 25px; /* المسافة الفاصلة بين الشعار والروابط */
+    display: flex;
 }
 
 .footer-logo {
-    max-width: 160px; /* حجم الشعار كما في الصورة المثالية */
+    max-width: 150px; /* التحكم بحجم الشعار كما في تصميمك */
     height: auto;
     display: block;
 }
 
-/* تنسيق القوائم */
 .footer-links {
     list-style: none;
     padding: 0;
