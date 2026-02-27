@@ -2304,13 +2304,13 @@ body {
 /*========-قسم تذييل الصفحة -footer=========*/
 /* الحاوية الرئيسية للتذييل */
 .main-footer {
-    background-color: #000045;
+    background-color: var(--color-secondary);
     /* اللون الكحلي الغامق */
-    color: white;
+    color:var(--color-white);
     padding: 60px 0 20px 0;
     direction: rtl;
     /* لضمان الترتيب من اليمين لليسار */
-    font-family: 'Arial', sans-serif;
+    font-family:var(--color-secondary);
 }
 
 .footer-container {
