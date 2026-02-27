@@ -2372,12 +2372,11 @@ body {
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    display: flex; /* تفعيل نظام الصفوف */
+    flex-direction: row; /* جعل العناصر تصطف بجانب بعضها */
+    justify-content: space-between; /* هذا الإعداد هو السر: يوزع العناصر بحيث يكون الأول في أقصى اليمين والأخير في أقصى اليسار */
+    direction: rtl; /* التأكد من أن الترتيب يبدأ من اليمين */
+    align-items: flex-start; /* محاذاة النصوص من الأعلى */
 }
 
 .footer-section {
