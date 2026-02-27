@@ -237,80 +237,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
-const track = document.getElementById('team-track');
-const btnPrev = document.getElementById('btn-prev');
-const btnNext = document.getElementById('btn-next');
-
-let currentIndex = 0;
-
-function getVisibleCount() {
-    const w = window.innerWidth;
-    if (w >= 1024) return 4;
-    if (w >= 768) return 3;
-    if (w >= 480) return 2;
-    return 1;
-}
-function getStepWidth() {
-    const card = track.querySelector('.team-card');
-    if (!card) return 0;
-    return card.getBoundingClientRect().width + 24; // +gap
-}
-
-function totalCards() {
-    return track.querySelectorAll('.team-card').length;
-}
-
-function maxIndex() {
-    return Math.max(0, totalCards() - getVisibleCount());
-}
-
-function updateSlider() {
-    const step = getStepWidth();
-    const visible = getVisibleCount();
-    const cards = totalCards();
-
-    const totalOverflow = (cards - visible) * step;
-    const offset = totalOverflow - currentIndex * step;
-    track.style.transform = `translateX(${offset}px)`;
-    btnPrev.disabled = currentIndex === 0;
-    btnNext.disabled = currentIndex >= maxIndex();
-}
-
-btnPrev.addEventListener('click', () => {
-    if (currentIndex > 0) { currentIndex--; updateSlider(); }
-});
-
-btnNext.addEventListener('click', () => {
-    if (currentIndex < maxIndex()) { currentIndex++; updateSlider(); }
-});
-
-let resizeTimer;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        currentIndex = Math.min(currentIndex, maxIndex());
-        updateSlider();
-    }, 100);
-});
-
-// Wait for fonts/layout to settle
-window.addEventListener('load', updateSlider);
-updateSlider();
-
-/* --- الفرق --- */
 const groupsSwiper = new Swiper('.groups-swiper', {
-    slidesPerView: 3,       /* 3 كروت في نفس الوقت */
-    spaceBetween: 24,
-    direction: 'horizontal',
-    loop: true,
     rtl: true,
+    slidesPerView: 3, // أو حسب حاجتك
+    spaceBetween: 24, // المسافة الوردية في فيجما
     navigation: {
-        nextEl: '.groups-swiper .swiper-button-next',
-        prevEl: '.groups-swiper .swiper-button-prev',
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-        0: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
+        0: { slidesPerView: 1.1, spaceBetween: 16 },
+        768: { slidesPerView: 2, spaceBetween: 20 },
+        1024: { slidesPerView: 3, spaceBetween: 24 }
     }
 });
