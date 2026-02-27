@@ -2363,8 +2363,8 @@ body {
 /*=========================================*/
 /*========-قسم تذييل الصفحة -footer=========*/
 .main-footer {
-    background-color: #000045; /* لون كحلي مطابق للصورة */
-    color: white;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
     padding: 60px 0 20px 0;
     direction: rtl;
     font-family: 'Arial', sans-serif;
@@ -2372,7 +2372,7 @@ body {
 
 .footer-container {
     display: flex;
-    justify-content: space-between; /* دفع العناصر للأطراف */
+    justify-content: space-between;
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
@@ -2395,7 +2395,7 @@ body {
 }
 
 .footer-links a {
-    color: white;
+    color:var(--color-white);
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
@@ -2424,10 +2424,16 @@ body {
     margin-right: 10px;
 }
 
+.contact-info i:hover, .social-icons i:hover {
+    transform: scale(1.2);
+    color: var(--color-white);
+    transition: all 0.3s ease;
+}
+
 .social-icons {
     display: flex;
     gap: 15px;
-    justify-content: flex-end; /* دفع الأيقونات لأقصى اليسار */
+    justify-content: flex-end;
     margin-top: 15px;
 }
 
@@ -2444,6 +2450,7 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     font-size: 14px;
 }
+
 
 /* التجاوب مع الجوال */
 @media (max-width: 768px) {
