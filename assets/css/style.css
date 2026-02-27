@@ -2383,13 +2383,18 @@ body {
 /* تنسيق قسم الشعار والروابط في اليمين */
 .right-section {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    align-items: flex-start; /* محاذاة كل شيء لليمين */
+}
+
+.logo-wrapper {
+    margin-bottom: 25px; /* مساحة كافية بين الشعار والقائمة */
+    width: 100%; /* لضمان ثبات المساحة */
 }
 
 .footer-logo {
-    width: 150px; /* حجم الشعار */
-    margin-bottom: 20px;
+    max-width: 160px; /* حجم الشعار كما في الصورة المثالية */
+    height: auto;
     display: block;
 }
 
