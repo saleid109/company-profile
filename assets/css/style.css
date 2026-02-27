@@ -65,7 +65,7 @@ body {
     /* إخفاء الرابط بعيداً فوق الشاشة */
     right: 50%;
     transform: translateX(50%);
-    background:var(--color-primary);
+    background: var(--color-primary);
     color: #000;
     padding: 10px 20px;
     z-index: 9999;
@@ -2072,210 +2072,189 @@ body {
 }
 
 /* ============================================================
-   قسم الفرق — Groups Section
-   ============================================================ */
+   قسم الفرق — Groups Sectio=============================== */
 
-/* ==== Variables ==== */
-:root {
-    --groups-primary: #001a4d;
-    --groups-accent: #3b5bdb;
-    --groups-bg: #f2f3f7;
-    --groups-card-bg: #ffffff;
-    --groups-border: #e8eaef;
-    --groups-text: #1a1a2e;
-    --groups-muted: #666b80;
-    --groups-subtle: #9397a8;
-    --groups-radius: 16px;
-    --groups-gap: 24px;
-    --groups-transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-/* ==== Section ==== */
+
+/* === Section === */
 .groups-section {
     width: 100%;
     max-width: 1284px;
     margin: 0 auto;
     padding: 72px 40px;
-    text-align: center;
     direction: rtl;
-    background-color: var(--groups-bg);
-}
-
-.groups-container {
-    width: 100%;
-    position: relative;
+    background: var(--bg);
 }
 
 .groups-title {
     font-size: clamp(24px, 3vw, 32px);
     font-weight: 800;
     margin-bottom: 48px;
-    color: var(--groups-primary);
+    color: var(--primary);
     text-align: center;
     letter-spacing: -0.5px;
 }
 
-/* ==== Slider Row ==== */
+/* === Slider === */
 .groups-slider-row {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-/* Clip — hides overflow only on inline axis */
 .groups-track-clip {
     flex: 1;
     min-width: 0;
     overflow: hidden;
 }
 
-/* Moving track */
 .groups-track {
     display: flex;
-    gap: var(--groups-gap);
-    transition: transform var(--groups-transition);
+    gap: var(--gap);
+    transition: transform var(--ease);
     will-change: transform;
 }
 
-/* ==== Card ==== */
+/* === Card === */
 .group-card {
-    /* FIX: صحيح لـ 3 كروت مع gap × 2 */
-    flex: 0 0 calc((100% - var(--groups-gap) * 2) / 3);
+    flex: 0 0 calc((100% - var(--gap) * 2) / 3);
     min-width: 0;
-
-    background-color: var(--groups-card-bg);
-    border-radius: var(--groups-radius);
-    border: 1px solid transparent;
-    padding: 24px;
-    text-align: right;
-    box-shadow: 0 2px 8px rgba(0, 26, 77, 0.06);
-    transition:
-        transform var(--groups-transition),
-        box-shadow var(--groups-transition),
-        border-color var(--groups-transition);
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 26, 77, .06);
+    transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
     cursor: pointer;
+    text-align: right;
 }
 
 .group-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(0, 26, 77, 0.12);
-    border-color: rgba(59, 91, 219, 0.15);
+    box-shadow: 0 12px 32px rgba(0, 26, 77, .12);
+    border-color: rgba(59, 91, 219, .2);
 }
 
-/* ==== Logo area ==== */
-.group-logo {
+/* === Cover box (داخل الكارت مع padding) === */
+.group-cover {
+    width: 100%;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #e8edf5 0%, #d0d8ea 100%);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 16px;
+    /* نسبة عرض/ارتفاع ثابتة */
+    aspect-ratio: 16 / 9;
+}
+
+.group-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* === الشعار فوق الصورة === */
+.group-logo-overlay {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding: 6px 10px 6px 12px;
+    box-shadow: 0 2px 10px rgba(0, 26, 77, .12);
 }
 
-/* Placeholder circle */
-.group-logo-placeholder {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
+.group-logo-circle {
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--groups-primary), var(--groups-accent));
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 26, 77, 0.2);
-}
-
-.group-logo-placeholder svg {
-    width: 22px;
-    height: 22px;
-}
-
-/* Logo image (when real logo is available) */
-.group-logo-img {
     flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
+    overflow: hidden;
+    border: none;
+}
+
+.group-logo-circle img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border: 2px solid var(--groups-border);
+    border-radius: 50%;
+}
+
+.group-logo-circle svg {
+    width: 20px;
+    height: 20px;
+    color: #fff;
 }
 
 .group-logo-text {
     display: flex;
     flex-direction: column;
     text-align: right;
-    gap: 2px;
+    gap: 1px;
 }
 
 .group-logo-text strong {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
-    color: var(--groups-primary);
+    color: var(--primary);
     line-height: 1.3;
 }
 
 .group-logo-text span {
     font-size: 11px;
-    color: var(--groups-subtle);
-    letter-spacing: 0.3px;
+    color: var(--subtle);
 }
 
-/* ==== Image placeholder (header area) ==== */
-.group-image {
-    width: 100%;
-    height: 160px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #e8edf5 0%, #d0d8ea 100%);
-    margin-bottom: 16px;
-    overflow: hidden;
-    position: relative;
-}
-
-.group-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ==== Name ==== */
+/* === Name === */
 .group-name {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
-    color: var(--groups-text);
+    color: var(--text);
     margin-bottom: 8px;
     line-height: 1.4;
 }
 
-/* ==== Description ==== */
+/* === Desc === */
 .group-desc {
     font-size: 14px;
-    color: var(--groups-muted);
+    color: var(--muted);
     line-height: 1.75;
     margin-bottom: 16px;
-
-    /* Clamp to 2 lines */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-/* ==== Meta row ==== */
+/* === Meta === */
 .group-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 16px;
+    gap: 8px 14px;
     justify-content: flex-end;
     align-items: center;
-    border-top: 1px solid var(--groups-border);
-    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
     margin-top: auto;
 }
 
 .group-meta span {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
     font-size: 13px;
-    color: var(--groups-muted);
+    color: var(--muted);
     white-space: nowrap;
 }
 
@@ -2283,97 +2262,63 @@ body {
     width: 14px;
     height: 14px;
     flex-shrink: 0;
-    color: var(--groups-accent);
+    color: var(--accent);
 }
 
-/* ==== Navigation Buttons ==== */
+/* === Nav Buttons === */
 .groups-btn {
     flex-shrink: 0;
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    border: 1.5px solid var(--groups-border);
-    background: var(--groups-card-bg);
-    color: var(--groups-primary);
+    border: 1.5px solid var(--border);
+    background: var(--card-bg);
+    color: var(--primary);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 26, 77, 0.08);
-    transition:
-        box-shadow 0.2s ease,
-        transform 0.2s ease,
-        opacity 0.2s ease,
-        background-color 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 26, 77, .08);
+    transition: box-shadow .2s, transform .2s, background-color .2s;
     user-select: none;
-    -webkit-tap-highlight-color: transparent;
+    align-self: center;
 }
 
 .groups-btn:hover:not(:disabled) {
-    background: var(--groups-primary);
+    background: var(--primary);
     color: #fff;
-    border-color: var(--groups-primary);
-    box-shadow: 0 6px 18px rgba(0, 26, 77, 0.18);
+    border-color: var(--primary);
+    box-shadow: 0 6px 18px rgba(0, 26, 77, .18);
     transform: scale(1.07);
 }
 
 .groups-btn:active:not(:disabled) {
-    transform: scale(0.97);
+    transform: scale(.97);
 }
 
 .groups-btn:disabled {
-    opacity: 0.3;
+    opacity: .3;
     cursor: not-allowed;
     pointer-events: none;
-    /* يمنع الـ click فعلياً */
 }
 
-/* ==== Responsive ==== */
-
-/* Tablet: 2 cards */
-@media (max-width: 900px) {
-    .groups-section {
-        padding: 48px 24px;
-    }
-
-    .group-card {
-        flex: 0 0 calc((100% - var(--groups-gap)) / 2);
-    }
-}
-
-/* Mobile: 1 card */
-@media (max-width: 560px) {
-    .groups-section {
-        padding: 40px 16px;
-    }
-
-    .groups-slider-row {
-        gap: 10px;
-    }
-
-    .group-card {
-        flex: 0 0 100%;
-    }
-
-    .groups-btn {
-        width: 36px;
-        height: 36px;
-    }
-}
 /*=========================================*/
 /*========-قسم تذييل الصفحة -footer=========*/
 /* الحاوية الرئيسية للتذييل */
 .main-footer {
-    background-color: #000045; /* اللون الكحلي الغامق */
+    background-color: #000045;
+    /* اللون الكحلي الغامق */
     color: white;
     padding: 60px 0 20px 0;
-    direction: rtl; /* لضمان الترتيب من اليمين لليسار */
+    direction: rtl;
+    /* لضمان الترتيب من اليمين لليسار */
     font-family: 'Arial', sans-serif;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-between; /* توزيع الأقسام للأطراف */
+    justify-content: space-between;
+    /* توزيع الأقسام للأطراف */
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
@@ -2383,17 +2328,21 @@ body {
 /* تنسيق قسم الشعار والروابط في اليمين */
 .right-section {
     display: flex;
-    flex-direction: column; /* ترتيب الشعار ثم القائمة عمودياً */
-    align-items: flex-start; /* محاذاة كل شيء لليمين (بداية السطر في RTL) */
+    flex-direction: column;
+    /* ترتيب الشعار ثم القائمة عمودياً */
+    align-items: flex-start;
+    /* محاذاة كل شيء لليمين (بداية السطر في RTL) */
 }
 
 .logo-wrapper {
-    margin-bottom: 25px; /* المسافة الفاصلة بين الشعار والروابط */
+    margin-bottom: 25px;
+    /* المسافة الفاصلة بين الشعار والروابط */
     display: flex;
 }
 
 .footer-logo {
-    max-width: 150px; /* التحكم بحجم الشعار كما في تصميمك */
+    max-width: 150px;
+    /* التحكم بحجم الشعار كما في تصميمك */
     height: auto;
     display: block;
 }
@@ -2416,26 +2365,30 @@ body {
 }
 
 .footer-links a:hover {
-    color: #ffcc00; /* تغيير اللون للذهبي عند التمرير */
+    color: #ffcc00;
+    /* تغيير اللون للذهبي عند التمرير */
 }
 
 /* تنسيق قسم التواصل في اليسار */
 .left-section {
-    text-align: left; /* محاذاة لليسار لتناسب الزاوية */
+    text-align: left;
+    /* محاذاة لليسار لتناسب الزاوية */
 }
 
 .contact-info p {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* ليبقى الأيقونة بجانب النص */
+    justify-content: flex-end;
+    /* ليبقى الأيقونة بجانب النص */
     gap: 12px;
     font-size: 16px;
 }
 
 /* تلوين أيقونات الاتصال (الهاتف والإيميل) */
 .contact-info i {
-    color: #ffcc00; /* اللون الذهبي الذي اخترته */
+    color: #ffcc00;
+    /* اللون الذهبي الذي اخترته */
     font-size: 18px;
 }
 
@@ -2448,13 +2401,15 @@ body {
 }
 
 .social-icons a {
-    color: #ffcc00; /* اللون الذهبي للأيقونات */
+    color: #ffcc00;
+    /* اللون الذهبي للأيقونات */
     font-size: 20px;
     transition: transform 0.3s ease;
 }
 
 .social-icons a:hover {
-    transform: scale(1.2); /* تكبير بسيط عند التمرير */
+    transform: scale(1.2);
+    /* تكبير بسيط عند التمرير */
     color: white;
 }
 
@@ -2476,8 +2431,11 @@ body {
         text-align: center;
         gap: 40px;
     }
-    
-    .right-section, .left-section, .social-icons, .contact-info p {
+
+    .right-section,
+    .left-section,
+    .social-icons,
+    .contact-info p {
         align-items: center;
         text-align: center;
         justify-content: center;
