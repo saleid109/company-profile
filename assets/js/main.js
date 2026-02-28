@@ -277,8 +277,7 @@ window.addEventListener('resize', updateSlider);
 
 
 //==================الفرق============
-
-(function( ) {
+ (function() {
             const section = document.querySelector('.teams-group-section');
             const track = section.querySelector('.carousel-track');
             const prevBtn = section.querySelector('.nav-btn.prev');
@@ -289,13 +288,11 @@ window.addEventListener('resize', updateSlider);
             const gap = 24;
 
             function updateCarousel() {
-                // حساب عدد البطاقات المرئية بناءً على عرض الحاوية
                 const containerWidth = section.querySelector('.carousel-wrapper').offsetWidth - 120;
                 const cardWidth = cards[0].offsetWidth;
                 const visibleCount = Math.floor(containerWidth / (cardWidth + gap)) || 1;
                 const maxIndex = Math.max(0, cards.length - visibleCount);
 
-                // التأكد من أن currentIndex لا يتجاوز الحدود
                 if (currentIndex > maxIndex) currentIndex = maxIndex;
 
                 const moveDistance = currentIndex * (cardWidth + gap);
@@ -325,6 +322,5 @@ window.addEventListener('resize', updateSlider);
             });
 
             window.addEventListener('resize', updateCarousel);
-            // تحديث أولي بعد تحميل الصفحة لضمان حساب العرض بشكل صحيح
             setTimeout(updateCarousel, 100);
         })();

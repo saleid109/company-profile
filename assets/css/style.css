@@ -2073,8 +2073,7 @@ body {
 
 /* ============================================================
    قسم الفرق — Groups Sectio=============================== */
-
-        .teams-group-section {
+.teams-group-section {
             font-family: 'Arial', sans-serif;
             background-color: #F8F8F8;
             padding: 60px 0;
@@ -2107,11 +2106,11 @@ body {
             display: flex;
             gap: 24px;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            flex-direction: row-reverse; /* ليتناسب مع RTL */
+            flex-direction: row-reverse;
             width: fit-content;
         }
 
-        /* أزرار التنقل - دوائر بيضاء بظل خفيف كما في فيجما */
+        /* أزرار التنقل - دوائر بيضاء بظل خفيف */
         .teams-group-section .nav-btn {
             background-color: #fff;
             border: none;
@@ -2165,48 +2164,24 @@ body {
             transform: translateY(-5px);
         }
 
-        /* الهيدر الرمادي داخل البطاقة */
+        /* الهيدر الرمادي الذي يحتوي على صورة الشعار الكاملة */
         .teams-group-section .card-header {
             width: 100%;
-            height: 130px;
+            height: 150px; /* زيادة الارتفاع لتناسب صورة الشعار */
             margin-bottom: 24px;
             background-color: #F9F9F9;
             border-radius: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
+            padding: 10px;
         }
 
-        .teams-group-section .brand-logo {
-            margin-left: 15px;
-            background-color: #002060;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 12px;
-        }
-
-        .teams-group-section .brand-logo img {
-            width: 100%;
-            height: 100%;
+        .teams-group-section .full-logo-img {
+            max-width: 90%;
+            max-height: 90%;
             object-fit: contain;
-        }
-
-        .teams-group-section .brand-info { text-align: right; }
-        .teams-group-section .brand-info p {
-            font-size: 1.1em;
-            color: #002060;
-            font-weight: bold;
-            margin: 0;
-            line-height: 1.2;
-        }
-        .teams-group-section .brand-info span {
-            font-size: 0.85em;
-            color: #999;
-            display: block;
         }
 
         /* نصوص البطاقة */
@@ -2243,7 +2218,7 @@ body {
             color: #666;
         }
 
-        /* أيقونات توضيحية لقارئات الشاشة */
+        /* أيقونات توضيحية */
         .teams-group-section .icon-meta::before { 
             margin-left: 6px; 
             color: #007bff; 
