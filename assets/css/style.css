@@ -61,14 +61,19 @@ body {
 .nav-wrapper {
     position: relative;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background-color: var(--color-secondary);
+    padding: 0 30px;
 }
 
 /* تنسيق رابط التخطي */
 .skip-link {
     position: absolute;
     top: -100px;
-    /* إخفاء الرابط بعيداً فوق الشاشة */
-    right: 50%;
+    /*إخفاءالرابطبعيداًفوقالشاشة*/right: 50%;
     transform: translateX(50%);
     background: var(--color-primary);
     color: #000;
@@ -78,7 +83,8 @@ body {
     font-weight: bold;
     border-radius: 0 0 5px 5px;
     transition: top 0.3s ease;
-    /* حركة انسيابية عند الظهور */
+        /* حركة انسيابية عند الظهور */
+
 }
 
 /* إظهار الرابط فقط عند الضغط على Tab */
