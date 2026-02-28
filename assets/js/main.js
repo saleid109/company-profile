@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* --- قسم الفرق --- */
 
-
+/* --- قسم الفرق --- */
 (function() {
     const section = document.querySelector('.teams-group-section');
     if (!section) return;
@@ -283,24 +283,25 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     const gap = 24;
 
-    function updateCarousel() {
+    function getVISIBLE() {
         const wrapperWidth = section.querySelector('.carousel-wrapper').offsetWidth;
         const cardWidth = cards[0].offsetWidth;
-        const VISIBLE = Math.floor(wrapperWidth / (cardWidth + gap)); // ← هذا يكفي
-        const maxIndex = Math.max(0, cards.length - VISIBLE);
+        return Math.floor(wrapperWidth / (cardWidth + gap));
+    }
 
+    function updateCarousel() {
+        const cardWidth = cards[0].offsetWidth;
+        const maxIndex = Math.max(0, cards.length - getVISIBLE());
         if (currentIndex > maxIndex) currentIndex = maxIndex;
 
-        track.style.transform = `translateX(${-(currentIndex * (cardWidth + gap))}px)`;
+        // ← موجب بدل سالب لأن RTL
+        track.style.transform = `translateX(${currentIndex * (cardWidth + gap)}px)`;
         prevBtn.disabled = currentIndex === 0;
         nextBtn.disabled = currentIndex >= maxIndex;
     }
 
     nextBtn.addEventListener('click', () => {
-        const wrapperWidth = section.querySelector('.carousel-wrapper').offsetWidth;
-        const cardWidth = cards[0].offsetWidth;
-        const VISIBLE = Math.floor(wrapperWidth / (cardWidth + gap));
-        const maxIndex = Math.max(0, cards.length - VISIBLE);
+        const maxIndex = Math.max(0, cards.length - getVISIBLE());
         if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); }
     });
 
