@@ -274,3 +274,31 @@ btnNext.addEventListener('click', () => {
 // Init
 updateSlider();
 window.addEventListener('resize', updateSlider);
+
+
+const track = document.querySelector('.carousel-track' );
+        const prevBtn = document.querySelector('.carousel-nav-button.prev');
+        const nextBtn = document.querySelector('.carousel-nav-button.next');
+        const cards = document.querySelectorAll('.group');
+        
+        let currentIndex = 0;
+        const visibleCount = 3;
+        const maxIndex = Math.max(0, cards.length - visibleCount);
+
+        function updateCarousel() {
+            const cardWidth = cards[0].offsetWidth + 24; // width + gap
+            track.style.transform = `translateX(${currentIndex * cardWidth}px)`;
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= maxIndex;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) { currentIndex--; updateCarousel(); }
+        });
+
+        window.addEventListener('resize', updateCarousel);
+        updateCarousel();
