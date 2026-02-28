@@ -1881,18 +1881,7 @@ body {
     padding: 0;
 }
 
-/* --- تنسيق عنصر الشعار --- */
-.partners-section .logo-item {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-    border-radius: 12px;
-    /* لسلاسة حركة البداية والنهاية */
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
+
 
 /* --- تنسيق صورة الشعار --- */
 .partners-section .logo-item img {
