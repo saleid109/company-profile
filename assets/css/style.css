@@ -2075,14 +2075,14 @@ body {
    قسم الفرق — Groups Sectio=============================== */
 
 .teams-group-section {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-main);
     background-color: #F8F8F8;
     padding: 60px 0;
     direction: rtl;
 }
 
 .teams-group-section .container {
-    max-width: 1200px;
+    max-width: 1442px;
     margin: 0 auto;
     padding: 0 20px;
 }
