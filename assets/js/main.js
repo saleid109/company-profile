@@ -261,7 +261,7 @@ prevBtn.addEventListener('click', () => {
 });
 
 function updateCarousel() {
-    const cardWidth = cards[0].offsetWidth + 20;
+    const cardWidth = cards[0].offsetWidth + 20; // 20 = gap
     track.style.transform = `translateX(${currentIndex * cardWidth}px)`;
     
     prevBtn.disabled = currentIndex === 0;
