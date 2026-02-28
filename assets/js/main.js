@@ -270,7 +270,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* --- قسم الفرق --- */
-
 (function() {
     const section = document.querySelector('.teams-group-section');
     if (!section) return;
@@ -281,25 +280,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = section.querySelectorAll('.group');
     let currentIndex = 0;
     const gap = 24;
+    const VISIBLE = 3; // ← ثابت دائماً
 
-    function getVISIBLE() {
-        const wrapperWidth = section.querySelector('.carousel-wrapper').offsetWidth;
-        const cardWidth = cards[0].offsetWidth;
-        return Math.floor(wrapperWidth / (cardWidth + gap));
+    function getCardWidth() {
+        return cards[0].offsetWidth + gap;
     }
 
     function updateCarousel() {
-        const cardWidth = cards[0].offsetWidth;
-        const maxIndex = Math.max(0, cards.length - getVISIBLE());
+        const maxIndex = Math.max(0, cards.length - VISIBLE);
         if (currentIndex > maxIndex) currentIndex = maxIndex;
 
-        track.style.transform = `translateX(${currentIndex * (cardWidth + gap)}px)`;
+        track.style.transform = `translateX(${currentIndex * getCardWidth()}px)`;
         prevBtn.disabled = currentIndex === 0;
         nextBtn.disabled = currentIndex >= maxIndex;
     }
 
     nextBtn.addEventListener('click', () => {
-        const maxIndex = Math.max(0, cards.length - getVISIBLE());
+        const maxIndex = cards.length - VISIBLE;
         if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); }
     });
 
@@ -308,8 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener('resize', updateCarousel);
-    
-    // ← هذان السطران معاً يضمنان الحساب الصحيح
     window.addEventListener('load', updateCarousel);
     setTimeout(updateCarousel, 300);
 })();
