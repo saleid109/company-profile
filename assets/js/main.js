@@ -277,50 +277,24 @@ window.addEventListener('resize', updateSlider);
 
 
 //==================الفرق============
- (function() {
+(function() {
             const section = document.querySelector('.teams-group-section');
             const track = section.querySelector('.carousel-track');
             const prevBtn = section.querySelector('.nav-btn.prev');
             const nextBtn = section.querySelector('.nav-btn.next');
             const cards = section.querySelectorAll('.group');
-            
             let currentIndex = 0;
             const gap = 24;
 
             function updateCarousel() {
-                const containerWidth = section.querySelector('.carousel-wrapper').offsetWidth - 120;
                 const cardWidth = cards[0].offsetWidth;
-                const visibleCount = Math.floor(containerWidth / (cardWidth + gap)) || 1;
-                const maxIndex = Math.max(0, cards.length - visibleCount);
-
-                if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-                const moveDistance = currentIndex * (cardWidth + gap);
-                track.style.transform = `translateX(${moveDistance}px)`;
-                
+                track.style.transform = `translateX(${currentIndex * (cardWidth + gap)}px)`;
                 prevBtn.disabled = currentIndex === 0;
-                nextBtn.disabled = currentIndex >= maxIndex;
+                nextBtn.disabled = currentIndex >= cards.length - 3;
             }
 
-            nextBtn.addEventListener('click', () => {
-                const containerWidth = section.querySelector('.carousel-wrapper').offsetWidth - 120;
-                const cardWidth = cards[0].offsetWidth;
-                const visibleCount = Math.floor(containerWidth / (cardWidth + gap)) || 1;
-                const maxIndex = Math.max(0, cards.length - visibleCount);
-                
-                if (currentIndex < maxIndex) {
-                    currentIndex++;
-                    updateCarousel();
-                }
-            });
-
-            prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateCarousel();
-                }
-            });
-
+            nextBtn.addEventListener('click', () => { if (currentIndex < cards.length - 3) { currentIndex++; updateCarousel(); } });
+            prevBtn.addEventListener('click', () => { if (currentIndex > 0) { currentIndex--; updateCarousel(); } });
             window.addEventListener('resize', updateCarousel);
-            setTimeout(updateCarousel, 100);
+            updateCarousel();
         })();
