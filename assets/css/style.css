@@ -2216,19 +2216,20 @@ body {
 
 
 .site-footer {
-    background: #071c3d;
-    color: #ffffff;
-    padding: 50px 0 0;
+    background:var(--color-secondary);
+    color: var(--color-white);
+    padding: 41px 0 0;
+    direction: rtl;
 }
 
 .footer-container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 40px 40px;
-    display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    padding: 0 115px 41px;
+    display: flex;
     gap: 50px;
-    align-items: start;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 /* ===== Brand Column ===== */
