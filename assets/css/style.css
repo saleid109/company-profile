@@ -2074,179 +2074,180 @@ body {
 /* ============================================================
    قسم الفرق — Groups Sectio=============================== */
 /* ============================================================
-   قسم الفرق — Groups Section
+   قسم الفرق — groups-carousel (كلاسات منفصلة لتجنب التعارض)
    ============================================================ */
 
-/* === Section === */
-.groups-section {
+.groups-carousel-section {
     width: 100%;
     max-width: 1284px;
     margin: 0 auto;
     padding: 72px 40px;
     direction: rtl;
-    background: var(--color-bg-light);
+    background: var(--color-bg-light, #f4f6f9);
+    text-align: center;
 }
 
-.groups-title {
+.groups-carousel-section h2 {
     font-size: clamp(24px, 3vw, 32px);
     font-weight: 800;
     margin-bottom: 48px;
-    color: var(--color-secondary);
+    color: var(--color-secondary, #002060);
     text-align: center;
-    letter-spacing: -0.5px;
 }
 
-/* === Slider === */
-.groups-slider-row {
+/* === الكروسيل === */
+.groups-carousel-wrapper {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
+    position: relative;
 }
 
-.groups-track-clip {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-}
-
-.groups-track {
+.groups-carousel-track {
     display: flex;
-    gap: 24px;
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
+    gap: 20px;
+    overflow: hidden;
+    flex: 1;
+    direction: ltr;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* === Card === */
-.group-card {
-    flex: 0 0 calc((100% - 24px * 2) / 3);
-    min-width: 0;
-    background: #ffffff;
+/* === الكرت === */
+.groups-carousel-card {
+    flex: 0 0 calc(33.333% - 14px);
+    min-width: calc(33.333% - 14px);
+    background: #fff;
     border-radius: 16px;
     border: 1px solid #e8eaef;
-    padding: 20px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     box-shadow: 0 2px 8px rgba(0, 26, 77, 0.06);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-                border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    direction: rtl;
     text-align: right;
 }
 
-.group-card:hover {
-    transform: translateY(-6px);
+.groups-carousel-card:hover {
+    transform: translateY(-5px);
     box-shadow: 0 12px 32px rgba(0, 26, 77, 0.12);
-    border-color: rgba(59, 91, 219, 0.2);
 }
 
-/* === صورة الغلاف ===
-   الصورة تحتوي على الشعار والخلفية — نعرضها كاملة بدون crop */
-.group-cover {
+/* === صورة الغلاف === */
+.groups-carousel-cover {
     width: 100%;
-    border-radius: 10px;
-    background: #eef0f5;
-    overflow: hidden;
-    margin-bottom: 16px;
-    /* contain بدل cover لأن الصورة تحتوي مساحة بيضاء مقصودة */
     aspect-ratio: 16 / 9;
+    background: #f0f2f5;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
-.group-cover img {
+.groups-carousel-cover img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
 }
 
-/* === Name === */
-.group-name {
-    font-size: 17px;
-    font-weight: 700;
-    color: #1a1a2e;
-    margin-bottom: 8px;
-    line-height: 1.4;
+/* === محتوى الكرت === */
+.groups-carousel-body {
+    padding: 16px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-/* === Desc === */
-.group-desc {
-    font-size: 14px;
-    color: #666b80;
-    line-height: 1.75;
-    margin-bottom: 16px;
+.groups-carousel-body h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #002060;
+    margin-bottom: 8px;
+}
+
+.groups-carousel-body p {
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 14px;
+    flex: 1;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-/* === Meta === */
-.group-meta {
+/* === التفاصيل === */
+.groups-carousel-meta {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
+    gap: 12px;
     flex-wrap: wrap;
-    gap: 8px 14px;
     justify-content: flex-end;
-    align-items: center;
-    border-top: 1px solid #e8eaef;
+    border-top: 1px solid #f0f0f0;
     padding-top: 12px;
-    margin-top: auto;
 }
 
-.group-meta span {
-    display: inline-flex;
+.groups-carousel-meta li {
+    display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 13px;
-    color: #666b80;
-    white-space: nowrap;
+    font-size: 0.8rem;
+    color: #555;
 }
 
-.group-meta span svg {
-    width: 14px;
-    height: 14px;
+/* === أزرار التنقل === */
+.groups-carousel-btn {
     flex-shrink: 0;
-    color: var(--color-primary, #3b5bdb);
-}
-
-/* === Nav Buttons === */
-.groups-btn {
-    flex-shrink: 0;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    border: 1.5px solid #e8eaef;
-    background: #ffffff;
-    color: #001a4d;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #333;
+    font-size: 1.3rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 26, 77, 0.08);
-    transition: box-shadow 0.2s, transform 0.2s, background-color 0.2s;
-    user-select: none;
-    align-self: center;
-    -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+    line-height: 1;
 }
 
-.groups-btn:hover:not(:disabled) {
-    background: #001a4d;
+.groups-carousel-btn:hover:not(:disabled) {
+    background: #002060;
     color: #fff;
-    border-color: #001a4d;
-    box-shadow: 0 6px 18px rgba(0, 26, 77, 0.18);
-    transform: scale(1.07);
+    border-color: #002060;
+    box-shadow: 0 4px 14px rgba(0, 32, 96, 0.25);
 }
 
-.groups-btn:active:not(:disabled) {
-    transform: scale(0.97);
-}
-
-.groups-btn:disabled {
+.groups-carousel-btn:disabled {
     opacity: 0.3;
     cursor: not-allowed;
-    pointer-events: none;
+}
+
+/* === الجوال === */
+@media (max-width: 900px) {
+    .groups-carousel-card {
+        flex: 0 0 calc(50% - 10px);
+        min-width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 600px) {
+    .groups-carousel-section {
+        padding: 40px 16px;
+    }
+
+    .groups-carousel-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
 }
 
 /*=========================================*/
@@ -2258,11 +2259,11 @@ body {
 .main-footer {
     background-color: var(--color-secondary);
     /* اللون الكحلي الغامق */
-    color:var(--color-white);
+    color: var(--color-white);
     padding: 60px 0 20px 0;
     direction: rtl;
     /* لضمان الترتيب من اليمين لليسار */
-    font-family:var(--color-secondary);
+    font-family: var(--color-secondary);
 }
 
 .footer-container {
@@ -2308,14 +2309,14 @@ body {
 }
 
 .footer-links a {
-    color:var(--color-white);
+    color: var(--color-white);
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s ease;
 }
 
 .footer-links a:hover {
-    color:var(--color-primary);
+    color: var(--color-primary);
     /* تغيير اللون للذهبي عند التمرير */
 }
 
@@ -2337,7 +2338,7 @@ body {
 
 /* تلوين أيقونات الاتصال (الهاتف والإيميل) */
 .contact-info i {
-    color:var(--color-primary);
+    color: var(--color-primary);
     /* اللون الذهبي الذي اخترته */
     font-size: 18px;
 }
@@ -2351,7 +2352,7 @@ body {
 }
 
 .social-icons a {
-    color:var(--color-primary);
+    color: var(--color-primary);
     /* اللون الذهبي للأيقونات */
     font-size: 20px;
     transition: transform 0.3s ease;
@@ -2360,7 +2361,7 @@ body {
 .social-icons a:hover {
     transform: scale(1.2);
     /* تكبير بسيط عند التمرير */
-    color:var(--color-white);
+    color: var(--color-white);
 }
 
 /* شريط الحقوق */

@@ -237,42 +237,41 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
+/* --- قسم الفرق (Carousel) --- */
 
-     const track = document.querySelector('.carousel-track');
-        const prevBtn = document.querySelector('.carousel-nav-button.prev');
-        const nextBtn = document.querySelector('.carousel-nav-button.next');
-        const cards = document.querySelectorAll('.team-card');
+(function () {
+    const track = document.querySelector('.groups-carousel-track');
+    const prevBtn = document.querySelector('.groups-carousel-btn--prev');
+    const nextBtn = document.querySelector('.groups-carousel-btn--next');
+    const cards = document.querySelectorAll('.groups-carousel-card');
 
-        let currentIndex = 0;
-        const visibleCount = 3;
-        const maxIndex = cards.length - visibleCount;
+    if (!track || !prevBtn || !nextBtn || cards.length === 0) return;
 
-        function getCardWidth() {
-            return cards[0].offsetWidth + 20; // عرض الكرت + gap
-        }
+    let groupIndex = 0;
+    const visible = 3;
+    const maxIndex = cards.length - visible;
 
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
+    function getCardW() {
+        return cards[0].offsetWidth + 20; // عرض الكرت + gap
+    }
 
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
+    function updateGroupsCarousel() {
+        track.style.transform = `translateX(${-(groupIndex * getCardW())}px)`;
+        prevBtn.disabled = groupIndex === 0;
+        nextBtn.disabled = groupIndex >= maxIndex;
+    }
 
-        function updateCarousel() {
-            const cardWidth = getCardWidth();
-            track.style.transform = `translateX(${-(currentIndex * cardWidth)}px)`;
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex >= maxIndex;
-        }
+    nextBtn.addEventListener('click', () => {
+        if (groupIndex < maxIndex) { groupIndex++; updateGroupsCarousel(); }
+    });
 
-        // تحديث عند تغيير حجم النافذة
-        window.addEventListener('resize', () => {
-            updateCarousel();
-        });
+    prevBtn.addEventListener('click', () => {
+        if (groupIndex > 0) { groupIndex--; updateGroupsCarousel(); }
+    });
+
+    window.addEventListener('resize', updateGroupsCarousel);
+
+    // تشغيل أولي
+    updateGroupsCarousel();
+})();
+
