@@ -2073,165 +2073,184 @@ body {
 
 /* ============================================================
    قسم الفرق — Groups Sectio=============================== */
-/* ============================================================
-   قسم الفرق — groups-carousel (كلاسات منفصلة لتجنب التعارض)
-   ============================================================ */
 
-.groups-carousel-section {
-    width: 100%;
-    max-width: 1284px;
-    margin: 0 auto;
-    padding: 72px 40px;
-    direction: rtl;
-    background: var(--color-bg-light, #f4f6f9);
-    text-align: center;
-}
+        .teams-group-section {
+            font-family: 'Arial', sans-serif;
+            background-color: #F8F8F8;
+            padding: 60px 0;
+            direction: rtl;
+            text-align: center;
+        }
 
-.groups-carousel-section h2 {
-    font-size: clamp(24px, 3vw, 32px);
-    font-weight: 800;
-    margin-bottom: 48px;
-    color: var(--color-secondary, #002060);
-    text-align: center;
-}
+        .teams-group-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-/* === الكروسيل === */
-.groups-carousel-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    position: relative;
-}
+        .teams-group-section h2 {
+            font-size: 2.5em;
+            color: #002060;
+            margin-bottom: 40px;
+            font-weight: bold;
+            position: relative;
+        }
 
-.groups-carousel-track {
-    display: flex;
-    gap: 20px;
-    overflow: hidden;
-    flex: 1;
-    direction: rtl;   /* ← غيّر من ltr إلى rtl */
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
+        /* تصميم الكاروسيل */
+        .teams-group-section .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 60px;
+        }
 
-/* === الكرت === */
-.groups-carousel-card {
-    flex: 0 0 calc(33.333% - 14px);
-    min-width: calc(33.333% - 14px);
-    background: #fff;
-    border-radius: 16px;
-    border: 1px solid #e8eaef;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 2px 8px rgba(0, 26, 77, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    direction: rtl;
-    text-align: right;
-}
+        .teams-group-section .carousel-track {
+            display: flex;
+            gap: 24px;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-direction: row-reverse; /* ليتناسب مع RTL */
+            width: fit-content;
+        }
 
-.groups-carousel-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 32px rgba(0, 26, 77, 0.12);
-}
+        /* أزرار التنقل - دوائر بيضاء بظل خفيف كما في فيجما */
+        .teams-group-section .nav-btn {
+            background-color: #fff;
+            border: none;
+            border-radius: 50%;
+            color: #999;
+            font-size: 1.8em;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
 
-/* === صورة الغلاف === */
-.groups-carousel-cover {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: var(--color-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
+        .teams-group-section .nav-btn:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            color: #002060;
+        }
 
-.groups-carousel-cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
+        .teams-group-section .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
 
-/* === محتوى الكرت === */
-.groups-carousel-body {
-    padding: 16px 20px 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
+        .teams-group-section .nav-btn.prev { right: 10px; }
+        .teams-group-section .nav-btn.next { left: 10px; }
 
-.groups-carousel-body h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #002060;
-    margin-bottom: 8px;
-}
+        /* تصميم البطاقة الفردية باستخدام كلاس group */
+        .teams-group-section .group {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 24px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
 
-.groups-carousel-body p {
-    font-size: 0.875rem;
-    color: #666;
-    line-height: 1.7;
-    margin-bottom: 14px;
-    flex: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
+        .teams-group-section .group:hover {
+            transform: translateY(-5px);
+        }
 
-/* === التفاصيل === */
-.groups-carousel-meta {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    border-top: 1px solid #f0f0f0;
-    padding-top: 12px;
-}
+        /* الهيدر الرمادي داخل البطاقة */
+        .teams-group-section .card-header {
+            width: 100%;
+            height: 130px;
+            margin-bottom: 24px;
+            background-color: #F9F9F9;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.groups-carousel-meta li {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.8rem;
-    color: #555;
-}
+        .teams-group-section .brand-logo {
+            margin-left: 15px;
+            background-color: #002060;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+        }
 
-/* === أزرار التنقل === */
-.groups-carousel-btn {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid #ddd;
-    background: #fff;
-    color: #333;
-    font-size: 1.3rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: all 0.25s ease;
-    line-height: 1;
-}
+        .teams-group-section .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
 
-.groups-carousel-btn:hover:not(:disabled) {
-    background: #002060;
-    color: #fff;
-    border-color: #002060;
-    box-shadow: 0 4px 14px rgba(0, 32, 96, 0.25);
-}
+        .teams-group-section .brand-info { text-align: right; }
+        .teams-group-section .brand-info p {
+            font-size: 1.1em;
+            color: #002060;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .teams-group-section .brand-info span {
+            font-size: 0.85em;
+            color: #999;
+            display: block;
+        }
 
-.groups-carousel-btn:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
+        /* نصوص البطاقة */
+        .teams-group-section .group h3 {
+            font-size: 1.4em;
+            color: #002060;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
 
+        .teams-group-section .group .description {
+            font-size: 0.9em;
+            color: #777;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            min-height: 45px;
+        }
 
+        /* تفاصيل الفريق في الأسفل */
+        .teams-group-section .footer-details {
+            list-style: none;
+            padding: 16px 0 0 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            border-top: 1px solid #F5F5F5;
+        }
+
+        .teams-group-section .footer-details li {
+            display: flex;
+            align-items: center;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        /* أيقونات توضيحية لقارئات الشاشة */
+        .teams-group-section .icon-meta::before { 
+            margin-left: 6px; 
+            color: #007bff; 
+        }
+        .teams-group-section .icon-members::before { content: "👥"; }
+        .teams-group-section .icon-tech::before { content: "💻"; }
+        .teams-group-section .icon-city::before { content: "📍"; }
 /*=========================================*/
 
 /*========-قسم تذييل الصفحة -footer=========*/
