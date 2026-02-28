@@ -56,7 +56,8 @@
 @media (max-width: 768px) {
 
     /* ===== أساسيات ===== */
-    html, body {
+    html,
+    body {
         overflow-x: hidden;
         width: 100%;
     }
@@ -91,7 +92,8 @@
     }
 
     .user-info span {
-        display: none; /* إخفاء نص تسجيل الدخول في الجوال */
+        display: none;
+        /* إخفاء نص تسجيل الدخول في الجوال */
     }
 
     .cart-info .price-text {
@@ -325,7 +327,8 @@
     }
 
     .fields-icon-wrapper {
-        display: none; /* إخفاء الصورة التوضيحية في الجوال */
+        display: none;
+        /* إخفاء الصورة التوضيحية في الجوال */
     }
 
     .fields-grid {
@@ -733,7 +736,8 @@
     }
 
     .stats-arrows {
-        display: none; /* إخفاء الأسهم في الجوال */
+        display: none;
+        /* إخفاء الأسهم في الجوال */
     }
 
     .stats-dark-card {
@@ -1006,7 +1010,7 @@
 }
 
 /* =========================================================
-   التابلت الصغير (481px - 768px)
+التابلت الصغير (481px - 768px)
 ========================================================= */
 
 @media (min-width: 481px) and (max-width: 768px) {
