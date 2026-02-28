@@ -2213,72 +2213,85 @@ body {
 /*=========================================*/
 
 /*========-قسم تذييل الصفحة -footer=========*/
-/* ===============================
-   FOOTER - Production Clean
-================================= */
+/* =========================================
+   FOOTER – Enterprise Clean Version
+========================================= */
 
 .site-footer {
-    background: #001a4d;
-    color: #fff;
-    padding-top: 70px;
-    font-family: var(--font-main);
+    background: #071c3d;
+    color: #ffffff;
+    padding: 50px 0 0;
 }
 
 .footer-container {
-    max-width: 1280px;
-    margin: auto;
-    padding: 0 40px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 40px;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 50px;
+    align-items: start;
 }
 
+/* ===== Brand Column ===== */
+
 .footer-brand img {
-    width: 160px;
-    margin-bottom: 20px;
+    width: 140px;
+    margin-bottom: 18px;
 }
 
 .footer-brand p {
     font-size: 14px;
-    line-height: 1.8;
-    opacity: 0.8;
+    line-height: 1.9;
+    opacity: 0.85;
+    max-width: 280px;
 }
 
+/* ===== Columns ===== */
+
 .footer-column h4 {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 17px;
     font-weight: 700;
-    color: var(--color-primary);
+    margin-bottom: 18px;
+    color: #f5c842;
 }
 
 .footer-column ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-column ul li {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .footer-column ul li a {
     text-decoration: none;
-    color: #d9d9d9;
-    transition: 0.3s;
+    font-size: 14px;
+    color: #d6dbe6;
+    transition: all 0.3s ease;
 }
 
 .footer-column ul li a:hover {
-    color: #f5c842;
+    color: #ffffff;
+    padding-right: 6px;
 }
+
+/* ===== Contact Text ===== */
 
 .footer-column p {
-    margin-bottom: 10px;
     font-size: 14px;
-    opacity: 0.85;
+    margin-bottom: 8px;
+    color: #cbd3e1;
 }
 
+/* ===== Bottom Bar ===== */
+
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    opacity: 0.7;
+    padding: 18px;
+    font-size: 13px;
+    color: #aab4c6;
 }
