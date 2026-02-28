@@ -276,7 +276,7 @@ updateSlider();
 window.addEventListener('resize', updateSlider);
 
 
-//==================
+//==================الفرق============
 
 (function( ) {
             const section = document.querySelector('.teams-group-section');
