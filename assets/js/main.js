@@ -276,29 +276,55 @@ updateSlider();
 window.addEventListener('resize', updateSlider);
 
 
-const track = document.querySelector('.carousel-track' );
-        const prevBtn = document.querySelector('.carousel-nav-button.prev');
-        const nextBtn = document.querySelector('.carousel-nav-button.next');
-        const cards = document.querySelectorAll('.group');
-        
-        let currentIndex = 0;
-        const visibleCount = 3;
-        const maxIndex = Math.max(0, cards.length - visibleCount);
+//==================
 
-        function updateCarousel() {
-            const cardWidth = cards[0].offsetWidth + 24; // width + gap
-            track.style.transform = `translateX(${currentIndex * cardWidth}px)`;
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex >= maxIndex;
-        }
+(function( ) {
+            const section = document.querySelector('.teams-group-section');
+            const track = section.querySelector('.carousel-track');
+            const prevBtn = section.querySelector('.nav-btn.prev');
+            const nextBtn = section.querySelector('.nav-btn.next');
+            const cards = section.querySelectorAll('.group');
+            
+            let currentIndex = 0;
+            const gap = 24;
 
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); }
-        });
+            function updateCarousel() {
+                // حساب عدد البطاقات المرئية بناءً على عرض الحاوية
+                const containerWidth = section.querySelector('.carousel-wrapper').offsetWidth - 120;
+                const cardWidth = cards[0].offsetWidth;
+                const visibleCount = Math.floor(containerWidth / (cardWidth + gap)) || 1;
+                const maxIndex = Math.max(0, cards.length - visibleCount);
 
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) { currentIndex--; updateCarousel(); }
-        });
+                // التأكد من أن currentIndex لا يتجاوز الحدود
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
 
-        window.addEventListener('resize', updateCarousel);
-        updateCarousel();
+                const moveDistance = currentIndex * (cardWidth + gap);
+                track.style.transform = `translateX(${moveDistance}px)`;
+                
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex >= maxIndex;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                const containerWidth = section.querySelector('.carousel-wrapper').offsetWidth - 120;
+                const cardWidth = cards[0].offsetWidth;
+                const visibleCount = Math.floor(containerWidth / (cardWidth + gap)) || 1;
+                const maxIndex = Math.max(0, cards.length - visibleCount);
+                
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+
+            window.addEventListener('resize', updateCarousel);
+            // تحديث أولي بعد تحميل الصفحة لضمان حساب العرض بشكل صحيح
+            setTimeout(updateCarousel, 100);
+        })();
