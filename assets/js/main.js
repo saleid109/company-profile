@@ -307,5 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener('resize', updateCarousel);
-    setTimeout(updateCarousel, 100);  // ← مهم للحساب الصحيح
+    setTimeout(updateCarousel, 100);
+    window.addEventListener('load', updateCarousel);
+setTimeout(updateCarousel, 300);
 })();
