@@ -280,14 +280,18 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     const gap = 24;
     const VISIBLE = 3;
+function updateCarousel() {
+    const wrapperWidth = section.querySelector('.carousel-wrapper').offsetWidth;
+    const cardWidth = cards[0].offsetWidth;
+    const VISIBLE = Math.floor(wrapperWidth / (cardWidth + gap));
+    const maxIndex = Math.max(0, cards.length - VISIBLE);
 
-    function updateCarousel() {
-        const cardWidth = cards[0].offsetWidth;
-        track.style.transform = `translateX(${-(currentIndex * (cardWidth + gap))}px)`;
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= cards.length - VISIBLE;
-    }
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
 
+    track.style.transform = `translateX(${-(currentIndex * (cardWidth + gap))}px)`;
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
+}
     nextBtn.addEventListener('click', () => {
         if (currentIndex < cards.length - VISIBLE) { currentIndex++; updateCarousel(); }
     });

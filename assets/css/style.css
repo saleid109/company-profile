@@ -2094,7 +2094,8 @@ body {
         .teams-group-section .carousel-wrapper {
             position: relative;
             overflow: hidden;
-            padding: 20px 60px;
+            padding: 20px 0px;
+            margin: 0 60px;
         }
         .teams-group-section .carousel-track {
             display: flex;
