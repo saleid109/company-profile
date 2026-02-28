@@ -2108,7 +2108,7 @@ body {
     gap: 20px;
     overflow: hidden;
     flex: 1;
-    direction: ltr;
+    direction: rtl;   /* ← غيّر من ltr إلى rtl */
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -2127,7 +2127,6 @@ body {
     cursor: pointer;
     direction: rtl;
     text-align: right;
-    gap: 20px;
 }
 
 .groups-carousel-card:hover {
