@@ -237,13 +237,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
-
 const track = document.querySelector('.carousel-track');
 const prevBtn = document.querySelector('.carousel-nav-button.prev');
 const nextBtn = document.querySelector('.carousel-nav-button.next');
+const cards = document.querySelectorAll('.team-card');
 
 let currentIndex = 0;
-const cards = document.querySelectorAll('.team-card');
 const visibleCount = 3;
 const maxIndex = cards.length - visibleCount;
 
@@ -262,8 +261,8 @@ prevBtn.addEventListener('click', () => {
 });
 
 function updateCarousel() {
-    const cardWidth = 300 + 20; // عرض ثابت بدل offsetWidth
-    track.style.transform = `translateX(${currentIndex * cardWidth}px)`;
+    const cardWidth = 300 + 20;
+    track.style.transform = `translateX(${-(currentIndex * cardWidth)}px)`;
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex >= maxIndex;
 }

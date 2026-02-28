@@ -27,13 +27,14 @@
             margin: 10px auto 0;
         }
 
-        .carousel-track {
+      .carousel-track {
     display: flex;
     gap: 20px;
     overflow: hidden;
-    width: 960px;  /* 3 × 300px + 2 × 20px gap = 960 */
+    width: 960px;
     flex-shrink: 0;
     transition: transform 0.4s ease;
+    direction: ltr; /* ← أضف هذا */
 }
 
         .team-carousel {
@@ -72,19 +73,21 @@
             right: 0;
         }
         .team-card {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            width: 300px;
-            max-width: 300px;
-            text-align: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex-shrink: 0;
-        }
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    direction: rtl; /* ← أضف هذا */
+}
             .team-logo-container {
                 width: 100px;
                 height: 100px;
