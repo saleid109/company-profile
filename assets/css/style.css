@@ -2240,12 +2240,12 @@ body {
     display: block;
 }
 
-/* تنسيق إضافي لعمود الشعار لضمان المحاذاة */
+/*  لعمود الشعار لضمان المحاذاة */
 .brand-column {
     max-width: 350px; /* لمنع النص من التمدد بشكل عرضي كبير */
 }
 .footer-column h4 {
-    color: #f5c842; /* اللون الذهبي للعناوين */
+    color: #f5c842; 
     font-size: 18px;
     margin-bottom: 20px;
 }
