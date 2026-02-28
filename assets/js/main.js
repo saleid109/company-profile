@@ -237,41 +237,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
-/* --- قسم الفرق (Carousel) --- */
+const track = document.getElementById('groups-track');
+const btnPrev = document.getElementById('groups-btn-prev');
+const btnNext = document.getElementById('groups-btn-next');
 
-(function () {
-    const track = document.querySelector('.groups-carousel-track');
-    const prevBtn = document.querySelector('.groups-carousel-btn--prev');
-    const nextBtn = document.querySelector('.groups-carousel-btn--next');
-    const cards = document.querySelectorAll('.groups-carousel-card');
+const CARDS_VISIBLE = 3;
+let currentIndex = 0;
 
-    if (!track || !prevBtn || !nextBtn || cards.length === 0) return;
+function getCardWidth() {
+    const card = track.querySelector('.group-card');
+    if (!card) return 0;
+    const gap = parseInt(getComputedStyle(track).gap) || 24;
+    return card.offsetWidth + gap;
+}
 
-    let groupIndex = 0;
-    const visible = 3;
-    const maxIndex = cards.length - visible;
+function totalCards() {
+    return track.querySelectorAll('.group-card').length;
+}
 
-    function getCardW() {
-        return cards[0].offsetWidth + 20; // عرض الكرت + gap
-    }
+function updateSlider() {
+    const offset = currentIndex * getCardWidth();
+    track.style.transform = `translateX(${offset}px)`;
 
-    function updateGroupsCarousel() {
-        track.style.transform = `translateX(${-(groupIndex * getCardW())}px)`;
-        prevBtn.disabled = groupIndex === 0;
-        nextBtn.disabled = groupIndex >= maxIndex;
-    }
+    btnPrev.disabled = currentIndex === 0;
+    btnNext.disabled = currentIndex >= totalCards() - CARDS_VISIBLE;
+}
 
-    nextBtn.addEventListener('click', () => {
-        if (groupIndex < maxIndex) { groupIndex++; updateGroupsCarousel(); }
-    });
+btnPrev.addEventListener('click', () => {
+    if (currentIndex > 0) { currentIndex--; updateSlider(); }
+});
 
-    prevBtn.addEventListener('click', () => {
-        if (groupIndex > 0) { groupIndex--; updateGroupsCarousel(); }
-    });
+btnNext.addEventListener('click', () => {
+    if (currentIndex < totalCards() - CARDS_VISIBLE) { currentIndex++; updateSlider(); }
+});
 
-    window.addEventListener('resize', updateGroupsCarousel);
-
-    // تشغيل أولي
-    updateGroupsCarousel();
-})();
-
+// Init
+updateSlider();
+window.addEventListener('resize', updateSlider);
