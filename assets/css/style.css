@@ -2127,6 +2127,7 @@ body {
     cursor: pointer;
     direction: rtl;
     text-align: right;
+    gap: 20px;
 }
 
 .groups-carousel-card:hover {
@@ -2138,7 +2139,7 @@ body {
 .groups-carousel-cover {
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: #f0f2f5;
+    background: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2231,24 +2232,6 @@ body {
     cursor: not-allowed;
 }
 
-/* === الجوال === */
-@media (max-width: 900px) {
-    .groups-carousel-card {
-        flex: 0 0 calc(50% - 10px);
-        min-width: calc(50% - 10px);
-    }
-}
-
-@media (max-width: 600px) {
-    .groups-carousel-section {
-        padding: 40px 16px;
-    }
-
-    .groups-carousel-card {
-        flex: 0 0 100%;
-        min-width: 100%;
-    }
-}
 
 /*=========================================*/
 
