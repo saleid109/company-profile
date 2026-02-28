@@ -2201,141 +2201,94 @@ body {
 
 /*========-قسم تذييل الصفحة -footer=========*/
 
+/* =========================================
+   Footer - Production Clean Version
+========================================= */
 
-/* الحاوية الرئيسية للتذييل */
-.main-footer {
-    background-color: var(--color-secondary);
-    /* اللون الكحلي الغامق */
-    color: var(--color-white);
-    padding: 60px 0 20px 0;
+.site-footer {
+    background-color: #0a0f5a;
+    color: #ffffff;
+    padding: 60px 20px 30px;
     direction: rtl;
-    /* لضمان الترتيب من اليمين لليسار */
-    font-family: var(--color-secondary);
+    font-family: var(--font-main);
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    /* توزيع الأقسام للأطراف */
-    align-items: flex-start;
+.footer-content {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
 }
 
-/* تنسيق قسم الشعار والروابط في اليمين */
-.right-section {
-    display: flex;
-    flex-direction: column;
-    /* ترتيب الشعار ثم القائمة عمودياً */
-    align-items: flex-start;
-    /* محاذاة كل شيء لليمين (بداية السطر في RTL) */
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-.logo-wrapper {
-    margin-bottom: 25px;
-    /* المسافة الفاصلة بين الشعار والروابط */
-    display: flex;
-}
-
-.footer-logo {
-    max-width: 150px;
-    /* التحكم بحجم الشعار كما في تصميمك */
-    height: auto;
-    display: block;
-}
-
-.footer-links {
+.footer-column ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
-.footer-links li {
+.footer-column ul li {
     margin-bottom: 12px;
 }
 
-.footer-links a {
-    color: var(--color-white);
+.footer-column ul li a {
     text-decoration: none;
-    font-size: 16px;
+    color: #cfcfe6;
     transition: 0.3s ease;
+    font-size: 15px;
 }
 
-.footer-links a:hover {
-    color: var(--color-primary);
-    /* تغيير اللون للذهبي عند التمرير */
+.footer-column ul li a:hover {
+    color: #ffffff;
 }
 
-/* تنسيق قسم التواصل في اليسار */
-.left-section {
-    text-align: left;
-    /* محاذاة لليسار لتناسب الزاوية */
+.contact-info p,
+.contact-info a {
+    font-size: 15px;
+    color: #cfcfe6;
+    margin-bottom: 12px;
+    text-decoration: none;
+    display: block;
 }
 
-.contact-info p {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    /* ليبقى الأيقونة بجانب النص */
-    gap: 12px;
-    font-size: 16px;
+.contact-info a:hover {
+    color: #ffffff;
 }
 
-/* تلوين أيقونات الاتصال (الهاتف والإيميل) */
-.contact-info i {
-    color: var(--color-primary);
-    /* اللون الذهبي الذي اخترته */
-    font-size: 18px;
-}
-
-/* تنسيق أيقونات التواصل الاجتماعي */
 .social-icons {
+    margin-top: 15px;
     display: flex;
     gap: 15px;
-    justify-content: flex-end;
-    margin-top: 20px;
 }
 
 .social-icons a {
-    color: var(--color-primary);
-    /* اللون الذهبي للأيقونات */
-    font-size: 20px;
-    transition: transform 0.3s ease;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 14px;
 }
 
 .social-icons a:hover {
-    transform: scale(1.2);
-    /* تكبير بسيط عند التمرير */
-    color: var(--color-white);
+    background: #ffffff;
+    color: #0a0f5a;
 }
 
-/* شريط الحقوق */
-.footer-bottom {
-    text-align: center;
+.copyright {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* التجاوب مع الجوال */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .right-section,
-    .left-section,
-    .social-icons,
-    .contact-info p {
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-    }
+    color: #cfcfe6;
 }
