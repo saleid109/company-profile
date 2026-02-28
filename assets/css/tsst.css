@@ -1,138 +1,111 @@
 
-  /* ================ قسم الفرق ================ */
-.teams-section {
-    padding: 40px 20px;
-    text-align: center;
-    direction: rtl;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .teams-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .teams-section h2 {
+            font-size: 2.5em;
+            color: #002060;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .teams-section h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+        }
+        .team-carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+        }
+        .carousel-nav-button {
+            background: none;
+            border: none;
+            font-size: 2em;
+            color: #007bff;
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        .carousel-nav-button.prev {
+            left: 0;
+        }
+        .carousel-nav-button.next {
+            right: 0;
+        }
+        .team-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .team-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: contain;
+            background-color: #eee;
+        }
+        .team-card h3 {
+            font-size: 1.5em;
+            color: #002060;
+            margin-bottom: 10px;
+        }
+        .team-card p {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .team-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .team-details li {
+            display: flex;
+            align-items: center;
+            font-size: 0.85em;
+            color: #666;
+        }
+        .team-details li svg {
+            margin-left: 5px;
+            fill: #007bff;
+        }
+        /* Icons - simplified for brevity, in a real scenario these would be SVG or icon fonts */
+        .icon-users::before { content: "👥"; margin-left: 5px; }
+        .icon-code::before { content: "💻"; margin-left: 5px; }
+        .icon-location::before { content: "📍"; margin-left: 5px; }
 
-.teams-section h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #1a1a2e;
-}
-
-/* الكروسيل */
-.team-carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    position: relative;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 20px;
-    overflow: hidden;  /* ← مهم جداً */
-    width: 100%;
-    max-width: 900px;
-    transition: transform 0.4s ease;
-}
-
-/* كرت الفريق */
-.team-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    border: 1px solid #ebebeb;  /* ← أضف border */
-    padding: 20px;
-    min-width: calc(33.333% - 14px);
-    max-width: calc(33.333% - 14px);  /* ← أضف max-width */
-    text-align: right;
-    flex-shrink: 0;
-}
-
-
-.team-card:hover {
-    transform: translateY(-4px);
-}
-
-.team-card img {
-    width: 80px;   /* ← صغّر الصورة */
-    height: 60px;
-    object-fit: contain;
-    margin-bottom: 15px;
-    display: block;
-    margin-inline: auto;
-}
-
-.team-card h3 {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #1a1a2e;
-    margin-bottom: 8px;
-}
-
-.team-card p {
-    font-size: 0.85rem;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    display: -webkit-box;
-    overflow: hidden;
-}
-
-/* تفاصيل الفريق */
-.team-details {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    font-size: 0.8rem;
-    color: #888;
-    border-top: 1px solid #f0f0f0;
-    padding-top: 12px;
-}
-
-.team-details li {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-/* أزرار التنقل */
-.carousel-nav-button {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: all 0.2s;
-    color: #333;
-}
-
-.carousel-nav-button:hover:not(:disabled) {
-    background: #4f46e5;
-    color: #fff;
-    border-color: #4f46e5;
-}
-
-.carousel-nav-button:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-/* الجوال */
-@media (max-width: 768px) {
-    .team-card {
-        min-width: calc(100% - 0px);
-    }
-
-    .carousel-track {
-        max-width: 100%;
-    }
-}
         /* Footer - basic styling to show context, not part of the requested section */
         footer {
             background-color: #002060;
