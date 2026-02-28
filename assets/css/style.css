@@ -2080,11 +2080,13 @@ body {
     padding: 60px 0;
     direction: rtl;
 }
+
 .teams-group-section .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
 .teams-group-section h2 {
     font-size: 2.5em;
     color: #002060;
@@ -2128,14 +2130,16 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
     transition: all 0.3s ease;
     /* ← لا position absolute */
 }
+
 .teams-group-section .nav-btn:hover:not(:disabled) {
     background-color: #002060;
     color: #fff;
 }
+
 .teams-group-section .nav-btn:disabled {
     opacity: 0.3;
     cursor: not-allowed;
@@ -2145,12 +2149,14 @@ body {
     background-color: #fff;
     border-radius: 20px;
     padding: 24px;
-    flex: 0 0 calc(33.333% - 16px); /* ← دائماً ثلث العرض */
+    flex: 0 0 calc(33.333% - 16px);
+    /* ← دائماً ثلث العرض */
     text-align: right;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
 }
+
 .teams-group-section .card-header {
     width: 100%;
     height: 160px;
@@ -2162,26 +2168,31 @@ body {
     align-items: center;
     overflow: hidden;
 }
+
 .teams-group-section .full-logo-img {
     max-width: 80%;
     object-fit: contain;
 }
+
 .teams-group-section .group h3 {
     font-size: 1.4em;
     color: #002060;
     margin-bottom: 12px;
     font-weight: bold;
 }
+
 .teams-group-section .group .description {
     font-size: 0.9em;
     color: #333;
     line-height: 1.6;
     margin-bottom: 10px;
 }
+
 .teams-group-section .dots-separator {
     color: #999;
     margin-bottom: 20px;
 }
+
 .teams-group-section .footer-details {
     list-style: none;
     padding: 0;
@@ -2190,6 +2201,7 @@ body {
     justify-content: space-between;
     width: 100%;
 }
+
 .teams-group-section .footer-details li {
     display: flex;
     align-items: center;
@@ -2197,34 +2209,46 @@ body {
     font-size: 0.85em;
     color: #333;
 }
+
 /*=========================================*/
 
 /*========-قسم تذييل الصفحة -footer=========*/
-
-/* =========================================
-   Footer - Production Clean Version
-========================================= */
+/* ===============================
+   FOOTER - Production Clean
+================================= */
 
 .site-footer {
-    background-color: #0a0f5a;
-    color: #ffffff;
-    padding: 60px 20px 30px;
-    direction: rtl;
+    background: #001a4d;
+    color: #fff;
+    padding-top: 70px;
     font-family: var(--font-main);
 }
 
-.footer-content {
-    max-width: 1200px;
+.footer-container {
+    max-width: 1280px;
     margin: auto;
+    padding: 0 40px 50px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: 40px;
+}
+
+.footer-brand img {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.8;
 }
 
 .footer-column h4 {
     font-size: 18px;
     margin-bottom: 20px;
     font-weight: 700;
+    color: var(--color-primary);
 }
 
 .footer-column ul {
@@ -2237,58 +2261,24 @@ body {
 
 .footer-column ul li a {
     text-decoration: none;
-    color: #cfcfe6;
-    transition: 0.3s ease;
-    font-size: 15px;
+    color: #d9d9d9;
+    transition: 0.3s;
 }
 
 .footer-column ul li a:hover {
-    color: #ffffff;
+    color: #f5c842;
 }
 
-.contact-info p,
-.contact-info a {
-    font-size: 15px;
-    color: #cfcfe6;
-    margin-bottom: 12px;
-    text-decoration: none;
-    display: block;
-}
-
-.contact-info a:hover {
-    color: #ffffff;
-}
-
-.social-icons {
-    margin-top: 15px;
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s ease;
+.footer-column p {
+    margin-bottom: 10px;
     font-size: 14px;
+    opacity: 0.85;
 }
 
-.social-icons a:hover {
-    background: #ffffff;
-    color: #0a0f5a;
-}
-
-.copyright {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
+    padding: 20px;
     font-size: 14px;
-    color: #cfcfe6;
+    opacity: 0.7;
 }
