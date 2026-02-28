@@ -70,7 +70,7 @@ body {
 .skip-link {
     position: absolute;
     top: -100px;
-    /*إخفاءالرابطبعيداًفوقالشاشة*/right: 50%;
+    right: 50%;
     transform: translateX(50%);
     background: var(--color-primary);
     color: #000;
