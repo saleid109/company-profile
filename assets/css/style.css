@@ -2105,7 +2105,7 @@ body {
         }
         .teams-group-section .nav-btn {
             background-color: #fff;
-            border: none;
+            border: 1px solid #ddd;
             border-radius: 50%;
             color: #999;
             font-size: 1.8em;
