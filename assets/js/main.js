@@ -237,6 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
+
 const track = document.querySelector('.carousel-track');
 const prevBtn = document.querySelector('.carousel-nav-button.prev');
 const nextBtn = document.querySelector('.carousel-nav-button.next');
@@ -261,9 +262,8 @@ prevBtn.addEventListener('click', () => {
 });
 
 function updateCarousel() {
-    const cardWidth = cards[0].offsetWidth + 20; // 20 = gap
+    const cardWidth = 300 + 20; // عرض ثابت بدل offsetWidth
     track.style.transform = `translateX(${currentIndex * cardWidth}px)`;
-    
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex >= maxIndex;
 }
