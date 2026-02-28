@@ -237,32 +237,42 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
-const track = document.querySelector('.carousel-track');
-const prevBtn = document.querySelector('.carousel-nav-button.prev');
-const nextBtn = document.querySelector('.carousel-nav-button.next');
-const cards = document.querySelectorAll('.team-card');
 
-let currentIndex = 0;
-const visibleCount = 3;
-const maxIndex = cards.length - visibleCount;
+     const track = document.querySelector('.carousel-track');
+        const prevBtn = document.querySelector('.carousel-nav-button.prev');
+        const nextBtn = document.querySelector('.carousel-nav-button.next');
+        const cards = document.querySelectorAll('.team-card');
 
-nextBtn.addEventListener('click', () => {
-    if (currentIndex < maxIndex) {
-        currentIndex++;
-        updateCarousel();
-    }
-});
+        let currentIndex = 0;
+        const visibleCount = 3;
+        const maxIndex = cards.length - visibleCount;
 
-prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-    }
-});
+        function getCardWidth() {
+            return cards[0].offsetWidth + 20; // عرض الكرت + gap
+        }
 
-function updateCarousel() {
-    const cardWidth = 300 + 20;
-    track.style.transform = `translateX(${-(currentIndex * cardWidth)}px)`;
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex >= maxIndex;
-}
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        function updateCarousel() {
+            const cardWidth = getCardWidth();
+            track.style.transform = `translateX(${-(currentIndex * cardWidth)}px)`;
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= maxIndex;
+        }
+
+        // تحديث عند تغيير حجم النافذة
+        window.addEventListener('resize', () => {
+            updateCarousel();
+        });
