@@ -33,9 +33,6 @@ body {
 }
 
 .service-card,
-.home-buttons a,
-.nav-menu li a,
-.btn-primary,
 .feature-item {
     will-change: transform;
     /* تحسين أداء GPU */
