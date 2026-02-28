@@ -2215,83 +2215,76 @@ body {
 
 /*========-قسم تذييل الصفحة -footer=========*/
 
-
 .site-footer {
-    background:var(--color-secondary);
-    color: var(--color-white);
-    padding: 41px 0 0;
+    background-color: #00015B; /* اللون الداكن جداً من التصميم */
+    color: #ffffff;
     direction: rtl;
+    padding-top: 50px;
+    font-family: 'Cairo', sans-serif;
 }
 
 .footer-container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 115px 41px;
     display: flex;
-    gap: 50px;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: space-between; /* توزيع الأعمدة بمسافات تلقائية */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    flex-wrap: wrap; /* لضمان التجاوب في الشاشات الصغيرة */
 }
-
-/* ===== Brand Column ===== */
-
-.footer-brand img {
-    width: 140px;
-    margin-bottom: 18px;
-}
-
-.footer-brand p {
-    font-size: 14px;
-    line-height: 1.9;
-    opacity: 0.85;
-    max-width: 280px;
-}
-
-/* ===== Columns ===== */
 
 .footer-column h4 {
-    font-size: 17px;
-    font-weight: 700;
-    margin-bottom: 18px;
-    color: #f5c842;
+    color: #f5c842; /* اللون الذهبي للعناوين */
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .footer-column ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .footer-column ul li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .footer-column ul li a {
+    color: #ffffff;
     text-decoration: none;
     font-size: 14px;
-    color: #d6dbe6;
-    transition: all 0.3s ease;
+    opacity: 0.8;
 }
 
-.footer-column ul li a:hover {
+/* تنسيق أيقونات التواصل الاجتماعي */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
     color: #ffffff;
-    padding-right: 6px;
+    font-size: 18px;
+    transition: color 0.3s;
 }
 
-/* ===== Contact Text ===== */
+.social-links a:hover {
+    color: #f5c842;
+}
 
-.footer-column p {
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
     font-size: 14px;
-    margin-bottom: 8px;
-    color: #cbd3e1;
 }
 
-/* ===== Bottom Bar ===== */
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+/* شريط الحقوق السفلي */
+.footer-bottom-bar {
     text-align: center;
-    padding: 18px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 13px;
-    color: #aab4c6;
+    color: rgba(255, 255, 255, 0.7);
 }
