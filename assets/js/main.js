@@ -270,13 +270,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* --- قسم الفرق --- */
+
 (function() {
     const section = document.querySelector('.teams-group-section');
     if (!section) return;
 
     const track = section.querySelector('.carousel-track');
     const prevBtn = section.querySelector('.nav-btn.prev');
-    const nextBtn = section.querySelector('.nav-btn.next');  
+    const nextBtn = section.querySelector('.nav-btn.next');
     const cards = section.querySelectorAll('.group');
     let currentIndex = 0;
     const gap = 24;
@@ -294,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         track.style.transform = `translateX(${currentIndex * (cardWidth + gap)}px)`;
         prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= maxIndex;  // ← تأكد من هذا السطر
+        nextBtn.disabled = currentIndex >= maxIndex;
     }
 
     nextBtn.addEventListener('click', () => {
@@ -307,7 +308,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener('resize', updateCarousel);
-    setTimeout(updateCarousel, 100);
+    
+    // ← هذان السطران معاً يضمنان الحساب الصحيح
     window.addEventListener('load', updateCarousel);
-setTimeout(updateCarousel, 300);
+    setTimeout(updateCarousel, 300);
 })();
