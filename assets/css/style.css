@@ -2258,12 +2258,19 @@ body {
 .footer-column ul li {
     margin-bottom: 12px;
 }
-
 .footer-column ul li a {
     color: #ffffff;
     text-decoration: none;
     font-size: 14px;
     opacity: 0.8;
+    transition: all 0.3s ease; 
+    display: inline-block;
+}
+
+.footer-column ul li a:hover {
+    opacity: 1;
+    color: #f5c842;
+    transform: translateX(-5px); 
 }
 
 /* تنسيق أيقونات التواصل الاجتماعي */
