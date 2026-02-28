@@ -202,12 +202,12 @@ body {
 
 /*  الحاوية الأب  */
 .nav-wrapper {
+    position: relative;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
     height: 70px;
-    /*  ارتفاع للهيدر يساعد في ضبط العناصر */
     background-color: var(--color-secondary);
     padding: 0 30px;
 }
