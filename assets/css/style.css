@@ -2274,13 +2274,13 @@ body {
 }
 
 .social-links a {
-    color: #ffffff;
+    color: var(--color-primary);
     font-size: 18px;
     transition: color 0.3s;
 }
 
 .social-links a:hover {
-    color: #f5c842;
+    color: var(--color-white);
 }
 
 .contact-item {
