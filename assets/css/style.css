@@ -2073,7 +2073,7 @@ body {
 
 /* ============================================================
    قسم الفرق — Groups Sectio=============================== */
-.teams-group-section {
+ .teams-group-section {
             font-family: 'Arial', sans-serif;
             background-color: #F8F8F8;
             padding: 60px 0;
@@ -2125,13 +2125,12 @@ body {
         .teams-group-section .nav-btn.next { left: 10px; }
         .teams-group-section .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
 
-        /* البطاقة مع محاذاة لليمين */
         .teams-group-section .group {
             background-color: #fff;
             border-radius: 20px;
             padding: 24px;
             width: 320px;
-            text-align: right; /* محاذاة النص لليمين */
+            text-align: right;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             display: flex;
             flex-direction: column;
@@ -2184,15 +2183,10 @@ body {
             font-size: 0.85em;
             color: #333;
         }
-        /* الأيقونات بعد النص في الـ RTL */
-        .teams-group-section .icon-meta::before { 
-            margin-right: 6px; /* مسافة بين النص والأيقونة */
-            color: #002060;
-            font-size: 1.1em;
+        .teams-group-section .footer-details li svg {
+            margin-right: 5px;
+            flex-shrink: 0;
         }
-        .teams-group-section .icon-members::before { content: "👥"; }
-        .teams-group-section .icon-tech::before { content: "💻"; }
-        .teams-group-section .icon-city::before { content: "📍"; }
 /*=========================================*/
 
 /*========-قسم تذييل الصفحة -footer=========*/
