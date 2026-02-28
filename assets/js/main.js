@@ -235,66 +235,66 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
-
 /* --- فريق العمل --- */
-const track = document.getElementById('groups-track');
-const btnPrev = document.getElementById('groups-btn-prev');
-const btnNext = document.getElementById('groups-btn-next');
-
-const CARDS_VISIBLE = 3;
-let currentIndex = 0;
-
-function getCardWidth() {
-    const card = track.querySelector('.group-card');
-    if (!card) return 0;
-    const gap = parseInt(getComputedStyle(track).gap) || 24;
-    return card.offsetWidth + gap;
-}
-
-function totalCards() {
-    return track.querySelectorAll('.group-card').length;
-}
-
-function updateSlider() {
-    const offset = currentIndex * getCardWidth();
-    track.style.transform = `translateX(${offset}px)`;
-
-    btnPrev.disabled = currentIndex === 0;
-    btnNext.disabled = currentIndex >= totalCards() - CARDS_VISIBLE;
-}
-
-btnPrev.addEventListener('click', () => {
-    if (currentIndex > 0) { currentIndex--; updateSlider(); }
-});
-
-btnNext.addEventListener('click', () => {
-    if (currentIndex < totalCards() - CARDS_VISIBLE) { currentIndex++; updateSlider(); }
-});
-
-// Init
-updateSlider();
-window.addEventListener('resize', updateSlider);
-
-
-//==================الفرق============
 (function() {
-            const section = document.querySelector('.teams-group-section');
-            const track = section.querySelector('.carousel-track');
-            const prevBtn = section.querySelector('.nav-btn.prev');
-            const nextBtn = section.querySelector('.nav-btn.next');
-            const cards = section.querySelectorAll('.group');
-            let currentIndex = 0;
-            const gap = 24;
+    const track = document.getElementById('team-track');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    if (!track || !btnPrev || !btnNext) return;
 
-            function updateCarousel() {
-                const cardWidth = cards[0].offsetWidth;
-                track.style.transform = `translateX(${currentIndex * (cardWidth + gap)}px)`;
-                prevBtn.disabled = currentIndex === 0;
-                nextBtn.disabled = currentIndex >= cards.length - 3;
-            }
+    const cards = track.querySelectorAll('.team-card');
+    const VISIBLE = 4;
+    let idx = 0;
 
-            nextBtn.addEventListener('click', () => { if (currentIndex < cards.length - 3) { currentIndex++; updateCarousel(); } });
-            prevBtn.addEventListener('click', () => { if (currentIndex > 0) { currentIndex--; updateCarousel(); } });
-            window.addEventListener('resize', updateCarousel);
-            updateCarousel();
-        })();
+    function getW() {
+        const gap = parseInt(getComputedStyle(track).gap) || 24;
+        return cards[0].offsetWidth + gap;
+    }
+
+    function update() {
+        track.style.transform = `translateX(${idx * getW()}px)`;
+        btnPrev.disabled = idx === 0;
+        btnNext.disabled = idx >= cards.length - VISIBLE;
+    }
+
+    btnNext.addEventListener('click', () => {
+        if (idx < cards.length - VISIBLE) { idx++; update(); }
+    });
+    btnPrev.addEventListener('click', () => {
+        if (idx > 0) { idx--; update(); }
+    });
+
+    window.addEventListener('resize', update);
+    update();
+})();
+
+/* --- قسم الفرق --- */
+(function() {
+    const section = document.querySelector('.teams-group-section');
+    if (!section) return;
+
+    const track = section.querySelector('.carousel-track');
+    const prevBtn = section.querySelector('.nav-btn.prev');
+    const nextBtn = section.querySelector('.nav-btn.next');
+    const cards = section.querySelectorAll('.group');
+    let currentIndex = 0;
+    const gap = 24;
+    const VISIBLE = 3;
+
+    function updateCarousel() {
+        const cardWidth = cards[0].offsetWidth;
+        track.style.transform = `translateX(${-(currentIndex * (cardWidth + gap))}px)`;
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= cards.length - VISIBLE;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < cards.length - VISIBLE) { currentIndex++; updateCarousel(); }
+    });
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) { currentIndex--; updateCarousel(); }
+    });
+
+    window.addEventListener('resize', updateCarousel);
+    setTimeout(updateCarousel, 100);
+})();
