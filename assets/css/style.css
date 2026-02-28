@@ -2100,7 +2100,6 @@ body {
             display: flex;
             gap: 24px;
             transition: transform 0.5s ease-in-out;
-            flex-direction: row-reverse;
             width: fit-content;
         }
         .teams-group-section .nav-btn {
