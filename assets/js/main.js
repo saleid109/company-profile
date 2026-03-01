@@ -1,7 +1,73 @@
-/* =========================================================
-    1. إدارة القائمة والملاحة (Navigation & Menu)
-========================================================= */
 
+
+// ===== فتح وإغلاق =====
+function openAuth(tab = 'login') {
+    document.getElementById('authOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    switchTab(tab, document.querySelectorAll('.auth-tab')[tab === 'login' ? 0 : 1]);
+}
+
+function closeAuth() {
+    document.getElementById('authOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+    if (e.target === document.getElementById('authOverlay')) closeAuth();
+}
+
+// إغلاق بـ Escape
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeAuth();
+});
+
+// ===== تبديل التبويبات =====
+function switchTab(tabName, btnEl) {
+    // تحديث الأزرار
+    document.querySelectorAll('.auth-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+    });
+    btnEl.classList.add('active');
+    btnEl.setAttribute('aria-selected', 'true');
+
+    // تحديث اللوحات
+    document.querySelectorAll('.auth-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(`panel-${tabName}`).classList.add('active');
+}
+
+// ===== معالجة النماذج =====
+function handleLogin(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.auth-submit');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>جاري التحقق...</span>';
+    btn.disabled = true;
+    // هنا تضع طلب API الخاص بك
+    setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-check"></i> <span>تم بنجاح!</span>';
+        btn.style.background = '#16a34a';
+        setTimeout(closeAuth, 1000);
+    }, 1500);
+}
+
+function handleRegister(e) {
+    e.preventDefault();
+    const pass = document.getElementById('reg-password').value;
+    const confirm = document.getElementById('reg-confirm').value;
+    if (pass !== confirm) {
+        alert('كلمتا المرور غير متطابقتين');
+        return;
+    }
+    const btn = e.target.querySelector('.auth-submit');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>جاري الإنشاء...</span>';
+    btn.disabled = true;
+    setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-check"></i> <span>تم إنشاء الحساب!</span>';
+        btn.style.background = '#16a34a';
+        setTimeout(closeAuth, 1000);
+    }, 1500);
+}
+//إدارة القائمة والملاحة (Navigation & Menu)============
 /**
  * دالة فتح وإغلاق قائمة الجوال والتحكم في الطبقة الظليلة
  */
@@ -230,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 /* --- فريق العمل --- */
-(function() {
+(function () {
     const track = document.getElementById('team-track');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
@@ -264,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* --- قسم الفرق --- */
-(function() {
+(function () {
     const section = document.querySelector('.teams-group-section');
     if (!section) return;
 
