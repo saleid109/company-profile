@@ -71,7 +71,7 @@
       <section class="auth-panel active" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
         <h3 class="auth-title" id="auth-main-title">أهلاً بعودتك </h3>
         <p class="auth-subtitle">أدخل بياناتك للوصول إلى حسابك</p>
-        
+        <!-- حقل البريد الإلكتروني أو اسم المستخدم -->
         <form onsubmit="handleLogin(event)">
           <div class="form-group">
             <label for="login-email">البريد الإلكتروني أو اسم المستخدم</label>
@@ -80,7 +80,7 @@
               <input type="text" id="login-email" name="username" placeholder="example@email.com" required autocomplete="username"/>
             </div>
           </div>
-          
+          <!-- حقل كلمة المرور -->
           <div class="form-group">
             <label for="login-password">كلمة المرور</label>
             <div class="input-wrap">
@@ -88,48 +88,49 @@
               <input type="password" id="login-password" name="password" placeholder="••••••••" required autocomplete="current-password"/>
             </div>
           </div>
-
+<!-- خيارات إضافية -->
           <div class="form-footer">
             <label class="remember-me">
               <input type="checkbox" name="remember"/> تذكرني
             </label>
             <a href="#" class="forgot-link">نسيت كلمة المرور؟</a>
           </div>
-
+<!-- زر تسجيل الدخول -->
           <button type="submit" class="auth-submit">
             <span>تسجيل الدخول</span>
             <i class="fas fa-arrow-left" aria-hidden="true"></i>
           </button>
         </form>
-
+<!-- رابط للتبديل إلى تسجيل حساب جديد -->
         <div class="auth-switch">
           <span>ليس لديك حساب؟</span>
           <button type="button" onclick="switchTab('register', document.getElementById('tab-register'))">أنشئ حساباً الآن</button>
         </div>
       </section>
+      <!-- ===== لوحة إنشاء حساب ===== -->
 
       <section class="auth-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register" hidden>
-        <h3 class="auth-title">إنشاء حساب جديد ✨</h3>
+        <h3 class="auth-title">إنشاء حساب جديد </h3>
         <p class="auth-subtitle">انضم إلى نقطة صعود وابدأ رحلتك</p>
-        
+        <!-- حقول إنشاء الحساب -->
         <form onsubmit="handleRegister(event)">
           <div class="form-row">
             <div class="form-group">
               <label for="reg-fname">الاسم الأول</label>
               <div class="input-wrap">
                 <i class="fas fa-user" aria-hidden="true"></i>
-                <input type="text" id="reg-fname" name="fname" placeholder="محمد" required autocomplete="given-name"/>
+                <input type="text" id="reg-fname" name="fname" placeholder="أحمد" required autocomplete="given-name"/>
               </div>
             </div>
             <div class="form-group">
               <label for="reg-lname">الاسم الأخير</label>
               <div class="input-wrap">
                 <i class="fas fa-user" aria-hidden="true"></i>
-                <input type="text" id="reg-lname" name="lname" placeholder="العلي" required autocomplete="family-name"/>
+                <input type="text" id="reg-lname" name="lname" placeholder="هزازي" required autocomplete="family-name"/>
               </div>
             </div>
           </div>
-
+<!-- حقل البريد الإلكتروني -->
           <div class="form-group">
             <label for="reg-email">البريد الإلكتروني</label>
             <div class="input-wrap">
@@ -137,7 +138,7 @@
               <input type="email" id="reg-email" name="email" placeholder="example@email.com" required autocomplete="email"/>
             </div>
           </div>
-
+<!-- حقل رقم الجوال -->
           <div class="form-group">
             <label for="reg-phone">رقم الجوال</label>
             <div class="input-wrap">
@@ -145,7 +146,7 @@
               <input type="tel" id="reg-phone" name="phone" placeholder="05xxxxxxxx" required autocomplete="tel"/>
             </div>
           </div>
-
+<!-- حقول كلمة المرورا -->
           <div class="form-row">
             <div class="form-group">
               <label for="reg-password">كلمة المرور</label>
@@ -154,7 +155,7 @@
                 <input type="password" id="reg-password" name="new-password" placeholder="••••••••" required autocomplete="new-password"/>
               </div>
             </div>
-
+<!-- حقل تأكيد كلمة المرور -->
             <div class="form-group">
               <label for="reg-confirm">تأكيد كلمة المرور</label>
               <div class="input-wrap">
@@ -163,7 +164,7 @@
               </div>
             </div>
           </div>
-
+          
           <button type="submit" class="auth-submit">
             <span>إنشاء الحساب</span>
             <i class="fas fa-arrow-left" aria-hidden="true"></i>
