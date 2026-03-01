@@ -2223,11 +2223,8 @@ body {
 /* التحكم في حجم الشعار */
 .footer-logo {
     width: 220px;
-    /* يمكنك زيادة أو تقليل هذا الرقم (مثلاً 180px أو 250px) */
     height: auto;
-    /* للحفاظ على أبعاد الصورة صحيحة */
     margin-bottom: 20px;
-    /* مسافة بين الشعار والنص الذي تحته */
     display: block;
 }
 
@@ -2384,24 +2381,16 @@ body {
     bottom: -25px;
     right: -25px;
 }
-
 .auth-brand-logo {
-    width: 65px;
-    height: 65px;
-    background: #FFCC35;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 14px;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 6px 18px rgba(255, 204, 53, .3);
+    display: block;
+    margin-bottom: 20px;
+    padding: 12px;
 }
 
-.auth-brand-logo i {
-    font-size: 26px;
-    color: #00025B;
+.auth-brand-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .auth-brand-name {
