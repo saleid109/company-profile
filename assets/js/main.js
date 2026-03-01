@@ -22,19 +22,22 @@ document.addEventListener('keydown', e => {
 });
 
 // ===== تبديل التبويبات =====
-function switchTab(tabName, btnEl) {
-    // تحديث الأزرار
+function switchTab(name, btn) {
     document.querySelectorAll('.auth-tab').forEach(t => {
         t.classList.remove('active');
         t.setAttribute('aria-selected', 'false');
     });
-    btnEl.classList.add('active');
-    btnEl.setAttribute('aria-selected', 'true');
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
 
-    // تحديث اللوحات
-    document.querySelectorAll('.auth-panel').forEach(p => p.classList.remove('active'));
-    document.getElementById(`panel-${tabName}`).classList.add('active');
-    panel.hidden = false;
+    document.querySelectorAll('.auth-panel').forEach(p => {
+        p.classList.remove('active');
+        p.hidden = true; // لإخفاء العنصر من الوصول والتركيز
+    });
+
+    const panel = document.getElementById('panel-' + name);
+    panel.classList.add('active');
+    panel.hidden = false; // لإظهاره وجعله متاحاً للتركيز
 }
 
 // ===== معالجة النماذج =====

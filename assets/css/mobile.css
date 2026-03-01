@@ -60,305 +60,251 @@
         overflow-x: hidden;
         width: 100%;
     }
-
     /*======================*/
-    /*زر الفتح التجريبي*/
+/*زر الفتح التجريبي*/
 
-    .auth-card {
+
+
+/* تقليل الحشو الجانبي في الجوال */
+    .container {
+        padding: 0 20px;
+    }
+
+    /* ===== القائمة الجانبية ===== */
+    .nav-wrapper {
+        height: 65px;
+        padding: 0 15px;
+        z-index: 3000;
+        background-color: var(--color-secondary);
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100dvh;
+        /* الإضافة المهمة */
+        transform: translateX(110%);
+        z-index: 4000;
+    }
+
+    .navbar-links.open {
+        transform: translateX(0);
+    }
+
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+        z-index: 1500;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-menu li a {
+        padding: 18px 25px;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .home-buttons a:active,
+    .btn-primary:active,
+    .service-card:active,
+    .nav-menu li a:active {
+        transform: scale(0.96);
+        background-color: rgba(0, 0, 0, 0.05);
+        transition: transform 0.1s ease;
+    }
+
+    /* ===== الهيرو ===== */
+    .hero-section {
+        height: auto;
+        padding: 120px 0 80px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .home-buttons a {
+        width: 100%;
+        height: 60px;
+    }
+
+    /* ===== الشبكات ===== */
+    .fields-grid,
+    .services-grid,
+    .technologies-grid,
+    .why-us-wrapper,
+    .container-training,
+    .container-why-choose,
+    .comparison-container {
         grid-template-columns: 1fr;
-        max-width: 420px;
-        max-height: 95dvh;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
     }
 
-    .auth-brand {
-        padding: 28px 20px;
-        flex-direction: row;
-        gap: 16px;
-        text-align: right;
-        justify-content: flex-start;
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+        max-width: 100%;
     }
 
-    .auth-brand::before,
-    .auth-brand::after {
+    .card-image img {
+        height: 180px;
+    }
+
+    /* ===== المقارنة ===== */
+    .compare-section {
+        padding: 60px 20px;
+    }
+
+    .compare-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .compare-side-text {
+        order: 1;
+        flex: unset;
+        width: 100%;
+        text-align: center;
+    }
+
+    .compare-side-text h2 {
+        font-size: 26px;
+        line-height: 1.5;
+    }
+.compare-table-wrapper {
+        overflow: visible;
+    }
+
+    /* إخفاء الهيدر */
+    .compare-table thead {
         display: none;
     }
 
-    .brand-logo {
-        width: 52px;
-        height: 52px;
-        flex-shrink: 0;
-        margin-bottom: 0;
+    /* تحويل الجدول لبلوكات */
+    .compare-table,
+    .compare-table tbody,
+    .compare-table tr,
+    .compare-table td {
+        display: block;
+        width: 100%;
     }
 
-    .brand-logo i {
-        font-size: 22px;
+    /* كل صف = بطاقة */
+    .compare-table tbody tr {
+        background: #fff;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        padding: 15px 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .brand-name {
-        font-size: 17px;
-        margin-bottom: 3px;
+    /* اسم الميزة */
+    .feature-name {
+        font-size: 15px;
+        font-weight: 700;
+        color: #0b0f5c;
+        border-bottom: 1px solid #eef1f8;
+        padding: 0 0 10px 0;
+        text-align: right;
     }
 
-    .brand-sub {
-        font-size: 12px;
+    /* خلايا نقطة صعود وشركات أخرى */
+    .featured-us,
+    .others-cell {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        padding: 6px 0 !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border-bottom: none !important;
+        width: 100% !important;
+        min-width: unset !important;
     }
 
-    .auth-content {
-        padding: 24px 20px 28px;
+    .featured-us::before {
+        content: "نقطة صعود";
+        font-weight: 700;
+        color: #0b0f5c;
+        font-size: 14px;
     }
 
-    .form-row {
-        grid-template-columns: 1fr;
+    .others-cell::before {
+        content: "شركات أخرى";
+        font-weight: 600;
+        color: #555;
+        font-size: 14px;
     }
 
-    .auth-close {
-        top: 12px;
-        left: 12px;
+    /* إلغاء التلوين المتناوب */
+    .compare-table tbody tr:nth-child(odd) td,
+    .compare-table tbody tr:nth-child(even) td {
+        background: transparent !important;
     }
-}
 
-/* تقليل الحشو الجانبي في الجوال */
-.container {
-    padding: 0 20px;
-}
-
-/* ===== القائمة الجانبية ===== */
-.nav-wrapper {
-    height: 65px;
-    padding: 0 15px;
-    z-index: 3000;
-    background-color: var(--color-secondary);
-}
-
-.logo img {
-    height: 45px;
-}
-
-.mobile-menu-icon {
-    display: block;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.navbar-links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 280px;
-    height: 100dvh;
-    /* الإضافة المهمة */
-    transform: translateX(110%);
-    z-index: 4000;
-}
-
-.navbar-links.open {
-    transform: translateX(0);
-}
-
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 1500;
-}
-
-.overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-
-.nav-menu {
-    flex-direction: column;
-    gap: 0;
-}
-
-.nav-menu li a {
-    padding: 18px 25px;
-    display: block;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.home-buttons a:active,
-.btn-primary:active,
-.service-card:active,
-.nav-menu li a:active {
-    transform: scale(0.96);
-    background-color: rgba(0, 0, 0, 0.05);
-    transition: transform 0.1s ease;
-}
-
-/* ===== الهيرو ===== */
-.hero-section {
-    height: auto;
-    padding: 120px 0 80px;
-}
-
-.hero-content h1 {
-    font-size: 1.8rem;
-    line-height: 1.4;
-}
-
-.hero-content p {
-    font-size: 1rem;
-    margin-bottom: 25px;
-}
-
-.home-buttons {
-    flex-direction: column;
-    gap: 15px;
-}
-
-.home-buttons a {
-    width: 100%;
-    height: 60px;
-}
-
-/* ===== الشبكات ===== */
-.fields-grid,
-.services-grid,
-.technologies-grid,
-.why-us-wrapper,
-.container-training,
-.container-why-choose,
-.comparison-container {
-    grid-template-columns: 1fr;
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-}
-
-.feature-item {
-    flex-direction: column;
-    text-align: center;
-    max-width: 100%;
-}
-
-.card-image img {
-    height: 180px;
-}
-
-/* ===== المقارنة ===== */
-.compare-section {
-    padding: 60px 20px;
-}
-
-.compare-container {
-    flex-direction: column;
-    gap: 30px;
-    padding: 0 15px;
-}
-
-.compare-side-text {
-    order: 1;
-    flex: unset;
-    width: 100%;
-    text-align: center;
-}
-
-.compare-side-text h2 {
-    font-size: 26px;
-    line-height: 1.5;
-}
-
-.compare-table-wrapper {
-    overflow: visible;
-}
-
-/* إخفاء الهيدر */
-.compare-table thead {
-    display: none;
-}
-
-/* تحويل الجدول لبلوكات */
-.compare-table,
-.compare-table tbody,
-.compare-table tr,
-.compare-table td {
-    display: block;
-    width: 100%;
-}
-
-/* كل صف = بطاقة */
-.compare-table tbody tr {
-    background: #fff;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    padding: 15px 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* اسم الميزة */
-.feature-name {
-    font-size: 15px;
-    font-weight: 700;
-    color: #0b0f5c;
-    border-bottom: 1px solid #eef1f8;
-    padding: 0 0 10px 0;
-    text-align: right;
-}
-
-/* خلايا نقطة صعود وشركات أخرى */
-.featured-us,
-.others-cell {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    padding: 6px 0 !important;
-    background: transparent !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    border-bottom: none !important;
-    width: 100% !important;
-    min-width: unset !important;
-}
-
-.featured-us::before {
-    content: "نقطة صعود";
-    font-weight: 700;
-    color: #0b0f5c;
-    font-size: 14px;
-}
-
-.others-cell::before {
-    content: "شركات أخرى";
-    font-weight: 600;
-    color: #555;
-    font-size: 14px;
-}
-
-/* إلغاء التلوين المتناوب */
-.compare-table tbody tr:nth-child(odd) td,
-.compare-table tbody tr:nth-child(even) td {
-    background: transparent !important;
-}
-
-.featured-us.last-us {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    padding-bottom: 6px !important;
-}
-
+    .featured-us.last-us {
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        padding-bottom: 6px !important;
+    }
 /* ===== الإحصائيات ===== */
 /* --- التنسيق الأساسي لضمان التباعد --- */
 .stats-section {
     position: relative;
     /* مساحة سفلية إضافية لتعويض بروز الكروت ومنع تداخلها مع قسم "عملائنا" */
-    padding-bottom: 120px;
+    padding-bottom: 120px; 
     background-color: #fcfcfc;
 }
 
 /* الصندوق الكحلي */
 .stats-dark-card {
     background-color: #000051;
-    padding: 60px 20px 140px 20px;
+    padding: 60px 20px 140px 20px; 
     text-align: center;
     border-radius: 10px;
     padding-bottom: 120px;
@@ -367,8 +313,7 @@
 /* شبكة الكروت (الأهم للتوافق) */
 .stats-cards-grid {
     display: flex;
-    flex-wrap: wrap;
-    /* للسماح بنزول الكروت لسطر جديد في الجوال */
+    flex-wrap: wrap; /* للسماح بنزول الكروت لسطر جديد في الجوال */
     justify-content: center;
     gap: 20px;
     max-width: 1100px;
@@ -394,7 +339,6 @@
 
 
 }
-
 /* =========================================================
     التابلت (769px - 1024px)
 ========================================================= */
@@ -478,12 +422,11 @@
     }
 
     /* ===== الإحصائيات ===== */
-    .stat-item {
-        flex: 1 1 calc(50% - 20px);
+.stat-item {
+        flex: 1 1 calc(50% - 20px); 
     }
-
     .stats-dark-card {
-        padding-bottom: 200px;
+        padding-bottom: 200px; 
     }
 
 }
