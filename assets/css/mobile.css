@@ -432,3 +432,161 @@
 }
 
 /*زر الفتح التجريبي*/
+
+/* الإعدادات العامة والمتغيرات */
+:root {
+    --primary-color: #2563eb; /* لون الهوية */
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --bg-card: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. الحاوية الكبرى (Overlay) */
+.auth-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 15px; /* هامش للجوال */
+}
+
+/* 2. الكارت الرئيسي - تصميم الجوال (الافتراضي) */
+.auth-card {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 450px; /* للجوال */
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* عمودي في الجوال */
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.4s ease-out;
+}
+
+/* 3. عمود الهوية (Brand) - تحسينه للجوال */
+.auth-brand {
+    background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-logo {
+    font-size: 2rem;
+}
+
+.brand-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.brand-sub {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* 4. منطقة المحتوى والتبويبات */
+.auth-content {
+    padding: 25px;
+    flex: 1;
+}
+
+.auth-tabs {
+    display: flex;
+    border-bottom: 2px solid #f1f5f9;
+    margin-bottom: 25px;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.auth-tab.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: -2px;
+}
+
+/* 5. تنسيق المدخلات (Inputs) - صديقة للمس */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrap i {
+    position: absolute;
+    right: 15px;
+    color: var(--text-muted);
+}
+
+.input-wrap input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem; /* يمنع الزووم التلقائي في الآيفون */
+}
+
+/* 6. استعلامات الوسائط (Media Queries) للأجهزة الكبيرة */
+
+/* الأجهزة اللوحية (Tablets) وما فوق */
+@media (min-width: 768px) {
+    .auth-card {
+        max-width: 850px;
+        flex-direction: row; /* تحويل الترتيب لأفقي */
+        min-height: 550px;
+    }
+
+    .auth-brand {
+        width: 35%; /* العمود الأيسر يأخذ مساحة أقل */
+        flex-direction: column; /* شعار فوق النص */
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .auth-content {
+        width: 65%;
+        padding: 40px;
+    }
+}
+
+/* 7. تأثيرات الحركة (Animations) */
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* إخفاء اللوحة غير النشطة */
+.auth-panel:not(.active) {
+    display: none;
+}
