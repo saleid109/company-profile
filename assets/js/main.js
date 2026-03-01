@@ -34,6 +34,7 @@ function switchTab(tabName, btnEl) {
     // تحديث اللوحات
     document.querySelectorAll('.auth-panel').forEach(p => p.classList.remove('active'));
     document.getElementById(`panel-${tabName}`).classList.add('active');
+    panel.hidden = false;
 }
 
 // ===== معالجة النماذج =====
