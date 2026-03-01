@@ -22,9 +22,9 @@
   <link rel="stylesheet" href="./assets/css/css-reset.css" />
   <link rel="stylesheet" href="./assets/css/variables.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/t.css" />
+  <link rel="stylesheet" href="./assets/css/mobile.css" />
 
-  <!---->
+  <!-- مكتبة السلايدر Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
@@ -60,7 +60,7 @@
         <!--  معلومات المستخدم والسلة -->
         <div class="flex-group">
           <!--اسم المستخدم-->
-          <div class="user-info" role="button" aria-label="تسجيل الدخول">
+          <div class="user-info" role="button" onclick="openAuth('login')" aria-label="تسجيل الدخول">
             <i class="fas fa-user-circle" aria-hidden="true"></i>
             <span>تسجيل الدخول</span>
           </div>
