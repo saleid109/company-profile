@@ -9,6 +9,11 @@
   --color-bg-light: #F5F5F5;
   --color-text: #181A2A;
   --color-white: #FFFFFF;
+  --color--muted:  #7a7a9a;
+  --color--border: rgba(0,1,91,0.12);
+  --shadow: 0 24px 64px rgba(0,1,91,0.18);
+  --radius: 20px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
 
 
 /* 1. ألوان إضافية من التصميم */
