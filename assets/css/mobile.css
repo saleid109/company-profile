@@ -88,13 +88,10 @@
         top: 0;
         right: 0;
         width: 280px;
-        height: 100vh;
-        background: var(--color-secondary);
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 2000;
-        padding-top: 80px;
+        height: 100dvh;
+        /* الإضافة المهمة */
+        transform: translateX(110%);
+        z-index: 4000;
     }
 
     .navbar-links.open {
