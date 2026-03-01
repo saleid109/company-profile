@@ -12,22 +12,21 @@ function toggleMenu() {
     const body = document.body;
 
     navLinks.classList.toggle("open");
-
-    // دعم الطبقة الظليلة (Overlay) إذا وجدت
     if (overlay) overlay.classList.toggle('active');
 
-    // تبديل الأيقونة والتحكم في تمرير الصفحة
     if (navLinks.classList.contains("open")) {
         if (menuIcon) menuIcon.classList.replace("fa-bars", "fa-times");
-        body.style.overflow = "hidden"; // منع التمرير عند فتح القائمة
+        // عند فتح القائمة: امنع التمرير فقط
+        body.style.overflow = "hidden";
         body.classList.add('menu-open');
     } else {
         if (menuIcon) menuIcon.classList.replace("fa-times", "fa-bars");
-        body.style.overflow = "auto"; // إعادة التمرير عند الإغلاق
+        // عند الإغلاق: أعد overflow-x: clip فقط وليس hidden
+        body.style.overflow = "";          /* ← إزالة inline style */
+        body.style.overflowX = "clip";    /* ← ← أضف هذا */
         body.classList.remove('menu-open');
     }
 }
-
 /* =========================================================
     2. وظائف فلترة الخدمات (Digital Services Filter)
 ========================================================= */
