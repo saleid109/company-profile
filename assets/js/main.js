@@ -16,14 +16,9 @@ function toggleMenu() {
 
     if (navLinks.classList.contains("open")) {
         if (menuIcon) menuIcon.classList.replace("fa-bars", "fa-times");
-        // عند فتح القائمة: امنع التمرير فقط
-        body.style.overflow = "hidden";
         body.classList.add('menu-open');
     } else {
         if (menuIcon) menuIcon.classList.replace("fa-times", "fa-bars");
-        // عند الإغلاق: أعد overflow-x: clip فقط وليس hidden
-        body.style.overflow = "";          /* ← إزالة inline style */
-        body.style.overflowX = "clip";    /* ← ← أضف هذا */
         body.classList.remove('menu-open');
     }
 }
