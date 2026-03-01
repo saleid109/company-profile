@@ -22,11 +22,14 @@ h4 {
     margin-bottom: 1rem;
 }
 
+html{
+    overflow-x: hidden;
+}
 
-html,body {
+body {
     font-family: var(--font-main);
     background-color: var(--color-bg-light);
-    overflow-x: clip;
+
 }
 
 .service-card,
