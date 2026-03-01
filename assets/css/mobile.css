@@ -418,10 +418,10 @@
 
     /* ===== الإحصائيات ===== */
 .stat-item {
-        flex: 1 1 calc(50% - 20px); /* كرتين في السطر كما في صورتك */
+        flex: 1 1 calc(50% - 20px); 
     }
     .stats-dark-card {
-        padding-bottom: 200px; /* زيادة الطول ليحتوي سطرين من الكروت */
+        padding-bottom: 200px; 
     }
 
 }
