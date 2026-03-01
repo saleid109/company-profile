@@ -122,12 +122,14 @@ body {
     color: var(--color-white);
     text-decoration: none;
     transition: var(--transition);
+    align-items: center;
 }
 
 .social-links {
     display: flex;
     gap: 15px;
     margin-left: 20px;
+    
 }
 
 .language {
