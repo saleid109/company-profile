@@ -113,9 +113,6 @@
         visibility: visible;
     }
 
-    body.menu-open {
-        overflow: hidden;
-    }
 
     .nav-menu {
         flex-direction: column;
