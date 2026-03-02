@@ -170,28 +170,25 @@
 .nav-menu li.has-mega > a.active::after {
     transform: rotate(180deg);
 }
-
+/* 3. القائمة الجانبية */
     .navbar-links {
         position: fixed;
         top: 0;
         right: 0;
         width: 280px;
-        height: 100dvh;
-        /* الإضافة المهمة */
+        height: 100vh;
+        background-color: #0b0f5c;
         transform: translateX(110%);
+        transition: transform 0.3s ease;
         z-index: 4000;
+        padding-top: 80px;
     }
 
-    
-
-    .navbar-links.open {
-        transform: translateX(0);
-    }
+    .navbar-links.open { transform: translateX(0); }
 
     .overlay {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.5);
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease;
