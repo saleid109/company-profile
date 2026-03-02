@@ -337,6 +337,35 @@
     font-size: 25px;
 }
 
+.stats-section {
+        padding-bottom: 60px; /* تقليل المسافة في الجوال */
+    }
+    
+    .stats-cards-grid {
+        margin-top: -80px; /* رفع الكروت قليلاً فوق الصندوق الكحلي */
+    }
+
+    /* تحسين عرض الجداول في الجوال لضمان عدم خروجها عن الشاشة */
+    .compare-table-wrapper {
+        width: 100%;
+        overflow-x: hidden; 
+    }
+    
+/*عملائنا*/
+.client-logo {
+        width: 100px;
+        height: 60px;
+    }
+    .clients-track {
+        gap: 30px;
+    }
+/* زر الفتح التجريبي */
+    .demo-fab {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
 
 }
 /* =========================================================
