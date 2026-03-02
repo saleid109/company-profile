@@ -490,6 +490,7 @@
         max-width: 850px;
         flex-direction: row; /* تحويل الترتيب لأفقي */
         min-height: 550px;
+        background-color: var(--color-secondary);
     }
 
     .auth-brand {
