@@ -95,7 +95,7 @@
     .user-info span {
         display: none;
     }
-    
+
     .nav-wrapper {
         height: 65px;
         padding: 0 15px;
@@ -143,10 +143,29 @@
         visibility: visible;
     }
 
-
-    .nav-menu {
+.nav-menu {
+        display: flex;
         flex-direction: column;
-        gap: 0;
+        align-items: center; /* توسيط الروابط عمودياً */
+        text-align: center;
+        width: 100%;
+    }
+
+    /* توسيط الأزرار (طلب خدمة / استثمر معنا) */
+    .home-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* التوسيط الأفقي */
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .home-buttons .btn-servers, 
+    .home-buttons .btn-outline {
+        margin: 0 auto; /* التأكد من التوسط */
+        width: 80%; /* جعل العرض مناسباً للجوال */
     }
 
     .nav-menu li a {
