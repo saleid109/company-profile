@@ -134,7 +134,7 @@ body {
     height: 100%;
 }
 
-/* التأكد من أن الأيقونات نفسها لا تملك هوامش سفلية */
+/*    الأيقونات      */
 .social-links a {
     display: flex;
     align-items: center;
