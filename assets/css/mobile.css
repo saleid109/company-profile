@@ -162,17 +162,20 @@
         margin: 20px auto;
     }
 
-    .home-buttons .btn-servers, 
-    .home-buttons .btn-outline {
-        margin: 0 auto; /* التأكد من التوسط */
-        width: 80%; /* جعل العرض مناسباً للجوال */
-    }
 
     .nav-menu li a {
         padding: 18px 25px;
         display: block;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
+
+    
+    .home-buttons .btn-servers, 
+    .home-buttons .btn-outline {
+        margin: 0 auto; /* التأكد من التوسط */
+        width: 60%; /* جعل العرض مناسباً للجوال */
+    }
+
 
     .home-buttons a:active,
     .btn-primary:active,
