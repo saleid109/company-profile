@@ -67,148 +67,118 @@
 
 
 
-/* تقليل الحشو الجانبي في الجوال */
-    .container {
-        padding: 0 20px;
-    }
-
-    /* ===== القائمة الجانبية ===== */
-
-.top-bar .container {
-        padding: 0 10px;
-        gap: 5px;
-    }
-
-    .flex-group {
-        gap: 10px; /* تقليل المسافات بين المجموعات */
-    }
-
-    .social-links {
-        gap: 8px;
-        margin-left: 10px;
-    }
-
-    /* تصغير الخط قليلاً لتوفير مساحة */
-    .top-bar, .language a, .price-text {
-        font-size: 12px;
-    }
-
-    /* إخفاء "تسجيل الدخول" كنص وإبقاء الأيقونة فقط لتوفير مساحة */
-    .user-info span {
-        display: none;
-    }
-
+/* 1. إصلاح الهيدر وزر القائمة */
     .nav-wrapper {
-        height: 65px;
-        padding: 0 15px;
-        z-index: 3000;
-        background-color: var(--color-secondary);
-    }
-
-    .logo img {
-        height: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--color-secondary); /* تأكد أن اللون ليس شفافاً */
     }
 
     .mobile-menu-icon {
-        display: block;
+        display: block !important; /* إظهار الأيقونة */
         font-size: 24px;
+        color: white; /* لون أيقونة الهامبرجر */
+        background: none;
+        border: none;
         cursor: pointer;
-        background-color: var(--color-white);
-    }
-    
-
-/*  القائمة الفرعية (الميجا منيو) */
-.mega-menu-content {
-    position: static; 
-    display: none;    /* تختفي وتظهر فقط عند الضغط */
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05); 
-    padding: 10px 0;
-    box-shadow: none;
-    border-radius: 0;
-}
-
-/* إظهار القائمة الفرعية عند إضافة كلاس open عبر JS */
-.mega-menu-content.open {
-    display: block ;
-}
-
-
-    /* ضبط شبكة العناصر داخل الميجا منيو لتكون صف واحد */
-    .mega-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 0 20px;
+        z-index: 5000;
     }
 
-    /* تنسيق روابط الميجا منيو لتناسب اللمس */
-    .mega-item {
-        text-align: right;
-        padding: 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* إضافة السهم بجانب الروابط التي لها قائمة فرعية */
-.nav-menu li.has-mega > a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-menu li.has-mega > a::after {
-    content: '\f107'; /* رمز السهم من FontAwesome */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-}
-
-/* تدوير السهم للأعلى عند فتح القائمة */
-.nav-menu li.has-mega > a.active::after {
-    transform: rotate(180deg);
-}
-
+    /* 2. إصلاح القائمة الجانبية */
     .navbar-links {
         position: fixed;
         top: 0;
         right: 0;
         width: 280px;
-        height: 100dvh;
-        /* الإضافة المهمة */
+        height: 100vh;
+        background-color: #0b0f5c; /* لون صلب لمنع الشفافية */
         transform: translateX(110%);
+        transition: transform 0.3s ease;
         z-index: 4000;
+        display: block; /* تأكد أنها ليست مخفية */
+        padding-top: 80px;
     }
-
-    
 
     .navbar-links.open {
         transform: translateX(0);
     }
 
-    .overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease;
-        z-index: 1500;
+    /* 3. توسيط الروابط والأزرار */
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
-    .overlay.active {
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu li a {
+        color: white;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        display: flex;
+        justify-content: center; /* توسيط النص */
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* 4. القائمة الفرعية (الميجا منيو) */
+    .mega-menu-content {
+        position: static;
+        display: none; /* مخفية افتراضياً */
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2); /* خلفية أغمق للتمييز */
+        padding: 0;
         opacity: 1;
         visibility: visible;
     }
 
-.nav-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* توسيط الروابط عمودياً */
-        text-align: center;
-        width: 100%;
+    .mega-menu-content.open {
+        display: block !important;
     }
 
+    .mega-grid {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    /* تنسيق كروت الميجا منيو في الجوال */
+    .mega-card {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        justify-content: center;
+    }
+
+    /* 5. أيقونة السهم التوضيحي */
+    .nav-menu li.has-mega > a::after {
+        content: '\f107'; 
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        transition: transform 0.3s;
+    }
+
+    .nav-menu li.has-mega > a.active::after {
+        transform: rotate(180deg);
+    }
+
+    /* 6. توسيط زر "احصل على استشارة" */
+    .nav-actions {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    
+    .nav-actions .btn-primary {
+        width: 80%;
+        text-align: center;
+    }
     /* توسيط الأزرار (طلب خدمة / استثمر معنا) */
     .home-buttons {
         display: flex;
