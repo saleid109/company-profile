@@ -71,6 +71,31 @@
     }
 
     /* ===== القائمة الجانبية ===== */
+
+.top-bar .container {
+        padding: 0 10px;
+        gap: 5px;
+    }
+
+    .flex-group {
+        gap: 10px; /* تقليل المسافات بين المجموعات */
+    }
+
+    .social-links {
+        gap: 8px;
+        margin-left: 10px;
+    }
+
+    /* تصغير الخط قليلاً لتوفير مساحة */
+    .top-bar, .language a, .price-text {
+        font-size: 12px;
+    }
+
+    /* إخفاء "تسجيل الدخول" كنص وإبقاء الأيقونة فقط لتوفير مساحة */
+    .user-info span {
+        display: none;
+    }
+    
     .nav-wrapper {
         height: 65px;
         padding: 0 15px;
