@@ -66,9 +66,7 @@
 
 
 /* تقليل الحشو الجانبي في الجوال */
-    .container {
-        padding: 0 20px;
-    }
+
 
     /* ===== القائمة الجانبية ===== */
     .nav-wrapper {
@@ -505,7 +503,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    
+
 /*زر الفتح التجريبي*/
 .demo-fab {
     position: fixed;
