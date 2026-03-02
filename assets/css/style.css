@@ -2314,19 +2314,19 @@ background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
 }
 
 /* تنسيق أيقونات التواصل الاجتماعي */
-.social-links {
+.social-links-footer {
     display: flex;
     gap: 15px;
     margin-top: 20px;
 }
 
-.social-links a {
+.social-links-footer a {
     color: var(--color-primary);
     font-size: 18px;
     transition: color 0.3s;
 }
 
-.social-links a:hover {
+.social-links-footer a:hover {
     color: var(--color-white);
 }
 
