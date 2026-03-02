@@ -113,24 +113,27 @@
         display: block;
         font-size: 24px;
         cursor: pointer;
+        background-color: var(--color-secondary);
     }
 
-    
 
-    .mobile-menu-icon{
-        position: static; /* لتظهر تحت الرابط مباشرة وليس فوقه */
-        display: none;    /* إخفاء */
-        width: 100%;
-        background: rgba(255, 255, 255, 0.05); /* خلفية خفيفة لتمييزها */
-        padding: 10px 0;
-        box-shadow: none;
-        border-radius: 0;
-    }
 
-    /* الكلاس الذي سيتم إضافته بواسطة الجافاسكريبت عند الضغط */
-    .mobile-menu-icon.open {
-        display: block; 
-    }
+/* التعديل يجب أن يكون لكلاس القائمة الفرعية (الميجا منيو) */
+.mega-menu-content {
+    position: static; 
+    display: none;    /* تختفي وتظهر فقط عند الضغط */
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05); 
+    padding: 10px 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* إظهار القائمة الفرعية عند إضافة كلاس open عبر JS */
+.mega-menu-content.open {
+    display: block ;
+}
+
 
     /* ضبط شبكة العناصر داخل الميجا منيو لتكون صف واحد */
     .mega-grid {
