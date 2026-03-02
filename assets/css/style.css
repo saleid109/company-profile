@@ -2123,7 +2123,7 @@ background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
 
 .teams-group-section h2 {
     font-size: 2.5em;
-    color: #002060;
+    color: var(--color-black);
     margin-bottom: 40px;
     font-weight: bold;
     text-align: center;
@@ -2168,6 +2168,7 @@ background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
     transition: all 0.3s ease;
     /* ← لا position absolute */
 }
+
 
 .teams-group-section .nav-btn:hover:not(:disabled) {
     background-color: #002060;
