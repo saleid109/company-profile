@@ -2355,7 +2355,7 @@ background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
 .auth-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 2, 60, 0.72);
+    background: rgba(0, 2, 60, 0.926);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     z-index: 9999;
