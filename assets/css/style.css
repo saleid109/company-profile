@@ -32,14 +32,14 @@ body {
 
 }
 
+/* تحسين الأداء وتقليل الاهتزاز أثناء التحريك */
 .service-card,
-.feature-item {
+.feature-item,
+.field-card {
     will-change: transform;
-    /* تحسين أداء GPU */
+    backface-visibility: hidden;
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-        box-shadow 0.3s ease,
-        background-color 0.2s ease,
-        filter 0.2s ease;
+        box-shadow 0.3s ease;
 }
 
 /* كلاس الظهور التدريجي (Scroll Reveal) */
@@ -48,7 +48,7 @@ body {
     transition: opacity 0.6s ease-out,
         transform 0.6s ease-out;
 }
-
+/* الحالة الأولية للعناصر المخفية */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
