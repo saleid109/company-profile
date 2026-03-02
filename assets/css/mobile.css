@@ -51,36 +51,6 @@
 /*===========================*/
 
 
-    .mobile-menu-icon{
-        position: static; /* لتظهر تحت الرابط مباشرة وليس فوقه */
-        display: none;    /* إخفاء */
-        width: 100%;
-        background: rgba(255, 255, 255, 0.05); /* خلفية خفيفة لتمييزها */
-        padding: 10px 0;
-        box-shadow: none;
-        border-radius: 0;
-    }
-
-    /* الكلاس الذي سيتم إضافته بواسطة الجافاسكريبت عند الضغط */
-    .mobile-menu-icon.open {
-        display: block; 
-    }
-
-    /* ضبط شبكة العناصر داخل الميجا منيو لتكون صف واحد */
-    .mega-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 0 20px;
-    }
-
-    /* تنسيق روابط الميجا منيو لتناسب اللمس */
-    .mega-item {
-        text-align: right;
-        padding: 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-}
 /* =========================================================
     الجوال (0px - 768px)
 ========================================================= */
@@ -143,6 +113,38 @@
         display: block;
         font-size: 24px;
         cursor: pointer;
+    }
+
+    
+
+    .mobile-menu-icon{
+        position: static; /* لتظهر تحت الرابط مباشرة وليس فوقه */
+        display: none;    /* إخفاء */
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05); /* خلفية خفيفة لتمييزها */
+        padding: 10px 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    /* الكلاس الذي سيتم إضافته بواسطة الجافاسكريبت عند الضغط */
+    .mobile-menu-icon.open {
+        display: block; 
+    }
+
+    /* ضبط شبكة العناصر داخل الميجا منيو لتكون صف واحد */
+    .mega-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    /* تنسيق روابط الميجا منيو لتناسب اللمس */
+    .mega-item {
+        text-align: right;
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .navbar-links {
