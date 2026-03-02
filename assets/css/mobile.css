@@ -151,21 +151,6 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* إضافة السهم بجانب الروابط التي لها قائمة فرعية */
-.nav-menu li.has-mega > a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-menu li.has-mega > a::after {
-    content: '\f107'; /* رمز السهم من FontAwesome */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-}
-
 /* تدوير السهم للأعلى عند فتح القائمة */
 .nav-menu li.has-mega > a.active::after {
     transform: rotate(180deg);
