@@ -98,11 +98,13 @@
         display: none;
     }
 
-    .nav-wrapper {
-        height: 65px;
+.nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--color-secondary) !important;
+        height: 70px;
         padding: 0 15px;
-        z-index: 3000;
-        background-color: var(--color-secondary);
     }
 
     .logo img {
