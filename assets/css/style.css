@@ -115,8 +115,9 @@ body {
 
 .flex-group {
     display: flex;
-    align-items: center;
+    align-items: center; 
     gap: 20px;
+    height: 100%;
 }
 
 .top-bar a {
@@ -127,10 +128,10 @@ body {
 }
 .social-links {
     display: flex;
-    align-items: center; /* توسيط عمودي للأيقونات */
+    align-items: center;
     gap: 15px;
     margin-left: 20px;
-    height: 100%; /* لضمان أخذ كامل الارتفاع المتاح */
+    height: 100%;
 }
 
 /* التأكد من أن الأيقونات نفسها لا تملك هوامش سفلية */
@@ -138,13 +139,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1; /* يمنع المسافات الإضافية للنصوص */
+    line-height: 1; 
 }
-
+/* تنسيق اللغة  */
 .language {
+    display: flex;
+    align-items: center;
+    height: 20px; /* ارتفاع محدد يتناسب مع الأيقونات */
     padding-right: 15px;
     border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+
 
 .language a {
     font-weight: var(--weight-bold);
