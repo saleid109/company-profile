@@ -287,6 +287,8 @@
         background: transparent !important;
     }
 
+    
+
     .featured-us.last-us {
         border-radius: 0 !important;
         box-shadow: none !important;
@@ -337,20 +339,7 @@
     font-size: 25px;
 }
 
-.stats-section {
-        padding-bottom: 60px; /* تقليل المسافة في الجوال */
-    }
-    
-    .stats-cards-grid {
-        margin-top: -80px; /* رفع الكروت قليلاً فوق الصندوق الكحلي */
-    }
 
-    /* تحسين عرض الجداول في الجوال لضمان عدم خروجها عن الشاشة */
-    .compare-table-wrapper {
-        width: 100%;
-        overflow-x: hidden; 
-    }
-    
 /*عملائنا*/
 .client-logo {
         width: 100px;
