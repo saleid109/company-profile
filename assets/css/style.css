@@ -125,12 +125,20 @@ body {
     transition: var(--transition);
     align-items: center;
 }
-
 .social-links {
     display: flex;
+    align-items: center; /* توسيط عمودي للأيقونات */
     gap: 15px;
     margin-left: 20px;
+    height: 100%; /* لضمان أخذ كامل الارتفاع المتاح */
+}
 
+/* التأكد من أن الأيقونات نفسها لا تملك هوامش سفلية */
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1; /* يمنع المسافات الإضافية للنصوص */
 }
 
 .language {
