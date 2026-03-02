@@ -69,15 +69,25 @@ body {
 /* تنسيق رابط التخطي */
 .skip-link {
     position: absolute;
-    top: -100%; /* خارج الشاشة تماماً */
-    left: 0;
+    top: -100px;
+    right: 50%;
+    transform: translateX(50%);
     background: var(--color-primary);
-    color: white;
-    padding: 8px;
-    z-index: 10000;
+    color: #000;
+    padding: 10px 20px;
+    z-index: 9999;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0 0 5px 5px;
+    transition: top 0.3s ease;
+    /* حركة انسيابية عند الظهور */
+
 }
+
+/* إظهار الرابط فقط عند الضغط على Tab */
 .skip-link:focus {
-    top: 0; /* يظهر فقط عند الضغط على Tab */
+    top: 0;
+    /* يعود لمكانه الطبيعي في أعلى الصفحة */
 }
 
 /*================================*/
