@@ -360,6 +360,25 @@
         height: 50px;
     }
 
+        .auth-card {
+        max-width: 850px;
+        flex-direction: row; /* تحويل الترتيب لأفقي */
+        min-height: 550px;
+    }
+
+    .auth-brand {
+        width: 35%; /* العمود الأيسر يأخذ مساحة أقل */
+        flex-direction: column; /* شعار فوق النص */
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .auth-content {
+        width: 65%;
+        padding: 40px;
+    }
+
 }
 /* =========================================================
     التابلت (769px - 1024px)
@@ -597,7 +616,7 @@
 /* 6. استعلامات الوسائط (Media Queries) للأجهزة الكبيرة */
 
 /* الأجهزة اللوحية (Tablets) وما فوق */
-@media (min-width: 768px) {
+
     .auth-card {
         max-width: 850px;
         flex-direction: row; /* تحويل الترتيب لأفقي */
@@ -616,8 +635,6 @@
         width: 65%;
         padding: 40px;
     }
-}
-
 /* 7. تأثيرات الحركة (Animations) */
 @keyframes slideUp {
     from { transform: translateY(20px); opacity: 0; }
