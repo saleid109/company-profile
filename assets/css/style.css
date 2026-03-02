@@ -2357,7 +2357,6 @@ background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
     inset: 0;
     background: rgba(0, 2, 60, 0.926);
     backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     z-index: 9999;
     display: flex;
     align-items: center;
