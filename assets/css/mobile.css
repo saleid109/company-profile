@@ -113,12 +113,12 @@
         display: block;
         font-size: 24px;
         cursor: pointer;
-        background-color: var(--color-secondary);
+        background-color: var(--color-white);
     }
 
 
 
-/* التعديل يجب أن يكون لكلاس القائمة الفرعية (الميجا منيو) */
+/*  القائمة الفرعية (الميجا منيو) */
 .mega-menu-content {
     position: static; 
     display: none;    /* تختفي وتظهر فقط عند الضغط */
