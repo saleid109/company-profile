@@ -1,4 +1,61 @@
 
+
+//إدارة القائمة والملاحة (Navigation & Menu)============
+/**
+ * دالة فتح وإغلاق قائمة الجوال والتحكم في الطبقة الظليلة
+ */
+function toggleMenu() {
+    const navLinks = document.querySelector(".navbar-links");
+    const menuIcon = document.querySelector(".mobile-menu-icon i");
+    const overlay = document.querySelector('.overlay');
+    const body = document.body;
+
+    navLinks.classList.toggle("open");
+    if (overlay) overlay.classList.toggle('active');
+
+    if (navLinks.classList.contains("open")) {
+        if (menuIcon) menuIcon.classList.replace("fa-bars", "fa-times");
+        body.classList.add('menu-open');
+    } else {
+        if (menuIcon) menuIcon.classList.replace("fa-times", "fa-bars");
+        body.classList.remove('menu-open');
+    }
+}
+/* =========================================================
+    2. وظائف فلترة الخدمات (Digital Services Filter)
+========================================================= */
+
+// متغيرات التحكم الافتراضية
+let currentMain = "products";
+let currentSub = "web";
+
+/**
+ * فلترة كروت الخدمات بناءً على القسم الرئيسي والفرعي المختتار
+ * تم إضافة تأثير ظهور متتابع (Delay) لتحسين تجربة المستخدم
+ */
+function filterCards() {
+    const cards = document.querySelectorAll(".service-card");
+    let delay = 0;
+
+    cards.forEach(card => {
+        const match = card.dataset.main === currentMain && card.dataset.sub === currentSub;
+
+        if (match) {
+            card.style.display = "block";
+            // إزالة الكلاس ثم إضافته بعد تأخير لتفعيل الأنيميشن
+            card.classList.remove("active");
+            setTimeout(() => {
+                card.classList.add("active");
+            }, delay);
+            delay += 100; // زيادة التأخير لكل كرت تالٍ
+        } else {
+            card.classList.remove("active");
+            card.style.display = "none";
+        }
+    });
+}
+
+
 /**
  * تفعيل التبويب الرئيسي وإظهار مجموعته الفرعية
  */
@@ -94,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- د. مراقب الظهور للحركات (Intersection Observer) ---
+    // ---. مراقب الظهور للحركات (Intersection Observer) ---
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -109,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         revealObserver.observe(el);
     });
 
-    // --- هـ. ربط أزرار التبويبات بالوظائف ---
+    // --- . ربط أزرار التبويبات بالوظائف ---
     document.querySelectorAll(".cat-btn").forEach(btn => {
         btn.addEventListener("click", () => activateMain(btn.dataset.main));
     });
@@ -118,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => activateSub(btn.dataset.sub));
     });
 
-    // --- و. التشغيل الأولي للفلترة ---
+    // --- . التشغيل الأولي للفلترة ---
     activateMain("products");
 });
 
@@ -318,58 +375,4 @@ function handleRegister(e) {
         btn.style.background = '#16a34a';
         setTimeout(closeAuth, 1000);
     }, 1500);
-}
-//إدارة القائمة والملاحة (Navigation & Menu)============
-/**
- * دالة فتح وإغلاق قائمة الجوال والتحكم في الطبقة الظليلة
- */
-function toggleMenu() {
-    const navLinks = document.querySelector(".navbar-links");
-    const menuIcon = document.querySelector(".mobile-menu-icon i");
-    const overlay = document.querySelector('.overlay');
-    const body = document.body;
-
-    navLinks.classList.toggle("open");
-    if (overlay) overlay.classList.toggle('active');
-
-    if (navLinks.classList.contains("open")) {
-        if (menuIcon) menuIcon.classList.replace("fa-bars", "fa-times");
-        body.classList.add('menu-open');
-    } else {
-        if (menuIcon) menuIcon.classList.replace("fa-times", "fa-bars");
-        body.classList.remove('menu-open');
-    }
-}
-/* =========================================================
-    2. وظائف فلترة الخدمات (Digital Services Filter)
-========================================================= */
-
-// متغيرات التحكم الافتراضية
-let currentMain = "products";
-let currentSub = "web";
-
-/**
- * فلترة كروت الخدمات بناءً على القسم الرئيسي والفرعي المختتار
- * تم إضافة تأثير ظهور متتابع (Delay) لتحسين تجربة المستخدم
- */
-function filterCards() {
-    const cards = document.querySelectorAll(".service-card");
-    let delay = 0;
-
-    cards.forEach(card => {
-        const match = card.dataset.main === currentMain && card.dataset.sub === currentSub;
-
-        if (match) {
-            card.style.display = "block";
-            // إزالة الكلاس ثم إضافته بعد تأخير لتفعيل الأنيميشن
-            card.classList.remove("active");
-            setTimeout(() => {
-                card.classList.add("active");
-            }, delay);
-            delay += 100; // زيادة التأخير لكل كرت تالٍ
-        } else {
-            card.classList.remove("active");
-            card.style.display = "none";
-        }
-    });
 }
