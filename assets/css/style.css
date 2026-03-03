@@ -40,11 +40,12 @@ html {
 /* كلاس الظهور التدريجي (Scroll Reveal) */
 
 .reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.6s ease-out,        transform 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 
 }
+
 /* الحالة الأولية للعناصر المخفية */
 .reveal.active {
     opacity: 1;
@@ -86,7 +87,7 @@ html {
 
 /* إظهار الرابط فقط عند الضغط على Tab */
 .skip-link:focus {
-    top: 0; 
+    top: 0;
 }
 
 
@@ -100,7 +101,7 @@ html {
 
 .flex-group {
     display: flex;
-    align-items: center; 
+    align-items: center;
     gap: 15px;
     height: 100%;
 }
@@ -137,7 +138,7 @@ html {
     padding-right: 15px;
     margin-right: 5px;
     border-right: 1px solid rgba(255, 255, 255, 0.2);
-    height: 18px; 
+    height: 18px;
 }
 
 
@@ -286,7 +287,8 @@ html {
     top: 100%;
     right: 50%;
     transform: translateX(50%) translateY(20px);
-    width: 1100px;
+    max-width: 1100px;
+    width: 95%;
     /* عرض كافٍ للثلاث كروت */
     background: #fff;
     border-radius: 20px;
@@ -382,7 +384,7 @@ html {
     width: 44px;
     height: 44px;
     border-radius: 24px;
-background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
+    background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -436,7 +438,7 @@ background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
 
 .hero-section {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -462,13 +464,15 @@ background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
     object-fit: cover;
 
 }
+
 /*  الخلفية الداكنة فوق الصورة */
 .hero-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
+
 /*  المحتوى النصي فوق الصورة */
 .hero-content {
     max-width: 900px;
@@ -1046,7 +1050,7 @@ background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
     0% {
         opacity: 0;
         transform: translateY(20px) scale(0.98);
-    
+
     }
 
     100% {
@@ -2657,18 +2661,20 @@ background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
     background: white;
     border-radius: 50%;
     top: 3px;
-    right: 3px; /* RTL — يبدأ من اليمين */
+    right: 3px;
+    /* RTL — يبدأ من اليمين */
     transition: transform 0.3s ease;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* عند التفعيل */
-.toggle-switch input:checked + .toggle-track {
+.toggle-switch input:checked+.toggle-track {
     background: #00025B;
 }
 
-.toggle-switch input:checked + .toggle-track::before {
-    transform: translateX(-16px); /* RTL — ينتقل لليسار */
+.toggle-switch input:checked+.toggle-track::before {
+    transform: translateX(-16px);
+    /* RTL — ينتقل لليسار */
 }
 
 .forgot-link {
