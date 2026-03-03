@@ -40,8 +40,10 @@ html {
 /* كلاس الظهور التدريجي (Scroll Reveal) */
 
 .reveal {
-    transition: opacity 0.6s ease-out,
-        transform 0.6s ease-out;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.6s ease-out,        transform 0.6s ease-out;
+
 }
 /* الحالة الأولية للعناصر المخفية */
 .reveal.active {
@@ -57,7 +59,7 @@ html {
     background-color: var(--color-secondary);
     color: var(--color-white);
     font-size: 14px;
-    height: 45px; /* ارتفاع ثابت يضمن التوسط */
+    min-height: 45px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
