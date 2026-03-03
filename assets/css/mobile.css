@@ -588,7 +588,7 @@
 
     
 
-}
+
 
 .team-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -763,4 +763,5 @@
 /* إخفاء اللوحة غير النشطة */
 .auth-panel:not(.active) {
     display: none;
+}
 }
