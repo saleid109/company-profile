@@ -41,6 +41,7 @@
     .home-buttons a:hover {
         filter: brightness(1.1);
         transform: translateY(-2px);
+        background-color: #1d4ed8;
     }
 
     .nav-menu li a:hover {
