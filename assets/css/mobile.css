@@ -733,14 +733,6 @@
     font-size: 1rem; /* يمنع الزووم التلقائي في الآيفون */
 }
 
-/* 6. استعلامات الوسائط (Media Queries) للأجهزة الكبيرة */
-
-
-    .auth-card {
-        max-width: 850px;
-        flex-direction: row; /* تحويل الترتيب لأفقي */
-        min-height: 550px;
-    }
 
     .auth-brand {
         width: 35%; /* العمود الأيسر يأخذ مساحة أقل */
