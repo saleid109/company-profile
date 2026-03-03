@@ -1,131 +1,4 @@
 
-
-// ===== فتح وإغلاق =====
-function openAuth(tab = 'login') {
-    document.getElementById('authOverlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    switchTab(tab, document.querySelectorAll('.auth-tab')[tab === 'login' ? 0 : 1]);
-}
-
-function closeAuth() {
-    document.getElementById('authOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-}
-
-function handleOverlayClick(e) {
-    if (e.target === document.getElementById('authOverlay')) closeAuth();
-}
-
-// إغلاق بـ Escape
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeAuth();
-});
-
-// ===== تبديل التبويبات =====
-function switchTab(name, btn) {
-    document.querySelectorAll('.auth-tab').forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-    });
-    btn.classList.add('active');
-    btn.setAttribute('aria-selected', 'true');
-
-    document.querySelectorAll('.auth-panel').forEach(p => {
-        p.classList.remove('active');
-        p.hidden = true; // لإخفاء العنصر من الوصول والتركيز
-    });
-
-    const panel = document.getElementById('panel-' + name);
-    panel.classList.add('active');
-    panel.hidden = false; // لإظهاره وجعله متاحاً للتركيز
-}
-
-// ===== معالجة النماذج =====
-function handleLogin(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.auth-submit');
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>جاري التحقق...</span>';
-    btn.disabled = true;
-    // هنا تضع طلب API الخاص بك
-    setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check"></i> <span>تم بنجاح!</span>';
-        btn.style.background = '#16a34a';
-        setTimeout(closeAuth, 1000);
-    }, 1500);
-}
-
-function handleRegister(e) {
-    e.preventDefault();
-    const pass = document.getElementById('reg-password').value;
-    const confirm = document.getElementById('reg-confirm').value;
-    if (pass !== confirm) {
-        alert('كلمتا المرور غير متطابقتين');
-        return;
-    }
-    const btn = e.target.querySelector('.auth-submit');
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>جاري الإنشاء...</span>';
-    btn.disabled = true;
-    setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check"></i> <span>تم إنشاء الحساب!</span>';
-        btn.style.background = '#16a34a';
-        setTimeout(closeAuth, 1000);
-    }, 1500);
-}
-//إدارة القائمة والملاحة (Navigation & Menu)============
-/**
- * دالة فتح وإغلاق قائمة الجوال والتحكم في الطبقة الظليلة
- */
-function toggleMenu() {
-    const navLinks = document.querySelector(".navbar-links");
-    const menuIcon = document.querySelector(".mobile-menu-icon i");
-    const overlay = document.querySelector('.overlay');
-    const body = document.body;
-
-    navLinks.classList.toggle("open");
-    if (overlay) overlay.classList.toggle('active');
-
-    if (navLinks.classList.contains("open")) {
-        if (menuIcon) menuIcon.classList.replace("fa-bars", "fa-times");
-        body.classList.add('menu-open');
-    } else {
-        if (menuIcon) menuIcon.classList.replace("fa-times", "fa-bars");
-        body.classList.remove('menu-open');
-    }
-}
-/* =========================================================
-    2. وظائف فلترة الخدمات (Digital Services Filter)
-========================================================= */
-
-// متغيرات التحكم الافتراضية
-let currentMain = "products";
-let currentSub = "web";
-
-/**
- * فلترة كروت الخدمات بناءً على القسم الرئيسي والفرعي المختتار
- * تم إضافة تأثير ظهور متتابع (Delay) لتحسين تجربة المستخدم
- */
-function filterCards() {
-    const cards = document.querySelectorAll(".service-card");
-    let delay = 0;
-
-    cards.forEach(card => {
-        const match = card.dataset.main === currentMain && card.dataset.sub === currentSub;
-
-        if (match) {
-            card.style.display = "block";
-            // إزالة الكلاس ثم إضافته بعد تأخير لتفعيل الأنيميشن
-            card.classList.remove("active");
-            setTimeout(() => {
-                card.classList.add("active");
-            }, delay);
-            delay += 100; // زيادة التأخير لكل كرت تالٍ
-        } else {
-            card.classList.remove("active");
-            card.style.display = "none";
-        }
-    });
-}
-
 /**
  * تفعيل التبويب الرئيسي وإظهار مجموعته الفرعية
  */
@@ -372,3 +245,131 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('load', updateCarousel);
     setTimeout(updateCarousel, 300);
 })();
+
+
+
+// ===== فتح وإغلاق =====
+function openAuth(tab = 'login') {
+    document.getElementById('authOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    switchTab(tab, document.querySelectorAll('.auth-tab')[tab === 'login' ? 0 : 1]);
+}
+
+function closeAuth() {
+    document.getElementById('authOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+    if (e.target === document.getElementById('authOverlay')) closeAuth();
+}
+
+// إغلاق بـ Escape
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeAuth();
+});
+
+// ===== تبديل التبويبات =====
+function switchTab(name, btn) {
+    document.querySelectorAll('.auth-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+
+    document.querySelectorAll('.auth-panel').forEach(p => {
+        p.classList.remove('active');
+        p.hidden = true; // لإخفاء العنصر من الوصول والتركيز
+    });
+
+    const panel = document.getElementById('panel-' + name);
+    panel.classList.add('active');
+    panel.hidden = false; // لإظهاره وجعله متاحاً للتركيز
+}
+
+// ===== معالجة النماذج =====
+function handleLogin(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.auth-submit');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>جاري التحقق...</span>';
+    btn.disabled = true;
+    // هنا تضع طلب API الخاص بك
+    setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-check"></i> <span>تم بنجاح!</span>';
+        btn.style.background = '#16a34a';
+        setTimeout(closeAuth, 1000);
+    }, 1500);
+}
+
+function handleRegister(e) {
+    e.preventDefault();
+    const pass = document.getElementById('reg-password').value;
+    const confirm = document.getElementById('reg-confirm').value;
+    if (pass !== confirm) {
+        alert('كلمتا المرور غير متطابقتين');
+        return;
+    }
+    const btn = e.target.querySelector('.auth-submit');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>جاري الإنشاء...</span>';
+    btn.disabled = true;
+    setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-check"></i> <span>تم إنشاء الحساب!</span>';
+        btn.style.background = '#16a34a';
+        setTimeout(closeAuth, 1000);
+    }, 1500);
+}
+//إدارة القائمة والملاحة (Navigation & Menu)============
+/**
+ * دالة فتح وإغلاق قائمة الجوال والتحكم في الطبقة الظليلة
+ */
+function toggleMenu() {
+    const navLinks = document.querySelector(".navbar-links");
+    const menuIcon = document.querySelector(".mobile-menu-icon i");
+    const overlay = document.querySelector('.overlay');
+    const body = document.body;
+
+    navLinks.classList.toggle("open");
+    if (overlay) overlay.classList.toggle('active');
+
+    if (navLinks.classList.contains("open")) {
+        if (menuIcon) menuIcon.classList.replace("fa-bars", "fa-times");
+        body.classList.add('menu-open');
+    } else {
+        if (menuIcon) menuIcon.classList.replace("fa-times", "fa-bars");
+        body.classList.remove('menu-open');
+    }
+}
+/* =========================================================
+    2. وظائف فلترة الخدمات (Digital Services Filter)
+========================================================= */
+
+// متغيرات التحكم الافتراضية
+let currentMain = "products";
+let currentSub = "web";
+
+/**
+ * فلترة كروت الخدمات بناءً على القسم الرئيسي والفرعي المختتار
+ * تم إضافة تأثير ظهور متتابع (Delay) لتحسين تجربة المستخدم
+ */
+function filterCards() {
+    const cards = document.querySelectorAll(".service-card");
+    let delay = 0;
+
+    cards.forEach(card => {
+        const match = card.dataset.main === currentMain && card.dataset.sub === currentSub;
+
+        if (match) {
+            card.style.display = "block";
+            // إزالة الكلاس ثم إضافته بعد تأخير لتفعيل الأنيميشن
+            card.classList.remove("active");
+            setTimeout(() => {
+                card.classList.add("active");
+            }, delay);
+            delay += 100; // زيادة التأخير لكل كرت تالٍ
+        } else {
+            card.classList.remove("active");
+            card.style.display = "none";
+        }
+    });
+}
