@@ -2392,7 +2392,6 @@ background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
     max-height: calc(100dvh - 24px);
     background: var(--color-white);
     border-radius: 18px;
-    box-shadow: 0 20px 60px rgba(0, 2, 91, .22);
     display: flex;
     flex-direction: row;
     overflow: hidden;
