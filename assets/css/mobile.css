@@ -600,11 +600,12 @@
 
     
 /*زر الفتح التجريبي*/
+
 .demo-fab {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--primary-color);
+    background-color: var(--color-secondary);
     color: white;
     border-radius: 50%;
     width: 50px;
