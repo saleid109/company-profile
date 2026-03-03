@@ -446,7 +446,7 @@
     }
 
     .team-grid {
-        grid-template-columns: 1fr; /* عضو واحد في السطر للجوال */
+        grid-template-columns: 1fr; /*عضو واحد في السطرv */
         padding: 0 10px;
     }
 
