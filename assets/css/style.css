@@ -50,19 +50,6 @@ html {
     transform: translateY(0);
 }
 
-/* حماية من الاهتزاز أثناء الحركة */
-.nav-wrapper {
-    position: relative;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-    background-color: var(--color-secondary);
-    padding: 0 30px;
-}
-
-
 
 /*================================*/
 
