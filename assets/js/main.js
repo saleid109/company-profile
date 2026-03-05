@@ -260,6 +260,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener('resize', update);
     update();
+
+    function getOffset() {
+    const clipWidth = document.querySelector('.team-track-clip').offsetWidth;
+    const cardWidth = document.querySelector('.team-card').offsetWidth;
+    const gap = window.innerWidth <= 768 ? 16 : 20;
+    return (clipWidth - cardWidth) / 2; // يمركز الكرت النشط دائماً
+}
+
+function goToCard(index) {
+    const offset = getOffset();
+    const cardWidth = document.querySelector('.team-card').offsetWidth;
+    const gap = window.innerWidth <= 768 ? 16 : 20;
+    
+    const translateX = offset - (index * (cardWidth + gap));
+    document.querySelector('.team-track').style.transform = `translateX(${translateX}px)`;
+}
+
+// عند التهيئة
+goToCard(0); // يبدأ بالكرت الأول مُمركزاً
 })();
 
 
