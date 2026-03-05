@@ -444,6 +444,8 @@
     }
 
 
+
+
     /*عملائنا*/
     .client-logo {
         width: 100px;
@@ -458,6 +460,20 @@
         grid-template-columns: 1fr;
         /*عضو واحد في السطرv */
         padding: 0 10px;
+    }
+
+    /* شركائنا */
+    .partners-section .logo-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .partners-section .logo-item img {
+        max-width: 100%;
+        height: auto;
+        
+        
     }
 
     .footer-grid {
