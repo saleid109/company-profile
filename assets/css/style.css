@@ -1987,6 +1987,7 @@ html {
     flex: 1;
     min-width: 0;
     overflow: hidden;
+    padding: 50px 20px 20px;
     padding-top: 55px;
     margin-top: -55px;
 }
@@ -1997,8 +1998,6 @@ html {
     gap: 24px;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
-    overflow: visible;
-    /* ← أضف هذا */
 }
 
 /* ===== Card ===== */
