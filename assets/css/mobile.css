@@ -174,7 +174,7 @@
         z-index: 4000;
         padding-top: 80px;
 
-}
+    }
 
     .navbar-links.open {
         transform: translateX(0);
@@ -465,32 +465,38 @@
         align-items: center;
         width: 100%;
     }
-/*فريق العمل*/
-.team-section {
-    padding: 60px 0; /* بدون padding جانبي على الـ section */
-}
 
-.team-track-clip {
-    overflow: hidden;
-    padding: 50px 0 20px; /* padding علوي لإظهار الصورة البارزة */
-}
+    /*فريق العمل*/
+    .team-section {
+        padding: 60px 0;
+        /* بدون padding جانبي على الـ section */
+    }
 
-.team-track {
-    display: flex;
-    gap: 16px;
-    padding: 0; /* ← المشكلة الرئيسية: احذف padding من هنا تماماً */
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
-}
+    .team-track-clip {
+        overflow: hidden;
+        padding: 50px 0 20px;
+        /* padding علوي لإظهار الصورة البارزة */
+    }
 
-.team-card {
-    flex: 0 0 260px; /* عرض ثابت بدل 80% */
-    min-width: unset;
-}
+    .team-track {
+        display: flex;
+        gap: 16px;
+        padding: 0;
+        /* ← المشكلة الرئيسية: احذف padding من هنا تماماً */
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+    }
 
-.team-card:first-child {
-    margin-right: 0; /* احذف أي margin خاصة */
-}
+    .team-card {
+        flex: 0 0 260px;
+        /* عرض ثابت بدل 80% */
+        min-width: unset;
+    }
+
+    .team-card:first-child {
+        margin-right: 0;
+        /* احذف أي margin خاصة */
+    }
 
 
     .footer-grid {
@@ -648,16 +654,31 @@
 
     /*فريق العمل*/
     .team-section {
-        padding: 60px 20px;
+        padding: 60px 0;
     }
 
+    .team-track-clip {
+        overflow: hidden;
+        padding: 50px 0 20px;
+    }
+
+    .team-track {
+        display: flex;
+        gap: 20px;
+        padding: 0;
+        /* لا padding هنا */
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+    }
 
     .team-card {
-        min-width: 220px;
+        flex: 0 0 300px;
+        /* أكبر قليلاً في التابلت */
+        min-width: unset;
     }
 
     .team-card:first-child {
-        margin-right: 20px;
+        margin-right: 0;
     }
 
     /*الفوتر*/
@@ -720,18 +741,18 @@
     }
 
     /* 3. عمود الهوية (Brand) - تحسينه للجوال */
-.auth-brand {
-    background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
-    color: white;
-    padding: 30px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    width: 35%;
-    gap: 20px;
-}
+    .auth-brand {
+        background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
+        color: white;
+        padding: 30px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        width: 35%;
+        gap: 20px;
+    }
 
     .brand-logo {
         font-size: 2rem;
