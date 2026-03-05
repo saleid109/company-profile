@@ -1995,9 +1995,10 @@ html {
 .team-track {
     display: flex;
     gap: 24px;
-    padding: 0 20px;   /* الحل */
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    overflow: visible;
+    /* ← أضف هذا */
 }
 
 /* ===== Card ===== */
