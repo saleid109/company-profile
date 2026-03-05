@@ -474,8 +474,9 @@
 
     .team-track-clip {
         overflow: hidden;
-        padding: 50px 0 20px;
-        /* padding علوي لإظهار الصورة البارزة */
+        padding: 55px 0 20px;
+        /* ← صفّر الجانبين */
+        margin-top: -55px;
     }
 
     .team-track {
@@ -659,7 +660,9 @@
 
     .team-track-clip {
         overflow: hidden;
-        padding: 50px 0 20px;
+        padding: 55px 0 20px;
+        /* ← صفّر الجانبين */
+        margin-top: -55px;
     }
 
     .team-track {

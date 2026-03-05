@@ -229,46 +229,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
 /* --- فريق العمل --- */
 (function () {
     const track = document.getElementById('team-track');
-    const clip = document.querySelector('.team-track-clip');
+    const clip  = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
-    if (!track || !btnPrev || !btnNext || !clip) return;
+    if (!track || !clip || !btnPrev || !btnNext) return;
 
     const cards = track.querySelectorAll('.team-card');
     let idx = 0;
 
-    // عدد الكروت الظاهرة حسب حجم الشاشة
     function getVisible() {
-        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 768)  return 1;
         if (window.innerWidth <= 1024) return 3;
         return 4;
     }
 
-    // عرض الكرت + الـ gap
-    function getCardStep() {
+    function getStep() {
         const gap = parseInt(getComputedStyle(track).gap) || 24;
         return cards[0].offsetWidth + gap;
     }
 
-    // حساب offset البداية لتمركز الكرت
-    function getInitialOffset() {
+    function getStartOffset() {
         const visible = getVisible();
         if (visible === 1) {
             // موبايل: مركّز
             return (clip.offsetWidth - cards[0].offsetWidth) / 2;
         }
-        // تابلت/ديسكتوب: يبدأ من الحافة
+        // تابلت وديسكتوب: يبدأ من الحافة
         return 0;
     }
 
     function update() {
-        const offset = getInitialOffset();
-        const step = getCardStep();
-        // RTL: الحركة بالموجب للأمام
-        const translateX = offset - (idx * step);
+        const offset = getStartOffset();
+        const translateX = offset - (idx * getStep());
         track.style.transform = `translateX(${translateX}px)`;
 
         const maxIdx = Math.max(0, cards.length - getVisible());
@@ -277,19 +273,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     btnNext.addEventListener('click', () => {
-        const maxIdx = cards.length - getVisible();
-        if (idx < maxIdx) { idx++; update(); }
+        if (idx < cards.length - getVisible()) { idx++; update(); }
     });
-
     btnPrev.addEventListener('click', () => {
         if (idx > 0) { idx--; update(); }
     });
 
-    window.addEventListener('resize', () => {
-        idx = 0; // إعادة للبداية عند تغيير الحجم
-        update();
-    });
-
+    window.addEventListener('resize', () => { idx = 0; update(); });
     update();
 })();
 
