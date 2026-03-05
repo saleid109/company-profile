@@ -466,25 +466,48 @@
         width: 100%;
     }
 /*فريق العمل*/
+.team-track-clip {
+        overflow: visible !important; /* هذا أهم سطر لحل مشكلة القص */
+        padding: 20px 0;
+        width: 100%;
+        position: relative;
+    }
 
-.team-track {
-    display: flex;
-    gap: 24px;
-    padding: 0 16px;   /* الحل */
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
-}
+    /* 2. المسار: نفعّل التمرير السلس ونضبط المسافات */
+    .team-track {
+        display: flex;
+        gap: 16px;
+        padding: 0 40px; /* مسافة جانبية لكي لا يلتصق الكرت بحافة الشاشة */
+        overflow-x: auto; /* يسمح بالسحب بالإصبع */
+        scroll-snap-type: x mandatory; /* لجعل الكرت يقف في المنتصف تماماً */
+        scrollbar-width: none; /* إخفاء شريط التمرير */
+    }
 
-.team-card{
-    flex: 0 0 80%;   /* عرض كرت واحد تقريباً */
-}
+    .team-track::-webkit-scrollbar {
+        display: none; /* إخفاء شريط التمرير لمتصفحات كروم وسفاري */
+    }
 
+    /* 3. الكرت: نضبط النسبة ليكون العرض مريحاً وغير مقصوص */
+    .team-card {
+        flex: 0 0 75%; /* الكرت يأخذ 75% من العرض ليظهر طرف الكرت التالي */
+        scroll-snap-align: center;
+        background: white;
+        border-radius: 20px;
+        padding: 30px 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        min-height: 350px; /* زيادة الطول لكي لا يبدو الكرت مضغوطاً */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-.team-track-clip{
-    padding-right:20px;
-    padding-left:20px;
-}
-
+    /* 4. الأسهم: نضعها في مكان لا يغطي الاسم أو الصورة */
+    .nav-arrow {
+        top: auto;
+        bottom: -50px; /* نقل الأسهم لأسفل الكروت لتوفير مساحة */
+    }
 
     .footer-grid {
         grid-template-columns: 1fr;
