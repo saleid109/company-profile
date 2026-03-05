@@ -232,53 +232,65 @@ document.addEventListener("DOMContentLoaded", () => {
 /* --- فريق العمل --- */
 (function () {
     const track = document.getElementById('team-track');
+    const clip = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
-    if (!track || !btnPrev || !btnNext) return;
+    if (!track || !btnPrev || !btnNext || !clip) return;
 
     const cards = track.querySelectorAll('.team-card');
-    const VISIBLE = 4;
     let idx = 0;
 
-    function getW() {
+    // عدد الكروت الظاهرة حسب حجم الشاشة
+    function getVisible() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 3;
+        return 4;
+    }
+
+    // عرض الكرت + الـ gap
+    function getCardStep() {
         const gap = parseInt(getComputedStyle(track).gap) || 24;
         return cards[0].offsetWidth + gap;
     }
 
+    // حساب offset البداية لتمركز الكرت
+    function getInitialOffset() {
+        const visible = getVisible();
+        if (visible === 1) {
+            // موبايل: مركّز
+            return (clip.offsetWidth - cards[0].offsetWidth) / 2;
+        }
+        // تابلت/ديسكتوب: يبدأ من الحافة
+        return 0;
+    }
+
     function update() {
-        track.style.transform = `translateX(${idx * getW()}px)`;
-        btnPrev.disabled = idx === 0;
-        btnNext.disabled = idx >= cards.length - VISIBLE;
+        const offset = getInitialOffset();
+        const step = getCardStep();
+        // RTL: الحركة بالموجب للأمام
+        const translateX = offset - (idx * step);
+        track.style.transform = `translateX(${translateX}px)`;
+
+        const maxIdx = Math.max(0, cards.length - getVisible());
+        btnPrev.disabled = idx <= 0;
+        btnNext.disabled = idx >= maxIdx;
     }
 
     btnNext.addEventListener('click', () => {
-        if (idx < cards.length - VISIBLE) { idx++; update(); }
+        const maxIdx = cards.length - getVisible();
+        if (idx < maxIdx) { idx++; update(); }
     });
+
     btnPrev.addEventListener('click', () => {
         if (idx > 0) { idx--; update(); }
     });
 
-    window.addEventListener('resize', update);
+    window.addEventListener('resize', () => {
+        idx = 0; // إعادة للبداية عند تغيير الحجم
+        update();
+    });
+
     update();
-
-    function getOffset() {
-    const clipWidth = document.querySelector('.team-track-clip').offsetWidth;
-    const cardWidth = document.querySelector('.team-card').offsetWidth;
-    const gap = window.innerWidth <= 768 ? 16 : 20;
-    return (clipWidth - cardWidth) / 2; // يمركز الكرت النشط دائماً
-}
-
-function goToCard(index) {
-    const offset = getOffset();
-    const cardWidth = document.querySelector('.team-card').offsetWidth;
-    const gap = window.innerWidth <= 768 ? 16 : 20;
-    
-    const translateX = offset - (index * (cardWidth + gap));
-    document.querySelector('.team-track').style.transform = `translateX(${translateX}px)`;
-}
-
-// عند التهيئة
-goToCard(0); // يبدأ بالكرت الأول مُمركزاً
 })();
 
 
