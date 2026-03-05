@@ -169,11 +169,15 @@
         width: 280px;
         height: 100vh;
         background-color: #0b0f5c;
-        transform: translateX(110%);
+        transform: translateX(100%);
         transition: transform 0.3s ease;
         z-index: 4000;
         padding-top: 80px;
-    }
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+}
 
     .navbar-links.open {
         transform: translateX(0);
