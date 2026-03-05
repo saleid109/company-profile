@@ -311,9 +311,6 @@
         line-height: 1.5;
     }
 
-    .compare-table-wrapper {
-        overflow: visible;
-    }
 
     /* إخفاء الهيدر */
     .compare-table thead {
