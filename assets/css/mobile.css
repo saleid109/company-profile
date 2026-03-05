@@ -463,9 +463,10 @@
     }
 
     /* شركائنا */
-.partners-section .logos-grid {
+    .partners-section .logos-grid {
         justify-content: center;
-        gap: 40px; /* تقليل المسافة بين الشعارات */
+        gap: 40px;
+        /* تقليل المسافة بين الشعارات */
     }
 
     .partners-section .logo-item {
@@ -622,18 +623,27 @@
 
 
 
-/* عملائنا */
+    /* عملائنا */
     .client-logo {
         width: 120px;
         height: 70px;
     }
 
-    
 
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
+    /*فريق العمل*/
+    .team-section {
+        padding: 60px 20px;
     }
 
+    .team-grid {
+        padding: 0 20px;
+    }
+
+    .team-card {
+        margin: 0 auto;
+    }
+
+    /*الفوتر*/
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
     }
