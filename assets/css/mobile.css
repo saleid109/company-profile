@@ -643,12 +643,6 @@
         padding: 60px 20px;
     }
 
-    .team-grid {
-        display: flex;
-        gap: 20px;
-        padding: 0 20px;
-        overflow-x: auto;
-    }
 
     .team-card {
         min-width: 220px;
