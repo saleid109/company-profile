@@ -467,38 +467,27 @@
     }
 
     /*فريق العمل*/
-    .team-section {
-        padding: 60px 0;
-        /* بدون padding جانبي على الـ section */
-    }
-
-    .team-track-clip {
-        overflow: hidden;
-        padding: 55px 0 20px;
-        /* ← صفّر الجانبين */
-        margin-top: -55px;
-    }
-
-    .team-track {
-        display: flex;
-        gap: 16px;
-        padding: 0;
-        /* ← المشكلة الرئيسية: احذف padding من هنا تماماً */
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: transform;
-    }
-
-    .team-card {
-        flex: 0 0 260px;
-        /* عرض ثابت بدل 80% */
-        min-width: unset;
-    }
-
-    .team-card:first-child {
-        margin-right: 0;
-        /* احذف أي margin خاصة */
-    }
-
+.team-section {
+    padding: 60px 0;
+}
+.team-container {
+    padding: 0 15px; /* تقليل padding الجانبي */
+}
+.team-track-clip {
+    overflow: hidden;
+    padding: 55px 0 20px;
+    margin-top: -55px;
+}
+.team-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+.team-card {
+    flex: 0 0 260px;
+    min-width: unset;
+}
 
     .footer-grid {
         grid-template-columns: 1fr;
