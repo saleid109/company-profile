@@ -402,10 +402,12 @@
     /* الصندوق الكحلي */
     .stats-dark-card {
         background-color: #000051;
-        padding: 60px 20px 140px 20px;
+        padding: 60px 20px 120px;
         text-align: center;
         border-radius: 10px;
-        padding-bottom: 120px;
+        color: white;
+        position: relative;
+        z-index: 1;
     }
 
     /* شبكة الكروت (الأهم للتوافق) */
