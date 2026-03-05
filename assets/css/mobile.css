@@ -31,7 +31,6 @@
 /* =========================================================
     تأثيرات سطح المكتب
 ========================================================= */
-
 @media (hover: hover) {
     .service-card:hover {
         transform: translateY(-10px);
@@ -39,9 +38,8 @@
     }
 
     .home-buttons a:hover {
-        filter: brightness(1.1);
         transform: translateY(-2px);
-        background-color: #1d4ed8;
+        filter: brightness(1.05);
     }
 
     .nav-menu li a:hover {
@@ -344,20 +342,14 @@
     }
 
     /* خلايا نقطة صعود وشركات أخرى */
-    .featured-us,
-    .others-cell {
-        display: flex !important;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: row-reverse;
-        padding: 6px 0 !important;
-        background: transparent !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        border-bottom: none !important;
-        width: 100% !important;
-        min-width: unset !important;
-    }
+.featured-us,
+.others-cell {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 10px;
+}
 
     .featured-us::before {
         content: "نقطة صعود";
