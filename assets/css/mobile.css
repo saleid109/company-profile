@@ -456,17 +456,11 @@
         gap: 30px;
     }
 
-    .team-grid {
-        grid-template-columns: 1fr;
-        /*عضو واحد في السطرv */
-        padding: 0 10px;
-    }
 
     /* شركائنا */
     .partners-section .logos-grid {
         justify-content: center;
         gap: 40px;
-        /* تقليل المسافة بين الشعارات */
     }
 
     .partners-section .logo-item {
@@ -475,8 +469,25 @@
         align-items: center;
         width: 100%;
     }
+/*فريق العمل*/
 
-    
+.team-track {
+    display: flex;
+    gap: 24px;
+    padding: 0 16px;   /* الحل */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.team-card{
+    flex: 0 0 80%;   /* عرض كرت واحد تقريباً */
+}
+
+
+.team-track-clip{
+    padding-right:20px;
+    padding-left:20px;
+}
 
 
     .footer-grid {
