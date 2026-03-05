@@ -463,18 +463,18 @@
     }
 
     /* شركائنا */
+.partners-section .logos-grid {
+        justify-content: center;
+        gap: 40px; /* تقليل المسافة بين الشعارات */
+    }
+
     .partners-section .logo-item {
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
     }
 
-    .partners-section .logo-item img {
-        display: block;
-        margin: auto;
-        max-width: 100%;
-        height: auto;
-    }
 
     .footer-grid {
         grid-template-columns: 1fr;
