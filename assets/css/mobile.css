@@ -718,14 +718,18 @@
     }
 
     /* 3. عمود الهوية (Brand) - تحسينه للجوال */
-    .auth-brand {
-        background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
-        color: white;
-        padding: 30px 20px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
+.auth-brand {
+    background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 35%;
+    gap: 20px;
+}
 
     .brand-logo {
         font-size: 2rem;
@@ -804,16 +808,6 @@
         /* يمنع الزووم التلقائي في الآيفون */
     }
 
-
-    .auth-brand {
-        width: 35%;
-        /* العمود الأيسر يأخذ مساحة أقل */
-        flex-direction: column;
-        /* شعار فوق النص */
-        justify-content: center;
-        text-align: center;
-        gap: 20px;
-    }
 
     .auth-content {
         width: 65%;
