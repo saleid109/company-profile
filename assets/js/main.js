@@ -231,9 +231,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --- فريق العمل --- */
+/* --- فريق العمل --- */
 (function () {
-    const track = document.getElementById('team-track');
-    const clip = document.querySelector('.team-track-clip');
+    const track   = document.getElementById('team-track');
+    const clip    = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
     if (!track || !clip || !btnPrev || !btnNext) return;
@@ -242,8 +243,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let idx = 0;
 
     function getVisible() {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 1024) return 2; /* ← تبقى 2 */
+        if (window.innerWidth <= 768)  return 1;
+        if (window.innerWidth <= 1024) return 2;
         return 4;
     }
 
@@ -252,24 +253,32 @@ document.addEventListener("DOMContentLoaded", () => {
         return cards[0].offsetWidth + gap;
     }
 
-    function update() {
-        track.style.transform = `translateX(${-(idx * getStep())}px)`;
-        const max = Math.max(0, cards.length - getVisible());
-        btnPrev.disabled = idx <= 0;
-        btnNext.disabled = idx >= max;
+    function getMax() {
+        return Math.max(0, cards.length - getVisible());
     }
 
-    btnNext.addEventListener('click', () => {
-        const max = cards.length - getVisible();
-        if (idx < max) { idx++; update(); }
-    });
+    function update() {
+        // RTL: الحركة للأمام = translateX موجب
+        track.style.transform = `translateX(${idx * getStep()}px)`;
+        btnPrev.disabled = idx <= 0;
+        btnNext.disabled  = idx >= getMax();
+    }
+
+    // RTL: السهم الأيسر (<) = للأمام
     btnPrev.addEventListener('click', () => {
+        if (idx < getMax()) { idx++; update(); }
+    });
+
+    // RTL: السهم الأيمن (>) = للخلف
+    btnNext.addEventListener('click', () => {
         if (idx > 0) { idx--; update(); }
     });
 
     window.addEventListener('resize', () => { idx = 0; update(); });
     setTimeout(update, 150);
 })();
+
+
 /* --- قسم الفرق --- */
 (function () {
     const section = document.querySelector('.teams-group-section');
