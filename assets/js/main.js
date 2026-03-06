@@ -232,8 +232,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* --- فريق العمل --- */
 (function () {
-    const track = document.getElementById('team-track');
-    const clip  = document.querySelector('.team-track-clip');
+    const track   = document.getElementById('team-track');
+    const clip    = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
     if (!track || !clip || !btnPrev || !btnNext) return;
@@ -253,23 +253,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function getStartOffset() {
-        const visible = getVisible();
-        if (visible === 1) {
-            // موبايل: مركّز
+        // موبايل فقط: مركّز. غير ذلك: من الحافة
+        if (window.innerWidth <= 768) {
             return (clip.offsetWidth - cards[0].offsetWidth) / 2;
         }
-        // تابلت وديسكتوب: يبدأ من الحافة
         return 0;
     }
 
     function update() {
-        const offset = getStartOffset();
-        const translateX = offset - (idx * getStep());
+        const translateX = getStartOffset() - (idx * getStep());
         track.style.transform = `translateX(${translateX}px)`;
 
         const maxIdx = Math.max(0, cards.length - getVisible());
         btnPrev.disabled = idx <= 0;
-        btnNext.disabled = idx >= maxIdx;
+        btnNext.disabled  = idx >= maxIdx;
     }
 
     btnNext.addEventListener('click', () => {
@@ -280,9 +277,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener('resize', () => { idx = 0; update(); });
-    update();
+    
+    // تأخير بسيط للتأكد من اكتمال تحميل الـ layout
+    requestAnimationFrame(update);
 })();
-
 
 /* --- قسم الفرق --- */
 (function () {

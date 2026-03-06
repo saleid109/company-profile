@@ -643,31 +643,27 @@
 
 
     /*فريق العمل*/
-    .team-section {
-        padding: 60px 0;
-    }
-
-    .team-track-clip {
-        overflow: hidden;
-        padding: 55px 0 20px;
-        /* ← صفّر الجانبين */
-        margin-top: -55px;
-    }
-
-    .team-track {
-        display: flex;
-        gap: 20px;
-        padding: 0;
-        /* لا padding هنا */
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: transform;
-    }
-
-    .team-card {
-        flex: 0 0 300px;
-        /* أكبر قليلاً في التابلت */
-        min-width: unset;
-    }
+ .team-section {
+    padding: 60px 0;
+}
+.team-container {
+    padding: 0 20px;
+}
+.team-track-clip {
+    overflow: hidden;
+    padding: 55px 0 20px;
+    margin-top: -55px;
+}
+.team-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+.team-card {
+    flex: 0 0 280px;
+    min-width: unset;
+}
 
     .team-card:first-child {
         margin-right: 0;
