@@ -467,30 +467,16 @@
     }
 
     /*فريق العمل*/
-    .team-container {
-        padding: 0 15px;
-    }
-
+    .team-container { padding: 0 15px; }
     .team-track-clip {
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
+        overflow: hidden;
         padding: 55px 0 20px;
         margin-top: -55px;
     }
+    .team-track { gap: 16px; }
+    .team-card  { flex: 0 0 85vw; } /* ← vw بدل % */
 
-    .team-track-clip::-webkit-scrollbar {
-        display: none;
-    }
 
-    .team-track {
-        gap: 16px;
-    }
-
-    .team-card {
-        flex: 0 0 85%;
-    }
-}
 
 .footer-grid {
     grid-template-columns: 1fr;
@@ -669,7 +655,7 @@
     .team-card {
         flex: 0 0 320px;
     }
-}
+
 
 /*الفوتر*/
 .footer-grid {
