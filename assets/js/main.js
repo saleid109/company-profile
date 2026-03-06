@@ -229,7 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
-
 /* --- فريق العمل --- */
 (function () {
     const track   = document.getElementById('team-track');
@@ -249,46 +248,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getStep() {
         const gap = parseFloat(getComputedStyle(track).gap) || 24;
-        return cards[0].getBoundingClientRect().width + gap;
-    }
-
-    function getStartOffset() {
-        const clipW = clip.getBoundingClientRect().width;
-        const cardW = cards[0].getBoundingClientRect().width;
-        const gap   = parseFloat(getComputedStyle(track).gap) || 24;
-        const w     = window.innerWidth;
-
-        if (w <= 768)  return (clipW - cardW) / 2;
-        if (w <= 1024) return (clipW - (cardW * 2 + gap)) / 2;
-        return 0;
+        return cards[0].offsetWidth + gap;
     }
 
     function update() {
-        const offset = getStartOffset() - (idx * getStep());
-        track.style.transform = `translateX(${offset}px)`;
+        // لا حاجة لـ offset — الكروت تملأ العرض بالكامل عبر CSS
+        track.style.transform = `translateX(${-(idx * getStep())}px)`;
 
-        const max = cards.length - getVisible();
+        const max = Math.max(0, cards.length - getVisible());
         btnPrev.disabled = idx <= 0;
         btnNext.disabled = idx >= max;
-
-        console.log('idx:', idx, 'offset:', offset, 'max:', max);
     }
 
-    // اضغط زر وشوف console أي زر يشتغل
     btnNext.addEventListener('click', () => {
-        console.log('NEXT clicked, idx before:', idx);
         const max = cards.length - getVisible();
         if (idx < max) { idx++; update(); }
     });
-
     btnPrev.addEventListener('click', () => {
-        console.log('PREV clicked, idx before:', idx);
         if (idx > 0) { idx--; update(); }
     });
 
     window.addEventListener('resize', () => { idx = 0; update(); });
-    
-    setTimeout(update, 100);
+    setTimeout(update, 150);
 })();
 
 /* --- قسم الفرق --- */
