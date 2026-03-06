@@ -472,8 +472,7 @@
     }
 
     .team-container {
-        padding: 0 15px;
-        /* تقليل padding الجانبي */
+        padding: 0 20px;
     }
 
     .team-track-clip {
@@ -483,16 +482,14 @@
     }
 
     .team-track {
-        display: flex;
-        gap: 16px;
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: transform;
+        gap: 20px;
     }
 
     .team-card {
-        flex: 0 0 260px;
-        min-width: unset;
+        flex: 0 0 calc(50% - 10px);
     }
+
+    /* ← كرتان بالضبط */
 
     .footer-grid {
         grid-template-columns: 1fr;
