@@ -230,38 +230,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 /* --- فريق العمل --- */
-(function () {
-    const clip    = document.querySelector('.team-track-clip');
-    const btnPrev = document.getElementById('btn-prev');
-    const btnNext = document.getElementById('btn-next');
-    if (!clip || !btnPrev || !btnNext) return;
+const track = document.getElementById("team-track");
+const cards = document.querySelectorAll(".team-card");
+const btnNext = document.getElementById("btn-next");
+const btnPrev = document.getElementById("btn-prev");
 
-    const card = clip.querySelector('.team-card');
+let index = 0;
 
-    function getScrollAmount() {
-        const gap = 20;
-        return card.offsetWidth + gap;
+function getCardWidth() {
+    const card = cards[0];
+    const style = window.getComputedStyle(card);
+    const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+    return card.offsetWidth + gap;
+}
+
+btnNext.addEventListener("click", () => {
+    const cardWidth = getCardWidth();
+
+    if (index < cards.length - 1) {
+        index++;
+        track.style.transform = `translateX(${-index * cardWidth}px)`;
     }
+});
 
-    // السهم الأيسر (<) = للأمام في RTL = scroll يزيد
-    btnPrev.addEventListener('click', () => {
-        clip.scrollLeft += getScrollAmount();
-    });
+btnPrev.addEventListener("click", () => {
+    const cardWidth = getCardWidth();
 
-    // السهم الأيمن (>) = للخلف في RTL = scroll يقل
-    btnNext.addEventListener('click', () => {
-        clip.scrollLeft -= getScrollAmount();
-    });
-
-    // تحديث حالة الأزرار
-    clip.addEventListener('scroll', () => {
-        btnNext.disabled = clip.scrollLeft <= 0;
-        btnPrev.disabled = clip.scrollLeft >= clip.scrollWidth - clip.offsetWidth - 5;
-    });
-
-    // تهيئة أولية
-    btnNext.disabled = true;
-})();
+    if (index > 0) {
+        index--;
+        track.style.transform = `translateX(${-index * cardWidth}px)`;
+    }
+});
 
 /* --- قسم الفرق --- */
 (function () {
