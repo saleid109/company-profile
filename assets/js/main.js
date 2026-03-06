@@ -229,55 +229,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
-
-/* --- فريق العمل --- */
 /* --- فريق العمل --- */
 (function () {
-    const track   = document.getElementById('team-track');
     const clip    = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
-    if (!track || !clip || !btnPrev || !btnNext) return;
+    if (!clip || !btnPrev || !btnNext) return;
 
-    const cards = Array.from(track.querySelectorAll('.team-card'));
-    let idx = 0;
+    const card = clip.querySelector('.team-card');
 
-    function getVisible() {
-        if (window.innerWidth <= 768)  return 1;
-        if (window.innerWidth <= 1024) return 2;
-        return 4;
+    function getScrollAmount() {
+        const gap = 20;
+        return card.offsetWidth + gap;
     }
 
-    function getStep() {
-        const gap = parseFloat(getComputedStyle(track).gap) || 24;
-        return cards[0].offsetWidth + gap;
-    }
-
-    function getMax() {
-        return Math.max(0, cards.length - getVisible());
-    }
-
-    function update() {
-        // RTL: الحركة للأمام = translateX موجب
-        track.style.transform = `translateX(${idx * getStep()}px)`;
-        btnPrev.disabled = idx <= 0;
-        btnNext.disabled  = idx >= getMax();
-    }
-
-    // RTL: السهم الأيسر (<) = للأمام
+    // السهم الأيسر (<) = للأمام في RTL = scroll يزيد
     btnPrev.addEventListener('click', () => {
-        if (idx < getMax()) { idx++; update(); }
+        clip.scrollLeft += getScrollAmount();
     });
 
-    // RTL: السهم الأيمن (>) = للخلف
+    // السهم الأيمن (>) = للخلف في RTL = scroll يقل
     btnNext.addEventListener('click', () => {
-        if (idx > 0) { idx--; update(); }
+        clip.scrollLeft -= getScrollAmount();
     });
 
-    window.addEventListener('resize', () => { idx = 0; update(); });
-    setTimeout(update, 150);
-})();
+    // تحديث حالة الأزرار
+    clip.addEventListener('scroll', () => {
+        btnNext.disabled = clip.scrollLeft <= 0;
+        btnPrev.disabled = clip.scrollLeft >= clip.scrollWidth - clip.offsetWidth - 5;
+    });
 
+    // تهيئة أولية
+    btnNext.disabled = true;
+})();
 
 /* --- قسم الفرق --- */
 (function () {
