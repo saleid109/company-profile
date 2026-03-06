@@ -660,8 +660,8 @@
     }
 
     .team-card {
-        flex: 0 0 calc(50% - 10px);
-        /* كرتان */
+        flex: 0 0 320px;
+        /* ← عرض ثابت بالبيكسل بدل النسبة */
     }
 
     .team-card:first-child {
