@@ -229,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
 /* --- فريق العمل --- */
 (function () {
     const track   = document.getElementById('team-track');
@@ -269,7 +270,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('resize', () => { idx = 0; update(); });
     setTimeout(update, 150);
 })();
-
 /* --- قسم الفرق --- */
 (function () {
     const section = document.querySelector('.teams-group-section');
