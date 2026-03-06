@@ -467,59 +467,69 @@
     }
 
     /*فريق العمل*/
-    .team-container { padding: 0 15px; }
+    .team-container {
+        padding: 0 15px;
+    }
+
     .team-track-clip {
         overflow: hidden;
         padding: 55px 0 20px;
         margin-top: -55px;
     }
-    .team-track { gap: 16px; }
-    .team-card  { flex: 0 0 85vw; } /* ← vw بدل % */
+
+    .team-track {
+        gap: 16px;
+    }
+
+    .team-card {
+        flex: 0 0 85vw;
+    }
+
+    /* ← vw بدل % */
 
 
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
 
-.footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 40px;
-}
-
-.footer-contact ul {
-    display: inline-block;
-    text-align: right;
-}
+    .footer-contact ul {
+        display: inline-block;
+        text-align: right;
+    }
 
 
-/* زر الفتح التجريبي */
-.demo-fab {
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-}
+    /* زر الفتح التجريبي */
+    .demo-fab {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
 
-.auth-card {
-    max-width: 850px;
-    flex-direction: row;
-    /* تحويل الترتيب لأفقي */
-    min-height: 550px;
-    background-color: var(--color-white);
-}
+    .auth-card {
+        max-width: 850px;
+        flex-direction: row;
+        /* تحويل الترتيب لأفقي */
+        min-height: 550px;
+        background-color: var(--color-white);
+    }
 
-.auth-brand {
-    width: 35%;
-    /* العمود الأيسر يأخذ مساحة أقل */
-    flex-direction: column;
-    /* شعار فوق النص */
-    justify-content: center;
-    text-align: center;
-    gap: 20px;
-}
+    .auth-brand {
+        width: 35%;
+        /* العمود الأيسر يأخذ مساحة أقل */
+        flex-direction: column;
+        /* شعار فوق النص */
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+    }
 
-.auth-content {
-    width: 65%;
-    padding: 40px;
-}
+    .auth-content {
+        width: 65%;
+        padding: 40px;
+    }
 
 }
 
@@ -637,15 +647,9 @@
     }
 
     .team-track-clip {
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
+        overflow: hidden;
         padding: 55px 0 20px;
         margin-top: -55px;
-    }
-
-    .team-track-clip::-webkit-scrollbar {
-        display: none;
     }
 
     .team-track {
@@ -653,181 +657,182 @@
     }
 
     .team-card {
-        flex: 0 0 320px;
+        flex: 0 0 42vw;
     }
 
+    /* ← ك
 
 /*الفوتر*/
-.footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-
-/*زر الفتح التجريبي*/
-
-.demo-fab {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--color-secondary);
-    color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 5000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* 1. الحاوية الكبرى (Overlay) */
-.auth-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 99999;
-    padding: 15px;
-    /* هامش للجوال */
-}
-
-/* 2. الكارت الرئيسي - تصميم الجوال (الافتراضي) */
-.auth-card {
-    background: var(--bg-card);
-    width: 100%;
-    max-width: 450px;
-    /* للجوال */
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    /* عمودي في الجوال */
-    position: relative;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    animation: slideUp 0.4s ease-out;
-}
-
-/* 3. عمود الهوية (Brand) - تحسينه للجوال */
-.auth-brand {
-    background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
-    color: white;
-    padding: 30px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    width: 35%;
-    gap: 20px;
-}
-
-.brand-logo {
-    font-size: 2rem;
-}
-
-.brand-name {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin: 0;
-}
-
-.brand-sub {
-    font-size: 0.85rem;
-    opacity: 0.9;
-}
-
-/* 4. منطقة المحتوى والتبويبات */
-.auth-content {
-    padding: 25px;
-    flex: 1;
-}
-
-.auth-tabs {
-    display: flex;
-    border-bottom: 2px solid #f1f5f9;
-    margin-bottom: 25px;
-}
-
-.auth-tab {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    background: none;
-    font-weight: 600;
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.auth-tab.active {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-    margin-bottom: -2px;
-}
-
-/* 5. تنسيق المدخلات (Inputs) - صديقة للمس */
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    color: var(--text-main);
-}
-
-.input-wrap {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.input-wrap i {
-    position: absolute;
-    right: 15px;
-    color: var(--text-muted);
-}
-
-.input-wrap input {
-    width: 100%;
-    padding: 12px 40px 12px 15px;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 10px;
-    font-size: 1rem;
-    /* يمنع الزووم التلقائي في الآيفون */
-}
-
-
-.auth-content {
-    width: 65%;
-    padding: 40px;
-}
-
-/* 7. تأثيرات الحركة (Animations) */
-@keyframes slideUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 
-/* إخفاء اللوحة غير النشطة */
-.auth-panel:not(.active) {
-    display: none;
-}
+    /*زر الفتح التجريبي*/
+
+    .demo-fab {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--color-secondary);
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 5000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 1. الحاوية الكبرى (Overlay) */
+    .auth-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        padding: 15px;
+        /* هامش للجوال */
+    }
+
+    /* 2. الكارت الرئيسي - تصميم الجوال (الافتراضي) */
+    .auth-card {
+        background: var(--bg-card);
+        width: 100%;
+        max-width: 450px;
+        /* للجوال */
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        /* عمودي في الجوال */
+        position: relative;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        animation: slideUp 0.4s ease-out;
+    }
+
+    /* 3. عمود الهوية (Brand) - تحسينه للجوال */
+    .auth-brand {
+        background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
+        color: white;
+        padding: 30px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        width: 35%;
+        gap: 20px;
+    }
+
+    .brand-logo {
+        font-size: 2rem;
+    }
+
+    .brand-name {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .brand-sub {
+        font-size: 0.85rem;
+        opacity: 0.9;
+    }
+
+    /* 4. منطقة المحتوى والتبويبات */
+    .auth-content {
+        padding: 25px;
+        flex: 1;
+    }
+
+    .auth-tabs {
+        display: flex;
+        border-bottom: 2px solid #f1f5f9;
+        margin-bottom: 25px;
+    }
+
+    .auth-tab {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        background: none;
+        font-weight: 600;
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .auth-tab.active {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
+        margin-bottom: -2px;
+    }
+
+    /* 5. تنسيق المدخلات (Inputs) - صديقة للمس */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        color: var(--text-main);
+    }
+
+    .input-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .input-wrap i {
+        position: absolute;
+        right: 15px;
+        color: var(--text-muted);
+    }
+
+    .input-wrap input {
+        width: 100%;
+        padding: 12px 40px 12px 15px;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 10px;
+        font-size: 1rem;
+        /* يمنع الزووم التلقائي في الآيفون */
+    }
+
+
+    .auth-content {
+        width: 65%;
+        padding: 40px;
+    }
+
+    /* 7. تأثيرات الحركة (Animations) */
+    @keyframes slideUp {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* إخفاء اللوحة غير النشطة */
+    .auth-panel:not(.active) {
+        display: none;
+    }
 }

@@ -230,37 +230,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 /* --- فريق العمل --- */
-const track = document.getElementById("team-track");
-const cards = document.querySelectorAll(".team-card");
-const btnNext = document.getElementById("btn-next");
-const btnPrev = document.getElementById("btn-prev");
+/* --- فريق العمل --- */
+(function () {
+    const track   = document.getElementById('team-track');
+    const clip    = document.querySelector('.team-track-clip');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    if (!track || !clip || !btnPrev || !btnNext) return;
 
-let index = 0;
+    const cards = Array.from(track.querySelectorAll('.team-card'));
+    let idx = 0;
 
-function getCardWidth() {
-    const card = cards[0];
-    const style = window.getComputedStyle(card);
-    const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
-    return card.offsetWidth + gap;
-}
-
-btnNext.addEventListener("click", () => {
-    const cardWidth = getCardWidth();
-
-    if (index < cards.length - 1) {
-        index++;
-        track.style.transform = `translateX(${-index * cardWidth}px)`;
+    function getVisible() {
+        if (window.innerWidth <= 768)  return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 4;
     }
-});
 
-btnPrev.addEventListener("click", () => {
-    const cardWidth = getCardWidth();
-
-    if (index > 0) {
-        index--;
-        track.style.transform = `translateX(${-index * cardWidth}px)`;
+    function getStep() {
+        const gap = parseFloat(getComputedStyle(track).gap) || 20;
+        return cards[0].offsetWidth + gap;
     }
-});
+
+    function update() {
+        // RTL: نحرك لليمين = سالب لأن الكروت تبدأ من اليمين
+        track.style.transform = `translateX(${-(idx * getStep())}px)`;
+        const max = Math.max(0, cards.length - getVisible());
+        btnPrev.disabled = idx <= 0;
+        btnNext.disabled  = idx >= max;
+    }
+
+    // السهم الأيسر (<) في RTL = يكشف الكروت القادمة = idx يزيد
+    btnPrev.addEventListener('click', () => {
+        const max = cards.length - getVisible();
+        if (idx < max) { idx++; update(); }
+    });
+
+    // السهم الأيمن (>) في RTL = يرجع للأول = idx يقل
+    btnNext.addEventListener('click', () => {
+        if (idx > 0) { idx--; update(); }
+    });
+
+    window.addEventListener('resize', () => { idx = 0; update(); });
+    setTimeout(update, 150);
+})();
 
 /* --- قسم الفرق --- */
 (function () {
