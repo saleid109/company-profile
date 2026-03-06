@@ -252,12 +252,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function update() {
-        // لا حاجة لـ offset — الكروت تملأ العرض بالكامل عبر CSS
         track.style.transform = `translateX(${-(idx * getStep())}px)`;
-
         const max = Math.max(0, cards.length - getVisible());
         btnPrev.disabled = idx <= 0;
-        btnNext.disabled = idx >= max;
+        btnNext.disabled  = idx >= max;
     }
 
     btnNext.addEventListener('click', () => {
