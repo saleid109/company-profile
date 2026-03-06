@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnNext = document.getElementById('btn-next');
     if (!track || !clip || !btnPrev || !btnNext) return;
 
-    const cards = track.querySelectorAll('.team-card');
+    const cards = Array.from(track.querySelectorAll('.team-card'));
     let idx = 0;
 
     function getVisible() {
@@ -248,49 +248,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function getStep() {
-        const gap = parseInt(getComputedStyle(track).gap) || 24;
-        return cards[0].offsetWidth + gap;
+        const gap = parseFloat(getComputedStyle(track).gap) || 24;
+        return cards[0].getBoundingClientRect().width + gap;
     }
 
     function getStartOffset() {
+        const clipW = clip.getBoundingClientRect().width;
+        const cardW = cards[0].getBoundingClientRect().width;
+        const gap   = parseFloat(getComputedStyle(track).gap) || 24;
         const w     = window.innerWidth;
-        const clipW = clip.offsetWidth;
-        const cardW = cards[0].offsetWidth;
-        const gap   = parseInt(getComputedStyle(track).gap) || 24;
 
-        if (w <= 768) {
-            return (clipW - cardW) / 2;
-        }
-        if (w <= 1024) {
-            const totalTwo = cardW * 2 + gap;
-            return (clipW - totalTwo) / 2;
-        }
+        if (w <= 768)  return (clipW - cardW) / 2;
+        if (w <= 1024) return (clipW - (cardW * 2 + gap)) / 2;
         return 0;
     }
 
     function update() {
-        // ← RTL: الحركة للأمام بالسالب (نحو اليسار)
-        const translateX = getStartOffset() + (idx * getStep());
-        track.style.transform = `translateX(${translateX}px)`;
+        const offset = getStartOffset() - (idx * getStep());
+        track.style.transform = `translateX(${offset}px)`;
 
-        const maxIdx = Math.max(0, cards.length - getVisible());
+        const max = cards.length - getVisible();
         btnPrev.disabled = idx <= 0;
-        btnNext.disabled  = idx >= maxIdx;
+        btnNext.disabled = idx >= max;
+
+        console.log('idx:', idx, 'offset:', offset, 'max:', max);
     }
 
-    // RTL: السهم الأيسر (<) يذهب للأمام (idx++)
-    btnPrev.addEventListener('click', () => {
-        if (idx < cards.length - getVisible()) { idx++; update(); }
-    });
-    // RTL: السهم الأيمن (>) يرجع للخلف (idx--)
+    // اضغط زر وشوف console أي زر يشتغل
     btnNext.addEventListener('click', () => {
+        console.log('NEXT clicked, idx before:', idx);
+        const max = cards.length - getVisible();
+        if (idx < max) { idx++; update(); }
+    });
+
+    btnPrev.addEventListener('click', () => {
+        console.log('PREV clicked, idx before:', idx);
         if (idx > 0) { idx--; update(); }
     });
 
     window.addEventListener('resize', () => { idx = 0; update(); });
-    requestAnimationFrame(update);
+    
+    setTimeout(update, 100);
 })();
-
 
 /* --- قسم الفرق --- */
 (function () {
