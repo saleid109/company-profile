@@ -230,8 +230,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 /* --- فريق العمل --- */
-/* --- فريق العمل --- */
-/* --- فريق العمل --- */
 (function () {
     const track   = document.getElementById('team-track');
     const clip    = document.querySelector('.team-track-clip');
@@ -241,6 +239,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const cards = Array.from(track.querySelectorAll('.team-card'));
     let idx = 0;
+    let cardW = 0;
+    let gap   = 0;
 
     function getVisible() {
         if (window.innerWidth <= 768)  return 1;
@@ -248,54 +248,42 @@ document.addEventListener("DOMContentLoaded", () => {
         return 4;
     }
 
-    function getGap() {
-        return parseFloat(getComputedStyle(track).gap) || 24;
-    }
-
-    function setCardWidths() {
+    function setup() {
         const visible = getVisible();
-        const gap     = getGap();
-        const clipW   = clip.offsetWidth;
-        // العرض الصحيح = (عرض الـ clip - مجموع الفراغات) / عدد الكروت الظاهرة
-        const cardW   = (clipW - gap * (visible - 1)) / visible;
-        cards.forEach(c => {
-            c.style.flex = `0 0 ${cardW}px`;
-        });
-        return cardW;
+        gap   = parseFloat(getComputedStyle(track).gap) || 24;
+        cardW = (clip.offsetWidth - gap * (visible - 1)) / visible;
+        cards.forEach(c => c.style.width = cardW + 'px');
+        cards.forEach(c => c.style.flex  = '0 0 ' + cardW + 'px');
     }
 
-    function update() {
-        const cardW = setCardWidths();
-        const gap   = getGap();
-        const step  = cardW + gap;
-        const max   = Math.max(0, cards.length - getVisible());
-        idx = Math.min(idx, max);
-
-        track.style.transform = `translateX(${-(idx * step)}px)`;
-
+    function render() {
+        const max = Math.max(0, cards.length - getVisible());
+        idx = Math.min(Math.max(idx, 0), max);
+        track.style.transform = `translateX(${-(idx * (cardW + gap))}px)`;
         btnPrev.disabled = idx <= 0;
         btnNext.disabled  = idx >= max;
     }
 
-    // RTL: السهم الأيسر (<) = التالي
+    function init() {
+        setup();
+        render();
+    }
+
     btnPrev.addEventListener('click', () => {
         const max = cards.length - getVisible();
-        if (idx < max) { idx++; update(); }
+        if (idx < max) { idx++; render(); }
     });
 
-    // RTL: السهم الأيمن (>) = السابق
     btnNext.addEventListener('click', () => {
-        if (idx > 0) { idx--; update(); }
+        if (idx > 0) { idx--; render(); }
     });
 
-    window.addEventListener('resize', () => { idx = 0; update(); });
-    
-    // ننتظر اكتمال الـ layout تماماً
-    if (document.readyState === 'complete') {
-        update();
-    } else {
-        window.addEventListener('load', update);
-    }
+    window.addEventListener('resize', () => { idx = 0; init(); });
+
+    // محاولات متعددة لضمان اكتمال الـ layout
+    setTimeout(init, 0);
+    setTimeout(init, 100);
+    setTimeout(init, 500);
 })();
 
 /* --- قسم الفرق --- */
