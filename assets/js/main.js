@@ -232,8 +232,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* --- فريق العمل --- */
 (function () {
-    const track   = document.getElementById('team-track');
-    const clip    = document.querySelector('.team-track-clip');
+    const track = document.getElementById('team-track');
+    const clip = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
     if (!track || !clip || !btnPrev || !btnNext) return;
@@ -242,8 +242,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let idx = 0;
 
     function getVisible() {
-        if (window.innerWidth <= 768)  return 1;
-        if (window.innerWidth <= 1024) return 2;
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2; /* ← تبقى 2 */
         return 4;
     }
 
@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
         track.style.transform = `translateX(${-(idx * getStep())}px)`;
         const max = Math.max(0, cards.length - getVisible());
         btnPrev.disabled = idx <= 0;
-        btnNext.disabled  = idx >= max;
+        btnNext.disabled = idx >= max;
     }
 
     btnNext.addEventListener('click', () => {
