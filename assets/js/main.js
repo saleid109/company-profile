@@ -232,8 +232,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* --- فريق العمل --- */
 (function () {
-    const track = document.getElementById('team-track');
-    const clip  = document.querySelector('.team-track-clip');
+    const track   = document.getElementById('team-track');
+    const clip    = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
     if (!track || !clip || !btnPrev || !btnNext) return;
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getVisible() {
         if (window.innerWidth <= 768)  return 1;
-        if (window.innerWidth <= 1024) return 3;
+        if (window.innerWidth <= 1024) return 2;
         return 4;
     }
 
@@ -253,34 +253,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function getStartOffset() {
-        const visible = getVisible();
-        if (visible === 1) {
-            // موبايل: مركّز
-            return (clip.offsetWidth - cards[0].offsetWidth) / 2;
+        const w     = window.innerWidth;
+        const clipW = clip.offsetWidth;
+        const cardW = cards[0].offsetWidth;
+        const gap   = parseInt(getComputedStyle(track).gap) || 24;
+
+        if (w <= 768) {
+            return (clipW - cardW) / 2;
         }
-        // تابلت وديسكتوب: يبدأ من الحافة
+        if (w <= 1024) {
+            const totalTwo = cardW * 2 + gap;
+            return (clipW - totalTwo) / 2;
+        }
         return 0;
     }
 
     function update() {
-        const offset = getStartOffset();
-        const translateX = offset - (idx * getStep());
+        // ← RTL: الحركة للأمام بالسالب (نحو اليسار)
+        const translateX = getStartOffset() + (idx * getStep());
         track.style.transform = `translateX(${translateX}px)`;
 
         const maxIdx = Math.max(0, cards.length - getVisible());
         btnPrev.disabled = idx <= 0;
-        btnNext.disabled = idx >= maxIdx;
+        btnNext.disabled  = idx >= maxIdx;
     }
 
-    btnNext.addEventListener('click', () => {
+    // RTL: السهم الأيسر (<) يذهب للأمام (idx++)
+    btnPrev.addEventListener('click', () => {
         if (idx < cards.length - getVisible()) { idx++; update(); }
     });
-    btnPrev.addEventListener('click', () => {
+    // RTL: السهم الأيمن (>) يرجع للخلف (idx--)
+    btnNext.addEventListener('click', () => {
         if (idx > 0) { idx--; update(); }
     });
 
     window.addEventListener('resize', () => { idx = 0; update(); });
-    update();
+    requestAnimationFrame(update);
 })();
 
 
@@ -299,66 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getCardWidth() {
         return cards[0].offsetWidth + gap;
-    }/* --- فريق العمل --- */
-(function () {
-    const track   = document.getElementById('team-track');
-    const clip    = document.querySelector('.team-track-clip');
-    const btnPrev = document.getElementById('btn-prev');
-    const btnNext = document.getElementById('btn-next');
-    if (!track || !clip || !btnPrev || !btnNext) return;
-
-    const cards = track.querySelectorAll('.team-card');
-    let idx = 0;
-
-    function getVisible() {
-        if (window.innerWidth <= 768)  return 1;
-        if (window.innerWidth <= 1024) return 2; // ← تابلت: كرتان كاملتان
-        return 4;
     }
-
-    function getStep() {
-        const gap = parseInt(getComputedStyle(track).gap) || 24;
-        return cards[0].offsetWidth + gap;
-    }
-
-    function getStartOffset() {
-        const w = window.innerWidth;
-        const clipW = clip.offsetWidth;
-        const cardW = cards[0].offsetWidth;
-        const gap   = parseInt(getComputedStyle(track).gap) || 24;
-
-        if (w <= 768) {
-            // موبايل: مركّز الكرت الواحد
-            return (clipW - cardW) / 2;
-        }
-        if (w <= 1024) {
-            // تابلت: كرتان مع مسافة صغيرة من الحافة
-            const totalTwo = cardW * 2 + gap;
-            return (clipW - totalTwo) / 2;
-        }
-        // ديسكتوب: من الحافة
-        return 0;
-    }
-
-    function update() {
-        const translateX = getStartOffset() - (idx * getStep());
-        track.style.transform = `translateX(${translateX}px)`;
-
-        const maxIdx = Math.max(0, cards.length - getVisible());
-        btnPrev.disabled = idx <= 0;
-        btnNext.disabled  = idx >= maxIdx;
-    }
-
-    btnNext.addEventListener('click', () => {
-        if (idx < cards.length - getVisible()) { idx++; update(); }
-    });
-    btnPrev.addEventListener('click', () => {
-        if (idx > 0) { idx--; update(); }
-    });
-
-    window.addEventListener('resize', () => { idx = 0; update(); });
-    requestAnimationFrame(update);
-})();
 
     function updateCarousel() {
         const maxIndex = Math.max(0, cards.length - VISIBLE);
