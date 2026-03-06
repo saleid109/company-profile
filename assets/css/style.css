@@ -1995,12 +1995,9 @@ html {
 .team-track {
     display: flex;
     gap: 24px;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
-    -webkit-transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    -moz-transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    -ms-transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    -o-transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 /* ===== Card ===== */
