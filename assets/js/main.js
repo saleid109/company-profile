@@ -228,6 +228,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }, frameRate);
     }
 
+    function render() {
+    const max = Math.max(0, cards.length - getVisible());
+    console.log('idx:', idx, 'max:', max, 'cards:', cards.length, 'visible:', getVisible());
+    // ... باقي الكود
+}
+
 });
 /* --- فريق العمل --- */
 (function () {
