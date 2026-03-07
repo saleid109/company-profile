@@ -1954,7 +1954,7 @@ html {
 }
 
 /* ============= فريق العمل/ TEAM SECTION =============== */
-/* ===== Section ===== */
+/* ===== الحاوية ===== */
 .team-section {
     width: 100%;
     max-width: 1284px;
@@ -1963,12 +1963,13 @@ html {
     text-align: center;
     direction: rtl;
 }
-
+/* ===== الحاوية ===== */
 .team-container {
     width: 100%;
     padding: 0 65px;
 }
 
+/* ===== العنوان ===== */
 .team-title {
     font-size: 36px;
     font-weight: 800;
@@ -1976,7 +1977,7 @@ html {
     color: #001a4d;
 }
 
-/* ===== Slider Row ===== */
+/* ===== سطر المزلق ===== */
 .team-slider-row {
     display: flex;
     align-items: center;
@@ -1991,7 +1992,7 @@ html {
     margin-top: -55px;
 }
 
-/*ا  */
+/* ===== المسار المتحرك (Track) ===== */
 .team-track {
     display: flex;
     gap: 24px;
