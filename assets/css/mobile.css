@@ -467,7 +467,6 @@
     }
 
     /*فريق العمل*/
-
     .team-container {
         padding: 0 15px;
     }
@@ -479,11 +478,13 @@
     }
 
     .team-track {
-        gap: 20px;
+        gap: 16px;
     }
 
-    .team-card {
-        flex: 0 0 calc(25% - 18px);
+    #team-track .team-card {
+        flex: 0 0 85vw !important;
+        width: 85vw !important;
+        min-width: 85vw !important;
     }
 
 
@@ -641,6 +642,7 @@
 
 
     /*فريق العمل*/
+
     .team-container {
         padding: 0 15px;
     }
@@ -653,6 +655,12 @@
 
     .team-track {
         gap: 20px;
+    }
+
+    #team-track .team-card {
+        flex: 0 0 340px !important;
+        width: 340px !important;
+        min-width: 340px !important;
     }
 
     /*الفوتر*/
