@@ -662,7 +662,20 @@
         width: 340px !important;
         min-width: 340px !important;
     }
+/*الفرق*/
 
+.teams-group-section .group {
+        /* جعل الكرت يأخذ عرض الشاشة بالكامل تقريباً ليظهر بوضوح */
+        flex: 0 0 100%; 
+        /* أو يمكنك استخدامه كـ 90% إذا كنت تريد رؤية طرف الكرت التالي */
+        /* flex: 0 0 90%; */
+        
+        max-width: 100%;
+    }
+
+    .teams-group-section .carousel-track {
+        gap: 15px; /* تقليل المسافة بين الكروت لتناسب الجوال */
+    }
     /*الفوتر*/
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
