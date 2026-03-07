@@ -235,7 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* --- فريق العمل --- */
-/* --- فريق العمل --- */
 (function () {
     const track   = document.getElementById('team-track');
     const clip    = document.querySelector('.team-track-clip');
@@ -253,36 +252,44 @@ document.addEventListener("DOMContentLoaded", () => {
         return 4;
     }
 
-    function getStep() {
-        // نقرأ العرض الحقيقي في كل مرة — لا نخزنه
-        const gap = parseFloat(getComputedStyle(track).gap) || 24;
-        return cards[0].getBoundingClientRect().width + gap;
+    function getCardW() {
+        // نقرأ عرض الـ clip مباشرة — دائماً صحيح
+        const gap     = parseFloat(getComputedStyle(track).gap) || 24;
+        const visible = getVisible();
+        const clipW   = clip.getBoundingClientRect().width;
+        if (clipW > 0) return (clipW - gap * (visible - 1)) / visible;
+        // fallback: نقرأ من الكرت مباشرة
+        const cardRect = cards[0].getBoundingClientRect();
+        return cardRect.width > 0 ? cardRect.width : 340;
     }
 
     function render() {
-        const max  = Math.max(0, cards.length - getVisible());
-        idx = Math.max(0, Math.min(idx, max));
-        const step = getStep();
+        const gap  = parseFloat(getComputedStyle(track).gap) || 24;
+        const cardW = getCardW();
+        const step  = cardW + gap;
+        const max   = Math.max(0, cards.length - getVisible());
 
-        // RTL: translateX سالب يحرك يسار
+        idx = Math.max(0, Math.min(idx, max));
         track.style.transform = `translateX(${-(idx * step)}px)`;
+
         btnPrev.disabled = idx <= 0;
         btnNext.disabled  = idx >= max;
     }
 
-    // RTL: السهم الأيسر (<) = للأمام
     btnPrev.addEventListener('click', () => {
         const max = cards.length - getVisible();
         if (idx < max) { idx++; render(); }
     });
 
-    // RTL: السهم الأيمن (>) = للخلف
     btnNext.addEventListener('click', () => {
         if (idx > 0) { idx--; render(); }
     });
 
     window.addEventListener('resize', () => { idx = 0; render(); });
     window.addEventListener('load', render);
+    document.addEventListener('DOMContentLoaded', render);
+    setTimeout(render, 200);
+    setTimeout(render, 600);
 })();
 
 /* --- قسم الفرق --- */
