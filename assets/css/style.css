@@ -1991,7 +1991,7 @@ html {
     margin-top: -55px;
 }
 
-/* The moving track */
+/*ا  */
 .team-track {
     display: flex;
     gap: 24px;
@@ -2000,7 +2000,7 @@ html {
 
 }
 
-/* ===== Card ===== */
+/* ===== البطاقة ===== */
 .team-card {
     position: relative;
     background: #fff;
@@ -2021,7 +2021,7 @@ html {
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== Avatar ===== */
+/* ===== الصورة الرمزية ===== */
 .team-avatar {
     position: absolute;
     top: -55px;
@@ -2050,7 +2050,7 @@ html {
     object-fit: cover;
 }
 
-/* ===== Text ===== */
+/* ===== الاسم ===== */
 .team-name {
     font-size: 20px;
     font-weight: 700;
@@ -2062,7 +2062,7 @@ html {
     color: #777;
 }
 
-/* ===== Nav Buttons ===== */
+/* ===== الازرار ===== */
 .team-btn {
     flex-shrink: 0;
     width: 42px;
