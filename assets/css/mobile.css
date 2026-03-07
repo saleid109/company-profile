@@ -483,7 +483,6 @@
     }
 
     .team-card {
-        flex: 0 0 340px !important;
         flex: 0 0 calc(25% - 18px);
     }
 
