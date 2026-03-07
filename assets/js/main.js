@@ -267,7 +267,13 @@ document.addEventListener("DOMContentLoaded", () => {
     function render() {
         const max = Math.max(0, cards.length - getVisible());
         idx = Math.min(Math.max(idx, 0), max);
-        track.style.transform = `translateX(${-(idx * (cardW + gap))}px)`;
+
+        // إذا cardW لا يزال صفر، أعد الحساب
+        if (cardW === 0) setup();
+
+        const step = cardW + gap;
+        track.style.transform = `translateX(${-(idx * step)}px)`;
+
         btnPrev.disabled = idx <= 0;
         btnNext.disabled = idx >= max;
     }
@@ -278,11 +284,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     btnPrev.addEventListener('click', () => {
+        if (cardW === 0) setup(); // تأكد من الحساب
         const max = cards.length - getVisible();
         if (idx < max) { idx++; render(); }
     });
 
     btnNext.addEventListener('click', () => {
+        if (cardW === 0) setup();
         if (idx > 0) { idx--; render(); }
     });
 
@@ -292,6 +300,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(init, 0);
     setTimeout(init, 100);
     setTimeout(init, 500);
+
+
 })();
 
 /* --- قسم الفرق --- */
