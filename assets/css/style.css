@@ -743,7 +743,7 @@ html {
     /* وضعها في جهة اليسار خلف البطاقات */
     width: 400px;
     height: 100%;
-    background-image: url('./public/images/yellow-arrows.png');
+    background-image: url('./public/images/yellow-arrows.svg');
     /* مسار صورة الأسهم */
     background-repeat: no-repeat;
     background-size: contain;
