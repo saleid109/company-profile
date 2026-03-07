@@ -2035,7 +2035,7 @@ html {
     border: 5px solid #f2f3f7;
     background: #dde1ea;
 }
-
+/* --- حاوية الصورة الرمزية --- */
 .team-avatar .avatar-placeholder {
     width: 100%;
     height: 100%;
@@ -2057,7 +2057,7 @@ html {
     font-weight: 700;
     color: #1B2D45;
 }
-
+/* ===== الدور الوظيفي ===== */
 .team-role {
     font-size: 14px;
     color: #777;
@@ -2084,7 +2084,7 @@ html {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     transform: scale(1.05);
 }
-
+/* حالة التعطيل للزر */
 .team-btn:disabled {
     opacity: 0.35;
     cursor: default;
