@@ -715,10 +715,21 @@
         font-size: 1.2em; /* تصغير عنوان الكرت */
     }
     /*الفوتر*/
-
 .footer-container {
-        grid-template-columns: repeat(2, 1fr); 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* توزيع الأعمدة إلى اثنين */
         gap: 40px;
+        padding: 0 40px 40px;
+    }
+
+    .brand-column {
+        grid-column: span 2; /* عمود الشعار يأخذ العرض الكامل في التابلت */
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin: 0 auto 20px; /* توسيط الشعار */
     }
 
     /*زر الفتح التجريبي*/
