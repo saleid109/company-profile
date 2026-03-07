@@ -468,24 +468,14 @@
 
     /*فريق العمل*/
 
-    .team-container {
-        padding: 0 15px;
-    }
-
+.team-container { padding: 0 15px; }
     .team-track-clip {
         overflow: hidden;
         padding: 55px 0 20px;
         margin-top: -55px;
     }
-
-    .team-track {
-        gap: 16px;
-    }
-
-    .team-card {
-        flex: 0 0 85vw !important;
-    }
-
+    .team-track { gap: 20px; }
+    .team-card  { flex: 0 0 340px !important; }
 
 
     .footer-grid {
