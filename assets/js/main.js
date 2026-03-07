@@ -231,8 +231,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 /* --- فريق العمل --- */
 (function () {
-    const track   = document.getElementById('team-track');
-    const clip    = document.querySelector('.team-track-clip');
+    const track = document.getElementById('team-track');
+    const clip = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
     if (!track || !clip || !btnPrev || !btnNext) return;
@@ -240,20 +240,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = Array.from(track.querySelectorAll('.team-card'));
     let idx = 0;
     let cardW = 0;
-    let gap   = 0;
+    let gap = 0;
 
     function getVisible() {
-        if (window.innerWidth <= 768)  return 1;
-        if (window.innerWidth <= 1024) return 2;
+        const w = window.innerWidth;
+        console.log('width:', w); // لنشوف العرض الفعلي
+        if (w <= 768) return 1;
+        if (w <= 1024) return 2;
+        if (w <= 1280) return 3;
         return 4;
     }
-
     function setup() {
         const visible = getVisible();
-        gap   = parseFloat(getComputedStyle(track).gap) || 24;
+        gap = parseFloat(getComputedStyle(track).gap) || 24;
         cardW = (clip.offsetWidth - gap * (visible - 1)) / visible;
         cards.forEach(c => c.style.width = cardW + 'px');
-        cards.forEach(c => c.style.flex  = '0 0 ' + cardW + 'px');
+        cards.forEach(c => c.style.flex = '0 0 ' + cardW + 'px');
     }
 
     function render() {
@@ -261,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
         idx = Math.min(Math.max(idx, 0), max);
         track.style.transform = `translateX(${-(idx * (cardW + gap))}px)`;
         btnPrev.disabled = idx <= 0;
-        btnNext.disabled  = idx >= max;
+        btnNext.disabled = idx >= max;
     }
 
     function init() {
