@@ -233,13 +233,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
 /* --- فريق العمل --- */
 (function () {
     const track = document.getElementById('team-track');
     const clip = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
-    
     if (!track || !clip || !btnPrev || !btnNext) return;
 
     const cards = Array.from(track.querySelectorAll('.team-card'));
@@ -249,17 +249,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getVisible() {
         const w = window.innerWidth;
-        if (w < 769) return 1; 
-        if (w < 1025) return 2; 
+        if (w < 769) return 1;  // ← أقل من 769 (مش <= 768)
+        if (w < 1025) return 2;  // ← تابلت كرتان
         return 4;
     }
-
     function setup() {
         const visible = getVisible();
         gap = parseFloat(getComputedStyle(track).gap) || 24;
         const clipW = clip.offsetWidth;
 
-        if (clipW === 0) return; 
+        if (clipW === 0) return; // ← تأمين إذا الـ clip مش جاهز
 
         cardW = (clipW - gap * (visible - 1)) / visible;
         cards.forEach(c => {
@@ -269,21 +268,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function render() {
-        const visible = getVisible();
-        const max = Math.max(0, cards.length - visible);
-        
-        // التأكد أن idx لا يتجاوز الحدود
-        idx = Math.max(0, Math.min(idx, max));
+        const max = Math.max(0, cards.length - getVisible());
+        idx = Math.min(Math.max(idx, 0), max);
 
+        // إذا cardW لا يزال صفر، أعد الحساب
         if (cardW === 0) setup();
 
         const step = cardW + gap;
-        // التحريك لليسار (السالب) في اللغات التي تدعم LTR أو حسب تصميمك
         track.style.transform = `translateX(${-(idx * step)}px)`;
 
-        // تحديث حالة الأزرار (Disabled)
-        btnPrev.disabled = (idx <= 0);
-        btnNext.disabled = (idx >= max);
+        btnPrev.disabled = idx <= 0;
+        btnNext.disabled = idx >= max;
     }
 
     function init() {
@@ -291,31 +286,24 @@ document.addEventListener("DOMContentLoaded", () => {
         render();
     }
 
-    // --- التعديل هنا: زر التالي (Next) يزيد الـ idx ---
-    btnNext.addEventListener('click', () => {
-        const max = cards.length - getVisible();
-        if (idx < max) { 
-            idx++; 
-            render(); 
-        }
-    });
+btnPrev.addEventListener('click', () => {
+    if (cardW === 0) setup(); // تأكد من الحساب
+    const max = cards.length - getVisible();
+    if (idx < max) { idx++; render(); }
+});
 
-    // --- التعديل هنا: زر السابق (Prev) ينقص الـ idx ---
-    btnPrev.addEventListener('click', () => {
-        if (idx > 0) { 
-            idx--; 
-            render(); 
-        }
-    });
+btnNext.addEventListener('click', () => {
+    if (cardW === 0) setup();
+    if (idx > 0) { idx--; render(); }
+});
 
-    window.addEventListener('resize', () => { 
-        idx = 0; 
-        init(); 
-    });
+    window.addEventListener('resize', () => { idx = 0; init(); });
 
-    // ضمان التنفيذ بعد تحميل الصفحة
-    window.addEventListener('load', init);
+    // محاولات متعددة لضمان اكتمال الـ layout
+    setTimeout(init, 0);
     setTimeout(init, 100);
+    setTimeout(init, 500);
+
 
 })();
 
