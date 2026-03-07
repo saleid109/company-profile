@@ -228,11 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, frameRate);
     }
 
-    function render() {
-    const max = Math.max(0, cards.length - getVisible());
-    console.log('idx:', idx, 'max:', max, 'cards:', cards.length, 'visible:', getVisible());
-    // ... باقي الكود
-}
+
 
 });
 /* --- فريق العمل --- */
@@ -250,18 +246,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getVisible() {
         const w = window.innerWidth;
-        console.log('width:', w); // لنشوف العرض الفعلي
-        if (w <= 768) return 1;
-        if (w <= 1024) return 2;
-        if (w <= 1280) return 3;
+        if (w < 769) return 1;  // ← أقل من 769 (مش <= 768)
+        if (w < 1025) return 2;  // ← تابلت كرتان
         return 4;
     }
     function setup() {
         const visible = getVisible();
         gap = parseFloat(getComputedStyle(track).gap) || 24;
-        cardW = (clip.offsetWidth - gap * (visible - 1)) / visible;
-        cards.forEach(c => c.style.width = cardW + 'px');
-        cards.forEach(c => c.style.flex = '0 0 ' + cardW + 'px');
+        const clipW = clip.offsetWidth;
+
+        if (clipW === 0) return; // ← تأمين إذا الـ clip مش جاهز
+
+        cardW = (clipW - gap * (visible - 1)) / visible;
+        cards.forEach(c => {
+            c.style.flex = `0 0 ${cardW}px`;
+            c.style.width = `${cardW}px`;
+        });
     }
 
     function render() {

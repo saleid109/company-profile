@@ -477,15 +477,15 @@
         margin-top: -55px;
     }
 
-    .team-track {
-        gap: 16px;
+    .team-track-clip {
+        overflow: hidden;
+        /* ← مش scroll */
     }
 
     .team-card {
-        flex: 0 0 85vw;
+        flex: 0 0 auto;
     }
 
-    /* ← vw بدل % */
 
 
     .footer-grid {
@@ -652,13 +652,16 @@
         margin-top: -55px;
     }
 
-    .team-track {
-        gap: 20px;
+    .team-track-clip {
+        overflow: hidden;
+        /* ← مش scroll */
     }
 
     .team-card {
-        flex: 0 0 42vw;
+        flex: 0 0 auto;
     }
+
+    /* JS يتحكم */
 
     /* ← ك
 
