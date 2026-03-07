@@ -467,6 +467,7 @@
     }
 
     /*فريق العمل*/
+
     .team-container {
         padding: 0 15px;
     }
@@ -477,13 +478,12 @@
         margin-top: -55px;
     }
 
-    .team-track-clip {
-        overflow: hidden;
-        /* ← مش scroll */
+    .team-track {
+        gap: 16px;
     }
 
     .team-card {
-        flex: 0 0 auto;
+        flex: 0 0 85vw !important;
     }
 
 
@@ -652,20 +652,15 @@
         margin-top: -55px;
     }
 
-    .team-track-clip {
-        overflow: hidden;
-        /* ← مش scroll */
+    .team-track {
+        gap: 20px;
     }
 
     .team-card {
-        flex: 0 0 auto;
+        flex: 0 0 calc(50% - 10px) !important;
     }
 
-    /* JS يتحكم */
-
-    /* ← ك
-
-/*الفوتر*/
+    /*الفوتر*/
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
     }
