@@ -676,6 +676,15 @@
     .teams-group-section .carousel-track {
         gap: 15px; /* تقليل المسافة بين الكروت لتناسب الجوال */
     }
+
+    .teams-group-section h2 {
+        font-size: 1.8em; /* تصغير العنوان الرئيسي */
+        margin-bottom: 20px;
+    }
+    
+    .teams-group-section .group h3 {
+        font-size: 1.2em; /* تصغير عنوان الكرت */
+    }
     /*الفوتر*/
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
