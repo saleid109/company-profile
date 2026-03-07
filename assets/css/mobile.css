@@ -487,43 +487,30 @@
         min-width: 85vw !important;
     }
 
+.site-footer {
+        padding-top: 40px;
+    }
 
-    .footer-grid {
-        grid-template-columns: 1fr;
+    .footer-container {
+        grid-template-columns: 1fr; /* عمود واحد فقط للجوال */
         text-align: center;
-        gap: 40px;
+        gap: 30px;
     }
 
-    .footer-contact ul {
-        display: inline-block;
-        text-align: right;
-    }
-
-.footer-container {
-        grid-template-columns: 1fr; /* عمود واحد فقط */
-        text-align: center;
-    }
-
-    .social-links-footer {
-        justify-content: center; /* توسيط أيقونات التواصل */
-    }
-
-    .footer-column.brand-column {
-        margin-bottom: 20px;
-    }
-
-    /* تحسين عرض قائمة التواصل للجوال */
-    .footer-contact ul {
-        display: inline-block;
-        text-align: right;
+    .brand-column {
+        grid-column: span 1;
     }
 
     .contact-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 10px;
+        justify-content: center; /* توسيط بيانات التواصل */
+    }
+
+    .social-links-footer {
+        justify-content: center; /* توسيط أيقونات التواصل الاجتماعي */
+    }
+
+    .footer-column ul li a:hover {
+        transform: none; /* إلغاء الإزاحة الجانبية في الجوال لتجنب خروج النص */
     }
 
 
