@@ -698,12 +698,8 @@
     /*الفرق*/
 
     .teams-group-section .group {
-        /* جعل الكرت يأخذ عرض الشاشة بالكامل تقريباً ليظهر بوضوح */
-        flex: 0 0 100%;
-        /* أو يمكنك استخدامه كـ 90% إذا كنت تريد رؤية طرف الكرت التالي */
-        /* flex: 0 0 90%; */
-
-        max-width: 100%;
+        flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
     }
 
     .teams-group-section .carousel-track {
