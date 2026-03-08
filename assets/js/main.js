@@ -325,13 +325,12 @@ document.addEventListener("DOMContentLoaded", () => {
         prevBtn.disabled = currentIndex === 0;
         nextBtn.disabled = currentIndex >= maxIndex;
     }
-
-    nextBtn.addEventListener('click', () => {
+    prevBtn.addEventListener('click', () => {
         const maxIndex = cards.length - getVisible();
         if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); }
     });
 
-    prevBtn.addEventListener('click', () => {
+    nextBtn.addEventListener('click', () => {
         if (currentIndex > 0) { currentIndex--; updateCarousel(); }
     });
 
