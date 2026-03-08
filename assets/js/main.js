@@ -293,6 +293,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(render, 200);
     setTimeout(render, 600);
 })();
+
+
 /* --- قسم الفرق --- */
 (function () {
     const section = document.querySelector('.teams-group-section');
@@ -304,8 +306,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = section.querySelectorAll('.group');
     let currentIndex = 0;
     const gap = 24;
-    const VISIBLE = 3; // ← ثابت دائماً
-
+    function getVisible() {
+        const w = window.innerWidth;
+        if (w < 768) return 1;
+        if (w <= 1024) return 2;
+        return 3;
+    }
     function getCardWidth() {
         return cards[0].offsetWidth + gap;
     }
