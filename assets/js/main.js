@@ -247,16 +247,18 @@ document.addEventListener("DOMContentLoaded", () => {
     function getVisible() {
         const w = window.innerWidth;
         if (w < 768) return 1;
-        if (w < 1025) return 2;
+        if (w <= 1024) return 2; 
         return 4;
     }
     function getCardW() {
         const gap = parseFloat(getComputedStyle(track).gap) || 20;
         const visible = getVisible();
-        const padding = 30; // padding من team-container على التابلت (15px * 2)
-        const btnSpace = 100; // مساحة الأزرار تقريباً
-        const totalW = window.innerWidth - padding - btnSpace;
-        return (totalW - gap * (visible - 1)) / visible;
+        const sliderRow = document.querySelector('.team-slider-row');
+        const rowW = sliderRow.getBoundingClientRect().width;
+        const btnW = btnPrev.getBoundingClientRect().width + btnNext.getBoundingClientRect().width;
+        const rowGap = parseFloat(getComputedStyle(sliderRow).gap) || 16;
+        const clipW = rowW - btnW - (rowGap * 2);
+        return (clipW - gap * (visible - 1)) / visible;
     }
 
     function render() {
