@@ -487,12 +487,13 @@
         min-width: 85vw !important;
     }
 
-.site-footer {
+    .site-footer {
         padding-top: 40px;
     }
 
     .footer-container {
-        grid-template-columns: 1fr; /* عمود واحد فقط للجوال */
+        grid-template-columns: 1fr;
+        /* عمود واحد فقط للجوال */
         text-align: center;
         gap: 30px;
     }
@@ -502,19 +503,22 @@
     }
 
     .contact-item {
-        justify-content: center; /* توسيط بيانات التواصل */
+        justify-content: center;
+        /* توسيط بيانات التواصل */
     }
 
     .social-links-footer {
-        justify-content: center; /* توسيط أيقونات التواصل الاجتماعي */
+        justify-content: center;
+        /* توسيط أيقونات التواصل الاجتماعي */
     }
 
     .footer-column ul li a:hover {
-        transform: none; /* إلغاء الإزاحة الجانبية في الجوال لتجنب خروج النص */
+        transform: none;
+        /* إلغاء الإزاحة الجانبية في الجوال لتجنب خروج النص */
     }
 
 
-    
+
 
     /* زر الفتح التجريبي */
     .demo-fab {
@@ -553,7 +557,7 @@
     التابلت (769px - 1024px)
 ========================================================= */
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 
     .nav-menu {
         gap: 15px;
@@ -678,45 +682,53 @@
         width: 340px !important;
         min-width: 340px !important;
     }
-/*الفرق*/
 
-.teams-group-section .group {
+    /*الفرق*/
+
+    .teams-group-section .group {
         /* جعل الكرت يأخذ عرض الشاشة بالكامل تقريباً ليظهر بوضوح */
-        flex: 0 0 100%; 
+        flex: 0 0 100%;
         /* أو يمكنك استخدامه كـ 90% إذا كنت تريد رؤية طرف الكرت التالي */
         /* flex: 0 0 90%; */
-        
+
         max-width: 100%;
     }
 
     .teams-group-section .carousel-track {
-        gap: 15px; /* تقليل المسافة بين الكروت لتناسب الجوال */
+        gap: 15px;
+        /* تقليل المسافة بين الكروت لتناسب الجوال */
     }
 
     .teams-group-section h2 {
-        font-size: 1.8em; /* تصغير العنوان الرئيسي */
+        font-size: 1.8em;
+        /* تصغير العنوان الرئيسي */
         margin-bottom: 20px;
     }
-    
+
     .teams-group-section .group h3 {
-        font-size: 1.2em; /* تصغير عنوان الكرت */
+        font-size: 1.2em;
+        /* تصغير عنوان الكرت */
     }
+
     /*الفوتر*/
-.footer-container {
+    .footer-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* توزيع الأعمدة إلى اثنين */
+        grid-template-columns: repeat(2, 1fr);
+        /* توزيع الأعمدة إلى اثنين */
         gap: 40px;
         padding: 0 40px 40px;
     }
 
     .brand-column {
-        grid-column: span 2; /* عمود الشعار يأخذ العرض الكامل في التابلت */
+        grid-column: span 2;
+        /* عمود الشعار يأخذ العرض الكامل في التابلت */
         max-width: 100%;
         text-align: center;
     }
 
     .footer-logo {
-        margin: 0 auto 20px; /* توسيط الشعار */
+        margin: 0 auto 20px;
+        /* توسيط الشعار */
     }
 
     /*زر الفتح التجريبي*/
