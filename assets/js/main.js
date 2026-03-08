@@ -260,18 +260,22 @@ document.addEventListener("DOMContentLoaded", () => {
         return cardRect.width > 0 ? cardRect.width : 340;
     }
 
-    function render() {
-        const gap = parseFloat(getComputedStyle(track).gap) || 24;
-        const cardW = getCardW();
-        const step = cardW + gap;
-        const max = Math.max(0, cards.length - getVisible());
+function render() {
+    const gap = parseFloat(getComputedStyle(track).gap) || 24;
+    const cardW = getCardW();
+    const step = cardW + gap;
+    const max = Math.max(0, cards.length - getVisible());
 
-        idx = Math.max(0, Math.min(idx, max));
-        track.style.transform = `translateX(${-(idx * step)}px)`;  // ← سالب مرة أخرى
+    idx = Math.max(0, Math.min(idx, max));
+    
+    // ← أضيفي هذا: حدد عرض كل كرت مباشرة
+    cards.forEach(card => card.style.width = cardW + 'px');
+    
+    track.style.transform = `translateX(${-(idx * step)}px)`;
 
-        btnPrev.disabled = idx >= max;
-        btnNext.disabled = idx <= 0;
-    }
+    btnPrev.disabled = idx >= max;
+    btnNext.disabled = idx <= 0;
+}
 
     btnPrev.addEventListener('click', () => {
         const max = cards.length - getVisible();
