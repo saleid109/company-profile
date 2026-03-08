@@ -250,32 +250,31 @@ document.addEventListener("DOMContentLoaded", () => {
         if (w < 1025) return 2;
         return 4;
     }
-
     function getCardW() {
-        const gap = parseFloat(getComputedStyle(track).gap) || 24;
+        const gap = parseFloat(getComputedStyle(track).gap) || 20;
         const visible = getVisible();
-        const clipW = clip.getBoundingClientRect().width;
-        if (clipW > 0) return (clipW - gap * (visible - 1)) / visible;
-        const cardRect = cards[0].getBoundingClientRect();
-        return cardRect.width > 0 ? cardRect.width : 340;
+        const padding = 30; // padding من team-container على التابلت (15px * 2)
+        const btnSpace = 100; // مساحة الأزرار تقريباً
+        const totalW = window.innerWidth - padding - btnSpace;
+        return (totalW - gap * (visible - 1)) / visible;
     }
 
-function render() {
-    const gap = parseFloat(getComputedStyle(track).gap) || 24;
-    const cardW = getCardW();
-    const step = cardW + gap;
-    const max = Math.max(0, cards.length - getVisible());
+    function render() {
+        const gap = parseFloat(getComputedStyle(track).gap) || 24;
+        const cardW = getCardW();
+        const step = cardW + gap;
+        const max = Math.max(0, cards.length - getVisible());
 
-    idx = Math.max(0, Math.min(idx, max));
-    
-    // ← أضيفي هذا: حدد عرض كل كرت مباشرة
-    cards.forEach(card => card.style.width = cardW + 'px');
-    
-    track.style.transform = `translateX(${-(idx * step)}px)`;
+        idx = Math.max(0, Math.min(idx, max));
 
-    btnPrev.disabled = idx >= max;
-    btnNext.disabled = idx <= 0;
-}
+        // ← أضيفي هذا: حدد عرض كل كرت مباشرة
+        cards.forEach(card => card.style.width = cardW + 'px');
+
+        track.style.transform = `translateX(${-(idx * step)}px)`;
+
+        btnPrev.disabled = idx >= max;
+        btnNext.disabled = idx <= 0;
+    }
 
     btnPrev.addEventListener('click', () => {
         const max = cards.length - getVisible();
