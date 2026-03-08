@@ -267,9 +267,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const max = Math.max(0, cards.length - getVisible());
 
         idx = Math.max(0, Math.min(idx, max));
-        track.style.transform = `translateX(${+(idx * step)}px)`;  // ← أزلنا السالب
-        btnPrev.disabled = idx >= max;  // ← بدل idx <= 0
-        btnNext.disabled = idx <= 0;    // ← بدل idx >= max
+        track.style.transform = `translateX(${-(idx * step)}px)`;  // ← سالب مرة أخرى
+
+        btnPrev.disabled = idx >= max;
+        btnNext.disabled = idx <= 0;
     }
 
     btnPrev.addEventListener('click', () => {
