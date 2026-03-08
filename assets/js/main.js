@@ -233,7 +233,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 /* --- فريق العمل --- */
 (function () {
     const track = document.getElementById('team-track');
@@ -247,18 +246,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getVisible() {
         const w = window.innerWidth;
-        if (w < 768) return 1;  // ← غيري 769 إلى 768
+        if (w < 768) return 1;
         if (w < 1025) return 2;
         return 4;
     }
 
     function getCardW() {
-        // نقرأ عرض الـ clip مباشرة — دائماً صحيح
         const gap = parseFloat(getComputedStyle(track).gap) || 24;
         const visible = getVisible();
         const clipW = clip.getBoundingClientRect().width;
         if (clipW > 0) return (clipW - gap * (visible - 1)) / visible;
-        // fallback: نقرأ من الكرت مباشرة
         const cardRect = cards[0].getBoundingClientRect();
         return cardRect.width > 0 ? cardRect.width : 340;
     }
@@ -277,12 +274,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     btnPrev.addEventListener('click', () => {
-        const max = cards.length - getVisible();
-        if (idx < max) { idx++; render(); }
+        if (idx > 0) { idx--; render(); }
     });
 
     btnNext.addEventListener('click', () => {
-        if (idx > 0) { idx--; render(); }
+        const max = cards.length - getVisible();
+        if (idx < max) { idx++; render(); }
     });
 
     window.addEventListener('resize', () => { idx = 0; render(); });
