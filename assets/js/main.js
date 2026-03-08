@@ -268,9 +268,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         idx = Math.max(0, Math.min(idx, max));
         track.style.transform = `translateX(${+(idx * step)}px)`;  // ← أزلنا السالب
-
-        btnPrev.disabled = idx <= 0;
-        btnNext.disabled = idx >= max;
+        btnPrev.disabled = idx >= max;  // ← بدل idx <= 0
+        btnNext.disabled = idx <= 0;    // ← بدل idx >= max
     }
 
     btnPrev.addEventListener('click', () => {
