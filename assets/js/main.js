@@ -232,7 +232,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
 /* --- فريق العمل --- */
 (function () {
     const track = document.getElementById('team-track');
@@ -247,42 +246,43 @@ document.addEventListener("DOMContentLoaded", () => {
     function getVisible() {
         const w = window.innerWidth;
         if (w < 768) return 1;
-        if (w <= 1024) return 2; 
+        if (w <= 1024) return 2;
         return 4;
     }
+
     function getCardW() {
-        const gap = parseFloat(getComputedStyle(track).gap) || 20;
-        const visible = getVisible();
         const sliderRow = document.querySelector('.team-slider-row');
         const rowW = sliderRow.getBoundingClientRect().width;
         const btnW = btnPrev.getBoundingClientRect().width + btnNext.getBoundingClientRect().width;
         const rowGap = parseFloat(getComputedStyle(sliderRow).gap) || 16;
+        const gap = parseFloat(getComputedStyle(track).gap) || 20;
+        const visible = getVisible();
         const clipW = rowW - btnW - (rowGap * 2);
         return (clipW - gap * (visible - 1)) / visible;
     }
 
     function render() {
-        const gap = parseFloat(getComputedStyle(track).gap) || 24;
+        const gap = parseFloat(getComputedStyle(track).gap) || 20;
         const cardW = getCardW();
         const step = cardW + gap;
         const max = Math.max(0, cards.length - getVisible());
 
-        idx = Math.max(0, Math.min(idx, max));
+        if (idx > max) idx = max;
 
-        // ← أضيفي هذا: حدد عرض كل كرت مباشرة
         cards.forEach(card => card.style.width = cardW + 'px');
+        track.style.transform = `translateX(${idx * step}px)`;  // ← موجب مثل الفرق
 
-        track.style.transform = `translateX(${-(idx * step)}px)`;
-
-        btnPrev.disabled = idx >= max;
+        btnPrev.disabled = idx >= max;  // ← prev يزيد idx
         btnNext.disabled = idx <= 0;
     }
 
+    // prev = السهم الأيسر = يزيد idx (يتحرك لليمين في RTL)
     btnPrev.addEventListener('click', () => {
-        const max = cards.length - getVisible();
+        const max = Math.max(0, cards.length - getVisible());
         if (idx < max) { idx++; render(); }
     });
 
+    // next = السهم الأيمن = ينقص idx
     btnNext.addEventListener('click', () => {
         if (idx > 0) { idx--; render(); }
     });
@@ -293,7 +293,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(render, 200);
     setTimeout(render, 600);
 })();
-
 /* --- قسم الفرق --- */
 (function () {
     const section = document.querySelector('.teams-group-section');
