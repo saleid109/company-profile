@@ -236,8 +236,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* --- فريق العمل --- */
 (function () {
-    const track   = document.getElementById('team-track');
-    const clip    = document.querySelector('.team-track-clip');
+    const track = document.getElementById('team-track');
+    const clip = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
     if (!track || !clip || !btnPrev || !btnNext) return;
@@ -247,16 +247,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getVisible() {
         const w = window.innerWidth;
-        if (w < 769)  return 1;
+        if (w < 768) return 1;  // ← غيري 769 إلى 768
         if (w < 1025) return 2;
         return 4;
     }
 
     function getCardW() {
         // نقرأ عرض الـ clip مباشرة — دائماً صحيح
-        const gap     = parseFloat(getComputedStyle(track).gap) || 24;
+        const gap = parseFloat(getComputedStyle(track).gap) || 24;
         const visible = getVisible();
-        const clipW   = clip.getBoundingClientRect().width;
+        const clipW = clip.getBoundingClientRect().width;
         if (clipW > 0) return (clipW - gap * (visible - 1)) / visible;
         // fallback: نقرأ من الكرت مباشرة
         const cardRect = cards[0].getBoundingClientRect();
@@ -264,16 +264,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function render() {
-        const gap  = parseFloat(getComputedStyle(track).gap) || 24;
+        const gap = parseFloat(getComputedStyle(track).gap) || 24;
         const cardW = getCardW();
-        const step  = cardW + gap;
-        const max   = Math.max(0, cards.length - getVisible());
+        const step = cardW + gap;
+        const max = Math.max(0, cards.length - getVisible());
 
         idx = Math.max(0, Math.min(idx, max));
         track.style.transform = `translateX(${-(idx * step)}px)`;
 
         btnPrev.disabled = idx <= 0;
-        btnNext.disabled  = idx >= max;
+        btnNext.disabled = idx >= max;
     }
 
     btnPrev.addEventListener('click', () => {
