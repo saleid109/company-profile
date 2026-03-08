@@ -294,7 +294,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(render, 600);
 })();
 
-
 /* --- قسم الفرق --- */
 (function () {
     const section = document.querySelector('.teams-group-section');
@@ -306,18 +305,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = section.querySelectorAll('.group');
     let currentIndex = 0;
     const gap = 24;
+
     function getVisible() {
         const w = window.innerWidth;
         if (w < 768) return 1;
         if (w <= 1024) return 2;
         return 3;
     }
+
     function getCardWidth() {
         return cards[0].offsetWidth + gap;
     }
 
     function updateCarousel() {
-        const maxIndex = Math.max(0, cards.length - VISIBLE);
+        const maxIndex = Math.max(0, cards.length - getVisible());
         if (currentIndex > maxIndex) currentIndex = maxIndex;
 
         track.style.transform = `translateX(${currentIndex * getCardWidth()}px)`;
@@ -326,7 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     nextBtn.addEventListener('click', () => {
-        const maxIndex = cards.length - VISIBLE;
+        const maxIndex = cards.length - getVisible();
         if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); }
     });
 
