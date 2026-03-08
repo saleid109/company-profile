@@ -494,7 +494,8 @@
     .team-track {
         gap: 16px;
     }
- #team-track .team-card {
+
+    #team-track .team-card {
         flex: 0 0 auto !important;
         min-width: 0 !important;
     }
@@ -690,7 +691,6 @@
 
     #team-track .team-card {
         flex: 0 0 auto !important;
-        width: auto !important;
         min-width: 0 !important;
     }
 
