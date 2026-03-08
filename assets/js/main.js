@@ -267,19 +267,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const max = Math.max(0, cards.length - getVisible());
 
         idx = Math.max(0, Math.min(idx, max));
-        track.style.transform = `translateX(${-(idx * step)}px)`;
+        track.style.transform = `translateX(${+(idx * step)}px)`;  // ← أزلنا السالب
 
         btnPrev.disabled = idx <= 0;
         btnNext.disabled = idx >= max;
     }
 
     btnPrev.addEventListener('click', () => {
-        if (idx > 0) { idx--; render(); }
+        const max = cards.length - getVisible();
+        if (idx < max) { idx++; render(); }
     });
 
     btnNext.addEventListener('click', () => {
-        const max = cards.length - getVisible();
-        if (idx < max) { idx++; render(); }
+        if (idx > 0) { idx--; render(); }
     });
 
     window.addEventListener('resize', () => { idx = 0; render(); });
