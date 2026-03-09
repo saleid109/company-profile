@@ -501,57 +501,39 @@
     }
 
 
-    /*الفرق*/
+    
+/*الفرق*/
     .teams-group-section {
-        padding: 50px 0;
-    }
-
-    .teams-group-section .container {
-        padding: 0 20px;
+        padding: 60px 0;
     }
 
     .teams-group-section h2 {
-        font-size: 1.8em;
-        margin-bottom: 32px;
+        font-size: 2em;
+        margin-bottom: 40px;
     }
 
     .teams-group-section .carousel-container {
         overflow: hidden;
         position: relative;
+        padding: 10px 8px; 
+        margin: -10px -8px; 
     }
 
     .teams-group-section .carousel-track {
-        display: flex;
-        gap: 16px;
+        gap: 20px;
     }
 
     .teams-group-section .group {
-        flex: 0 0 100%;
-        width: 100%;
-        max-width: 100%;
+        width: calc((100% - 20px) / 2);
+        flex-shrink: 0;
         min-width: 0;
         padding: 24px;
         box-sizing: border-box;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     }
 
     .teams-group-section .group h3 {
-        font-size: 1.25em;
-    }
-
-    .teams-group-section .group-description {
-        font-size: 0.95em;
-    }
-
-    .teams-group-section .nav-btn {
-        width: 44px;
-        height: 44px;
-        font-size: 1.1em;
-    }
-
-    .teams-group-section .carousel-controls {
-        margin-top: 40px;
-        gap: 12px;
+        font-size: 1.3em;
     }
 
     .teams-group-section .group-icon {
@@ -563,6 +545,8 @@
         width: 32px;
         height: 32px;
     }
+
+
 
 
     /*الفوتر*/
@@ -761,52 +745,72 @@
     }
 
 
-    /*الفرق*/
+
+/*الفرق*/
     .teams-group-section {
-        padding: 60px 0;
+        padding: 50px 0;
+    }
+
+    .teams-group-section .container {
+        padding: 0 16px;
     }
 
     .teams-group-section h2 {
-        font-size: 2em;
-        margin-bottom: 40px;
+        font-size: 1.8em;
+        margin-bottom: 32px;
     }
 
+    /* ✅ حل مشكلة قص الظل */
     .teams-group-section .carousel-container {
         overflow: hidden;
         position: relative;
+        padding: 10px 8px;  /* مساحة للـ box-shadow */
+        margin: -10px -8px; /* تعويض الـ padding */
     }
 
     .teams-group-section .carousel-track {
-        display: flex;
-        gap: 20px;
+        gap: 16px;
     }
 
+    /* ✅ حل مشكلة العرض */
     .teams-group-section .group {
-        flex: 0 0 calc((100% - 20px) / 2);
-        width: calc((100% - 20px) / 2);
-        max-width: calc((100% - 20px) / 2);
+        width: 100%;
+        flex-shrink: 0;
         min-width: 0;
         padding: 24px;
-        box-sizing: border-box;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        box-sizing: border-box; /* ✅ مهم جداً */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* ظل أخف للجوال */
     }
 
     .teams-group-section .group h3 {
-        font-size: 1.3em;
+        font-size: 1.25em;
     }
 
+    .teams-group-section .group-description {
+        font-size: 0.95em;
+    }
+
+    .teams-group-section .nav-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1em;
+    }
+
+    .teams-group-section .carousel-controls {
+        margin-top: 32px;
+        gap: 12px;
+    }
+    
     .teams-group-section .group-icon {
         width: 56px;
         height: 56px;
     }
-
+    
     .teams-group-section .group-icon img {
         width: 32px;
         height: 32px;
     }
-
-
-
+    
     /*الفوتر*/
     .footer-container {
         display: grid;
@@ -996,7 +1000,3 @@
         display: none;
     }
 }
-
-
-
-
