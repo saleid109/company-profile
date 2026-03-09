@@ -502,7 +502,7 @@
 
 
     /*الفرق*/
-    
+
 
     /*الفوتر*/
     .site-footer {
@@ -701,28 +701,39 @@
 
 
     /*الفرق*/
-
-    .teams-group-section .group {
-        flex: 0 0 calc(50% - 8px);
-        max-width: calc(50% - 8px);
-    }
-
-    .teams-group-section .carousel-track {
-        gap: 15px;
-        /* تقليل المسافة بين الكروت لتناسب الجوال */
+.teams-group-section {
+        padding: 60px 0;
     }
 
     .teams-group-section h2 {
-        font-size: 1.8em;
-        /* تصغير العنوان الرئيسي */
-        margin-bottom: 20px;
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+
+    .teams-group-section .carousel-track {
+        gap: 20px;
+    }
+
+    .teams-group-section .group {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        padding: 24px;
     }
 
     .teams-group-section .group h3 {
-        font-size: 1.2em;
-        /* تصغير عنوان الكرت */
+        font-size: 1.3em;
     }
 
+    .teams-group-section .group-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .teams-group-section .group-icon img {
+        width: 32px;
+        height: 32px;
+    }
+    
     /*الفوتر*/
     .footer-container {
         display: grid;
