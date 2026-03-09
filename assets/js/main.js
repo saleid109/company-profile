@@ -294,7 +294,11 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(render, 600);
 })();
 
-/* --- قسم الفرق --- */
+
+/* ======================================
+   قسم الفرق - JavaScript المحسن
+====================================== */
+
 (function () {
     const section = document.querySelector('.teams-group-section');
     if (!section) return;
@@ -303,41 +307,205 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = section.querySelector('.nav-btn.prev');
     const nextBtn = section.querySelector('.nav-btn.next');
     const cards = section.querySelectorAll('.group');
+    
+    if (!track || !prevBtn || !nextBtn || cards.length === 0) return;
+
     let currentIndex = 0;
-    const gap = 24;
+    const gap = 24; // يجب أن يتطابق مع CSS
 
-    function getVisible() {
-        const w = window.innerWidth;
-        if (w < 768) return 1;
-        if (w <= 1024) return 2;
-        return 3;
+    /**
+     * حساب عدد البطاقات المرئية حسب عرض الشاشة
+     * @returns {number} عدد البطاقات
+     */
+    function getVisibleCards() {
+        const width = window.innerWidth;
+        if (width < 768) return 1;        // جوال: بطاقة واحدة
+        if (width < 1024) return 2;       // تابلت: بطاقتين
+        return 3;                         // ديسكتوب: 3 بطاقات
     }
 
+    /**
+     * حساب المسافة بين البطاقات حسب عرض الشاشة
+     * @returns {number} المسافة بالبكسل
+     */
+    function getGap() {
+        const width = window.innerWidth;
+        if (width < 640) return 12;
+        if (width < 768) return 16;
+        if (width < 1024) return 20;
+        return 24;
+    }
+
+    /**
+     * حساب عرض البطاقة الواحدة
+     * @returns {number} العرض بالبكسل
+     */
     function getCardWidth() {
-        return cards[0].offsetWidth + gap;
+        if (cards.length === 0) return 0;
+        return cards[0].offsetWidth + getGap();
     }
 
+    /**
+     * تحديث موضع الـ Carousel
+     */
     function updateCarousel() {
-        const maxIndex = Math.max(0, cards.length - getVisible());
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
+        const visibleCards = getVisibleCards();
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+        
+        // التأكد من أن الـ index ضمن الحدود المسموحة
+        if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
 
-        track.style.transform = `translateX(${currentIndex * getCardWidth()}px)`;
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= maxIndex;
+        const cardWidth = getCardWidth();
+        const offset = currentIndex * cardWidth;
+
+        // تطبيق الحركة (RTL: positive translateX)
+        track.style.transform = `translateX(${offset}px)`;
+
+        // تحديث حالة الأزرار
+        updateButtons(maxIndex);
     }
-    prevBtn.addEventListener('click', () => {
-        const maxIndex = cards.length - getVisible();
-        if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); }
+
+    /**
+     * تحديث حالة أزرار التنقل
+     * @param {number} maxIndex - أقصى index مسموح
+     */
+    function updateButtons(maxIndex) {
+        // في RTL: prev يتحرك لليمين (يزيد index)
+        prevBtn.disabled = currentIndex >= maxIndex;
+        // في RTL: next يتحرك لليسار (ينقص index)
+        nextBtn.disabled = currentIndex <= 0;
+
+        // إضافة visual feedback
+        if (prevBtn.disabled) {
+            prevBtn.style.opacity = '0.3';
+        } else {
+            prevBtn.style.opacity = '1';
+        }
+
+        if (nextBtn.disabled) {
+            nextBtn.style.opacity = '0.3';
+        } else {
+            nextBtn.style.opacity = '1';
+        }
+    }
+
+    /**
+     * التحرك للبطاقة السابقة (لليمين في RTL)
+     */
+    function goToPrev() {
+        const visibleCards = getVisibleCards();
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+        
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    }
+
+    /**
+     * التحرك للبطاقة التالية (لليسار في RTL)
+     */
+    function goToNext() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    }
+
+    /**
+     * إعادة تعيين الـ Carousel عند تغيير حجم الشاشة
+     */
+    function handleResize() {
+        currentIndex = 0;
+        updateCarousel();
+    }
+
+    // ربط الأحداث
+    prevBtn.addEventListener('click', goToPrev);
+    nextBtn.addEventListener('click', goToNext);
+
+    // دعم لوحة المفاتيح للوصولية
+    prevBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            goToPrev();
+        }
     });
 
-    nextBtn.addEventListener('click', () => {
-        if (currentIndex > 0) { currentIndex--; updateCarousel(); }
+    nextBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            goToNext();
+        }
     });
 
-    window.addEventListener('resize', updateCarousel);
+    // دعم السحب باللمس (Touch Swipe) للجوال
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeThreshold = 50; // الحد الأدنى للسحب
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) < swipeThreshold) return;
+
+        // في RTL: السحب لليمين = next، السحب لليسار = prev
+        if (diff > 0) {
+            goToNext(); // سحب لليسار
+        } else {
+            goToPrev(); // سحب لليمين
+        }
+    }
+
+    // التهيئة الأولية
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(handleResize, 150);
+    });
+
+    // تشغيل التحديث عند التحميل
     window.addEventListener('load', updateCarousel);
+    document.addEventListener('DOMContentLoaded', updateCarousel);
+    
+    // تحديثات متعددة للتأكد من العرض الصحيح
+    setTimeout(updateCarousel, 100);
     setTimeout(updateCarousel, 300);
+    setTimeout(updateCarousel, 600);
+
+    // إضافة Intersection Observer لتحسين الأداء
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                updateCarousel();
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(section);
+
 })();
+
+
+
+
 
 
 
