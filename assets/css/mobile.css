@@ -942,7 +942,11 @@
         cursor: pointer;
         z-index: 5000;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+}
 
     /* 1. الحاوية الكبرى (Overlay) */
     .auth-overlay {
