@@ -2139,6 +2139,8 @@ html {
     flex: 1;
     overflow: hidden;
     padding: 20px 0;
+    position: relative;
+
 }
 
 .teams-group-section .carousel-track {
