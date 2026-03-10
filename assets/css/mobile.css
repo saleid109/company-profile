@@ -29,14 +29,6 @@
 }
 
 
-@media (prefers-reduced-motion: reduce) {
-    .carousel-track,
-    .teams-group-section .group,
-    .nav-btn {
-        transition: none !important;
-    }
-}
-
 /* =========================================================
     تأثيرات سطح المكتب
 ========================================================= */
@@ -510,10 +502,14 @@
     }
 
 
-    
-/*الفرق*/
-.teams-group-section {
+
+    /*الفرق*/
+    .teams-group-section {
         padding: 60px 0;
+    }
+
+    .teams-group-section .container {
+        padding: 0 16px;
     }
 
     .teams-group-section h2 {
@@ -521,48 +517,48 @@
         margin-bottom: 40px;
     }
 
-    .carousel-outer {
-        gap: 15px;
+    .teams-group-section .carousel-container {
+        padding: 20px 50px;
+        /* مساحة للأزرار */
     }
 
-    .carousel-wrapper {
-        padding: 10px 5px;
-        margin: -10px -5px;
-    }
-
-    .carousel-track {
-        gap: 16px;
-    }
-
-    /* ✅ بطاقة واحدة في الجوال */
+    /* ✅ الكرت يأخذ العرض كاملاً - بدون حسابات معقدة */
     .teams-group-section .group {
+        flex: 0 0 100%;
         width: 100%;
-        min-width: 0;
-        padding: 24px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        padding: 20px;
     }
 
     .teams-group-section .group h3 {
-        font-size: 1.3em;
+        font-size: 1.25em;
     }
 
     .teams-group-section .group .description {
-        font-size: 0.95em;
+        font-size: 0.92em;
     }
 
     .card-header {
-        padding: 25px;
-        min-height: 100px;
+        padding: 20px;
+        min-height: 90px;
     }
 
     .full-logo-img {
-        max-height: 60px;
+        max-height: 55px;
     }
 
-    .nav-btn {
-        width: 44px;
-        height: 44px;
-        font-size: 1.2em;
+    /* تصغير الأزرار في الجوال */
+    .teams-group-section .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1em;
+    }
+
+    .teams-group-section .nav-btn.prev {
+        left: 5px;
+    }
+
+    .teams-group-section .nav-btn.next {
+        right: 5px;
     }
 
     .footer-details {
@@ -570,7 +566,7 @@
     }
 
     .footer-details li {
-        font-size: 0.9em;
+        font-size: 0.88em;
     }
 
 
@@ -771,9 +767,13 @@
 
 
 
-/*الفرق*/
+    /*الفرق*/
     .teams-group-section {
         padding: 70px 0;
+    }
+
+    .teams-group-section .container {
+        padding: 0 24px;
     }
 
     .teams-group-section h2 {
@@ -781,50 +781,49 @@
         margin-bottom: 45px;
     }
 
-    .carousel-outer {
-        gap: 18px;
+    .teams-group-section .carousel-container {
+        padding: 20px 60px;
+        /* مساحة للأزرار */
     }
 
-    .carousel-wrapper {
-        padding: 10px 6px;
-        margin: -10px -6px;
-    }
-
-    .carousel-track {
-        gap: 20px;
-    }
-
-    /* ✅ بطاقتين في التابلت */
+    /* ✅ عرض كرتين مع طرح المسافة بينهما (20px) */
     .teams-group-section .group {
+        flex: 0 0 calc((100% - 20px) / 2);
         width: calc((100% - 20px) / 2);
-        min-width: 0;
-        padding: 26px;
-        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        padding: 24px;
     }
 
     .teams-group-section .group h3 {
-        font-size: 1.35em;
+        font-size: 1.32em;
     }
 
     .teams-group-section .group .description {
-        font-size: 0.97em;
+        font-size: 0.95em;
     }
 
     .card-header {
-        padding: 28px;
-        min-height: 110px;
+        padding: 25px;
+        min-height: 105px;
     }
 
     .full-logo-img {
-        max-height: 70px;
+        max-height: 65px;
     }
 
-    .nav-btn {
-        width: 48px;
-        height: 48px;
-        font-size: 1.3em;
+    .teams-group-section .nav-btn {
+        width: 46px;
+        height: 46px;
+        font-size: 1.25em;
     }
-    
+
+    .teams-group-section .nav-btn.prev {
+        left: 5px;
+    }
+
+    .teams-group-section .nav-btn.next {
+        right: 5px;
+    }
+
     /*الفوتر*/
     .footer-container {
         display: grid;
