@@ -295,9 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 
-/* ======================================
-   قسم الفرق - JavaScript المحسن
-====================================== */
+/* ============= قسم الفرق - JavaScript==================== */
 
 (function () {
     const section = document.querySelector('.teams-group-section');
