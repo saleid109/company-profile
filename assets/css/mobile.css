@@ -521,11 +521,12 @@
         /*  بدون padding جانبي */
     }
 
-    .teams-group-section .group {
-        flex: 0 0 100%;
-        width: 100%;
-        overflow: hidden;
-        /* ✅ نفس الإصلاح */
+.teams-group-section .group {
+        flex: 0 0 calc((100% - 24px) / 2);
+        width: calc((100% - 24px) / 2);
+        max-width: calc((100% - 24px) / 2);
+        padding: 28px;
+        overflow: hidden; /* ✅ أضف هذا */
     }
 
     /*  الأزرار على الحواف */
