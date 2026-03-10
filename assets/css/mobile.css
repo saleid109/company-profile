@@ -880,15 +880,19 @@
 
     /*الفوتر*/
 
-    .footer-container {
+    .site-footer .footer-container {
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-areas:
-            "brand brand brand"
-            "col1  col2  col3";
+            "brand brand"
+            "col1  col2"
+            "col3  .";
         gap: 24px 20px;
         padding: 30px 24px 40px;
         text-align: right;
+        align-items: start;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .brand-column {
@@ -898,7 +902,8 @@
         align-items: center;
         gap: 16px;
         padding-bottom: 20px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 100%;
     }
 
     .footer-logo {
@@ -914,10 +919,18 @@
         line-height: 1.7;
     }
 
-    /* توزيع الأعمدة الثلاثة صراحةً */
-    .footer-column:nth-child(2) { grid-area: col1; }
-    .footer-column:nth-child(3) { grid-area: col2; }
-    .footer-column:nth-child(4) { grid-area: col3; }
+    /* توزيع الأعمدة */
+    .footer-column:nth-child(2) {
+        grid-area: col1;
+    }
+
+    .footer-column:nth-child(3) {
+        grid-area: col2;
+    }
+
+    .footer-column:nth-child(4) {
+        grid-area: col3;
+    }
 
     .footer-column {
         text-align: right;
@@ -926,6 +939,15 @@
     .footer-column h4 {
         font-size: 15px;
         margin-bottom: 14px;
+        color: #f5c842;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+        font-size: 14px;
     }
 
     .social-links-footer {
@@ -935,6 +957,11 @@
     .contact-item {
         justify-content: flex-start;
         flex-direction: row-reverse;
+    }
+
+    .footer-bottom-bar {
+        font-size: 13px;
+        padding: 18px 24px;
     }
 
     /*زر الفتح التجريبي*/
@@ -958,7 +985,7 @@
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
-}
+    }
 
     /* 1. الحاوية الكبرى (Overlay) */
     .auth-overlay {
