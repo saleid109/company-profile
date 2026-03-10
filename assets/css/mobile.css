@@ -573,13 +573,10 @@
     }
 
     .footer-container {
-        display: flex;
+        display: flex !important;
+        /* ✅ إجبار flex */
         flex-direction: column;
-        /* ✅ عمود واحد تحت الآخر */
         align-items: center;
-        text-align: center;
-        gap: 32px;
-        padding: 0 20px 40px;
     }
 
     .brand-column {
@@ -826,31 +823,34 @@
 
     /*الفوتر*/
     .footer-container {
-        display: grid;
+        display: grid !important;
+        /* ✅ إجبار grid */
         grid-template-columns: 1fr 1fr;
-        /* ✅ عمودان متساويان */
         gap: 32px 24px;
         padding: 0 30px 40px;
         text-align: right;
     }
 
     .brand-column {
-        grid-column: span 2;
-        /* ✅ الشعار يأخذ السطر كاملاً */
+        grid-column: 1 / -1;
+        /* ✅ يمتد على كل الأعمدة */
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
+        /* ✅ RTL: نص يمين، شعار يسار */
         align-items: center;
         gap: 20px;
         text-align: right;
+        max-width: 100%;
     }
 
     .footer-logo {
-        width: 180px;
+        width: 160px;
+        flex-shrink: 0;
         margin: 0;
     }
 
-    .footer-column h4 {
-        font-size: 16px;
+    .footer-column {
+        text-align: right;
     }
 
     .social-links-footer {
