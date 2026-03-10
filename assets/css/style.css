@@ -2116,7 +2116,7 @@ html {
 .teams-group-section .container {
     max-width: 1442px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 .teams-group-section h2 {
@@ -2126,8 +2126,6 @@ html {
     font-weight: bold;
     text-align: center;
 }
-
-
 
 /* ← الحاوية الخارجية تحتوي الأزرار والـ wrapper */
 .teams-group-section .carousel-outer {
@@ -2192,8 +2190,6 @@ html {
     display: flex;
     flex-direction: column;
     overflow: hidden; /* ✅ أضف هذا */
-    box-sizing: border-box;
-
 }
 
 
