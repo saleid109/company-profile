@@ -504,6 +504,7 @@
 
 
     /*الفرق*/
+
     .teams-group-section {
         padding: 60px 0;
     }
@@ -520,13 +521,23 @@
     .teams-group-section .carousel-container {
         padding: 20px 50px;
         /* مساحة للأزرار */
+        display: flex;
+        /* التأكد من أن الحاوية تستخدم flexbox */
+        gap: 0;
+        /* لا توجد مسافة بين الكروت في عرض الجوال */
+        overflow-x: auto;
+        /* للسماح بالتمرير الأفقي */
+        scroll-snap-type: x mandatory;
+        /* لتحسين تجربة التمرير */
     }
 
-    /* ✅ الكرت يأخذ العرض كاملاً - بدون حسابات معقدة */
     .teams-group-section .group {
         flex: 0 0 100%;
+        /* الكرت يأخذ العرض كاملاً */
         width: 100%;
         padding: 20px;
+        scroll-snap-align: start;
+        /* لمحاذاة الكروت عند التمرير */
     }
 
     .teams-group-section .group h3 {
@@ -559,6 +570,14 @@
 
     .teams-group-section .nav-btn.next {
         right: 5px;
+    }
+
+    .footer-details {
+        gap: 8px;
+    }
+
+    .footer-details li {
+        font-size: 0.88em;
     }
 
     .footer-details {
@@ -768,29 +787,27 @@
 
 
     /*الفرق*/
-    .teams-group-section {
-        padding: 70px 0;
-    }
-
-    .teams-group-section .container {
-        padding: 0 24px;
-    }
-
-    .teams-group-section h2 {
-        font-size: 2.2em;
-        margin-bottom: 45px;
-    }
-
     .teams-group-section .carousel-container {
-        padding: 20px 60px;
-        /* مساحة للأزرار */
+        padding: 20px 0;
+        /* يمكن تعديل هذا إذا كانت هناك أزرار تنقل داخل الحاوية وتحتاج لمساحة */
+        display: flex;
+        /* التأكد من أن الحاوية تستخدم flexbox */
+        gap: 20px;
+        /* المسافة بين الكروت */
+        overflow-x: auto;
+        /* للسماح بالتمرير الأفقي إذا كان هناك المزيد من الكروت */
+        scroll-snap-type: x mandatory;
+        /* لتحسين تجربة التمرير */
     }
 
-    /* ✅ عرض كرتين مع طرح المسافة بينهما (20px) */
     .teams-group-section .group {
-        flex: 0 0 calc((100% - 20px) / 2);
-        width: calc((100% - 20px) / 2);
+        flex: 0 0 calc(50% - 10px);
+        /* عرض كرتين مع مسافة 20px بينهما (10px لكل جانب) */
+        width: calc(50% - 10px);
+        /* عرض كرتين مع مسافة 20px بينهما (10px لكل جانب) */
         padding: 24px;
+        scroll-snap-align: start;
+        /* لمحاذاة الكروت عند التمرير */
     }
 
     .teams-group-section .group h3 {

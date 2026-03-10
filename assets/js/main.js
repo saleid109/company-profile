@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!track || !prevBtn || !nextBtn || cards.length === 0) return;
 
     let currentIndex = 0;
-    const GAP = 20; // ✅ توحيد المسافة - يجب أن يتطابق مع CSS
+    const gap = 24; // يجب أن يتطابق مع CSS
 
     /**
      * حساب عدد البطاقات المرئية حسب عرض الشاشة
@@ -317,18 +317,30 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     function getVisibleCards() {
         const width = window.innerWidth;
-        if (width <= 767) return 1;       // جوال: بطاقة واحدة
-        if (width <= 1024) return 2;      // تابلت: بطاقتين
+        if (width < 768) return 1;        // جوال: بطاقة واحدة
+        if (width < 1024) return 2;       // تابلت: بطاقتين
         return 3;                         // ديسكتوب: 3 بطاقات
     }
 
     /**
-     * حساب عرض البطاقة الواحدة مع المسافة
+     * حساب المسافة بين البطاقات حسب عرض الشاشة
+     * @returns {number} المسافة بالبكسل
+     */
+    function getGap() {
+        const width = window.innerWidth;
+        if (width < 640) return 12;
+        if (width < 768) return 16;
+        if (width < 1024) return 20;
+        return 24;
+    }
+
+    /**
+     * حساب عرض البطاقة الواحدة
      * @returns {number} العرض بالبكسل
      */
     function getCardWidth() {
         if (cards.length === 0) return 0;
-        return cards[0].offsetWidth + GAP;
+        return cards[0].offsetWidth + getGap();
     }
 
     /**
@@ -364,8 +376,17 @@ document.addEventListener("DOMContentLoaded", () => {
         nextBtn.disabled = currentIndex <= 0;
 
         // إضافة visual feedback
-        prevBtn.style.opacity = prevBtn.disabled ? '0.3' : '1';
-        nextBtn.style.opacity = nextBtn.disabled ? '0.3' : '1';
+        if (prevBtn.disabled) {
+            prevBtn.style.opacity = '0.3';
+        } else {
+            prevBtn.style.opacity = '1';
+        }
+
+        if (nextBtn.disabled) {
+            nextBtn.style.opacity = '0.3';
+        } else {
+            nextBtn.style.opacity = '1';
+        }
     }
 
     /**
@@ -432,7 +453,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
 
     function handleSwipe() {
-        const swipeThreshold = 50;
+        const swipeThreshold = 50; // الحد الأدنى للسحب
         const diff = touchStartX - touchEndX;
 
         if (Math.abs(diff) < swipeThreshold) return;
@@ -479,6 +500,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(section);
 
 })();
+
 
 
 
