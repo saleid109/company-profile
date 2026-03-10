@@ -2198,6 +2198,7 @@ html {
 .teams-group-section .card-header {
     width: 100%;
     height: 160px;
+    flex-shrink: 0;        /*    — يمنع الضغط على الصورة */
     margin-bottom: 24px;
     background-color: #F9F9F9;
     border-radius: 15px;
