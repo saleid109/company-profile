@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = section.querySelector('.nav-btn.prev');
     const nextBtn = section.querySelector('.nav-btn.next');
     const cards = section.querySelectorAll('.group');
-    
+
     if (!track || !prevBtn || !nextBtn || cards.length === 0) return;
 
     let currentIndex = 0;
@@ -340,9 +340,11 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     function getCardWidth() {
     if (cards.length === 0) return 0;
-    
-    // ✅ استخدم getBoundingClientRect بدلاً من offsetWidth
+    // انتظر حتى يكتمل الرسم
     const rect = cards[0].getBoundingClientRect();
+    if (rect.width === 0) {
+        return cards[0].offsetWidth + getGap();
+    }
     return rect.width + getGap();
 }
 
@@ -352,8 +354,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateCarousel() {
         const visibleCards = getVisibleCards();
         const maxIndex = Math.max(0, cards.length - visibleCards);
-        
-        // التأكد من أن الـ index ضمن الحدود المسموحة
+
         if (currentIndex > maxIndex) {
             currentIndex = maxIndex;
         }
@@ -361,10 +362,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const cardWidth = getCardWidth();
         const offset = currentIndex * cardWidth;
 
-        // تطبيق الحركة (RTL: positive translateX)
+        // ✅ في RTL يجب أن يكون موجباً وليس سالباً
         track.style.transform = `translateX(${offset}px)`;
 
-        // تحديث حالة الأزرار
         updateButtons(maxIndex);
     }
 
@@ -398,7 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function goToPrev() {
         const visibleCards = getVisibleCards();
         const maxIndex = Math.max(0, cards.length - visibleCards);
-        
+
         if (currentIndex < maxIndex) {
             currentIndex++;
             updateCarousel();
@@ -479,7 +479,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // تشغيل التحديث عند التحميل
     window.addEventListener('load', updateCarousel);
     document.addEventListener('DOMContentLoaded', updateCarousel);
-    
+
     // تحديثات متعددة للتأكد من العرض الصحيح
     setTimeout(updateCarousel, 100);
     setTimeout(updateCarousel, 300);
