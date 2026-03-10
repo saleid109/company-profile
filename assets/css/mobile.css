@@ -529,6 +529,10 @@
 
     /*الفرق*/
 
+    .teams-group-section .carousel-wrapper {
+        padding: 10px 0;
+    }
+
     .teams-group-section .container {
         padding: 0 16px !important;
         /* مسافة أمان على الجوانب */
@@ -542,8 +546,9 @@
 
     .teams-group-section h2 {
         padding: 0 16px;
-        /* ✅ padding للعنوان فقط */
     }
+
+
 
     .teams-group-section .carousel-container {
         padding: 20px 0;
@@ -776,7 +781,7 @@
 
     /*الفرق*/
     .teams-group-section .container {
-        padding: 0 24px !important;
+        padding: 0 16px !important;
     }
 
     .teams-group-section .group {
@@ -784,7 +789,7 @@
         flex: 1 0 calc(50% - 12px);
         max-width: calc(50% - 12px);
     }
-}
+
 
 .teams-group-section h2 {
     padding: 0 10px;
