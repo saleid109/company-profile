@@ -2182,14 +2182,16 @@ html {
     background-color: #fff;
     border-radius: 20px;
     padding: 24px;
-    flex: 0 0 calc((100% - 48px) / 3); /* ✅ إصلاح العرض */
-    width: calc((100% - 48px) / 3);    /* ✅ تأكيد العرض */
+    flex: 0 0 calc((100% - 48px) / 3);
+    width: calc((100% - 48px) / 3);
     min-height: 420px;
     text-align: right;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* ✅ إصلاح بروز card-header */
+    overflow: hidden; /* ✅ أضف هذا */
+    box-sizing: border-box;
+
 }
 
 
