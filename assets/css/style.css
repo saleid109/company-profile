@@ -2182,8 +2182,8 @@ html {
     background-color: #fff;
     border-radius: 20px;
     padding: 24px;
-    flex: 0 0 calc(33.333% - 16px);
-    /* ← دائماً ثلث العرض */
+    flex: 0 0 calc((100% - 48px) / 3); /* ✅ إصلاح العرض */
+    width: calc((100% - 48px) / 3);    /* ✅ تأكيد العرض */
     min-height: 420px;
     text-align: right;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
