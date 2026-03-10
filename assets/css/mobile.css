@@ -548,7 +548,9 @@
         padding: 0 16px;
     }
 
-
+.teams-group-section .card-header {
+        height: 130px; /* ✅ أصغر قليلاً على الجوال */
+    }
 
     .teams-group-section .carousel-container {
         padding: 20px 0;
