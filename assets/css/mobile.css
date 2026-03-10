@@ -769,9 +769,9 @@
     }
 
     .teams-group-section .group {
-        flex: 0 0 calc((100% - 20px) / 2);
-        width: calc((100% - 20px) / 2);
-        max-width: calc((100% - 20px) / 2);
+       flex: 0 0 calc((100% - 24px) / 2);
+        width: calc((100% - 24px) / 2);
+        max-width: calc((100% - 24px) / 2);
         padding: 28px;
         /* ✅ padding داخلي أكبر */
     }
