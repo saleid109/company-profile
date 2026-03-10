@@ -339,9 +339,12 @@ document.addEventListener("DOMContentLoaded", () => {
      * @returns {number} العرض بالبكسل
      */
     function getCardWidth() {
-        if (cards.length === 0) return 0;
-        return cards[0].offsetWidth + getGap();
-    }
+    if (cards.length === 0) return 0;
+    
+    // ✅ استخدم getBoundingClientRect بدلاً من offsetWidth
+    const rect = cards[0].getBoundingClientRect();
+    return rect.width + getGap();
+}
 
     /**
      * تحديث موضع الـ Carousel

@@ -450,7 +450,8 @@ html {
 /*  الصورة الخلفية */
 .hero-section {
     position: relative;
-    height: 100vh; /* ملء الشاشة بالكامل */
+    height: 100vh;
+    /* ملء الشاشة بالكامل */
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -468,7 +469,8 @@ html {
 .hero-bg video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* يمنع تشوه الفيديو ويجعله يملأ المساحة */
+    object-fit: cover;
+    /* يمنع تشوه الفيديو ويجعله يملأ المساحة */
 }
 
 /* طبقة تظليل خفيفة لجعل النص الذهبي والأبيض يبرز */
@@ -486,6 +488,7 @@ html {
     z-index: 2;
     color: var(--color-white);
 }
+
 /* تنسيق النصوص */
 .hero-content h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
@@ -1969,6 +1972,7 @@ html {
     text-align: center;
     direction: rtl;
 }
+
 /* ===== الحاوية ===== */
 .team-container {
     width: 100%;
@@ -2041,6 +2045,7 @@ html {
     border: 5px solid #f2f3f7;
     background: #dde1ea;
 }
+
 /* --- حاوية الصورة الرمزية --- */
 .team-avatar .avatar-placeholder {
     width: 100%;
@@ -2063,6 +2068,7 @@ html {
     font-weight: 700;
     color: #1B2D45;
 }
+
 /* ===== الدور الوظيفي ===== */
 .team-role {
     font-size: 14px;
@@ -2090,6 +2096,7 @@ html {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     transform: scale(1.05);
 }
+
 /* حالة التعطيل للزر */
 .team-btn:disabled {
     opacity: 0.35;
