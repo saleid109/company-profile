@@ -867,44 +867,47 @@
     }
 
     /*الفوتر*/
+
     .footer-container {
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr);  /* ✅ 3 أعمدة */
-        grid-template-rows: auto auto;
-        gap: 30px 20px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "brand brand brand"
+            "col1  col2  col3";
+        gap: 24px 20px;
         padding: 30px 24px 40px;
         text-align: right;
-        align-items: start;
     }
 
-    /* الشعار يمتد فوق الـ 3 أعمدة */
     .brand-column {
-        grid-column: 1 / -1;     /* ✅ يمتد كامل العرض */
-        grid-row: 1;
+        grid-area: brand;
         display: flex;
-        flex-direction: row;      /* ✅ شعار + نص جنباً لجنب */
+        flex-direction: row;
         align-items: center;
         gap: 16px;
-        max-width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
         padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .footer-logo {
-        width: 120px;
+        width: 110px;
         flex-shrink: 0;
         margin: 0;
     }
 
     .brand-text {
-        font-size: 14px;
+        font-size: 13px;
         opacity: 0.85;
         text-align: right;
+        line-height: 1.7;
     }
 
-    /* الأعمدة الثلاثة في السطر الثاني */
+    /* توزيع الأعمدة الثلاثة صراحةً */
+    .footer-column:nth-child(2) { grid-area: col1; }
+    .footer-column:nth-child(3) { grid-area: col2; }
+    .footer-column:nth-child(4) { grid-area: col3; }
+
     .footer-column {
-        grid-row: 2;
         text-align: right;
     }
 
@@ -919,6 +922,7 @@
 
     .contact-item {
         justify-content: flex-start;
+        flex-direction: row-reverse;
     }
 
     /*زر الفتح التجريبي*/
