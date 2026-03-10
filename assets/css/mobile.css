@@ -583,76 +583,43 @@
 
 
     /* الفوتر -  */
-
-.site-footer {
-        padding-top: 30px;
-    }
-
     .footer-container {
-        padding: 15px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "brand"
+            "col1"
+            "col2"
+            "col3";
         gap: 0;
+        padding: 20px 16px 10px;
     }
 
     .brand-column {
-        width: 100%;
-        padding-bottom: 15px;
-        margin-bottom: 0;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        align-items: flex-end;
     }
 
     .footer-logo {
         width: 120px;
-        margin-bottom: 10px;
-    }
-
-    .brand-text {
-        font-size: 13px;
-        line-height: 1.7;
     }
 
     .social-links-footer {
-        margin-top: 12px;
-        gap: 10px;
-    }
-
-    .social-links-footer a {
-        width: 44px;
-        height: 44px;
-        font-size: 18px;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 14px;
     }
 
     .footer-column {
-        width: 100%;
-        padding: 15px 0;
-    }
-
-    .footer-column h4 {
-        font-size: 15px;
-        margin-bottom: 12px;
-    }
-
-    .footer-column ul li {
-        margin-bottom: 10px;
-    }
-
-    .footer-column ul li a {
-        font-size: 13px;
+        padding: 18px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: right;
     }
 
     .contact-item {
-        font-size: 13px;
-        margin-bottom: 10px;
-        gap: 8px;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
     }
-
-    .contact-item i {
-        font-size: 15px;
-    }
-
-    .footer-bottom-bar {
-        font-size: 11px;
-        padding: 15px;
-    }
-
 
 
     /* زر الفتح التجريبي */
@@ -859,85 +826,14 @@
     }
 
     /*الفوتر*/
-
-    .site-footer {
-        padding-top: 40px;
-    }
-
     .footer-container {
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
             "brand brand"
-            "col1 col2"
-            "col3 col3";
-        gap: 30px 25px;
-        padding: 0 30px 30px;
-    }
-
-    .brand-column {
-        grid-area: brand;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 20px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        max-width: 100%;
-    }
-
-    .footer-logo {
-        width: 140px;
-        margin: 0;
-        flex-shrink: 0;
-    }
-
-    .brand-text {
-        font-size: 13px;
-        line-height: 1.7;
-        margin: 0;
-        max-width: none;
-        flex: 1;
-    }
-
-    /* توزيع الأعمدة */
-    .footer-column:nth-child(2) {
-        grid-area: col1;
-    }
-
-    .footer-column:nth-child(3) {
-        grid-area: col2;
-    }
-
-    .footer-column:nth-child(4) {
-        grid-area: col3;
-    }
-
-    .footer-column h4 {
-        font-size: 15px;
-        margin-bottom: 15px;
-    }
-
-    .footer-column ul li a {
-        font-size: 13px;
-    }
-
-    .contact-item {
-        font-size: 13px;
-    }
-
-    .social-links-footer {
-        gap: 10px;
-    }
-
-    .social-links-footer a {
-        width: 34px;
-        height: 34px;
-        font-size: 15px;
-    }
-
-    .footer-bottom-bar {
-        font-size: 12px;
-        padding: 18px;
+            "col1  col2"
+            "col3  col3";
+        gap: 24px;
+        padding: 24px 20px 30px;
     }
 
     /*زر الفتح التجريبي*/
