@@ -505,22 +505,35 @@
 
 
     /*الفرق*/
-.teams-group-section .carousel-container {
-        padding: 20px 0; /*  بدون padding جانبي */
+
+    .teams-group-section .container {
+        padding: 0 !important;
+        /* ✅ إلغاء الـ padding تماماً */
     }
-    
+
+    .teams-group-section h2 {
+        padding: 0 16px;
+        /* ✅ padding للعنوان فقط */
+    }
+
+    .teams-group-section .carousel-container {
+        padding: 20px 0;
+        /*  بدون padding جانبي */
+    }
+
     .teams-group-section .group {
         flex: 0 0 100%;
         width: 100%;
         max-width: 100%;
-        padding: 24px; /*  padding داخلي أكبر */
+        padding: 24px;
+        /*  padding داخلي أكبر */
     }
-    
+
     /*  الأزرار على الحواف */
     .teams-group-section .nav-btn.prev {
         left: -5px;
     }
-    
+
     .teams-group-section .nav-btn.next {
         right: -5px;
     }
@@ -740,22 +753,34 @@
 
 
     /*الفرق*/
-.teams-group-section .carousel-container {
-        padding: 20px 0; /* ✅ بدون padding جانبي */
+    .teams-group-section .container {
+        padding: 0 10px !important;
+        /* ✅ الحد الأدنى */
     }
-    
+
+    .teams-group-section h2 {
+        padding: 0 10px;
+        /* ✅ padding للعنوان فقط */
+    }
+
+    .teams-group-section .carousel-container {
+        padding: 20px 0;
+        /* ✅ بدون padding جانبي */
+    }
+
     .teams-group-section .group {
         flex: 0 0 calc((100% - 20px) / 2);
         width: calc((100% - 20px) / 2);
         max-width: calc((100% - 20px) / 2);
-        padding: 28px; /* ✅ padding داخلي أكبر */
+        padding: 28px;
+        /* ✅ padding داخلي أكبر */
     }
-    
+
     /* ✅ الأزرار على الحواف */
     .teams-group-section .nav-btn.prev {
         left: -10px;
     }
-    
+
     .teams-group-section .nav-btn.next {
         right: -10px;
     }
@@ -767,6 +792,7 @@
     .footer-details li {
         font-size: 0.88em;
     }
+
     /*الفوتر*/
     .footer-container {
         display: grid;
