@@ -524,9 +524,8 @@
     .teams-group-section .group {
         flex: 0 0 100%;
         width: 100%;
-        max-width: 100%;
-        padding: 24px;
-        /*  padding داخلي أكبر */
+        overflow: hidden;
+        /* ✅ نفس الإصلاح */
     }
 
     /*  الأزرار على الحواف */
@@ -770,10 +769,10 @@
 
     .teams-group-section .group {
         flex: 0 0 calc((100% - 24px) / 2);
+        /* gap واحد بين كارتين */
         width: calc((100% - 24px) / 2);
-        max-width: calc((100% - 24px) / 2);
-        padding: 28px;
-        /* ✅ padding داخلي أكبر */
+        overflow: hidden;
+        /* ✅ نفس الإصلاح */
     }
 
     /* ✅ الأزرار على الحواف */
