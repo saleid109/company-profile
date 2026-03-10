@@ -351,23 +351,28 @@ document.addEventListener("DOMContentLoaded", () => {
     /**
      * تحديث موضع الـ Carousel
      */
-    function updateCarousel() {
-        const visibleCards = getVisibleCards();
-        const maxIndex = Math.max(0, cards.length - visibleCards);
+function updateCarousel() {
+    const visibleCards = getVisibleCards();
+    const maxIndex = Math.max(0, cards.length - visibleCards);
 
-        if (currentIndex > maxIndex) {
-            currentIndex = maxIndex;
-        }
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
 
-        const cardWidth = getCardWidth();
-        const offset = currentIndex * cardWidth;
+    // ✅ احسب العرض من الـ wrapper وليس من الكارت
+    const wrapperWidth = track.parentElement.getBoundingClientRect().width;
+    const currentGap = getGap();
+    const cardW = (wrapperWidth - (currentGap * (visibleCards - 1))) / visibleCards;
+    
+    // ✅ اضبط عرض كل كارت صراحةً
+    cards.forEach(card => {
+        card.style.width = cardW + 'px';
+        card.style.flex = `0 0 ${cardW}px`;
+    });
 
-        // ✅ في RTL يجب أن يكون موجباً وليس سالباً
-        track.style.transform = `translateX(${offset}px)`;
+    const offset = currentIndex * (cardW + currentGap);
+    track.style.transform = `translateX(${offset}px)`;
 
-        updateButtons(maxIndex);
-    }
-
+    updateButtons(maxIndex);
+}
     /**
      * تحديث حالة أزرار التنقل
      * @param {number} maxIndex - أقصى index مسموح
