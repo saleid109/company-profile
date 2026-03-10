@@ -2263,14 +2263,15 @@ html {
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    /* توزيع الأعمدة بمسافات تلقائية */
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-areas: "brand col1 col2 col3";
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px 40px;
-    flex-wrap: wrap;
-    /* لضمان التجاوب في الشاشات الصغيرة */
+    gap: 40px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 /* التحكم في حجم الشعار */
@@ -2282,10 +2283,10 @@ html {
 }
 
 /*  لعمود الشعار لضمان المحاذاة */
-.brand-column {
-    max-width: 350px;
-    /* لمنع النص من التمدد بشكل عرضي كبير */
-}
+.brand-column  { grid-area: brand; }
+.footer-column:nth-child(2) { grid-area: col1; }
+.footer-column:nth-child(3) { grid-area: col2; }
+.footer-column:nth-child(4) { grid-area: col3; }
 
 .footer-column h4 {
     color: #f5c842;
