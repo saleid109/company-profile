@@ -584,16 +584,15 @@
 
     /* الفوتر -  */
 
-    .site-footer {
-        padding-top: 30px;
+  .site-footer {
+        padding-top: 40px;
     }
 
     .footer-container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 0 !important;
-        padding: 20px 20px 10px !important;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 0 20px 20px;
     }
 
     /* عمود الشعار */
@@ -601,75 +600,118 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: flex-start;
         text-align: right;
-        padding-bottom: 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        max-width: 100%;
+        padding-bottom: 25px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        margin-bottom: 5px;
     }
 
     .footer-logo {
-        width: 120px;
-        margin: 0 0 12px 0;
+        width: 130px;
+        margin-bottom: 15px;
     }
 
     .brand-text {
         font-size: 13px;
         line-height: 1.8;
-        opacity: 0.8;
-        text-align: right;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 0;
+        max-width: 100%;
     }
 
-    /* أيقونات التواصل */
     .social-links-footer {
-        display: flex !important;
-        justify-content: flex-end;
-        gap: 18px;
-        margin-top: 14px;
+        display: flex;
+        justify-content: flex-start;
+        gap: 12px;
+        margin-top: 18px;
     }
 
     .social-links-footer a {
-        font-size: 20px;
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        transition: all 0.3s;
     }
 
-    /* الأعمدة */
+    .social-links-footer a:hover {
+        background: #f5c842;
+        color: #00025B;
+    }
+
+    /* الأعمدة الأخرى */
     .footer-column {
         width: 100%;
         text-align: right;
-        padding: 18px 0;
+        padding: 20px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-column:last-of-type {
+        border-bottom: none;
     }
 
     .footer-column h4 {
         font-size: 15px;
-        margin-bottom: 12px;
+        margin-bottom: 15px;
         color: #f5c842;
+        font-weight: 700;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
     .footer-column ul li {
-        margin-bottom: 10px;
-        text-align: right;
+        margin-bottom: 12px;
     }
 
     .footer-column ul li a {
         font-size: 14px;
-        opacity: 0.8;
-        display: flex;
-        justify-content: flex-end;
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        display: block;
+        transition: all 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+        color: #f5c842;
+        padding-right: 5px;
     }
 
     /* تواصل معنا */
     .contact-item {
-        justify-content: flex-end;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
         font-size: 14px;
-        gap: 8px;
-        flex-direction: row-reverse;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 12px;
+        direction: rtl;
+    }
+
+    .contact-item i {
+        color: #f5c842;
+        font-size: 16px;
+        order: 2;
     }
 
     /* شريط الحقوق */
     .footer-bottom-bar {
         font-size: 12px;
-        padding: 15px 10px;
+        padding: 18px 10px;
+        margin-top: 10px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
     }
 
 
@@ -880,43 +922,43 @@
 
     /*الفوتر*/
 
-    .site-footer .footer-container {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr);
+    .site-footer {
+        padding-top: 40px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
             "brand brand"
-            "col1  col2"
-            "col3  .";
-        gap: 24px 20px;
-        padding: 30px 24px 40px;
-        text-align: right;
-        align-items: start;
-        width: 100%;
-        box-sizing: border-box;
+            "col1 col2"
+            "col3 col3";
+        gap: 30px 25px;
+        padding: 0 30px 30px;
     }
 
     .brand-column {
         grid-area: brand;
         display: flex;
         flex-direction: row;
-        align-items: center;
-        gap: 16px;
-        padding-bottom: 20px;
+        align-items: flex-start;
+        gap: 20px;
+        padding-bottom: 25px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         max-width: 100%;
     }
 
     .footer-logo {
-        width: 110px;
-        flex-shrink: 0;
+        width: 140px;
         margin: 0;
+        flex-shrink: 0;
     }
 
     .brand-text {
         font-size: 13px;
-        opacity: 0.85;
-        text-align: right;
         line-height: 1.7;
+        margin: 0;
+        max-width: none;
+        flex: 1;
     }
 
     /* توزيع الأعمدة */
@@ -932,36 +974,32 @@
         grid-area: col3;
     }
 
-    .footer-column {
-        text-align: right;
-    }
-
     .footer-column h4 {
         font-size: 15px;
-        margin-bottom: 14px;
-        color: #f5c842;
-    }
-
-    .footer-column ul li {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     .footer-column ul li a {
-        font-size: 14px;
-    }
-
-    .social-links-footer {
-        justify-content: flex-start;
+        font-size: 13px;
     }
 
     .contact-item {
-        justify-content: flex-start;
-        flex-direction: row-reverse;
+        font-size: 13px;
+    }
+
+    .social-links-footer {
+        gap: 10px;
+    }
+
+    .social-links-footer a {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
     }
 
     .footer-bottom-bar {
-        font-size: 13px;
-        padding: 18px 24px;
+        font-size: 12px;
+        padding: 18px;
     }
 
     /*زر الفتح التجريبي*/
