@@ -524,12 +524,20 @@
     }
 
     .teams-group-section .group {
+        flex: 0 0 100%;
         width: calc((100% - 20px) / 2);
         flex-shrink: 0;
         min-width: 0;
         padding: 24px;
         box-sizing: border-box;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .teams-group-section .carousel-outer {
+        flex-direction: column;
+    }
+    .teams-group-section .nav-btn {
+        display: none; /* أو اجعلها تظهر في الأسفل */
     }
 
     .teams-group-section .group h3 {
