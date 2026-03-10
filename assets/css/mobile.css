@@ -520,12 +520,11 @@
         padding: 20px 0;
         /*  بدون padding جانبي */
     }
-
 .teams-group-section .group {
-        flex: 0 0 calc((100% - 24px) / 2);
-        width: calc((100% - 24px) / 2);
-        max-width: calc((100% - 24px) / 2);
-        padding: 28px;
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        padding: 24px;
         overflow: hidden; /* ✅ أضف هذا */
     }
 
@@ -768,12 +767,12 @@
         /* ✅ بدون padding جانبي */
     }
 
-    .teams-group-section .group {
+.teams-group-section .group {
         flex: 0 0 calc((100% - 24px) / 2);
-        /* gap واحد بين كارتين */
         width: calc((100% - 24px) / 2);
-        overflow: hidden;
-        /* ✅ نفس الإصلاح */
+        max-width: calc((100% - 24px) / 2);
+        padding: 28px;
+        overflow: hidden; /* ✅ أضف هذا */
     }
 
     /* ✅ الأزرار على الحواف */
