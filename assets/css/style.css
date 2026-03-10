@@ -2256,10 +2256,10 @@ html {
 .site-footer {
     background-color: var(--color-secondary);
     /* اللون الداكن جداً من التصميم */
-    color: #ffffff;
+    color: var(--color-white);
     direction: rtl;
     padding-top: 50px;
-    font-family: 'Cairo', sans-serif;
+    font-family: var(--font-main);
 }
 
 .footer-container {
@@ -2303,7 +2303,7 @@ html {
 }
 
 .footer-column ul li a {
-    color: #ffffff;
+    color: var(--color-white);
     text-decoration: none;
     font-size: 14px;
     opacity: 0.8;
@@ -2406,7 +2406,7 @@ html {
 .auth-brand {
     width: 210px;
     flex-shrink: 0;
-    background: #00025B;
+    background: var(--color-secondary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2449,7 +2449,7 @@ html {
 
 .auth-brand-name {
     color: #fff;
-    font-family: 'Tajawal', sans-serif;
+    font-family: var(--font-main);
     font-size: 17px;
     font-weight: 800;
     margin-bottom: 5px;
@@ -2458,12 +2458,12 @@ html {
 }
 
 .auth-brand-name span {
-    color: #FFCC35;
+    color: var(--color-accent);
 }
 
 .auth-brand-sub {
     color: rgba(255, 255, 255, .48);
-    font-family: 'Tajawal', sans-serif;
+    font-family:var(--font-main);
     font-size: 11px;
     line-height: 1.7;
     position: relative;
@@ -2492,7 +2492,7 @@ html {
     border-radius: 50%;
     border: none;
     background: rgba(0, 2, 91, .07);
-    color: #00025B;
+    color: var(--color-secondary);
     font-size: 13px;
     cursor: pointer;
     display: flex;
@@ -2520,7 +2520,7 @@ html {
     background: none;
     border: none;
     padding: 9px 0;
-    font-family: 'Tajawal', sans-serif;
+    font-family:var(--font-main);
     font-size: 14px;
     font-weight: 700;
     color: #999;
@@ -2536,12 +2536,12 @@ html {
     right: 0;
     width: 0;
     height: 2px;
-    background: #00025B;
+    background: var(--color-secondary);
     transition: width .3s;
 }
 
 .auth-tab.active {
-    color: #00025B;
+    color: var(--color-secondary);
 }
 
 .auth-tab.active::after {
@@ -2559,10 +2559,10 @@ html {
 }
 
 .auth-title {
-    font-family: 'Tajawal', sans-serif;
+    font-family:var(--font-main);
     font-size: 19px;
     font-weight: 800;
-    color: #00025B;
+    color: var(--color-secondary);
     margin-bottom: 3px;
 }
 
@@ -2580,10 +2580,10 @@ html {
 
 .form-group label {
     display: block;
-    font-family: 'Tajawal', sans-serif;
+    font-family:var(--font-main);
     font-size: 12px;
     font-weight: 700;
-    color: #00025B;
+    color: var(--color-secondary);
     margin-bottom: 5px;
 }
 
@@ -2607,18 +2607,18 @@ html {
     border: 1.5px solid rgba(0, 2, 91, .11);
     border-radius: 9px;
     padding: 0 36px 0 11px;
-    font-family: 'Tajawal', sans-serif;
+    font-family:var(--font-main);
     font-size: 13px;
     color: #181A2A;
-    background: #F5F5F5;
+    background: var(--color-bg-light);
     outline: none;
     transition: border-color .25s, box-shadow .25s, background .25s;
     direction: rtl;
 }
 
 .input-wrap input:focus {
-    border-color: #00025B;
-    background: #fff;
+    border-color: var(--color-secondary);
+    background: var(--color-white);
     box-shadow: 0 0 0 3px rgba(0, 2, 91, .07);
 }
 
@@ -2676,7 +2676,7 @@ html {
     position: absolute;
     width: 16px;
     height: 16px;
-    background: white;
+    background: var(--color-white);
     border-radius: 50%;
     top: 3px;
     right: 3px;
@@ -2687,7 +2687,7 @@ html {
 
 /* عند التفعيل */
 .toggle-switch input:checked+.toggle-track {
-    background: #00025B;
+    background: var(--color-secondary);
 }
 
 .toggle-switch input:checked+.toggle-track::before {
@@ -2699,24 +2699,24 @@ html {
     font-family: 'Tajawal', sans-serif;
     font-size: 12px;
     font-weight: 700;
-    color: #00025B;
+    color: var(--color-secondary);
     text-decoration: none;
     transition: color .2s;
 }
 
 .forgot-link:hover {
-    color: #FFCC35;
+    color: var(--color-primary);
 }
 
 /* زر إرسال */
 .auth-submit {
     width: 100%;
     height: 46px;
-    background: #00025B;
-    color: #fff;
+    background: var(--color-secondary);
+    color: var(--color-white);
     border: none;
     border-radius: 10px;
-    font-family: 'Tajawal', sans-serif;
+    font-family:var(--font-main);
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
@@ -2735,7 +2735,7 @@ html {
     content: '';
     position: absolute;
     inset: 0;
-    background: #FFCC35;
+    background: var(--color-primary);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform .35s;
@@ -2746,7 +2746,7 @@ html {
 }
 
 .auth-submit:hover {
-    color: #00025B;
+    color: var(--color-secondary);
     box-shadow: 0 5px 18px rgba(255, 204, 53, .35);
 }
 
@@ -2771,12 +2771,12 @@ html {
     font-family: 'Tajawal', sans-serif;
     font-size: 12px;
     font-weight: 700;
-    color: #00025B;
+    color: var(--color-secondary);
     cursor: pointer;
     text-decoration: underline;
     transition: color .2s;
 }
 
 .auth-switch button:hover {
-    color: #FFCC35;
+    color: var(--color-primary);
 }
