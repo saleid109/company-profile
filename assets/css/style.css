@@ -2262,13 +2262,9 @@ html {
     font-family: 'Cairo', 'Tajawal', sans-serif;
 }
 
-/* =========================================================
-    الديسكتوب (الافتراضي) - 1025px فما فوق ✅
-========================================================= */
-
 .footer-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* ✅ 4 أعمدة متساوية */
+    grid-template-columns: repeat(4, 1fr); /*   أعمدة متساوية */
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
