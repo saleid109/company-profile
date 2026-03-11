@@ -485,34 +485,42 @@
         font-size: 0.88em;
     }
 
-    /* ===== الفوتر - جوال ===== */
-    .site-footer {
-        padding-top: 30px;
+    /* ===== الفوتر  ===== */
+ .site-footer {
+        padding-top: 40px;
     }
 
     .footer-container {
-        display: flex !important;
+        display: flex; /* ✅ Flex للجوال فقط */
         flex-direction: column;
-        padding: 0;
         gap: 0;
-        width: 100%;
+        padding: 0 20px 25px;
     }
 
-    .footer-column {
-        width: 100%;
-        padding: 18px 16px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        border-right: none;
-        box-sizing: border-box;
-    }
-
+    /* إعادة ترتيب: اللوجو أولاً */
     .brand-column {
-        padding: 18px 16px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        order: 1;
+        width: 100%;
+        padding: 20px 0 25px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        margin-bottom: 5px;
+    }
+
+    .footer-column:nth-child(2) {
+        order: 2;
+    }
+
+    .footer-column:nth-child(3) {
+        order: 3;
+    }
+
+    .footer-column:nth-child(4) {
+        order: 4;
     }
 
     .footer-logo {
         width: 120px;
+        margin-bottom: 15px;
     }
 
     .brand-text {
@@ -520,21 +528,37 @@
         line-height: 1.7;
     }
 
+    .footer-column {
+        width: 100%;
+        text-align: right;
+        padding: 22px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-column:last-of-type {
+        border-bottom: none;
+    }
+
     .footer-column h4 {
-        font-size: 15px;
-        margin-bottom: 12px;
+        font-size: 16px;
+        margin-bottom: 16px;
     }
 
     .footer-column ul li {
-        margin-bottom: 10px;
+        margin-bottom: 13px;
     }
 
     .footer-column ul li a {
-        font-size: 13px;
+        font-size: 14px;
+    }
+
+    .contact-item {
+        font-size: 14px;
+        margin-bottom: 13px;
     }
 
     .social-links-footer {
-        gap: 10px;
+        margin-top: 20px;
     }
 
     .social-links-footer a {
@@ -543,17 +567,14 @@
         font-size: 18px;
     }
 
-    .contact-item {
-        font-size: 13px;
-        margin-bottom: 10px;
-        gap: 8px;
-    }
-
     .footer-bottom-bar {
-        font-size: 11px;
-        padding: 15px 16px;
+        font-size: 12px;
+        padding: 20px 10px;
+        margin-top: 15px;
     }
 
+
+    /*زرالتسجيل  */
     .demo-fab {
         bottom: 20px;
         right: 20px;
