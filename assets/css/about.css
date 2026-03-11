@@ -37,7 +37,7 @@
     /* يمنع تشوه الفيديو ويجعله يملأ المساحة */
 }
 
-/* طبقة تظليل خفيفة لجعل النص الذهبي والأبيض يبرز */
+/* طبقة تظليل  */
 .video-overlay {
     position: absolute;
     top: 0;
@@ -154,6 +154,100 @@
   height: auto;
 }
 
+/* ========== قسم قيمنا ========== */
+.values-section {
+  padding: 80px 0;
+  background: var(--color-bg-light);
+}
+
+.values-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ===== النص ===== */
+.values-text h2 {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+}
+
+.values-text p {
+  font-size: 15px;
+  color: var(--color-gray-text);
+  line-height: 1.9;
+}
+
+/* ===== الدوائر ===== */
+.venn-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+}
+
+.venn-circle {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+/* المسؤولية المجتمعية - أعلى يمين */
+.venn-social {
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 2, 91, 0.85);
+  color: var(--color-white);
+  top: 0;
+  right: 20px;
+}
+
+/* الاحترافية - أعلى يسار */
+.venn-prof {
+  width: 130px;
+  height: 130px;
+  background: rgba(0, 2, 91, 0.65);
+  color: var(--color-white);
+  top: 20px;
+  left: 10px;
+}
+
+/* التمكين - يمين وسط */
+.venn-enable {
+  width: 120px;
+  height: 120px;
+  background: rgba(0, 2, 91, 0.5);
+  color: var(--color-white);
+  top: 100px;
+  right: 0;
+}
+
+/* الابتكار - المركز الذهبي */
+.venn-innovation {
+  width: 150px;
+  height: 150px;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  font-size: 16px;
+  font-weight: 900;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  box-shadow: 0 8px 24px rgba(255, 204, 53, 0.4);
+}
+
+
+
 /* ===== الجوال ===== */
 @media (max-width: 768px) {
   .intro-grid {
@@ -166,5 +260,14 @@
 
   .vm-cards {
     grid-template-columns: 1fr;
+  }
+
+  .values-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .venn-wrapper {
+    width: 260px;
+    height: 260px;
   }
 }
