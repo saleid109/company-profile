@@ -583,7 +583,7 @@
 
 
     /* الفوتر -  */
-.site-footer {
+    .site-footer {
         padding-top: 30px;
     }
 
@@ -849,7 +849,7 @@
     }
 
     /*الفوتر*/
-.site-footer {
+    .site-footer {
         padding-top: 35px;
     }
 
@@ -1097,7 +1097,7 @@
 
     .footer-container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 2fr 1fr 1fr 1fr;
         gap: 0;
         padding: 0;
         width: 100%;
