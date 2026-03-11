@@ -2256,42 +2256,71 @@ html {
 /*========-قسم تذييل الصفحة -footer=========*/
 .site-footer {
     background-color: #00025B;
-    color: rgba(255, 255, 255, 0.85);
-    padding-top: 40px;
-    width: 100%;
-    overflow: visible;
+    color: #ffffff;
+    direction: rtl;
+    padding-top: 60px;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
 }
+
+/* =========================================================
+    الديسكتوب (الافتراضي) - 1025px فما فوق ✅
+========================================================= */
 
 .footer-container {
-    width: 100%;
-    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* ✅ 4 أعمدة متساوية */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 40px;
+}
+
+/* ترتيب الأعمدة من اليمين لليسار */
+.brand-column {
+    order: 1; /* أقصى اليمين */
+}
+
+.footer-column:nth-child(2) {
+    order: 2; /* روابط سريعة */
+}
+
+.footer-column:nth-child(3) {
+    order: 3; /* نقطة صعود */
+}
+
+.footer-column:nth-child(4) {
+    order: 4; /* تواصل معنا */
+}
+
+/* عمود اللوجو */
+.brand-column {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    padding: 0;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    width: 160px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.brand-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    line-height: 1.8;
     margin: 0;
-    box-sizing: border-box;
 }
 
-.footer-column {
-    width: 100%;
-    text-align: right;
-    padding: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-sizing: border-box;
-}
-
-.footer-column:last-child {
-    border-bottom: none;
-}
-
+/* عناوين الأعمدة */
 .footer-column h4 {
-    font-size: 16px;
-    margin: 0 0 15px 0;
     color: #f5c842;
+    font-size: 18px;
+    margin-bottom: 20px;
     font-weight: 700;
 }
 
+/* القوائم */
 .footer-column ul {
     list-style: none;
     padding: 0;
@@ -2299,65 +2328,58 @@ html {
 }
 
 .footer-column ul li {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .footer-column ul li a {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .footer-column ul li a:hover {
     color: #f5c842;
+    transform: translateX(-3px);
 }
 
-/* عمود الشعار */
-.brand-column {
-    padding: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.logo-wrapper {
+/* معلومات التواصل */
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
     margin-bottom: 15px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    direction: rtl; /* ✅ RTL للعربية */
 }
 
-.footer-logo {
-    width: 140px;
-    height: auto;
-    display: block;
+.contact-item i {
+    color: #f5c842;
+    font-size: 16px;
+    order: 2; /* الأيقونة على اليمين */
 }
 
-.brand-text {
-    font-size: 14px;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 0 15px 0;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-/* أيقونات التواصل */
+/* أيقونات التواصل الاجتماعي */
 .social-links-footer {
     display: flex;
-    justify-content: flex-start;
     gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 .social-links-footer a {
     width: 38px;
     height: 38px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     color: #ffffff;
+    font-size: 16px;
     transition: all 0.3s;
-    text-decoration: none;
 }
 
 .social-links-footer a:hover {
@@ -2366,37 +2388,20 @@ html {
     transform: translateY(-3px);
 }
 
-/* عنصر التواصل */
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 12px;
-    justify-content: flex-start;
-    direction: ltr;
-}
-
-.contact-item i {
-    color: #f5c842;
-    font-size: 16px;
-}
-
-/* شريط الحقوق */
+/* شريط الحقوق السفلي */
 .footer-bottom-bar {
-    font-size: 12px;
-    padding: 20px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.6);
+    padding: 25px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    width: 100%;
-    box-sizing: border-box;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 30px;
 }
 
 .footer-bottom-bar p {
     margin: 0;
 }
+
 
 /*=========================================*/
 /*==================== نهاية ملف CSS ====================*/
