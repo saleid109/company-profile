@@ -583,6 +583,7 @@
 
 
     /* الفوتر -  */
+
     .site-footer {
         padding-top: 30px;
     }
@@ -626,6 +627,10 @@
 
     .footer-column ul li a {
         font-size: 13px;
+    }
+
+    .social-links-footer {
+        gap: 10px;
     }
 
     .social-links-footer a {
@@ -822,16 +827,16 @@
 
     .teams-group-section h2 {
         padding: 0 10px;
-        /* ✅ padding للعنوان فقط */
+        /*  padding للعنوان فقط */
     }
 
     .teams-group-section .carousel-container {
         padding: 20px 0;
-        /* ✅ بدون padding جانبي */
+        /*  بدون padding جانبي */
     }
 
 
-    /* ✅ الأزرار على الحواف */
+    /*  الأزرار على الحواف */
     .teams-group-section .nav-btn.prev {
         left: -10px;
     }
@@ -1090,69 +1095,38 @@
     }
 }
 
-@media (min-width: 1025px) {
-    .site-footer {
-        padding-top: 50px;
-    }
+/* ============================================ حلول الأمان والاستقرار
+   ============================================ */
 
+/* منع الاختفاء والاقتصاص */
+.site-footer,
+.footer-container,
+.footer-column,
+.brand-column {
+    visibility: visible;
+    display: block;
+}
+
+@media (min-width: 768px) {
     .footer-container {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 0;
-        padding: 0;
-        width: 100%;
-        max-width: 100%;
     }
+}
 
-    .footer-column {
-        padding: 30px;
-        border-bottom: none;
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
-        width: 100%;
-        box-sizing: border-box;
-    }
+/* منع قطع النصوص */
+.brand-text,
+.contact-item,
+.footer-column h4,
+.footer-column ul li a {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
-    .footer-column:last-child {
-        border-right: none;
-    }
-
-    .brand-column {
-        padding: 30px;
-        border-bottom: none;
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-logo {
-        width: 150px;
-    }
-
-    .brand-text {
-        font-size: 14px;
-        line-height: 1.8;
-    }
-
-    .footer-column h4 {
-        font-size: 16px;
-        margin-bottom: 15px;
-    }
-
-    .footer-column ul li {
-        margin-bottom: 12px;
-    }
-
-    .footer-column ul li a {
-        font-size: 14px;
-    }
-
-    .social-links-footer {
-        margin-top: 20px;
-    }
-
-    /* شريط الحقوق */
-    .footer-bottom-bar {
-        grid-column: 1 / -1;
-        font-size: 13px;
-        padding: 25px 30px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
+/* ضمان أن جميع العناصر مرئية */
+.site-footer * {
+    visibility: visible;
+    overflow: visible;
 }
