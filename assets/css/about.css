@@ -69,7 +69,9 @@
   padding: 80px 0;
   background: var(--color-white);
 }
-
+.about-intro .container {
+  overflow: hidden;
+}
 /* العنوان العلوي */
 .intro-top {
   text-align: right;
