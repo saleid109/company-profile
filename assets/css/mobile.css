@@ -819,14 +819,14 @@
     .social-links-footer a {
         width: 36px;
         height: 36px;
-        display: flex;
+        display: flex; 
         align-items: center;
         justify-content: center;
     }
 
-    /*  تأكد من ظهور شريط الحقوق */
+    /*   شريط الحقوق */
     .footer-bottom-bar {
-        display: block;
+        display: block; 
         text-align: center;
         padding: 20px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -918,4 +918,3 @@
         display: block;
         animation: slideUp 0.4s ease;
     }
-}
