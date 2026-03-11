@@ -559,18 +559,30 @@
     }
 
     .social-links-footer {
+        display: flex;
+        /* ✅ مهم */
+        gap: 12px;
         margin-top: 20px;
     }
 
     .social-links-footer a {
         width: 40px;
         height: 40px;
-        font-size: 18px;
+        display: flex;
+        /* ✅ مهم */
+        align-items: center;
+        justify-content: center;
     }
 
+    /* ✅ تأكد من ظهور شريط الحقوق */
     .footer-bottom-bar {
-        font-size: 12px;
+        display: block;
+        /* ✅ مهم */
+        text-align: center;
         padding: 20px 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.6);
         margin-top: 15px;
     }
 
@@ -811,7 +823,8 @@
     }
 
     .social-links-footer {
-        display: flex; /* ✅ مهم جداً */
+        display: flex;
+        /* ✅ مهم جداً */
         gap: 12px;
         margin-top: 20px;
     }
