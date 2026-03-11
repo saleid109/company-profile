@@ -1,561 +1,102 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ========== قسم about-intro ========== */
+.about-intro {
+  padding: 80px 0;
+  background: var(--color-white);
 }
 
-body {
-
-    font-family: var(--font-main);
-    background-color: var(--color-bg-light);
+/* العنوان العلوي */
+.intro-top {
+  text-align: right;
+  margin-bottom: 40px;
 }
 
-/* القواعد العامة للعناوين */
-h1,
-h2,
-h3,
-h4 {
-    font-family: var(--font-main);
-    font-weight: var(--weight-bold);
-    color: var(--color-secondary);
-    margin-bottom: 1rem;
+.intro-top .section-label {
+  color: var(--color-primary);
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
 }
 
-html {
-    overflow-x: hidden;
+.intro-top h2 {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--color-secondary);
 }
 
-
-
-/* تحسين الأداء وتقليل الاهتزاز أثناء التحريك */
-.service-card,
-.feature-item,
-.field-card {
-    will-change: transform;
-    backface-visibility: hidden;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-        box-shadow 0.3s ease;
+/* الشبكة الرئيسية: عمودين */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
 }
 
-/* كلاس الظهور التدريجي (Scroll Reveal) */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-
+/* العمود الأيمن */
+.intro-right h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--color-secondary);
+  margin-bottom: 16px;
 }
 
-/* الحالة الأولية للعناصر المخفية */
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+.intro-right > p {
+  font-size: 15px;
+  color: var(--color-gray-text);
+  line-height: 1.9;
+  margin-bottom: 28px;
 }
 
-
-/*================================*/
-
-/* تنسيق التوب بار */
-.top-bar {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    font-size: 14px;
-    min-height: 45px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
+/* بطاقتا الرؤية والرسالة */
+.vm-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-/* تنسيق رابط التخطي */
-
-.skip-link {
-    position: absolute;
-    top: -100px;
-    right: 50%;
-    transform: translateX(50%);
-    background: var(--color-primary);
-    color: var(--color-secondary);
-    padding: 8px 15px;
-    z-index: 9999;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 0 0 5px 5px;
-    transition: top 0.3s ease;
+.vm-card {
+  background: var(--color-bg-light);
+  border-radius: 12px;
+  padding: 20px;
+  border-top: 3px solid var(--color-primary);
 }
 
-
-/* إظهار الرابط فقط عند الضغط على Tab */
-.skip-link:focus {
-    top: 0;
+.vm-card h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-secondary);
+  margin-bottom: 8px;
 }
 
-
-.top-bar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 30px;
+.vm-card p {
+  font-size: 13px;
+  color: var(--color-gray-text);
+  line-height: 1.8;
 }
 
-.flex-group {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    height: 100%;
+/* العمود الأيسر: الصورة */
+.intro-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.top-bar a {
-    color: var(--color-white);
-    text-decoration: none;
-    transition: var(--transition);
-    align-items: center;
+.intro-left img {
+  max-width: 100%;
+  height: auto;
 }
 
-.social-links {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+/* ===== الجوال ===== */
+@media (max-width: 768px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+  }
 
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    line-height: 1;
-    color: var(--color-white);
-    transition: var(--transition);
-}
-
-
-
-/* تنسيق اللغة  */
-.language {
-    display: flex;
-    align-items: center;
-    padding-right: 15px;
-    margin-right: 5px;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    height: 18px;
-}
-
-
-
-.language a {
-    font-weight: var(--weight-bold);
-    /* 700 */
-    color: var(--color-white);
-}
-
-.top-bar a:hover {
-    color: var(--color-primary);
-}
-
-/*تسجيل الدخول*/
-.user-info span {
-    font-weight: var(--weight-bold);
-}
-
-.user-info i {
-    margin-left: 8px;
-    margin-right: 0;
-}
-
-/* السلة والعداد */
-.cart-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-direction: row;
-    /*  الترتيب الأفقي */
-}
-
-/* الأيقونة  */
-.cart-icon-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-/*العداد الاحمر*/
-.cart-badge {
-    position: absolute;
-    top: -10px;
-    /* يرفع الدائرة للأعلى */
-    right: -6px;
-    background-color: var(--color-accent);
-    color: var(--color-white);
-    font-size: 10px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-
-/*السعر*/
-
-.price-text {
-    font-weight: var(--weight-regular);
-}
-
-/*===============================================*/
-
-/*  الحاوية الأب  */
-.nav-wrapper {
-    position: relative;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-    background-color: var(--color-secondary);
-    padding: 0 30px;
-}
-
-/*  حاوية الشعار  */
-.logo {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-/*الصورة */
-.logo img {
-    height: 50px;
-    width: auto;
-    z-index: var(--z-fixed);
-    display: block;
-    object-fit: contain;
-}
-
-/* الروابط */
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-}
-
-/* تنسيق الروابط داخل القائمة */
-.nav-menu a {
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-/* تأثير التحويم على الروابط */
-.nav-menu a:hover {
-    color: var(--color-primary);
-    transform: translateY(-2px);
-}
-
-/*  الرابط النشط */
-.nav-menu a.active {
-    color: var(--color-primary);
-    font-weight: var(--weight-bold);
-    position: relative;
-}
-
-/*  خط صغير تحت كلمة الرئيسية  */
-.nav-menu a.active::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    right: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-primary);
-}
-
-/*التحويم*/
-.nav-menu a.active:hover {
-    color: var(--color-bg-light);
-    transform: translateY(-2px);
-}
-
-/* الحاوية الكبرى للميجا منيو */
-.mega-menu-content {
-    position: absolute;
-    top: 100%;
-    right: 50%;
-    transform: translateX(50%) translateY(20px);
-    max-width: 1100px;
-    width: 95%;
-    /* عرض كافٍ للثلاث كروت */
-    background: #fff;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    z-index: 2500;
-}
-
-/* إظهار القائمة عند التحويم */
-.has-mega:hover .mega-menu-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(50%) translateY(0);
-}
-
-/* تقسيم الكروت باستخدام Grid */
-.mega-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-/* تنسيق الكرت الفردي */
-.mega-card {
-    display: flex;
-    flex-direction: row;
-    /* الترتيب الطبيعي في RTL يبدأ من اليمين */
-    align-items: flex-start;
-    /* محاذاة العناصر للأعلى لجعل العنوان في الأعلى */
-    padding: 20px;
-    background: var(--color-white);
-    border: 1px solid #f0f0f0;
-    border-radius: 15px;
-    text-decoration: none;
-    transition: 0.3s ease;
-    direction: rtl;
-    /* تأكيد اتجاه اليمين لليسار */
-}
-
-.mega-card:hover {
-    border-color: var(--color-primary);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-/* محتوى المعلومات - يسار الأيقونة */
-.card-info {
-    text-align: right;
-    order: 2;
-    /* تأتي بعد الأيقونة */
-    flex-grow: 1;
-}
-
-.card-info h4 {
-    color: var(--color-secondary);
-    font-size: 17px;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.card-info p {
-    color: var(--color-gray-text);
-    font-size: 13px;
-    line-height: 1.4;
-    margin-bottom: 8px;
-}
-
-.read-more {
-    display: inline-block;
-    color: var(--color-primary);
-    font-weight: bold;
-    font-size: 12px;
-}
-
-.card-icon-wrapper {
-    flex-shrink: 0;
-    /* منع تصغير الأيقونة */
-    margin-left: 15px;
-    /* إزاحة النص لليسار قليلاً */
-    order: 1;
-    /* تأكيد ظهورها كأول عنصر يميناً */
-}
-
-.card-icon-wrapper img {
-    width: 44px;
-    height: 44px;
-    object-fit: contain;
-}
-
-.mega-icon-wrap {
-    width: 44px;
-    height: 44px;
-    border-radius: 24px;
-    background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.mega-icon-wrap::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
-}
-
-.mega-icon-wrap i {
-    font-size: 25px;
-    color: #F1B709;
-    position: relative;
-    z-index: 1;
-}
-
-
-/*ايقونة المنسدلة للجوال*/
-.mobile-menu-icon {
+  .intro-left {
     display: none;
+  }
+
+  .vm-cards {
+    grid-template-columns: 1fr;
+  }
 }
-
-/*  زر الاستشارة*/
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    padding: 9px 18px;
-    border-radius: 8px;
-    border: var(--color-secondary);
-    text-decoration: none;
-    font-weight: var(--weight-bold);
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-/*  تأثير التحويم على زر الاستشارة */
-.btn-primary:hover {
-    background-color: var(--color-white);
-    box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
-}
-
-/*=====================================*/
-/*=====================قسم البداية====================*/
-/*البداية*/
-
-.hero-section {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--color-white);
-    overflow: hidden;
-}
-
-/*  الصورة الخلفية */
-.hero-section {
-    position: relative;
-    height: 100vh;
-    /* ملء الشاشة بالكامل */
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.hero-bg video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* يمنع تشوه الفيديو ويجعله يملأ المساحة */
-}
-
-/* طبقة تظليل خفيفة لجعل النص الذهبي والأبيض يبرز */
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 26, 77, 0.496);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    color: var(--color-white);
-}
-
-/* تنسيق النصوص */
-.hero-content h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin: 0 auto 30px;
-    color: var(--color-white);
-    font-family: var(--font-main);
-    max-width: 800px;
-}
-
-/* تنسيق الفقرة */
-.hero-content p {
-    font-size: 24px;
-    max-width: 850px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
-    font-weight: var(--weight-bold);
-    font-family: var(--font-main);
-    color: var(--color-white);
-    text-align: center;
-}
-
-/* حاوية الأزرار */
-.home-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-    /* للسماح للأزرار بالنزول تحت بعضها في الجوال  */
-}
-
-/* تنسيق الأزرار المشترك */
-.home-buttons .btn-servers,
-.home-buttons .btn-outline {
-    width: 220px;
-    height: 60px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: var(--weight-bold);
-    font-family: var(--font-main);
-    transition: var(--transition);
-    text-decoration: none;
-}
-
-/* زر طلب خدمة (الأبيض) */
-.btn-servers {
-    background-color: var(--color-white);
-    color: var(--color-secondary);
-}
-
-/* زر استثمر معنا (الأصفر) */
-.btn-outline {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-}
-
-/* تأثيرات الهوفر */
-.btn-servers:hover,
-.btn-outline:hover {
-    transform: translateY(-5px);
-    background-color: var(--color-white);
-    box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
-}
-
-
-
-/* ----- تنسيق قسم عن نقطة صعود  (About Section) ----- */
