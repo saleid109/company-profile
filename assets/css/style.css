@@ -2377,13 +2377,13 @@ html {
     justify-content: center;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    color: #ffffff;
+    color: var(--color-primary);
     font-size: 16px;
     transition: all 0.3s;
 }
 
 .social-links-footer a:hover {
-    background: #f5c842;
+    background:var(--color-bg-light);
     color: #00025B;
     transform: translateY(-3px);
 }
