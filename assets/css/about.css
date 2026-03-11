@@ -12,17 +12,16 @@
     overflow: hidden;
 }
 
-/*  الصورة الخلفية */
+/*   الخلفية */
 .hero-section {
     position: relative;
     height: 100vh;
-    /* ملء الشاشة بالكامل */
     display: flex;
     align-items: center;
     overflow: hidden;
 }
 
-.hero-bg {
+.hero-video {
     position: absolute;
     top: 0;
     left: 0;
@@ -31,7 +30,7 @@
     z-index: -1;
 }
 
-.hero-bg video {
+.hero-video video {
     width: 100%;
     height: 100%;
     object-fit: cover;
