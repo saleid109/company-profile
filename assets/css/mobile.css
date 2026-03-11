@@ -431,7 +431,7 @@
         padding: 60px 20px 120px;
         text-align: center;
         border-radius: 10px;
-        color: white;
+        color: var(--color-white);
         position: relative;
         z-index: 1;
     }
@@ -453,7 +453,7 @@
 
     /* الكرت الفردي */
     .stat-item {
-        background: #ffffff;
+        background: var(--color-white);
         flex: 1 1 100%;
         margin: 0 10px;
         min-width: 200px;
@@ -583,44 +583,67 @@
 
 
     /* الفوتر -  */
+.site-footer {
+        padding-top: 30px;
+    }
+
     .footer-container {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "brand"
-            "col1"
-            "col2"
-            "col3";
+        display: flex;
+        flex-direction: column;
+        padding: 0;
         gap: 0;
-        padding: 20px 16px 10px;
+    }
+
+    .footer-column {
+        width: 100%;
+        padding: 18px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-sizing: border-box;
     }
 
     .brand-column {
-        padding-bottom: 20px;
+        padding: 18px 16px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        align-items: flex-end;
     }
 
     .footer-logo {
         width: 120px;
     }
 
-    .social-links-footer {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 14px;
+    .brand-text {
+        font-size: 13px;
+        line-height: 1.7;
     }
 
-    .footer-column {
-        padding: 18px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        text-align: right;
+    .footer-column h4 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+        font-size: 13px;
+    }
+
+    .social-links-footer a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
 
     .contact-item {
-        justify-content: flex-end;
-        flex-direction: row-reverse;
+        font-size: 13px;
+        margin-bottom: 10px;
+        gap: 8px;
     }
 
+    .footer-bottom-bar {
+        font-size: 11px;
+        padding: 15px 16px;
+    }
 
     /* زر الفتح التجريبي */
     .demo-fab {
