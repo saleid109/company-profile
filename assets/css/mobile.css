@@ -810,14 +810,29 @@
         font-size: 14px;
     }
 
+    .social-links-footer {
+        display: flex; /* ✅ مهم جداً */
+        gap: 12px;
+        margin-top: 20px;
+    }
+
     .social-links-footer a {
         width: 36px;
         height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
+    /*  تأكد من ظهور شريط الحقوق */
     .footer-bottom-bar {
-        font-size: 13px;
+        display: block;
+        text-align: center;
         padding: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 30px;
     }
 
 
@@ -903,3 +918,4 @@
         display: block;
         animation: slideUp 0.4s ease;
     }
+}
