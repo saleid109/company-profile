@@ -2871,30 +2871,3 @@ html {
     display: flex;
 }
 
-/* للجوال فقط */
-@media (max-width: 767px) {
-    .nav-actions.desktop-only {
-        display: none;
-    }
-    
-    .navbar-links {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .nav-menu {
-        flex: 1;
-    }
-    
-    .nav-actions.mobile-only {
-        display: block;
-        padding: 20px 25px;
-        margin-top: auto;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .nav-actions.mobile-only .btn-primary {
-        width: 100%;
-        text-align: center;
-    }
-}
