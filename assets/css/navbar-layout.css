@@ -1,0 +1,510 @@
+/* =========================================================
+    إصلاح ترتيب القائمة وزر الاستشارة
+========================================================= */
+
+/* ✅ إخفاء/إظهار زر الاستشارة حسب الشاشة */
+.nav-actions.mobile-only {
+    display: none;
+}
+
+.nav-actions.desktop-only {
+    display: flex;
+}
+
+/* =========================================================
+    الجوال (0px - 767px)
+========================================================= */
+
+@media (max-width: 767px) {
+
+    /* ✅ إخفاء زر الاستشارة من الشاشة الرئيسية */
+    .nav-actions.desktop-only {
+        display: none;
+    }
+
+    /* ✅ القائمة الجانبية */
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+        background-color: #0b0f5c;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 4000;
+        padding-top: 80px;
+        padding-bottom: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-links.open {
+        transform: translateX(0);
+    }
+
+    /* ✅ القائمة الرئيسية */
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        flex: 1; /* ✅ تأخذ المساحة المتاحة */
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu li a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 25px;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: background 0.3s ease;
+    }
+
+    .nav-menu li a:active {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ✅ القوائم الفرعية */
+    .mega-menu-content {
+        position: static;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+        box-shadow: none;
+    }
+
+    .mega-menu-content.open {
+        max-height: 500px;
+        opacity: 1;
+        padding: 10px 0;
+    }
+
+    .mega-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+
+    .mega-card {
+        display: flex;
+        gap: 15px;
+        padding: 15px 25px;
+        background: transparent;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        text-decoration: none;
+        color: white;
+        align-items: flex-start;
+        transition: background 0.2s ease;
+    }
+
+    .mega-card:hover,
+    .mega-card:active {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .mega-card:last-child {
+        border-bottom: none;
+    }
+
+    /* ✅ أيقونات القوائم الفرعية */
+    .card-icon-wrapper {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-icon-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .mega-icon-wrap {
+        width: 40px;
+        height: 40px;
+        background: rgba(245, 200, 66, 0.2);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-primary, #f5c842);
+        font-size: 18px;
+    }
+
+    .card-info {
+        flex: 1;
+    }
+
+    .card-info h4 {
+        font-size: 15px;
+        margin: 0 0 5px 0;
+        color: white;
+        font-weight: 700;
+    }
+
+    .card-info p {
+        font-size: 13px;
+        margin: 0 0 5px 0;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.4;
+    }
+
+    .read-more {
+        font-size: 12px;
+        color: var(--color-primary, #f5c842);
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: 600;
+    }
+
+    /* ✅ زر الاستشارة في أسفل القائمة الجانبية */
+    .nav-actions.mobile-only {
+        display: block;
+        padding: 20px 25px;
+        margin-top: auto; /* ✅ يدفعه للأسفل */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-actions.mobile-only .btn-primary {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+        background: var(--color-primary, #f5c842);
+        color: var(--color-secondary, #0b0f5c);
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-actions.mobile-only .btn-primary:active {
+        transform: scale(0.98);
+        background: #e0b533;
+    }
+
+    /* ✅ تدوير السهم عند فتح القائمة الفرعية */
+    .nav-menu li.has-mega > a.active .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+
+    .nav-menu li a .fa-chevron-down {
+        transition: transform 0.3s ease;
+        font-size: 12px;
+    }
+
+    /* ✅ أيقونة القائمة */
+    .mobile-menu-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: var(--color-white);
+        color: var(--color-secondary);
+        border-radius: 8px;
+        cursor: pointer;
+        border: none;
+        z-index: 5000;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-icon:active {
+        transform: scale(0.95);
+    }
+
+    /* ✅ طبقة التظليل */
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 3000;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* ✅ منع scroll للصفحة عند فتح القائمة */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    /* ✅ تحسين شريط التمرير في القائمة الجانبية */
+    .navbar-links::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .navbar-links::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .navbar-links::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+    }
+
+    .navbar-links::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* =========================================================
+    التابلت / الآيباد (768px - 1024px)
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* ✅ إخفاء أيقونة القائمة */
+    .mobile-menu-icon {
+        display: none;
+    }
+
+    /* ✅ إخفاء زر الاستشارة للجوال */
+    .nav-actions.mobile-only {
+        display: none;
+    }
+
+    /* ✅ إظهار القائمة بشكل طبيعي */
+    .navbar-links {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        transform: none;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        position: relative;
+        white-space: nowrap;
+        border-bottom: none;
+    }
+
+    .nav-menu li a {
+        padding: 10px 12px;
+        font-size: 14px;
+        color: var(--color-white);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu li a:hover {
+        color: var(--color-primary, #f5c842);
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+    }
+
+    /* ✅ القوائم المنسدلة للآيباد */
+    .mega-menu-content {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(11, 15, 92, 0.98);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        padding: 20px;
+        min-width: 450px;
+        max-width: 500px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        max-height: none;
+    }
+
+    .nav-menu li.dropdown:hover .mega-menu-content,
+    .mega-menu-content.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .mega-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .mega-card {
+        display: flex;
+        gap: 15px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s ease;
+        border-bottom: none;
+    }
+
+    .mega-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateX(-5px);
+    }
+
+    .card-icon-wrapper {
+        width: 45px;
+        height: 45px;
+    }
+
+    .mega-icon-wrap {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .card-info h4 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .card-info p {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    /* ✅ زر الاستشارة للآيباد */
+    .nav-actions.desktop-only {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .nav-actions.desktop-only .btn-primary {
+        padding: 10px 20px;
+        font-size: 14px;
+        white-space: nowrap;
+        background-color: var(--color-primary, #f5c842);
+        color: var(--color-secondary, #0b0f5c);
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        display: inline-block;
+        min-width: 140px;
+        text-align: center;
+    }
+
+    .nav-actions.desktop-only .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(245, 200, 66, 0.3);
+    }
+
+    /* ✅ إخفاء الـ overlay */
+    .overlay {
+        display: none;
+    }
+}
+
+/* =========================================================
+    الشاشات الكبيرة (1025px فما فوق)
+========================================================= */
+
+@media (min-width: 1025px) {
+
+    .mobile-menu-icon {
+        display: none;
+    }
+
+    .nav-actions.mobile-only {
+        display: none;
+    }
+
+    .navbar-links {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        transform: none;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .nav-menu li a {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    .mega-menu-content {
+        min-width: 500px;
+        padding: 25px;
+    }
+
+    .mega-grid {
+        gap: 15px;
+    }
+
+    .mega-card {
+        padding: 15px;
+    }
+
+    .nav-actions.desktop-only .btn-primary {
+        padding: 12px 24px;
+        font-size: 15px;
+        min-width: 160px;
+    }
+
+    .overlay {
+        display: none;
+    }
+}
