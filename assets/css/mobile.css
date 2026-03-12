@@ -41,25 +41,6 @@ html, body {
     }
 }
 
-/* =================================================== */
-/*          Teams Group Section - Responsive         */
-/* =================================================== */
-
-.teams-group-section .container {
-    padding: 0 !important;
-}
-
-.teams-group-section .carousel-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-}
-
-.teams-group-section .group {
-    overflow: hidden;
-    box-sizing: border-box;
-}
 
 /* =========================================================
     تأثيرات سطح المكتب
