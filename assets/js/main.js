@@ -1,11 +1,3 @@
-/* =========================================================
-    ملف JavaScript الرئيسي - نقطة صعود
-    تم التحسين والتنظيم وإزالة التكرار
-========================================================= */
-
-/* =========================================================
-    1. إدارة القائمة والملاحة (Navigation & Menu)
-========================================================= */
 
 /**
  * فتح وإغلاق قائمة الجوال والتحكم في الطبقة الظليلة
@@ -66,7 +58,7 @@ function filterCards() {
  */
 function activateMain(mainValue) {
     currentMain = mainValue;
-    const mainTabs = document.querySelectorAll(".cat-btn");
+    const mainTabs = document.querySelectorAll(".caet-btn");
     const subGroups = document.querySelectorAll(".sub-categories");
 
     mainTabs.forEach(btn => {
@@ -110,40 +102,50 @@ function activateSub(subValue) {
  * تفعيل القوائم الفرعية في الجوال
  */
 function initMobileMegaMenu() {
-    // فقط في الجوال
-    if (window.innerWidth >= 768) return;
+    // تفعيل القوائم المنسدلة للجوال والايباد (أقل من 1025 بكسل)
+    if (window.innerWidth > 1024) return;
 
-    const megaMenuLinks = document.querySelectorAll('.nav-menu li.has-mega > a');
+    const dropdownLinks = document.querySelectorAll('.nav-menu li.dropdown > a');
     
-    megaMenuLinks.forEach(link => {
-        // إزالة المستمعات القديمة أولاً
+    dropdownLinks.forEach(link => {
+        // إزالة المستمعات القديمة لتجنب التكرار
         const newLink = link.cloneNode(true);
         link.parentNode.replaceChild(newLink, link);
     });
 
     // إضافة المستمعات الجديدة
-    document.querySelectorAll('.nav-menu li.has-mega > a').forEach(link => {
+    document.querySelectorAll('.nav-menu li.dropdown > a').forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            this.classList.toggle('active');
-            
-            const megaMenu = this.nextElementSibling;
-            if (megaMenu && megaMenu.classList.contains('mega-menu-content')) {
-                megaMenu.classList.toggle('open');
-            }
-            
-            // إغلاق القوائم الأخرى
-            document.querySelectorAll('.nav-menu li.has-mega > a').forEach(otherLink => {
-                if (otherLink !== this) {
-                    otherLink.classList.remove('active');
-                    const otherMenu = otherLink.nextElementSibling;
-                    if (otherMenu) {
-                        otherMenu.classList.remove('open');
+            // في الجوال والايباد، نريد النقر لفتح القائمة بدلاً من التحويم
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const parentLi = this.parentElement;
+                const megaMenu = this.nextElementSibling;
+                
+                // تبديل الحالة
+                const isOpen = megaMenu && (megaMenu.classList.contains('open') || megaMenu.classList.contains('active-mobile'));
+                
+                // إغلاق جميع القوائم الأخرى أولاً
+                document.querySelectorAll('.nav-menu li.dropdown').forEach(li => {
+                    if (li !== parentLi) {
+                        li.querySelector('a').classList.remove('active');
+                        const menu = li.querySelector('.mega-menu-content, .dropdown-menu');
+                        if (menu) {
+                            menu.classList.remove('open');
+                            menu.classList.remove('active-mobile');
+                        }
                     }
+                });
+
+                // تبديل حالة القائمة الحالية
+                this.classList.toggle('active', !isOpen);
+                if (megaMenu) {
+                    megaMenu.classList.toggle('open', !isOpen);
+                    megaMenu.classList.toggle('active-mobile', !isOpen);
                 }
-            });
+            }
         });
     });
 }
@@ -504,7 +506,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ربط أزرار التبويبات
-    document.querySelectorAll(".cat-btn").forEach(btn => {
+    document.querySelectorAll(".caet-btn").forEach(btn => {
         btn.addEventListener("click", () => activateMain(btn.dataset.main));
     });
 
