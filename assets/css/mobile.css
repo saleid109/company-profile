@@ -1,17 +1,34 @@
-* {
+/* ========================================================= 
+    الإعدادات العامة وتحسين الأداء
+========================================================= */
+
+/* ✅ إصلاح الاقتصاص - Box Sizing العام */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
+html {
     width: 100%;
-    overflow-x: hidden;  /* فقط للأفقي */
+    overflow-x: hidden;
 }
 
-/* ========================================================= 
-    الإعدادات العامة وتحسين الأداء
-========================================================= */
+body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ✅ إصلاح Container العام */
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
 .service-card {
     will-change: transform;
@@ -23,11 +40,9 @@ html, body {
 .home-buttons a,
 .nav-menu li a,
 .btn-primary {
-    transition: transform 0.2s ease,        filter 0.2s ease,        background-color 0.2s ease;
-    -webkit-transition: transform 0.2s ease,;
-    -moz-transition: transform 0.2s ease,;
-    -ms-transition: transform 0.2s ease,;
-    -o-transition: transform 0.2s ease,;
+    transition: transform 0.2s ease,
+        filter 0.2s ease,
+        background-color 0.2s ease;
 }
 
 .nav-wrapper {
@@ -41,6 +56,29 @@ html, body {
     }
 }
 
+/* =================================================== */
+/*          Teams Group Section - Responsive         */
+/* =================================================== */
+
+.teams-group-section .container {
+    padding: 0 20px !important; /* ✅ تغيير من 0 */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.teams-group-section .carousel-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.teams-group-section .group {
+    overflow: hidden;
+    box-sizing: border-box;
+}
 
 /* =========================================================
     تأثيرات سطح المكتب
@@ -68,9 +106,9 @@ html, body {
 
 @media (max-width: 767px) {
 
-
     .container {
         padding: 0 20px;
+        max-width: 100%;
     }
 
     .top-bar .container {
@@ -104,6 +142,7 @@ html, body {
         background-color: var(--color-secondary) !important;
         height: 70px;
         padding: 0 15px;
+        width: 100%;
     }
 
     .logo img {
@@ -443,8 +482,6 @@ html, body {
 
     .teams-group-section .container {
         padding: 0 16px !important;
-        box-sizing: border-box;
-
     }
 
     .teams-group-section .group {
@@ -479,14 +516,16 @@ html, body {
     /* ===== الفوتر  ===== */
     .site-footer {
         padding-top: 40px;
+        width: 100%;
+        overflow: hidden;
     }
 
     .footer-container {
         display: flex;
-        /* ✅ Flex للجوال فقط */
         flex-direction: column;
         gap: 0;
         padding: 0 20px 25px;
+        max-width: 100%;
     }
 
     /* إعادة ترتيب: اللوجو أولاً */
@@ -596,10 +635,17 @@ html, body {
 }
 
 /* =========================================================
-    التابلت (768px - 1024px)
+    التابلت / الآيباد (768px - 1024px) - محسّن ✅
 ========================================================= */
 
 @media (min-width: 768px) and (max-width: 1024px) {
+
+    /* ✅ إصلاح Container للآيباد */
+    .container {
+        max-width: 100%;
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
 
     .nav-menu {
         gap: 15px;
@@ -614,7 +660,6 @@ html, body {
         font-size: 14px;
     }
 
-    .container,
     .container-training,
     .why-us-wrapper,
     .container-why-choose {
@@ -622,6 +667,7 @@ html, body {
         flex-direction: column;
         text-align: center;
         gap: 40px;
+        max-width: 100%;
     }
 
     .hero-section {
@@ -639,6 +685,7 @@ html, body {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
         max-width: 100%;
+        padding: 0 20px;
     }
 
     .service-card {
@@ -649,25 +696,27 @@ html, body {
         transform: scale(0.99);
     }
 
-    .services-grid,
-    .fields-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 20px;
-    }
-
     .card-image img {
         height: 220px;
+    }
+
+    .compare-section {
+        padding: 60px 30px;
+        width: 100%;
+        overflow: hidden;
     }
 
     .compare-container {
         flex-direction: column;
         gap: 40px;
         padding: 0 30px;
+        max-width: 100%;
     }
 
     .compare-side-text {
         flex: unset;
         width: 100%;
+        max-width: 100%;
         text-align: center;
         order: 1;
     }
@@ -679,7 +728,9 @@ html, body {
     .compare-table-wrapper {
         flex: unset;
         width: 100%;
+        max-width: 100%;
         order: 2;
+        overflow-x: auto;
     }
 
     .stat-item {
@@ -695,15 +746,18 @@ html, body {
         height: 70px;
     }
 
-    /* فريق العمل */
+    /* ✅ فريق العمل - محسّن للآيباد */
     .team-container {
-        padding: 0 15px;
+        padding: 0 30px;
+        max-width: 100%;
+        overflow: hidden;
     }
 
     .team-track-clip {
         overflow: hidden;
         padding: 55px 0 20px;
         margin-top: -55px;
+        width: 100%;
     }
 
     .team-track {
@@ -715,30 +769,44 @@ html, body {
         min-width: 0 !important;
     }
 
-    /* الفرق */
+    /* ✅ الفرق - محسّن للآيباد */
+    .teams-group-section {
+        width: 100%;
+        overflow: hidden;
+    }
+
     .teams-group-section .container {
-        padding: 0 24px !important;
+        padding: 0 30px !important; /* ✅ تغيير من 24px */
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .teams-group-section .group {
         flex: 1 0 calc(50% - 12px);
         max-width: calc(50% - 12px);
+        box-sizing: border-box;
     }
 
     .teams-group-section h2 {
-        padding: 0 10px;
+        padding: 0 20px;
+    }
+
+    .teams-group-section .carousel-wrapper {
+        width: 100%;
+        overflow: hidden;
     }
 
     .teams-group-section .carousel-container {
         padding: 20px 0;
+        max-width: 100%;
     }
 
     .teams-group-section .nav-btn.prev {
-        left: -10px;
+        left: 0;
     }
 
     .teams-group-section .nav-btn.next {
-        right: -10px;
+        right: 0;
     }
 
     .footer-details {
@@ -749,21 +817,29 @@ html, body {
         font-size: 0.88em;
     }
 
-    /* ===== الفوتر - تابلت ===== */
+    /* ✅ الفوتر - محسّن للآيباد */
+    .site-footer {
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
     .footer-container {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* ✅ عمودين */
         gap: 35px 30px;
-        padding: 0 30px 35px;
+        padding: 0 40px 35px; /* ✅ زيادة من 30px */
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     /* إعادة ترتيب الأعمدة */
     .brand-column {
         order: 1;
         grid-column: 1 / -1;
-        /* ✅ يأخذ العرض الكامل */
         padding-bottom: 25px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
     }
 
     .footer-column:nth-child(2) {
@@ -777,7 +853,7 @@ html, body {
     .footer-column:nth-child(4) {
         order: 4;
         grid-column: 1 / -1;
-        /* ✅ يأخذ العرض الكامل */
+        width: 100%;
     }
 
     .footer-logo {
@@ -786,11 +862,21 @@ html, body {
 
     .brand-text {
         font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .footer-column {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .footer-column h4 {
         font-size: 16px;
         margin-bottom: 18px;
+    }
+
+    .footer-column ul {
+        width: 100%;
     }
 
     .footer-column ul li a {
@@ -802,32 +888,33 @@ html, body {
     }
 
     .social-links-footer {
-        display: flex; /* ✅ مهم جداً */
+        display: flex;
         gap: 12px;
         margin-top: 20px;
+        flex-wrap: wrap;
     }
 
     .social-links-footer a {
         width: 36px;
         height: 36px;
-        display: flex; 
+        display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    /*   شريط الحقوق */
+    /* شريط الحقوق */
     .footer-bottom-bar {
-        display: block; 
+        display: block;
         text-align: center;
         padding: 20px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 13px;
         color: rgba(255, 255, 255, 0.7);
         margin-top: 30px;
+        width: 100%;
     }
 
-
-    /* زر الفتح التجريبي */
+    /* ✅ زر الفتح التجريبي */
     .demo-fab {
         position: fixed;
         bottom: 20px;
@@ -909,3 +996,20 @@ html, body {
         display: block;
         animation: slideUp 0.4s ease;
     }
+}
+
+/* =========================================================
+    الشاشات الكبيرة (1025px فما فوق)
+========================================================= */
+
+@media (min-width: 1025px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .teams-group-section .container {
+        padding: 0 40px !important;
+    }
+}
