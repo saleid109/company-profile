@@ -1,67 +1,50 @@
 /*=====================قسم البداية====================*/
 /*البداية*/
 
+/* ===== إصلاح Hero ===== */
 .hero-section {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--color-white);
-    overflow: hidden;
+  position: relative;
+  height: 300px; /* ارتفاع الهيرو */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-/*   الخلفية */
-.hero-section {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.hero-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* يمنع تشوه الفيديو ويجعله يملأ المساحة */
+/* طبقة تعتيم فوق الفيديو */
+.video-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 2, 91, 0.5);
 }
 
-/* طبقة تظليل  */
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 26, 77, 0.496);
+.title-about {
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    color: var(--color-white);
+.title-about h1 {
+  color: var(--color-white);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 900;
 }
-
-/* تنسيق النصوص */
-.hero-content h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin: 0 auto 30px;
-    color: var(--color-white);
-    font-family: var(--font-main);
-    max-width: 800px;
-}
-
 
 
 /* ========== قسم about-intro ========== */
