@@ -1,8 +1,14 @@
+/* =========================================================
+    ملف JavaScript الرئيسي - نقطة صعود
+    تم التحسين والتنظيم وإزالة التكرار
+========================================================= */
 
+/* =========================================================
+    1. إدارة القائمة والملاحة (Navigation & Menu)
+========================================================= */
 
-//إدارة القائمة والملاحة (Navigation & Menu)============
 /**
- * دالة فتح وإغلاق قائمة الجوال والتحكم في الطبقة الظليلة
+ * فتح وإغلاق قائمة الجوال والتحكم في الطبقة الظليلة
  */
 function toggleMenu() {
     const navLinks = document.querySelector(".navbar-links");
@@ -10,28 +16,29 @@ function toggleMenu() {
     const overlay = document.querySelector('.overlay');
     const body = document.body;
 
+    if (!navLinks) return;
+
     navLinks.classList.toggle("open");
     if (overlay) overlay.classList.toggle('active');
 
     if (navLinks.classList.contains("open")) {
-        if (menuIcon) menuIcon.classList.replace("fa-bars", "fa-times");
+        if (menuIcon) menuIcon.className = "fas fa-times";
         body.classList.add('menu-open');
     } else {
-        if (menuIcon) menuIcon.classList.replace("fa-times", "fa-bars");
+        if (menuIcon) menuIcon.className = "fas fa-bars";
         body.classList.remove('menu-open');
     }
 }
+
 /* =========================================================
     2. وظائف فلترة الخدمات (Digital Services Filter)
 ========================================================= */
 
-// متغيرات التحكم الافتراضية
 let currentMain = "products";
 let currentSub = "web";
 
 /**
- * فلترة كروت الخدمات بناءً على القسم الرئيسي والفرعي المختتار
- * تم إضافة تأثير ظهور متتابع (Delay) لتحسين تجربة المستخدم
+ * فلترة كروت الخدمات بناءً على القسم الرئيسي والفرعي المختار
  */
 function filterCards() {
     const cards = document.querySelectorAll(".service-card");
@@ -42,12 +49,11 @@ function filterCards() {
 
         if (match) {
             card.style.display = "block";
-            // إزالة الكلاس ثم إضافته بعد تأخير لتفعيل الأنيميشن
             card.classList.remove("active");
             setTimeout(() => {
                 card.classList.add("active");
             }, delay);
-            delay += 100; // زيادة التأخير لكل كرت تالٍ
+            delay += 100;
         } else {
             card.classList.remove("active");
             card.style.display = "none";
@@ -55,23 +61,20 @@ function filterCards() {
     });
 }
 
-
 /**
- * تفعيل التبويب الرئيسي وإظهار مجموعته الفرعية
+ * تفعيل التبويب الرئيسي
  */
 function activateMain(mainValue) {
     currentMain = mainValue;
     const mainTabs = document.querySelectorAll(".cat-btn");
     const subGroups = document.querySelectorAll(".sub-categories");
 
-    // تحديث حالة الأزرار الرئيسية
     mainTabs.forEach(btn => {
         const isActive = btn.dataset.main === mainValue;
         btn.classList.toggle("active", isActive);
         btn.setAttribute("aria-selected", isActive);
     });
 
-    // إظهار المجموعات الفرعية المناسبة
     subGroups.forEach(group => {
         const match = group.dataset.parent === mainValue;
         group.classList.toggle("active", match);
@@ -89,7 +92,7 @@ function activateMain(mainValue) {
 }
 
 /**
- * تفعيل التبويب الفرعي داخل المجموعة النشطة
+ * تفعيل التبويب الفرعي
  */
 function activateSub(subValue) {
     currentSub = subValue;
@@ -100,144 +103,85 @@ function activateSub(subValue) {
 }
 
 /* =========================================================
-    3. تهيئة الأحداث (Initializations & Event Listeners)
+    3. القوائم المنسدلة للجوال (Mobile Mega Menu)
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+/**
+ * تفعيل القوائم الفرعية في الجوال
+ */
+function initMobileMegaMenu() {
+    // فقط في الجوال
+    if (window.innerWidth >= 768) return;
 
-    // --- أ. إدارة إغلاق القائمة عبر الـ Overlay ---
-    const overlay = document.querySelector('.overlay');
-    if (overlay) {
-        overlay.addEventListener('click', () => {
-            const navLinks = document.querySelector(".navbar-links");
-            if (navLinks.classList.contains("open")) toggleMenu();
-        });
-    }
+    const megaMenuLinks = document.querySelectorAll('.nav-menu li.has-mega > a');
+    
+    megaMenuLinks.forEach(link => {
+        // إزالة المستمعات القديمة أولاً
+        const newLink = link.cloneNode(true);
+        link.parentNode.replaceChild(newLink, link);
+    });
 
-    // --- ب. دعم الوصول للقوائم المنسدلة (Dropdown Accessibility) ---
-    const dropdowns = document.querySelectorAll(".dropdown");
-    dropdowns.forEach((dd) => {
-        const trigger = dd.querySelector("a");
-        if (!trigger) return;
-
-        trigger.setAttribute("aria-expanded", "false");
-        trigger.setAttribute("role", "button");
-
-        trigger.addEventListener("click", (e) => {
-            const submenu = dd.querySelector(".mega-menu-content") || dd.querySelector("ul");
-            if (!submenu) return;
-
+    // إضافة المستمعات الجديدة
+    document.querySelectorAll('.nav-menu li.has-mega > a').forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            const isOpen = trigger.getAttribute("aria-expanded") === "true";
-            trigger.setAttribute("aria-expanded", String(!isOpen));
-            dd.classList.toggle("open", !isOpen);
-        });
-    });
-
-    // --- ج. تهيئة سلايدر المشاريع (Swiper Slider) ---
-    if (typeof Swiper !== "undefined") {
-        new Swiper(".projects-swiper", {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            grabCursor: true,
-            autoplay: { delay: 3000, disableOnInteraction: false },
-            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-            pagination: { el: ".swiper-pagination", clickable: true },
-            breakpoints: {
-                768: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 3, spaceBetween: 33 },
-            },
-        });
-    }
-
-    // ---. مراقب الظهور للحركات (Intersection Observer) ---
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+            e.stopPropagation();
+            
+            this.classList.toggle('active');
+            
+            const megaMenu = this.nextElementSibling;
+            if (megaMenu && megaMenu.classList.contains('mega-menu-content')) {
+                megaMenu.classList.toggle('open');
             }
+            
+            // إغلاق القوائم الأخرى
+            document.querySelectorAll('.nav-menu li.has-mega > a').forEach(otherLink => {
+                if (otherLink !== this) {
+                    otherLink.classList.remove('active');
+                    const otherMenu = otherLink.nextElementSibling;
+                    if (otherMenu) {
+                        otherMenu.classList.remove('open');
+                    }
+                }
+            });
         });
-    }, { threshold: 0.15 });
-
-    const elementsToReveal = document.querySelectorAll('.service-card, .feature-item, .field-card, .stat-card, .hero-content');
-    elementsToReveal.forEach(el => {
-        el.classList.add('reveal');
-        revealObserver.observe(el);
     });
+}
 
-    // --- . ربط أزرار التبويبات بالوظائف ---
-    document.querySelectorAll(".cat-btn").forEach(btn => {
-        btn.addEventListener("click", () => activateMain(btn.dataset.main));
-    });
+/* =========================================================
+    4. إحصائيات متحركة (Animated Statistics)
+========================================================= */
 
-    document.querySelectorAll(".sub-btn").forEach(btn => {
-        btn.addEventListener("click", () => activateSub(btn.dataset.sub));
-    });
+/**
+ * تحريك الأرقام في قسم الإحصائيات
+ */
+function animateNumber(element, target) {
+    let current = 0;
+    const duration = 1800;
+    const frameRate = 1000 / 60;
+    const totalFrames = duration / frameRate;
+    const increment = target / totalFrames;
 
-    // --- . التشغيل الأولي للفلترة ---
-    activateMain("products");
-});
+    const counter = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(counter);
+        }
+        element.textContent = "+" + Math.floor(current).toLocaleString('en-US');
+    }, frameRate);
+}
 
-//احصائيات
-// ======= إحصائيات: ظهور + عداد احترافي =======
+/* =========================================================
+    5. سلايدر فريق العمل (Team Slider)
+========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    const statItems = document.querySelectorAll('.stat-item');
-
-    const statsObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                const item = entry.target;
-                item.classList.add('revealed');
-
-                const numberEl = item.querySelector('.stat-number');
-                const target = parseInt(numberEl.dataset.target);
-
-                animateNumber(numberEl, target);
-
-                observer.unobserve(item); // يعمل مرة واحدة فقط
-            }
-
-        });
-    }, { threshold: 0.3 });
-
-    statItems.forEach(item => statsObserver.observe(item));
-
-    function animateNumber(element, target) {
-
-        let current = 0;
-        const duration = 1800;
-        const frameRate = 1000 / 60;
-        const totalFrames = duration / frameRate;
-        const increment = target / totalFrames;
-
-        const counter = setInterval(() => {
-            current += increment;
-
-            if (current >= target) {
-                current = target;
-                clearInterval(counter);
-            }
-
-            element.textContent = "+" + Math.floor(current).toLocaleString('en-US');
-
-        }, frameRate);
-    }
-
-
-
-});
-
-/* --- فريق العمل --- */
-(function () {
+(function initTeamSlider() {
     const track = document.getElementById('team-track');
     const clip = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
+    
     if (!track || !clip || !btnPrev || !btnNext) return;
 
     const cards = Array.from(track.querySelectorAll('.team-card'));
@@ -270,19 +214,17 @@ document.addEventListener("DOMContentLoaded", () => {
         if (idx > max) idx = max;
 
         cards.forEach(card => card.style.width = cardW + 'px');
-        track.style.transform = `translateX(${idx * step}px)`;  // ← موجب مثل الفرق
+        track.style.transform = `translateX(${idx * step}px)`;
 
-        btnPrev.disabled = idx >= max;  // ← prev يزيد idx
+        btnPrev.disabled = idx >= max;
         btnNext.disabled = idx <= 0;
     }
 
-    // prev = السهم الأيسر = يزيد idx (يتحرك لليمين في RTL)
     btnPrev.addEventListener('click', () => {
         const max = Math.max(0, cards.length - getVisible());
         if (idx < max) { idx++; render(); }
     });
 
-    // next = السهم الأيمن = ينقص idx
     btnNext.addEventListener('click', () => {
         if (idx > 0) { idx--; render(); }
     });
@@ -294,10 +236,11 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(render, 600);
 })();
 
+/* =========================================================
+    6. سلايدر الفرق (Teams Carousel)
+========================================================= */
 
-/* ========== قسم الفرق - JavaScript==================== */
-
-(function () {
+(function initTeamsCarousel() {
     const section = document.querySelector('.teams-group-section');
     if (!section) return;
 
@@ -309,23 +252,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!track || !prevBtn || !nextBtn || cards.length === 0) return;
 
     let currentIndex = 0;
-    const gap = 24; // يجب أن يتطابق مع CSS
 
-    /**
-     * حساب عدد البطاقات المرئية حسب عرض الشاشة
-     * @returns {number} عدد البطاقات
-     */
     function getVisibleCards() {
         const width = window.innerWidth;
-        if (width < 768) return 1;        // جوال: بطاقة واحدة
-        if (width < 1024) return 2;       // تابلت: بطاقتين
-        return 3;                         // ديسكتوب: 3 بطاقات
+        if (width < 768) return 1;
+        if (width < 1024) return 2;
+        return 3;
     }
 
-    /**
-     * حساب المسافة بين البطاقات حسب عرض الشاشة
-     * @returns {number} المسافة بالبكسل
-     */
     function getGap() {
         const width = window.innerWidth;
         if (width < 640) return 12;
@@ -334,85 +268,44 @@ document.addEventListener("DOMContentLoaded", () => {
         return 24;
     }
 
-    /**
-     * حساب عرض البطاقة الواحدة
-     * @returns {number} العرض بالبكسل
-     */
-    function getCardWidth() {
-    if (cards.length === 0) return 0;
-    // انتظر حتى يكتمل الرسم
-    const rect = cards[0].getBoundingClientRect();
-    if (rect.width === 0) {
-        return cards[0].offsetWidth + getGap();
-    }
-    return rect.width + getGap();
-}
-
-    /**
-     * تحديث موضع الـ Carousel
-     */
-function updateCarousel() {
-    const visibleCards = getVisibleCards();
-    const maxIndex = Math.max(0, cards.length - visibleCards);
-
-    if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-    // ✅ احسب العرض من الـ wrapper وليس من الكارت
-    const wrapperWidth = track.parentElement.getBoundingClientRect().width;
-    const currentGap = getGap();
-    const cardW = (wrapperWidth - (currentGap * (visibleCards - 1))) / visibleCards;
-    
-    // ✅ اضبط عرض كل كارت صراحةً
-    cards.forEach(card => {
-        card.style.width = cardW + 'px';
-        card.style.flex = `0 0 ${cardW}px`;
-    });
-
-    const offset = currentIndex * (cardW + currentGap);
-    track.style.transform = `translateX(${offset}px)`;
-
-    updateButtons(maxIndex);
-}
-    /**
-     * تحديث حالة أزرار التنقل
-     * @param {number} maxIndex - أقصى index مسموح
-     */
-    function updateButtons(maxIndex) {
-        // في RTL: prev يتحرك لليمين (يزيد index)
-        prevBtn.disabled = currentIndex >= maxIndex;
-        // في RTL: next يتحرك لليسار (ينقص index)
-        nextBtn.disabled = currentIndex <= 0;
-
-        // إضافة visual feedback
-        if (prevBtn.disabled) {
-            prevBtn.style.opacity = '0.3';
-        } else {
-            prevBtn.style.opacity = '1';
-        }
-
-        if (nextBtn.disabled) {
-            nextBtn.style.opacity = '0.3';
-        } else {
-            nextBtn.style.opacity = '1';
-        }
-    }
-
-    /**
-     * التحرك للبطاقة السابقة (لليمين في RTL)
-     */
-    function goToPrev() {
+    function updateCarousel() {
         const visibleCards = getVisibleCards();
         const maxIndex = Math.max(0, cards.length - visibleCards);
 
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+        const wrapperWidth = track.parentElement.getBoundingClientRect().width;
+        const currentGap = getGap();
+        const cardW = (wrapperWidth - (currentGap * (visibleCards - 1))) / visibleCards;
+        
+        cards.forEach(card => {
+            card.style.width = cardW + 'px';
+            card.style.flex = `0 0 ${cardW}px`;
+        });
+
+        const offset = currentIndex * (cardW + currentGap);
+        track.style.transform = `translateX(${offset}px)`;
+
+        updateButtons(maxIndex);
+    }
+
+    function updateButtons(maxIndex) {
+        prevBtn.disabled = currentIndex >= maxIndex;
+        nextBtn.disabled = currentIndex <= 0;
+        
+        prevBtn.style.opacity = prevBtn.disabled ? '0.3' : '1';
+        nextBtn.style.opacity = nextBtn.disabled ? '0.3' : '1';
+    }
+
+    function goToPrev() {
+        const visibleCards = getVisibleCards();
+        const maxIndex = Math.max(0, cards.length - visibleCards);
         if (currentIndex < maxIndex) {
             currentIndex++;
             updateCarousel();
         }
     }
 
-    /**
-     * التحرك للبطاقة التالية (لليسار في RTL)
-     */
     function goToNext() {
         if (currentIndex > 0) {
             currentIndex--;
@@ -420,34 +313,12 @@ function updateCarousel() {
         }
     }
 
-    /**
-     * إعادة تعيين الـ Carousel عند تغيير حجم الشاشة
-     */
     function handleResize() {
         currentIndex = 0;
         updateCarousel();
     }
 
-    // ربط الأحداث
-    prevBtn.addEventListener('click', goToPrev);
-    nextBtn.addEventListener('click', goToNext);
-
-    // دعم لوحة المفاتيح للوصولية
-    prevBtn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            goToPrev();
-        }
-    });
-
-    nextBtn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            goToNext();
-        }
-    });
-
-    // دعم السحب باللمس (Touch Swipe) للجوال
+    // دعم اللمس
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -457,86 +328,54 @@ function updateCarousel() {
 
     track.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+            diff > 0 ? goToNext() : goToPrev();
+        }
     }, { passive: true });
 
-    function handleSwipe() {
-        const swipeThreshold = 50; // الحد الأدنى للسحب
-        const diff = touchStartX - touchEndX;
+    prevBtn.addEventListener('click', goToPrev);
+    nextBtn.addEventListener('click', goToNext);
 
-        if (Math.abs(diff) < swipeThreshold) return;
-
-        // في RTL: السحب لليمين = next، السحب لليسار = prev
-        if (diff > 0) {
-            goToNext(); // سحب لليسار
-        } else {
-            goToPrev(); // سحب لليمين
-        }
-    }
-
-    // التهيئة الأولية
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(handleResize, 150);
     });
 
-    // تشغيل التحديث عند التحميل
     window.addEventListener('load', updateCarousel);
     document.addEventListener('DOMContentLoaded', updateCarousel);
-
-    // تحديثات متعددة للتأكد من العرض الصحيح
     setTimeout(updateCarousel, 100);
     setTimeout(updateCarousel, 300);
     setTimeout(updateCarousel, 600);
-
-    // إضافة Intersection Observer لتحسين الأداء
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                updateCarousel();
-            }
-        });
-    }, observerOptions);
-
-    observer.observe(section);
-
 })();
 
+/* =========================================================
+    7. نظام التسجيل والدخول (Authentication)
+========================================================= */
 
-
-
-
-
-
-// ===== فتح وإغلاق =====
 function openAuth(tab = 'login') {
-    document.getElementById('authOverlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    switchTab(tab, document.querySelectorAll('.auth-tab')[tab === 'login' ? 0 : 1]);
+    const overlay = document.getElementById('authOverlay');
+    if (overlay) {
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        const tabBtn = document.querySelectorAll('.auth-tab')[tab === 'login' ? 0 : 1];
+        if (tabBtn) switchTab(tab, tabBtn);
+    }
 }
 
 function closeAuth() {
-    document.getElementById('authOverlay').classList.remove('open');
-    document.body.style.overflow = '';
+    const overlay = document.getElementById('authOverlay');
+    if (overlay) {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
 }
 
 function handleOverlayClick(e) {
     if (e.target === document.getElementById('authOverlay')) closeAuth();
 }
 
-// إغلاق بـ Escape
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeAuth();
-});
-
-// ===== تبديل التبويبات =====
 function switchTab(name, btn) {
     document.querySelectorAll('.auth-tab').forEach(t => {
         t.classList.remove('active');
@@ -547,21 +386,22 @@ function switchTab(name, btn) {
 
     document.querySelectorAll('.auth-panel').forEach(p => {
         p.classList.remove('active');
-        p.hidden = true; // لإخفاء العنصر من الوصول والتركيز
+        p.hidden = true;
     });
 
     const panel = document.getElementById('panel-' + name);
-    panel.classList.add('active');
-    panel.hidden = false; // لإظهاره وجعله متاحاً للتركيز
+    if (panel) {
+        panel.classList.add('active');
+        panel.hidden = false;
+    }
 }
 
-// ===== معالجة النماذج =====
 function handleLogin(e) {
     e.preventDefault();
     const btn = e.target.querySelector('.auth-submit');
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>جاري التحقق...</span>';
     btn.disabled = true;
-    // هنا تضع طلب API الخاص بك
+    
     setTimeout(() => {
         btn.innerHTML = '<i class="fas fa-check"></i> <span>تم بنجاح!</span>';
         btn.style.background = '#16a34a';
@@ -573,13 +413,16 @@ function handleRegister(e) {
     e.preventDefault();
     const pass = document.getElementById('reg-password').value;
     const confirm = document.getElementById('reg-confirm').value;
+    
     if (pass !== confirm) {
         alert('كلمتا المرور غير متطابقتين');
         return;
     }
+    
     const btn = e.target.querySelector('.auth-submit');
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>جاري الإنشاء...</span>';
     btn.disabled = true;
+    
     setTimeout(() => {
         btn.innerHTML = '<i class="fas fa-check"></i> <span>تم إنشاء الحساب!</span>';
         btn.style.background = '#16a34a';
@@ -587,3 +430,120 @@ function handleRegister(e) {
     }, 1500);
 }
 
+/* =========================================================
+    8. تهيئة الأحداث (DOMContentLoaded Initializations)
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // إغلاق القائمة عبر الـ Overlay
+    const overlay = document.querySelector('.overlay');
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            const navLinks = document.querySelector(".navbar-links");
+            if (navLinks && navLinks.classList.contains("open")) {
+                toggleMenu();
+            }
+        });
+    }
+
+    // إغلاق القائمة بالـ ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const navLinks = document.querySelector(".navbar-links");
+            if (navLinks && navLinks.classList.contains("open")) {
+                toggleMenu();
+            }
+            closeAuth();
+        }
+    });
+
+    // تهيئة القوائم المنسدلة للجوال
+    initMobileMegaMenu();
+
+    // إعادة تهيئة عند تغيير حجم الشاشة
+    window.addEventListener('resize', () => {
+        initMobileMegaMenu();
+    });
+
+    // تهيئة سلايدر المشاريع (Swiper)
+    if (typeof Swiper !== "undefined") {
+        new Swiper(".projects-swiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            grabCursor: true,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+            navigation: { 
+                nextEl: ".swiper-button-next", 
+                prevEl: ".swiper-button-prev" 
+            },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 3, spaceBetween: 33 },
+            },
+        });
+    }
+
+    // Intersection Observer للحركات
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    const elementsToReveal = document.querySelectorAll(
+        '.service-card, .feature-item, .field-card, .stat-card, .hero-content'
+    );
+    elementsToReveal.forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+    });
+
+    // ربط أزرار التبويبات
+    document.querySelectorAll(".cat-btn").forEach(btn => {
+        btn.addEventListener("click", () => activateMain(btn.dataset.main));
+    });
+
+    document.querySelectorAll(".sub-btn").forEach(btn => {
+        btn.addEventListener("click", () => activateSub(btn.dataset.sub));
+    });
+
+    // التشغيل الأولي للفلترة
+    activateMain("products");
+
+    // تهيئة الإحصائيات
+    const statItems = document.querySelectorAll('.stat-item');
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const item = entry.target;
+                item.classList.add('revealed');
+                const numberEl = item.querySelector('.stat-number');
+                const target = parseInt(numberEl.dataset.target);
+                animateNumber(numberEl, target);
+                observer.unobserve(item);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    statItems.forEach(item => statsObserver.observe(item));
+
+    // إغلاق القائمة عند النقر على الروابط العادية
+    document.querySelectorAll('.nav-menu li:not(.has-mega) a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 768) {
+                const navbar = document.querySelector('.navbar-links');
+                const overlay = document.querySelector('.overlay');
+                if (navbar && navbar.classList.contains('open')) {
+                    toggleMenu();
+                }
+            }
+        });
+    });
+});
+
+console.log('✅ All scripts loaded successfully');
