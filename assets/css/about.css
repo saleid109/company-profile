@@ -159,12 +159,12 @@
   padding: 80px 0;
   background: var(--color-bg-light);
 }
-
 .values-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  direction: ltr; /* هذا يعكس الترتيب */
 }
 
 /* ===== النص ===== */
