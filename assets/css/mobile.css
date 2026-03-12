@@ -443,6 +443,8 @@ html, body {
 
     .teams-group-section .container {
         padding: 0 16px !important;
+        box-sizing: border-box;
+
     }
 
     .teams-group-section .group {
