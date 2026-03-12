@@ -1,3 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;  /* فقط للأفقي */
+}
+
 /* ========================================================= 
     الإعدادات العامة وتحسين الأداء
 ========================================================= */
@@ -12,9 +23,11 @@
 .home-buttons a,
 .nav-menu li a,
 .btn-primary {
-    transition: transform 0.2s ease,
-        filter 0.2s ease,
-        background-color 0.2s ease;
+    transition: transform 0.2s ease,        filter 0.2s ease,        background-color 0.2s ease;
+    -webkit-transition: transform 0.2s ease,;
+    -moz-transition: transform 0.2s ease,;
+    -ms-transition: transform 0.2s ease,;
+    -o-transition: transform 0.2s ease,;
 }
 
 .nav-wrapper {
