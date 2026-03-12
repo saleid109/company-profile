@@ -361,35 +361,3 @@
         font-size: 12px;
     }
 }
-
-/* =========================================================
-    إضافات JavaScript المطلوبة
-========================================================= */
-
-/* 
-للجوال: يجب إضافة JavaScript لفتح القوائم الفرعية:
-
-// في ملف main.js
-document.querySelectorAll('.nav-menu li.has-mega > a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.classList.toggle('active');
-        const megaMenu = this.nextElementSibling;
-        if (megaMenu) {
-            megaMenu.classList.toggle('open');
-        }
-    });
-});
-
-// لفتح/إغلاق القائمة الجانبية
-function toggleMenu() {
-    document.querySelector('.navbar-links').classList.toggle('open');
-    document.querySelector('.overlay').classList.toggle('active');
-}
-
-// للنقر على الطبقة المعتمة
-document.querySelector('.overlay').addEventListener('click', function() {
-    document.querySelector('.navbar-links').classList.remove('open');
-    this.classList.remove('active');
-});
-*/
