@@ -4,7 +4,7 @@
 /* ===== إصلاح Hero ===== */
 .hero-section {
   position: relative;
-  height: 151px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
