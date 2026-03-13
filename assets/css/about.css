@@ -86,17 +86,12 @@
 }
 
 #sections-title {
-  font-size: 18px;
+  font-size: 32px;
   color: var(--color-secondary);
   text-align: center;
   margin-bottom: 0;
 }
 
-.intro-top h2 {
-  font-size: 48px;
-  font-weight: var(--weight-bold);
-  color: var(--color-secondary);
-}
 
 /* الشبكة الرئيسية: عمودين */
 .intro-grid {
@@ -109,7 +104,7 @@
 /* العمود الأيمن */
 .intro-right h3 {
   font-size: 24px;
-  font-weight: 900;
+  font-weight: var(--);
   color: var(--color-secondary);
   margin-bottom: 16px;
 }
