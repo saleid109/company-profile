@@ -386,3 +386,42 @@
         font-size: 12px;
     }
 }
+
+/* =========================================================
+    إصلاح زر الاستشارة في الجوال
+========================================================= */
+
+@media (max-width: 767px) {
+    
+    /*  إخفاء زر الديسكتوب */
+    .nav-actions.desktop-only {
+        display: none;
+    }
+    
+    /*  القائمة الجانبية */
+    .navbar-links {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    /*  القائمة تأخذ المساحة */
+    .nav-menu {
+        flex: 1;
+        overflow-y: auto;
+    }
+    
+    /*  زر الاستشارة في الأسفل */
+    .nav-actions.mobile-only {
+        display: block;
+        margin-top: auto;
+        padding: 20px 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-actions.mobile-only .btn-primary {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
