@@ -290,7 +290,7 @@ html {
     max-width: 1100px;
     width: 95%;
     /* عرض كافٍ للثلاث كروت */
-    background: #fff;
+    background: var(--color-white);
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
