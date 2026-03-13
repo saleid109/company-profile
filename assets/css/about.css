@@ -162,7 +162,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
-  direction: ltr; /* هذا يعكس الترتيب */
+  direction: ltr; /* لعكس الترتيب */
 }
 
 /* ===== النص ===== */
