@@ -115,7 +115,7 @@
 .intro-right > p {
   font-size: 24px;
   color: var(--color-gray-text);
-  line-height: 40px;
+  line-height: 1.9;
   margin-bottom: 28px;
   font-weight: 500;
 }
