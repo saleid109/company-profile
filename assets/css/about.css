@@ -104,12 +104,11 @@
 /* العمود الأيمن */
 .intro-right h3 {
   font-size: 48px;
-  font-weight: var(--weight-bold);
+  font-weight: 700;
   color: var(--color-secondary);
   margin-bottom: 16px;
-  line-height:normal;
+  line-height: normal;
   text-align: right;
-
 }
 
 .intro-right > p {
