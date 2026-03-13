@@ -171,12 +171,15 @@
   font-weight: 900;
   color: var(--color-secondary);
   margin-bottom: 20px;
+  text-align: right;
+
 }
 
 .values-text p {
   font-size: 15px;
   color: var(--color-gray-text);
   line-height: 1.9;
+  text-align: right;
 }
 
 /* ===== الدوائر ===== */
