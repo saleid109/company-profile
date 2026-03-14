@@ -106,7 +106,7 @@ function initMobileMegaMenu() {
     if (window.innerWidth > 1024) return;
 
     const dropdownLinks = document.querySelectorAll('.nav-menu li.dropdown > a');
-    
+
     dropdownLinks.forEach(link => {
         // إزالة المستمعات القديمة لتجنب التكرار
         const newLink = link.cloneNode(true);
@@ -115,18 +115,18 @@ function initMobileMegaMenu() {
 
     // إضافة المستمعات الجديدة
     document.querySelectorAll('.nav-menu li.dropdown > a').forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             // في الجوال والايباد، نريد النقر لفتح القائمة بدلاً من التحويم
             if (window.innerWidth <= 1024) {
                 e.preventDefault();
                 e.stopPropagation();
-                
+
                 const parentLi = this.parentElement;
                 const megaMenu = this.nextElementSibling;
-                
+
                 // تبديل الحالة
                 const isOpen = megaMenu && (megaMenu.classList.contains('open') || megaMenu.classList.contains('active-mobile'));
-                
+
                 // إغلاق جميع القوائم الأخرى أولاً
                 document.querySelectorAll('.nav-menu li.dropdown').forEach(li => {
                     if (li !== parentLi) {
@@ -183,7 +183,7 @@ function animateNumber(element, target) {
     const clip = document.querySelector('.team-track-clip');
     const btnPrev = document.getElementById('btn-prev');
     const btnNext = document.getElementById('btn-next');
-    
+
     if (!track || !clip || !btnPrev || !btnNext) return;
 
     const cards = Array.from(track.querySelectorAll('.team-card'));
@@ -279,7 +279,7 @@ function animateNumber(element, target) {
         const wrapperWidth = track.parentElement.getBoundingClientRect().width;
         const currentGap = getGap();
         const cardW = (wrapperWidth - (currentGap * (visibleCards - 1))) / visibleCards;
-        
+
         cards.forEach(card => {
             card.style.width = cardW + 'px';
             card.style.flex = `0 0 ${cardW}px`;
@@ -294,7 +294,7 @@ function animateNumber(element, target) {
     function updateButtons(maxIndex) {
         prevBtn.disabled = currentIndex >= maxIndex;
         nextBtn.disabled = currentIndex <= 0;
-        
+
         prevBtn.style.opacity = prevBtn.disabled ? '0.3' : '1';
         nextBtn.style.opacity = nextBtn.disabled ? '0.3' : '1';
     }
@@ -403,7 +403,7 @@ function handleLogin(e) {
     const btn = e.target.querySelector('.auth-submit');
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>جاري التحقق...</span>';
     btn.disabled = true;
-    
+
     setTimeout(() => {
         btn.innerHTML = '<i class="fas fa-check"></i> <span>تم بنجاح!</span>';
         btn.style.background = '#16a34a';
@@ -415,16 +415,16 @@ function handleRegister(e) {
     e.preventDefault();
     const pass = document.getElementById('reg-password').value;
     const confirm = document.getElementById('reg-confirm').value;
-    
+
     if (pass !== confirm) {
         alert('كلمتا المرور غير متطابقتين');
         return;
     }
-    
+
     const btn = e.target.querySelector('.auth-submit');
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>جاري الإنشاء...</span>';
     btn.disabled = true;
-    
+
     setTimeout(() => {
         btn.innerHTML = '<i class="fas fa-check"></i> <span>تم إنشاء الحساب!</span>';
         btn.style.background = '#16a34a';
@@ -476,9 +476,9 @@ document.addEventListener("DOMContentLoaded", () => {
             loop: true,
             grabCursor: true,
             autoplay: { delay: 3000, disableOnInteraction: false },
-            navigation: { 
-                nextEl: ".swiper-button-next", 
-                prevEl: ".swiper-button-prev" 
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
             },
             pagination: { el: ".swiper-pagination", clickable: true },
             breakpoints: {
@@ -549,3 +549,42 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 console.log('✅ All scripts loaded successfully');
+
+//=======================================
+
+//قسم خاص بصفحة من نحن فقط، لا يتم تحميله في الصفحات الأخرى
+
+/* أنيميشن الظهور */
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in, .slide-in-right, .slide-in-left').forEach(el => observer.observe(el));
+
+/* سلايدر الشهادات */
+const certs = [
+    { icon: 'fas fa-certificate', title: 'شهادة الجهة الحكومية', desc: 'نقطة صعود معتمدة من الجهات الرسمية في المملكة العربية السعودية وفق أعلى معايير الجودة والامتثال.' },
+    { icon: 'fas fa-stamp', title: 'ترخيص وزارة التجارة', desc: 'حاصلون على ترخيص رسمي من وزارة التجارة السعودية لممارسة نشاط تطوير البرمجيات والحلول التقنية.' },
+    { icon: 'fas fa-award', title: 'شهادة الجودة ISO', desc: 'نلتزم بمعايير الجودة الدولية في جميع خدماتنا ومنتجاتنا، ضماناً لأعلى مستويات رضا العملاء.' },
+    { icon: 'fas fa-shield-alt', title: 'عضوية هيئة الاتصالات', desc: 'أعضاء معتمدون في هيئة الاتصالات وتقنية المعلومات بالمملكة العربية السعودية.' },
+    { icon: 'fas fa-trophy', title: 'شهادة التميز التقني', desc: 'حصلنا على شهادة التميز التقني تقديراً لإسهاماتنا في تطوير قطاع التقنية بالمملكة.' },
+];
+let certIdx = 0;
+function updateCert() {
+    const c = certs[certIdx];
+    const v = document.getElementById('cert-visual');
+    v.style.opacity = '0';
+    setTimeout(() => {
+        document.getElementById('cert-icon').className = c.icon;
+        document.getElementById('cert-title').textContent = c.title;
+        document.getElementById('cert-desc').textContent = c.desc;
+        document.getElementById('cert-count').textContent = (certIdx + 1) + ' / ' + certs.length;
+        v.setAttribute('aria-label', 'شهادة ' + (certIdx + 1) + ' من ' + certs.length + ': ' + c.title);
+        v.style.opacity = '1'; v.style.transition = 'opacity .4s ease';
+    }, 280);
+}
+function nextCert() { certIdx = (certIdx + 1) % certs.length; updateCert(); }
+function prevCert() { certIdx = (certIdx - 1 + certs.length) % certs.length; updateCert(); }
+setInterval(nextCert, 4500);
+document.getElementById('cert-next').addEventListener('click', nextCert);
+document.getElementById('cert-prev').addEventListener('click', prevCert);
+updateCert();
