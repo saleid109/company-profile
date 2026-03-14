@@ -324,7 +324,19 @@
   line-height: 1.8;
 }
 
+/* إصلاح التعارض مع style.css */
+.about-intro .container {
+  overflow: visible !important;
+}
 
+.intro-top .section-label {
+  font-size: 20px !important;
+}
+
+#sections-title {
+  font-size: 24px !important;
+  font-weight: 900;
+}
 
 /* ===== الجوال ===== */
 @media (max-width: 768px) {
