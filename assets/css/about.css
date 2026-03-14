@@ -74,27 +74,44 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-/* العنوان العلوي */
-.intro-top {
-  text-align: right;
-  margin-bottom: 40px;
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.intro-top .section-label {
-  color: var(--color-primary);
-  font-size: 40px;
-  font-weight: 700;
-  display: block;
-  margin-bottom: 8px;
-  text-align: center;
+.intro-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-#sections-title {
+.intro-right h3 {
   font-size: 32px;
+  font-weight: 700;
   color: var(--color-secondary);
-  text-align: center;
-  margin-bottom: 0;
 }
+
+.intro-right > p {
+  font-size: 18px;
+  color: var(--color-gray-text);
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.intro-right a {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
 
 
 /* الشبكة الرئيسية: عمودين */
