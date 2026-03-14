@@ -68,32 +68,18 @@
   padding: 40px 0 60px;
   background: var(--color-white);
   position: relative;
+  overflow: visible; /* غيري من hidden */
+}
+
+.plane-svg {
+  position: absolute;
+  left: -120px;
+  top: 120px;
+  width: 480px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
   overflow: hidden;
-}
-
-.plane-svg{
-  position:absolute;
-  left:-120px;
-  top:120px;
-
-  width:520px;
-  height:auto;
-
-  opacity:.35;
-  pointer-events:none;
-  z-index:0;
-}
-
-.plane-svg path{
-  stroke-dashoffset:1000;
-  animation: pathMove 20s linear infinite;
-  -webkit-animation: pathMove 20s linear infinite;
-}
-
-@keyframes pathMove{
-  to{
-    stroke-dashoffset:0;
-  }
 }
 
 .about-intro .container {
@@ -155,16 +141,6 @@
   max-width: 680px;
 }
 
-.plane-svg {
-  position: absolute;
-  left: -120px;
-  top: 120px;
-  width: 480px;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
 
 /* بطاقتا الرؤية والرسالة */
 .vm-cards {
