@@ -71,15 +71,17 @@
   overflow: hidden;
 }
 
-.plane-bg {
-  position: absolute;
-  left: 0;
-  top: 80px;
-  width: 420px;
-  max-width: 35vw;
-  opacity: 0.25;
-  pointer-events: none;
-  z-index: 0;
+.plane-svg{
+  position:absolute;
+  left:-120px;
+  top:120px;
+
+  width:520px;
+  height:auto;
+
+  opacity:.35;
+  pointer-events:none;
+  z-index:0;
 }
 
 .about-intro .container {

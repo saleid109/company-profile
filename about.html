@@ -258,17 +258,27 @@
     <!-- ========== قسم من نحن ========== -->
 
     <section class="about-intro">
-                  <!--  الصورة  -->
-            <img src="./public/images/plane.png" alt="طائرة ورقية تحلق في السماء تمثل الطموح والتقدم"
-              class="plane-bg" />
+      <!--  الصورة  -->
+      <svg class="plane-svg" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
 
+        <!-- المسار المتقطع -->
+        <path d="M80 300 
+        C150 200, 220 350, 300 200
+        S420 120, 520 160" fill="none" stroke="#9FB2C8" stroke-width="3" stroke-dasharray="8 10" opacity="0.4" />
+
+        <!-- الطائرة -->
+        <g transform="translate(500,140) rotate(-20)">
+          <polygon points="0,0 40,10 0,20 10,10" fill="#C7D3E3" />
+        </g>
+
+      </svg>
       <div class="container">
         <div class="intro-top">
           <span class="section-label">نقطة بداية... تقودك نحو الصعود</span>
           <h2 id="sections-title">نحو مستقبل تقني مشرق</h2>
         </div>
 
-  <!-- الشبكة الرئيسية: عمودين -->
+        <!-- الشبكة الرئيسية: عمودين -->
         <div class="intro-grid">
           <div class="intro-right">
             <h3>نقطة صعود</h3>
@@ -277,7 +287,7 @@
               تطوير الويب والتطبيقات وأتمتة العمليات، بالإضافة إلى برامج تدريبية
               وتأهيلية لسوق العمل.
             </p>
-<!--البطاقات الفرعية للرؤية والرسالة-->
+            <!--البطاقات الفرعية للرؤية والرسالة-->
 
             <div class="vm-cards">
               <div class="vm-card">
