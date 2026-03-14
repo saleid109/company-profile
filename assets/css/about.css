@@ -98,9 +98,15 @@
 /* الشبكة الرئيسية: عمودين */
 .intro-grid {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 2fr 1fr;
   gap: 40px;
   align-items: start;
+  padding-right: 20px; /* مسافة من الحافة */
+}
+/* إصلاح قطع العنوان */
+.intro-right {
+  overflow: visible;
+  padding-right: 0;
 }
 
 /* العمود الأيمن */
@@ -109,9 +115,7 @@
   font-weight: 700;
   color: var(--color-secondary);
   margin-bottom: 16px;
-  line-height: normal;
-  text-align: right;
-  overflow: visible;
+  white-space: nowrap; /* يمنع كسر السطر */
 }
 
 .intro-right > p {
