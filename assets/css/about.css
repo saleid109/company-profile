@@ -126,23 +126,18 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
-  max-width: 800px; /* حدي العرض */
-  margin-right: 0;  /* دفعه لليمين */
+  max-width: 760px;
   margin-left: auto;
+  margin-right: 0;
 }
 
-.intro-right {
-  text-align: right;
-}
-
-/* العمود الأيمن (النص) */
 .intro-right h3 {
   font-size: 48px;
   font-weight: 700;
   color: var(--color-secondary);
   margin-bottom: 24px;
   text-align: right;
-  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .intro-right > p {
@@ -150,6 +145,24 @@
   color: var(--color-gray-text);
   line-height: 1.8;
   text-align: right;
+  max-width: 680px;
+}
+
+.vm-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 680px;
+}
+
+.plane-svg {
+  position: absolute;
+  left: -120px;
+  top: 120px;
+  width: 520px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* بطاقتا الرؤية والرسالة */
