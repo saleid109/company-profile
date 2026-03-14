@@ -71,8 +71,8 @@
 /* حاوية الشبكة */
 .about-intro .container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
+  margin: 32px auto;
+  padding: 0 20px;
 }
 
 /* العنوان العلوي */
