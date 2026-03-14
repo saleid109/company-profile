@@ -99,10 +99,9 @@
 /* الشبكة الرئيسية: عمودين */
 .intro-grid {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 2fr 3fr; /* الصورة أكبر قليلاً */
   gap: 40px;
   align-items: center;
-  direction: rtl; /* النص يمين، الصورة يسار */
 }
 
 .intro-right {
@@ -168,10 +167,10 @@
 }
 
 .intro-left img {
-  max-width: 60%;
+  max-width: 100%;
   height: auto;
   display: block;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 
