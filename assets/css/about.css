@@ -149,12 +149,14 @@
   font-weight: 800;
   color: var(--color-secondary);
   margin-bottom: 12px;
+  text-align: right;
 }
 
 .vm-card p {
-  font-size: 14px;
-  color: var(--color-gray-text);
-  line-height: 1.7;
+  font-size: 14px; /* كان 13px */
+  color: var(--color-gray-secondary);
+  line-height: 1.8;
+  text-align: right;
 }
 
 /* العمود الأيسر: الصورة */
