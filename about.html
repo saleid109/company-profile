@@ -259,19 +259,26 @@
 
     <section class="about-intro">
       <!--  الصورة  -->
-      <svg class="plane-svg" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+      <svg class="plane-svg" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
 
-        <!-- المسار المتقطع -->
-        <path d="M80 300 
-        C150 200, 220 350, 300 200
-        S420 120, 520 160" fill="none" stroke="#9FB2C8" stroke-width="3" stroke-dasharray="8 10" opacity="0.4" />
+        <!-- المسار المنقط -->
+        <path d="M 50 380 C 100 320, 150 400, 220 320 S 320 200, 420 240 S 520 180, 560 160" fill="none"
+          stroke="#8899BB" stroke-width="2" stroke-dasharray="8 12" opacity="0.5" />
 
-        <!-- الطائرة -->
-        <g transform="translate(500,140) rotate(-20)">
-          <polygon points="0,0 40,10 0,20 10,10" fill="#C7D3E3" />
+        <!-- الطائرة الورقية -->
+        <g transform="translate(530,138) rotate(-25)" opacity="0.85">
+          <!-- الجسم الرئيسي -->
+          <polygon points="0,0 -60,15 -60,5" fill="none" stroke="white" stroke-width="1.5" />
+          <polygon points="0,0 -60,15 -60,25" fill="none" stroke="white" stroke-width="1.5" />
+          <!-- الجناح السفلي -->
+          <polygon points="0,0 -60,25 -45,15" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1" />
+          <!-- الجناح العلوي -->
+          <polygon points="0,0 -60,5 -45,15" fill="rgba(255,255,255,0.08)" stroke="white" stroke-width="1" />
+          <!-- خط الوسط -->
+          <line x1="0" y1="0" x2="-60" y2="15" stroke="white" stroke-width="0.8" opacity="0.6" />
         </g>
-
       </svg>
+      <!-- المحتوى النصي -->
       <div class="container">
         <div class="intro-top">
           <span class="section-label">نقطة بداية... تقودك نحو الصعود</span>
