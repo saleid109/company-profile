@@ -144,9 +144,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+
+  max-width: 680px;
   margin-top: 32px;
-  width: 100%;
 }
+
+
 .vm-card {
   background: #FFFFFF;
   border-radius: 16px;
