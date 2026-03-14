@@ -72,12 +72,12 @@
 }
 .plane-svg {
   position: absolute;
-  left: 0; 
-  top: 10%;
-  width: 360px; /* الحجم المذكور في Figma */
-  opacity: 0.5;
-  z-index: -1; /* خلف المحتوى */
+  left: 5%;
+  top: 320px;
+  width: 380px;
+  opacity: 0.3;
   pointer-events: none;
+  z-index: 0;
 }
 
 .about-intro .container {
@@ -113,6 +113,7 @@
   max-width: 800px; /* زيدي العرض قليلاً ليناسب المحتوى */
   margin-left: auto; /* لضمان التموضع جهة اليمين في الحاوية الكبيرة */
   margin-left: 0;
+  direction: rtl; /* التأكد من اتجاه العناصر */
 }
 .intro-right h3 {
   font-family: 'Tajawal', sans-serif;
