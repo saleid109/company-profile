@@ -66,13 +66,19 @@
 
 .plane-svg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 55%;
-  max-width: 580px;
-  height: auto;
+
+  right: 0;
+  top: 60%;
+
+  width: 676px;
+  height: 160px;
+
+  transform: translateY(-50%);
+
+  opacity: .25;
+
   pointer-events: none;
-  z-index: 0
+  z-index: 0;
 }
 
 .about-intro .container {
@@ -129,8 +135,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+
   max-width: 676px;
-  margin-right: auto
+  height: 160px;
+
+  margin-right: auto;
+
+  position: relative;
+  /* مهم */
+  z-index: 2;
 }
 
 .vm-card {
@@ -138,7 +151,9 @@
   border-radius: 12px;
   padding: 32px 16px;
   border-top: 3px solid var(--color-primary);
-  transition: var(--transition)
+  transition: var(--transition);
+  position: relative;
+  z-index: 2;
 }
 
 .vm-card:hover {
@@ -471,7 +486,7 @@
   font-size: .75rem;
   cursor: pointer;
   transition: var(--transition);
-  
+
 }
 
 .cert-nav-btn:hover {
