@@ -96,9 +96,9 @@
 /* الشبكة الرئيسية: عمودين */
 .intro-grid {
   display: grid;
-  grid-template-columns: 3fr 2fr; /* الأيمن أكبر */
+  grid-template-columns: 3fr 2fr;
   gap: 40px;
-  align-items: center;
+  align-items: start;
 }
 
 /* العمود الأيمن */
