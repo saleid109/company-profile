@@ -159,10 +159,11 @@
   position: absolute;
   left: -120px;
   top: 120px;
-  width: 520px;
-  opacity: 0.35;
+  width: 480px;
+  opacity: 0.3;
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
 }
 
 /* بطاقتا الرؤية والرسالة */
