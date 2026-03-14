@@ -67,14 +67,25 @@
 .about-intro {
   padding: 40px 0 60px;
   background: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.plane-bg {
+  position: absolute;
+  left: 0;
+  top: 80px;
+  width: 420px;
+  max-width: 35vw;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .about-intro .container {
-  max-width: 1200px;
-  margin: 0px auto;
-  padding: 0 20px;
+  position: relative;
+  z-index: 2;
 }
-
 /* العنوان العلوي */
 .intro-top {
   text-align: center;
@@ -99,9 +110,9 @@
 /* الشبكة الرئيسية: عمودين */
 .intro-grid {
   display: grid;
-  grid-template-columns: 2fr 3fr; /* الصورة أكبر قليلاً */
+  grid-template-columns: 1fr; /* عمود واحد الحين */
   gap: 40px;
-  align-items: center;
+  
 }
 
 .intro-right {
@@ -159,19 +170,6 @@
   line-height: 1.7;
 }
 
-/* العمود الأيسر: الصورة */
-.intro-left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.intro-left img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  opacity: 0.4;
-}
 
 
 
