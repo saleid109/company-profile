@@ -114,10 +114,12 @@
 .intro-right > p {
   font-size: 24px;
   color: var(--color-gray-text);
-  line-height: 1.9;
+  line-height: 40px;
   margin-bottom: 28px;
   font-weight: 500;
 }
+
+
 
 /* بطاقتا الرؤية والرسالة */
 .vm-cards {
@@ -131,6 +133,14 @@
   border-radius: 12px;
   padding: 20px;
   border-top: 3px solid var(--color-primary);
+}
+
+.vm-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 676px;
+  margin-right: auto;
 }
 
 .vm-card h4 {
