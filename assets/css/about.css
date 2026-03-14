@@ -445,7 +445,8 @@
 .cert-frame p {
   color: rgba(255, 255, 255, .72);
   font-size: .82rem;
-  line-height: 1.7
+  line-height: 1.6;
+  font-weight: 500
 }
 
 .cert-nav-bar {
@@ -454,7 +455,7 @@
   justify-content: center;
   gap: 16px;
   padding: 13px 20px;
-  border-top: 1px solid #f0f2f7
+  border-top: 1px solid #f0f2f7;
 }
 
 .cert-nav-btn {
@@ -469,19 +470,20 @@
   color: var(--color-secondary);
   font-size: .75rem;
   cursor: pointer;
-  transition: var(--transition)
+  transition: var(--transition);
+  
 }
 
 .cert-nav-btn:hover {
   background: var(--color-secondary);
   color: var(--color-white);
-  border-color: var(--color-secondary)
+  border-color: var(--color-secondary);
 }
 
 .cert-count {
   font-size: .88rem;
   color: var(--color-gray-text);
-  font-family: 'Montserrat', sans-serif
+  font-family: 'Montserrat', sans-serif;
 }
 
 .certs-text h2 {
