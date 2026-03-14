@@ -73,13 +73,12 @@
 
 .plane-svg {
   position: absolute;
-  left: -120px;
-  top: 120px;
-  width: 480px;
+  left: 5%;
+  top: 320px;
+  width: 380px;
   opacity: 0.3;
   pointer-events: none;
   z-index: 0;
-  overflow: hidden;
 }
 
 .about-intro .container {
