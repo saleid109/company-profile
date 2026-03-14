@@ -100,10 +100,14 @@
 /* الشبكة الرئيسية: عمودين */
 .intro-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  /* الصورة يسار والنص يمين */
+  grid-template-columns: 1fr 2fr; /* الصورة أصغر، النص أكبر */
   gap: 60px;
   align-items: center;
+  direction: rtl; /* النص يمين، الصورة يسار */
+}
+
+.intro-right {
+  text-align: right;
 }
 
 /* العمود الأيمن (النص) */
