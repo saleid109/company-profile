@@ -70,15 +70,14 @@
   position: relative;
   overflow: visible; /* غيري من hidden */
 }
-
 .plane-svg {
   position: absolute;
-  left: 5%;
-  top: 320px;
-  width: 380px;
-  opacity: 0.3;
+  left: 0; 
+  top: 10%;
+  width: 360px; /* الحجم المذكور في Figma */
+  opacity: 0.5;
+  z-index: -1; /* خلف المحتوى */
   pointer-events: none;
-  z-index: 0;
 }
 
 .about-intro .container {
@@ -115,15 +114,17 @@
   margin-left: auto; /* لضمان التموضع جهة اليمين في الحاوية الكبيرة */
   margin-left: 0;
 }
-
 .intro-right h3 {
+  font-family: 'Tajawal', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  color: var(--color-secondary);
+  color: #00015B; /* الكود اللوني الدقيق من الصورة */
   margin-bottom: 24px;
   text-align: right;
-  line-height: 1.2;
+  line-height: normal;
 }
+
+
 .intro-right > p {
   font-size: 20px;
   color: var(--color-gray-text);
