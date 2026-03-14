@@ -126,23 +126,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  max-width: 676px;
+  margin-right: auto;
 }
 
 .vm-card {
   background: var(--color-bg-light);
   border-radius: 12px;
-  padding: 20px;
+  padding: 32px 16px;
   border-top: 3px solid var(--color-primary);
 }
-
-.vm-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  max-width: 676px;
-  margin-right: auto;
-}
-
 .vm-card h4 {
   font-size: 16px;
   font-weight: 800;
