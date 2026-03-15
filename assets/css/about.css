@@ -118,14 +118,16 @@
 .intro-right {
   display: flex;
   flex-direction: column;
+  text-align: right;
   gap: 20px;
+  padding: 0 80px;
 }
 
 /* العمود الثاني - البطاقات (الأيسر في RTL) */
 .intro-left {
   display: flex;
-  align-items: flex-start;
   justify-content: flex-start;
+  align-items: center;
 }
 
 .intro-right h3 {
