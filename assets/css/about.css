@@ -158,14 +158,14 @@
 
 .vm-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 2, 91, .1)
+  box-shadow: 0 6px 20px rgba(0, 2, 91, .1);
 }
 
 .vm-card h4 {
   font-size: 16px;
   font-weight: 800;
   color: var(--color-secondary);
-  margin-bottom: 8px
+  margin-bottom: 8px;
 }
 
 .vm-card p {
