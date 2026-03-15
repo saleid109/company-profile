@@ -120,7 +120,8 @@
   flex-direction: column;
   text-align: right;
   gap: 20px;
-  padding: 0 80px;
+  width: 100%;
+  padding: 0 20px;
 }
 
 /* العمود الثاني - البطاقات (الأيسر في RTL) */
