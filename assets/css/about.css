@@ -143,57 +143,60 @@
   font-weight: 500;
   text-align: right;
 }
-
+/* ===== تنسيق حاوية البطاقات ===== */
 .vm-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-
   width: 100%;
-  min-height: 220px;
-
+  margin-top: 24px; /* مسافة بسيطة بين النص والبطاقات */
   position: relative;
   z-index: 3;
 }
 
+/* ===== تنسيق البطاقة لتطابق Figma ===== */
 .vm-card {
-  background: var(--color-white);
-  border-radius: 12px;
-  padding: 28px 18px;
-  border-top: 5px solid var(--color-primary);
-  transition: var(--transition);
-  position: relative;
-  z-index: 3;
-  box-shadow: 0 3px 16px rgba(0, 2, 91, 0.1);
+  background: #FFFFFF;
+  border-radius: 16px; /* مطبق من Figma */
+  border: 1px solid #B5C4D6; /* مطبق من Figma */
+  border-top: 6px solid #FFCC35; /* الخط الأصفر العلوي (استبدله بـ var(--color-primary) إذا أردت) */
+  padding: 32px 16px; /* مطبق من Figma */
+  
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 8px; 
+  text-align: right;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* لضمان عدم خروج الزوايا العلوية عن الإطار الدائري */
 }
 
+/* تأثير عند تمرير الماوس */
 .vm-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(0, 2, 91, 0.18);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 2, 91, 0.08); /* ظل خفيف يبرز البطاقة */
 }
 
+/* تنسيق عنوان البطاقة (الرؤية / الرسالة) */
 .vm-card h4 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--color-secondary);
-  margin-bottom: 12px;
+  margin: 0;
   line-height: 1.4;
 }
 
+/* تنسيق نص البطاقة */
 .vm-card p {
-  font-size: 13px;
-  color: var(--color-gray-text);
-  line-height: 1.7;
-  flex-grow: 1;
+  font-size: 15px;
+  color: var(--color-gray-secondary);
+  margin: 0;
+  line-height: 1.6;
 }
 
 /* ===== قسم القيم ===== */
 .values-section {
   padding: 80px 0;
-  background: var(--color-bg-light);
+  background: var(--color-white);
 }
 
 .values-layout {
