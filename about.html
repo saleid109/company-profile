@@ -256,32 +256,64 @@
 
 
     <!-- ========== قسم من نحن ========== -->
-<section class="about-section" dir="rtl">
-  <div class="container">
-    <div class="about-header">
-      <h3 class="main-title">نقطة صعود</h3>
-      <p class="main-description">
-        شركة سعودية متخصصة في البرمجة وتقديم الحلول التقنية. تقدم خدمات تطوير الويب والتطبيقات وأتمتة العمليات، بالإضافة إلى برامج تدريبية وتأهيلية لسوق العمل.
-      </p>
-    </div>
 
-    <div class="vm-cards">
-      <div class="vm-card">
-        <h4>الرسالة</h4>
-        <p>
-          تطوير الكفاءات الوطنية في الخدمات التقنية عبر برامج متنوعة مكثفة وتوفير منتجات تقنية مبتكرة.
-        </p>
-      </div>
+    <section class="about-intro">
+      <!--  الصورة  -->
+      <svg class="plane-svg" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
 
-      <div class="vm-card">
-        <h4>الرؤية</h4>
-        <p>
-          المصدر الأول لتأهيل الشباب السعودي وربطهم بسوق العمل بحلول تقنية مبتكرة.
-        </p>
+        <!-- المسار المنقط -->
+        <path d="M 50 380 C 100 320, 150 400, 220 320 S 320 200, 420 240 S 520 180, 560 160" fill="none"
+          stroke="#8899BB" stroke-width="2" stroke-dasharray="8 12" opacity="0.5" />
+
+        <!-- الطائرة الورقية -->
+        <g transform="translate(530,138) rotate(-25)" opacity="0.85">
+          <polygon points="0,0 -60,15 -60,5" fill="none" stroke="#8899BB" stroke-width="1.5" />
+          <polygon points="0,0 -60,15 -60,25" fill="none" stroke="#8899BB" stroke-width="1.5" />
+          <polygon points="0,0 -60,25 -45,15" fill="rgba(100,130,180,0.15)" stroke="#8899BB" stroke-width="1" />
+          <polygon points="0,0 -60,5 -45,15" fill="rgba(100,130,180,0.08)" stroke="#8899BB" stroke-width="1" />
+          <line x1="0" y1="0" x2="-60" y2="15" stroke="#8899BB" stroke-width="0.8" opacity="0.6" />
+        </g>
+      </svg>
+      <!-- المحتوى النصي -->
+      <div class="container">
+        <div class="intro-top">
+          <span class="section-label">نقطة بداية... تقودك نحو الصعود</span>
+          <h2 id="sections-title">نحو مستقبل تقني مشرق</h2>
+        </div>
+
+        <!-- الشبكة الرئيسية: عمودين -->
+        <div class="intro-grid">
+          <div class="intro-right">
+            <h3>نقطة صعود</h3>
+            <p>
+              شركة سعودية متخصصة في البرمجة وتقديم الحلول التقنية. تقدم خدمات
+              تطوير الويب والتطبيقات وأتمتة العمليات، بالإضافة إلى برامج تدريبية
+              وتأهيلية لسوق العمل.
+            </p>
+            <!--البطاقات الفرعية للرؤية والرسالة-->
+
+            <div class="vm-cards">
+              <div class="vm-card">
+                <h4>الرؤية</h4>
+                <p>
+                  المصدر الأول لتأهيل الشباب السعودي وربطهم بسوق
+                  العمل بحلول تقنية مبتكرة.
+                </p>
+              </div>
+              <div class="vm-card">
+                <h4>الرسالة</h4>
+                <p>
+                  تطوير الكفاءات الوطنية في الخدمات التقنية عبر برامج
+                  متنوعة مكثفة وتوفير منتجات تقنية مبتكرة.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+
     <!-- ========== قسم قيمنا ========== -->
     <section class="values-section" aria-labelledby="values-title">
       <div class="container">
@@ -581,3 +613,4 @@
 </body>
 
 </html>
+
