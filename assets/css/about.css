@@ -118,7 +118,7 @@
   text-align: right;
   gap: 20px;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 ;
 }
 
 /* العمود الثاني - البطاقات (الأيسر في RTL) */
@@ -147,7 +147,7 @@
 /* ===== تنسيق حاوية البطاقات ===== */
 .vm-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2, 1fr;
   gap: 16px;
   width: 100%;
   margin-top: 24px; /* مسافة بسيطة بين النص والبطاقات */
@@ -155,7 +155,7 @@
   z-index: 3;
 }
 
-/* ===== تنسيق البطاقة لتطابق Figma ===== */
+/* ===== تنسيق البطاقة   ===== */
 .vm-card {
   background: #ffffff;
   border-radius: 16px; /* مطبق من Figma */
