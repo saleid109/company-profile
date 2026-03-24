@@ -149,11 +149,10 @@
 /* ===== تنسيق حاوية البطاقات ===== */
 .vm-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* ← هذا فقط يحتاج تغيير */
   gap: 16px;
   width: 100%;
   margin-top: 24px;
-  /* مسافة بسيطة بين النص والبطاقات */
   position: relative;
   z-index: 3;
 }
