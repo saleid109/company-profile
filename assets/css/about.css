@@ -69,14 +69,14 @@
 /* ✅ الطائرة: absolute مباشرة داخل section */
 .plane-svg {
   position: absolute;
-  right: -80px;
+  left: -40px;       /* ← اليسار بدل اليمين */
   top: 50%;
   width: 650px;
   height: 430px;
   transform: translateY(-50%);
-  opacity: 0.12;
+  opacity: 0.25;     /* ← ارفعي الشفافية عشان تبان */
   pointer-events: none;
-  z-index: 0;               /* ✅ خلف المحتوى */
+  z-index: 0;
 }
 
 /* ✅ Container فوق الطائرة */
