@@ -117,11 +117,8 @@
 
 /* العمود الأول - المحتوى النصي (الأيمن في RTL) */
 .intro-right {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  gap: 20px;
   width: 100%;
+  max-width: 100%; /* ← أضيفي هذا */
   padding: 0;
 }
 
@@ -152,12 +149,11 @@
 /* ===== تنسيق حاوية البطاقات ===== */
 .vm-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* ✅ الإصلاح الرئيسي */
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   width: 100%;
+  max-width: 100%; /* ← تأكد من هذا */
   margin-top: 24px;
-  position: relative;
-  z-index: 3;
 }
 
 /* ===== تنسيق البطاقة ===== */
