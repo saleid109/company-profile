@@ -1503,6 +1503,9 @@ html {
     z-index: 2;
     width: 160px;
     min-width: 160px;
+    position: sticky;
+    right: 0; 
+    z-index: 5;
 }
 
 .featured-us.last-us {
