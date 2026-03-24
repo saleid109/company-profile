@@ -62,7 +62,7 @@
   padding: 60px 0 40px;
   background: var(--color-white);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   min-height: 500px;
 }
 
@@ -157,8 +157,10 @@
 .vm-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 25px;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 /* ===== تنسيق البطاقة ===== */
