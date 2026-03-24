@@ -148,16 +148,14 @@
 
 /* ===== تنسيق حاوية البطاقات ===== */
 .vm-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;        /* ← غيّري grid إلى flex */
   gap: 16px;
   width: 100%;
-  max-width: 100%; /* ← تأكد من هذا */
-  margin-top: 24px;
 }
 
 /* ===== تنسيق البطاقة ===== */
 .vm-card {
+  flex: 1;
   background: #ffffff;
   border-radius: 16px;
   border: 1px solid #b5c4d6;
