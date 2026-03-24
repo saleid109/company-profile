@@ -116,7 +116,7 @@
     /* ============================================
         القوائم - النسخة المتقدمة
     ============================================ */
-    
+
     .nav-wrapper {
         display: flex;
         justify-content: space-between;
@@ -239,7 +239,7 @@
         box-shadow: none;
     }
 
-    .nav-menu li.has-mega > a.active + .mega-menu-content,
+    .nav-menu li.has-mega>a.active+.mega-menu-content,
     .mega-menu-content.open {
         max-height: 500px;
         opacity: 1;
@@ -321,7 +321,7 @@
     }
 
     /* تدوير السهم عند فتح القائمة */
-    .nav-menu li.has-mega > a.active .fa-chevron-down {
+    .nav-menu li.has-mega>a.active .fa-chevron-down {
         transform: rotate(180deg);
     }
 
@@ -758,7 +758,7 @@
 @media (min-width: 768px) and (max-width: 1024px) {
 
     /* ============================================
-        القوائم - النسخة المتقدمة للتابلت
+        القوائم -  المتقدمة للتابلت
     ============================================ */
 
     .nav-wrapper {
@@ -769,6 +769,19 @@
         gap: 20px;
         width: 100%;
         box-sizing: border-box;
+        background-color: var(--color-secondary) !important;
+        height: 70px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav-wrapper .container {
+        flex-direction: row !important;
+    }
+
+    .nav-actions.desktop-only {
+        display: flex !important;
     }
 
     .navbar-links {
