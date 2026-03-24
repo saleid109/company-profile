@@ -157,17 +157,19 @@
 
 /* ===== تنسيق البطاقة لتطابق Figma ===== */
 .vm-card {
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 16px; /* مطبق من Figma */
-  border: 1px solid #B5C4D6; /* مطبق من Figma */
-  border-top: 6px solid #FFCC35; /* الخط الأصفر العلوي (استبدله بـ var(--color-primary) إذا أردت) */
+  border: 1px solid #b5c4d6; /* مطبق من Figma */
+  border-top: 6px solid #ffcc35; /* الخط الأصفر العلوي (استبدله بـ var(--color-primary) إذا أردت) */
   padding: 32px 16px; /* مطبق من Figma */
-  
+
   display: flex;
   flex-direction: column;
-  gap: 8px; 
+  gap: 8px;
   text-align: right;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   overflow: hidden; /* لضمان عدم خروج الزوايا العلوية عن الإطار الدائري */
 }
 
