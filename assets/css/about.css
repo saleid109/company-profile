@@ -1,5 +1,5 @@
 /* ===== الهيكل العام ===== */
-.hero-section {
+.hero-inner {
   position: relative;
   height: 200px;
   display: flex;
