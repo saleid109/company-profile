@@ -142,8 +142,9 @@
 }
 
 .intro-right > p {
-  font-family: "Tajawal", sans-serif;
+  font-family: var(--font-main);
   font-size: clamp(16px, 2vw, 24px);
+  margin-bottom: 50px; /* زيادة هذه القيمة تعطي مساحة أكبر للبطاقات */
   line-height: 1.8;
   color: var(--color-gray-secondary);
   text-align: right;
