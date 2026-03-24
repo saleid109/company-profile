@@ -118,7 +118,7 @@
 .intro-right {
   width: 100%;
   max-width: 100%; /* ← أضيفي هذا */
-  padding: 0;
+  padding: 0 10px;
 }
 
 /* العمود الثاني - الدوائر (الأيسر في RTL) */
@@ -147,15 +147,17 @@
 
 /* ===== تنسيق حاوية البطاقات ===== */
 .vm-cards {
-  display: flex;        /* ← غيّري grid إلى flex */
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   width: 100%;
 }
 
 /* ===== تنسيق البطاقة ===== */
 .vm-card {
   flex: 1;
-  background: #ffffff;
+  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.9);
   border-radius: 16px;
   border: 1px solid #b5c4d6;
   border-top: 6px solid #ffcc35;
@@ -599,9 +601,8 @@
     grid-template-columns: 1fr;
   }
 
-  /* ✅ البطاقات تبقى عمودين حتى في الجوال إذا في مساحة، وإلا عمود واحد */
   .vm-cards {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .intro-right h3 {
