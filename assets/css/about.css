@@ -61,11 +61,12 @@
 .about-intro {
   padding: 60px 0 40px;
   background: var(--color-white);
-  position: relative;
+  position: relative;       /* ✅ مهم لتحديد سياق الـ absolute */
   overflow: hidden;
   min-height: 500px;
 }
 
+/* ✅ الطائرة: absolute مباشرة داخل section */
 .plane-svg {
   position: absolute;
   right: -80px;
@@ -75,9 +76,10 @@
   transform: translateY(-50%);
   opacity: 0.12;
   pointer-events: none;
-  z-index: 0;
+  z-index: 0;               /* ✅ خلف المحتوى */
 }
 
+/* ✅ Container فوق الطائرة */
 .about-intro .container {
   position: relative;
   z-index: 2;
@@ -104,6 +106,7 @@
   margin-bottom: 0;
 }
 
+/* ✅ الشبكة الرئيسية: عمودان متساويان */
 .intro-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -122,7 +125,7 @@
   padding: 0;
 }
 
-/* العمود الثاني - البطاقات (الأيسر في RTL) */
+/* العمود الثاني - الدوائر (الأيسر في RTL) */
 .intro-left {
   display: flex;
   align-items: center;
@@ -138,7 +141,7 @@
   text-align: right;
 }
 
-.intro-right>p {
+.intro-right > p {
   font-size: clamp(14px, 1.6vw, 18px);
   color: var(--color-gray-text);
   line-height: 1.8;
@@ -149,7 +152,7 @@
 /* ===== تنسيق حاوية البطاقات ===== */
 .vm-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* ← هذا فقط يحتاج تغيير */
+  grid-template-columns: repeat(2, 1fr); /* ✅ الإصلاح الرئيسي */
   gap: 16px;
   width: 100%;
   margin-top: 24px;
@@ -157,18 +160,13 @@
   z-index: 3;
 }
 
-/* ===== تنسيق البطاقة   ===== */
+/* ===== تنسيق البطاقة ===== */
 .vm-card {
   background: #ffffff;
   border-radius: 16px;
-  /* مطبق من Figma */
   border: 1px solid #b5c4d6;
-  /* مطبق من Figma */
   border-top: 6px solid #ffcc35;
-  /* الخط الأصفر العلوي (استبدله بـ var(--color-primary) إذا أردت) */
   padding: 32px 16px;
-  /* مطبق من Figma */
-
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -177,17 +175,13 @@
     transform 0.3s ease,
     box-shadow 0.3s ease;
   overflow: hidden;
-  /* لضمان عدم خروج الزوايا العلوية عن الإطار الدائري */
 }
 
-/* تأثير عند تمرير الماوس */
 .vm-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 2, 91, 0.08);
-  /* ظل خفيف يبرز البطاقة */
 }
 
-/* تنسيق عنوان البطاقة (الرؤية / الرسالة) */
 .vm-card h4 {
   font-size: 20px;
   font-weight: 800;
@@ -196,7 +190,6 @@
   line-height: 1.4;
 }
 
-/* تنسيق نص البطاقة */
 .vm-card p {
   font-size: 15px;
   color: var(--color-gray-secondary);
@@ -413,16 +406,20 @@
   position: absolute;
   inset: 0;
   background:
-    repeating-linear-gradient(90deg,
+    repeating-linear-gradient(
+      90deg,
       rgba(255, 255, 255, 0.025) 0px,
       rgba(255, 255, 255, 0.025) 1px,
       transparent 1px,
-      transparent 50px),
-    repeating-linear-gradient(0deg,
+      transparent 50px
+    ),
+    repeating-linear-gradient(
+      0deg,
       rgba(255, 255, 255, 0.025) 0px,
       rgba(255, 255, 255, 0.025) 1px,
       transparent 1px,
-      transparent 50px);
+      transparent 50px
+    );
 }
 
 .cert-frame {
@@ -452,29 +449,10 @@
   border-style: solid;
 }
 
-.cert-corner.tl {
-  top: 10px;
-  right: 10px;
-  border-width: 2px 0 0 2px;
-}
-
-.cert-corner.tr {
-  top: 10px;
-  left: 10px;
-  border-width: 2px 2px 0 0;
-}
-
-.cert-corner.bl {
-  bottom: 10px;
-  right: 10px;
-  border-width: 0 0 2px 2px;
-}
-
-.cert-corner.br {
-  bottom: 10px;
-  left: 10px;
-  border-width: 0 2px 2px 0;
-}
+.cert-corner.tl { top: 10px; right: 10px; border-width: 2px 0 0 2px; }
+.cert-corner.tr { top: 10px; left: 10px; border-width: 2px 2px 0 0; }
+.cert-corner.bl { bottom: 10px; right: 10px; border-width: 0 0 2px 2px; }
+.cert-corner.br { bottom: 10px; left: 10px; border-width: 0 2px 2px 0; }
 
 .cert-seal {
   width: 58px;
@@ -570,11 +548,8 @@
 .fade-in {
   opacity: 0;
   transform: translateY(22px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
@@ -583,11 +558,8 @@
 .slide-in-right {
   opacity: 0;
   transform: translateX(36px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .slide-in-right.visible {
   opacity: 1;
   transform: translateX(0);
@@ -596,46 +568,29 @@
 .slide-in-left {
   opacity: 0;
   transform: translateX(-36px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .slide-in-left.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-.d1 {
-  transition-delay: 0.08s;
-}
-
-.d2 {
-  transition-delay: 0.16s;
-}
-
-.d3 {
-  transition-delay: 0.24s;
-}
-
-.d4 {
-  transition-delay: 0.32s;
-}
+.d1 { transition-delay: 0.08s; }
+.d2 { transition-delay: 0.16s; }
+.d3 { transition-delay: 0.24s; }
+.d4 { transition-delay: 0.32s; }
 
 /* ===== التجاوب ===== */
 @media (max-width: 1024px) {
   .certs-layout {
     grid-template-columns: 1fr;
   }
-
   .certs-layout .cert-card {
     max-width: 420px;
   }
-
   .intro-grid {
     gap: 40px;
   }
-
   .plane-svg {
     width: 550px;
     height: 370px;
@@ -645,90 +600,70 @@
 }
 
 @media (max-width: 768px) {
-
   .intro-grid,
-  .vm-cards,
   .values-layout,
   .features-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* ✅ البطاقات تبقى عمودين حتى في الجوال إذا في مساحة، وإلا عمود واحد */
+  .vm-cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .intro-right h3 {
     font-size: clamp(24px, 5vw, 32px);
     margin-bottom: 16px;
   }
-
-  .intro-right>p {
+  .intro-right > p {
     font-size: clamp(13px, 4vw, 16px);
     margin-bottom: 24px;
   }
-
   .intro-grid {
     gap: 32px;
   }
-
   .vm-cards {
     min-height: auto;
     gap: 12px;
   }
-
   .vm-card {
     padding: 20px 14px;
   }
-
   .vm-card h4 {
     font-size: 16px;
     margin-bottom: 10px;
   }
-
   .vm-card p {
     font-size: 12px;
   }
-
   .venn-wrapper {
     width: 260px;
     height: 260px;
   }
-
-  .venn-social {
-    width: 120px;
-    height: 120px;
-    font-size: 11px;
-  }
-
-  .venn-prof {
-    width: 104px;
-    height: 104px;
-    font-size: 11px;
-  }
-
-  .venn-enable {
-    width: 96px;
-    height: 96px;
-    font-size: 11px;
-  }
-
-  .venn-innovation {
-    width: 120px;
-    height: 120px;
-    font-size: 13px;
-  }
-
+  .venn-social  { width: 120px; height: 120px; font-size: 11px; }
+  .venn-prof    { width: 104px; height: 104px; font-size: 11px; }
+  .venn-enable  { width: 96px;  height: 96px;  font-size: 11px; }
+  .venn-innovation { width: 120px; height: 120px; font-size: 13px; }
   .plane-svg {
     width: 350px;
     height: 280px;
     opacity: 0.08;
     right: -50px;
   }
-
   .about-intro {
     padding: 40px 0 28px;
     min-height: auto;
   }
-
   .values-section,
   .features-section,
   .certs-section {
     padding: 48px 0;
+  }
+}
+
+/* ✅ شاشات صغيرة جداً: البطاقات عمود واحد */
+@media (max-width: 420px) {
+  .vm-cards {
+    grid-template-columns: 1fr;
   }
 }
