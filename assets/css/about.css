@@ -62,7 +62,6 @@
   padding: 60px 0 40px;
   background: var(--color-white);
   position: relative;
-  /* ✅ مهم لتحديد سياق الـ absolute */
   overflow: hidden;
   min-height: 500px;
 }
