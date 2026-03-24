@@ -170,8 +170,8 @@
   background: rgba(255, 255, 255, 0.9);
   border-radius: 16px;
   border: 1px solid #b5c4d6;
-  border-top: 6px solid #ffcc35;
-  padding: 32px 16px;
+border-top: 5px solid var(--color-primary);
+  padding: 40px 25px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -180,6 +180,7 @@
     transform 0.3s ease,
     box-shadow 0.3s ease;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 2, 91, 0.05);
 }
 
 .vm-card:hover {
