@@ -96,7 +96,7 @@
 /*  الشبكة الرئيسية:   */
 .intro-grid {
   display: grid;
-  grid-template-columns: 280px 1fr; /* عمود للطائرة + عمود للمحتوى */
+  grid-template-columns: 1fr 1.5fr;
   gap: 40px;
   direction: rtl;
   align-items: start;
@@ -150,7 +150,7 @@
 
 /* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) --- */
 .illustration-container {
-  position: relative; /* بدل absolute */
+  position: relative;
   top: auto;
   left: auto;
   width: 100%;
