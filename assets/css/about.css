@@ -150,33 +150,37 @@
 /* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) --- */
 .illustration-container {
   position: absolute;
-  top: -140px;
-  left: -80px;
-  width: 350px;
-  height: 350px;
+  top: -160px; /* رفعتها للأعلى لتظهر في الفراغ فوق البطاقات */
+  left: -20px;  /* تقريبها من الحافة اليسرى */
+  width: 300px;
+  height: 300px;
   z-index: 1;
   pointer-events: none;
-  /* scaleX(-1) هي التي تقوم بعكس الاتجاه أفقياً */
-  transform: scaleX(-1);
+  /* تعكس الحاوية لتوجيه الطائرة نحو اليمين (المحتوى) */
+  transform: scaleX(-1); 
 }
 
 .dashed-path {
   position: absolute;
   width: 100%;
-  top: 42px;
+  top: 60px;
   left: 0;
-  opacity: 0.25;
+  opacity: 0.15; /* خفيفة جداً لكي لا تشوش على النص */
 }
 
 .paper-plane {
   position: absolute;
-  width: 180px;
-  top: 8px;
-  left: 288px;
+  width: 100px; /* حجم متناسق */
+  top: 10px;
+  left: 20px;   /* تم تعديل الموقع ليكون مرئياً داخل الحاوية المعكوسة */
   opacity: 0.8;
-  /* قمت بإزالة الـ rotate السابقة لأن عكس الاتجاه قد يكون كافياً،
-     أو يمكنك تعديلها إذا احتجت لتدوير إضافي */
-  /* transform: rotate(-10deg); */
+  /* تدوير بسيط لجعلها تطير باتجاه البطاقات */
+  transform: rotate(15deg); 
+}
+
+/* لضمان عدم ظهور شريط تمرير أفقي بسبب الطائرة */
+.about-intro {
+  overflow-x: hidden; 
 }
 
 /* ===== تنسيق حاوية البطاقات ===== */
