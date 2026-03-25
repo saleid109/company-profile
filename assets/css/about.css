@@ -60,7 +60,7 @@
 /* ===== قسم المقدمة ===== */
 .about-intro {
   padding: 60px 0 40px;
-  background: var(--color-white);
+  background-color: var(--color-white);
   position: relative;
   overflow: visible;
   min-height: 500px;
