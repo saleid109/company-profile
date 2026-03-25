@@ -58,11 +58,12 @@
 }
 
 /* ===== قسم المقدمة ===== */
+/* ===== القسم الرئيسي ===== */
 .about-intro {
   padding: 60px 0 40px;
   background: var(--color-white);
-  overflow: visible;
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;    /* ← مهم لـ absolute الطائرة */
 }
 
 /*  Container   */
@@ -93,34 +94,22 @@
 }
 
 /*  الشبكة الرئيسية:   */
-/* ===== الشبكة الرئيسية - الحل النهائي ===== */
-/* ===== الشبكة الرئيسية - الحل النهائي الدائم ===== */
+
+/* ===== الشبكة: عمود واحد فقط للمحتوى ===== */
 .intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  grid-template-areas: "plane content";
-  /* ← يسار: طائرة | يمين: نص */
-  gap: 40px;
-  align-items: start;
-  /* ← لا direction هنا نهائياً */
+  display: block;        /* ← ألغِ الـ grid تماماً */
 }
 
 .intro-left {
-  grid-area: plane;
-  /* ← العمود الأيسر دائماً */
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
+  display: none;         /* ← اخفِ العمود الفارغ */
 }
 
 .intro-right {
-  grid-area: content;
-  /* ← العمود الأيمن دائماً */
   width: 100%;
+  max-width: 700px;
+  margin-left: auto;     /* ← المحتوى على اليمين */
   padding: 0 10px;
   direction: rtl;
-  /* ← RTL على المحتوى فقط */
 }
 
 
@@ -155,14 +144,18 @@
 /* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) --- */
 
 /* تقليل ارتفاع الطائرة لتناسب المحتوى */
+
+/* ===== الطائرة: عنصر ديكوري مطلق ===== */
 .illustration-container {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  /* ← أصغر من 280px */
-  z-index: 1;
+  position: absolute;    /* ← خارج التدفق */
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleX(-1);
+  width: 200px;
+  height: 200px;
   pointer-events: none;
-  transform: scaleX(-1);
+  opacity: 0.4;
+  z-index: 0;
 }
 
 .dashed-path {
