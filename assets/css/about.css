@@ -173,12 +173,12 @@
 
 .paper-plane {
   position: absolute;
-  width: 100px; /* حجم متناسق */
+  width: 100px; 
   top: 10px;
-  left: 20px;   /* تم تعديل الموقع ليكون مرئياً داخل الحاوية المعكوسة */
+  left: 20px; 
   opacity: 0.8;
-  /* تدوير بسيط لجعلها تطير باتجاه البطاقات */
-  transform: rotate(15deg); 
+  /* scaleX(-1) لقلب الاتجاه، و rotate لتعديل زاوية الطيران */
+  transform: scaleX(-1) rotate(-15deg); 
 }
 
 /* لضمان عدم ظهور شريط تمرير أفقي بسبب الطائرة */
