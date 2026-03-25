@@ -646,8 +646,7 @@
 .d4 {
   transition-delay: 0.32s;
 }
-
-/* ===== التجاوب ===== */
+/* ===== التجاوب المحدث ===== */
 @media (max-width: 1024px) {
   .certs-layout {
     grid-template-columns: 1fr;
@@ -655,125 +654,60 @@
 
   .certs-layout .cert-card {
     max-width: 420px;
+    margin: 0 auto; /* لضمان التوسط */
   }
 
   .intro-grid {
     gap: 40px;
   }
 
-  .paper-plane{
-    width: 550px;
-    height: 370px;
-    right: -60px;
-    opacity: 0.1;
+  /* تصحيح أبعاد الطائرة الورقية */
+  .paper-plane {
+    width: 120px; /* حجم منطقي */
+    height: auto;
+    right: 5%;
+    opacity: 0.15;
   }
 }
 
 @media (max-width: 768px) {
-
+  /* توحيد الشبكات في عمود واحد */
   .intro-grid,
   .values-layout,
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-
-.vm-cards {
-        grid-template-columns: 1fr; /* بطاقة واحدة في كل سطر للموبايل */
-        gap: 20px;
-    }
-    
-    .illustration-container {
-        opacity: 0.3; /* تخفيف الشفافية في الموبايل لعدم تشتيت القراءة */
-        top: -40px;
-    }
-    
-    .paper-plane {
-        right: 2%; /* تقريبها للحافة في الشاشات الضيقة */
-    }
-
-  .intro-right h3 {
-    font-size: clamp(24px, 5vw, 32px);
-    margin-bottom: 16px;
-  }
-
-  .intro-right>p {
-    font-size: clamp(13px, 4vw, 16px);
-    margin-bottom: 24px;
-  }
-
-  .intro-grid {
-    gap: 32px;
-  }
-
+  .features-grid,
   .vm-cards {
-    min-height: auto;
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .vm-card {
-    padding: 20px 14px;
-  }
-
-  .vm-card h4 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  .vm-card p {
-    font-size: 12px;
-  }
-
-  .venn-wrapper {
-    width: 260px;
-    height: 260px;
-  }
-
-  .venn-social {
-    width: 120px;
-    height: 120px;
-    font-size: 11px;
-  }
-
-  .venn-prof {
-    width: 104px;
-    height: 104px;
-    font-size: 11px;
-  }
-
-  .venn-enable {
-    width: 96px;
-    height: 96px;
-    font-size: 11px;
-  }
-
-  .venn-innovation {
-    width: 120px;
-    height: 120px;
-    font-size: 13px;
+  .illustration-container {
+    opacity: 0.3;
+    top: -20px;
   }
 
   .paper-plane {
-    width: 350px;
-    height: 280px;
-    opacity: 0.08;
-    right: -50px;
+    width: 80px; /* أصغر للموبايل */
+    right: 10px;
+    top: 0;
   }
 
-  .about-intro {
-    padding: 40px 0 28px;
-    min-height: auto;
+  .intro-right h3 {
+    font-size: clamp(22px, 5vw, 28px);
+    text-align: center; /* اختيار المظهر المتوسط للموبايل */
   }
 
-  .values-section,
-  .features-section,
-  .certs-section {
-    padding: 48px 0;
+  .intro-right > p {
+    text-align: center;
+    font-size: 15px;
   }
-}
 
-/* ✅ شاشات صغيرة جداً: البطاقات عمود واحد */
-@media (max-width: 420px) {
-  .vm-cards {
-    grid-template-columns: 1fr;
+  /* تصغير حجم الدوائر (Venn Diagram) لتناسب الشاشات الصغيرة */
+  .venn-wrapper {
+    width: 240px;
+    height: 240px;
+    margin: 40px auto;
   }
+
+  .venn-circle { font-size: 10px; }
+  .venn-innovation { font-size: 12px; width: 110px; height: 110px; }
 }
