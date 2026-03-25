@@ -140,42 +140,44 @@
   display: block;
 }
 
-/* الحاوية الأساسية للبطاقات والرسم */
-.cards-wrapper {
-  position: relative;
-  margin-top: 40px;
-  min-height: 300px; 
-  left: 0;
-}
-/* الحاوية الكبيرة التي تجمع الطائرة والمسار */
+/* الحاوية التي تجمع الطائرة والمسار */
 .illustration-container {
   position: absolute;
-  top: 10%;      /* عدلي الارتفاع حسب تصميم فيجما */
-  left: 20px;    /* مكان ظهورها في جهة اليسار */
-  z-index: 1;    /* للتأكد من ظهورها فوق الخلفية وتحت البطاقات إذا لزم الأمر */
+  /* نضعها في جهة اليسار بالنسبة للحاوية الأب cards-wrapper */
+  left: 0; 
+  top: -40px; /* تحكمي في الارتفاع لتكون محاذية لعنوان "نقطة صعود" */
+  z-index: 1;
   
-  /* السحر هنا: قلب الحاوية بالكامل أفقياً */
-  transform: scaleX(-1); 
-  
-  /* اختيارياً: إضافة حركة بسيطة لجعلها حيوية */
-  transition: transform 0.3s ease;
+  /* قلب الحاوية بالكامل لجعل المسار والطائرة ينطلقان لليمين */
+  transform: scaleX(-1);
+  pointer-events: none; /* لمنعها من تداخل النقر مع النصوص */
 }
 
-/* تنسيق المسار المنقط */
+/* المسار المنقط */
 .dashed-path {
-  width: 180px;  /* تحكمي في طول المسار من هنا */
-  opacity: 0.6;
+  width: 160px; /* الحجم كما في الفيجما تقريباً */
+  opacity: 0.5;
+  display: block;
 }
 
-/* تنسيق الطائرة */
+/* الطائرة الورقية */
 .paper-plane {
   position: absolute;
-  width: 60px;   /* حجم الطائرة */
-  top: -15px;    /* لضبط مكانها بدقة عند نهاية المسار */
-  right: -20px;  /* لضبطها لتكون في مقدمة المسار */
+  width: 50px;
+  /* ضبط مكانها عند نهاية المسار المنقط */
+  top: -10px;
+  right: -15px; 
   
   /* تدوير بسيط لتناسب زاوية الصعود */
-  transform: rotate(-10deg); 
+  transform: rotate(-15deg);
+}
+
+/* تأكدي أن الأب له position relative */
+.cards-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 /* لضمان عدم ظهور شريط تمرير أفقي بسبب الطائرة */
 .about-intro {
