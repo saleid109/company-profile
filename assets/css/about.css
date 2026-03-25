@@ -59,11 +59,8 @@
 
 /* ===== قسم المقدمة ===== */
 .about-intro {
-  padding: 60px 0 40px;
-  background: var(--color-white);
-  position: relative;
   overflow: visible;
-  min-height: 500px;
+  overflow-x: hidden;
 }
 
 /*  Container   */
@@ -116,7 +113,7 @@
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding-top: 20px;
+  min-height: 250px;
 }
 
 .intro-right h3 {
@@ -144,8 +141,7 @@
 /* الحاوية الأساسية للبطاقات والرسم */
 .cards-wrapper {
   position: relative;
-  margin-top: 24px;
-  min-height: auto;
+  margin-top: 32px;
 }
 
 /* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) --- */
