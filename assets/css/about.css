@@ -59,10 +59,11 @@
 
 /* ===== قسم المقدمة ===== */
 .about-intro {
+  padding: 60px 0 40px;
+  background: var(--color-white);
   overflow: visible;
   overflow-x: hidden;
 }
-
 /*  Container   */
 .about-intro .container {
   position: relative;
