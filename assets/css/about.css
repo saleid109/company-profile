@@ -144,35 +144,36 @@
 .cards-wrapper {
   position: relative;
   margin-top: 40px;
+  min-height: 300px; /* لضمان مساحة كافية للرسم */
 }
 
 /* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) --- */
 .illustration-container {
   position: absolute;
-  top: 30px;
-  left: -60px; /* ← هنا السحر */
-  width: 280px;
-  height: 280px;
-  z-index: 1;
+  top: -50px; /* لرفعها قليلاً فوق مستوى البطاقات */
+  right: -40px; /* تحريكها لجهة اليمين كما في خربشة اليد */
+  width: 350px;
+  height: 350px;
+  z-index: 1; /* خلف البطاقات التي تأخذ z-index: 2 أو 3 */
+  pointer-events: none; /* لكي لا تعيق النقر على الروابط */
 }
 
 .dashed-path {
   position: absolute;
-  z-index: 2;
   width: 100%;
-  top: 84px;
-  right: 5%;
-  opacity: 0.35;
-  /* تقليل الشفافية جداً ليكون هادئاً */
-  pointer-events: none;
+  top: 60px;
+  right: 0;
+  opacity: 0.2; /* جعل المسار خفيفاً جداً لجمالية التصميم */
+  transform: scaleX(-1); /* عكس المسار ليناسب اتجاه الصعود من اليمين */
 }
 
 .paper-plane {
   position: absolute;
-  width: 45px;
-  top: 10px;
-  left: 55px;
-  opacity: 0.9;
+  width: 60px;
+  top: 20px;
+  right: 150px; /* تعديل مكان الطائرة لتظهر وكأنها تطير نحو اليسار */
+  opacity: 0.8;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.05));
 }
 
 
@@ -184,7 +185,7 @@
   gap: 25px;
   width: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 /* ===== تنسيق البطاقة ===== */
