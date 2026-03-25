@@ -167,6 +167,7 @@
   top: 60px;
   left: 0;
   opacity: 1; /* خفيفة جداً لكي لا تشوش على النص */
+  align-items: left;
   
 }
 
