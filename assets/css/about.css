@@ -144,7 +144,8 @@
 .cards-wrapper {
   position: relative;
   margin-top: 40px;
-  min-height: 300px; /* لضمان مساحة كافية للرسم */
+  min-height: 300px; 
+  left: 0;
 }
 
 /* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) --- */
@@ -165,7 +166,8 @@
   width: 100%;
   top: 60px;
   left: 0;
-  opacity: 0.15; /* خفيفة جداً لكي لا تشوش على النص */
+  opacity: 1; /* خفيفة جداً لكي لا تشوش على النص */
+  
 }
 
 .paper-plane {
