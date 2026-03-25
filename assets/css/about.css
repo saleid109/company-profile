@@ -64,6 +64,7 @@
   overflow: visible;
   overflow-x: hidden;
 }
+
 /*  Container   */
 .about-intro .container {
   position: relative;
@@ -93,17 +94,20 @@
 
 /*  الشبكة الرئيسية:   */
 /* ===== الشبكة الرئيسية - الحل النهائي ===== */
+/* ===== الشبكة الرئيسية - الحل النهائي الدائم ===== */
 .intro-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr; /* يسار: طائرة | يمين: نص */
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-areas: "plane content";
+  /* ← يسار: طائرة | يمين: نص */
   gap: 40px;
   align-items: start;
-  /* ← احذفي direction: rtl من هنا تماماً */
+  /* ← لا direction هنا نهائياً */
 }
 
-/* تحديد صريح لكل عمود */
 .intro-left {
-  grid-column: 1;           /* ← العمود الأيسر دائماً */
+  grid-area: plane;
+  /* ← العمود الأيسر دائماً */
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -111,9 +115,12 @@
 }
 
 .intro-right {
-  grid-column: 2;           /* ← العمود الأيمن دائماً */
+  grid-area: content;
+  /* ← العمود الأيمن دائماً */
   width: 100%;
   padding: 0 10px;
+  direction: rtl;
+  /* ← RTL على المحتوى فقط */
 }
 
 
@@ -125,7 +132,7 @@
   text-align: right;
 }
 
-.intro-right > p {
+.intro-right>p {
   font-family: var(--font-main);
   font-size: clamp(16px, 2vw, 24px);
   margin-bottom: 50px;
@@ -151,7 +158,8 @@
 .illustration-container {
   position: relative;
   width: 100%;
-  height: 220px;            /* ← أصغر من 280px */
+  height: 220px;
+  /* ← أصغر من 280px */
   z-index: 1;
   pointer-events: none;
   transform: scaleX(-1);
@@ -162,14 +170,17 @@
   width: 100%;
   top: 60px;
   left: 0;
-  opacity: 0.15; /* خفيفة جداً لكي لا تشوش على النص */
+  opacity: 0.15;
+  /* خفيفة جداً لكي لا تشوش على النص */
 }
 
 .paper-plane {
   position: absolute;
-  width: 100px; /* حجم متناسق */
+  width: 100px;
+  /* حجم متناسق */
   top: 10px;
-  left: 20px; /* تم تعديل الموقع ليكون مرئياً داخل الحاوية المعكوسة */
+  left: 20px;
+  /* تم تعديل الموقع ليكون مرئياً داخل الحاوية المعكوسة */
   opacity: 0.8;
   /* تدوير بسيط لجعلها تطير باتجاه البطاقات */
   transform: rotate(15deg);
@@ -441,20 +452,16 @@
   position: absolute;
   inset: 0;
   background:
-    repeating-linear-gradient(
-      90deg,
+    repeating-linear-gradient(90deg,
       rgba(255, 255, 255, 0.025) 0px,
       rgba(255, 255, 255, 0.025) 1px,
       transparent 1px,
-      transparent 50px
-    ),
-    repeating-linear-gradient(
-      0deg,
+      transparent 50px),
+    repeating-linear-gradient(0deg,
       rgba(255, 255, 255, 0.025) 0px,
       rgba(255, 255, 255, 0.025) 1px,
       transparent 1px,
-      transparent 50px
-    );
+      transparent 50px);
 }
 
 .cert-frame {
@@ -681,6 +688,7 @@
 }
 
 @media (max-width: 768px) {
+
   /* توحيد الشبكات في عمود واحد */
   .intro-grid,
   .values-layout,
@@ -708,7 +716,7 @@
     /* اختيار المظهر المتوسط للموبايل */
   }
 
-  .intro-right > p {
+  .intro-right>p {
     text-align: center;
     font-size: 15px;
   }
