@@ -356,7 +356,7 @@
 }
 
 .feature-card {
-  background: var(--color-white);
+  background: var(--color-bg-light);
   border-radius: 12px;
   padding: 32px 24px;
   text-align: center;
