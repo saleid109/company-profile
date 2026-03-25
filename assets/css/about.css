@@ -150,32 +150,33 @@
 /* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) --- */
 .illustration-container {
   position: absolute;
-  top: -50px; /* لرفعها قليلاً فوق مستوى البطاقات */
-  right: -40px; /* تحريكها لجهة اليمين كما في خربشة اليد */
+  top: -140px; 
+  left: -80px; /* نقلناها لليسار بدلاً من اليمين */
   width: 350px;
   height: 350px;
-  z-index: 1; /* خلف البطاقات التي تأخذ z-index: 2 أو 3 */
-  pointer-events: none; /* لكي لا تعيق النقر على الروابط */
+  z-index: 1; /* تبقى خلف البطاقات */
+  pointer-events: none;
+  /* عكس الاتجاه أفقياً لتناسب التموضع الجديد */
+  transform: scaleX(1); 
 }
 
 .dashed-path {
   position: absolute;
   width: 100%;
-  top: 60px;
-  right: 0;
-  opacity: 0.2; /* جعل المسار خفيفاً جداً لجمالية التصميم */
-  transform: scaleX(-1); /* عكس المسار ليناسب اتجاه الصعود من اليمين */
+  top: 42px;
+  left: 0; /* تموضع المسار من اليسار */
+  opacity: 0.25;
 }
 
 .paper-plane {
   position: absolute;
-  width: 60px;
-  top: 20px;
-  right: 150px; /* تعديل مكان الطائرة لتظهر وكأنها تطير نحو اليسار */
+  width: 180px;
+  top: 8px;
+  left: 288px; /* تموضع الطائرة من اليسار */
   opacity: 0.8;
-  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.05));
+  /* تدوير بسيط للطائرة لتبدو متجهة نحو المحتوى */
+  transform: rotate(-10deg); 
 }
-
 
 
 /* ===== تنسيق حاوية البطاقات ===== */
