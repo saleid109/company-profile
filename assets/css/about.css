@@ -163,12 +163,14 @@
 
 .dashed-path {
   position: absolute;
-  width: 100%;
-  top: 60px;
-  left: 0;
-  opacity: 1; /* خفيفة جداً لكي لا تشوش على النص */
-  align-items: left;
+  /* تأكدي من ضبط التموضع ليتناسب مع بداية الطائرة */
+  top: 50px; 
+  right: 20px; /* قد تحتاجين لتغيير left إلى right لضبط الاتجاه الجديد */
+  width: 200px;
+  opacity: 0.5;
   
+  /* هذا السطر سيقوم بقلب المسار كاملاً */
+  transform: scaleX(-1);
 }
 
 .paper-plane {
