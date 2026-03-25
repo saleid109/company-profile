@@ -126,10 +126,11 @@
   text-align: right;
 }
 
-.intro-right > p {
+.intro-right>p {
   font-family: var(--font-main);
   font-size: clamp(16px, 2vw, 24px);
-  margin-bottom: 50px; /* زيادة هذه القيمة تعطي مساحة أكبر للبطاقات */
+  margin-bottom: 50px;
+  /* زيادة هذه القيمة تعطي مساحة أكبر للبطاقات */
   line-height: 1.8;
   color: var(--color-gray-secondary);
   text-align: right;
@@ -141,50 +142,57 @@
 
 /* الحاوية الأساسية للبطاقات والرسم */
 .cards-wrapper {
-    position: relative;
-    margin-top: 40px;
+  position: relative;
+  margin-top: 40px;
 }
 
 /* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) --- */
 
 .illustration-container {
-    position: absolute;
-    top: -80px; 
-    right: 5%;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* تبقى خلف البطاقات ولكن فوق خلفية القسم */
-    pointer-events: none;
-    display: block;
+  position: absolute;
+  top: -80px;
+  right: 5%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* تبقى خلف البطاقات ولكن فوق خلفية القسم */
+  pointer-events: none;
+  display: block;
 }
 
 .dashed-path {
-    position: absolute;
-    z-index: 2;
-    width: clamp(250px, 25vw, 400px);
-    top: 10px;
-    right: 5%;
-    opacity: 0.15; /* تقليل الشفافية جداً ليكون هادئاً */
-    pointer-events: none;
+  position: absolute;
+  z-index: 2;
+  width: clamp(250px, 25vw, 400px);
+  top: 10px;
+  right: 5%;
+  opacity: 0.15;
+  /* تقليل الشفافية جداً ليكون هادئاً */
+  pointer-events: none;
 }
 
 .paper-plane {
-    position: absolute;
-    width: 50px;
-    top: -20px;
-    right: 15%;
-    opacity: 0.25; /* شفافية خفيفة للطائرة */
-    animation: flightPath 8s ease-in-out infinite; /* إبطاء الحركة لزيادة الأناقة */
+  position: absolute;
+  width: 50px;
+  top: -20px;
+  right: 15%;
+  opacity: 0.25;
+  /* شفافية خفيفة للطائرة */
+  animation: flightPath 8s ease-in-out infinite;
+  /* إبطاء الحركة لزيادة الأناقة */
 }
 
 /* ✅ أنيميشن طيران احترافي (يتحرك للأمام والخلف مع دوران بسيط) */
 @keyframes flightPath {
-    0%, 100% { 
-        transform: translate(0, 0) rotate(0deg); 
-    }
-    50% { 
-        transform: translate(-20px, -30px) rotate(-10deg); 
-    }
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(-20px, -30px) rotate(-10deg);
+  }
 }
 
 
@@ -202,22 +210,26 @@
 
 /* --- تحسينات البطاقات لتطابق الصورة --- */
 .vm-card {
-    position: relative;
-    z-index: 3;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 16px;                        /* ← أضيفي هذا */
-    border: 1px solid rgba(181, 196, 214, 0.3); /* ← border أولاً */
-    border-top: 6px solid #ffcc35;              /* ← border-top بعده يطغى عليه ✅ */
-    padding: 35px 25px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 20px 50px rgba(0, 2, 91, 0.04);
-    overflow: hidden;
+  position: relative;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  /* ← أضيفي هذا */
+  border: 1px solid rgba(181, 196, 214, 0.3);
+  /* ← border أولاً */
+  border-top: 6px solid #ffcc35;
+  /* ← border-top بعده يطغى عليه ✅ */
+  padding: 35px 25px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 20px 50px rgba(0, 2, 91, 0.04);
+  overflow: hidden;
 }
 
 .vm-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--color-primary); /* يتغير الإطار عند التحويم */
-    box-shadow: 0 20px 40px rgba(0, 2, 91, 0.08);
+  transform: translateY(-10px);
+  border-color: var(--color-primary);
+  /* يتغير الإطار عند التحويم */
+  box-shadow: 0 20px 40px rgba(0, 2, 91, 0.08);
 }
 
 .vm-card h4 {
@@ -646,6 +658,7 @@
 .d4 {
   transition-delay: 0.32s;
 }
+
 /* ===== التجاوب المحدث ===== */
 @media (max-width: 1024px) {
   .certs-layout {
@@ -654,7 +667,8 @@
 
   .certs-layout .cert-card {
     max-width: 420px;
-    margin: 0 auto; /* لضمان التوسط */
+    margin: 0 auto;
+    /* لضمان التوسط */
   }
 
   .intro-grid {
@@ -663,7 +677,8 @@
 
   /* تصحيح أبعاد الطائرة الورقية */
   .paper-plane {
-    width: 120px; /* حجم منطقي */
+    width: 120px;
+    /* حجم منطقي */
     height: auto;
     right: 5%;
     opacity: 0.15;
@@ -671,6 +686,7 @@
 }
 
 @media (max-width: 768px) {
+
   /* توحيد الشبكات في عمود واحد */
   .intro-grid,
   .values-layout,
@@ -686,17 +702,19 @@
   }
 
   .paper-plane {
-    width: 80px; /* أصغر للموبايل */
+    width: 80px;
+    /* أصغر للموبايل */
     right: 10px;
     top: 0;
   }
 
   .intro-right h3 {
     font-size: clamp(22px, 5vw, 28px);
-    text-align: center; /* اختيار المظهر المتوسط للموبايل */
+    text-align: center;
+    /* اختيار المظهر المتوسط للموبايل */
   }
 
-  .intro-right > p {
+  .intro-right>p {
     text-align: center;
     font-size: 15px;
   }
@@ -708,6 +726,13 @@
     margin: 40px auto;
   }
 
-  .venn-circle { font-size: 10px; }
-  .venn-innovation { font-size: 12px; width: 110px; height: 110px; }
+  .venn-circle {
+    font-size: 10px;
+  }
+
+  .venn-innovation {
+    font-size: 12px;
+    width: 110px;
+    height: 110px;
+  }
 }
