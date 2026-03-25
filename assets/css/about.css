@@ -148,34 +148,35 @@
 }
 
 /* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) --- */
+/* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) في جهة اليسار --- */
 .illustration-container {
   position: absolute;
-  top: -140px; 
-  left: -80px; /* نقلناها لليسار بدلاً من اليمين */
+  top: -160px; /* رفعتها للأعلى قليلاً لتناسب منطقة "هنا" في رسمك */
+  left: -40px;  /* تقريبها من الحافة اليسرى */
   width: 350px;
   height: 350px;
-  z-index: 1; /* تبقى خلف البطاقات */
+  z-index: 1; 
   pointer-events: none;
-  /* عكس الاتجاه أفقياً لتناسب التموضع الجديد */
-  transform: scaleX(1); 
+  /* scaleX(-1) تعكس الطائرة لتنظر لليمين (باتجاه النص) */
+  transform: scaleX(-1); 
 }
 
 .dashed-path {
   position: absolute;
   width: 100%;
-  top: 42px;
-  left: 0; /* تموضع المسار من اليسار */
-  opacity: 0.25;
+  top: 60px;
+  left: 0;
+  opacity: 0.2; /* خففت الشفافية قليلاً لتكون هادئة */
 }
 
 .paper-plane {
   position: absolute;
-  width: 180px;
-  top: 8px;
-  left: 288px; /* تموضع الطائرة من اليسار */
+  width: 100px; /* حجم متناسق مع البطاقات */
+  top: 0;
+  left: 40px; 
   opacity: 0.8;
-  /* تدوير بسيط للطائرة لتبدو متجهة نحو المحتوى */
-  transform: rotate(-10deg); 
+  /* تدوير بسيط لجعل مقدمة الطائرة تشير للأسفل قليلاً باتجاه البطاقات */
+  transform: rotate(15deg); 
 }
 
 
