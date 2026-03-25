@@ -661,7 +661,7 @@
     gap: 40px;
   }
 
-  .plane-svg {
+  .plane {
     width: 550px;
     height: 370px;
     right: -60px;
@@ -677,9 +677,19 @@
     grid-template-columns: 1fr;
   }
 
-  .vm-cards {
-    grid-template-columns: 1fr;
-  }
+.vm-cards {
+        grid-template-columns: 1fr; /* بطاقة واحدة في كل سطر للموبايل */
+        gap: 20px;
+    }
+    
+    .illustration-container {
+        opacity: 0.3; /* تخفيف الشفافية في الموبايل لعدم تشتيت القراءة */
+        top: -40px;
+    }
+    
+    .paper-plane {
+        right: 2%; /* تقريبها للحافة في الشاشات الضيقة */
+    }
 
   .intro-right h3 {
     font-size: clamp(24px, 5vw, 32px);
