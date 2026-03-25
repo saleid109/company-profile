@@ -143,34 +143,34 @@
 /* الحاوية التي تجمع الطائرة والمسار */
 .illustration-container {
   position: absolute;
-  /* رفع العنصر للأعلى - عدلي الرقم حسب الرغبة */
-  top: -80px; 
+  /*رفعالعنصرللأعلى-عدليالرقمحسبالرغبة*/top: -80px;
   left: 10px;
   z-index: 1;
-  
-  /* قلب الاتجاه أفقياً (Mirror) */
-  transform: scaleX(-1);
-  
-  /* منع التداخل مع ضغطات الماوس على النصوص */
+  transform: none;
   pointer-events: none;
+
 }
 
 /* المسار المنقط */
 .dashed-path {
   width: 170px; /* حجم المسار */
   opacity: 0.5;
+  transform: scaleX(-1);
+
 }
 
 /* الطائرة الورقية */
 .paper-plane {
   position: absolute;
   width: 55px;
-  /* ضبط موقعها بدقة عند نهاية المسار */
   top: -15px;
-  right: -20px;
+  right: auto;
+  left: -20px;
   
   /* تدوير بسيط لجعلها تطير للأعلى */
-  transform: rotate(-12deg);
+    transform: scaleX(-1) rotate(-12deg);
+  opacity: 0.2;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* تأكدي أن الأب له position relative */
