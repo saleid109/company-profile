@@ -92,31 +92,30 @@
 }
 
 /*  الشبكة الرئيسية:   */
+/* ===== الشبكة الرئيسية - الحل النهائي ===== */
 .intro-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr; /* ← غيّري إلى: */
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1fr 1.5fr; /* يسار: طائرة | يمين: نص */
   gap: 40px;
-  direction: rtl;
   align-items: start;
+  /* ← احذفي direction: rtl من هنا تماماً */
 }
 
-/* العمود الأول - المحتوى النصي (الأيمن في RTL) */
-.intro-right {
-  width: 100%;
-  max-width: 100%;
-  /* ← أضيفي هذا */
-  padding: 0 10px;
-}
-
-/* العمود الثاني - الدوائر (الأيسر في RTL) */
+/* تحديد صريح لكل عمود */
 .intro-left {
+  grid-column: 1;           /* ← العمود الأيسر دائماً */
   display: flex;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  min-height: 250px;
 }
+
+.intro-right {
+  grid-column: 2;           /* ← العمود الأيمن دائماً */
+  width: 100%;
+  padding: 0 10px;
+}
+
 
 .intro-right h3 {
   font-size: clamp(28px, 3.2vw, 40px);
@@ -147,12 +146,12 @@
 }
 
 /* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) --- */
+
+/* تقليل ارتفاع الطائرة لتناسب المحتوى */
 .illustration-container {
   position: relative;
-  top: auto;
-  left: auto;
   width: 100%;
-  height: 280px;
+  height: 220px;            /* ← أصغر من 280px */
   z-index: 1;
   pointer-events: none;
   transform: scaleX(-1);
