@@ -60,7 +60,7 @@
 /* ===== قسم المقدمة ===== */
 .about-intro {
   padding: 60px 0 40px;
-  background-color: var(--color-white);
+  background: var(--color-white);
   position: relative;
   overflow: visible;
   min-height: 500px;
@@ -96,10 +96,10 @@
 /*  الشبكة الرئيسية:   */
 .intro-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  /* ← عمود واحد بدل عمودين */
-  gap: 0;
+  grid-template-columns: 280px 1fr; /* عمود للطائرة + عمود للمحتوى */
+  gap: 40px;
   direction: rtl;
+  align-items: start;
 }
 
 /* العمود الأول - المحتوى النصي (الأيمن في RTL) */
@@ -113,9 +113,10 @@
 /* العمود الثاني - الدوائر (الأيسر في RTL) */
 .intro-left {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
+  padding-top: 20px;
 }
 
 .intro-right h3 {
@@ -126,7 +127,7 @@
   text-align: right;
 }
 
-.intro-right>p {
+.intro-right > p {
   font-family: var(--font-main);
   font-size: clamp(16px, 2vw, 24px);
   margin-bottom: 50px;
@@ -143,21 +144,20 @@
 /* الحاوية الأساسية للبطاقات والرسم */
 .cards-wrapper {
   position: relative;
-  margin-top: 40px;
-  min-height: 300px; /* لضمان مساحة كافية للرسم */
+  margin-top: 24px;
+  min-height: auto;
 }
 
 /* --- تحديثات ذكية للرسم التوضيحي (الطائرة والمسار) --- */
 .illustration-container {
-  position: absolute;
-  top: -160px; /* رفعتها للأعلى لتظهر في الفراغ فوق البطاقات */
-  left: -20px;  /* تقريبها من الحافة اليسرى */
-  width: 300px;
-  height: 300px;
+  position: relative; /* بدل absolute */
+  top: auto;
+  left: auto;
+  width: 100%;
+  height: 280px;
   z-index: 1;
   pointer-events: none;
-  /* تعكس الحاوية لتوجيه الطائرة نحو اليمين (المحتوى) */
-  transform: scaleX(-1); 
+  transform: scaleX(-1);
 }
 
 .dashed-path {
@@ -172,15 +172,15 @@
   position: absolute;
   width: 100px; /* حجم متناسق */
   top: 10px;
-  left: 20px;   /* تم تعديل الموقع ليكون مرئياً داخل الحاوية المعكوسة */
+  left: 20px; /* تم تعديل الموقع ليكون مرئياً داخل الحاوية المعكوسة */
   opacity: 0.8;
   /* تدوير بسيط لجعلها تطير باتجاه البطاقات */
-  transform: rotate(15deg); 
+  transform: rotate(15deg);
 }
 
 /* لضمان عدم ظهور شريط تمرير أفقي بسبب الطائرة */
 .about-intro {
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 /* ===== تنسيق حاوية البطاقات ===== */
@@ -205,8 +205,9 @@
   border: 1px solid rgba(181, 196, 214, 0.3);
   /* ← border أولاً */
   border-top: 6px solid #ffcc35;
-  /* ← border-top بعده يطغى عليه ✅ */
-  padding: 35px 25px;
+  /* ← border-top بعده يطغى عليه  */
+  padding: 30px 24px 24px;
+
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 20px 50px rgba(0, 2, 91, 0.04);
   overflow: hidden;
@@ -443,16 +444,20 @@
   position: absolute;
   inset: 0;
   background:
-    repeating-linear-gradient(90deg,
+    repeating-linear-gradient(
+      90deg,
       rgba(255, 255, 255, 0.025) 0px,
       rgba(255, 255, 255, 0.025) 1px,
       transparent 1px,
-      transparent 50px),
-    repeating-linear-gradient(0deg,
+      transparent 50px
+    ),
+    repeating-linear-gradient(
+      0deg,
       rgba(255, 255, 255, 0.025) 0px,
       rgba(255, 255, 255, 0.025) 1px,
       transparent 1px,
-      transparent 50px);
+      transparent 50px
+    );
 }
 
 .cert-frame {
@@ -600,7 +605,9 @@
 .fade-in {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .fade-in.visible {
@@ -611,7 +618,9 @@
 .slide-in-right {
   opacity: 0;
   transform: translateX(36px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .slide-in-right.visible {
@@ -622,7 +631,9 @@
 .slide-in-left {
   opacity: 0;
   transform: translateX(-36px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .slide-in-left.visible {
@@ -673,7 +684,6 @@
 }
 
 @media (max-width: 768px) {
-
   /* توحيد الشبكات في عمود واحد */
   .intro-grid,
   .values-layout,
@@ -701,7 +711,7 @@
     /* اختيار المظهر المتوسط للموبايل */
   }
 
-  .intro-right>p {
+  .intro-right > p {
     text-align: center;
     font-size: 15px;
   }
