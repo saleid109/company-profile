@@ -160,7 +160,7 @@
   position: absolute;
   z-index: 2;
   width: 100%;
-  top: 10px;
+  top: 84px;
   right: 5%;
   opacity: 0.35;
   /* تقليل الشفافية جداً ليكون هادئاً */
@@ -170,23 +170,11 @@
 .paper-plane {
   position: absolute;
   width: 45px;
-  top: -10px;
-  left: 20px;
+  top: 10px;
+  left: 55px;
   opacity: 0.9;
 }
 
-/* ✅ أنيميشن طيران احترافي (يتحرك للأمام والخلف مع دوران بسيط) */
-@keyframes flightPath {
-
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-
-  50% {
-    transform: translate(-20px, -30px) rotate(-10deg);
-  }
-}
 
 
 /* ===== تنسيق حاوية البطاقات ===== */
