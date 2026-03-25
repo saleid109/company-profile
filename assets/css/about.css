@@ -71,6 +71,7 @@
   position: relative;
   z-index: 2;
   overflow: visible;
+  padding-left: 200px;
 }
 
 .intro-top {
@@ -103,11 +104,10 @@
 .intro-left {
   display: none;         /* ← اخفِ العمود الفارغ */
 }
-
 .intro-right {
   width: 100%;
   max-width: 700px;
-  margin-left: auto;     /* ← المحتوى على اليمين */
+  margin-left: auto;
   padding: 0 10px;
   direction: rtl;
 }
@@ -168,9 +168,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
-  width: 100%;
-  position: relative;
-  z-index: 7;
+  width: 100%;           /* ← تمتد بعرض .intro-right كاملاً */
 }
 
 /* ===== تنسيق البطاقة ===== */
