@@ -149,7 +149,6 @@
 
 .illustration-container {
     position: absolute;
-    /* ✅ تعديل الارتفاع لتبدأ الطائرة من خلف النص وتتجه للبطاقات */
     top: -80px; 
     right: 5%;
     width: 100%;
@@ -161,6 +160,7 @@
 
 .dashed-path {
     position: absolute;
+    z-index: 2;
     width: clamp(250px, 25vw, 400px);
     top: 10px;
     right: 5%;
