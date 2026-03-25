@@ -661,7 +661,7 @@
     gap: 40px;
   }
 
-  .plane {
+  .paper-plane{
     width: 550px;
     height: 370px;
     right: -60px;
@@ -752,7 +752,7 @@
     font-size: 13px;
   }
 
-  .plane-svg {
+  .paper-plane {
     width: 350px;
     height: 280px;
     opacity: 0.08;
