@@ -329,7 +329,7 @@
   height: 150px;
   background: var(--color-primary);   /* ← أصفر */
   border: none;
-  color: var(--color-secondary);
+  color: var(--color-white);
   font-size: 15px;
   font-weight: 900;
   bottom: 0;
@@ -340,7 +340,7 @@
 }
 
 .venn-innovation i {
-  color: var(--color-secondary);
+  color: var(--color-white);
   font-size: 30px;
 }
 
