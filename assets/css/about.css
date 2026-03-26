@@ -231,8 +231,7 @@
   margin: 0;
   line-height: 1.6;
 }
-
-/* ===== ===================قسم القيم ================== */
+/* ===== قسم القيم ===== */
 .values-section {
   padding: 80px 0;
   background: var(--color-white);
@@ -243,7 +242,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
-  direction: ltr;
+}
+
+/* ===== النص - العمود الأيمن ===== */
+.values-text {
+  direction: rtl;
+  text-align: right;
 }
 
 .values-text h2 {
@@ -251,70 +255,82 @@
   font-weight: 900;
   color: var(--color-secondary);
   margin-bottom: 20px;
-  text-align: right;
 }
 
 .values-text p {
   font-size: 15px;
   color: var(--color-gray-text);
   line-height: 1.9;
-  text-align: right;
 }
 
+/* ===== حاوية الدوائر ===== */
 .venn-wrapper {
   position: relative;
   width: 320px;
-  height: 320px;
+  height: 340px;
   margin: 0 auto;
 }
 
+/* ===== الدوائر - الأساس ===== */
 .venn-circle {
   position: absolute;
   border-radius: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 13px;
   font-weight: 700;
-  padding: 10px;
-  transition: var(--transition);
+  padding: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
+
+  /* ← التغيير الأهم: أبيض مع border */
+  background: var(--color-white);
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
 }
 
+.venn-circle i {
+  font-size: 28px;
+  margin-bottom: 6px;
+  color: var(--color-secondary);
+}
+
+/* ===== المسؤولية المجتمعية - أعلى الوسط ===== */
 .venn-social {
   width: 150px;
   height: 150px;
-  background: rgba(0, 2, 91, 0.85);
-  color: var(--color-white);
   top: 0;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
+/* ===== الاحترافية - يسار وسط ===== */
 .venn-prof {
+  width: 140px;
+  height: 140px;
+  top: 90px;
+  left: 0;
+}
+
+/* ===== التمكين - يمين وسط ===== */
+.venn-enable {
   width: 130px;
   height: 130px;
-  background: rgba(0, 2, 91, 0.65);
-  color: var(--color-white);
-  top: 20px;
-  left: 10px;
-}
-
-.venn-enable {
-  width: 120px;
-  height: 120px;
-  background: rgba(0, 2, 91, 0.5);
-  color: var(--color-white);
   top: 100px;
   right: 0;
 }
 
+/* ===== الابتكار - أسفل الوسط (أصفر) ===== */
 .venn-innovation {
   width: 150px;
   height: 150px;
-  background: var(--color-primary);
+  background: var(--color-primary);   /* ← أصفر */
+  border: none;
   color: var(--color-secondary);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 900;
   bottom: 0;
   left: 50%;
@@ -323,15 +339,27 @@
   box-shadow: 0 8px 24px rgba(255, 204, 53, 0.4);
 }
 
+.venn-innovation i {
+  color: var(--color-secondary);
+  font-size: 30px;
+}
+
+/* ===== Hover ===== */
 .venn-circle:hover {
-  transform: scale(1.07);
+  transform: scale(1.06) translateX(0);
+  box-shadow: 0 8px 24px rgba(0, 2, 91, 0.15);
   z-index: 10;
 }
 
+.venn-social:hover {
+  transform: translateX(-50%) scale(1.06);
+}
+
 .venn-innovation:hover {
-  transform: translateX(-50%) scale(1.07);
+  transform: translateX(-50%) scale(1.06);
   box-shadow: 0 12px 30px rgba(255, 204, 53, 0.5);
 }
+
 
 /* ===== ماذا يميزنا ===== */
 .features-section {
@@ -720,4 +748,22 @@
     width: 110px;
     height: 110px;
   }
+
+    .values-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .venn-wrapper {
+    width: 260px;
+    height: 280px;
+    margin: 0 auto;
+  }
+
+  .venn-circle { transform-origin: center; }
+  .venn-social  { width: 120px; height: 120px; }
+  .venn-prof    { width: 110px; height: 110px; }
+  .venn-enable  { width: 105px; height: 105px; top: 80px; }
+  .venn-innovation { width: 120px; height: 120px; }
+
 }
