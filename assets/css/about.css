@@ -315,7 +315,7 @@ line-height: 50px; /* 156.25% */
   z-index: 5;
 }
 
-/* اليسار */
+/* -الاحترافية-اليسار */
 .venn-prof {
   width: 180px;
   height: 180px;
@@ -324,7 +324,7 @@ line-height: 50px; /* 156.25% */
   z-index: 1;
 }
 
-/* اليمين */
+/* -التمكين -اليمين */
 .venn-enable {
   width: 200px;
   height: 200px;
@@ -333,12 +333,14 @@ line-height: 50px; /* 156.25% */
   z-index: 4;
 }
 
-/* الدائرة الصفراء (الأساس) */
+/* الدائرة الصفراء (الأساس-الابتكار) */
 .venn-innovation {
   background: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  border: 2px solid var(--color-secondary);
+  color: var(--color-white);
   width: 240px;
   height: 240px;
+  
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
