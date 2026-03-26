@@ -103,22 +103,21 @@
   direction: rtl;
 }
 
-/* العمود الأول - المحتوى النصي (الأيمن في RTL) */
+/*  العمود الأيمن (النص) */
 .intro-right {
   width: 100%;
   max-width: 100%;
   /* ← أضيفي هذا */
   padding: 0 10px;
 }
-
-/* العمود الثاني - الدوائر (الأيسر في RTL) */
+/*  العمود الأيسر (الطائرة والمسار) */
 .intro-left {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
-
+/*  العنوان والنص في العمود الأيمن */
 .intro-right h3 {
   font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 700;
