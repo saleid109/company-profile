@@ -265,7 +265,6 @@ color: var(--text, #1B2D45);
 text-align: right;
 font-family: Tajawal;
 font-size: 32px;
-font-style: normal;
 font-weight: 500;
 line-height: 50px; /* 156.25% */
 }
