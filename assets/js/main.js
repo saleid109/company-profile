@@ -590,35 +590,3 @@ document.getElementById('cert-prev').addEventListener('click', prevCert);
 updateCert();
 
 
-
-  < !-- ================== جافاسكريبت ================== -->
-    /* ---- قائمة الجوال ---- */
-    function toggleMobileMenu(btn) {
-        const menu = document.getElementById('nav-menu');
-        const isOpen = menu.style.display === 'flex';
-        menu.style.display = isOpen ? 'none' : 'flex';
-        menu.style.flexDirection = 'column';
-        menu.style.position = 'absolute';
-        menu.style.top = '100%';
-        menu.style.right = '0';
-        menu.style.left = '0';
-        menu.style.background = 'var(--color-secondary)';
-        menu.style.padding = '12px 20px';
-        menu.style.zIndex = '99';
-        btn.setAttribute('aria-expanded', !isOpen);
-        btn.querySelector('i').className = isOpen ? 'fas fa-bars' : 'fas fa-times';
-    };
-
-/* ---- Intersection Observer للأنيميشن ---- */
-const animatedEls = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
-
-const observers = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observers.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.15 });
-
-animatedEls.forEach(el => observers.observe(el));
