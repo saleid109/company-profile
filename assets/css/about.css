@@ -309,10 +309,10 @@ line-height: 50px; /* 156.25% */
 .venn-social {
   width: 220px;
   height: 220px;
-  top: 0;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 5;
 }
 
 /* اليسار */
@@ -330,7 +330,7 @@ line-height: 50px; /* 156.25% */
   height: 200px;
   top: 150px;
   right: 20px;
-  z-index: 1;
+  z-index: 4;
 }
 
 /* الدائرة الصفراء (الأساس) */
@@ -342,7 +342,7 @@ line-height: 50px; /* 156.25% */
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: 2;
 
 }
 
