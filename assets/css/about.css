@@ -333,10 +333,10 @@ line-height: 50px; /* 156.25% */
 
 /* ===== الابتكار - أسفل الوسط (أصفر) ===== */
 .venn-innovation {
-  width: 150px;
-  height: 150px;
-  background: #F1B709;   /* ← أصفر */
-  border: none;
+  width: 230px;
+  height: 230px;
+  background: #F1B709;
+  /*←أصفر*/border: none;
   color: var(--color-white);
   font-size: 15px;
   font-weight: 900;
@@ -345,6 +345,10 @@ line-height: 50px; /* 156.25% */
   transform: translateX(-50%);
   z-index: 3;
   box-shadow: 0 8px 24px rgba(255, 204, 53, 0.4);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 
 .venn-innovation i {
