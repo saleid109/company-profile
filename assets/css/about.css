@@ -276,15 +276,9 @@ line-height: 50px; /* 156.25% */
 /* ===== حاوية الدوائر ===== */
 .venn-wrapper {
   position: relative;
-  width: 320px;
-  height: 340px;
+  width: 520px;   /* كان 320 */
+  height: 500px;  /* كان 340 */
   margin: 0 auto;
-  transform: scale(1.6);
-  transform-origin: center center;
-
-  /* ← تعويض المساحة الإضافية بعد التكبير */
-  margin-top: 80px;
-  margin-bottom: 80px;
 }
 
 /* ===== الدوائر - الأساس ===== */
@@ -314,8 +308,8 @@ line-height: 50px; /* 156.25% */
 
 /* ===== المسؤولية المجتمعية - أعلى الوسط ===== */
 .venn-social {
-  width: 150px;
-  height: 150px;
+  width: 220px;
+  height: 220px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -331,9 +325,9 @@ line-height: 50px; /* 156.25% */
 
 /* ===== التمكين - يمين وسط ===== */
 .venn-enable {
-  width: 130px;
-  height: 130px;
-  top: 100px;
+  width: 200px;
+  height: 200px;
+  top: 160px;
   right: 0;
 }
 
