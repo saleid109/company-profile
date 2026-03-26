@@ -276,11 +276,10 @@ line-height: 50px; /* 156.25% */
 /* ===== حاوية الدوائر ===== */
 .venn-wrapper {
   position: relative;
-  width: 520px;   /* كان 320 */
-  height: 500px;  /* كان 340 */
+  width: 520px;
+  height: 460px;
   margin: 0 auto;
 }
-
 /* ===== الدوائر - الأساس ===== */
 .venn-circle {
   position: absolute;
@@ -306,49 +305,45 @@ line-height: 50px; /* 156.25% */
   color: var(--color-secondary);
 }
 
-/* ===== المسؤولية المجتمعية - أعلى الوسط ===== */
+/* الأعلى - المسؤولية */
 .venn-social {
   width: 220px;
   height: 220px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 2;
 }
 
-/* ===== الاحترافية - يسار وسط ===== */
+/* اليسار */
 .venn-prof {
-  width: 140px;
-  height: 140px;
-  top: 90px;
-  left: 0;
+  width: 180px;
+  height: 180px;
+  top: 160px;
+  left: 40px;
+  z-index: 1;
 }
 
-/* ===== التمكين - يمين وسط ===== */
+/* اليمين */
 .venn-enable {
   width: 200px;
   height: 200px;
-  top: 160px;
-  right: 0;
+  top: 150px;
+  right: 20px;
+  z-index: 1;
 }
 
-/* ===== الابتكار - أسفل الوسط (أصفر) ===== */
+/* الدائرة الصفراء (الأساس) */
 .venn-innovation {
-  width: 230px;
-  height: 230px;
-  background: #F1B709;
-  /*←أصفر*/border: none;
-  color: var(--color-white);
-  font-size: 15px;
-  font-weight: 900;
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  width: 240px;
+  height: 240px;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
-  box-shadow: 0 8px 24px rgba(255, 204, 53, 0.4);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
+
 }
 
 .venn-innovation i {
