@@ -217,7 +217,7 @@
 }
 
 .vm-card h4 {
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 400;
   color: var(--color-secondary);
   margin: 0;
@@ -225,8 +225,8 @@
 }
 
 .vm-card p {
-  font-size: 15px;
-  color: var(--color-gray-secondary);
+  font-size: 23px;
+  color: var(--color-text);
   margin: 0;
   line-height: 1.6;
 }
