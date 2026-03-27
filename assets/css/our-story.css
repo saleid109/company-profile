@@ -60,7 +60,9 @@
   margin-bottom: 50px;
   position: relative;
   width: 100%;
-  gap: 32px; 
+  gap: 32px;
+  justify-content: space-between;
+
 }
 
 .timeline-dot {
@@ -74,6 +76,8 @@
   transform: translate(-50%, -50%);
   z-index: 2;
   flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--color-bg-light);
+
 }
 
 .timeline-year {
@@ -108,8 +112,9 @@
 /* مسافة فاصلة بين الكرت/السنة والخط المركزي */
 .timeline-year,
 .timeline-content {
-  width: calc(50% - 40px); 
+  width: calc(50% - 40px);
 }
+
 /* السنة على اليمين → الخط يمتد من اليسار نحو الخط المركزي */
 .timeline-item.right .timeline-year::after {
   content: '';
@@ -117,7 +122,8 @@
   width: 70%;
   height: 3px;
   background: var(--color-secondary);
-  margin: 8px 0 0 auto; /* ← يُحاذيه لليسار (نحو الخط) */
+  margin: 8px 0 0 auto;
+  /* ← يُحاذيه لليسار (نحو الخط) */
 }
 
 /* السنة على اليسار → الخط يمتد من اليمين نحو الخط المركزي */
@@ -127,8 +133,10 @@
   width: 70%;
   height: 3px;
   background: var(--color-secondary);
-  margin: 8px auto 0 0; /* ← يُحاذيه لليمين (نحو الخط) */
+  margin: 8px auto 0 0;
+  /* ← يُحاذيه لليمين (نحو الخط) */
 }
+
 /* السنة على اليمين → الخط يمتد من اليسار نحو الخط المركزي */
 .timeline-item.right .timeline-year::after {
   content: '';
@@ -136,7 +144,8 @@
   width: 70%;
   height: 3px;
   background: var(--color-secondary);
-  margin: 8px 0 0 auto; /* ← يُحاذيه لليسار (نحو الخط) */
+  margin: 8px 0 0 auto;
+  /* ← يُحاذيه لليسار (نحو الخط) */
 }
 
 /* السنة على اليسار → الخط يمتد من اليمين نحو الخط المركزي */
@@ -146,7 +155,8 @@
   width: 70%;
   height: 3px;
   background: var(--color-secondary);
-  margin: 8px auto 0 0; /* ← يُحاذيه لليمين (نحو الخط) */
+  margin: 8px auto 0 0;
+  /* ← يُحاذيه لليمين (نحو الخط) */
 }
 
 /* ===== الأسهم الذهبية ===== */
@@ -154,9 +164,9 @@
 .stats-arrows {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   gap: 8px;
-  padding-left: 60px; 
+  padding-left: 60px;
   margin-bottom: -20px;
   position: relative;
   z-index: 1;
@@ -164,11 +174,21 @@
 
 /*  الأسهم   */
 .stats-arrows svg polygon {
-  fill: rgba(212, 160, 23, 0.25); /* ذهبي شفاف */
+  fill: rgba(212, 160, 23, 0.25);
+  /* ذهبي شفاف */
 }
+
+
+/* ===== استايل الموبايل ===== */
+
 @media (max-width: 768px) {
-  .timeline::before { left: 22px; }
-  .tl-arrow { left: 22px; }
+  .timeline::before {
+    left: 22px;
+  }
+
+  .tl-arrow {
+    left: 22px;
+  }
 
   .timeline-item,
   .timeline-item.right,
@@ -178,11 +198,19 @@
     padding-left: 48px;
   }
 
-  .timeline-dot { left: 22px; top: 14px; }
+  .timeline-dot {
+    left: 22px;
+    top: 14px;
+  }
 
   .timeline-year,
-  .timeline-content { width: 100%; }
-
+  .timeline-content {
+    width: 100%;
+  }
+  
+.timeline-year::after {
+    display: none;
+  }
   .timeline-item.right .timeline-year,
   .timeline-item.left .timeline-year {
     text-align: right;
