@@ -96,6 +96,13 @@
   color: var(--color-gray-text);
   line-height: 1.85;
   text-align: right;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+
+}
+
+.timeline-content:hover {
+  transform: translateY(-4px);
+  transition: 0.3s;
 }
 
 .timeline-item.right {
@@ -207,7 +214,7 @@
   .timeline-content {
     width: 100%;
   }
-  
+
 .timeline-year::after {
     display: none;
   }
