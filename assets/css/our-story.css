@@ -7,7 +7,6 @@
   justify-content: center;
   overflow: hidden;
 }
-
 .hero-content {
   position: relative;
   z-index: 1;
@@ -18,36 +17,28 @@
   height: 100%;
   padding: 0;
 }
-
 .video-wrapper {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   z-index: 0;
 }
-
 .hero-video {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
 }
-
 .video-wrapper::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: rgba(0, 2, 91, 0.5);
 }
-
 .title-about {
   position: relative;
   z-index: 1;
   text-align: center;
   width: 100%;
 }
-
 .title-about h1 {
   color: var(--color-white);
   font-size: clamp(28px, 4vw, 48px);
@@ -59,12 +50,10 @@
   padding: 80px 0;
   background: var(--color-bg-light);
 }
-
 .intro-top {
   text-align: center;
   margin-bottom: 60px;
 }
-
 .intro-top .section-label {
   color: var(--color-primary);
   font-size: clamp(20px, 2.5vw, 32px);
@@ -72,7 +61,6 @@
   display: block;
   margin-bottom: 12px;
 }
-
 .intro-top h2 {
   font-size: clamp(18px, 2vw, 26px);
   color: var(--color-secondary);
@@ -86,22 +74,17 @@
   margin: 0 auto;
   padding: 40px 0;
 }
-
-/* الخط العمودي الذهبي */
 .timeline::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 3px;
   background: var(--color-primary);
-  top: 0;
-  bottom: 0;
+  top: 0; bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
-
-/* السهم فوق الخط */
 .timeline::after {
-  content: "▲";
+  content: '▲';
   position: absolute;
   top: -20px;
   left: 50%;
@@ -109,8 +92,6 @@
   color: var(--color-primary);
   font-size: 20px;
 }
-
-/* عنصر واحد */
 .timeline-item {
   display: flex;
   align-items: center;
@@ -118,15 +99,12 @@
   position: relative;
   width: 100%;
 }
-
-/* العناصر اليمينية - السنة يسار الخط والبطاقة يمين */
 .timeline-item.right {
   flex-direction: row-reverse;
 }
 
-/* الدائرة */
-.timeline-item::after {
-  content: "";
+/* الدائرة على الخط */
+.timeline-dot {
   width: 16px;
   height: 16px;
   background: var(--color-secondary);
@@ -134,12 +112,12 @@
   border-radius: 50%;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
   flex-shrink: 0;
 }
 
-/* السنة */
 .timeline-year {
   width: calc(50% - 40px);
   font-size: 24px;
@@ -147,8 +125,6 @@
   color: var(--color-secondary);
   text-align: center;
 }
-
-/* البطاقة */
 .timeline-content {
   width: calc(50% - 40px);
   background: var(--color-white);
@@ -163,269 +139,14 @@
 
 /* الجوال */
 @media (max-width: 768px) {
-  .timeline::before {
-    left: 20px;
-  }
-  .timeline::after {
-    left: 20px;
-  }
+  .timeline::before { left: 20px; }
+  .timeline::after { left: 20px; }
   .timeline-item,
   .timeline-item.right {
     flex-direction: column;
     padding-right: 50px;
-  } /* ===== Hero ===== */
-  .hero-section {
-    position: relative;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
   }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 0;
-  }
-
-  .video-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-
-  .hero-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .video-wrapper::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 2, 91, 0.5);
-  }
-
-  .title-about {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    width: 100%;
-  }
-
-  .title-about h1 {
-    color: var(--color-white);
-    font-size: clamp(28px, 4vw, 48px);
-    font-weight: 900;
-  }
-
-  /* ===== قسم القصة ===== */
-  .story-section {
-    padding: 80px 0;
-    background: var(--color-bg-light);
-  }
-
-  .intro-top {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .intro-top .section-label {
-    color: var(--color-primary);
-    font-size: clamp(20px, 2.5vw, 32px);
-    font-weight: 700;
-    display: block;
-    margin-bottom: 12px;
-  }
-
-  .intro-top h2 {
-    font-size: clamp(18px, 2vw, 26px);
-    color: var(--color-secondary);
-    font-weight: 700;
-  }
-
-  /* ===== التايم لاين ===== */
-  .timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 0;
-  }
-
-  /* الخط العمودي الذهبي */
-  .timeline::before {
-    content: "";
-    position: absolute;
-    width: 3px;
-    background: var(--color-primary);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  /* السهم فوق الخط */
-  .timeline::after {
-    content: "▲";
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--color-primary);
-    font-size: 20px;
-  }
-
-  /* عنصر واحد */
-  .timeline-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-    position: relative;
-    width: 100%;
-  }
-
-  /* العناصر اليمينية - السنة يسار الخط والبطاقة يمين */
-  .timeline-item.right {
-    flex-direction: row-reverse;
-  }
-  /* الدائرة - إصلاح موضعها */
-  .timeline-item::after {
-    content: "";
-    width: 16px;
-    height: 16px;
-    background: var(--color-secondary);
-    border: 3px solid var(--color-primary);
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    flex-shrink: 0;
-  }
-
-  /* البطاقة - إصلاح النص */
-  .timeline-content {
-    width: calc(50% - 50px); /* زيادة المسافة */
-    background: var(--color-white);
-    border: 1.5px solid var(--color-secondary);
-    border-radius: 12px;
-    padding: 20px 24px;
-    font-size: 15px;
-    color: var(--color-gray-text);
-    line-height: 1.8;
-    text-align: right;
-    word-break: keep-all;
-  }
-
-  /* السنة */
-  .timeline-year {
-    width: calc(50% - 50px);
-    font-size: 24px;
-    font-weight: 900;
-    color: var(--color-secondary);
-    text-align: center;
-  }
-
-  /* خط أفقي يربط الدائرة بالبطاقة */
-  .timeline-item.right .timeline-content {
-    margin-left: 50px;
-  }
-
-  .timeline-item.left .timeline-content {
-    margin-right: 50px;
-  }
-  /* تنسيق الأسهم الزخرفية في الخلفية */
-  .bg-arrows-decor {
-    position: absolute;
-    bottom: -50px;
-    right: 5%;
-    display: flex;
-    align-items: flex-end;
-    gap: 20px;
-    z-index: 0; /* خلف المحتوى */
-    pointer-events: none; /* لضمان عدم حجب الروابط */
-  }
-
-  /* حركة بسيطة للأسهم لزيادة الحيوية (اختياري) */
-  .bg-arrows-decor svg {
-    animation: floatUp 6s ease-in-out infinite;
-  }
-
-  .bg-arrows-decor svg:nth-child(2) {
-    animation-delay: 2s;
-  }
-
-  @keyframes floatUp {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-  /* التأكد من أن محتوى التايم لاين فوق الخلفية */
-  .timeline-container {
-    z-index: 2;
-  }
-  /* --- الأسهم   --- */
-  .stats-arrows {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    gap: 10px;
-    padding-right: 60px;
-    height: 160px;
-    background-color: var(--color-bg-light);
-  }
-  /* إخفاء الأسهم على الجوال إذا كانت تشوه التصميم */
-  @media screen and (max-width: 768px) {
-    .bg-arrows-decor {
-      opacity: 0.5;
-      transform: scale(0.7);
-      right: -20px;
-    }
-  }
-  /* الجوال */
-  @media (max-width: 768px) {
-    .timeline::before {
-      left: 20px;
-    }
-    .timeline::after {
-      left: 20px;
-    }
-    .timeline-item,
-    .timeline-item.right {
-      flex-direction: column;
-      padding-right: 50px;
-    }
-    .timeline-item::after {
-      left: 20px;
-      top: 10px;
-    }
-    .timeline-year,
-    .timeline-content {
-      width: 100%;
-    }
-  }
-  .timeline-item::after {
-    left: 20px;
-    top: 10px;
-  }
+  .timeline-dot { left: 20px; top: 10px; }
   .timeline-year,
-  .timeline-content {
-    width: 100%;
-  }
+  .timeline-content { width: 100%; }
 }
