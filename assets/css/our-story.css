@@ -121,14 +121,27 @@
   margin-left: 48px;
 }
 
-@media (max-width: 768px) {
-  .timeline::before {
-    left: 22px;
-  }
+/* ===== الأسهم الذهبية ===== */
 
-  .tl-arrow {
-    left: 22px;
-  }
+.stats-arrows {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end; /* يمين */
+  gap: 8px;
+  padding-right: 60px;
+  /* تداخل مع الفوتر من الأسفل */
+  margin-bottom: -20px;
+  position: relative;
+  z-index: 1;
+}
+
+/*  الأسهم   */
+.stats-arrows svg polygon {
+  fill: rgba(212, 160, 23, 0.25); /* ذهبي شفاف */
+}
+@media (max-width: 768px) {
+  .timeline::before { left: 22px; }
+  .tl-arrow { left: 22px; }
 
   .timeline-item,
   .timeline-item.right,
@@ -138,15 +151,10 @@
     padding-left: 48px;
   }
 
-  .timeline-dot {
-    left: 22px;
-    top: 14px;
-  }
+  .timeline-dot { left: 22px; top: 14px; }
 
   .timeline-year,
-  .timeline-content {
-    width: 100%;
-  }
+  .timeline-content { width: 100%; }
 
   .timeline-item.right .timeline-year,
   .timeline-item.left .timeline-year {
@@ -154,11 +162,9 @@
     margin-bottom: 8px;
   }
 
- .timeline-item.left .timeline-content {
-  margin-right: 48px; /* يدفع الكرت بعيداً عن الخط */
-}
-
-.timeline-item.right .timeline-content {
-  margin-left: 48px;
-}
+  /* ← أزل margin-right و margin-left هنا لأنهم يكسرون الموبايل */
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content {
+    margin: 0;
+  }
 }
