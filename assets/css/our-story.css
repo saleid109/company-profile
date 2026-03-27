@@ -94,22 +94,23 @@
   line-height: 1.85;
   text-align: right;
 }
-
+/* right: الكرت يسار، السنة يمين */
 .timeline-item.right .timeline-year {
-  order: 1;
-  background-color: var(--color-secondary);
+  order: 2;
+  text-align: center;
+  /* لا يوجد background هنا */
 }
-
 .timeline-item.right .timeline-content {
-  order: -1;
+  order: 0;
 }
 
+/* left: السنة يسار، الكرت يمين */
 .timeline-item.left .timeline-year {
-  order: -1;
+  order: 0;
+  text-align: center;
 }
-
 .timeline-item.left .timeline-content {
-  order: 1;
+  order: 2;
 }
 
 @media (max-width: 768px) {
