@@ -385,23 +385,23 @@ line-height: 50px; /* 156.25% */
 }
 
 .features-grid {
-  display: flex; 
-  justify-content: center; 
-  gap: 49px;   
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* ← عمودان بدل flex */
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .feature-card {
-  width: 260px; 
-  padding: 24px 16px; 
+  width: 100%;          /* ← بدل width: 260px الثابت */
+  padding: 32px 24px;
   border-radius: 12px;
   background: var(--color-bg-light);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;  
-
+  gap: 12px;
   transition: all 0.3s ease;
 }
 
@@ -411,14 +411,14 @@ line-height: 50px; /* 156.25% */
 }
 
 .feature-icon {
-  width: 65px;
-  height: 65px;
+  width: 70px;
+  height: 70px;
   background: var(--color-secondary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 18px;
+  margin: 0 auto 12px;
   transition: var(--transition);
 }
 
@@ -436,16 +436,17 @@ line-height: 50px; /* 156.25% */
 }
 
 .feature-card h3 {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--color-secondary);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .feature-card p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-gray-text);
   line-height: 1.8;
+  direction: rtl;
 }
 
 /* ===== الشهادات ===== */
