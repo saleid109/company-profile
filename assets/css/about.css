@@ -369,39 +369,44 @@ line-height: 50px; /* 156.25% */
   box-shadow: 0 12px 30px rgba(255, 204, 53, 0.5);
 }
 
-
-/* ===== ماذا يميزنا ===== */
-.features-section {
-  padding: 80px 0;
-  background: var(--color-white);
-}
-
+/* ===== ماذا يميزنا - العنوان الرئيسي ===== */
 .section-center-title {
-  text-align: center;
-  font-size: 28px;
-  font-weight: 900;
-  color: var(--color-secondary);
+  color: var(--primary, #00015B);
+  text-align: right;
+  font-family: Tajawal;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: normal;
   margin-bottom: 50px;
 }
 
+/* ===== الشبكة - صفّان كل صف بطاقتان ===== */
 .features-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;  /* ← عمودان بدل flex */
-  gap: 24px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.feature-card {
-  width: 100%;          /* ← بدل width: 260px الثابت */
-  padding: 32px 24px;
-  border-radius: 12px;
-  background: var(--color-bg-light);
-  text-align: center;
   display: flex;
   flex-direction: column;
+  gap: 32px;
   align-items: center;
-  gap: 12px;
+}
+
+/* ===== الصف (المربعين) ===== */
+.features-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 49px;
+  align-self: stretch;
+}
+
+/* ===== البطاقة ===== */
+.feature-card {
+  display: flex;
+  width: 567px;
+  padding: 24px 16px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 48px;
+  border-radius: 12px;
+  background: var(--color-bg-light);
   transition: all 0.3s ease;
 }
 
@@ -410,18 +415,20 @@ line-height: 50px; /* 156.25% */
   box-shadow: 0 8px 24px rgba(0, 2, 91, 0.12);
 }
 
+/* ===== الأيقونة ===== */
 .feature-icon {
-  width: 70px;
-  height: 70px;
+  display: flex;
+  width: 145px;
+  height: 141px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   background: var(--color-secondary);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 12px;
+  margin: 0;
   transition: var(--transition);
 }
-
 
 .feature-card:hover .feature-icon {
   background: var(--color-primary);
@@ -432,24 +439,31 @@ line-height: 50px; /* 156.25% */
 }
 
 .feature-icon i {
-  font-size: 24px;
+  font-size: 48px;
   color: var(--color-white);
 }
 
+/* ===== العنوان ===== */
 .feature-card h3 {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--color-secondary);
-  margin-bottom: 8px;
+  color: var(--primary, #00015B);
+  text-align: right;
+  font-family: Tajawal;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
 }
 
+/* ===== النص ===== */
 .feature-card p {
-  font-size: 14px;
-  color: var(--color-gray-text);
-  line-height: 1.8;
-  direction: rtl;
+  color: var(--text, #1B2D45);
+  text-align: right;
+  font-family: Tajawal;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  margin: 0;
 }
-
 /* ===== الشهادات ===== */
 .certs-section {
   padding: 80px 0;
