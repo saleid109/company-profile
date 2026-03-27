@@ -385,16 +385,23 @@ line-height: 50px; /* 156.25% */
 }
 
 .features-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  display: flex; 
+  justify-content: center; 
+  gap: 49px;   
+  flex-wrap: wrap;
 }
 
 .feature-card {
-  background: var(--color-bg-light);
+  width: 260px; 
+  padding: 24px 16px; 
   border-radius: 12px;
-  padding: 32px 24px;
+  background: var(--color-bg-light);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;  
+
   transition: all 0.3s ease;
 }
 
