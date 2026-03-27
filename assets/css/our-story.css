@@ -72,6 +72,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  flex-shrink: 0;
 }
 
 .timeline-year {
@@ -93,23 +94,23 @@
   line-height: 1.85;
   text-align: right;
 }
-/* right: الكرت يسار، السنة يمين */
-.timeline-item.right .timeline-year {
-  order: 2;
-  text-align: center;
-  /* لا يوجد background هنا */
-}
-.timeline-item.right .timeline-content {
-  order: 0;
+
+.timeline-item.right {
+  flex-direction: row-reverse;
+  /* السنة يمين، الكرت يسار */
 }
 
-/* left: السنة يسار، الكرت يمين */
-.timeline-item.left .timeline-year {
-  order: 0;
-  text-align: center;
+.timeline-item.left {
+  flex-direction: row;
+  /* السنة يسار، الكرت يمين */
 }
-.timeline-item.left .timeline-content {
-  order: 2;
+
+/* أزل كل خصائص order من .right و .left */
+
+/* مسافة فاصلة بين الكرت/السنة والخط المركزي */
+.timeline-year,
+.timeline-content {
+  width: calc(50% - 24px);
 }
 
 @media (max-width: 768px) {
