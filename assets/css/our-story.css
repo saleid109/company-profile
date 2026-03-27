@@ -113,6 +113,14 @@
   width: calc(50% - 24px);
 }
 
+.timeline-item.left .timeline-content {
+  margin-right: 48px; /* يدفع الكرت بعيداً عن الخط */
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: 48px;
+}
+
 @media (max-width: 768px) {
   .timeline::before {
     left: 22px;
@@ -142,13 +150,15 @@
 
   .timeline-item.right .timeline-year,
   .timeline-item.left .timeline-year {
-    order: 0;
     text-align: right;
     margin-bottom: 8px;
   }
 
-  .timeline-item.right .timeline-content,
-  .timeline-item.left .timeline-content {
-    order: 1;
-  }
+ .timeline-item.left .timeline-content {
+  margin-right: 48px; /* يدفع الكرت بعيداً عن الخط */
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: 48px;
+}
 }
