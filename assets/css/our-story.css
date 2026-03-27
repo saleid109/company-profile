@@ -118,25 +118,74 @@
   /* السنة يسار، الكرت يمين */
 }
 
-
-
-/* السنة على اليمين → الخط يمتد من اليسار نحو الخط المركزي */
-.timeline-item.right .timeline-year::after {
-  content: '';
-  display: block;
-  width: 70%;
-  height: 3px;
-  background: var(--color-secondary);
-  margin: 8px 0 0 auto;
-  /* ← يُحاذيه لليسار (نحو الخط) */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 70px;
+  position: relative;
 }
+
+/* الاتجاهات */
+.timeline-item.right {
+  flex-direction: row-reverse;
+}
+
+.timeline-item.left {
+  flex-direction: row;
+}
+
+/* النقطة */
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--color-secondary);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  box-shadow: 0 0 0 4px var(--color-bg-light);
+}
+
+/* السنة */
+.timeline-year {
+  width: 110px;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--color-secondary);
+  text-align: center;
+  position: relative;
+}
+
+/* الكرت */
+.timeline-content {
+  width: calc(50% - 150px);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-secondary);
+  border-radius: 14px;
+  padding: 18px 22px;
+  font-size: 15px;
+  color: var(--color-gray-text);
+  line-height: 1.85;
+  text-align: right;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-4px);
+}
+
+/* الخط الصغير */
+
 /* يمين */
 .timeline-item.right .timeline-year::after {
   content: '';
   position: absolute;
   top: 50%;
-  right: -60px;
-  width: 60px;
+  right: -55px;
+  width: 55px;
   height: 2px;
   background: var(--color-secondary);
   transform: translateY(-50%);
@@ -147,33 +196,11 @@
   content: '';
   position: absolute;
   top: 50%;
-  left: -60px;
-  width: 60px;
+  left: -55px;
+  width: 55px;
   height: 2px;
   background: var(--color-secondary);
   transform: translateY(-50%);
-}
-
-/* السنة على اليمين → الخط يمتد من اليسار نحو الخط المركزي */
-.timeline-item.right .timeline-year::after {
-  content: '';
-  display: block;
-  width: 70%;
-  height: 3px;
-  background: var(--color-secondary);
-  margin: 8px 0 0 auto;
-  /* ← يُحاذيه لليسار (نحو الخط) */
-}
-
-/* السنة على اليسار → الخط يمتد من اليمين نحو الخط المركزي */
-.timeline-item.left .timeline-year::after {
-  content: '';
-  display: block;
-  width: 70%;
-  height: 3px;
-  background: var(--color-secondary);
-  margin: 8px auto 0 0;
-  /* ← يُحاذيه لليمين (نحو الخط) */
 }
 
 /* ===== الأسهم الذهبية ===== */
