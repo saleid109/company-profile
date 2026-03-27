@@ -74,7 +74,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 3;
   flex-shrink: 0;
   box-shadow: 0 0 0 4px var(--color-bg-light);
 
@@ -135,16 +135,28 @@
   margin: 8px 0 0 auto;
   /* ← يُحاذيه لليسار (نحو الخط) */
 }
+/* يمين */
+.timeline-item.right .timeline-year::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  width: 60px;
+  height: 2px;
+  background: var(--color-secondary);
+  transform: translateY(-50%);
+}
 
-/* السنة على اليسار → الخط يمتد من اليمين نحو الخط المركزي */
+/* يسار */
 .timeline-item.left .timeline-year::after {
   content: '';
-  display: block;
-  width: 70%;
-  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: -60px;
+  width: 60px;
+  height: 2px;
   background: var(--color-secondary);
-  margin: 8px auto 0 0;
-  /* ← يُحاذيه لليمين (نحو الخط) */
+  transform: translateY(-50%);
 }
 
 /* السنة على اليمين → الخط يمتد من اليسار نحو الخط المركزي */
