@@ -413,7 +413,7 @@
   align-items: flex-start;
   gap: 48px;
   border-radius: 12px;
-  background: var(--color-bg-light);
+  background: var(--color-white);
   transition: all 0.3s ease;
 }
 
