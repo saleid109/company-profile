@@ -378,8 +378,14 @@
 
 /* ===== ماذا يميزنا - العنوان الرئيسي ===== */
 
+.features-section {
+  padding: 80px 0;
+  background: var(--color-white);
+}
+
+
 .section-center-title {
-  color: var(--primary, #00015B);
+  color: var(--color-secondary);
   text-align: right;
   font-family: Tajawal;
   font-size: 48px;
