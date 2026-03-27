@@ -60,6 +60,7 @@
   margin-bottom: 50px;
   position: relative;
   width: 100%;
+  gap: 32px; 
 }
 
 .timeline-dot {
@@ -105,20 +106,33 @@
   /* السنة يسار، الكرت يمين */
 }
 
-/* أزل كل خصائص order من .right و .left */
 
 /* مسافة فاصلة بين الكرت/السنة والخط المركزي */
 .timeline-year,
 .timeline-content {
-  width: calc(50% - 24px);
+  width: calc(50% - 40px); 
 }
 
-.timeline-item.left .timeline-content {
-  margin-right: 48px; /* يدفع الكرت بعيداً عن الخط */
+.timeline-item.right .timeline-year {
+  position: relative;
 }
 
-.timeline-item.right .timeline-content {
-  margin-left: 48px;
+.timeline-item.right .timeline-year::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: var(--color-secondary);
+  margin: 6px auto 0;
+}
+
+.timeline-item.left .timeline-year::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: var(--color-secondary);
+  margin: 6px auto 0;
 }
 
 /* ===== الأسهم الذهبية ===== */
