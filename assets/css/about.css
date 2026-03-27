@@ -420,8 +420,9 @@
   align-items: flex-start;
   gap: 48px;
   border-radius: 12px;
-  background: var(--color-background);
+  background: var(--color-white);
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 2, 91, 0.08);
 }
 
 .feature-card:hover {
@@ -718,6 +719,28 @@
 .d4 {
   transition-delay: 0.32s;
 }
+
+
+
+/* ===== الأسهم الذهبية ===== */
+
+.stats-arrows {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 8px;
+  padding-left: 60px;
+  margin-bottom: -20px;
+  position: relative;
+  z-index: 1;
+}
+
+/*  الأسهم   */
+.stats-arrows svg polygon {
+  fill: rgba(212, 160, 23, 0.25);
+  /* ذهبي شفاف */
+}
+
 
 /* ===== التجاوب المحدث ===== */
 @media (max-width: 1024px) {
