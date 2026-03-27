@@ -119,11 +119,6 @@
 }
 
 
-/* مسافة فاصلة بين الكرت/السنة والخط المركزي */
-.timeline-year,
-.timeline-content {
-  width: calc(50% - 40px);
-}
 
 /* السنة على اليمين → الخط يمتد من اليسار نحو الخط المركزي */
 .timeline-item.right .timeline-year::after {
@@ -230,9 +225,6 @@
     width: 100%;
   }
 
-.timeline-year::after {
-    display: none;
-  }
   .timeline-item.right .timeline-year,
   .timeline-item.left .timeline-year {
     text-align: right;
