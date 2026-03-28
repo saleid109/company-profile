@@ -496,7 +496,7 @@
   align-items: center;
   gap: 60px;
   direction: rtl;
-  padding: 0 80px; /* ← يبعدها عن الحافتين */
+  padding: 0 96px; /* ← يبعدها عن الحافتين */
 }
 
 /* ===== العمود الأيمن - النص ===== */
