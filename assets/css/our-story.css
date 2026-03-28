@@ -113,15 +113,6 @@
   border-bottom: 18px solid var(--color-primary);
 }
 
-.timeline-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 70px;
-  position: relative;
-  width: 100%;
-  gap: 12px;
-  justify-content: space-between;
-}
 
 .timeline-dot {
   width: 24px;
