@@ -345,43 +345,29 @@
     <div class="container">
       <div class="certs-layout">
 
-        <div class="certs-deco" aria-hidden="true">
-          <img src="./public/images/arrwloo2.svg" alt="صورة زخرفية لشهادات واعتمادات" loading="lazy">
-        </div>
-
-        <!-- البطاقة - الصورة -->
-        <div class="cert-card" role="region" aria-label="عارض الشهادات والاعتمادات">
-          <div class="cert-visual" role="img" aria-label="شهادة رسمية معتمدة">
-            <!-- صورة الشهادة -->
-            <img id="cert-img" src="./public/images/Frame37838.jpg"
-              alt="شهادة السجل التجاري الموحد من وزارة التجارة السعودية" width="340" height="260" loading="lazy"
-              decoding="async" />
-          </div>
-
-          <!-- شريط التنقل -->
-          <nav class="cert-nav-bar" aria-label="التنقل بين الشهادات">
-            <button class="cert-nav-btn" id="cert-prev" aria-label="الشهادة السابقة" aria-controls="cert-img">
-              <i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </button>
-
-            <span class="cert-count" aria-live="polite" aria-atomic="true">
-              <span id="cert-current">1</span> / <span id="cert-total">5</span>
-            </span>
-
-            <button class="cert-nav-btn" id="cert-next" aria-label="الشهادة التالية" aria-controls="cert-img">
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>
-            </button>
-          </nav>
-        </div>
-
-        <!-- النص -->
+        <!-- النص - يمين -->
         <div class="certs-text">
-          <h2 id="certs-title">شهاداتنا واعتماداتنا الرسمية</h2>
-          <p>
-            نفخر بحصولنا على مجموعة من التراخيص والشهادات الرسمية
-            التي تعكس التزامنا بالموثوقية والجودة.
-          </p>
+          <!-- السهم الأصفر الزخرفي -->
+          <svg class="deco-curl" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="142" height="127"
+            viewBox="0 0 142 127" fill="none">
+            <g clip-path="url(#clip0_1_4881)">
+              <path
+                d="M19.2521 62.1508C17.1589 56.8166 21.1114 50.9502 15.5045 46.2039C14.9141 47.6826 14.4367 48.6194 14.3579 49.451C13.1943 59.5716 11.9932 69.8728 11.0103 80.0309C10.8527 81.694 11.0867 84.1919 12.129 85.0683C14.1422 86.7117 15.9289 84.9168 17.3881 83.3362C22.0933 78.3802 26.979 73.4617 31.7933 68.434C28.1923 66.2717 28.1923 66.2718 19.0935 73.3283C23.9561 52.6726 44.7694 41.8356 63.6956 50.4836C62.7404 52.3574 61.7139 54.1221 60.7588 55.996C58.1117 61.4744 57.2366 67.0389 58.9989 73.0579C60.2679 77.3728 62.8121 80.5399 67.436 81.4077C72.169 82.2041 75.4077 79.769 77.9687 76.0626C83.5648 68.183 82.9114 59.0975 76.1639 52.1355C75.3022 51.2968 74.6585 50.3151 73.6198 48.9685C83.2641 41.5544 93.9326 37.3678 105.791 38.3277C124.159 39.6997 129.903 54.649 129.008 67.5573C128.959 69.1488 128.441 70.7365 128.095 73.3025C131.263 70.7585 131.864 67.8691 132.355 65.0509C134.358 54.0687 128.448 41.7228 118.65 36.2927C112.381 32.9159 105.699 31.5257 98.6377 32.4118C88.2808 33.7425 78.7746 37.3231 70.6915 44.0257C69.8904 44.7069 69.0177 45.2789 67.9984 46.1031C59.017 42.633 49.7726 40.4272 39.9806 43.5713C30.5497 46.7904 25.3148 54.7451 19.2521 62.1508ZM69.1365 53.3112C77.5613 58.5497 79.5576 67.0666 74.1532 73.573C72.8745 75.191 70.4406 76.4747 68.4506 76.5317C65.7004 76.619 64.3454 74.0761 63.8593 71.4313C62.3563 64.6185 64.4992 58.8466 69.1365 53.3112Z"
+                fill="#FDCA30" />
+            </g>
+            <defs>
+              <clipPath id="clip0_1_4881">
+                <rect width="117" height="88" fill="white" transform="translate(34.0986) rotate(22.7979)" />
+              </clipPath>
+            </defs>
+          </svg>
 
+          <h2 id="certs-title">شهاداتنا واعتماداتنا الرسمية</h2>
+          <p>نفخر بحصولنا على مجموعة من التراخيص والشهادات الرسمية التي تعكس التزامنا بالموثوقية والجودة.</p>
+
+          <!-- السهام الزخرفية السفلية -->
+          <div class="deco-arrows" aria-hidden="true">
+            
         
       <!-- الأسهم الزخرفية — مخفية عن قارئ الشاشة -->
       <div class="stats-arrows" aria-hidden="true">
@@ -395,6 +381,30 @@
           <polygon points="25,0 50,55 33,55 33,130 17,130 17,55 0,55" fill="#f5e9b8" />
         </svg>
       </div>
+          </div>
+        </div>
+
+        <!-- البطاقة - يسار -->
+        <div class="cert-card">
+          <div class="cert-visual">
+            <img id="cert-img" src="./public/images/Frame37838.jpg" alt="شهادة رسمية معتمدة" width="377" height="545"
+              loading="lazy" />
+          </div>
+
+          <!-- شريط التنقل -->
+          <nav class="cert-nav-bar" aria-label="التنقل بين الشهادات">
+            <button class="cert-nav-btn" id="cert-prev" aria-label="السابق">
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+
+            <span class="cert-count" aria-live="polite">
+              <span id="cert-total">5</span> / <span id="cert-current">1</span>
+            </span>
+
+            <button class="cert-nav-btn" id="cert-next" aria-label="التالي">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+          </nav>
         </div>
 
       </div>
