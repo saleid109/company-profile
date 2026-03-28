@@ -546,17 +546,21 @@
   opacity: 1;
   justify-content: flex-start;
 }
-
-
 /* --- الأسهم   --- */
+
 .certs-arrows {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    gap: 10px;
-    padding-right: 60px;
-    height: 160px;
+  position: absolute;
+  bottom: 0;        /* ← لاصقة بالأسفل */
+  left: 0;          /* ← جهة اليسار */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 10px;
+  height: 280px;    /* ← أطول */
+  padding: 0 60px;
+  pointer-events: none;
 }
+
 
 /* ===== العمود الأيسر - البطاقة ===== */
 .cert-card {
