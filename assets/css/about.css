@@ -537,11 +537,11 @@
 /* السهام الزخرفية السفلية */
 .deco-arrows {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 8px;
   margin-top: 32px;
-  opacity: 0.28;
-  justify-content: flex-end;
+  opacity: 1;
+  justify-content: flex-start;
 }
 
 

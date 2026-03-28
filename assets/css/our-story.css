@@ -229,8 +229,3 @@
   }
 }
 
-/* لمسة جمالية للأسهم الذهبية في الخلفية */
-.stats-arrows {
-  opacity: 0.4;
-  pointer-events: none;
-}
