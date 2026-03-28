@@ -641,22 +641,6 @@
 
 
 
-/* ===== تجاوب ===== */
-@media (max-width: 1024px) {
-  .certs-layout {
-    flex-direction: column;
-  }
-
-  .cert-card {
-    width: 100%;
-    max-width: 410px;
-    margin: 0 auto;
-  }
-
-  .certs-text p {
-    width: 100%;
-  }
-}
 
 /* ===== التجاوب المحدث ===== */
 @media (max-width: 1024px) {
