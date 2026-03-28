@@ -307,6 +307,15 @@
     padding: 16px;
     text-align: right;
   }
+
+  .stats-arrows {
+    right: 5px;
+    bottom: 0;
+  }
+
+  .stats-arrows svg {
+    width: 25px;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -377,5 +386,14 @@
 
   .timeline-year {
     justify-content: flex-end;
+  }
+
+  .stats-arrows {
+    right: 10px; /* قلل من اليمين */
+    bottom: 0;
+  }
+
+  .stats-arrows svg {
+    width: 35px; /* قلل حجمها */
   }
 }
