@@ -537,21 +537,12 @@
   max-width: 100%;
 }
 
-/* السهام الزخرفية السفلية */
-.deco-arrows {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin-top: 32px;
-  opacity: 1;
-  justify-content: flex-start;
-}
 /* --- الأسهم   --- */
 
 .certs-arrows {
   position: absolute;
   bottom: 0;        /* ← لاصقة بالأسفل */
-  left: 0;          /* ← جهة اليسار */
+  right: 0;          /* ← جهة اليسار */
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
