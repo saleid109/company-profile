@@ -552,7 +552,38 @@ console.log('✅ All scripts loaded successfully');
 
 //=======================================
 
-//قسم خاص بصفحة من نحن فقط، لا يتم تحميله في الصفحات الأخرى
+// تحقق من وجود عناصر معينة قبل تنفيذ الكود الخاص بها
+
+// قسم خاص بصفحة من نحن فقط
+if (document.getElementById('cert-next')) {
+    /* سلايدر الشهادات */
+    const certs = [ ... ];
+    // ... بقية الكود
+    document.getElementById('cert-next').addEventListener('click', nextCert);
+    document.getElementById('cert-prev').addEventListener('click', prevCert);
+    updateCert();
+}
+
+// قسم خاص بصفحة قصتنا فقط
+if (document.querySelector('.timeline-item')) {
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        timelineObserver.observe(item);
+    });
+}
+
+
+//قسم خاص بصفحة من نحن فقط،ى
+
+
+
 
 /* أنيميشن الظهور */
 const observer = new IntersectionObserver((entries) => {
