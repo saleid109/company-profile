@@ -120,7 +120,7 @@
   position: relative;
   width: 100%;
   gap: 20px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .timeline-dot {
@@ -149,7 +149,7 @@
 }
 
 .timeline-content {
-  width: calc(50% - 80px);
+  width: 45%;
   max-width: 100%;
   min-height: 130px;
   padding: 16px;
