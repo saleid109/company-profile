@@ -129,7 +129,7 @@
   align-items: center;
   font-size: clamp(24px, 2.5vw, 40px);
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   white-space: nowrap;
   gap: 10px;
   width: calc(50% - 30px); /* نفس عرض الكرت تقريباً */
