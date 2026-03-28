@@ -61,10 +61,10 @@
 /* ===== قسم التايم لاين (القصة) - النسخة المعتمدة الاحترافية ===== */
 
 .story-section {
+  position: relative; /* أضف هذا */
   padding: 80px 0;
   background: var(--color-background);
 }
-
 .timeline {
   position: relative;
   max-width: 1000px;
