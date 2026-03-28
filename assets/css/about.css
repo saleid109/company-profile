@@ -552,6 +552,9 @@
   align-items: center;
   gap: 19px;
   flex-shrink: 0;
+  border: 1.5px dashed var(--color-secondary); /* ← الإطار المنقط من فيجما */
+  padding: 12px;
+  border-radius: 8px;
 }
 
 /* منطقة الصورة */
@@ -580,27 +583,27 @@
 .cert-nav-bar {
   display: flex;
   align-items: center;
-  gap: 144px;
+  justify-content: space-between; /* ← بدل gap: 144px */
+  width: 100%;                    /* ← يمتد بعرض البطاقة كاملاً */
+  padding: 0 8px;
 }
 
 .cert-nav-btn {
   width: 32px;
   height: 32px;
-  border-radius: 50%;
-  border: 1.5px solid #e0e4ef;
+  border: none;
   background: none;
+  cursor: pointer;
+  color: var(--color-primary);
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-secondary);
-  cursor: pointer;
-  transition: var(--transition);
+  transition: opacity 0.2s;
 }
 
 .cert-nav-btn:hover {
-  background: var(--color-secondary);
-  color: var(--color-white);
-  border-color: var(--color-secondary);
+  opacity: 0.7;
 }
 
 /* السهمين - الأيقونة المستديرة */
@@ -613,11 +616,9 @@
 
 .cert-count {
   color: var(--sec2, #F1B709);
-  text-align: right;
-  font-family: Tajawal;
+  font-family: var(--font-main);
   font-size: 24px;
   font-weight: 500;
-  line-height: normal;
 }
 
 /* ===== تجاوب ===== */
