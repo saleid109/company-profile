@@ -545,6 +545,15 @@
 }
 
 
+/* --- الأسهم   --- */
+.stats-arrows {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 60px;
+    height: 160px;
+}
 
 /* ===== العمود الأيسر - البطاقة ===== */
 .cert-card {
