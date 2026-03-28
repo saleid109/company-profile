@@ -539,18 +539,17 @@
 
 /* --- الأسهم   --- */
 
-.certs-arrows {
+.cert-arrows {
   position: absolute;
-  bottom: 0;        /* ← لاصقة بالأسفل */
-  right: 0;          /* ← جهة اليسار */
+  bottom: 0;
+  right: 60px;        /* ← جهة اليمين لأن الصفحة RTL */
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start;
-  gap: 10px;
-  height: 480px;    /* ← أطول */
-  padding: 0 60px;
+  justify-content: flex-end;
+  gap: 16px;
+  height: 300px;
   pointer-events: none;
-  
+  z-index: 0;
 }
 
 
