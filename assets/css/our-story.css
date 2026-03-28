@@ -58,11 +58,11 @@
 }
 
 /* ===== قسم القصة ===== */
-/* ===== قسم التايم لاين (القصة) - النسخة المعتمدة الاحترافية ===== */
+/* =====قسم التايم لاين (القصة)   ===== */
 
 .story-section {
   position: relative;
-  /* أضف هذا */
+  overflow: hidden; 
   padding: 80px 0;
   background: var(--color-background);
 }
@@ -255,6 +255,7 @@
 
   .story-section {
     position: relative;
+    
   }
 
   .timeline::before {
