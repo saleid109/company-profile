@@ -460,7 +460,7 @@
 
 /* ===== العنوان ===== */
 .feature-card h3 {
-  color: var(--primary, #00015B);
+  color: var(--color-gray-secondary);
   text-align: right;
   font-family: Tajawal;
   font-size: 24px;
