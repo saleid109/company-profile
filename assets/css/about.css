@@ -624,10 +624,10 @@
 
 
 /* --- الأسهم   --- */
-.stats-arrows {
+.deco-arrows {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items:flex-start;
+    justify-content: flex-start;
     gap: 10px;
     padding-right: 60px;
     height: 160px;
