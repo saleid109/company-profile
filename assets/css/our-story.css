@@ -220,18 +220,22 @@
   z-index: 0;
 }
 /* ===== التجاوب مع الموبايل والتابلت (Responsive) ===== */
-
 @media (max-width: 768px) {
+
+  .story-section {
+    position: relative;
+  }
 
   /* نقل الخط الرأسي لليمين */
   .timeline::before {
     left: auto;
-    right: 25px;
+    right: 20px;
+    width: 3px;
   }
 
   .tl-arrow {
     left: auto;
-    right: 17px;
+    right: 12px;
   }
 
   /* تحويل العناصر لعمود واحد */
@@ -239,24 +243,27 @@
   .timeline-item.left,
   .timeline-item.right {
     flex-direction: column !important;
-    align-items: flex-start;
-    padding-right: 60px;
+    align-items: flex-end; /* محاذاة لليمين */
+    padding-right: 50px; /* مسافة للخط */
     padding-left: 0;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   .timeline-dot {
     left: auto;
-    right: 15px;
-    top: 20px;
+    right: 11px;
+    top: 10px;
     transform: none;
   }
 
+  /* السنة فوق الكرت */
   .timeline-year {
     width: auto;
     text-align: right;
-    margin-bottom: 10px;
-    font-size: 24px;
+    margin-bottom: 8px;
+    font-size: 22px;
+    order: -1; /* السنة أولاً */
+    flex-direction: row !important;
   }
 
   .timeline-year::after {
@@ -266,7 +273,7 @@
   .timeline-content {
     width: 100% !important;
     margin: 0 !important;
-    padding: 20px;
+    padding: 16px;
     text-align: right;
   }
 }
