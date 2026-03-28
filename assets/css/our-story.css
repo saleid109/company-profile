@@ -187,19 +187,6 @@
   flex-direction: row;
 }
 
-/* النقطة */
-.timeline-dot {
-  width: 14px;
-  height: 14px;
-  background: var(--color-secondary);
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  box-shadow: 0 0 0 4px var(--color-bg-light);
-}
 
 /* السنة */
 .timeline-year {
@@ -237,8 +224,8 @@
   content: "";
   position: absolute;
   top: 50%;
-  right: -30px;
-  width: 30px;
+  right: -12px;
+  width: 12px;
   height: 2px;
   background: var(--color-secondary);
   transform: translateY(-50%);
@@ -249,8 +236,8 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -30px;
-  width: 30px;
+  left: -12px;
+  width: 12px;
   height: 2px;
   background: var(--color-secondary);
   transform: translateY(-50%);
