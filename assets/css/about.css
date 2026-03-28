@@ -488,9 +488,10 @@
 
 .certs-layout {
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 1fr 400px;
   gap: 60px;
   align-items: center;
+  direction: rtl;
 }
 
 .cert-card {
@@ -645,17 +646,16 @@
 }
 
 .certs-text h2 {
-  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-  font-weight: 900;
-  color: var(--color-text);
-  margin-bottom: 16px;
-  line-height: 1.45;
+  font-size: clamp(28px, 3vw, 40px);
+  font-family: Tajawal;
+  direction: rtl;
+  text-align: right;
 }
 
 .certs-text p {
-  font-size: 0.95rem;
-  color: var(--color-gray-text);
-  line-height: 1.8;
+  font-size: clamp(18px, 2vw, 24px);
+  direction: rtl;
+  text-align: right;
 }
 
 .deco-arrows {
