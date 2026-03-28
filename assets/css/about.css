@@ -671,6 +671,39 @@
     right: 5%;
     opacity: 0.15;
   }
+
+  .values-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .values-text {
+    text-align: center;
+  }
+
+  /* التابلت */
+  .certs-layout {
+    flex-direction: column;
+    padding: 0 40px;
+    gap: 40px;
+  }
+
+  .certs-text {
+    top: 0; /* إلغاء الإزاحة في الشاشات الأصغر */
+    text-align: center;
+  }
+
+  .certs-text h2, .certs-text p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .deco-curl {
+    left: 50%;
+    transform: translateX(-50%) rotate(22deg);
+    top: -50px;
+  }
 }
 
 @media (max-width: 768px) {
