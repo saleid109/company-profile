@@ -232,7 +232,6 @@
     position: relative;
   }
 
-  /* نقل الخط الرأسي لليمين */
   .timeline::before {
     left: auto;
     right: 20px;
@@ -244,15 +243,12 @@
     right: 12px;
   }
 
-  /* تحويل العناصر لعمود واحد */
   .timeline-item,
   .timeline-item.left,
   .timeline-item.right {
     flex-direction: column !important;
     align-items: flex-end;
-    /* محاذاة لليمين */
     padding-right: 50px;
-    /* مسافة للخط */
     padding-left: 0;
     margin-bottom: 40px;
   }
@@ -264,15 +260,14 @@
     transform: none;
   }
 
-  /* السنة فوق الكرت */
   .timeline-year {
-    width: auto;
+    width: 100%;
     text-align: right;
     margin-bottom: 8px;
     font-size: 22px;
     order: -1;
-    /* السنة أولاً */
     flex-direction: row !important;
+    justify-content: flex-end;
   }
 
   .timeline-year::after {
@@ -284,38 +279,5 @@
     margin: 0 !important;
     padding: 16px;
     text-align: right;
-  }
-
-  .timeline-item,
-  .timeline-item.left,
-  .timeline-item.right {
-    flex-direction: column !important;
-    align-items: flex-end;
-    /* كل شيء لليمين */
-    padding-right: 50px;
-    padding-left: 0;
-    margin-bottom: 40px;
-  }
-
-  .timeline-year {
-    width: 100%;
-    /* يمتد بالكامل */
-    text-align: right;
-    /* النص لليمين */
-    margin-bottom: 8px;
-    font-size: 22px;
-    order: -1;
-    flex-direction: row !important;
-    justify-content: flex-end;
-    /* أضف هذا */
-  }
-
-  .timeline-content {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 16px;
-    text-align: right;
-    justify-content: flex-end;
-    /* أضف هذا */
   }
 }
