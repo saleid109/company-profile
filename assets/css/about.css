@@ -501,7 +501,7 @@
   align-items: center;
   gap: 60px;
   direction: rtl;
-  padding: 0 96px; /* ← يبعدها عن الحافتين */
+  padding: 0 40px; /* ← يبعدها عن الحافتين */
 }
 
 /* ===== العمود الأيمن - النص ===== */
@@ -758,6 +758,64 @@
   .venn-innovation {
     width: 120px;
     height: 120px;
+  }
+
+  .features-row {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .feature-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .feature-icon i {
+    font-size: 28px;
+  }
+
+  .feature-card h3 {
+    font-size: 18px;
+  }
+
+  .feature-card p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+
+  .certs-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-card {
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+  }
+
+  .cert-visual {
+    height: auto;
+  }
+
+  .cert-visual img {
+    width: 100%;
+    height: auto;
+  }
+
+  .certs-text {
+    top: 0;
+    text-align: center;
+  }
+
+  .certs-text p {
+    width: 100%;
+    font-size: 16px;
+    line-height: 28px;
   }
 
 }
