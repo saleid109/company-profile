@@ -547,9 +547,10 @@
   align-items: flex-end;
   justify-content: flex-start;
   gap: 10px;
-  height: 280px;    /* ← أطول */
+  height: 480px;    /* ← أطول */
   padding: 0 60px;
   pointer-events: none;
+  
 }
 
 
@@ -561,7 +562,7 @@
   align-items: center;
   gap: 19px;
   flex-shrink: 0;
-  border: 1.5px dashed var(--color-secondary); /* ← الإطار المنقط من فيجما */
+  border: 3px solid var(--color-secondary); /* ← الإطار المنقط من فيجما */
   padding: 12px;
   border-radius: 8px;
 }
@@ -578,6 +579,7 @@
   overflow: hidden;
   background: var(--color-white);
   box-shadow: var(--shadow);
+
 }
 
 .cert-visual img {
