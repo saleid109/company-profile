@@ -232,6 +232,19 @@
   background: var(--color-bg-light);
 }
 
+/* اليمين */
+.timeline-item.right .timeline-content {
+  text-align: left;
+  margin-right: 40px;
+
+}
+
+/* اليسار */
+.timeline-item.left .timeline-content {
+  text-align: right;
+  margin-left: 40px;
+}
+
 /*  الأسهم   */
 .stats-arrows svg polygon {
   fill: rgba(252, 238, 43, 0.241);
