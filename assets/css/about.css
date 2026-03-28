@@ -544,6 +544,8 @@
   justify-content: flex-end;
 }
 
+
+
 /* ===== العمود الأيسر - البطاقة ===== */
 .cert-card {
   display: flex;
@@ -623,16 +625,6 @@
 
 
 
-/* --- الأسهم   --- */
-.deco-arrows {
-    display: flex;
-    align-items:flex-start;
-    justify-content: flex-start;
-    gap: 10px;
-    padding-right: 60px;
-    height: 160px;
-    background-color: var(--color-white);
-}
 
 
 
