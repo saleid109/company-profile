@@ -82,7 +82,7 @@
   margin-bottom: 8px;
 }
 
-#sections-title {
+#section-story-title {
   font-size: clamp(20px, 2.5vw, 32px);
   color: var(--color-secondary);
   font-weight: 700;
