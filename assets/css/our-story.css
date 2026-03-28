@@ -308,3 +308,74 @@
     text-align: right;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .timeline {
+    max-width: 100%;
+    padding: 40px 20px;
+  }
+
+  .timeline::before {
+    left: auto;
+    right: 20px;
+    width: 3px;
+  }
+
+  .tl-arrow {
+    left: auto;
+    right: 12px;
+    top: 0;
+    transform: translateX(50%);
+  }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    flex-direction: column !important;
+    align-items: flex-end;
+    padding-right: 50px;
+    padding-left: 0;
+    margin-bottom: 40px;
+  }
+
+  .timeline-dot {
+    left: auto;
+    right: 11px;
+    top: 10px;
+    transform: none;
+  }
+
+  .timeline-year {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 8px;
+    font-size: 28px;
+    order: -1;
+    flex-direction: row !important;
+    justify-content: flex-end;
+  }
+
+  .timeline-year::after {
+    display: none;
+  }
+
+  .timeline-content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px;
+    text-align: right;
+  }
+
+  
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    align-items: flex-end;
+    padding-right: 70px; /* زد قليلاً ليقترب من الدائرة */
+  }
+
+  .timeline-year {
+    justify-content: flex-end;
+  }
+}
