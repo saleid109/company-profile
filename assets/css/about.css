@@ -621,6 +621,22 @@
   font-weight: 500;
 }
 
+
+
+/* --- الأسهم   --- */
+.stats-arrows {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 60px;
+    height: 160px;
+    background-color: var(--color-white);
+}
+
+
+
+
 /* ===== تجاوب ===== */
 @media (max-width: 1024px) {
   .certs-layout {
