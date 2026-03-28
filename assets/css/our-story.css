@@ -205,6 +205,20 @@
   flex-direction: row;
   text-align: right;
 }
+
+
+.story-arrows {
+  position: absolute;
+  bottom: 0;
+  right: 60px; 
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 16px;
+  height: 300px;
+  pointer-events: none;
+  z-index: 0;
+}
 /* ===== التجاوب مع الموبايل والتابلت (Responsive) ===== */
 
 @media (max-width: 768px) {
