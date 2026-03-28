@@ -119,7 +119,7 @@
   margin-bottom: 70px;
   position: relative;
   width: 100%;
-  gap: 24px;
+  gap: 12px;
   justify-content: space-between;
 }
 
@@ -146,6 +146,7 @@
 
 .timeline-content {
   width: 586px;
+  max-width: 100%;
   min-height: 130px;
   padding: 16px;
   border-radius: 20px;
@@ -188,30 +189,6 @@
 }
 
 
-/* السنة */
-.timeline-year {
-  width: 110px;
-  font-size: 24px;
-  font-weight: 900;
-  color: var(--color-secondary);
-  text-align: center;
-  position: relative;
-}
-
-/* الكرت */
-.timeline-content {
-  width: calc(50% - 150px);
-  background: var(--color-white);
-  border: 1.5px solid var(--color-secondary);
-  border-radius: 14px;
-  padding: 18px 22px;
-  font-size: 15px;
-  color: var(--color-gray-text);
-  line-height: 1.85;
-  text-align: right;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: 0.3s;
-}
 
 .timeline-content:hover {
   transform: translateY(-4px);
