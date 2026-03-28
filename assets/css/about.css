@@ -675,6 +675,14 @@
 
 @media (max-width: 768px) {
 
+  .hero-inner {
+    height: 140px;
+  }
+
+  .title-about h1 {
+    font-size: 24px;
+  }
+
   /* توحيد الشبكات في عمود واحد */
   .intro-grid,
   .values-layout,
@@ -705,6 +713,22 @@
   .intro-right>p {
     text-align: center;
     font-size: 15px;
+  }
+
+  .intro-right {
+    padding: 0;
+  }
+
+  .vm-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .vm-card h4 {
+    font-size: 20px;
+  }
+
+  .vm-card p {
+    font-size: 16px;
   }
 
   /* تصغير حجم الدوائر (Venn Diagram) لتناسب الشاشات الصغيرة */
