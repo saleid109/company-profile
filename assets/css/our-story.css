@@ -182,7 +182,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  width: 650px; /* زد من 60px إلى 120px */
+  width: 182px; /* زد من 60px إلى 120px */
   height: 2px;
   background: var(--color-secondary);
   transform: translateY(-50%);
