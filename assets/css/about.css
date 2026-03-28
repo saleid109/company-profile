@@ -496,6 +496,7 @@
   align-items: center;
   gap: 60px;
   direction: rtl;
+  padding: 0 80px; /* ← يبعدها عن الحافتين */
 }
 
 /* ===== العمود الأيمن - النص ===== */
@@ -564,6 +565,8 @@
   border: 3px solid var(--color-secondary); /* ← الإطار المنقط من فيجما */
   padding: 12px;
   border-radius: 8px;
+  margin-left: 40px; /* ← يبعد البطاقة عن الحافة اليسرى */
+
 }
 
 /* منطقة الصورة */
