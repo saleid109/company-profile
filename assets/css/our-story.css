@@ -137,10 +137,11 @@
 }
 
 .timeline-year {
-  width: 102px;
-  font-size: 40px;
+  width: auto;
+  min-width: 70px;
+  font-size: 32px;
   font-weight: 700;
-  color: var(--color-secondary);
+  margin: 0 10px;
 }
 
 .timeline-content {
