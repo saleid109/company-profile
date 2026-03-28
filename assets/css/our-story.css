@@ -218,7 +218,7 @@
   }
 
   .timeline-year::after {
-    display: none; /* إخفاء الخط الصغير في الموبايل لمنع الزحام */
+    display: none; 
   }
 
   .timeline-content {
