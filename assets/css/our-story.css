@@ -58,11 +58,10 @@
 }
 
 /* ===== قسم القصة ===== */
-/* =====قسم التايم لاين (القصة)   ===== */
+/* ===== قسم التايم لاين (القصة) -    ===== */
 
 .story-section {
   position: relative;
-  overflow: hidden; 
   padding: 80px 0;
   background: var(--color-background);
 }
