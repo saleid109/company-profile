@@ -58,42 +58,25 @@
 }
 
 /* ===== قسم القصة ===== */
+/* ===== قسم التايم لاين (القصة) - النسخة المعتمدة الاحترافية ===== */
+
 .story-section {
   padding: 80px 0;
   background: var(--color-bg-light);
 }
 
-.intro-top {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.intro-top .section-label {
-  color: var(--color-primary);
-  font-size: clamp(20px, 2.5vw, 32px);
-  font-weight: 700;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.intro-top h2 {
-  font-size: clamp(18px, 2vw, 26px);
-  color: var(--color-secondary);
-  font-weight: 700;
-}
-
-/* ===== التايم لاين ===== */
 .timeline {
   position: relative;
-  max-width: 900px;
+  max-width: 1000px; /* زيادة بسيطة للمساحة الجانبية */
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
+/* الخط الرأسي (المسار) */
 .timeline::before {
   content: "";
   position: absolute;
-  width: 5px;
+  width: 4px;
   background: var(--color-primary);
   top: 0;
   bottom: 0;
@@ -101,31 +84,33 @@
   transform: translateX(-50%);
 }
 
+/* السهم العلوي للمسار */
 .tl-arrow {
   position: absolute;
-  top: -22px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-bottom: 18px solid var(--color-primary);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid var(--color-primary);
 }
 
+/* حاوية العنصر (السنة + الدائرة + الكرت) */
 .timeline-item {
   display: flex;
   align-items: center;
-  margin-bottom: 70px;
+  justify-content: space-between;
   position: relative;
   width: 100%;
-  gap: 20px;
-  justify-content: space-between;
+  margin-bottom: 80px; /* مسافة مريحة بين السنوات */
 }
 
+/* الدائرة المركزية */
 .timeline-dot {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   background: var(--color-secondary);
   border-radius: 50%;
   position: absolute;
@@ -133,162 +118,119 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
-  box-shadow: 0 0 0 4px var(--color-bg-light);
+  box-shadow: 0 0 0 6px var(--color-bg-light);
 }
 
+/* السنة - عرض ثابت لضمان التوازن */
 .timeline-year {
-  width: 80px;
-  min-width: 70px;
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0 10px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+  width: 90px;
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 800;
   color: var(--color-secondary);
+  position: relative;
+  text-align: center;
+  z-index: 2;
 }
 
+/* الكرت - عرض محسوب بدقة */
 .timeline-content {
-  width: 45%;
-  max-width: 100%;
-  min-height: 130px;
-  padding: 16px;
-  border-radius: 20px;
-  border: 1px solid var(--color-secondary);
+  width: calc(50% - 80px); /* مسافة أمان 80px للدائرة والخط */
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 1, 91, 0.1);
   background: var(--color-white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  line-height: 1.6;
 }
 
 .timeline-content:hover {
-  transform: translateY(-4px);
-  transition: 0.3s;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+  border-color: var(--color-primary);
 }
 
-.timeline-item.right {
-  flex-direction: row-reverse;
-  /* السنة يمين، الكرت يسار */
-}
+/* --- التحكم في الاتجاهات (يمين ويسار) --- */
 
-.timeline-item.left {
-  flex-direction: row;
-  /* السنة يسار، الكرت يمين */
-}
+.timeline-item.left { flex-direction: row; }
+.timeline-item.right { flex-direction: row-reverse; }
 
+/* المسافة الخفيفة بين الكرت والمسار (نصيحة الـ 20px) */
+.timeline-item.left .timeline-content { margin-left: 20px; }
+.timeline-item.right .timeline-content { margin-right: 20px; }
 
-/* الاتجاهات */
-.timeline-item.right {
-  flex-direction: row-reverse;
-}
-
-.timeline-item.left {
-  flex-direction: row;
-}
-
-
-
-.timeline-content:hover {
-  transform: translateY(-4px);
-}
-
-/* الخط الصغير */
-
-/* يمين */
-.timeline-item.right .timeline-year::after {
+/* الخط الأفقي الصغير الخارج من السنة */
+.timeline-year::after {
   content: "";
   position: absolute;
   top: 50%;
-  right: -8px;
-  width: 8px;
+  width: 20px;
   height: 2px;
   background: var(--color-secondary);
   transform: translateY(-50%);
+  opacity: 0.5;
 }
 
-/* يسار */
-.timeline-item.left .timeline-year::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -8px;
-  width: 8px;
-  height: 2px;
-  background: var(--color-secondary);
-  transform: translateY(-50%);
-}
+.timeline-item.left .timeline-year::after { right: -25px; }
+.timeline-item.right .timeline-year::after { left: -25px; }
 
-/* ===== الأسهم الذهبية ===== */
-
-.stats-arrows {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  gap: 8px;
-  padding-left: 60px;
-  margin-bottom: -20px;
-  position: relative;
-  z-index: 1;
-  background: var(--color-bg-light);
-}
-
-/* اليمين */
-.timeline-item.right .timeline-content {
-  text-align: left;
-  margin-right: 40px;
-
-}
-
-/* اليسار */
-.timeline-item.left .timeline-content {
-  text-align: right;
-  margin-left: 40px;
-}
-
-/*  الأسهم   */
-.stats-arrows svg polygon {
-  fill: rgba(252, 238, 43, 0.241);
-  /* ذهبي شفاف */
-}
-
-/* ===== استايل الموبايل ===== */
+/* ===== التجاوب مع الموبايل والتابلت (Responsive) ===== */
 
 @media (max-width: 768px) {
+  /* نقل الخط الرأسي لليمين */
   .timeline::before {
-    left: 22px;
+    left: auto;
+    right: 25px;
   }
 
   .tl-arrow {
-    left: 22px;
+    left: auto;
+    right: 17px;
   }
 
-  .timeline-item,
-  .timeline-item.right,
-  .timeline-item.left {
-    flex-direction: column;
+  /* تحويل العناصر لعمود واحد */
+  .timeline-item, 
+  .timeline-item.left, 
+  .timeline-item.right {
+    flex-direction: column !important;
     align-items: flex-start;
-    padding-left: 48px;
+    padding-right: 60px;
+    padding-left: 0;
+    margin-bottom: 50px;
   }
 
   .timeline-dot {
-    left: 22px;
-    top: 14px;
+    left: auto;
+    right: 15px;
+    top: 20px;
+    transform: none;
   }
 
-  .timeline-year,
-  .timeline-content {
-    width: 100%;
-  }
-
-  .timeline-item.right .timeline-year,
-  .timeline-item.left .timeline-year {
+  .timeline-year {
+    width: auto;
     text-align: right;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    font-size: 24px;
   }
 
-  /* ← أزل margin-right و margin-left هنا لأنهم يكسرون الموبايل */
-  .timeline-item.left .timeline-content,
-  .timeline-item.right .timeline-content {
-    margin: 0;
+  .timeline-year::after {
+    display: none; /* إخفاء الخط الصغير في الموبايل لمنع الزحام */
   }
+
+  .timeline-content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px;
+    text-align: right;
+  }
+}
+
+/* لمسة جمالية للأسهم الذهبية في الخلفية */
+.stats-arrows {
+  opacity: 0.4;
+  pointer-events: none;
 }
