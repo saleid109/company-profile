@@ -137,7 +137,7 @@
 }
 
 .timeline-year {
-  width: auto;
+  width: 80px;
   min-width: 70px;
   font-size: 32px;
   font-weight: 700;
