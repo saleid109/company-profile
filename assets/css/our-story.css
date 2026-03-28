@@ -113,6 +113,15 @@
   border-bottom: 18px solid var(--color-primary);
 }
 
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 70px;
+  position: relative;
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+}
 
 .timeline-dot {
   width: 24px;
@@ -133,10 +142,14 @@
   font-size: 32px;
   font-weight: 700;
   margin: 0 10px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  color: var(--color-secondary);
 }
 
 .timeline-content {
-  width: 586px;
+  width: calc(50% - 80px);
   max-width: 100%;
   min-height: 130px;
   padding: 16px;
@@ -163,12 +176,6 @@
   /* السنة يسار، الكرت يمين */
 }
 
-.timeline-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 70px;
-  position: relative;
-}
 
 /* الاتجاهات */
 .timeline-item.right {
@@ -192,8 +199,8 @@
   content: "";
   position: absolute;
   top: 50%;
-  right: -12px;
-  width: 12px;
+  right: -8px;
+  width: 8px;
   height: 2px;
   background: var(--color-secondary);
   transform: translateY(-50%);
@@ -204,8 +211,8 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -12px;
-  width: 12px;
+  left: -8px;
+  width: 8px;
   height: 2px;
   background: var(--color-secondary);
   transform: translateY(-50%);
