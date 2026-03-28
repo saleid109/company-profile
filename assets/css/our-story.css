@@ -240,7 +240,9 @@
 
   .tl-arrow {
     left: auto;
-    right: 12px;
+    right: 23px;
+    top: 0px;
+    transform: translateX(50%); /* توسيط على الخط */
   }
 
   .timeline-item,
