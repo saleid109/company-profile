@@ -565,8 +565,8 @@
   border: 3px solid var(--color-secondary); /* ← الإطار المنقط من فيجما */
   padding: 12px;
   border-radius: 8px;
-  margin-left: 40px; /* ← يبعد البطاقة عن الحافة اليسرى */
-
+  background: var(--color-white);
+  box-shadow: 0 4px 12px rgba(0, 2, 91, 0.08);
 }
 
 /* منطقة الصورة */
