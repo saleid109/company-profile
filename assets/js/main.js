@@ -594,7 +594,7 @@ updateCert();
 
 /* أنيميشن الظهور */
 
-const observer = new IntersectionObserver((entries) => {
+const timelineObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
@@ -603,6 +603,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 document.querySelectorAll('.timeline-item').forEach(item => {
-    observer.observe(item);
+    timelineObserver.observe(item);
 });
 
