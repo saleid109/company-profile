@@ -125,15 +125,14 @@
 
 /* السنة - عرض ثابت لضمان التوازن */
 .timeline-year {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 9px; /* من فيجما */
   font-size: clamp(24px, 2.5vw, 40px);
   font-weight: 700;
   color: var(--color-primary);
-  position: relative;
-  z-index: 2;
   white-space: nowrap;
+  gap: 10px;
+  width: calc(50% - 30px); /* نفس عرض الكرت تقريباً */
 }
 
 /* الكرت - عرض محسوب بدقة */
@@ -182,19 +181,21 @@
 .timeline-year::after {
   content: "";
   display: block;
-  width: 200px; /* زد من 80px إلى 200px */
   height: 2px;
   background: var(--color-secondary);
+  flex-grow: 1;
   opacity: 0.7;
 }
-/* left: الخط يمتد لليمين نحو الدائرة */
+/* left: الخط نحو اليمين (نحو الدائرة) */
 .timeline-item.left .timeline-year {
-  flex-direction: row; /* سنة ثم خط */
+  flex-direction: row-reverse;
+  text-align: left;
 }
 
-/* right: الخط يمتد لليسار نحو الدائرة */
+/* right: الخط نحو اليسار (نحو الدائرة) */
 .timeline-item.right .timeline-year {
-  flex-direction: row-reverse; /* خط ثم سنة */
+  flex-direction: row;
+  text-align: right;
 }
 /* ===== التجاوب مع الموبايل والتابلت (Responsive) ===== */
 
