@@ -1,5 +1,5 @@
 /* ===== الهيكل العام ===== */
-.hero-inner {
+.hero-story {
   position: relative;
   height: 200px;
   display: flex;
@@ -42,14 +42,14 @@
   background: rgba(0, 2, 91, 0.5);
 }
 
-.title-about {
+.title-wrap {
   position: relative;
   z-index: 1;
   text-align: center;
   width: 100%;
 }
 
-.title-about h1 {
+.title-wrap h1 {
   color: var(--color-white);
   font-size: clamp(28px, 4vw, 48px);
   font-weight: 900;
