@@ -67,7 +67,8 @@
 
 .timeline {
   position: relative;
-  max-width: 1000px; /* زيادة بسيطة للمساحة الجانبية */
+  max-width: 1000px;
+  /* زيادة بسيطة للمساحة الجانبية */
   margin: 0 auto;
   padding: 60px 0;
 }
@@ -104,7 +105,8 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
-  margin-bottom: 80px; /* مسافة مريحة بين السنوات */
+  margin-bottom: 80px;
+  /* مسافة مريحة بين السنوات */
 }
 
 /* الدائرة المركزية */
@@ -134,7 +136,8 @@
 
 /* الكرت - عرض محسوب بدقة */
 .timeline-content {
-  width: calc(50% - 80px); /* مسافة أمان 80px للدائرة والخط */
+  width: calc(50% - 80px);
+  /* مسافة أمان 80px للدائرة والخط */
   padding: 25px;
   border-radius: 18px;
   border: 1px solid rgba(0, 1, 91, 0.1);
@@ -156,12 +159,22 @@
 
 /* --- التحكم في الاتجاهات (يمين ويسار) --- */
 
-.timeline-item.left { flex-direction: row; }
-.timeline-item.right { flex-direction: row-reverse; }
+.timeline-item.left {
+  flex-direction: row;
+}
+
+.timeline-item.right {
+  flex-direction: row-reverse;
+}
 
 /* المسافة الخفيفة بين الكرت والمسار (نصيحة الـ 20px) */
-.timeline-item.left .timeline-content { margin-left: 20px; }
-.timeline-item.right .timeline-content { margin-right: 20px; }
+.timeline-item.left .timeline-content {
+  margin-left: 20px;
+}
+
+.timeline-item.right .timeline-content {
+  margin-right: 20px;
+}
 
 /* الخط الأفقي الصغير الخارج من السنة */
 /* الخط الأفقي الصغير الخارج من السنة */
@@ -169,19 +182,21 @@
   content: "";
   position: absolute;
   top: 50%;
-  width: 60px;
+  width: 650px; /* زد من 60px إلى 120px */
   height: 2px;
   background: var(--color-secondary);
   transform: translateY(-50%);
   opacity: 0.7;
+  left: 100%; /* افتراضي لليمين */
 }
 
-.timeline-item.left .timeline-year::after { right: -65px; }
-.timeline-item.right .timeline-year::after { left: -65px; }
+.timeline-item.left .timeline-year::after { right: -125px; }
+.timeline-item.right .timeline-year::after { left: -125px; }
 
 /* ===== التجاوب مع الموبايل والتابلت (Responsive) ===== */
 
 @media (max-width: 768px) {
+
   /* نقل الخط الرأسي لليمين */
   .timeline::before {
     left: auto;
@@ -194,8 +209,8 @@
   }
 
   /* تحويل العناصر لعمود واحد */
-  .timeline-item, 
-  .timeline-item.left, 
+  .timeline-item,
+  .timeline-item.left,
   .timeline-item.right {
     flex-direction: column !important;
     align-items: flex-start;
@@ -219,7 +234,7 @@
   }
 
   .timeline-year::after {
-    display: none; 
+    display: none;
   }
 
   .timeline-content {
@@ -229,4 +244,3 @@
     text-align: right;
   }
 }
-
