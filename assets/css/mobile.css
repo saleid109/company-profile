@@ -761,7 +761,11 @@
         القوائم -  المتقدمة للتابلت
     ============================================ */
 
- .top-bar .container {
+    html, body {
+        overflow-x: visible;
+    }
+
+    .top-bar .container {
         display: flex;
         flex-wrap: wrap; /* 👈 أهم شيء */
         justify-content: space-between;
