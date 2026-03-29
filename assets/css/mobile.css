@@ -330,26 +330,6 @@
         font-size: 12px;
     }
 
-    /* زر الاستشارة في أسفل القائمة الجانبية */
-    .nav-actions.mobile-only {
-        display: block;
-        margin-top: auto;
-        padding: 20px 25px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-actions.mobile-only .btn-primary {
-        width: 100%;
-        display: block;
-        text-align: center;
-        padding: 15px;
-        background: var(--color-primary, #f5c842);
-        color: var(--color-secondary, #0b0f5c);
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 16px;
-    }
 
     /* ============================================
         باقي الأقسام
