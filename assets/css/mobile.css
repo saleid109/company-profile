@@ -14,6 +14,7 @@
         background-color 0.2s ease;
 }
 
+
 .nav-actions.desktop-only {
     display: flex;
     align-items: center;
@@ -22,7 +23,6 @@
 .nav-actions.mobile-cta {
     display: none;
 }
-
 
 .home-buttons a,
 .nav-menu li a,
@@ -83,16 +83,7 @@
         color: var(--color-primary);
         background: rgba(0, 0, 0, 0.02);
     }
-/* تأثيرات زر الاستشارة في الديسكتوب */
-    .nav-actions .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(245, 200, 66, 0.3);
-    }
-/* تأثيرات الميجا من النسخة المتقدمة */
-        .mega-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateX(-5px);
-        }
+
 
         
 
