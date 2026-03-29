@@ -65,6 +65,10 @@ html {
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
+    z-index: var(--z-fixed);
+    overflow: hidden; /* أو */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* تنسيق رابط التخطي */
@@ -97,8 +101,7 @@ html {
     align-items: center;
     width: 100%;
     padding: 0 30px;
-    overflow: hidden; /* أو */
-    box-sizing: border-box;
+    
 }
 
 .flex-group {
