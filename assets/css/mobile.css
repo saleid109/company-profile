@@ -330,7 +330,6 @@
         font-size: 12px;
     }
 
-    /* ✅ Mega menu في الجوال يشبه التابلت */
     .navbar-links .mega-menu-content {
         position: static;
         opacity: 1;
@@ -341,7 +340,6 @@
         padding: 10px;
         margin: 10px 15px;
         display: none;
-        /* مخفي افتراضيًا */
         box-shadow: none;
         min-width: unset;
     }
