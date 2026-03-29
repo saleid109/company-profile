@@ -18,6 +18,14 @@
     display: none;
 }
 
+.nav-actions.desktop-only {
+    display: flex;
+}
+
+.nav-actions.mobile-cta {
+    display: none;
+}
+
 .home-buttons a,
 .nav-menu li a,
 .btn-primary {
