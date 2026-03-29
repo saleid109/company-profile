@@ -14,6 +14,10 @@
         background-color 0.2s ease;
 }
 
+nav-actions.mobile-cta {
+    display: none;
+}
+
 .home-buttons a,
 .nav-menu li a,
 .btn-primary {
@@ -82,12 +86,7 @@
             transform: translateX(-5px);
         }
 
-        /* إخفاء زر الاستشارة   */
-
-    .nav-actions.mobile-cta {
-        display: none;
-    }
-
+        
 
 
 
