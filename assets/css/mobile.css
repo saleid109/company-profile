@@ -761,22 +761,20 @@
         القوائم -  المتقدمة للتابلت
     ============================================ */
 
-    .container {
-        padding: 0 30px;
-    }
-
-    .top-bar .container {
-        padding: 0 20px;
-        gap: 10px;
+ .top-bar .container {
+        padding: 0 15px;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .flex-group {
-        gap: 15px;
+        gap: 10px;
+        flex-wrap: wrap;
     }
 
     .social-links {
-        gap: 10px;
-        margin-left: 15px;
+        gap: 8px;
     }
 
     .top-bar,
@@ -786,10 +784,10 @@
     }
 
     .user-info span {
-        display: inline-block;
+        font-size: 13px;
     }
 
-
+    
     .nav-wrapper {
         display: flex;
         justify-content: space-between;
