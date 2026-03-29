@@ -763,28 +763,25 @@
 
     .top-bar .container {
         padding: 0 15px;
-        gap: 8px;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        gap: 5px;
     }
 
     .flex-group {
-        gap: 10px;
-        flex-wrap: wrap;
+        gap: 8px;
     }
 
     .social-links {
-        gap: 8px;
+        gap: 6px;
     }
 
     .top-bar,
     .language a,
     .price-text {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .user-info span {
-        font-size: 13px;
+        font-size: 12px;
     }
 
 
