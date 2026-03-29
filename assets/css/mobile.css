@@ -330,6 +330,13 @@
         font-size: 12px;
     }
 
+    .nav-actions.mobile-cta {
+        display: flex;
+        align-items: center;
+    }
+
+
+
 
     /* ============================================
         باقي الأقسام
