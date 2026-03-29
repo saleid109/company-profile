@@ -330,6 +330,58 @@
         font-size: 12px;
     }
 
+    /* ✅ Mega menu في الجوال يشبه التابلت */
+    .navbar-links .mega-menu-content {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px 15px;
+        display: none;
+        /* مخفي افتراضيًا */
+        box-shadow: none;
+        min-width: unset;
+    }
+
+    /* عند الضغط يظهر */
+    .navbar-links .dropdown.open .mega-menu-content {
+        display: block;
+    }
+
+    .navbar-links .mega-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-links .mega-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .navbar-links .card-info h4 {
+        color: var(--color-primary, #f5c842);
+        font-size: 14px;
+        margin: 0 0 4px;
+    }
+
+    .navbar-links .card-info p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+    }
+
+
+
     .nav-actions.mobile-cta {
         display: flex;
         align-items: center;
@@ -895,8 +947,8 @@
     }
 
     .nav-actions.mobile-cta {
-    display: none;
-}
+        display: none;
+    }
 
     .mega-menu-content {
         position: absolute;
