@@ -404,7 +404,7 @@ nav-actions.mobile-cta {
 
 
     .nav-actions.mobile-cta {
-        display: flex;
+        display: flex !important;
         align-items: center;
     }
 
