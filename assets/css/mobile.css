@@ -388,10 +388,10 @@
     }
 
     .nav-actions.mobile-cta .btn-primary {
-        padding: 8px 14px;
-        font-size: 13px;
-        background: var(--color-primary, #f5c842);
-        color: var(--color-secondary, #0b0f5c);
+        padding: 8px 12px;
+        font-size: 12px;
+        background: var(--color-primary);
+        color: var(--color-secondary);
         border-radius: 8px;
         text-decoration: none;
         font-weight: 700;
