@@ -345,9 +345,10 @@
     }
 
     /* عند الضغط يظهر */
-    .navbar-links .dropdown.open .mega-menu-content {
-        display: block;
-    }
+    .navbar-links .mega-menu-content.open,
+.navbar-links .mega-menu-content.active-mobile {
+    display: block;
+}
 
     .navbar-links .mega-grid {
         display: flex;
