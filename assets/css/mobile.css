@@ -71,6 +71,25 @@
         color: var(--color-primary);
         background: rgba(0, 0, 0, 0.02);
     }
+/* تأثيرات زر الاستشارة في الديسكتوب */
+    .nav-actions .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(245, 200, 66, 0.3);
+    }
+/* تأثيرات الميجا من النسخة المتقدمة */
+        .mega-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-5px);
+        }
+
+        /* إخفاء زر الاستشارة   */
+
+    .nav-actions.mobile-cta {
+        display: none;
+    }
+
+
+
 
     
 }
@@ -945,10 +964,6 @@
     .nav-actions .btn-primary:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(245, 200, 66, 0.3);
-    }
-
-    .nav-actions.mobile-cta {
-        display: none;
     }
 
     .mega-menu-content {
