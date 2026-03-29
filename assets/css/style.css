@@ -2871,6 +2871,9 @@ html {
 }
 
 /* إخفاء/إظهار زر الاستشارة */
+.nav-actions.mobile-only {
+    display: none;
+}
 
 .nav-actions.desktop-only {
     display: flex;
