@@ -859,10 +859,30 @@ nav-actions.mobile-cta {
         gap: 10px;
     }
 
-    .social-links {
+    .nav-wrapper {
         display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .navbar-links {
+        order: 2;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-actions.desktop-only {
+        order: 3;
+        display: flex;
+    }
+
+    .nav-actions.mobile-cta {
+        display: none;
     }
 
     .user-info {
@@ -881,6 +901,8 @@ nav-actions.mobile-cta {
     .price-text {
         white-space: nowrap;
     }
+
+    
 
 
 
