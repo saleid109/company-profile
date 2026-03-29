@@ -14,10 +14,6 @@
         background-color 0.2s ease;
 }
 
-.nav-actions.mobile-cta {
-    display: none;
-}
-
 .nav-actions.desktop-only {
     display: flex;
 }
@@ -25,6 +21,7 @@
 .nav-actions.mobile-cta {
     display: none;
 }
+
 
 .home-buttons a,
 .nav-menu li a,
