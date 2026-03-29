@@ -16,6 +16,7 @@
 
 .nav-actions.desktop-only {
     display: flex;
+    align-items: center;
 }
 
 .nav-actions.mobile-cta {
