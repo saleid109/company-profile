@@ -2878,6 +2878,7 @@ html {
 .nav-actions.desktop-only {
     display: flex;
 }
+
 .nav-actions.mobile-cta {
     display: none;
 }
