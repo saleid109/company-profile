@@ -30,35 +30,7 @@ nav-actions.mobile-cta {
     position: relative;
 }
 
-.nav-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-/* الشعار على اليمين - RTL */
-.logo {
-    order: 1;
-}
-
-/* القائمة في الوسط */
-.navbar-links {
-    order: 2;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-/* زر الاستشارة على اليسار */
-.nav-actions.desktop-only {
-    order: 3;
-}
-
-/* الزر الجوال لا يأخذ مساحة في الديسكتوب */
-.nav-actions.mobile-cta {
-    order: 4;
-    display: none;
-}
 
 @media (prefers-reduced-motion: reduce) {
     * {
