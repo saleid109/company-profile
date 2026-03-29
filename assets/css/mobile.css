@@ -761,7 +761,7 @@
         القوائم -  المتقدمة للتابلت
     ============================================ */
 
- .top-bar .container {
+    .top-bar .container {
         padding: 0 15px;
         gap: 8px;
         flex-wrap: wrap;
@@ -787,7 +787,7 @@
         font-size: 13px;
     }
 
-    
+
     .nav-wrapper {
         display: flex;
         justify-content: space-between;
