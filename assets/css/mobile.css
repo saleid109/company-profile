@@ -941,54 +941,7 @@
         opacity: 1;
         visibility: visible;
     }
-    .mega-menu-content {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: rgba(11, 15, 92, 0.98);
-        backdrop-filter: blur(10px);
-        border-radius: 12px;
-        padding: 20px;
-        min-width: 500px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        z-index: 1000;
-    }
 
-    .nav-menu li.dropdown:hover .mega-menu-content {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    .mega-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .mega-card {
-        display: flex;
-        gap: 15px;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        text-decoration: none;
-        color: white;
-        transition: all 0.3s ease;
-    }
-
-    .mega-card:hover {
-        background: rgba(255, 255, 255, 0.1);
-        transform: translateX(-5px);
-    }
-
-    .mobile-menu-icon {
-        display: none;
-    }
 
     /* ============================================
         باقي الأقسام
