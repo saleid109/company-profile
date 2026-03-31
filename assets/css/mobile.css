@@ -862,15 +862,12 @@
         align-items: center;
         gap: 10px;
     }
-
-    /* يمين: اللوجو */
-    .logo {
-        order: 3;
+    .logo img {
+        height: 45px;
     }
 
     /* يمين بجانب اللوجو: الهامبرغر */
     .mobile-menu-icon {
-        order: 2;
         display: flex !important;
         align-items: center;
         justify-content: center;
@@ -887,7 +884,6 @@
     /* يسار: زر الاستشارة */
     .nav-actions.desktop-only {
         display: flex !important;
-        order: 1;
         align-items: center;
     }
 
