@@ -830,133 +830,117 @@
         القوائم -  المتقدمة للتابلت
     ============================================ */
 
-    /*  إصلاح اقتصاص التوب بار في التابلت */
-    html,
-    body {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    .top-bar {
-        width: 100%;
-        overflow: hidden;
-        box-sizing: border-box;
-    }
-
+  /* ===== Top Bar ===== */
     .top-bar .container {
-        max-width: 100%;
-        box-sizing: border-box;
+        padding: 0 15px;
+        gap: 5px;
     }
+    .flex-group { gap: 8px; }
+    .social-links { gap: 6px; }
+    .top-bar, .language a, .price-text { font-size: 12px; }
 
-
-    .flex-group {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 10px;
-    }
-
-
-    .user-info {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-
-    .user-info span {
-        font-size: 12px;
-        white-space: nowrap;
-        /* 👈 يمنع النزول سطر */
-        display: none;
-    }
-
-    .price-text {
-        white-space: nowrap;
-    }
-
+    /* ===== Navbar - نفس سلوك الجوال ===== */
     .nav-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 30px;
-        gap: 20px;
-        width: 100%;
-        box-sizing: border-box;
-        background-color: var(--color-secondary) !important;
+        padding: 0 15px;
         height: 70px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
     }
 
-    .nav-wrapper .container {
-        flex-direction: row !important;
-    }
-
-    .nav-actions.desktop-only {
-        display: flex !important;
-    }
-
+    /* إخفاء القائمة الأفقية */
     .navbar-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: #0b0f5c;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 4000;
+        padding-top: 80px;
+        overflow-y: auto;
         display: flex;
-        flex: 1;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
     }
 
-    .nav-menu {
-        display: flex;
-        flex-direction: row;
-        gap: 25px;
+    .navbar-links.open {
+        transform: translateX(0);
+    }
+
+    /* إظهار أيقونة الهامبرغر */
+    .mobile-menu-icon {
+        display: flex !important;
         align-items: center;
         justify-content: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+        width: 45px;
+        height: 45px;
+        background: var(--color-white);
+        color: var(--color-secondary);
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 24px;
+    }
+
+    /* إخفاء زر الديسكتوب */
+    .nav-actions.desktop-only {
+        display: none !important;
+    }
+
+    /* القائمة عمودية */
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     .nav-menu li {
-        position: relative;
-        white-space: nowrap;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .nav-menu li a {
-        padding: 10px 15px;
-        font-size: 15px;
-        color: var(--color-white);
-        text-decoration: none;
+        padding: 18px 25px;
+        font-size: 16px;
+        color: white;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 5px;
-        transition: all 0.3s ease;
     }
 
-    .nav-actions {
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
+    /* زر الاستشارة في أسفل القائمة */
+    .nav-actions.mobile-only {
+        display: block !important;
+        margin-top: auto;
+        padding: 20px 25px;
+        border-top: 1px solid rgba(255,255,255,0.1);
     }
 
-    .nav-actions .btn-primary {
-        padding: 12px 24px;
-        font-size: 15px;
-        white-space: nowrap;
-        background-color: var(--color-primary, #f5c842);
+    .nav-actions.mobile-only .btn-primary {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 15px;
+        background: var(--color-primary, #f5c842);
         color: var(--color-secondary, #0b0f5c);
         border-radius: 8px;
-        text-decoration: none;
         font-weight: 700;
+        font-size: 16px;
+    }
+
+    /* طبقة التظليل */
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        opacity: 0;
+        visibility: hidden;
         transition: all 0.3s ease;
-        display: inline-block;
-        min-width: 150px;
-        text-align: center;
+        z-index: 3000;
     }
 
-    .nav-actions .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(245, 200, 66, 0.3);
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
-
     .mega-menu-content {
         position: absolute;
         top: 100%;
