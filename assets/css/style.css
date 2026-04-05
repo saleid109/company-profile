@@ -1996,27 +1996,27 @@ html {
 }
 
 /* ===== سطر المزلق ===== */
-.team-slider-row {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.team-track-clip {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-    padding: 55px 0 20px;
+.team-swiper {
+    padding: 55px 0 20px !important;
     margin-top: -55px;
 }
 
-/* ===== المسار المتحرك (Track) ===== */
-.team-track {
-    display: flex;
-    gap: 24px;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
+.team-swiper .swiper-button-prev,
+.team-swiper .swiper-button-next {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    color: #1B2D45;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    top: calc(50% + 17px); /* تعويض الـ padding */
+}
 
+.team-swiper .swiper-button-prev::after,
+.team-swiper .swiper-button-next::after {
+    font-size: 14px;
+    font-weight: 700;
 }
 
 /* ===== البطاقة ===== */
@@ -2083,33 +2083,6 @@ html {
     color: #777;
 }
 
-/* ===== الازرار ===== */
-.team-btn {
-    flex-shrink: 0;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 1px solid #e0e0e0;
-    background: #fff;
-    color: #1B2D45;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 0.2s, transform 0.2s, opacity 0.2s;
-}
-
-.team-btn:hover:not(:disabled) {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    transform: scale(1.05);
-}
-
-/* حالة التعطيل للزر */
-.team-btn:disabled {
-    opacity: 0.35;
-    cursor: default;
-}
 
 /* ============================================================
    قسم الفرق — Groups Sectio=============================== */
