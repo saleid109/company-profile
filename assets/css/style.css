@@ -5,7 +5,6 @@
 }
 
 body {
-
     font-family: var(--font-main);
     background-color: var(--color-bg-light);
 }
@@ -25,15 +24,14 @@ html {
     overflow-x: hidden;
 }
 
-
-
 /* تحسين الأداء وتقليل الاهتزاز أثناء التحريك */
 .service-card,
 .feature-item,
 .field-card {
     will-change: transform;
     backface-visibility: hidden;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+    transition:
+        transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
         box-shadow 0.3s ease;
 }
 
@@ -42,8 +40,9 @@ html {
 .reveal {
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-
+    transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
 }
 
 /* الحالة الأولية للعناصر المخفية */
@@ -51,7 +50,6 @@ html {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 /*================================*/
 
@@ -66,7 +64,8 @@ html {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     z-index: var(--z-fixed);
-    overflow: hidden; /* أو */
+    overflow: hidden;
+    /* أو */
     width: 100%;
     box-sizing: border-box;
 }
@@ -88,12 +87,10 @@ html {
     transition: top 0.3s ease;
 }
 
-
 /* إظهار الرابط فقط عند الضغط على Tab */
 .skip-link:focus {
     top: 0;
 }
-
 
 .top-bar .container {
     display: flex;
@@ -101,7 +98,6 @@ html {
     align-items: center;
     width: 100%;
     padding: 0 30px;
-    
 }
 
 .flex-group {
@@ -134,8 +130,6 @@ html {
     transition: var(--transition);
 }
 
-
-
 /* تنسيق اللغة  */
 .language {
     display: flex;
@@ -145,8 +139,6 @@ html {
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     height: 18px;
 }
-
-
 
 .language a {
     font-weight: var(--weight-bold);
@@ -389,7 +381,7 @@ html {
     width: 44px;
     height: 44px;
     border-radius: 24px;
-    background: linear-gradient(94deg, #FFD760 1.1%, #FFEAAB 100%);
+    background: linear-gradient(94deg, #ffd760 1.1%, #ffeaab 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -398,20 +390,21 @@ html {
 }
 
 .mega-icon-wrap::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+    background: radial-gradient(circle at center,
+            rgba(255, 255, 255, 0.5) 0%,
+            transparent 70%);
 }
 
 .mega-icon-wrap i {
     font-size: 25px;
-    color: #F1B709;
+    color: #f1b709;
     position: relative;
     z-index: 1;
 }
-
 
 /*ايقونة المنسدلة للجوال*/
 .mobile-menu-icon {
@@ -561,8 +554,6 @@ html {
     box-shadow: 0 5px 15px rgba(255, 204, 53, 0.4);
 }
 
-
-
 /* ----- تنسيق قسم عن نقطة صعود  (About Section) ----- */
 
 /*  الحاوية العامة للقسم */
@@ -610,7 +601,6 @@ html {
     text-align: right;
     width: 100%;
     margin-right: 0;
-
 }
 
 /* زر اقرأ المزيد */
@@ -705,7 +695,6 @@ html {
     display: block;
 }
 
-
 /* نص البطاقة */
 .feature-info h3 {
     font-size: 1.2rem;
@@ -757,7 +746,7 @@ html {
     /* وضعها في جهة اليسار خلف البطاقات */
     width: 400px;
     height: 100%;
-    background-image: url('./public/images/yellow-arrows.svg');
+    background-image: url("./public/images/yellow-arrows.svg");
     /* مسار صورة الأسهم */
     background-repeat: no-repeat;
     background-size: contain;
@@ -823,7 +812,9 @@ html {
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 /* صندوق الأيقونة */
@@ -876,7 +867,6 @@ html {
 
 /* ----- نهاية قسم مجالاتنا (Fields Section) ----- */
 
-
 /* ==========  قسم خدماتنا Services Section ========== */
 
 .services-section {
@@ -886,10 +876,10 @@ html {
 }
 
 .section-main-title {
-    color: #00015B !important;
+    color: #00015b !important;
     /* لون الهوية الكحلي */
     text-align: center;
-    font-family: 'Tajawal', sans-serif;
+    font-family: "Tajawal", sans-serif;
     font-size: 48px !important;
     /* تكبير العنوان */
     font-weight: 800;
@@ -912,17 +902,17 @@ html {
 
 .caet-btn {
     padding: 12px 35px;
-    border: 2px solid #00015B;
+    border: 2px solid #00015b;
     border-radius: 40px;
     background: transparent;
-    color: #00015B;
+    color: #00015b;
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s ease;
 }
 
 .caet-btn:hover {
-    background: #00015B;
+    background: #00015b;
     color: #fff;
 }
 
@@ -930,11 +920,9 @@ html {
     color: #fff;
     box-shadow: 0 4px 15px rgba(0, 1, 91, 0.2);
     transform: scale(1.05);
-    background: linear-gradient(45deg, #00015B, #1d23a3);
+    background: linear-gradient(45deg, #00015b, #1d23a3);
     /* تدرج لوني خفيف */
 }
-
-
 
 /* ===== التبويبات الفرعية ===== */
 .sub-categories {
@@ -951,7 +939,7 @@ html {
 
 .sub-btn {
     padding: 8px 22px;
-    border: 1px solid #00015B;
+    border: 1px solid #00015b;
     border-radius: 25px;
     background: #fff;
     cursor: pointer;
@@ -960,12 +948,12 @@ html {
 }
 
 .sub-btn:hover {
-    background: #00015B;
+    background: #00015b;
     color: #fff;
 }
 
 .sub-btn.active {
-    background: #00015B;
+    background: #00015b;
     color: #fff;
 }
 
@@ -988,7 +976,6 @@ html {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     transition: 0.3s ease;
 }
-
 
 .service-card.active {
     display: block;
@@ -1031,8 +1018,8 @@ html {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #00015B;
-    font-family: 'Tajawal', sans-serif;
+    color: #00015b;
+    font-family: "Tajawal", sans-serif;
 }
 
 .service-card p {
@@ -1046,7 +1033,7 @@ html {
 .card-btn {
     display: inline-block;
     padding: 8px 22px;
-    background: #00015B;
+    background: #00015b;
     color: #fff;
     border-radius: 25px;
     font-size: 0.9rem;
@@ -1064,7 +1051,6 @@ html {
     0% {
         opacity: 0;
         transform: translateY(20px) scale(0.98);
-
     }
 
     100% {
@@ -1073,8 +1059,6 @@ html {
         filter: blur(0);
     }
 }
-
-
 
 /* ----- نهاية قسم خدماتناا (Services Section) ----- */
 
@@ -1165,7 +1149,7 @@ html {
 /* الحاوية العامة للقسم */
 .technologies-section {
     padding: 100px 0;
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
     direction: rtl;
 }
 
@@ -1205,7 +1189,7 @@ html {
 
 /* تنسيق البطاقة الفردية */
 .technology-item {
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 20px;
     /* الانحناء من Figma */
     padding: 32px;
@@ -1254,8 +1238,6 @@ html {
     transition: transform 0.3s ease;
 }
 
-
-
 /* تأثير التحويم على الشعارات */
 .tech-logos img:hover {
     transform: scale(1.1);
@@ -1287,7 +1269,6 @@ html {
     align-items: center;
     gap: 60px;
     direction: rtl;
-
 }
 
 /* تنسيق المحتوى النصي */
@@ -1457,7 +1438,6 @@ html {
 .compare-table thead th.us-col {
     padding-top: 30px;
     border-radius: 40px 40px 0 0;
-
 }
 
 .others-col {
@@ -1466,8 +1446,6 @@ html {
     width: 160px;
     min-width: 160px;
     white-space: nowrap;
-
-
 }
 
 /* اسم الميزة */
@@ -1485,8 +1463,6 @@ html {
     text-align: center;
     padding: 15px;
     border-bottom: 1px solid #eef1f8;
-
-
 }
 
 /* تلوين الصفوف - يشمل كل الخلايا عدا الكحلي */
@@ -1495,12 +1471,12 @@ html {
 }
 
 .compare-table tbody tr:nth-child(even) td:not(.featured-us) {
-    background-color: #EDEDED;
+    background-color: #ededed;
 }
 
 /* العمود الكحلي البارز */
 .featured-us {
-    background-color: #00015B !important;
+    background-color: #00015b !important;
     text-align: center;
     padding: 20px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -1509,7 +1485,7 @@ html {
     width: 160px;
     min-width: 160px;
     position: sticky;
-    right: 0; 
+    right: 0;
     z-index: 5;
 }
 
@@ -1517,7 +1493,6 @@ html {
     border-radius: 0 0 40px 40px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     padding-bottom: 30px;
-
 }
 
 /* حواف دائرية أول وآخر صف */
@@ -1528,7 +1503,6 @@ html {
 .compare-table tbody tr:last-child .feature-name {
     border-radius: 0 0 16px 0;
     border-bottom: none;
-
 }
 
 .compare-table tbody tr:last-child .others-cell {
@@ -1630,8 +1604,6 @@ html {
     max-width: 350px;
 }
 
-
-
 /*تنسيق الأسهم  */
 .swiper-button-next,
 .swiper-button-prev {
@@ -1728,7 +1700,6 @@ html {
     padding-bottom: 0;
 }
 
-
 .stats-container {
     max-width: 100%;
     margin: 0;
@@ -1743,7 +1714,6 @@ html {
     text-align: center;
     position: relative;
     z-index: 1;
-
 }
 
 /*العنوان*/
@@ -1787,7 +1757,8 @@ html {
     align-items: center;
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s ease,
+    transition:
+        opacity 0.8s ease,
         transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -1864,7 +1835,6 @@ html {
     flex-wrap: wrap;
 }
 
-
 .logo-item {
     display: flex;
     justify-content: center;
@@ -1909,7 +1879,6 @@ html {
 
 /*=================   قسم شركاء النجاح ================*/
 
-
 /* --- تنسيق القسم العام --- */
 .partners-section {
     width: 100%;
@@ -1944,15 +1913,15 @@ html {
     padding: 0;
 }
 
-
-
 /* --- تنسيق صورة الشعار --- */
 .partners-section .logo-item img {
     max-width: 180px;
     height: auto;
     opacity: 1;
     filter: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
 }
 
 /* --- تأثير hover --- */
@@ -1963,14 +1932,13 @@ html {
     background: var(--color-bg-light);
 }
 
-
 /* --- دعم مستخدمي الكيبورد --- */
 .partners-section .logo-item:focus-visible {
     outline: 2px solid #005fcc;
     outline-offset: 4px;
 }
 
-/*=================   قسم الفرق ================*/
+/*================= قسم فريق العمل ================*/
 .team-section {
     width: 100%;
     max-width: 1284px;
@@ -2000,15 +1968,13 @@ html {
     position: relative;
 }
 
-
 .team-swiper {
     overflow: visible !important;
-    padding-top: 0 !important;
-    margin-top: 0 !important;  
-    padding-bottom: 20px;
+    padding: 0 0 20px !important;
+    margin: 0 !important;
 }
 
-
+/* ===== الأزرار ===== */
 .team-swiper .swiper-button-prev,
 .team-swiper .swiper-button-next {
     width: 42px;
@@ -2016,11 +1982,24 @@ html {
     border-radius: 50%;
     border: 1px solid #e0e0e0;
     background: #fff;
-    color: #1B2D45;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    color: #1b2d45;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     top: 50%;
     transform: translateY(-50%);
-    margin-top: 27px; /* تعويض نص الـ padding-top */
+    margin-top: 0;
+    /* ← أزلنا الـ 27px */
+}
+
+.team-swiper .swiper-button-prev {
+    left: -54px;
+    /* ← خارج منطقة الكروت */
+    right: auto;
+}
+
+.team-swiper .swiper-button-next {
+    right: -54px;
+    /* ← خارج منطقة الكروت */
+    left: auto;
 }
 
 .team-swiper .swiper-button-prev::after,
@@ -2029,6 +2008,7 @@ html {
     font-weight: 700;
 }
 
+/* ===== البطاقة ===== */
 .team-card {
     position: relative;
     background: #fff;
@@ -2039,7 +2019,9 @@ html {
     align-items: center;
     gap: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .team-card:hover {
@@ -2047,6 +2029,7 @@ html {
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
 }
 
+/* ===== الصورة الرمزية ===== */
 .team-avatar {
     position: absolute;
     top: -55px;
@@ -2075,10 +2058,11 @@ html {
     object-fit: cover;
 }
 
+/* ===== النصوص ===== */
 .team-name {
     font-size: 20px;
     font-weight: 700;
-    color: #1B2D45;
+    color: #1b2d45;
 }
 
 .team-role {
@@ -2091,7 +2075,7 @@ html {
 
 .teams-group-section {
     font-family: var(--font-main);
-    background-color: #F8F8F8;
+    background-color: #f8f8f8;
     padding: 60px 0;
     direction: rtl;
 }
@@ -2123,7 +2107,6 @@ html {
     overflow: hidden;
     padding: 20px 0;
     position: relative;
-
 }
 
 .teams-group-section .carousel-track {
@@ -2131,7 +2114,6 @@ html {
     gap: 24px;
     transition: transform 0.5s ease-in-out;
     align-items: stretch;
-
 }
 
 /* ← الأزرار الآن خارج overflow hidden */
@@ -2152,7 +2134,6 @@ html {
     transition: all 0.3s ease;
     /* ← لا position absolute */
 }
-
 
 .teams-group-section .nav-btn:hover:not(:disabled) {
     background-color: #002060;
@@ -2178,14 +2159,13 @@ html {
     overflow: hidden;
 }
 
-
 .teams-group-section .card-header {
     width: 100%;
     height: 160px;
     flex-shrink: 0;
     /*    — يمنع الضغط على الصورة */
     margin-bottom: 24px;
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -2238,11 +2218,11 @@ html {
 
 /*========-قسم تذييل الصفحة -footer=========*/
 .site-footer {
-    background-color: #00025B;
+    background-color: #00025b;
     color: #ffffff;
     direction: rtl;
     padding-top: 60px;
-    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-family: "Cairo", "Tajawal", sans-serif;
 }
 
 .footer-container {
@@ -2295,8 +2275,6 @@ html {
     line-height: 1.8;
     margin: 0;
 }
-
-
 
 /* عناوين الأعمدة */
 .footer-column h4 {
@@ -2372,7 +2350,7 @@ html {
 
 .social-links-footer a:hover {
     background: var(--color-bg-light);
-    color: #00025B;
+    color: #00025b;
     transform: translateY(-3px);
 }
 
@@ -2392,7 +2370,7 @@ html {
 }
 
 .footer-column::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     right: 0;
@@ -2402,11 +2380,12 @@ html {
             rgba(255, 255, 255, 0) 0%,
             rgba(255, 255, 255, 0.2) 50%,
             rgba(255, 255, 255, 0) 100%);
-    margin-bottom:-11px;
+    margin-bottom: -11px;
 }
 
 .footer-bottom-bar {
-    display: block; /* ✅ مهم جداً */
+    display: block;
+    /* ✅ مهم جداً */
     text-align: center;
     padding: 25px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -2414,7 +2393,6 @@ html {
     color: rgba(255, 255, 255, 0.7);
     margin-top: 30px;
 }
-
 
 /*=========================================*/
 /*==================== نهاية ملف CSS ====================*/
@@ -2432,7 +2410,9 @@ html {
     padding: 12px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .3s ease, visibility .3s ease;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
     position: fixed;
     inset: 0;
     z-index: 9998;
@@ -2454,12 +2434,11 @@ html {
     overflow: hidden;
     position: relative;
     direction: rtl;
-    transform: translateY(24px) scale(.97);
-    transition: transform .38s cubic-bezier(.34, 1.4, .64, 1);
+    transform: translateY(24px) scale(0.97);
+    transition: transform 0.38s cubic-bezier(0.34, 1.4, 0.64, 1);
     isolation: isolate;
     position: relative;
     z-index: 9999;
-
 }
 
 .auth-overlay.open .auth-card {
@@ -2483,23 +2462,23 @@ html {
 }
 
 .auth-brand::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    border: 30px solid rgba(255, 204, 53, .07);
+    border: 30px solid rgba(255, 204, 53, 0.07);
     top: -40px;
     left: -40px;
 }
 
 .auth-brand::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 24px solid rgba(255, 204, 53, .05);
+    border: 24px solid rgba(255, 204, 53, 0.05);
     bottom: -25px;
     right: -25px;
 }
@@ -2526,7 +2505,7 @@ html {
 }
 
 .auth-brand-sub {
-    color: rgba(255, 255, 255, .48);
+    color: rgba(255, 255, 255, 0.48);
     font-family: var(--font-main);
     font-size: 11px;
     line-height: 1.7;
@@ -2555,26 +2534,26 @@ html {
     height: 32px;
     border-radius: 50%;
     border: none;
-    background: rgba(0, 2, 91, .07);
+    background: rgba(0, 2, 91, 0.07);
     color: var(--color-secondary);
     font-size: 13px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all .25s;
+    transition: all 0.25s;
     z-index: 10;
 }
 
 .auth-close:hover {
-    background: rgba(0, 2, 91, .14);
+    background: rgba(0, 2, 91, 0.14);
     transform: rotate(90deg);
 }
 
 /* تبويبات */
 .auth-tabs {
     display: flex;
-    border-bottom: 2px solid rgba(0, 2, 91, .1);
+    border-bottom: 2px solid rgba(0, 2, 91, 0.1);
     margin-bottom: 20px;
     flex-shrink: 0;
 }
@@ -2590,18 +2569,18 @@ html {
     color: #999;
     cursor: pointer;
     position: relative;
-    transition: color .25s;
+    transition: color 0.25s;
 }
 
 .auth-tab::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -2px;
     right: 0;
     width: 0;
     height: 2px;
     background: var(--color-secondary);
-    transition: width .3s;
+    transition: width 0.3s;
 }
 
 .auth-tab.active {
@@ -2631,7 +2610,7 @@ html {
 }
 
 .auth-subtitle {
-    font-family: 'Tajawal', sans-serif;
+    font-family: "Tajawal", sans-serif;
     font-size: 12px;
     color: #999;
     margin-bottom: 18px;
@@ -2668,22 +2647,25 @@ html {
 .input-wrap input {
     width: 100%;
     height: 42px;
-    border: 1.5px solid rgba(0, 2, 91, .11);
+    border: 1.5px solid rgba(0, 2, 91, 0.11);
     border-radius: 9px;
     padding: 0 36px 0 11px;
     font-family: var(--font-main);
     font-size: 13px;
-    color: #181A2A;
+    color: #181a2a;
     background: var(--color-bg-light);
     outline: none;
-    transition: border-color .25s, box-shadow .25s, background .25s;
+    transition:
+        border-color 0.25s,
+        box-shadow 0.25s,
+        background 0.25s;
     direction: rtl;
 }
 
 .input-wrap input:focus {
     border-color: var(--color-secondary);
     background: var(--color-white);
-    box-shadow: 0 0 0 3px rgba(0, 2, 91, .07);
+    box-shadow: 0 0 0 3px rgba(0, 2, 91, 0.07);
 }
 
 .input-wrap input::placeholder {
@@ -2736,7 +2718,7 @@ html {
 }
 
 .toggle-track::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 16px;
     height: 16px;
@@ -2760,12 +2742,12 @@ html {
 }
 
 .forgot-link {
-    font-family: 'Tajawal', sans-serif;
+    font-family: "Tajawal", sans-serif;
     font-size: 12px;
     font-weight: 700;
     color: var(--color-secondary);
     text-decoration: none;
-    transition: color .2s;
+    transition: color 0.2s;
 }
 
 .forgot-link:hover {
@@ -2790,19 +2772,21 @@ html {
     gap: 7px;
     position: relative;
     overflow: hidden;
-    transition: color .3s, box-shadow .3s;
+    transition:
+        color 0.3s,
+        box-shadow 0.3s;
     flex-shrink: 0;
     margin-top: 2px;
 }
 
 .auth-submit::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: var(--color-primary);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform .35s;
+    transition: transform 0.35s;
 }
 
 .auth-submit:hover::before {
@@ -2811,7 +2795,7 @@ html {
 
 .auth-submit:hover {
     color: var(--color-secondary);
-    box-shadow: 0 5px 18px rgba(255, 204, 53, .35);
+    box-shadow: 0 5px 18px rgba(255, 204, 53, 0.35);
 }
 
 .auth-submit>* {
@@ -2823,7 +2807,7 @@ html {
 .auth-switch {
     text-align: center;
     margin-top: 12px;
-    font-family: 'Tajawal', sans-serif;
+    font-family: "Tajawal", sans-serif;
     font-size: 12px;
     color: #999;
     flex-shrink: 0;
@@ -2832,13 +2816,13 @@ html {
 .auth-switch button {
     background: none;
     border: none;
-    font-family: 'Tajawal', sans-serif;
+    font-family: "Tajawal", sans-serif;
     font-size: 12px;
     font-weight: 700;
     color: var(--color-secondary);
     cursor: pointer;
     text-decoration: underline;
-    transition: color .2s;
+    transition: color 0.2s;
 }
 
 .auth-switch button:hover {
@@ -2857,4 +2841,3 @@ html {
 .nav-actions.mobile-cta {
     display: none;
 }
-
