@@ -1996,6 +1996,7 @@ html {
     overflow: hidden;
     padding-top: 55px;
     margin-top: -55px;
+    position: relative;
 }
 
 
@@ -2016,7 +2017,9 @@ html {
     background: #fff;
     color: #1B2D45;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    top: calc(50% + 17px);
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 27px; /* تعويض نص الـ padding-top */
 }
 
 .team-swiper .swiper-button-prev::after,
