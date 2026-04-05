@@ -1990,15 +1990,20 @@ html {
     color: #001a4d;
 }
 
-.team-swiper {
-    padding: 55px 0 20px !important;
+.team-swiper-outer {
+    overflow: hidden;
+    padding-top: 55px;
     margin-top: -55px;
-    overflow: visible !important;
 }
 
-.team-swiper .swiper-wrapper {
-    overflow: hidden;
+
+.team-swiper {
+    overflow: visible !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;  
+    padding-bottom: 20px;
 }
+
 
 .team-swiper .swiper-button-prev,
 .team-swiper .swiper-button-next {
