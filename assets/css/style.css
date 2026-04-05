@@ -1969,9 +1969,6 @@ html {
     outline: 2px solid #005fcc;
     outline-offset: 4px;
 }
-
-/* ============= فريق العمل/ TEAM SECTION =============== */
-/* ===== الحاوية ===== */
 .team-section {
     width: 100%;
     max-width: 1284px;
@@ -1981,13 +1978,11 @@ html {
     direction: rtl;
 }
 
-/* ===== الحاوية ===== */
 .team-container {
     width: 100%;
     padding: 0 65px;
 }
 
-/* ===== العنوان ===== */
 .team-title {
     font-size: 36px;
     font-weight: 800;
@@ -1995,10 +1990,14 @@ html {
     color: #001a4d;
 }
 
-/* ===== سطر المزلق ===== */
 .team-swiper {
     padding: 55px 0 20px !important;
     margin-top: -55px;
+    overflow: visible !important;
+}
+
+.team-swiper .swiper-wrapper {
+    overflow: hidden;
 }
 
 .team-swiper .swiper-button-prev,
@@ -2010,7 +2009,7 @@ html {
     background: #fff;
     color: #1B2D45;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    top: calc(50% + 17px); /* تعويض الـ padding */
+    top: calc(50% + 17px);
 }
 
 .team-swiper .swiper-button-prev::after,
@@ -2019,7 +2018,6 @@ html {
     font-weight: 700;
 }
 
-/* ===== البطاقة ===== */
 .team-card {
     position: relative;
     background: #fff;
@@ -2031,7 +2029,6 @@ html {
     gap: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
 .team-card:hover {
@@ -2039,7 +2036,6 @@ html {
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== الصورة الرمزية ===== */
 .team-avatar {
     position: absolute;
     top: -55px;
@@ -2053,7 +2049,6 @@ html {
     background: #dde1ea;
 }
 
-/* --- حاوية الصورة الرمزية --- */
 .team-avatar .avatar-placeholder {
     width: 100%;
     height: 100%;
@@ -2069,19 +2064,16 @@ html {
     object-fit: cover;
 }
 
-/* ===== الاسم ===== */
 .team-name {
     font-size: 20px;
     font-weight: 700;
     color: #1B2D45;
 }
 
-/* ===== الدور الوظيفي ===== */
 .team-role {
     font-size: 14px;
     color: #777;
 }
-
 
 /* ============================================================
    قسم الفرق — Groups Sectio=============================== */

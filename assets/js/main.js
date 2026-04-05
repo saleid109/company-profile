@@ -173,29 +173,24 @@ function animateNumber(element, target) {
         element.textContent = "+" + Math.floor(current).toLocaleString('en-US');
     }, frameRate);
 }
-
-/* =========================================================
-    5. سلايدر فريق العمل (Team Slider)
-========================================================= */
-/* =========================================================
-    5. سلايدر فريق العمل (Team Swiper)
-========================================================= */
 if (typeof Swiper !== "undefined") {
     new Swiper(".team-swiper", {
         slidesPerView: 1,
         spaceBetween: 24,
         grabCursor: true,
         loop: true,
-        speed: 600,
-
-        navigation: {
-            nextEl: ".team-swiper .swiper-button-next",
-            prevEl: ".team-swiper .swiper-button-prev",
-        },
+        speed: 700,
+        watchOverflow: true,
 
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+
+        navigation: {
+            nextEl: ".team-swiper .swiper-button-next",
+            prevEl: ".team-swiper .swiper-button-prev",
         },
 
         breakpoints: {
@@ -205,7 +200,6 @@ if (typeof Swiper !== "undefined") {
         },
     });
 }
-
 /* =========================================================
     6. سلايدر الفرق (Teams Carousel)
 ========================================================= */
