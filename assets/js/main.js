@@ -177,66 +177,25 @@ function animateNumber(element, target) {
 /* =========================================================
     5. سلايدر فريق العمل (Team Slider)
 ========================================================= */
-
-(function initTeamSlider() {
-    const track = document.getElementById('team-track');
-    const clip = document.querySelector('.team-track-clip');
-    const btnPrev = document.getElementById('btn-prev');
-    const btnNext = document.getElementById('btn-next');
-
-    if (!track || !clip || !btnPrev || !btnNext) return;
-
-    const cards = Array.from(track.querySelectorAll('.team-card'));
-    let idx = 0;
-
-    function getVisible() {
-        const w = window.innerWidth;
-        if (w < 768) return 1;
-        if (w <= 1024) return 2;
-        return 4;
-    }
-
-    function getCardW() {
-        const sliderRow = document.querySelector('.team-slider-row');
-        const rowW = sliderRow.getBoundingClientRect().width;
-        const btnW = btnPrev.getBoundingClientRect().width + btnNext.getBoundingClientRect().width;
-        const rowGap = parseFloat(getComputedStyle(sliderRow).gap) || 16;
-        const gap = parseFloat(getComputedStyle(track).gap) || 20;
-        const visible = getVisible();
-        const clipW = rowW - btnW - (rowGap * 2);
-        return (clipW - gap * (visible - 1)) / visible;
-    }
-
-    function render() {
-        const gap = parseFloat(getComputedStyle(track).gap) || 20;
-        const cardW = getCardW();
-        const step = cardW + gap;
-        const max = Math.max(0, cards.length - getVisible());
-
-        if (idx > max) idx = max;
-
-        cards.forEach(card => card.style.width = cardW + 'px');
-        track.style.transform = `translateX(${idx * step}px)`;
-
-        btnPrev.disabled = idx >= max;
-        btnNext.disabled = idx <= 0;
-    }
-
-    btnPrev.addEventListener('click', () => {
-        const max = Math.max(0, cards.length - getVisible());
-        if (idx < max) { idx++; render(); }
+/* =========================================================
+    5. سلايدر فريق العمل (Team Swiper)
+========================================================= */
+if (typeof Swiper !== "undefined") {
+    new Swiper(".team-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        grabCursor: true,
+        loop: true,
+        navigation: {
+            nextEl: ".team-swiper .swiper-button-next",
+            prevEl: ".team-swiper .swiper-button-prev",
+        },
+        breakpoints: {
+            768:  { slidesPerView: 2 },
+            1024: { slidesPerView: 4 },
+        },
     });
-
-    btnNext.addEventListener('click', () => {
-        if (idx > 0) { idx--; render(); }
-    });
-
-    window.addEventListener('resize', () => { idx = 0; render(); });
-    window.addEventListener('load', render);
-    document.addEventListener('DOMContentLoaded', render);
-    setTimeout(render, 200);
-    setTimeout(render, 600);
-})();
+}
 
 /* =========================================================
     6. سلايدر الفرق (Teams Carousel)
