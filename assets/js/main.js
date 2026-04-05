@@ -186,12 +186,21 @@ if (typeof Swiper !== "undefined") {
         spaceBetween: 24,
         grabCursor: true,
         loop: true,
+        speed: 600,
+
         navigation: {
             nextEl: ".team-swiper .swiper-button-next",
             prevEl: ".team-swiper .swiper-button-prev",
         },
+
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+
         breakpoints: {
-            768:  { slidesPerView: 2 },
+            640:  { slidesPerView: 2 },
+            768:  { slidesPerView: 3 },
             1024: { slidesPerView: 4 },
         },
     });
