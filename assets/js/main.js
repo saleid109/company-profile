@@ -175,183 +175,133 @@ function animateNumber(element, target) {
 }
 
 /* =========================================================
-    5. سلايدر فريق العمل (Team Slider)
+    5 & 6. سلايدر موحّد قابل لإعادة الاستخدام (Unified Carousel)
 ========================================================= */
 
-(function initTeamSlider() {
-    const track = document.getElementById('team-track');
-    const clip = document.querySelector('.team-track-clip');
-    const btnPrev = document.getElementById('btn-prev');
-    const btnNext = document.getElementById('btn-next');
+/**
+ * دالة موحّدة تُشغّل أي سلايدر بنفس المنطق
+ * @param {Object} cfg - إعدادات السلايدر
+ */
+function initCarousel(cfg) {
+    const section   = cfg.section   ? document.querySelector(cfg.section) : document;
+    const track     = section.querySelector(cfg.track);
+    const clip      = cfg.clip ? section.querySelector(cfg.clip) : null;
+    const btnPrev   = section.querySelector(cfg.prev);
+    const btnNext   = section.querySelector(cfg.next);
+    const cards     = Array.from(track ? track.querySelectorAll(cfg.card) : []);
 
-    if (!track || !clip || !btnPrev || !btnNext) return;
+    if (!track || !btnPrev || !btnNext || cards.length === 0) return;
 
-    const cards = Array.from(track.querySelectorAll('.team-card'));
     let idx = 0;
 
+    // عدد الكروت الظاهرة حسب عرض الشاشة
     function getVisible() {
         const w = window.innerWidth;
-        if (w < 768) return 1;
-        if (w <= 1024) return 2;
-        return 4;
+        if (w < 768)  return cfg.visibleSm  ?? 1;
+        if (w < 1024) return cfg.visibleMd  ?? 2;
+        return              cfg.visibleLg  ?? 3;
     }
 
-    function getCardW() {
-        const sliderRow = document.querySelector('.team-slider-row');
-        const rowW = sliderRow.getBoundingClientRect().width;
-        const btnW = btnPrev.getBoundingClientRect().width + btnNext.getBoundingClientRect().width;
-        const rowGap = parseFloat(getComputedStyle(sliderRow).gap) || 16;
-        const gap = parseFloat(getComputedStyle(track).gap) || 20;
-        const visible = getVisible();
-        const clipW = rowW - btnW - (rowGap * 2);
+    // حساب عرض الكرت مع مراعاة المسافات والأزرار
+    function getCardWidth() {
+        const rowEl    = cfg.rowSelector ? section.querySelector(cfg.rowSelector) : track.parentElement;
+        const rowW     = rowEl.getBoundingClientRect().width;
+        const btnW     = cfg.rowSelector
+            ? (btnPrev.getBoundingClientRect().width + btnNext.getBoundingClientRect().width
+               + (parseFloat(getComputedStyle(rowEl).gap) || 16) * 2)
+            : 0;
+        const gap      = parseFloat(getComputedStyle(track).gap) || 20;
+        const visible  = getVisible();
+        const clipW    = rowW - btnW;
         return (clipW - gap * (visible - 1)) / visible;
     }
 
+    // رسم وضع السلايدر
     function render() {
-        const gap = parseFloat(getComputedStyle(track).gap) || 20;
-        const cardW = getCardW();
-        const step = cardW + gap;
-        const max = Math.max(0, cards.length - getVisible());
+        const gap     = parseFloat(getComputedStyle(track).gap) || 20;
+        const cardW   = getCardWidth();
+        const step    = cardW + gap;
+        const maxIdx  = Math.max(0, cards.length - getVisible());
 
-        if (idx > max) idx = max;
+        if (idx > maxIdx) idx = maxIdx;
 
-        cards.forEach(card => card.style.width = cardW + 'px');
+        cards.forEach(card => {
+            card.style.width = cardW + 'px';
+            card.style.flex  = `0 0 ${cardW}px`;
+        });
+
+        // دعم RTL: الإزاحة موجبة في كلا الحالتين (المحتوى يتحرك لليسار عند التقدم)
         track.style.transform = `translateX(${idx * step}px)`;
 
-        btnPrev.disabled = idx >= max;
-        btnNext.disabled = idx <= 0;
+        btnPrev.disabled     = idx >= maxIdx;
+        btnNext.disabled     = idx <= 0;
+        btnPrev.style.opacity = btnPrev.disabled ? '0.3' : '1';
+        btnNext.style.opacity = btnNext.disabled ? '0.3' : '1';
     }
 
-    btnPrev.addEventListener('click', () => {
+    // زر السابق (في RTL: يتقدم للأمام)
+    function goPrev() {
         const max = Math.max(0, cards.length - getVisible());
         if (idx < max) { idx++; render(); }
-    });
+    }
 
-    btnNext.addEventListener('click', () => {
+    // زر التالي (في RTL: يرجع للخلف)
+    function goNext() {
         if (idx > 0) { idx--; render(); }
+    }
+
+    btnPrev.addEventListener('click', goPrev);
+    btnNext.addEventListener('click', goNext);
+
+    // دعم اللمس
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    track.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) diff > 0 ? goNext() : goPrev();
+    }, { passive: true });
+
+    // إعادة رسم عند تغيير حجم الشاشة مع debounce
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { idx = 0; render(); }, 150);
     });
 
-    window.addEventListener('resize', () => { idx = 0; render(); });
+    // تشغيل مبدئي
     window.addEventListener('load', render);
     document.addEventListener('DOMContentLoaded', render);
     setTimeout(render, 200);
     setTimeout(render, 600);
-})();
+}
 
-/* =========================================================
-    6. سلايدر الفرق (Teams Carousel)
-========================================================= */
 
-(function initTeamsCarousel() {
-    const section = document.querySelector('.teams-group-section');
-    if (!section) return;
+/* — تهيئة سلايدر فريق العمل — */
+initCarousel({
+    track:       '#team-track',
+    clip:        '.team-track-clip',
+    prev:        '#btn-prev',
+    next:        '#btn-next',
+    card:        '.team-card',
+    rowSelector: '.team-slider-row',
+    visibleSm:   1,
+    visibleMd:   2,
+    visibleLg:   4,
+});
 
-    const track = section.querySelector('.carousel-track');
-    const prevBtn = section.querySelector('.nav-btn.prev');
-    const nextBtn = section.querySelector('.nav-btn.next');
-    const cards = section.querySelectorAll('.group');
-
-    if (!track || !prevBtn || !nextBtn || cards.length === 0) return;
-
-    let currentIndex = 0;
-
-    function getVisibleCards() {
-        const width = window.innerWidth;
-        if (width < 768) return 1;
-        if (width < 1024) return 2;
-        return 3;
-    }
-
-    function getGap() {
-        const width = window.innerWidth;
-        if (width < 640) return 12;
-        if (width < 768) return 16;
-        if (width < 1024) return 20;
-        return 24;
-    }
-
-    function updateCarousel() {
-        const visibleCards = getVisibleCards();
-        const maxIndex = Math.max(0, cards.length - visibleCards);
-
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-        const wrapperWidth = track.parentElement.getBoundingClientRect().width;
-        const currentGap = getGap();
-        const cardW = (wrapperWidth - (currentGap * (visibleCards - 1))) / visibleCards;
-
-        cards.forEach(card => {
-            card.style.width = cardW + 'px';
-            card.style.flex = `0 0 ${cardW}px`;
-        });
-
-        const offset = currentIndex * (cardW + currentGap);
-        track.style.transform = `translateX(${offset}px)`;
-
-        updateButtons(maxIndex);
-    }
-
-    function updateButtons(maxIndex) {
-        prevBtn.disabled = currentIndex >= maxIndex;
-        nextBtn.disabled = currentIndex <= 0;
-
-        prevBtn.style.opacity = prevBtn.disabled ? '0.3' : '1';
-        nextBtn.style.opacity = nextBtn.disabled ? '0.3' : '1';
-    }
-
-    function goToPrev() {
-        const visibleCards = getVisibleCards();
-        const maxIndex = Math.max(0, cards.length - visibleCards);
-        if (currentIndex < maxIndex) {
-            currentIndex++;
-            updateCarousel();
-        }
-    }
-
-    function goToNext() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    }
-
-    function handleResize() {
-        currentIndex = 0;
-        updateCarousel();
-    }
-
-    // دعم اللمس
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    track.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    track.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > 50) {
-            diff > 0 ? goToNext() : goToPrev();
-        }
-    }, { passive: true });
-
-    prevBtn.addEventListener('click', goToPrev);
-    nextBtn.addEventListener('click', goToNext);
-
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(handleResize, 150);
-    });
-
-    window.addEventListener('load', updateCarousel);
-    document.addEventListener('DOMContentLoaded', updateCarousel);
-    setTimeout(updateCarousel, 100);
-    setTimeout(updateCarousel, 300);
-    setTimeout(updateCarousel, 600);
-})();
-
+/* — تهيئة سلايدر الفرق — */
+initCarousel({
+    section:     '.teams-group-section',
+    track:       '.carousel-track',
+    prev:        '.nav-btn.prev',
+    next:        '.nav-btn.next',
+    card:        '.group',
+    visibleSm:   1,
+    visibleMd:   2,
+    visibleLg:   3,
+});
 /* =========================================================
     7. نظام التسجيل والدخول (Authentication)
 ========================================================= */
