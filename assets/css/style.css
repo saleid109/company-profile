@@ -1983,6 +1983,7 @@ html {
 .team-container {
     width: 100%;
     padding: 0 65px;
+    position: relative;
 }
 
 .team-title {
