@@ -1,89 +1,107 @@
-/* ===== الهيكل العام ===== */
+/* ===== Hero Section ===== */
 .hero-news {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  background-color: var(--color-bg-light, #f5f5f5);
+  padding: 60px 0 40px;
 }
 
 .news-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.hero-list-news{
+.hero-list-news {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 20px;
+  align-items: center;
+  gap: 40px;
 }
 
-
-.hero-hero-content-news{
-  float: 1;
-  
+/* النص على اليمين */
+.hero-content-news {
+  flex: 1;
 }
 
-.hero-title-news{
-  font-size: 36px;
+.hero-title-news {
+  font-size: 42px;
   font-weight: var(--weight-bold);
   color: var(--color-secondary);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  line-height: 1.4;
 }
 
 .hero-title-news span {
-  color: var(--color-primary);
+  color: var(--color-primary); /* أصفر/ذهبي */
 }
 
-.hero-subtitle-news{
-  font-size: 24px;
+.hero-subtitle-news {
+  font-size: 18px;
   font-weight: var(--weight-regular);
   color: var(--color-gray-secondary);
-  margin-bottom: 20px;
 }
 
-.hero-card{
-  max-width: 500px;
-  border-radius: var(--border-radius);
+/* البطاقة على اليسار */
+.hero-card {
+  flex: 0 0 460px;
+  background: #fff;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
 }
 
 .hero-card img {
-  width: 100%;
+  max-width: 160px;
   height: auto;
   display: block;
 }
 
+/* ===== Featured News ===== */
 .featured-news {
-  background-color: var(--color-bg-light);
-  padding: var(--section-padding);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
+  background-color: #fff;
+  padding: 60px 0;
 }
+
+.container-news {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .featured-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 300px;
+  max-width: 750px;       /* كان 300px — صغير جداً */
   margin: 0 auto;
-  text-align: center;
-  gap: 10px;
+  text-align: right;
+  gap: 16px;
 }
 
 .featured-card h2 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: var(--weight-bold);
   color: var(--color-secondary);
-  font-weight: var(--weight-bold);
-  text-align: right;
+  line-height: 1.6;
 }
+
 .featured-card p {
-  font-size: 18px;
-  font-weight: var(--weight-regular);
+  font-size: 16px;
+  line-height: 1.8;
   color: var(--color-gray-secondary);
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary);
+  font-weight: var(--weight-bold);
+  font-size: 15px;
+  text-decoration: none;
 }
