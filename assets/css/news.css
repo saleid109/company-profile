@@ -39,5 +39,24 @@
   color: var(--color-primary);
 }
 
+.hero-subtitle-news{
+  font-size: 24px;
+  font-weight: var(--weight-regular);
+  color: var(--color-gray-secondary);
+  margin-bottom: 20px;
+}
+
+.hero-card{
+  max-width: 500px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.hero-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 
