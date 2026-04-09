@@ -67,7 +67,6 @@
 
 /* ===== القسم المميز (تحت الهيرو) ===== */
 .featured-news {
-  padding: 60px 0;
   background-color: var(--color-white);
 }
 
@@ -88,6 +87,8 @@
   border-radius: 20px;
   background: var(--color-white);
   margin: 0 auto;
+  text-align: right;
+  direction: rtl;
 }
 
 .featured-card h2 {
@@ -112,8 +113,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #00015B;
-  font-family: 'Tajawal', sans-serif;
+  color:var(--color-primary);
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
