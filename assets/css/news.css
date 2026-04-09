@@ -16,7 +16,7 @@
 
 .hero-list-news {
   display: flex;
-  flex-direction: row;          /* النص يمين → كارت يسار */
+  flex-direction: row-reverse; 
   justify-content: space-between;
   align-items: center;
   gap: 80px;
