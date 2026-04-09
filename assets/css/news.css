@@ -54,7 +54,7 @@
   align-items: flex-start;
   gap: 0px;
   border-radius: 20px;
-  background: #EDEDED;
+  background: #0B1E5B;
   flex-shrink: 0;
   padding-bottom: 0;
 }
@@ -138,7 +138,7 @@
   padding: 20px;
   border-radius: 12px;
   background-color: var(--color-white);
-  align-items: flex-start;
+  align-items: center;
 }
 .news-thumb {
   flex-shrink: 0;
