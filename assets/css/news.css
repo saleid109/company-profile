@@ -19,19 +19,19 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 48px;
+  gap: 80px;
 }
 
 /* النص اليميني */
 .hero-content-news {
-  width: 380px;
+  width: 420px;
   flex-shrink: 0;
   text-align: right;
   padding-top: 20px;
 }
 
 .hero-title-news {
-  font-size: 56px;
+  font-size: 64px;
   font-weight: 700;
   line-height: 1.3;
   margin-bottom: 24px;
