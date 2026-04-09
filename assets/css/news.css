@@ -67,7 +67,7 @@
 /* ===== القسم المميز (تحت الهيرو) ===== */
 .featured-news {
   padding: 60px 0;
-  background-color: var(--color-white);
+  background-color: var();
 }
 
 .container-news {
