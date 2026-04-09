@@ -431,12 +431,13 @@
   .news-controls {
     flex-direction: column;
     align-items: stretch;
-    align-items: flex-start; /* يسار فعلياً في RTL */
-
   }
 
   .search-group {
     width: 100%;
+    flex-direction: column-reverse;
+    gap: 12px;
+    
   }
 
   .sort-btn {
