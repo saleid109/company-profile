@@ -359,28 +359,63 @@
    ============================================ */
 
 /* Tablet — 1024px */
-@media (max-width: 1024px) {
-  .hero-list-news {
-    gap: 32px;
-  }
+/* ===== تابلت — 768px إلى 1024px ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
 
-  .hero-title-news {
-    font-size: 36px;
+  /* ── الهيرو ── */
+  .hero-list-news {
+    flex-direction: row;
+    gap: 32px;
+    align-items: center;
   }
 
   .hero-content-news {
-    width: 340px;
+    width: 280px;
+    flex-shrink: 0;
+  }
+
+  .hero-title-news {
+    font-size: 32px;
+  }
+
+  .hero-subtitle-news {
+    font-size: 16px;
   }
 
   .hero-card {
-    max-width: 480px;
-    width: auto;
     flex: 1;
+    width: auto;
+  }
+
+  /* ── بطاقات الأخبار ── */
+  .news-card {
+    flex-direction: row;
+    gap: 16px;
+    padding: 12px 16px;
   }
 
   .news-thumb {
     width: 220px;
-    height: 150px;
+    height: 160px;
+    flex-shrink: 0;
+  }
+
+  .news-body h3 {
+    font-size: 18px;
+  }
+
+  .news-body p {
+    font-size: 14px;
+  }
+
+  /* ── أدوات البحث ── */
+  .news-controls {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search-group {
+    width: 240px;
   }
 }
 
