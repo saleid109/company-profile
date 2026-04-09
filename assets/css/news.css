@@ -46,6 +46,7 @@
 
 /* ===== البطاقة اليسارية (صورة الخبر) ===== */
 .hero-card {
+  background-color: var(--color-white);
   display: flex;
   max-width: 677px;
   width: 100%;
