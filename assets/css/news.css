@@ -16,25 +16,25 @@
 
 .hero-list-news {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 40px;
+  gap: 48px;
 }
 
-/* ===== النص اليميني ===== */
+/* النص اليميني */
 .hero-content-news {
-  flex: 1;
+  width: 380px;
+  flex-shrink: 0;
   text-align: right;
-  direction: rtl;
-  gap: 62px;
+  padding-top: 20px;
 }
 
 .hero-title-news {
-  color: var(--color-secondary);
-  font-size: 36px;
+  font-size: 56px;
   font-weight: 700;
   line-height: 1.3;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .hero-title-news span {
@@ -42,65 +42,51 @@
 }
 
 .hero-subtitle-news {
-  color: var(--color-gray-text);
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 24px;
-  text-align: right;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #666;
+  max-width: 320px;
 }
 
-/* ===== بطاقة الخبر المميز ===== */
+/* البطاقة */
 .hero-card {
-  display: flex;
-  flex-direction: column;
-  max-width: 677px;
-  width: 100%;
-  border-radius: 20px;
-  background: #EDEDED;
+  width: 677px;
+  max-width: 100%;
+  border-radius: 24px;
   overflow: hidden;
-  flex-shrink: 0;
+  background: #fff;
+  box-shadow: none;
 }
 
 .hero-card > img {
   width: 100%;
-  height: auto;
   display: block;
+  border-radius: 24px 24px 0 0;
 }
 
 .hero-card-body {
-  padding: 20px;
-  background:var(--color-white);
-  text-align: right;
-  direction: rtl;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  padding: 24px 20px 18px;
+  text-align: center;
+  background: #fff;
 }
 
 .hero-card-body h2 {
-  color: var(--color-secondary);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.5;
-  margin: 0;
+  font-size: 20px;
+  line-height: 1.7;
+  margin-bottom: 14px;
 }
 
 .hero-card-body p {
-  color: var(--color-gray-secondary);
-  font-size: 14px;
-  line-height: 24px;
-  margin: 0;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #666;
+  max-width: 90%;
+  margin: auto;
 }
 
 .btn-link-news {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--color-primary);
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  direction: rtl;
+  margin-top: 14px;
+  justify-content: flex-end;
 }
 
 .btn-link-news:hover {
@@ -320,7 +306,7 @@
 
 
 /* ============================================
-   RESPONSIVE
+    RESPONSIVE
    ============================================ */
 
 /* Tablet — 1024px */
