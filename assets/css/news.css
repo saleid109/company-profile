@@ -88,7 +88,7 @@
   border-radius: 20px;
   background: var(--color-white);
   margin: 0 auto;
-  text-align: left;
+  text-align: right;
   direction: rtl;
 }
 
@@ -110,7 +110,7 @@
   width: 100%;
 }
 
-.btn-link {
+.btn-link-news {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -118,4 +118,5 @@
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
+  text-align: left;
 }
