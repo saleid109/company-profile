@@ -19,8 +19,25 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
+  padding: 20px;
 }
 
+
+.hero-hero-content-news{
+  float: 1;
+  
+}
+
+.hero-title-news{
+  font-size: 36px;
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+}
+
+.hero-title-news span {
+  color: var(--color-primary);
+}
 
 
 
