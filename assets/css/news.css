@@ -21,13 +21,4 @@
 
 
 
-.hero-card{
-  background-color: var(--color-white);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  padding: var(--card-padding);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
 
