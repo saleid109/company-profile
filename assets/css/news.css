@@ -3,7 +3,9 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
-  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .news-container {
