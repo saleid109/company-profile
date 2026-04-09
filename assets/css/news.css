@@ -47,7 +47,8 @@
 /* ===== البطاقة اليسارية (صورة الخبر) ===== */
 .hero-card {
   display: flex;
-  width: 677px;
+  max-width: 677px;
+  width: 100%;
   padding: 10px;
   flex-direction: column;
   align-items: flex-start;
@@ -78,7 +79,8 @@
 
 .featured-card {
   display: flex;
-  width: 677px;
+  max-width: 677px;
+  width: 100%;
   padding: 10px;
   flex-direction: column;
   align-items: flex-start;
