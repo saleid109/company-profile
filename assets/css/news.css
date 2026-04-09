@@ -55,7 +55,7 @@
   max-width: 100%;
   border-radius: 24px;
   overflow: hidden;
-  background: #fff;
+  background:var(--color-white);
   box-shadow: 0 8px 32px rgba(0,0,0,.10);
 }
 
@@ -70,7 +70,7 @@
 .hero-card-body {
   padding: 24px 28px 20px;
   text-align: right;
-  background: #fff;
+  background:var(--color-white);
   direction: rtl;
 }
 
@@ -94,11 +94,11 @@
   align-items: center;
   gap: 6px;
   margin-top: 8px;
-  color: var(--color-primary);    /* أصفر */
+  color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
   font-size: 15px;
-  float: left;                    /* يسار الكارت */
+  float: left; 
 }
 
 .btn-link-news:hover {
@@ -126,7 +126,7 @@
 }
 
 /* =========================================
-   SECTION TITLE
+    SECTION TITLE
 ========================================= */
 .section-title {
   color: var(--color-secondary);
@@ -140,7 +140,7 @@
 }
 
 /* =========================================
-   CONTROLS
+    CONTROLS
 ========================================= */
 .news-controls {
   display: flex;
@@ -160,9 +160,8 @@
   gap: 8px;
   border-radius: 100px;
   border: 1px solid #D0D0D0;
-  background: #fff;
+  background:var(--color-white);
   cursor: pointer;
-  font-family: Tajawal;
   font-size: 14px;
 }
 
@@ -205,7 +204,7 @@
 }
 
 /* =========================================
-   NEWS LIST
+    NEWS LIST
 ========================================= */
 .news-list {
   display: flex;
@@ -214,11 +213,11 @@
 }
 
 /* =========================================
-   CARD — الصورة يسار / النص يمين
+  — الصورة يسار / النص يمين
 ========================================= */
 .news-card {
   display: flex;
-  flex-direction: row;          /* LTR: صورة يسار، نص يمين */
+  flex-direction: row; 
   padding: 16px 24px;
   align-items: center;
   gap: 24px;
@@ -232,7 +231,7 @@
 }
 
 /* =========================================
-   IMAGE — يسار البطاقة
+    IMAGE — يسار البطاقة
 ========================================= */
 .news-thumb {
   width: 361px;
@@ -251,7 +250,7 @@
 }
 
 /* =========================================
-   TEXT AREA — يمين البطاقة
+    TEXT AREA — يمين البطاقة
 ========================================= */
 .news-body {
   flex: 1;
@@ -260,7 +259,7 @@
   justify-content: center;
   gap: 16px;
   text-align: right;
-  order: 0;                      /* يظهر أولاً في RTL = يمين فعلياً */
+  order: 0;                     /* يظهر أولاً في RTL = يمين فعلياً */
 }
 
 .news-body h3 {
@@ -293,8 +292,14 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  align-self: flex-end;          /* نهاية الفلكس = يسار في RTL */
+  align-self: flex-start;          /* نهاية الفلكس = يسار في RTL */
   direction: rtl;
+}
+
+.read-more i {
+  font-size: 18px;
+  transition: transform 0.2s;
+  color: var(--color-primary);
 }
 
 .read-more:hover {
@@ -426,6 +431,8 @@
   .news-controls {
     flex-direction: column;
     align-items: stretch;
+    align-items: flex-start; /* يسار فعلياً في RTL */
+
   }
 
   .search-group {
