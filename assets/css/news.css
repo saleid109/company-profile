@@ -59,4 +59,17 @@
   display: block;
 }
 
-
+.featured-news {
+  background-color: var(--color-bg-light);
+  padding: var(--section-padding);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+.featured-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
