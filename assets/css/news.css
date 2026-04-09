@@ -360,9 +360,8 @@
 
 /* Tablet — 1024px */
 /* ===== تابلت — 768px إلى 1024px ===== */
-
-@media (min-width: 768px) and (max-width: 1024px) {
-
+/* ===== تابلت — 768px إلى 1024px ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
   /* ── الهيرو ── */
   .hero-list-news {
     flex-direction: row;
@@ -376,7 +375,7 @@
   }
 
   .hero-title-news {
-    font-size: 32px;
+    font-size: 32px;        /* تابلت فقط ✅ */
   }
 
   .hero-subtitle-news {
@@ -388,7 +387,6 @@
     width: auto;
   }
 
-  /* ── بطاقات الأخبار ── */
   .news-card {
     flex-direction: row;
     gap: 16px;
@@ -401,36 +399,22 @@
     flex-shrink: 0;
   }
 
-  .news-body h3 {
-    font-size: 18px;
-  }
+  .news-body h3 { font-size: 18px; }
+  .news-body p  { font-size: 14px; }
 
-  .news-body p {
-    font-size: 14px;
-  }
-
-  /* ── أدوات البحث ── */
   .news-controls {
     flex-direction: row;
     align-items: center;
   }
 
-  .search-group {
-    width: 240px;
-  }
+  .search-group { width: 240px; }
 }
 
-/* Tablet صغير — 768px */
+/* ===== موبايل — أقل من 768px ===== */
 @media (max-width: 768px) {
-  .hero-news {
-    padding: 40px 0;
-  }
+  .hero-news      { padding: 40px 0; }
+  .news-container { padding: 0 20px; }
 
-  .news-container {
-    padding: 0 20px;
-  }
-
-  /* الهيرو يصير عمودي */
   .hero-list-news {
     flex-direction: column;
     align-items: stretch;
@@ -439,47 +423,33 @@
   .hero-content-news {
     width: 100%;
     text-align: center;
-  }
-
-  .hero-title-news {
-    font-size: 28px;
-    text-align: center;
-  }
-
-  .hero-subtitle-news {
-    text-align: center;
+    order: 2;
   }
 
   .hero-card {
     max-width: 100%;
     width: 100%;
+    order: 1;
   }
 
-  /* قسم الأخبار */
-  .news-section {
-    padding: 40px 0;
+  .hero-title-news {
+    font-size: 28px;        /* موبايل فقط ✅ */
+    text-align: center;
   }
 
-  .news-section .container {
-    padding: 0 20px;
-  }
+  .hero-subtitle-news { text-align: center; }
+
+  .news-section           { padding: 40px 0; }
+  .news-section .container { padding: 0 20px; }
 
   .news-controls {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .search-group {
-    width: 100%;
-    
-  }
+  .search-group { width: 100%; }
+  .sort-btn     { width: 100%; justify-content: center; }
 
-  .sort-btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* بطاقة الخبر تصير عمودية */
   .news-card {
     flex-direction: column;
     align-items: stretch;
@@ -487,43 +457,18 @@
 
   .news-thumb {
     width: 100%;
-    height: 200px;
-    order: 0;
+    height: auto;
+    aspect-ratio: 16/9;
   }
 
-  .news-body {
-    order: 0;
-  }
-
-  .read-more {
-    align-self: flex-start;      /* يسار فعلياً في الموبايل */
-  }
+  .read-more { align-self: flex-end; }
 }
 
-/* موبايل — 480px */
+/* ===== موبايل صغير — أقل من 480px ===== */
 @media (max-width: 480px) {
-  .hero-title-news {
-    font-size: 22px;
-  }
-
-  .hero-card-body h2 {
-    font-size: 16px;
-  }
-
-  .section-title {
-    font-size: 28px;
-  }
-
-  .news-body h3 {
-    font-size: 18px;
-  }
-
-  .news-thumb {
-    height: 160px;
-  }
-
-  .page-btn {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
+  .hero-title-news    { font-size: 22px; }  /* موبايل صغير ✅ */
+  .hero-card-body h2  { font-size: 16px; }
+  .section-title      { font-size: 28px; }
+  .news-body h3       { font-size: 16px; }
+  .page-btn           { padding: 6px 12px; font-size: 13px; }
 }
