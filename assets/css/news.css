@@ -16,13 +16,14 @@
 
 .hero-list-news {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;          /* النص يمين → كارت يسار */
   justify-content: space-between;
   align-items: center;
   gap: 80px;
+  direction: rtl;               /* يضمن: أول عنصر = يمين */
 }
 
-/* النص اليميني */
+/* ── النص اليميني ── */
 .hero-content-news {
   width: 420px;
   flex-shrink: 0;
@@ -38,7 +39,7 @@
 }
 
 .hero-title-news span {
-  color: var(--color-primary);
+  color: var(--color-primary);   /* أصفر */
 }
 
 .hero-subtitle-news {
@@ -48,50 +49,69 @@
   color: #666;
 }
 
-/* البطاقة */
+/* ── بطاقة الخبر المميز (يسار) ── */
 .hero-card {
   width: 600px;
   max-width: 100%;
   border-radius: 24px;
   overflow: hidden;
   background: #fff;
-  box-shadow: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,.10);
 }
 
 .hero-card > img {
   width: 100%;
   display: block;
   border-radius: 24px 24px 0 0;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
 
 .hero-card-body {
-  padding: 24px 20px 18px;
-  text-align: center;
+  padding: 24px 28px 20px;
+  text-align: right;
   background: #fff;
+  direction: rtl;
 }
 
 .hero-card-body h2 {
   font-size: 20px;
   line-height: 1.7;
   margin-bottom: 14px;
+  color: var(--color-secondary);
 }
 
 .hero-card-body p {
   font-size: 16px;
   line-height: 1.9;
   color: #666;
-  max-width: 90%;
-  margin: auto;
+  margin-bottom: 16px;
 }
 
+/* ── اقرأ المزيد → يسار (نهاية السطر في RTL) ── */
 .btn-link-news {
-  margin-top: 14px;
-  justify-content: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: var(--color-primary);    /* أصفر */
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  float: left;                    /* يسار الكارت */
 }
 
 .btn-link-news:hover {
   text-decoration: underline;
 }
+
+/* clearfix بعد float */
+.hero-card-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 
 /* ===== قسم الأخبار ===== */
 .news-section {
@@ -143,11 +163,29 @@
   background: #fff;
   cursor: pointer;
   font-family: Tajawal;
+  font-size: 14px;
 }
 
 .search-group {
   width: 286px;
   position: relative;
+}
+
+.search-group label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.search-group i {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
 }
 
 .search-group input {
@@ -158,6 +196,12 @@
   padding: 0 45px 0 20px;
   font-family: Tajawal;
   font-size: 14px;
+  direction: rtl;
+  outline: none;
+}
+
+.search-group input:focus {
+  border-color: var(--color-primary);
 }
 
 /* =========================================
@@ -166,15 +210,15 @@
 .news-list {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
 }
 
 /* =========================================
-   CARD
+   CARD — الصورة يسار / النص يمين
 ========================================= */
 .news-card {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;          /* LTR: صورة يسار، نص يمين */
   padding: 16px 24px;
   align-items: center;
   gap: 24px;
@@ -184,10 +228,11 @@
   box-shadow:
     0 12px 16px -4px rgba(16,24,40,.08),
     0 4px 6px -2px rgba(16,24,40,.03);
+  direction: rtl;
 }
 
 /* =========================================
-   IMAGE
+   IMAGE — يسار البطاقة
 ========================================= */
 .news-thumb {
   width: 361px;
@@ -195,24 +240,27 @@
   flex-shrink: 0;
   border-radius: 20px;
   overflow: hidden;
+  order: 1;                      /* يظهر آخراً في RTL = يسار فعلياً */
 }
 
 .news-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 /* =========================================
-   TEXT AREA
+   TEXT AREA — يمين البطاقة
 ========================================= */
 .news-body {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
   text-align: right;
+  order: 0;                      /* يظهر أولاً في RTL = يمين فعلياً */
 }
 
 .news-body h3 {
@@ -220,6 +268,7 @@
   font-family: Tajawal;
   font-size: 24px;
   font-weight: 700;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -233,22 +282,26 @@
 }
 
 /* =========================================
-    READ MORE
+    READ MORE — يسار البطاقة
 ========================================= */
 .read-more {
   color: var(--color-secondary);
   font-family: Tajawal;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  align-self: flex-end;          /* نهاية الفلكس = يسار في RTL */
+  direction: rtl;
 }
 
 .read-more:hover {
+  color: var(--color-primary);
   text-decoration: underline;
 }
+
 /* ===== الترقيم ===== */
 .pagination-section {
   padding: 40px 0;
@@ -275,6 +328,7 @@
   background: #fff;
   color: var(--color-secondary);
   font-size: 14px;
+  font-family: Tajawal;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
@@ -302,20 +356,26 @@
 /* Tablet — 1024px */
 @media (max-width: 1024px) {
   .hero-list-news {
-    gap: 24px;
+    gap: 32px;
   }
 
   .hero-title-news {
-    font-size: 28px;
+    font-size: 36px;
+  }
+
+  .hero-content-news {
+    width: 340px;
   }
 
   .hero-card {
     max-width: 480px;
+    width: auto;
+    flex: 1;
   }
 
   .news-thumb {
-    width: 160px;
-    height: 110px;
+    width: 220px;
+    height: 150px;
   }
 }
 
@@ -336,11 +396,12 @@
   }
 
   .hero-content-news {
+    width: 100%;
     text-align: center;
   }
 
   .hero-title-news {
-    font-size: 26px;
+    font-size: 28px;
     text-align: center;
   }
 
@@ -350,6 +411,7 @@
 
   .hero-card {
     max-width: 100%;
+    width: 100%;
   }
 
   /* قسم الأخبار */
@@ -367,7 +429,7 @@
   }
 
   .search-group {
-    max-width: 100%;
+    width: 100%;
   }
 
   .sort-btn {
@@ -384,6 +446,15 @@
   .news-thumb {
     width: 100%;
     height: 200px;
+    order: 0;
+  }
+
+  .news-body {
+    order: 0;
+  }
+
+  .read-more {
+    align-self: flex-start;      /* يسار فعلياً في الموبايل */
   }
 }
 
@@ -398,11 +469,11 @@
   }
 
   .section-title {
-    font-size: 22px;
+    font-size: 28px;
   }
 
   .news-body h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .news-thumb {
