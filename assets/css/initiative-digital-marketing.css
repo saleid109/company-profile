@@ -1,0 +1,293 @@
+/* ============================================
+  المحتوى الرئيسي
+   ============================================ */
+#main-content {
+  padding: 2.5rem 1rem 4rem;
+}
+
+/* ── wrapper المقال ── */
+article {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ============================================
+  رأس المقال
+   ============================================ */
+article>header {
+  margin-bottom: 1.8rem;
+}
+
+article>header h1 {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+}
+
+.post-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.post-date::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8A920' stroke-width='2'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+/* ============================================
+  صورة المقال (figure)
+   ============================================ */
+article>figure {
+  margin-bottom: 2rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--surface);
+}
+
+article>figure img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+article>figure figcaption {
+  padding: 10px 16px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+  border-top: 1px solid var();
+}
+
+/* ============================================
+  محتوى المقال
+   ============================================ */
+.content {
+  margin-bottom: 2.5rem;
+}
+
+.content p {
+  font-size: 1rem;
+  line-height: 1.95;
+  color: #2c3550;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+.content strong {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* الاقتباس */
+.content blockquote {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem 1.2rem 1rem;
+  background: #fffbf0;
+  border-right: 4px solid var(--gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.7;
+}
+
+.content blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  font-size: 3.5rem;
+  color: var(--gold);
+  font-family: serif;
+  line-height: 1;
+  opacity: 0.4;
+}
+
+/* ============================================
+   ألبوم الصور (Gallery)
+   ============================================ */
+.gallery {
+  margin-bottom: 2.5rem;
+}
+
+.gallery h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.gallery h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  width: 50px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* السلايدر */
+.slider-container {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.slides {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.slides img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.slides img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+/* أزرار السلايدر */
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.slider-controls button {
+  background: var(--white);
+  color: var(--navy);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 20px;
+  font-family: var(--font-ar);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.slider-controls button:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.slider-controls button:active {
+  transform: scale(0.97);
+}
+
+/* ============================================
+   رابط العودة للأخبار
+   ============================================ */
+nav[aria-label="العودة"] {
+  max-width: var(--max-width);
+  margin: 0 auto 1rem;
+}
+
+nav[aria-label="العودة"] a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--navy);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--gold);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+nav[aria-label="العودة"] a::before {
+  content: '←';
+  font-size: 1rem;
+  transition: transform var(--transition);
+}
+
+nav[aria-label="العودة"] a:hover {
+  color: var(--gold);
+}
+
+nav[aria-label="العودة"] a:hover::before {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   Responsive — جوال
+   ============================================ */
+@media (max-width: 768px) {
+  #main-content {
+    padding: 1.5rem 0.75rem 3rem;
+  }
+
+  article>header h1 {
+    font-size: 1.2rem;
+  }
+
+  article>figure img {
+    max-height: 260px;
+  }
+
+  .content p {
+    font-size: 0.95rem;
+    text-align: right;
+  }
+
+  .content blockquote {
+    font-size: 0.95rem;
+    padding: 1rem 1rem 1rem 0.75rem;
+  }
+
+  .slides {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .slides img {
+    height: 130px;
+  }
+
+  .gallery h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slides {
+    grid-template-columns: 1fr;
+  }
+
+  .slides img {
+    height: 200px;
+  }
+
+  .slider-controls button {
+    flex: 1;
+    text-align: center;
+  }
+}
