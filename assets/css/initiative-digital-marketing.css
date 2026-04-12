@@ -96,13 +96,13 @@ article>figure figcaption {
   font-size: 32px;
   font-weight: 500;
   line-height: 40px;
-  color: var(--color-gray);
+  color: #6f6f6f;
   text-align: right;
   margin-bottom: 28px;
 }
 
 .content strong {
-  color: var(--color-primary);
+  color: var(--color-text);
   font-weight: 700;
 }
 
