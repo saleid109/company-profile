@@ -93,7 +93,7 @@ article>figure figcaption {
 
 .content p {
   font-family: var(--font-main);
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 500;
   line-height: 40px;
   color: #6f6f6f;
@@ -102,17 +102,17 @@ article>figure figcaption {
 }
 
 .content strong {
-  color: var(--color-text);
-  font-weight: 700;
+  color: var(--color-gray-text);
+  font-weight: var(--weight-bold);
 }
 
 /* الاقتباس   */
 .content blockquote {
   font-family: var(--font-main);
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 40px;
-  color: var(--color-primary);
+  color: var(--color-accent);
   text-align: center;
   margin: 48px auto;
   max-width: 1372px;
@@ -144,7 +144,7 @@ article>figure figcaption {
 
 /* عنوان الألبوم  : */
 .gallery h2 {
-  font-family: var(--font-main);
+  font-family: var(--foarynt-main);
   font-size: 48px;
   font-weight: 700;
   line-height: 40px;
