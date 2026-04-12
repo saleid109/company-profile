@@ -340,4 +340,25 @@ nav[aria-label="العودة"] a:hover::before {
     font-size: 14px;
     padding: 10px 12px;
   }
+
+}
+
+@media (max-width: 480px) {
+  .content p {
+    font-size: 15px;
+    line-height: 26px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+article > figure {
+  width: 100%;   /* أضف هذا خارج الـ media query */
+  max-width: 676px;
+}
+
+.slider-container {
+  overflow: hidden;   /* أضف هذا */
+  width: 100%;
+  box-sizing: border-box;
 }
