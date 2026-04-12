@@ -224,24 +224,23 @@ article>figure figcaption {
 }
 
 /* ============================================
-رابط العودة — 00/primary
+رابط العودة — 00
    ============================================ */
 nav[aria-label="العودة"] {
   max-width: 1376px;
   margin: 0 auto 2rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
 nav[aria-label="العودة"] a {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-main);
   font-size: 24px;
   font-weight: 500;
   line-height: normal;
-  max-width: 1376px;
-  margin: 0 auto 2rem;
-  display: flex;
-  justify-content: flex-end; 
   color: var(--color-secondary);
   text-align: left;
   text-decoration: none;
