@@ -57,7 +57,8 @@ article>figure {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 676px;
+  width: 100%;
+  max-width: 676px;
   margin: 0 auto 40px;
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -177,6 +178,7 @@ article>figure figcaption {
   gap: 16px;
   width: 100%;
 }
+
 
 .slides img {
   flex: 1;
@@ -352,13 +354,9 @@ nav[aria-label="العودة"] a:hover::before {
   }
 }
 
-article > figure {
-  width: 100%;   /* أضف هذا خارج الـ media query */
-  max-width: 676px;
-}
 
 .slider-container {
-  overflow: hidden;   /* أضف هذا */
+  overflow: hidden; 
   width: 100%;
   box-sizing: border-box;
 }
