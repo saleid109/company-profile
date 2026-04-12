@@ -251,7 +251,7 @@ nav[aria-label="العودة"] a::before {
 }
 
 nav[aria-label="العودة"] a:hover {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 nav[aria-label="العودة"] a:hover::before {
