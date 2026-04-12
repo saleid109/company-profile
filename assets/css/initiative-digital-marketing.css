@@ -144,7 +144,7 @@ article>figure figcaption {
 
 /* عنوان الألبوم  : */
 .gallery h2 {
-  font-family: var(--foarynt-main);
+  font-family: var(--font-main);
   font-size: 48px;
   font-weight: 700;
   line-height: 40px;
