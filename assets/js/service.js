@@ -43,7 +43,7 @@ function switchServiceTab(tab, clickedBtn) {
     }
 }
 
-//**
+/**
  * وظيفة تبديل التبويبات في قسم الخدمات
  * محدثة لتتوافق مع الهيكل المطور (Sticky Sidebar)
  */
