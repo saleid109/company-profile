@@ -215,151 +215,686 @@
 
     <!-- ========== قسم الخدمات -منتجات ========== -->
     <!-- ===== Services Section ===== -->
-<section class="services-section" aria-labelledby="services-title">
-  <div class="container">
+    <section id="services" class="services-section" aria-label="قائمة الخدمات">
+      <div class="container">
 
-    <!-- عنوان القسم (مهم لـ SEO) -->
-    <header class="section-header">
-      <h2 id="services-title">خدماتنا</h2>
-    </header>
+        <!-- التبويبات -->
+        <div class="tabs-row" role="tablist" aria-label="أنواع الخدمات">
+          <button class="tab-btn active" role="tab" id="btn-work" aria-selected="true" aria-controls="tab-work"
+            onclick="switchServiceTab('work', this)">
+            تأهيل لسوق العمل
+          </button>
+          <button class="tab-btn" role="tab" id="btn-digital" aria-selected="false" aria-controls="tab-digital"
+            onclick="switchServiceTab('digital', this)">
+            خدمة رقمية
+          </button>
+          <button class="tab-btn" role="tab" id="btn-products" aria-selected="false" aria-controls="tab-products"
+            onclick="switchServiceTab('products', this)">
+            منتجات رقمية
+          </button>
+        </div>
 
-    <!-- التبويبات -->
-    <div class="tabs" role="tablist" aria-label="أنواع الخدمات">
-      <button class="tab active"
-              role="tab"
-              aria-selected="true"
-              aria-controls="tab-work"
-              id="tab-btn-work">
-        تأهيل لسوق العمل
-      </button>
+        <!-- Layout رئيسي -->
+        <div class="main-layout">
 
-      <button class="tab"
-              role="tab"
-              aria-selected="false"
-              aria-controls="tab-digital"
-              id="tab-btn-digital">
-        خدمة رقمية
-      </button>
+          <!-- البطاقات -->
+          <div class="cards-side">
 
-      <button class="tab"
-              role="tab"
-              aria-selected="false"
-              aria-controls="tab-products"
-              id="tab-btn-products">
-        منتجات رقمية
-      </button>
-    </div>
+            <!-- ======== تأهيل لسوق العمل ======== -->
+            <div id="tab-work" class="cards-grid" role="tabpanel" aria-labelledby="btn-work" tabindex="0">
 
-    <div class="layout">
+              <!-- بطاقة 1 -->
+              <article class="services-card" aria-label="تأهيل لسوق العمل الرقمي - تطوير الويب">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <img src="./public/images/serviceN.png" alt="تطوير الويب" />
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"></div>
+                    <div class="card-brand-name">
+                      <strong>موقع تعريفي</strong>
+                      <span><span class="start"></span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">تأهيل لسوق العمل الرقمي - تطوير الويب</h3>
+                  <div class="card-actions">
+                    <button class="btn-request" type="button" aria-label="طلب خدمة تطوير الويب">طلب الخدمة</button>
+                    <button class="btn-details" type="button" aria-label="عرض تفاصيل تطوير الويب">
+                      التفاصيل <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </article>
 
-      <!-- البطاقات -->
-      <section class="cards"
-               id="tab-work"
-               role="tabpanel"
-               aria-labelledby="tab-btn-work">
+              <!-- بطاقة 2 -->
+              <article class="services-card" aria-label="تأهيل لسوق العمل الرقمي - تطوير التطبيقات">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">تأهيل لسوق العمل الرقمي - تطوير التطبيقات</h3>
+                  <div class="card-actions">
+                    <button class="btn-request" type="button" aria-label="طلب خدمة تطوير التطبيقات">طلب الخدمة</button>
+                    <button class="btn-details" type="button" aria-label="عرض تفاصيل تطوير التطبيقات">
+                      التفاصيل <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </article>
 
-        <!-- Card -->
-        <article class="card" aria-labelledby="service-title-1">
+              <!-- بطاقة 3 -->
+              <article class="services-card" aria-label="تأهيل لسوق العمل الرقمي - التسويق الرقمي">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-bullhorn"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">تأهيل لسوق العمل الرقمي - التسويق الرقمي</h3>
+                  <div class="card-actions">
+                    <button class="btn-request" type="button" aria-label="طلب خدمة التسويق الرقمي">طلب الخدمة</button>
+                    <button class="btn-details" type="button" aria-label="عرض تفاصيل التسويق الرقمي">
+                      التفاصيل <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </article>
 
-          <!-- الصورة -->
-          <figure class="card-img">
-            <img src="./public/images/serviceN.png"
-                 alt="خدمة تطوير الويب وتأهيل لسوق العمل">
-          </figure>
+              <!-- بطاقة 4 -->
+              <article class="services-card" aria-label="تأهيل لسوق العمل الرقمي - الإدارة">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">تأهيل لسوق العمل الرقمي - الإدارة</h3>
+                  <div class="card-actions">
+                    <button class="btn-request" type="button">طلب الخدمة</button>
+                    <button class="btn-details" type="button">التفاصيل <i class="fas fa-chevron-left"
+                        aria-hidden="true"></i></button>
+                  </div>
+                </div>
+              </article>
 
-          <div class="card-body">
+              <!-- بطاقة 5 -->
+              <article class="services-card" aria-label="تأهيل لسوق العمل الرقمي - الأمن السيبراني">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">تأهيل لسوق العمل الرقمي - الأمن السيبراني</h3>
+                  <div class="card-actions">
+                    <button class="btn-request" type="button">طلب الخدمة</button>
+                    <button class="btn-details" type="button">التفاصيل <i class="fas fa-chevron-left"
+                        aria-hidden="true"></i></button>
+                  </div>
+                </div>
+              </article>
 
-            <!-- عنوان الخدمة -->
-            <h3 id="service-title-1">
-              تأهيل لسوق العمل الرقمي - تطوير الويب
-            </h3>
+              <!-- بطاقة 6 -->
+              <article class="services-card" aria-label="تأهيل لسوق العمل الرقمي - التصاميم">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-pen-nib"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">تأهيل لسوق العمل الرقمي - التصاميم</h3>
+                  <div class="card-actions">
+                    <button class="btn-request" type="button">طلب الخدمة</button>
+                    <button class="btn-details" type="button">التفاصيل <i class="fas fa-chevron-left"
+                        aria-hidden="true"></i></button>
+                  </div>
+                </div>
+              </article>
 
-            <!-- التقييم -->
-            <div class="stars"
-                 role="img"
-                 aria-label="تقييم 5 من 5 نجوم">
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-              <i class="fas fa-star" aria-hidden="true"></i>
-            </div>
+            </div><!-- /tab-work -->
 
-            <!-- الأزرار -->
-            <div class="actions">
+            <!-- ======== خدمة رقمية ======== -->
+            <div id="tab-digital" class="cards-grid hidden" role="tabpanel" aria-labelledby="btn-digital" tabindex="0">
 
-              <button class="btn-main"
-                      type="button"
-                      aria-label="طلب خدمة تطوير الويب">
-                طلب الخدمة
-              </button>
+              <!-- بطاقة 1 -->
+              <article class="services-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">موقع تعريفي</h3>
+                  <div class="card-stars" aria-label="التقييم: 5 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button" aria-label="إضافة موقع تعريفي إلى السلة">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
 
-              <a href="#"
-                 class="btn-link"
-                 aria-label="عرض تفاصيل خدمة تطوير الويب">
-                التفاصيل
-              </a>
+              <!-- بطاقة 2 -->
+              <article class="services-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-store"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">موقع الكتروني</h3>
+                  <div class="card-stars" aria-label="التقييم: 3.5 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star-half-alt star-half" aria-hidden="true"></i>
+                    <i class="far fa-star star-empty" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button" aria-label="إضافة موقع الكتروني إلى السلة">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
 
-            </div>
+              <!-- بطاقة 3 -->
+              <article class="services-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">نظام اداري</h3>
+                  <div class="card-stars" aria-label="التقييم: 5 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button" aria-label="إضافة نظام اداري إلى السلة">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- بطاقة 4 -->
+              <article class="services-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-mobile-screen"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">تطبيق جوال</h3>
+                  <div class="card-stars" aria-label="التقييم: 5 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- بطاقة 5 -->
+              <article class="services-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">حملة تسويقية رقمية</h3>
+                  <div class="card-stars" aria-label="التقييم: 4 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="far fa-star star-empty" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- بطاقة 6 -->
+              <article class="services-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-palette"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">تصميم هوية بصرية</h3>
+                  <div class="card-stars" aria-label="التقييم: 5 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
+
+            </div><!-- /tab-digital -->
+
+            <!-- ======== منتجات رقمية ======== -->
+            <div id="tab-products" class="cards-grid hidden" role="tabpanel" aria-labelledby="btn-products"
+              tabindex="0">
+
+              <!-- بطاقة 1 -->
+              <article class="services-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">نظام اداري</h3>
+                  <div class="card-stars" aria-label="التقييم: 5 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- بطاقة 2 -->
+              <article class="services-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-box-open"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">موقع الكتروني</h3>
+                  <div class="card-stars" aria-label="التقييم: 3.5 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star-half-alt star-half" aria-hidden="true"></i>
+                    <i class="far fa-star star-empty" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- بطاقة 3 -->
+              <article class="service-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-chart-pie"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">موقع تعريفي</h3>
+                  <div class="card-stars" aria-label="التقييم: 5 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- بطاقة 4 -->
+              <article class="services-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-database"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">نظام اداري متكامل</h3>
+                  <div class="card-stars" aria-label="التقييم: 5 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- بطاقة 5 -->
+              <article class="services-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">موقع الكتروني متقدم</h3>
+                  <div class="card-stars" aria-label="التقييم: 5 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- بطاقة 6 -->
+              <article class="services-card">
+                <div class="card-img-placeholder" aria-hidden="true">
+                  <i class="fas fa-cloud"></i>
+                </div>
+                <div class="card-body">
+                  <div class="card-brand">
+                    <div class="card-brand-logo" aria-hidden="true"><i class="fas fa-arrow-trend-up"></i></div>
+                    <div class="card-brand-name">
+                      <strong>نقطة صعود</strong>
+                      <span>Nuqta Suud</span>
+                    </div>
+                  </div>
+                  <h3 class="card-title">حل سحابي متكامل</h3>
+                  <div class="card-stars" aria-label="التقييم: 5 من 5">
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                    <i class="fas fa-star star-full" aria-hidden="true"></i>
+                  </div>
+                  <div class="card-actions">
+                    <button class="btn-add-cart" type="button">
+                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
+                    </button>
+                    <p class="card-price"><span class="currency">﷼</span> 2000</p>
+                  </div>
+                </div>
+              </article>
+
+            </div><!-- /tab-products -->
+
+            <!-- Pagination -->
+            <nav class="pagination" aria-label="التنقل بين الصفحات">
+              <button class="page-nav" type="button" aria-label="الصفحة السابقة">السابق</button>
+              <button class="page-btn active" type="button" aria-label="الصفحة 1" aria-current="page">1</button>
+              <button class="page-btn" type="button" aria-label="الصفحة 2">2</button>
+              <button class="page-btn" type="button" aria-label="الصفحة 3">3</button>
+              <button class="page-btn" type="button" aria-label="الصفحة 4">4</button>
+              <button class="page-btn" type="button" aria-label="الصفحة 5">5</button>
+              <button class="page-btn" type="button" aria-label="الصفحة 6">6</button>
+              <button class="page-nav" type="button" aria-label="الصفحة التالية">التالي</button>
+            </nav>
 
           </div>
-        </article>
+          
+          <!-- /cards-side -->
 
-      </section>
+          <!-- ======== Sidebar/الجانبي الفلتر ======== -->
+          <aside class="sidebar-side" aria-label="فلتر الخدمات">
+            <div class="sidebar">
 
-      <!-- الفلتر -->
-      <aside class="sidebar"
-             aria-label="تصفية الخدمات">
+              <div class="sidebar-header">
+                <h2 class="sidebar-section-title">تصفية حسب</h2>
+                <button class="clear-all-btn" type="button" onclick="clearAllFilters()" aria-label="مسح جميع الفلاتر">
+                  مسح الكل
+                </button>
+              </div>
 
-        <h3>تصفية حسب</h3>
+              <!-- فلاتر تأهيل لسوق العمل -->
+              <fieldset id="sidebar-work" class="filter-group" aria-label="فلاتر تأهيل لسوق العمل">
+                <legend onclick="toggleFilterGroup(this.parentElement)">
+                  التخصص <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </legend>
+                <div class="filter-options">
+                  <label class="filter-label">
+                    <input type="checkbox" name="filter-work" value="tech" checked />
+                    التقنية
+                  </label>
+                  <label class="filter-label">
+                    <input type="checkbox" name="filter-work" value="admin" />
+                    الإدارة
+                  </label>
+                  <label class="filter-label">
+                    <input type="checkbox" name="filter-work" value="design" />
+                    التصاميم
+                  </label>
+                </div>
+              </fieldset>
 
-        <!-- مجموعة فلترة -->
-        <form>
+              <!-- فلاتر خدمة رقمية ومنتجات رقمية -->
+              <fieldset id="sidebar-digital" class="filter-group hidden" aria-label="فلاتر الخدمات الرقمية">
+                <legend onclick="toggleFilterGroup(this.parentElement)">
+                  تطوير الويب <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </legend>
+                <div class="filter-options">
+                  <label class="filter-label">
+                    <input type="checkbox" name="filter-digital" value="website" />
+                    موقع تعريفي
+                  </label>
+                  <label class="filter-label">
+                    <input type="checkbox" name="filter-digital" value="ecommerce" />
+                    متجر إلكتروني
+                  </label>
+                </div>
+              </fieldset>
 
-          <fieldset class="filter-group">
-            <legend>التخصص</legend>
+              <fieldset id="sidebar-apps" class="filter-group hidden" aria-label="فلاتر تطبيقات">
+                <legend onclick="toggleFilterGroup(this.parentElement)">
+                  تطوير التطبيقات <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </legend>
+                <div class="filter-options">
+                  <label class="filter-label">
+                    <input type="checkbox" name="filter-apps" value="ios" />
+                    iOS
+                  </label>
+                  <label class="filter-label">
+                    <input type="checkbox" name="filter-apps" value="android" />
+                    Android
+                  </label>
+                </div>
+              </fieldset>
 
-            <label>
-              <input type="checkbox" name="category" value="tech" checked>
-              التقنية
-            </label>
+              <hr class="divider" />
 
-            <label>
-              <input type="checkbox" name="category" value="admin">
-              الإدارة
-            </label>
+              <!-- التقييم -->
+              <h3 class="sidebar-section-title" style="margin-bottom:14px;">التقييم</h3>
+              <div class="rating-filter" role="radiogroup" aria-label="فلتر بالتقييم">
+                <label class="rating-option">
+                  <input type="radio" name="rating-filter" value="5" />
+                  <span class="rating-stars" aria-label="5 نجوم">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                  </span>
+                </label>
+                <label class="rating-option">
+                  <input type="radio" name="rating-filter" value="4" />
+                  <span class="rating-stars" aria-label="4 نجوم فأكثر">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star empty" aria-hidden="true"></i>
+                  </span>
+                </label>
+                <label class="rating-option">
+                  <input type="radio" name="rating-filter" value="3" />
+                  <span class="rating-stars" aria-label="3 نجوم فأكثر">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star empty" aria-hidden="true"></i>
+                    <i class="fas fa-star empty" aria-hidden="true"></i>
+                  </span>
+                </label>
+                <label class="rating-option">
+                  <input type="radio" name="rating-filter" value="2" />
+                  <span class="rating-stars" aria-label="نجمتان فأكثر">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star empty" aria-hidden="true"></i>
+                    <i class="fas fa-star empty" aria-hidden="true"></i>
+                    <i class="fas fa-star empty" aria-hidden="true"></i>
+                  </span>
+                </label>
+                <label class="rating-option">
+                  <input type="radio" name="rating-filter" value="1" />
+                  <span class="rating-stars" aria-label="نجمة فأكثر">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star empty" aria-hidden="true"></i>
+                    <i class="fas fa-star empty" aria-hidden="true"></i>
+                    <i class="fas fa-star empty" aria-hidden="true"></i>
+                    <i class="fas fa-star empty" aria-hidden="true"></i>
+                  </span>
+                </label>
+              </div>
 
-            <label>
-              <input type="checkbox" name="category" value="design">
-              التصاميم
-            </label>
-          </fieldset>
+            </div>
+          </aside>
 
-          <!-- التقييم -->
-          <fieldset class="rating">
-            <legend>التقييم</legend>
-
-            <label class="rate">
-              <input type="radio" name="rating" value="5">
-              <span aria-hidden="true">★★★★★</span>
-              <span class="sr-only">5 نجوم</span>
-            </label>
-
-            <label class="rate">
-              <input type="radio" name="rating" value="4">
-              <span aria-hidden="true">★★★★☆</span>
-              <span class="sr-only">4 نجوم أو أكثر</span>
-            </label>
-
-          </fieldset>
-
-        </form>
-
-      </aside>
-
-    </div>
-  </div>
-</section>
+        </div><!-- /main-layout -->
+      </div><!-- /container -->
+    </section>
   </main>
   <!-- نهاية main-layout -->
 
