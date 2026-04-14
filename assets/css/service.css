@@ -33,6 +33,7 @@
 /* ===== Layout ===== */
 .main-layout {
     display: flex;
+    flex-direction: row-reverse;
     gap: 32px;
     align-items: flex-start;
 }
@@ -46,10 +47,8 @@
 
 /* الفلتر يأخذ 28% */
 .sidebar-side {
-    flex: 0 0 28%;
-    min-width: 240px;
-    position: sticky;
-    top: 120px;
+    flex: 0 0 260px;
+    width: 260px;
 }
 
 /* ===== Cards Grid ===== */
