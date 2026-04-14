@@ -968,7 +968,6 @@ html {
 
 /* ===== كرت الخدمة ===== */
 .service-card {
-    display: none;
     /* يتم التحكم به عبر JS */
     background: #fff;
     padding: 25px;
