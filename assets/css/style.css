@@ -968,18 +968,13 @@ html {
 
 /* ===== كرت الخدمة ===== */
 .service-card {
-    /* يتم التحكم به عبر JS */
-    background: #fff;
+    background: var(--color-white);
     padding: 25px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     transition: 0.3s ease;
 }
 
-.service-card.active {
-    display: block;
-    animation: fadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-}
 
 .service-card:hover {
     transform: translateY(-6px);
