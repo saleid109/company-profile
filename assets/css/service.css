@@ -1,5 +1,5 @@
 /* ===============================
-   Services Section - Layout
+    Services Section - Layout
 ================================= */
 .services-section {
     padding: 60px 0;
@@ -13,7 +13,7 @@
 }
 
 /* ===============================
-   Tabs
+    Tabs
 ================================= */
 .tabs-row {
     display: flex;
@@ -37,7 +37,7 @@
 }
 
 /* ===============================
-   Cards Grid
+    Cards Grid
 ================================= */
 .cards-side {
     flex: 1;
@@ -54,7 +54,7 @@
 }
 
 /* ===============================
-   Card Design
+    Card Design
 ================================= */
 .services-card {
     background: #fff;
@@ -101,7 +101,7 @@
 }
 
 /* ===============================
-   Buttons
+    Buttons
 ================================= */
 .card-actions {
     display: flex;
@@ -139,7 +139,7 @@
 }
 
 /* ===============================
-   Sidebar
+    Sidebar
 ================================= */
 .sidebar-side {
     width: 280px;
@@ -184,14 +184,14 @@
 }
 
 /* ===============================
-   Rating
+    Rating
 ================================= */
 .rating-stars i {
     color: #f5b50a;
 }
 
 /* ===============================
-   Pagination
+    Pagination
 ================================= */
 .pagination {
     display: flex;
@@ -215,7 +215,7 @@
 }
 
 /* ===============================
-   Load More
+    Load More
 ================================= */
 .load-more-btn {
     display: block;
@@ -223,4 +223,49 @@
     margin-top: 20px;
     color: #00015B;
     font-weight: bold;
+}
+
+/* ===============================
+    Tablet
+================================= */
+@media (max-width: 992px) {
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .sidebar-side {
+        width: 100%;
+        order: -1;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===============================
+    Mobile
+================================= */
+@media (max-width: 600px) {
+    .tabs-row {
+        flex-direction: column;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-img-placeholder img {
+        height: 160px;
+    }
+
+    .card-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-add-cart,
+    .btn-request {
+        width: 100%;
+    }
 }
