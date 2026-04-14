@@ -54,6 +54,18 @@ function clearAllFilters() {
  * تهيئة الصفحة عند التحميل
  */
 document.addEventListener('DOMContentLoaded', () => {
+    // فقط تهيئة الـ sidebar بدون إخفاء/إظهار البطاقات
     const firstBtn = document.getElementById('btn-work');
-    if (firstBtn) switchServiceTab('work', firstBtn);
+    if (firstBtn) {
+        firstBtn.classList.add('active');
+        firstBtn.setAttribute('aria-selected', 'true');
+    }
+    
+    // تهيئة الـ sidebar فقط
+    ['sidebar-digital', 'sidebar-apps'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('hidden');
+    });
+    
+    document.getElementById('sidebar-work')?.classList.remove('hidden');
 });
