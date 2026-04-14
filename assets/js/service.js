@@ -1,101 +1,59 @@
 /**
- * وظيفة تبديل التبويبات في قسم الخدمات
- * محدثة لتتوافق مع الهيكل المطور (Sticky Sidebar)
+ * تبديل التبويبات في قسم الخدمات
  */
 function switchServiceTab(tab, clickedBtn) {
-    // 1. تحديث حالة أزرار التبويبات (إضافة الكلاس النشط)
+    // 1. إزالة active من كل الأزرار
     document.querySelectorAll('.tabs-row .tab-btn').forEach(btn => {
         btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
     });
     clickedBtn.classList.add('active');
+    clickedBtn.setAttribute('aria-selected', 'true');
 
-    // 2. إدارة حاويات المحتوى (إخفاء الكل ثم إظهار المستهدف)
-    const serviceGrids = ['tab-work', 'tab-digital', 'tab-products'];
-    serviceGrids.forEach(id => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.classList.add('hidden');
-        }
+    // 2. إخفاء كل التبويبات وإظهار المستهدف
+    ['tab-work', 'tab-digital', 'tab-products'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('hidden');
     });
 
     const targetGrid = document.getElementById('tab-' + tab);
     if (targetGrid) {
         targetGrid.classList.remove('hidden');
-        // تحسين: إعادة التمرير للأعلى قليلاً عند التبديل لضمان رؤية البطاقات من البداية
-        window.scrollTo({
-            top: targetGrid.closest('.services-section').offsetTop - 100,
-            behavior: 'smooth'
-        });
     }
 
-    // 3. إدارة الفلاتر الجانبية (Sidebar)
-    const sidebarWork = document.getElementById('sidebar-work');
-    const sidebarDigital = document.getElementById('sidebar-digital');
+    // 3. إدارة الفلاتر الجانبية
+    ['sidebar-work', 'sidebar-digital', 'sidebar-apps'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('hidden');
+    });
 
-    if (sidebarWork) sidebarWork.classList.add('hidden');
-    if (sidebarDigital) sidebarDigital.classList.add('hidden');
-
-    // ملاحظة: خدمة رقمية ومنتجات رقمية يتشاركان نفس الفلاتر كما في التصميم
     if (tab === 'work') {
-        if (sidebarWork) sidebarWork.classList.remove('hidden');
+        document.getElementById('sidebar-work')?.classList.remove('hidden');
     } else {
-        if (sidebarDigital) sidebarDigital.classList.remove('hidden');
+        document.getElementById('sidebar-digital')?.classList.remove('hidden');
+        document.getElementById('sidebar-apps')?.classList.remove('hidden');
     }
 }
 
 /**
- * وظيفة تبديل التبويبات في قسم الخدمات
- * محدثة لتتوافق مع الهيكل المطور (Sticky Sidebar)
+ * تبديل حالة مجموعة الفلتر (فتح/إغلاق)
  */
-function switchServiceTab(tab, clickedBtn) {
-    // 1. تحديث حالة أزرار التبويبات (إضافة الكلاس النشط)
-    document.querySelectorAll('.tabs-row .tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    clickedBtn.classList.add('active');
-
-    // 2. إدارة حاويات المحتوى (إخفاء الكل ثم إظهار المستهدف)
-    const serviceGrids = ['tab-work', 'tab-digital', 'tab-products'];
-    serviceGrids.forEach(id => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.classList.add('hidden');
-        }
-    });
-
-    const targetGrid = document.getElementById('tab-' + tab);
-    if (targetGrid) {
-        targetGrid.classList.remove('hidden');
-        // تحسين: إعادة التمرير للأعلى قليلاً عند التبديل لضمان رؤية البطاقات من البداية
-        window.scrollTo({
-            top: targetGrid.closest('.services-section').offsetTop - 100,
-            behavior: 'smooth'
-        });
-    }
-
-    // 3. إدارة الفلاتر الجانبية (Sidebar)
-    const sidebarWork = document.getElementById('sidebar-work');
-    const sidebarDigital = document.getElementById('sidebar-digital');
-
-    if (sidebarWork) sidebarWork.classList.add('hidden');
-    if (sidebarDigital) sidebarDigital.classList.add('hidden');
-
-    // ملاحظة: خدمة رقمية ومنتجات رقمية يتشاركان نفس الفلاتر كما في التصميم
-    if (tab === 'work') {
-        if (sidebarWork) sidebarWork.classList.remove('hidden');
-    } else {
-        if (sidebarDigital) sidebarDigital.classList.remove('hidden');
-    }
+function toggleFilterGroup(fieldset) {
+    if (fieldset) fieldset.classList.toggle('collapsed');
 }
 
 /**
- * وظيفة تبديل حالة الفلتر (علامة الصح)
+ * مسح جميع الفلاتر
  */
-function toggleFilter(el) {
-    el.classList.toggle('active');
-    const check = el.querySelector('.filter-check');
-    if (check) {
-        check.textContent = el.classList.contains('active') ? '✓' : '';
-    }
+function clearAllFilters() {
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('input[type="radio"]').forEach(rb => rb.checked = false);
 }
 
+/**
+ * تهيئة الصفحة عند التحميل
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const firstBtn = document.getElementById('btn-work');
+    if (firstBtn) switchServiceTab('work', firstBtn);
+});
