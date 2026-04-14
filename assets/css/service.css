@@ -269,6 +269,8 @@
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
     padding: 24px 20px;
+    position: sticky;
+    top: 120px;
 }
 
 .sidebar-header {
