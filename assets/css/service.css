@@ -513,9 +513,6 @@
     padding: 40px 0;
 }
 
-.hidden {
-    display: none !important;
-}
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
