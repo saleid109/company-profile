@@ -477,8 +477,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // التشغيل الأولي للفلترة
-    activateMain("products");
-
+    activateMain(currentMain);
     // تهيئة الإحصائيات
     const statItems = document.querySelectorAll('.stat-item');
     const statsObserver = new IntersectionObserver((entries, observer) => {
