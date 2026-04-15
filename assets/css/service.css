@@ -252,7 +252,7 @@ Services Section — Wrapper
     width: 285px;
     flex-shrink: 0;
     position: sticky;
-    top: 20px;
+    top: 100px;
 }
 
 .sidebar {
