@@ -1,16 +1,20 @@
+
 /* ===============================
     Services Section - Layout
 ================================= */
 .services-section {
     padding: 60px 0;
-    background: #f9fafc;
+    background: var(--bg-light);
 }
 
 .main-layout {
     display: flex;
-    gap: 30px;
+    gap: 32px; /* تطابق مع Figma gap: 32px */
     align-items: flex-start;
-    flex-direction: row-reverse;
+    flex-direction: row-reverse; /* السايدبار على اليمين */
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* ===============================
@@ -18,23 +22,26 @@
 ================================= */
 .tabs-row {
     display: flex;
-    gap: 10px;
-    margin-bottom: 30px;
+    gap: 12px;
+    margin-bottom: 32px;
+    justify-content: flex-start;
 }
 
 .tab-btn {
-    padding: 10px 18px;
-    border: none;
-    background: #eee;
-    border-radius: 8px;
+    padding: 12px 24px;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    border-radius: 10px;
     cursor: pointer;
-    font-family: inherit;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+    color: var(--primary-color);
     transition: 0.3s;
 }
 
 .tab-btn.active {
-    background: #00015B;
-    color: #fff;
+    background: var(--primary-color);
+    color: var(--white);
 }
 
 /* ===============================
@@ -47,227 +54,163 @@
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.cards-grid.hidden {
-    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
+    gap: 32px; /* تطابق مع Figma */
 }
 
 /* ===============================
-    Card Design
+    Card Design (Pixel Perfect)
 ================================= */
 .services-card {
-    background: #fff;
-    border-radius: 16px;
-    overflow: hidden;
+    background: var(--white);
+    width: 292px; /* تطابق مع Figma */
+    border-radius: 20px; /* تطابق مع Figma */
+    padding: 16px; /* تطابق مع Figma */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px; /* تطابق مع Figma */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     transition: 0.3s;
-    border: 1px solid #eee;
+    border: 1px solid transparent;
 }
 
 .services-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
 }
 
 /* الصورة */
+.card-img-placeholder {
+    width: 100%;
+    height: 218px; /* تطابق مع Figma */
+    border-radius: 12px;
+    overflow: hidden;
+    align-self: stretch;
+    background: #F3F3F3;
+}
+
 .card-img-placeholder img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
 }
 
-/* محتوى */
+/* محتوى البطاقة */
 .card-body {
-    padding: 18px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .card-title {
+    width: 100%;
+    color: var(--text-dark);
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
     font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    line-height: 1.5;
+    font-weight: 500;
+    margin: 0;
 }
 
 /* النجوم */
 .card-stars {
-    color: #f5b50a;
-    margin-bottom: 10px;
+    display: flex;
+    gap: 4px;
+    color: var(--accent-color);
 }
 
-/* السعر */
-.card-price {
-    font-weight: bold;
-    color: #00015B;
+.card-stars svg {
+    width: 16px;
+    height: 16px;
 }
 
-/* ===============================
-    Buttons
-================================= */
-.card-actions {
+/* السعر والطلب */
+.card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    width: 100%;
+    margin-top: 8px;
 }
 
-/* زر الطلب */
-.btn-request {
-    background: #00015B;
-    color: #fff;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    cursor: pointer;
+.card-price {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--primary-color);
 }
 
-/* زر التفاصيل */
-.btn-details {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #00015B;
-}
-
-/* زر السلة */
 .btn-add-cart {
-    background: #00015B;
-    color: #fff;
+    background: var(--primary-color);
+    color: var(--white);
     border: none;
-    padding: 8px 14px;
+    padding: 8px 16px;
     border-radius: 8px;
     cursor: pointer;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-add-cart:hover {
+    opacity: 0.9;
 }
 
 /* ===============================
-    Sidebar
+    Sidebar (Pixel Perfect)
 ================================= */
 .sidebar-side {
-    width: 280px;
+    width: 285px; /* تطابق مع Figma */
 }
 
 .sidebar {
-    background: #fff;
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid #eee;
-}
-
-.sidebar-header {
+    background: var(--white);
+    padding: 24px 32px; /* تطابق مع Figma */
+    border-radius: 10px; /* تطابق مع Figma */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.clear-all-btn {
-    background: none;
-    border: none;
-    color: red;
-    cursor: pointer;
-}
-
-.filter-group {
-    margin-top: 20px;
+    flex-direction: column;
+    gap: 32px; /* تطابق مع Figma */
+    align-self: stretch;
+    border: 1px solid var(--border-color);
 }
 
 .filter-group legend {
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.filter-options {
-    margin-top: 10px;
-}
-
-.filter-label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-/* ===============================
-    Rating
-================================= */
-.rating-stars i {
-    color: #f5b50a;
-}
-
-/* ===============================
-    Pagination
-================================= */
-.pagination {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: var(--text-dark);
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 30px;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.page-btn,
-.page-nav {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    background: #fff;
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
     cursor: pointer;
-    border-radius: 6px;
 }
 
-.page-btn.active {
-    background: #00015B;
-    color: #fff;
-}
-
-/* ===============================
-    Load More
-================================= */
-.load-more-btn {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    color: #00015B;
-    font-weight: bold;
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
 }
 
 /* ===============================
-    Tablet
+    Responsive
 ================================= */
 @media (max-width: 992px) {
     .main-layout {
         flex-direction: column;
     }
-
     .sidebar-side {
         width: 100%;
-        order: -1;
     }
-
     .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* ===============================
-    Mobile
-================================= */
-@media (max-width: 600px) {
-    .tabs-row {
-        flex-direction: column;
-    }
-
-    .cards-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .card-img-placeholder img {
-        height: 160px;
-    }
-
-    .card-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn-add-cart,
-    .btn-request {
-        width: 100%;
+        justify-items: center;
     }
 }
