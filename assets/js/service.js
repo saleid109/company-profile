@@ -1,129 +1,112 @@
-/**
-*   - تفاعلية صفحة الخدمات
-*     تبديل علامات التبويب، وإظهار/إخفاء الفلاتر، وتحديثات إمكانية الوصول.
+const services = [
+    {
+        title: "تطوير مواقع إلكترونية",
+        category: "web-dev",
+        rating: 5,
+        image: "./public/images/serviceN.png",
+        type: "work",
+    },
+    {
+        title: "برمجة خاصة",
+        category: "coding",
+        rating: 4,
+        image: "./public/images/serviceN.png",
+        type: "digital",
+        price: 2000,
+    },
+    {
+        title: "قوالب جاهزة",
+        category: "templates",
+        rating: 5,
+        image: "./public/images/serviceN.png",
+        type: "products",
+        price: 1500,
+    },
+];
 
-*/
+function createCard(service) {
+    return `
+    <article class="services-card" data-category="${service.category}" data-rating="${service.rating}">
+      
+      <div class="card-img-wrapper">
+        <img src="${service.image}" alt="${service.title}" loading="lazy">
+      </div>
 
-document.addEventListener('DOMContentLoaded', () => {
-// الحالة الابتدائية: عرض علامة التبويب الأولى فقط وشريطها الجانبي المقابل
-initializePage();
+      <div class="card-body">
 
+        <div class="card-meta">
+          <h3 class="card-label">${service.title}</h3>
+
+          ${service.type === "work"
+            ? `<a href="service-detail.html" class="card-details-link">
+         التفاصيل <i class="fas fa-chevron-left"></i>
+            </a>`
+            : `<span class="card-price">${service.price} ﷼</span>`
+        }
+        </div>
+
+        ${service.type === "work"
+            ? `<button class="btn-request-service">طلب الخدمة</button>`
+            : `<button class="btn-add-cart">أضف إلى السلة</button>`
+        }
+
+    </div>
+    </article>
+  `;
+}
+function renderServices(type = "work") {
+    const container = document.getElementById("services-container");
+
+    const filtered = services.filter((service) => service.type === type);
+
+    container.innerHTML = filtered.map(createCard).join("");
+}
+
+tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        const target = tab.getAttribute("data-tab");
+
+        tabs.forEach((t) => {
+            t.classList.remove("active");
+            t.setAttribute("aria-selected", "false");
+        });
+
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+
+        sidebars.forEach((sidebar) => {
+            sidebar.classList.toggle(
+                "hidden",
+                sidebar.getAttribute("data-sidebar") !== target,
+            );
+        });
+
+        // أهم سطر
+        renderServices(target);
+    });
 });
 
+const tabs = document.querySelectorAll(".tab-btn");
+const panels = document.querySelectorAll(".cards-panel");
 
-/**
-* تهيئة حالة الصفحة عند التحميل
-*/
-function initializePage() {
-// إخفاء جميع الأشرطة الجانبية باستثناء الشريط الأول (العمل)
-const sidebars = ['sidebar-work', 'sidebar-digital', 'sidebar-apps']; sidebars.forEach(id => {
-const el = document.getElementById(id);
-if (el) {
-if (id === 'sidebar-work') {
-el.classList.remove('hidden');
-} else {
-el.classList.add('hidden');
-}
-}
+tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        const target = tab.dataset.tab;
+
+        tabs.forEach((t) => {
+            t.classList.remove("active");
+            t.setAttribute("aria-selected", "false");
+        });
+
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+
+        panels.forEach((panel) => {
+            if (panel.id === "panel-" + target) {
+                panel.classList.remove("hidden");
+            } else {
+                panel.classList.add("hidden");
+            }
+        });
+    });
 });
-
-// إظهار لوحة التبويب الأولى (العمل) وإخفاء الباقي
-
-const panels = ['panel-work', 'panel-digital', 'panel-products'];
-
-panels.forEach(id => {
-const el = document.getElementById(id);
-if (el) {
-if (id === 'panel-work') {
-el.classList.remove('hidden');
-} else {
-el.classList.add('hidden');
-}
-}
-});
-
-}
-
-/**
-* التبديل بين علامات تبويب الخدمات
-* @param {string} tabName - اسم علامة التبويب المراد التبديل إليها (العمل، الرقمي، المنتجات)
-* @param {HTMLElement} clickedBtn - عنصر الزر الذي تم النقر عليه
-*/
-function switchServiceTab(tabName, clickedBtn) {
-// 1. تحديث حالة الأزرار (المرئية وإمكانية الوصول)
-const allTabBtns = document.querySelectorAll('.tab-btn');
-
-allTabBtns.forEach(btn => {
-btn.classList.remove('active');
-btn.setAttribute('aria-selected', 'false');
-});
-clickedBtn.classList.add('active');
-clickedBtn.setAttribute('aria-selected', 'true');
-
-// 2. تحديث رؤية لوحات التبويب
-const panels = {
-'work': 'panel-work',
-'digital': 'panel-digital',
-'products': 'panel-products'
-};
-
-Object.values(panels).forEach(id => {
-const panel = document.getElementById(id);
-if (panel) panel.classList.add('hidden');
-});
-
-const activePanel = document.getElementById(panels[tabName]);
-
-if (activePanel) activePanel.classList.remove('hidden');
-
-
-// 3. تحديث رؤية فلاتر الشريط الجانبي
-// المنطق: 'work' يُظهر الشريط الجانبي الخاص بالعمل، والباقي يُظهر الشريط الجانبي الخاص بالتطبيقات الرقمية
-const sidebarWork = document.getElementById('sidebar-work');
-
-const sidebarDigital = document.getElementById('sidebar-digital');
-const sidebarApps = document.getElementById('sidebar-apps');
-
-if (tabName === 'work') {
-sidebarWork?.classList.remove('hidden');
-sidebarDigital?.classList.add('hidden');
-sidebarApps?.classList.add('hidden');
-} else {
-sidebarWork?.classList.add('hidden');
-sidebarDigital?.classList.remove('hidden');
-sidebarApps?.classList.remove('hidden');
-
-}
-}
-
-/**
-* تبديل رؤية مجموعات التصفية (نمط الأكورديون)
-* @param {HTMLElement} legendElement - مفتاح التصفية أو الزر الذي يُفعّل التبديل
-*/
-function toggleFilterGroup(legendElement) {
-const filterGroup = legendElement.closest('.filter-group');
-if (filterGroup) {
-filterGroup.classList.toggle('collapsed');
-
-// تحديث حالة ARIA الموسعة إن وجدت
-const button = legendElement.querySelector('button') || legendElement;
-
-if (button.hasAttribute('aria-expanded')) {
-const isExpanded = button.getAttribute('aria-expanded') === 'true';
-button.setAttribute('aria-expanded', !isExpanded);
-}
-}
-}
-
-/**
-* مسح جميع عوامل التصفية المحددة في الشريط الجانبي
-*/
-function clearAllFilters() {
-const sidebar = document.querySelector('.sidebar');
-if (sidebar) {
-const inputs = sidebar.querySelectorAll('input[type="checkbox"], input[type="radio"]');
-inputs.forEach(input => {
-input.checked = false;
-});
-}
-}
