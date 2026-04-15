@@ -54,14 +54,16 @@ Services Section — Wrapper
 .tabs-row {
     display: flex;
     flex-direction: row;
-    gap: 12px;
+    gap: 16px;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 24px;
 }
 
 .tab-btn {
     padding: 12px 24px;
-    border: 1.5px solid var(--primary-color, #00015b);
-    background: transparent;
+    border: 1.5px solid #00015B;
+    background: #fff;
     border-radius: 10px;
     cursor: pointer;
     font-family: "Tajawal", sans-serif;
