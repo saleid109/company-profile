@@ -124,13 +124,10 @@ Services Section — Wrapper
 
 /* منطقة الصورة */
 .card-img-wrapper {
+    height: 218px;
     width: 100%;
-    height: 200px;
+    border-radius: 12px;
     overflow: hidden;
-    background: #eef0f8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .card-img-wrapper img {
@@ -141,26 +138,26 @@ Services Section — Wrapper
 
 /* جسم البطاقة */
 .card-body {
-    padding: 14px 16px;
+    padding: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 /* صف العنوان والسعر / رابط التفاصيل */
 .card-meta {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 8px;
+    align-items: center;
 }
 
 .card-label {
-    font-size: 14px;
+    font-family: var(--font-main);
+    font-size: 16px;
     font-weight: 500;
-    color: #000000;
-    line-height: 1.4;
-    flex: 1;
+    color: #000;
     text-align: right;
 }
 
@@ -204,28 +201,23 @@ Services Section — Wrapper
 /* النجوم */
 .card-stars {
     display: flex;
-    gap: 3px;
+    gap: 6px;
     color: var(--accent-color, #fdca30);
 }
 
 .card-stars i {
-    font-size: 13px;
+    font-size: 18px;
+    color: #FDCA30;
 }
 
 /* زر طلب الخدمة */
 .btn-request-service {
-    background: var(--primary-color, #00015b);
-    color: #ffffff;
-    border: none;
-    padding: 9px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: "Tajawal", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
     width: 100%;
-    text-align: center;
-    transition: opacity 0.2s;
+    height: 40px;
+    border-radius: 10px;
+    background: #00015B;
+    color: #FFF;
+    font-size: 14px;
 }
 
 .btn-request-service:hover {
@@ -252,7 +244,7 @@ Services Section — Wrapper
 }
 
 /* ===============================
-   السايدبار (يمين)
+    السايدبار (يمين)
 ================================= */
 .sidebar-side {
     width: 285px;
