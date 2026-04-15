@@ -80,7 +80,7 @@ Services Section — Wrapper
 }
 
 /* ===============================
-   لوحات التبويب (Panels)
+    لوحات التبويب (Panels)
 ================================= */
 .cards-panel {
     display: block;
@@ -91,19 +91,19 @@ Services Section — Wrapper
 }
 
 /* ===============================
-   شبكة البطاقات
+    شبكة البطاقات   
 ================================= */
 .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 24px;
 }
 
 /* ===============================
-   البطاقة الأساسية
+البطاقة الأساسية
 ================================= */
 .services-card {
-    background: #ffffff;
+    background:var(--accent-color);
     border-radius: 16px;
     overflow: hidden;
     display: flex;
@@ -118,7 +118,7 @@ Services Section — Wrapper
 
 .services-card:hover {
     transform: translateY(-4px);
-    border-color: var(--primary-color, #00015b);
+    border-color: var(--color-secondary, #00015b);
     box-shadow: 0 6px 24px rgba(0, 1, 91, 0.12);
 }
 
