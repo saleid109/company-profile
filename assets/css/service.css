@@ -20,18 +20,13 @@
 }
 
 /* ===============================
-   Services Section — Wrapper
+Services Section — Wrapper
 ================================= */
 .services-section {
     padding: 60px 0;
     background-color: var(--bg-light, #fafafa);
 }
 
-/* ===============================
-   Main Layout — السايدبار يمين، البطاقات يسار
-   مع RTL: الترتيب في HTML (sidebar أولاً)
-   + flex-direction: row → sidebar يظهر على اليمين
-================================= */
 .main-layout {
     display: flex;
     flex-direction: row;
