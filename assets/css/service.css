@@ -35,6 +35,8 @@ Services Section — Wrapper
     /* RTL: أول عنصر (sidebar) يذهب لليمين */
     gap: 32px;
     align-items: flex-start;
+    margin-top: 32px;
+
 }
 
 /* ===============================
@@ -56,8 +58,6 @@ Services Section — Wrapper
     flex-direction: row;
     gap: 16px;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-top: 24px;
 }
 
 .tab-btn {
@@ -105,7 +105,7 @@ Services Section — Wrapper
 البطاقة الأساسية
 ================================= */
 .services-card {
-    background:var(--accent-color);
+    background:var(--color-white);
     border-radius: 16px;
     overflow: hidden;
     display: flex;
@@ -140,7 +140,7 @@ Services Section — Wrapper
 
 /* جسم البطاقة */
 .card-body {
-    padding: 0;
+    padding: 12px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -253,7 +253,6 @@ Services Section — Wrapper
     flex-shrink: 0;
     position: sticky;
     top: 20px;
-    margin-top: 24px;
 }
 
 .sidebar {
