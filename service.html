@@ -9,6 +9,8 @@
     content="استكشف خدمات نقطة صعود: تطوير المواقع، المنتجات الرقمية، وبرامج التأهيل لسوق العمل الرقمي.">
 
   <!-- الخطوط -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap"
     rel="stylesheet" />
 
@@ -25,7 +27,6 @@
   <link rel="stylesheet" href="./assets/css/about.css" />
   <link rel="stylesheet" href="./assets/css/our-story.css" />
   <link rel="stylesheet" href="./assets/css/service.css" />
-
 
   <!-- مكتبة السلايدر Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -86,11 +87,11 @@
         <div class="navbar-links">
           <ul class="nav-menu">
             <li>
-              <a href="index.html" aria-current="page">الرئيسية</a>
+              <a href="index.html">الرئيسية</a>
             </li>
 
             <li class="dropdown has-mega">
-              <a href="#about.html" aria-haspopup="true" aria-expanded="false">
+              <a href="about.html" aria-haspopup="true" aria-expanded="false">
                 عن نقطة صعود
                 <i class="fas fa-chevron-down mr-1 text-xs"></i>
               </a>
@@ -135,7 +136,7 @@
             </li>
 
             <li class="dropdown">
-              <a href="service.html#services" class="active" aria-haspopup="true" aria-expanded="false">خدماتنا</a>
+              <a href="service.html#services" class="active" aria-current="page" aria-haspopup="true" aria-expanded="false">خدماتنا</a>
             </li>
             <li><a href="portfolio.html">أعمالنا</a></li>
 
@@ -213,8 +214,7 @@
       </div>
     </section>
 
-    <!-- ========== قسم الخدمات - ========== -->
-    <!-- ================= Main Content ================= -->
+    <!-- ========== قسم الخدمات ========== -->
     <div class="container">
       <div class="main-layout">
 
@@ -233,8 +233,7 @@
             <nav data-sidebar="work" class="sidebar-filters" aria-label="فلاتر تأهيل سوق العمل">
 
               <div class="filter-group">
-                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-web-dev"
-                  >
+                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-web-dev" onclick="toggleFilterGroup(this)">
                   <span>تطوير الويب</span>
                   <i class="fas fa-chevron-down" aria-hidden="true"></i>
                 </button>
@@ -251,251 +250,18 @@
               </div>
 
               <div class="filter-group">
-                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-app-dev"
-                  type="button">
+                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-app-dev" onclick="toggleFilterGroup(this)">
                   <span>تطوير التطبيقات</span>
                   <i class="fas fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <div id="fg-app-dev" class="filter-options">
                   <label class="filter-label">
-                    <input type="checkbox" name="filter-work" value="mobile-app">
-                    <span>تطبيقات الجوال</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="filter-group">
-                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-marketing"
-                  onclick="toggleFilterGroup(this)">
-                  <span>التسويق</span>
-                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </button>
-                <div id="fg-marketing" class="filter-options">
-                  <label class="filter-label">
-                    <input type="checkbox" name="filter-work" value="social-media">
-                    <span>التسويق الإلكتروني</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="filter-group">
-                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-license"
-                  onclick="toggleFilterGroup(this)">
-                  <span>التراخيص</span>
-                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </button>
-                <div id="fg-license" class="filter-options">
-                  <label class="filter-label">
-                    <input type="checkbox" name="filter-work" value="freelance">
-                    <span>العمل الحر</span>
-                  </label>
-                </div>
-              </div>
-
-              <!-- فلتر التقييم -->
-              <div class="filter-group filter-rating">
-                <h3 class="filter-rating-title">التقييم</h3>
-                <div class="filter-options">
-                  <label class="filter-label" aria-label="تقييم 5 نجوم">
-                    <div class="card-stars">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                    </div>
-                    <input type="checkbox" name="rating" value="5">
-                  </label>
-                  <label class="filter-label" aria-label="تقييم 4 نجوم">
-                    <div class="card-stars">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    <input type="checkbox" name="rating" value="4">
-                  </label>
-                  <label class="filter-label" aria-label="تقييم 3 نجوم">
-                    <div class="card-stars">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    <input type="checkbox" name="rating" value="3">
-                  </label>
-                  <label class="filter-label" aria-label="تقييم 2 نجوم">
-                    <div class="card-stars">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    <input type="checkbox" name="rating" value="2">
-                  </label>
-                  <label class="filter-label" aria-label="تقييم نجمة واحدة">
-                    <div class="card-stars">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    <input type="checkbox" name="rating" value="1">
-                  </label>
-                </div>
-              </div>
-
-            </nav>
-
-            <!-- فلاتر تبويب: خدمة رقمية -->
-            <nav id="sidebar-digital" class="sidebar-filters hidden" aria-label="فلاتر الخدمة الرقمية">
-
-              <div class="filter-group">
-                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-dig-admin"
-                  onclick="toggleFilterGroup(this)">
-                  <span>الادارة</span>
-                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </button>
-                <div id="fg-dig-admin" class="filter-options">
-                  <label class="filter-label">
-                    <input type="checkbox" name="filter-digital" value="admin">
-                    <span>الإدارة التقنية</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="filter-group">
-                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-dig-tech"
-                  onclick="toggleFilterGroup(this)">
-                  <span>التقنية</span>
-                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </button>
-                <div id="fg-dig-tech" class="filter-options">
-                  <label class="filter-label">
-                    <input type="checkbox" name="filter-digital" value="tech" checked>
-                    <span>البرمجة والتطوير</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="filter-group">
-                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-dig-design"
-                  onclick="toggleFilterGroup(this)">
-                  <span>التصاميم</span>
-                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </button>
-                <div id="fg-dig-design" class="filter-options">
-                  <label class="filter-label">
-                    <input type="checkbox" name="filter-digital" value="design">
-                    <span>تصميم الجرافيك</span>
-                  </label>
-                </div>
-              </div>
-
-              <!-- فلتر التقييم -->
-              <div class="filter-group filter-rating">
-                <h3 class="filter-rating-title">التقييم</h3>
-                <div class="filter-options">
-                  <label class="filter-label">
-                    <div class="card-stars">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                    </div>
-                    <input type="checkbox" name="rating-digital" value="5">
+                    <input type="checkbox" name="filter-work" value="ios">
+                    <span>تطبيقات iOS</span>
                   </label>
                   <label class="filter-label">
-                    <div class="card-stars">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    <input type="checkbox" name="rating-digital" value="4">
-                  </label>
-                  <label class="filter-label">
-                    <div class="card-stars">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    <input type="checkbox" name="rating-digital" value="3">
-                  </label>
-                  <label class="filter-label">
-                    <div class="card-stars">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    <input type="checkbox" name="rating-digital" value="2">
-                  </label>
-                  <label class="filter-label">
-                    <div class="card-stars">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    <input type="checkbox" name="rating-digital" value="1">
-                  </label>
-                </div>
-              </div>
-
-            </nav>
-
-            <!-- فلاتر تبويب: منتجات رقمية -->
-            <nav data-sidebar="digital" class="sidebar-filters hidden" aria-label="فلاتر المنتجات الرقمية">
-
-              <div class="filter-group">
-                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-prod-web"
-                  onclick="toggleFilterGroup(this)">
-                  <span>تطوير الويب</span>
-                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </button>
-                <div id="fg-prod-web" class="filter-options">
-                  <label class="filter-label">
-                    <input type="checkbox" name="filter-products" value="web">
-                    <span>قوالب المواقع</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="filter-group">
-                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-prod-apps"
-                  onclick="toggleFilterGroup(this)">
-                  <span>تطوير التطبيقات</span>
-                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </button>
-                <div id="fg-prod-apps" class="filter-options">
-                  <label class="filter-label">
-                    <input type="checkbox" name="filter-products" value="apps">
-                    <span>قوالب التطبيقات</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="filter-group">
-                <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-prod-mkt"
-                  onclick="toggleFilterGroup(this)">
-                  <span>التسويق</span>
-                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </button>
-                <div id="fg-prod-mkt" class="filter-options">
-                  <label class="filter-label">
-                    <input type="checkbox" name="filter-products" value="marketing">
-                    <span>أدوات التسويق</span>
+                    <input type="checkbox" name="filter-work" value="android">
+                    <span>تطبيقات Android</span>
                   </label>
                 </div>
               </div>
@@ -927,21 +693,18 @@
             <button class="pagination-btn pagination-active" aria-current="page" aria-label="الصفحة 1">1</button>
             <button class="pagination-btn" aria-label="الصفحة 2">2</button>
             <button class="pagination-btn" aria-label="الصفحة 3">3</button>
-            <button class="pagination-btn" aria-label="الصفحة 7">7</button>
             <button class="pagination-btn" aria-label="الصفحة 4">4</button>
             <button class="pagination-btn" aria-label="الصفحة 5">5</button>
             <button class="pagination-btn" aria-label="الصفحة 6">6</button>
+            <button class="pagination-btn" aria-label="الصفحة 7">7</button>
             <button class="pagination-btn pagination-next" aria-label="الصفحة التالية">التالي</button>
           </nav>
 
         </div>
-        <!-- نهاية cards-column -->
-
       </div>
       <!-- نهاية main-layout -->
     </div>
   </main>
-  <!-- نهاية main-layout -->
 
   <!--=========== Footer ===========-->
   <footer class="site-footer">
@@ -956,9 +719,9 @@
       <div class="footer-column">
         <h4>نقطة صعود</h4>
         <ul>
-          <li><a href="#">من نحن</a></li>
-          <li><a href="#">خدماتنا</a></li>
-          <li><a href="#">أعمالنا</a></li>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="service.html">خدماتنا</a></li>
+          <li><a href="portfolio.html">أعمالنا</a></li>
         </ul>
       </div>
 
@@ -966,8 +729,8 @@
         <h4>روابط سريعة</h4>
         <ul>
           <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="#">أعضاء المجلس</a></li>
-          <li><a href="#">الفرق</a></li>
+          <li><a href="team.html">أعضاء المجلس</a></li>
+          <li><a href="team.html">الفرق</a></li>
         </ul>
       </div>
 
