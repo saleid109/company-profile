@@ -52,7 +52,7 @@
 }
 
 /* =========================================
-   Sidebar & Filters
+    Sidebar & Filters
    ========================================= */
 .sidebar-side {
     width: 300px;
@@ -139,7 +139,7 @@
 }
 
 /* =========================================
-   Cards Grid & Service Cards
+    Cards Grid & Service Cards
    ========================================= */
 .cards-grid {
     display: grid;
@@ -238,7 +238,7 @@
 }
 
 /* =========================================
-   Buttons
+    Buttons
    ========================================= */
 .btn-request-service, .btn-add-cart {
     width: 100%;
@@ -273,7 +273,7 @@
 }
 
 /* =========================================
-   Pagination
+    Pagination
    ========================================= */
 .pagination {
     display: flex;
@@ -308,14 +308,14 @@
 }
 
 /* =========================================
-   Utilities
+    Utilities
    ========================================= */
 .hidden {
     display: none !important;
 }
 
 /* =========================================
-   Responsive Design
+    Responsive Design
    ========================================= */
 @media (max-width: 1024px) {
     .sidebar-side {
