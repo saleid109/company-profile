@@ -8,11 +8,16 @@
   <meta name="description"
     content="استكشف خدمات نقطة صعود: تطوير المواقع، المنتجات الرقمية، وبرامج التأهيل لسوق العمل الرقمي.">
 
+  <!-- الخطوط -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap"
     rel="stylesheet" />
+
+  <!-- الأيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- أيقونات Material Symbols -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
+  <!--صفحات الانماط الاساسية css-->
   <link rel="stylesheet" href="./assets/css/css-reset.css" />
   <link rel="stylesheet" href="./assets/css/variables.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -20,13 +25,16 @@
   <link rel="stylesheet" href="./assets/css/about.css" />
   <link rel="stylesheet" href="./assets/css/our-story.css" />
   <link rel="stylesheet" href="./assets/css/service.css" />
+
+
+  <!-- مكتبة السلايدر Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
   <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
 
-  <!--================= الهيدر ================-->
+  <!--================= قسم الهيدر ================-->
   <header>
     <div class="top-bar">
       <div class="container">
@@ -47,6 +55,7 @@
             <a href="#" aria-label="تبديل اللغة إلى الإنجليزية">EN</a>
           </div>
         </div>
+
         <div class="flex-group">
           <div class="user-info" role="button" onclick="openAuth('login')" aria-label="تسجيل الدخول">
             <i class="fas fa-user-circle" aria-hidden="true"></i>
@@ -73,12 +82,15 @@
         <button class="mobile-menu-icon" onclick="toggleMenu()" aria-label="فتح القائمة">
           <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
+
         <div class="navbar-links">
           <ul class="nav-menu">
-            <li><a href="index.html" aria-current="page">الرئيسية</a></li>
+            <li>
+              <a href="index.html" aria-current="page">الرئيسية</a>
+            </li>
+
             <li class="dropdown has-mega">
-              <!-- ✅ إصلاح: href="#about.html" → href="about.html" -->
-              <a href="about.html" aria-haspopup="true" aria-expanded="false">
+              <a href="#about.html" aria-haspopup="true" aria-expanded="false">
                 عن نقطة صعود
                 <i class="fas fa-chevron-down mr-1 text-xs"></i>
               </a>
@@ -96,7 +108,9 @@
                   </a>
                   <a href="our-story.html" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <div class="mega-icon-wrap"><i class="fas fa-book-open"></i></div>
+                      <div class="mega-icon-wrap">
+                        <i class="fas fa-book-open"></i>
+                      </div>
                     </div>
                     <div class="card-info">
                       <h4>قصتنا</h4>
@@ -106,7 +120,9 @@
                   </a>
                   <a href="news.html" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <div class="mega-icon-wrap"><i class="fas fa-newspaper"></i></div>
+                      <div class="mega-icon-wrap">
+                        <i class="fas fa-newspaper"></i>
+                      </div>
                     </div>
                     <div class="card-info">
                       <h4>أخبارنا</h4>
@@ -117,10 +133,12 @@
                 </div>
               </div>
             </li>
+
             <li class="dropdown">
               <a href="service.html#services" class="active" aria-haspopup="true" aria-expanded="false">خدماتنا</a>
             </li>
             <li><a href="portfolio.html">أعمالنا</a></li>
+
             <li class="dropdown has-mega">
               <a href="team.html" aria-haspopup="true" aria-expanded="false">
                 طاقم العمل
@@ -130,7 +148,9 @@
                 <div class="mega-grid">
                   <a href="#" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <div class="mega-icon-wrap"><i class="fas fa-user-tie"></i></div>
+                      <div class="mega-icon-wrap">
+                        <i class="fas fa-user-tie"></i>
+                      </div>
                     </div>
                     <div class="card-info">
                       <h4>اعضاء المجلس</h4>
@@ -161,21 +181,24 @@
                 </div>
               </div>
             </li>
+
             <li><a href="#clients-partners">شركاء النجاح</a></li>
             <li><a href="#contact">تواصل معنا</a></li>
           </ul>
         </div>
+
         <div class="nav-actions">
           <a href="#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
         </div>
       </div>
     </nav>
+
     <div class="overlay"></div>
   </header>
 
   <main id="main-content">
 
-    <!-- Hero -->
+    <!-- ========== Hero ========== -->
     <section id="hero" class="hero-inner">
       <div class="container hero-content">
         <div class="video-wrapper">
@@ -190,11 +213,12 @@
       </div>
     </section>
 
-    <!-- ===== Main Content ===== -->
+    <!-- ========== قسم الخدمات - ========== -->
+    <!-- ================= Main Content ================= -->
     <div class="container">
       <div class="main-layout">
 
-        <!-- ===== السايدبار ===== -->
+        <!-- ===== السايدبار على اليمين ===== -->
         <aside class="sidebar-side" aria-labelledby="filter-title">
           <div class="sidebar">
 
@@ -205,13 +229,12 @@
               </button>
             </div>
 
-            <!-- ✅ فلاتر تبويب: تأهيل لسوق العمل — data-sidebar="work" -->
+            <!-- فلاتر تبويب: تأهيل لسوق العمل -->
             <nav data-sidebar="work" class="sidebar-filters" aria-label="فلاتر تأهيل سوق العمل">
 
               <div class="filter-group">
-                <!-- ✅ إصلاح: أضفنا onclick لكل الأزرار -->
                 <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-web-dev"
-                  onclick="toggleFilterGroup(this)">
+                  >
                   <span>تطوير الويب</span>
                   <i class="fas fa-chevron-down" aria-hidden="true"></i>
                 </button>
@@ -228,9 +251,8 @@
               </div>
 
               <div class="filter-group">
-                <!-- ✅ إصلاح: حذف type="button" المكررة -->
                 <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-app-dev"
-                  onclick="toggleFilterGroup(this)">
+                  type="button">
                   <span>تطوير التطبيقات</span>
                   <i class="fas fa-chevron-down" aria-hidden="true"></i>
                 </button>
@@ -270,6 +292,7 @@
                 </div>
               </div>
 
+              <!-- فلتر التقييم -->
               <div class="filter-group filter-rating">
                 <h3 class="filter-rating-title">التقييم</h3>
                 <div class="filter-options">
@@ -281,7 +304,7 @@
                       <i class="fas fa-star" aria-hidden="true"></i>
                       <i class="fas fa-star" aria-hidden="true"></i>
                     </div>
-                    <input type="checkbox" name="rating-work" value="5">
+                    <input type="checkbox" name="rating" value="5">
                   </label>
                   <label class="filter-label" aria-label="تقييم 4 نجوم">
                     <div class="card-stars">
@@ -291,7 +314,7 @@
                       <i class="fas fa-star" aria-hidden="true"></i>
                       <i class="far fa-star" aria-hidden="true"></i>
                     </div>
-                    <input type="checkbox" name="rating-work" value="4">
+                    <input type="checkbox" name="rating" value="4">
                   </label>
                   <label class="filter-label" aria-label="تقييم 3 نجوم">
                     <div class="card-stars">
@@ -301,7 +324,7 @@
                       <i class="far fa-star" aria-hidden="true"></i>
                       <i class="far fa-star" aria-hidden="true"></i>
                     </div>
-                    <input type="checkbox" name="rating-work" value="3">
+                    <input type="checkbox" name="rating" value="3">
                   </label>
                   <label class="filter-label" aria-label="تقييم 2 نجوم">
                     <div class="card-stars">
@@ -311,7 +334,7 @@
                       <i class="far fa-star" aria-hidden="true"></i>
                       <i class="far fa-star" aria-hidden="true"></i>
                     </div>
-                    <input type="checkbox" name="rating-work" value="2">
+                    <input type="checkbox" name="rating" value="2">
                   </label>
                   <label class="filter-label" aria-label="تقييم نجمة واحدة">
                     <div class="card-stars">
@@ -321,15 +344,15 @@
                       <i class="far fa-star" aria-hidden="true"></i>
                       <i class="far fa-star" aria-hidden="true"></i>
                     </div>
-                    <input type="checkbox" name="rating-work" value="1">
+                    <input type="checkbox" name="rating" value="1">
                   </label>
                 </div>
               </div>
 
             </nav>
 
-            <!-- ✅ إصلاح: كان id="sidebar-digital" → الآن data-sidebar="digital" -->
-            <nav data-sidebar="digital" class="sidebar-filters hidden" aria-label="فلاتر الخدمة الرقمية">
+            <!-- فلاتر تبويب: خدمة رقمية -->
+            <nav id="sidebar-digital" class="sidebar-filters hidden" aria-label="فلاتر الخدمة الرقمية">
 
               <div class="filter-group">
                 <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-dig-admin"
@@ -373,6 +396,7 @@
                 </div>
               </div>
 
+              <!-- فلتر التقييم -->
               <div class="filter-group filter-rating">
                 <h3 class="filter-rating-title">التقييم</h3>
                 <div class="filter-options">
@@ -431,8 +455,8 @@
 
             </nav>
 
-            <!-- ✅ إصلاح: كان data-sidebar="digital" (مكرر!) → الآن data-sidebar="products" -->
-            <nav data-sidebar="products" class="sidebar-filters hidden" aria-label="فلاتر المنتجات الرقمية">
+            <!-- فلاتر تبويب: منتجات رقمية -->
+            <nav data-sidebar="digital" class="sidebar-filters hidden" aria-label="فلاتر المنتجات الرقمية">
 
               <div class="filter-group">
                 <button type="button" class="filter-group-toggle" aria-expanded="true" aria-controls="fg-prod-web"
@@ -490,6 +514,7 @@
                 </div>
               </div>
 
+              <!-- فلتر التقييم -->
               <div class="filter-group filter-rating">
                 <h3 class="filter-rating-title">التقييم</h3>
                 <div class="filter-options">
@@ -551,10 +576,10 @@
           </div>
         </aside>
 
-        <!-- ===== عمود البطاقات ===== -->
+        <!-- ===== عمود البطاقات على اليسار ===== -->
         <div class="cards-column">
 
-          <!-- ✅ التبويبات — data-tab يطابق data-sidebar و panel IDs -->
+          <!-- التبويبات فوق البطاقات مباشرة -->
           <nav class="tabs-row" role="tablist" aria-label="تصنيفات الخدمات">
             <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-work" id="tab-work"
               data-tab="work">
@@ -574,7 +599,8 @@
           <section class="cards-panel" id="panel-work" role="tabpanel" aria-labelledby="tab-work">
             <div class="cards-grid">
 
-              <article class="services-card services-card--work" data-category="web-dev" data-rating="5">
+              <!-- بطاقة تأهيل 1 -->
+              <article class="services-card services-card--work">
                 <div class="card-img-wrapper">
                   <img src="./public/images/serviceN.png" alt="تطوير مواقع الكتروني" loading="lazy">
                 </div>
@@ -582,74 +608,16 @@
                   <div class="card-meta">
                     <span class="card-label">تطوير مواقع الكتروني</span>
                     <a href="service-detail.html" class="card-details-link">
-                      التفاصيل <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                      التفاصيل
+                      <i class="fas fa-chevron-left" aria-hidden="true"></i>
                     </a>
                   </div>
                   <button class="btn-request-service" type="button">طلب الخدمة</button>
                 </div>
               </article>
 
-              <article class="services-card services-card--work" data-category="mobile-app" data-rating="5">
-                <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="تطوير التطبيقات" loading="lazy">
-                </div>
-                <div class="card-body">
-                  <div class="card-meta">
-                    <span class="card-label">تطوير التطبيقات</span>
-                    <a href="service-detail.html" class="card-details-link">
-                      التفاصيل <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <button class="btn-request-service" type="button">طلب الخدمة</button>
-                </div>
-              </article>
-
-              <article class="services-card services-card--work" data-category="social-media" data-rating="4">
-                <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="التسويق الإلكتروني" loading="lazy">
-                </div>
-                <div class="card-body">
-                  <div class="card-meta">
-                    <span class="card-label">التسويق الإلكتروني</span>
-                    <a href="service-detail.html" class="card-details-link">
-                      التفاصيل <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <button class="btn-request-service" type="button">طلب الخدمة</button>
-                </div>
-              </article>
-
-              <article class="services-card services-card--work" data-category="ecommerce" data-rating="5">
-                <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="المتاجر الإلكترونية" loading="lazy">
-                </div>
-                <div class="card-body">
-                  <div class="card-meta">
-                    <span class="card-label">المتاجر الإلكترونية</span>
-                    <a href="service-detail.html" class="card-details-link">
-                      التفاصيل <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <button class="btn-request-service" type="button">طلب الخدمة</button>
-                </div>
-              </article>
-
-              <article class="services-card services-card--work" data-category="freelance" data-rating="3">
-                <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="العمل الحر" loading="lazy">
-                </div>
-                <div class="card-body">
-                  <div class="card-meta">
-                    <span class="card-label">العمل الحر</span>
-                    <a href="service-detail.html" class="card-details-link">
-                      التفاصيل <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <button class="btn-request-service" type="button">طلب الخدمة</button>
-                </div>
-              </article>
-
-              <article class="services-card services-card--work" data-category="web-dev" data-rating="4">
+              <!-- بطاقة تأهيل 2 -->
+              <article class="services-card services-card--work">
                 <div class="card-img-wrapper">
                   <img src="./public/images/serviceN.png" alt="تطوير مواقع الكتروني" loading="lazy">
                 </div>
@@ -657,7 +625,76 @@
                   <div class="card-meta">
                     <span class="card-label">تطوير مواقع الكتروني</span>
                     <a href="service-detail.html" class="card-details-link">
-                      التفاصيل <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                      التفاصيل
+                      <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                  <button class="btn-request-service" type="button">طلب الخدمة</button>
+                </div>
+              </article>
+
+              <!-- بطاقة تأهيل 3 -->
+              <article class="services-card services-card--work">
+                <div class="card-img-wrapper">
+                  <img src="./public/images/serviceN.png" alt="تطوير مواقع الكتروني" loading="lazy">
+                </div>
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="card-label">تطوير مواقع الكتروني</span>
+                    <a href="service-detail.html" class="card-details-link">
+                      التفاصيل
+                      <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                  <button class="btn-request-service" type="button">طلب الخدمة</button>
+                </div>
+              </article>
+
+              <!-- بطاقة تأهيل 4 -->
+              <article class="services-card services-card--work">
+                <div class="card-img-wrapper">
+                  <img src="./public/images/serviceN.png" alt="تطوير مواقع الكتروني" loading="lazy">
+                </div>
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="card-label">تطوير مواقع الكتروني</span>
+                    <a href="service-detail.html" class="card-details-link">
+                      التفاصيل
+                      <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                  <button class="btn-request-service" type="button">طلب الخدمة</button>
+                </div>
+              </article>
+
+              <!-- بطاقة تأهيل 5 -->
+              <article class="services-card services-card--work">
+                <div class="card-img-wrapper">
+                  <img src="./public/images/serviceN.png" alt="تطوير مواقع الكتروني" loading="lazy">
+                </div>
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="card-label">تطوير مواقع الكتروني</span>
+                    <a href="service-detail.html" class="card-details-link">
+                      التفاصيل
+                      <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                  <button class="btn-request-service" type="button">طلب الخدمة</button>
+                </div>
+              </article>
+
+              <!-- بطاقة تأهيل 6 -->
+              <article class="services-card services-card--work">
+                <div class="card-img-wrapper">
+                  <img src="./public/images/serviceN.png" alt="تطوير مواقع الكتروني" loading="lazy">
+                </div>
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="card-label">تطوير مواقع الكتروني</span>
+                    <a href="service-detail.html" class="card-details-link">
+                      التفاصيل
+                      <i class="fas fa-chevron-left" aria-hidden="true"></i>
                     </a>
                   </div>
                   <button class="btn-request-service" type="button">طلب الخدمة</button>
@@ -671,147 +708,51 @@
           <section class="cards-panel hidden" id="panel-digital" role="tabpanel" aria-labelledby="tab-digital">
             <div class="cards-grid">
 
-              <article class="services-card services-card--digital" data-category="tech" data-rating="5">
+              <article class="services-card services-card--work">
                 <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="موقع تعريفي" loading="lazy">
+                  <img src="./public/images/serviceN.png" alt="تأهيل لسوق العمل الرقمي - تطوير الويب" loading="lazy">
                 </div>
                 <div class="card-body">
                   <div class="card-meta">
-                    <span class="card-label">موقع تعريفي</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
+                    <span class="card-label">تأهيل لسوق العمل الرقمي - تطوير الويب</span>
+                    <a href="service-detail.html" class="card-details-link">
+                      التفاصيل
+                      <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </a>
                   </div>
-                  <div class="card-footer-row">
-                    <div class="card-stars" aria-label="تقييم: 5 نجوم">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                    </div>
-                    <button class="btn-add-cart" type="button">
-                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
-                    </button>
-                  </div>
+                  <button class="btn-request-service" type="button">طلب الخدمة</button>
                 </div>
               </article>
 
-              <article class="services-card services-card--digital" data-category="tech" data-rating="4">
+              <article class="services-card services-card--work">
                 <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="موقع الكتروني" loading="lazy">
+                  <img src="./public/images/serviceN.png" alt="تأهيل لسوق العمل الرقمي - تطوير الويب" loading="lazy">
                 </div>
                 <div class="card-body">
                   <div class="card-meta">
-                    <span class="card-label">موقع الكتروني</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
+                    <span class="card-label">تأهيل لسوق العمل الرقمي - تطوير الويب</span>
+                    <a href="service-detail.html" class="card-details-link">
+                      التفاصيل
+                      <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </a>
                   </div>
-                  <div class="card-footer-row">
-                    <div class="card-stars" aria-label="تقييم: 4 نجوم">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    <button class="btn-add-cart" type="button">
-                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
-                    </button>
-                  </div>
+                  <button class="btn-request-service" type="button">طلب الخدمة</button>
                 </div>
               </article>
 
-              <article class="services-card services-card--digital" data-category="admin" data-rating="5">
+              <article class="services-card services-card--work">
                 <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="نظام اداري" loading="lazy">
+                  <img src="./public/images/serviceN.png" alt="تأهيل لسوق العمل الرقمي - تطوير الويب" loading="lazy">
                 </div>
                 <div class="card-body">
                   <div class="card-meta">
-                    <span class="card-label">نظام اداري</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
+                    <span class="card-label">تأهيل لسوق العمل الرقمي - تطوير الويب</span>
+                    <a href="service-detail.html" class="card-details-link">
+                      التفاصيل
+                      <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </a>
                   </div>
-                  <div class="card-footer-row">
-                    <div class="card-stars" aria-label="تقييم: 5 نجوم">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                    </div>
-                    <button class="btn-add-cart" type="button">
-                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="services-card services-card--digital" data-category="tech" data-rating="5">
-                <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="تطبيق جوال" loading="lazy">
-                </div>
-                <div class="card-body">
-                  <div class="card-meta">
-                    <span class="card-label">تطبيق جوال</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
-                  </div>
-                  <div class="card-footer-row">
-                    <div class="card-stars" aria-label="تقييم: 5 نجوم">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                    </div>
-                    <button class="btn-add-cart" type="button">
-                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="services-card services-card--digital" data-category="design" data-rating="4">
-                <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="حملة تسويقية رقمية" loading="lazy">
-                </div>
-                <div class="card-body">
-                  <div class="card-meta">
-                    <span class="card-label">حملة تسويقية رقمية</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
-                  </div>
-                  <div class="card-footer-row">
-                    <div class="card-stars" aria-label="تقييم: 4 نجوم">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    <button class="btn-add-cart" type="button">
-                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
-                    </button>
-                  </div>
-                </div>
-              </article>
-
-              <article class="services-card services-card--digital" data-category="design" data-rating="5">
-                <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="تصميم هوية بصرية" loading="lazy">
-                </div>
-                <div class="card-body">
-                  <div class="card-meta">
-                    <span class="card-label">تصميم هوية بصرية</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
-                  </div>
-                  <div class="card-footer-row">
-                    <div class="card-stars" aria-label="تقييم: 5 نجوم">
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                      <i class="fas fa-star" aria-hidden="true"></i>
-                    </div>
-                    <button class="btn-add-cart" type="button">
-                      <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف الى السلة
-                    </button>
-                  </div>
+                  <button class="btn-request-service" type="button">طلب الخدمة</button>
                 </div>
               </article>
 
@@ -822,14 +763,18 @@
           <section class="cards-panel hidden" id="panel-products" role="tabpanel" aria-labelledby="tab-products">
             <div class="cards-grid">
 
-              <article class="services-card services-card--product" data-category="web" data-rating="5">
+              <!-- بطاقة منتج 1 -->
+              <article class="services-card services-card--product">
                 <div class="card-img-wrapper">
                   <img src="./public/images/serviceN.png" alt="نظام اداري" loading="lazy">
                 </div>
                 <div class="card-body">
                   <div class="card-meta">
                     <span class="card-label">نظام اداري</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
+                    <span class="card-price">
+                      2000
+                      <span class="price-currency">﷼</span>
+                    </span>
                   </div>
                   <div class="card-footer-row">
                     <div class="card-stars" aria-label="تقييم: 5 نجوم">
@@ -844,14 +789,18 @@
                 </div>
               </article>
 
-              <article class="services-card services-card--product" data-category="web" data-rating="4">
+              <!-- بطاقة منتج 2 -->
+              <article class="services-card services-card--product">
                 <div class="card-img-wrapper">
                   <img src="./public/images/serviceN.png" alt="موقع الكتروني" loading="lazy">
                 </div>
                 <div class="card-body">
                   <div class="card-meta">
                     <span class="card-label">موقع الكتروني</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
+                    <span class="card-price">
+                      2000
+                      <span class="price-currency">﷼</span>
+                    </span>
                   </div>
                   <div class="card-footer-row">
                     <div class="card-stars" aria-label="تقييم: 4 نجوم">
@@ -866,14 +815,18 @@
                 </div>
               </article>
 
-              <article class="services-card services-card--product" data-category="web" data-rating="5">
+              <!-- بطاقة منتج 3 -->
+              <article class="services-card services-card--product">
                 <div class="card-img-wrapper">
                   <img src="./public/images/serviceN.png" alt="موقع تعريفي" loading="lazy">
                 </div>
                 <div class="card-body">
                   <div class="card-meta">
                     <span class="card-label">موقع تعريفي</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
+                    <span class="card-price">
+                      2000
+                      <span class="price-currency">﷼</span>
+                    </span>
                   </div>
                   <div class="card-footer-row">
                     <div class="card-stars" aria-label="تقييم: 5 نجوم">
@@ -888,14 +841,18 @@
                 </div>
               </article>
 
-              <article class="services-card services-card--product" data-category="apps" data-rating="5">
+              <!-- بطاقة منتج 4 -->
+              <article class="services-card services-card--product">
                 <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="نظام اداري متكامل" loading="lazy">
+                  <img src="./public/images/serviceN.png" alt="نظام اداري" loading="lazy">
                 </div>
                 <div class="card-body">
                   <div class="card-meta">
-                    <span class="card-label">نظام اداري متكامل</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
+                    <span class="card-label">نظام اداري</span>
+                    <span class="card-price">
+                      2000
+                      <span class="price-currency">﷼</span>
+                    </span>
                   </div>
                   <div class="card-footer-row">
                     <div class="card-stars" aria-label="تقييم: 5 نجوم">
@@ -910,14 +867,18 @@
                 </div>
               </article>
 
-              <article class="services-card services-card--product" data-category="marketing" data-rating="5">
+              <!-- بطاقة منتج 5 -->
+              <article class="services-card services-card--product">
                 <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="موقع الكتروني متقدم" loading="lazy">
+                  <img src="./public/images/serviceN.png" alt="موقع الكتروني" loading="lazy">
                 </div>
                 <div class="card-body">
                   <div class="card-meta">
-                    <span class="card-label">موقع الكتروني متقدم</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
+                    <span class="card-label">موقع الكتروني</span>
+                    <span class="card-price">
+                      2000
+                      <span class="price-currency">﷼</span>
+                    </span>
                   </div>
                   <div class="card-footer-row">
                     <div class="card-stars" aria-label="تقييم: 5 نجوم">
@@ -932,14 +893,18 @@
                 </div>
               </article>
 
-              <article class="services-card services-card--product" data-category="license" data-rating="5">
+              <!-- بطاقة منتج 6 -->
+              <article class="services-card services-card--product">
                 <div class="card-img-wrapper">
-                  <img src="./public/images/serviceN.png" alt="حل سحابي متكامل" loading="lazy">
+                  <img src="./public/images/serviceN.png" alt="موقع تعريفي" loading="lazy">
                 </div>
                 <div class="card-body">
                   <div class="card-meta">
-                    <span class="card-label">حل سحابي متكامل</span>
-                    <span class="card-price">2000 <span class="price-currency">﷼</span></span>
+                    <span class="card-label">موقع تعريفي</span>
+                    <span class="card-price">
+                      2000
+                      <span class="price-currency">﷼</span>
+                    </span>
                   </div>
                   <div class="card-footer-row">
                     <div class="card-stars" aria-label="تقييم: 5 نجوم">
@@ -957,23 +922,26 @@
             </div>
           </section>
 
-          <!-- Pagination -->
+          <!-- ===== Pagination ===== -->
           <nav class="pagination" aria-label="التنقل بين الصفحات">
-            <button class="pagination-btn pagination-prev" type="button" aria-label="الصفحة السابقة">السابق</button>
-            <button class="pagination-btn pagination-active" type="button" aria-current="page" aria-label="الصفحة 1">1</button>
-            <button class="pagination-btn" type="button" aria-label="الصفحة 2">2</button>
-            <button class="pagination-btn" type="button" aria-label="الصفحة 3">3</button>
-            <button class="pagination-btn" type="button" aria-label="الصفحة 4">4</button>
-            <button class="pagination-btn" type="button" aria-label="الصفحة 5">5</button>
-            <button class="pagination-btn" type="button" aria-label="الصفحة 6">6</button>
-            <button class="pagination-btn" type="button" aria-label="الصفحة 7">7</button>
-            <button class="pagination-btn pagination-next" type="button" aria-label="الصفحة التالية">التالي</button>
+            <button class="pagination-btn pagination-active" aria-current="page" aria-label="الصفحة 1">1</button>
+            <button class="pagination-btn" aria-label="الصفحة 2">2</button>
+            <button class="pagination-btn" aria-label="الصفحة 3">3</button>
+            <button class="pagination-btn" aria-label="الصفحة 7">7</button>
+            <button class="pagination-btn" aria-label="الصفحة 4">4</button>
+            <button class="pagination-btn" aria-label="الصفحة 5">5</button>
+            <button class="pagination-btn" aria-label="الصفحة 6">6</button>
+            <button class="pagination-btn pagination-next" aria-label="الصفحة التالية">التالي</button>
           </nav>
 
         </div>
+        <!-- نهاية cards-column -->
+
       </div>
+      <!-- نهاية main-layout -->
     </div>
   </main>
+  <!-- نهاية main-layout -->
 
   <!--=========== Footer ===========-->
   <footer class="site-footer">
@@ -984,6 +952,7 @@
         </div>
         <p class="brand-text">شركة سعودية متخصصة في الحلول التقنية والتحول الرقمي.</p>
       </div>
+
       <div class="footer-column">
         <h4>نقطة صعود</h4>
         <ul>
@@ -992,6 +961,7 @@
           <li><a href="#">أعمالنا</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h4>روابط سريعة</h4>
         <ul>
@@ -1000,6 +970,7 @@
           <li><a href="#">الفرق</a></li>
         </ul>
       </div>
+
       <div class="footer-column contact-col">
         <h4>تواصل معنا</h4>
         <p class="contact-item">050000000 <i class="fas fa-phone-alt"></i></p>
@@ -1013,6 +984,7 @@
         </div>
       </div>
     </div>
+
     <div class="footer-bottom-bar">
       <p>حقوق النشر © 2024 نقطة صعود | تم بواسطة نقطة صعود</p>
     </div>
@@ -1027,6 +999,7 @@
       <button class="auth-close" onclick="closeAuth()" aria-label="إغلاق نافذة تسجيل الدخول">
         <i class="fas fa-times" aria-hidden="true"></i>
       </button>
+
       <div class="auth-brand">
         <div class="auth-brand-logo" aria-hidden="true">
           <img src="./public/images/logo-nuqta.svg" alt="شعار نقطة صعود" class="auth-logo-img" />
@@ -1035,13 +1008,19 @@
           <p class="auth-brand-sub">نقطة بداية .. تقودك نحو الصعود</p>
         </div>
       </div>
+
       <div class="auth-content">
         <div class="auth-tabs" role="tablist">
           <button id="tab-login" class="auth-tab active" role="tab" aria-selected="true" aria-controls="panel-login"
-            onclick="switchTab('login', this)">تسجيل الدخول</button>
+            onclick="switchTab('login', this)">
+            تسجيل الدخول
+          </button>
           <button id="tab-register" class="auth-tab" role="tab" aria-selected="false" aria-controls="panel-register"
-            onclick="switchTab('register', this)">حساب جديد</button>
+            onclick="switchTab('register', this)">
+            حساب جديد
+          </button>
         </div>
+
         <section class="auth-panel active" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
           <h3 class="auth-title" id="auth-main-title">أهلاً بعودتك</h3>
           <p class="auth-subtitle">أدخل بياناتك للوصول إلى حسابك</p>
@@ -1050,14 +1029,16 @@
               <label for="login-email">البريد الإلكتروني أو اسم المستخدم</label>
               <div class="input-wrap">
                 <i class="fas fa-envelope" aria-hidden="true"></i>
-                <input type="text" id="login-email" name="username" placeholder="example@email.com" required autocomplete="username" />
+                <input type="text" id="login-email" name="username" placeholder="example@email.com" required
+                  autocomplete="username" />
               </div>
             </div>
             <div class="form-group">
               <label for="login-password">كلمة المرور</label>
               <div class="input-wrap">
                 <i class="fas fa-lock" aria-hidden="true"></i>
-                <input type="password" id="login-password" name="password" placeholder="••••••••" required autocomplete="current-password" />
+                <input type="password" id="login-password" name="password" placeholder="••••••••" required
+                  autocomplete="current-password" />
               </div>
             </div>
             <div class="form-meta">
@@ -1077,9 +1058,12 @@
           </form>
           <div class="auth-switch">
             <span>ليس لديك حساب؟</span>
-            <button type="button" onclick="switchTab('register', document.getElementById('tab-register'))">أنشئ حساباً الآن</button>
+            <button type="button" onclick="switchTab('register', document.getElementById('tab-register'))">
+              أنشئ حساباً الآن
+            </button>
           </div>
         </section>
+
         <section class="auth-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register" hidden>
           <h3 class="auth-title">إنشاء حساب جديد</h3>
           <p class="auth-subtitle">انضم إلى نقطة صعود وابدأ رحلتك</p>
@@ -1089,14 +1073,16 @@
                 <label for="reg-fname">الاسم الأول</label>
                 <div class="input-wrap">
                   <i class="fas fa-user" aria-hidden="true"></i>
-                  <input type="text" id="reg-fname" name="fname" placeholder="أحمد" required autocomplete="given-name" />
+                  <input type="text" id="reg-fname" name="fname" placeholder="أحمد" required
+                    autocomplete="given-name" />
                 </div>
               </div>
               <div class="form-group">
                 <label for="reg-lname">الاسم الأخير</label>
                 <div class="input-wrap">
                   <i class="fas fa-user" aria-hidden="true"></i>
-                  <input type="text" id="reg-lname" name="lname" placeholder="هزازي" required autocomplete="family-name" />
+                  <input type="text" id="reg-lname" name="lname" placeholder="هزازي" required
+                    autocomplete="family-name" />
                 </div>
               </div>
             </div>
@@ -1104,7 +1090,8 @@
               <label for="reg-email">البريد الإلكتروني</label>
               <div class="input-wrap">
                 <i class="fas fa-envelope" aria-hidden="true"></i>
-                <input type="email" id="reg-email" name="email" placeholder="example@email.com" required autocomplete="email" />
+                <input type="email" id="reg-email" name="email" placeholder="example@email.com" required
+                  autocomplete="email" />
               </div>
             </div>
             <div class="form-group">
@@ -1119,14 +1106,16 @@
                 <label for="reg-password">كلمة المرور</label>
                 <div class="input-wrap">
                   <i class="fas fa-lock" aria-hidden="true"></i>
-                  <input type="password" id="reg-password" name="new-password" placeholder="••••••••" required autocomplete="new-password" />
+                  <input type="password" id="reg-password" name="new-password" placeholder="••••••••" required
+                    autocomplete="new-password" />
                 </div>
               </div>
               <div class="form-group">
                 <label for="reg-confirm">تأكيد كلمة المرور</label>
                 <div class="input-wrap">
                   <i class="fas fa-lock" aria-hidden="true"></i>
-                  <input type="password" id="reg-confirm" name="confirm-password" placeholder="••••••••" required autocomplete="new-password" />
+                  <input type="password" id="reg-confirm" name="confirm-password" placeholder="••••••••" required
+                    autocomplete="new-password" />
                 </div>
               </div>
             </div>
@@ -1137,7 +1126,9 @@
           </form>
           <div class="auth-switch">
             <span>لديك حساب بالفعل؟</span>
-            <button type="button" onclick="switchTab('login', document.getElementById('tab-login'))">سجّل دخولك</button>
+            <button type="button" onclick="switchTab('login', document.getElementById('tab-login'))">
+              سجّل دخولك
+            </button>
           </div>
         </section>
       </div>
