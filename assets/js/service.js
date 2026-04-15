@@ -27,8 +27,8 @@ el.classList.add('hidden');
 }
 });
 
+// إظهار لوحة التبويب الأولى (العمل) وإخفاء الباقي
 
-/ إخفاء جميع لوحات التبويب باستثناء الأولى
 const panels = ['panel-work', 'panel-digital', 'panel-products'];
 
 panels.forEach(id => {
