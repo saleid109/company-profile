@@ -581,22 +581,22 @@
 
           <!-- التبويبات فوق البطاقات مباشرة -->
           <nav class="tabs-row" role="tablist" aria-label="تصنيفات الخدمات">
-            <button data-tab="work" class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-work" id="tab-work"
+            <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-work" id="tab-work"
               onclick="switchServiceTab('work', this)">
               تأهيل لسوق العمل
             </button>
-            <button data-tab="digital" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-digital" id="tab-digital"
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-digital" id="tab-digital"
               onclick="switchServiceTab('digital', this)">
               خدمة رقمية
             </button>
-            <button data-tab="products" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-products" id="tab-products"
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-products" id="tab-products"
               onclick="switchServiceTab('products', this)">
               منتجات رقمية
             </button>
           </nav>
 
           <!-- ===== لوحة: تأهيل لسوق العمل ===== -->
-          <section data-panel="work" class="cards-panel" id="panel-work" role="tabpanel" aria-labelledby="tab-work">
+          <section class="cards-panel" id="panel-work" role="tabpanel" aria-labelledby="tab-work">
             <div class="cards-grid">
 
               <!-- بطاقة تأهيل 1 -->
@@ -705,7 +705,7 @@
           </section>
 
           <!-- ===== لوحة: خدمة رقمية ===== -->
-          <section data-panel="digital" class="cards-panel hidden" id="panel-digital" role="tabpanel" aria-labelledby="tab-digital">
+          <section class="cards-panel hidden" id="panel-digital" role="tabpanel" aria-labelledby="tab-digital">
             <div class="cards-grid">
 
               <article class="services-card services-card--work">
@@ -760,7 +760,7 @@
           </section>
 
           <!-- ===== لوحة: منتجات رقمية ===== -->
-          <section data-panel="digital" class="cards-panel hidden"id="panel-products" role="tabpanel" aria-labelledby="tab-products">
+          <section class="cards-panel hidden" id="panel-products" role="tabpanel" aria-labelledby="tab-products">
             <div class="cards-grid">
 
               <!-- بطاقة منتج 1 -->
