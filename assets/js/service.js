@@ -44,7 +44,7 @@ const sidebars = document.querySelectorAll(".sidebar-filters");
 const container = document.getElementById("services-container");
 
 /**
- * وظيفة إنشاء كود HTML للبطاقة بناءً على التصميم الجديد
+ * وظيفة إنشاء بطاقة خدمة واحدة   
  * @param {Object} service 
  * @returns {string} HTML string
  */
