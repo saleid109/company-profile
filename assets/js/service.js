@@ -71,18 +71,24 @@ function renderServices(type) {
 // تبديل السايدبار حسب التبويب
 // ============================================
 function updateSidebar(type) {
-    const allGroups = document.querySelectorAll(".filter-group, .sidebar-filters");
-    const showIds   = sidebarConfig[type] || [];
+    // قائمة ثابتة بكل الـ ids — أضمن من querySelectorAll
+    const allFilterIds = [
+        "filter-group-work",
+        "filter-group-web",
+        "filter-group-apps",
+        "filter-group-marketing",
+        "filter-group-licenses",
+        "filter-group-rating"
+    ];
 
-    allGroups.forEach(group => {
-        // إخفاء كل الفلاتر أولاً
-        group.classList.add("hidden");
+    // إخفاء الكل أولاً
+    allFilterIds.forEach(id => {
+        document.getElementById(id)?.classList.add("hidden");
     });
 
-    // إظهار الفلاتر المطلوبة فقط
-    showIds.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.classList.remove("hidden");
+    // إظهار المطلوب فقط
+    (sidebarConfig[type] || []).forEach(id => {
+        document.getElementById(id)?.classList.remove("hidden");
     });
 }
 
