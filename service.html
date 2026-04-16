@@ -246,73 +246,143 @@
         </div>
 
         <!-- السايدبار (اليمين) -->
-        <aside class="sidebar-side">
-          <div class="sidebar">
-            <div class="sidebar-header">
-              <h2 class="sidebar-title">تصفية حسب</h2>
-              <button class="btn-clear-filters">مسح الكل</button>
-            </div>
+ <aside class="sidebar-side">
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2 class="sidebar-title">تصفية حسب</h2>
+      <button class="btn-clear-filters">مسح الكل</button>
+    </div>
 
-            <div class="filter-group">
-              <button class="filter-group-toggle">تطوير الويب <i class="fas fa-chevron-down"></i></button>
-            </div>
-            <div class="filter-group">
-              <button class="filter-group-toggle">تطوير التطبيقات <i class="fas fa-chevron-down"></i></button>
-            </div>
-            <div class="filter-group">
-              <button class="filter-group-toggle">التسويق <i class="fas fa-chevron-down"></i></button>
-            </div>
-            <div class="filter-group">
-              <button class="filter-group-toggle">التراخيص <i class="fas fa-chevron-down"></i></button>
-            </div>
+    <!-- فلتر تطوير الويب -->
+    <div class="filter-group">
+      <button class="filter-group-toggle">
+        تطوير الويب
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="filter-content">
+        <div class="filter-options">
+          <label class="filter-option">
+            <input type="checkbox" class="filter-cb">
+            <span>React</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" class="filter-cb">
+            <span>Vue.js</span>
+          </label>
+        </div>
+      </div>
+    </div>
 
-            <div class="filter-group">
-              <h3 class="sidebar-title" style="font-size: 16px; margin-bottom: 15px;">التقييم</h3>
-              <div class="filter-options">
-                <!-- 5 Stars -->
-                <div class="rating-filter-item">
-                  <div class="rating-stars-sidebar">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                      class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                  <input type="checkbox" class="rating-checkbox">
-                </div>
-                <!-- 4 Stars -->
-                <div class="rating-filter-item">
-                  <div class="rating-stars-sidebar">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                      class="fas fa-star"></i><i class="far fa-star"></i>
-                  </div>
-                  <input type="checkbox" class="rating-checkbox">
-                </div>
-                <!-- 3 Stars -->
-                <div class="rating-filter-item">
-                  <div class="rating-stars-sidebar">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                      class="far fa-star"></i><i class="far fa-star"></i>
-                  </div>
-                  <input type="checkbox" class="rating-checkbox">
-                </div>
-                <!-- 2 Stars -->
-                <div class="rating-filter-item">
-                  <div class="rating-stars-sidebar">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i
-                      class="far fa-star"></i><i class="far fa-star"></i>
-                  </div>
-                  <input type="checkbox" class="rating-checkbox">
-                </div>
-                <!-- 1 Star -->
-                <div class="rating-filter-item">
-                  <div class="rating-stars-sidebar">
-                    <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                      class="far fa-star"></i><i class="far fa-star"></i>
-                  </div>
-                  <input type="checkbox" class="rating-checkbox">
-                </div>
-              </div>
-            </div>
+    <!-- فلتر تطوير التطبيقات -->
+    <div class="filter-group">
+      <button class="filter-group-toggle">
+        تطوير التطبيقات
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="filter-content">
+        <div class="filter-options">
+          <label class="filter-option">
+            <input type="checkbox" class="filter-cb">
+            <span>iOS</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" class="filter-cb">
+            <span>Android</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- فلتر التسويق -->
+    <div class="filter-group">
+      <button class="filter-group-toggle">
+        التسويق
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="filter-content"></div>
+    </div>
+
+    <!-- فلتر التراخيص -->
+    <div class="filter-group">
+      <button class="filter-group-toggle">
+        التراخيص
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="filter-content"></div>
+    </div>
+
+    <!-- التقييم بالنجوم -->
+    <div class="filter-group rating-section">
+      <h3 class="sidebar-title" 
+          style="font-size:15px; margin-bottom:12px;">
+        التقييم
+      </h3>
+      <div class="filter-options">
+
+        <!-- 5 نجوم -->
+        <div class="rating-filter-item">
+          <div class="rating-stars-sidebar">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
           </div>
-        </aside>
+          <input type="checkbox" class="rating-checkbox" value="5">
+        </div>
+
+        <!-- 4 نجوم -->
+        <div class="rating-filter-item">
+          <div class="rating-stars-sidebar">
+            <i class="far fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <input type="checkbox" class="rating-checkbox" value="4">
+        </div>
+
+        <!-- 3 نجوم -->
+        <div class="rating-filter-item">
+          <div class="rating-stars-sidebar">
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <input type="checkbox" class="rating-checkbox" value="3">
+        </div>
+
+        <!-- 2 نجوم -->
+        <div class="rating-filter-item">
+          <div class="rating-stars-sidebar">
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <input type="checkbox" class="rating-checkbox" value="2">
+        </div>
+
+        <!-- 1 نجمة -->
+        <div class="rating-filter-item">
+          <div class="rating-stars-sidebar">
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <input type="checkbox" class="rating-checkbox" value="1">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</aside>
 
       </div>
     </div>
