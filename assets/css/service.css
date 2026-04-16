@@ -213,18 +213,14 @@
     color: var(--color-text);
     text-align: right; /* مهم RTL */
 }
-
 .card-footer-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 5px;
 }
 
 .card-stars {
-    display: flex;
-    gap: 2px;
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-size: 14px;
 }
 
@@ -237,12 +233,12 @@
 .card-price {
     font-size: 18px;
     font-weight: 800;
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .price-currency {
     font-size: 14px;
-    color: var(--color-accent); /* Golden currency icon as in image */
+    color: var(--color-primary); /* Golden currency icon as in image */
 }
 
 .btn-add-cart {
