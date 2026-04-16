@@ -65,6 +65,7 @@
     background: var(--color-white);
     border-radius: 12px;
     overflow: hidden;
+    padding: 20px;
 }
 
 .sidebar-header {
