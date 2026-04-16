@@ -170,35 +170,35 @@
 
 .services-card {
     background: var(--color-white);
-    border-radius: 12px;
-    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    gap: 12px;
     transition: var(--transition);
-    position: relative;
-    overflow: hidden;
 }
 
 .services-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 .card-img-wrapper {
     width: 100%;
-    background: #f8f9fb;
-    border-radius: 8px;
-    aspect-ratio: 1 / 1;
+    height: 160px; /* بدل aspect-ratio */
+    background: #f7f7f7;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 15px;
 }
 
 .card-img-wrapper img {
-    max-width: 100%;
+    max-width: 80px;
     max-height: 100%;
     object-fit: contain;
+    opacity: 0.8;
 }
 
 .card-body {
@@ -208,10 +208,10 @@
 }
 
 .card-label {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
-    color: #444;
-    text-align: center;
+    color: var(--color-text);
+    text-align: right; /* مهم RTL */
 }
 
 .card-footer-row {
