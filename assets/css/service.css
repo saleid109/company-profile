@@ -174,22 +174,13 @@
     max-height: 0;
     transition: max-height 0.3s ease;
 }
-
 .filter-content.open {
     max-height: 300px;
 }
-
 .chevron {
     transition: transform 0.25s;
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-right: 2px solid #333;
-    border-bottom: 2px solid #333;
-    transform: rotate(45deg);
-    
 }
-
 .chevron.open {
     transform: rotate(180deg);
 }
