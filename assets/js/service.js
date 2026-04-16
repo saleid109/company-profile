@@ -39,10 +39,59 @@ const services = [
 ];
 
 // عناصر الـ DOM
+// عناصر الـ DOM
 const tabs = document.querySelectorAll(".tab-btn");
-const sidebars = document.querySelectorAll(".sidebar-filters");
 const container = document.getElementById("services-container");
 
+/**
+ * وظيفة تبديل محتوى السايدبار بناءً على التبويب النشط
+ * @param {string} target 
+ */
+function updateSidebarFilters(target) {
+    // جلب حاويات الفلاتر المختلفة في السايدبار
+    const workFilters = document.getElementById("filter-group-work");
+    const digitalFilters = document.getElementById("filter-group-digital");
+
+    if (!workFilters || !digitalFilters) return;
+
+    if (target === "work") {
+        // إظهار فلاتر التأهيل وإخفاء فلاتر الخدمات الرقمية
+        workFilters.classList.remove("hidden");
+        digitalFilters.classList.add("hidden");
+    } else {
+        // إظهار فلاتر الخدمات/المنتجات الرقمية وإخفاء فلاتر التأهيل
+        workFilters.classList.add("hidden");
+        digitalFilters.classList.remove("hidden");
+    }
+}
+
+// تعديل مستمعي الأحداث للتبويبات
+tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        const target = tab.dataset.tab; // 'work', 'digital', أو 'products'
+
+        // 1. تحديث حالة الأزرار (Active State)
+        tabs.forEach((t) => {
+            t.classList.remove("active");
+            t.setAttribute("aria-selected", "false");
+        });
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+
+        // 2. تحديث الفلاتر في السايدبار (المنطق الجديد)
+        updateSidebarFilters(target);
+
+        // 3. إعادة رندر البطاقات في المحتوى الرئيسي
+        renderServices(target);
+    });
+});
+
+// العرض الأولي عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", () => {
+    // نفترض أن التبويب الافتراضي هو 'work'
+    renderServices("work");
+    updateSidebarFilters("work");
+});
 /**
  * وظيفة إنشاء بطاقة خدمة واحدة   
  * @param {Object} service 
