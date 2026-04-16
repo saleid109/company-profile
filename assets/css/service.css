@@ -130,7 +130,7 @@
 .rating-stars-sidebar {
     display: flex;
     gap: 4px;
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-size: 18px;
 }
 
@@ -294,7 +294,7 @@
 .pagination-nav-text {
     background: none;
     border: none;
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-weight: 700;
     cursor: pointer;
     font-family: var(--font-main);
