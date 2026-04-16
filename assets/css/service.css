@@ -27,26 +27,28 @@
 }
 
 .tab-btn {
-    padding: 12px 30px;
-    border: 1.5px solid var(--color-primary);
+    padding: 10px 40px;
+    border: 1.5px solid var(--color-secondary);
     background: var(--color-white);
     border-radius: 50px; /* Capsule shape */
     cursor: pointer;
     font-family: var(--font-main);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     transition: var(--transition);
 }
 
 .tab-btn.active {
-    background: var(--color-primary);
+    background: var(--color-secondary);
     color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(222, 220, 215, 0.3);
 }
 
 
 .tab-btn:hover:not(.active) {
-    background: rgba(255, 204, 53, 0.1);
+    background: var(--color-secondary);
+    color: var(--color-white);
 }
 
 /* =========================================
@@ -242,17 +244,18 @@
 }
 
 .btn-add-cart {
-    width: 100%;
-    background: var(--color-primary);
-    color: white;
+    background: var(--color-secondary);
+    color: #fff;
     border: none;
-    padding: 10px;
-    border-radius: 20px;
+    padding: 12px;
+    border-radius: 30px;
     font-weight: 700;
-    font-family: var(--font-main);
     cursor: pointer;
-    margin-top: 10px;
-    font-size: 14px;
+    transition: var(--transition);
+}
+
+.btn-add-cart:hover {
+    background: var(--color-navy-light);
 }
 
 /* =========================================
