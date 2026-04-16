@@ -44,12 +44,13 @@
     color: var(--color-white);
 }
 
+
 .tab-btn:hover:not(.active) {
-    background: #f0f4ff;
+    background: rgba(255, 204, 53, 0.1);
 }
 
 /* =========================================
-   Sidebar & Filters
+    Sidebar & Filters
    ========================================= */
 .sidebar-side {
     width: 300px;
@@ -159,7 +160,7 @@
 }
 
 /* =========================================
-   Cards Grid & Service Cards
+    Cards Grid & Service Cards
    ========================================= */
 .cards-grid {
     display: grid;
@@ -176,10 +177,11 @@
     padding: 15px;
     transition: var(--transition);
     position: relative;
+    overflow: hidden;
 }
 
 .services-card:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
 }
 
 .card-img-wrapper {
@@ -194,8 +196,9 @@
 }
 
 .card-img-wrapper img {
-    max-width: 60%;
-    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .card-body {
