@@ -99,16 +99,17 @@
 .filter-group-toggle {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* هذا يوزع النص والسهم على الأطراف */
     align-items: center;
     background: none;
     border: none;
-    padding: 10px 0;
+    padding: 12px 5px; /* أضفنا مسافة بسيطة من الجوانب */
     font-size: 16px;
     font-weight: 700;
     color: #333;
     cursor: pointer;
     font-family: var(--font-main);
+    text-align: right; /* لضمان محاذاة النص لليمين في العربية */
 }
 
 .filter-options {
