@@ -122,3 +122,4 @@ tabs.forEach((tab) => {
 document.addEventListener("DOMContentLoaded", () => {
     renderServices("work");
 });
+
