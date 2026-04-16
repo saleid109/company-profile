@@ -126,33 +126,28 @@
 .rating-filter-item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    /* row تجعل العناصر تتبع ترتيب الـ HTML (الشيك بوكس ثم النجوم) */
+    flex-direction: row; 
+    gap: 12px; /* مسافة بين الشيك بوكس والنجوم */
+    padding: 8px 0;
     cursor: pointer;
 }
 
-/* ترتيب النجوم RTL */
+/* لضمان بقاء النجوم بجانب بعضها وعدم انعكاس ترتيبها الداخلي */
 .rating-stars-sidebar {
     display: flex;
     gap: 4px;
-    color: var(--color-primary);
-    font-size: 18px;
-    flex-direction: row-reverse;
-    /* ← الإصلاح */
+    color: #FFB800; /* لون النجوم الذهبي */
+    /* نلغي أي row-reverse قديم كان موجوداً */
+    flex-direction: row; 
 }
 
-/* الـ checkbox المخصص */
+/* تنسيق الشيك بوكس ليظهر بشكل نظيف */
 .rating-checkbox {
     width: 18px;
     height: 18px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    appearance: none;
-    -webkit-appearance: none;
     cursor: pointer;
-    position: relative;
-    transition: all 0.2s;
-    background: white;
+    accent-color: var(--color-secondary); /* لتغيير لون الشيك بوكس عند التفعيل */
 }
 
 .rating-checkbox:checked {
