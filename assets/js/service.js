@@ -31,7 +31,13 @@ const container = document.getElementById("services-container");
 // إنشاء بطاقة خدمة
 // ============================================
 function createCard(service) {
-    const hasPrice = service.price !== null;
+    const isWork = service.type === 'work';
+    const hasPrice = !isWork && service.price !== null;
+
+    const stars = [1,2,3,4,5].map(i =>
+        `<i class="${i <= service.rating ? 'fas' : 'far'} fa-star"></i>`
+    ).join('');
+
     return `
         <article class="services-card">
             <div class="card-img-wrapper">
@@ -39,23 +45,25 @@ function createCard(service) {
             </div>
             <div class="card-body">
                 <div class="card-label">${service.title}</div>
+
                 <div class="card-footer-row">
-                    <div class="card-stars">
-                        ${[1,2,3,4,5].map(i =>
-                            `<i class="${i <= service.rating ? 'fas' : 'far'} fa-star"></i>`
-                        ).join('')}
-                    </div>
+                    <div class="card-stars">${stars}</div>
                     ${hasPrice ? `
                     <div class="card-price-wrap">
-                        <span class="card-price">${service.price}</span>
                         <span class="price-currency"><i class="fas fa-coins"></i></span>
+                        <span class="card-price">${service.price}</span>
                     </div>` : ''}
                 </div>
-                <button class="btn-add-cart" type="button">أضف إلى السلة</button>
+
+                <div class="card-divider"></div>
+
+                <button class="btn-add-cart" type="button">
+                    ${isWork ? 'طلب الخدمة' : 'أضف إلى السلة'}
+                </button>
+                <a href="/service/${service.id}" class="card-details-link">التفاصيل &rsaquo;</a>
             </div>
         </article>`;
 }
-
 // ============================================
 // عرض الخدمات
 // ============================================
