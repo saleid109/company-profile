@@ -142,8 +142,8 @@ tabs.forEach(tab => {
 // ============================================
 // العرض الأولي — بدون DOMContentLoaded
 // ============================================
-// ضع هذا الـ script قبل إغلاق </body> مباشرةً
 const activeTab = document.querySelector(".tab-btn.active");
 const initialType = activeTab?.dataset.tab || "work";
 updateSidebar(initialType);
 renderServices(initialType);
+
