@@ -287,7 +287,7 @@
 }
 
 /* =========================================
-   Pagination
+    Pagination
    ========================================= */
 .pagination {
     display: flex;
@@ -328,8 +328,29 @@
     font-size: 16px;
 }
 
+.card-divider {
+    height: 1px;
+    background: #f0f0f0;
+    margin: 4px 0;
+}
+
+.card-details-link {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-top: 4px;
+    transition: opacity 0.2s;
+}
+
+.card-details-link:hover {
+    opacity: 0.7;
+}
+
 /* =========================================
-   Utilities
+    Utilities
    ========================================= */
 .hidden {
     display: none !important;
