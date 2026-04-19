@@ -48,12 +48,12 @@ function createCard(service) {
 
                 <div class="card-footer-row">
                     <div class="card-stars">${stars}</div>
-                    // في createCard
-${hasPrice ? `
-<div class="card-price-wrap">
-    <span class="card-price">${service.price}</span>
-    <span class="price-currency">&#65020;</span>
-</div>` : ''}
+                    ${hasPrice ? `
+                    <div class="card-price-wrap">
+                        <span class="price-currency" style="font-size:15px; font-weight:800;">&#65020;</span>
+<span class="card-price">${service.price}</span>
+                    </div>` : ''}
+                </div>
 
                 <div class="card-divider"></div>
 
