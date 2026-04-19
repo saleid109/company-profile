@@ -2,11 +2,11 @@
 // بيانات الخدمات
 // ============================================
 const services = [
-    { id: 1, type: "products", title: "نظام إداري",        image: "./public/images/logo-nuqta.svg", price: 2000, rating: 5 },
-    { id: 2, type: "products", title: "موقع إلكتروني",     image: "./public/images/logo-nuqta.svg", price: 2000, rating: 4 },
-    { id: 3, type: "products", title: "موقع تعريفي",       image: "./public/images/logo-nuqta.svg", price: 2000, rating: 5 },
-    { id: 4, type: "work",     title: "تأهيل لسوق العمل", image: "./public/images/logo-nuqta.svg", price: null, rating: 5 },
-    { id: 5, type: "digital",  title: "تطوير مواقع إلكتروني", image: "./public/images/logo-nuqta.svg", price: 1500, rating: 5 },
+    { id: 1, type: "products", title: "نظام إداري", image: "./public/images/logo-nuqta.svg", price: 2000, rating: 5 },
+    { id: 2, type: "products", title: "موقع إلكتروني", image: "./public/images/logo-nuqta.svg", price: 2000, rating: 4 },
+    { id: 3, type: "products", title: "موقع تعريفي", image: "./public/images/logo-nuqta.svg", price: 2000, rating: 5 },
+    { id: 4, type: "work", title: "تأهيل لسوق العمل", image: "./public/images/logo-nuqta.svg", price: null, rating: 5 },
+    { id: 5, type: "digital", title: "تطوير مواقع إلكتروني", image: "./public/images/logo-nuqta.svg", price: 1500, rating: 5 },
 ];
 
 // ============================================
@@ -17,14 +17,14 @@ const sidebarConfig = {
     work: ["filter-group-work"],
 
     // خدمة رقمية ومنتجات رقمية — يظهر: الويب، التطبيقات، التسويق، التراخيص، التقييم
-    digital:   ["filter-group-web", "filter-group-apps", "filter-group-marketing", "filter-group-licenses", "filter-group-rating"],
-    products:  ["filter-group-web", "filter-group-apps", "filter-group-marketing", "filter-group-licenses", "filter-group-rating"],
+    digital: ["filter-group-web", "filter-group-apps", "filter-group-marketing", "filter-group-licenses", "filter-group-rating"],
+    products: ["filter-group-web", "filter-group-apps", "filter-group-marketing", "filter-group-licenses", "filter-group-rating"],
 };
 
 // ============================================
 // DOM
 // ============================================
-const tabs      = document.querySelectorAll(".tab-btn");
+const tabs = document.querySelectorAll(".tab-btn");
 const container = document.getElementById("services-container");
 
 // ============================================
@@ -34,7 +34,7 @@ function createCard(service) {
     const isWork = service.type === 'work';
     const hasPrice = !isWork && service.price !== null;
 
-    const stars = [1,2,3,4,5].map(i =>
+    const stars = [1, 2, 3, 4, 5].map(i =>
         `<i class="${i <= service.rating ? 'fas' : 'far'} fa-star"></i>`
     ).join('');
 
@@ -50,8 +50,8 @@ function createCard(service) {
                     <div class="card-stars">${stars}</div>
                     ${hasPrice ? `
                     <div class="card-price-wrap">
-                        <span class="price-currency"><i class="fas fa-coins"></i></span>
-                        <span class="card-price">${service.price}</span>
+                        <span class="price-currency" style="font-size:15px; font-weight:800;">&#65020;</span>
+<span class="card-price">${service.price}</span>
                     </div>` : ''}
                 </div>
 

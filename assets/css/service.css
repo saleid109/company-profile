@@ -256,7 +256,8 @@
 .card-price-wrap {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+    flex-direction: row-reverse; /* الرقم يمين، الرمز يساره */
 }
 
 .card-price {
@@ -264,11 +265,10 @@
     font-weight: 800;
     color: var(--color-secondary);
 }
-
 .price-currency {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 800;
     color: var(--color-primary);
-    /* Golden currency icon as in image */
 }
 
 .btn-add-cart {
