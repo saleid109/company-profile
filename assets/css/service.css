@@ -178,6 +178,8 @@
     max-height: 300px;
 }
 .chevron {
+    font-size: 14px;
+    color: #888;
     transition: transform 0.25s;
     display: inline-block;
 }
