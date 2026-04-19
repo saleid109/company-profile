@@ -34,7 +34,7 @@ function createCard(service) {
     const isWork = service.type === 'work';
     const hasPrice = !isWork && service.price !== null;
 
-    const stars = [1, 2, 3, 4, 5].map(i =>
+    const stars = [1,2,3,4,5].map(i =>
         `<i class="${i <= service.rating ? 'fas' : 'far'} fa-star"></i>`
     ).join('');
 
@@ -50,8 +50,8 @@ function createCard(service) {
                     <div class="card-stars">${stars}</div>
                     ${hasPrice ? `
                     <div class="card-price-wrap">
-                        <span class="price-currency" style="font-size:15px; font-weight:800;">&#65020;</span>
-<span class="card-price">${service.price}</span>
+                        <span class="card-price">${service.price}</span>
+                        <span class="price-currency">﷼</span>
                     </div>` : ''}
                 </div>
 
