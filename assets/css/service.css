@@ -222,10 +222,10 @@
 }
 
 .card-img-wrapper img {
-    max-width: 200px;
-    max-height: 100%;
+    max-width: 160px;  /* كان 80px — كبّره أكثر */
+    max-height: 160px;
     object-fit: contain;
-    opacity: 0.8;
+    opacity: 1;        /* كان 0.8 — اجعلها واضحة */
 }
 
 .card-body {
