@@ -14,7 +14,7 @@ const services = [
         id: 2, 
         type: "products", 
         title: "موقع تعريفي", 
-        image: "./public/images/wehero-main.jpg",
+        image: "./public/images/hero-main.jpg",
         price: 2000, 
         rating: 4 
     },
