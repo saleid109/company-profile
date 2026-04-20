@@ -13,15 +13,15 @@ const services = [
     { 
         id: 2, 
         type: "products", 
-        title: "تطوير المواقع", 
-        image: "./public/images/web-dev.jpg",
+        title: "موقع تعريفي", 
+        image: "./public/images/wehero-main.jpg",
         price: 2000, 
         rating: 4 
     },
     { 
         id: 3, 
         type: "products", 
-        title: "موقع تجاري", 
+        title: "تطبيق تجاري", 
         image: "./public/images/ecommerce.jpg", 
         price: 2000, 
         rating: 5 
@@ -38,7 +38,7 @@ const services = [
         id: 5, 
         type: "digital", 
         title: "تطوير مواقع إلكترونية", 
-        image: "./public/images/hero-main.jpg", 
+        image: "./public/images/web-dev.jpg", 
         price: 1500, 
         rating: 5 
     },
