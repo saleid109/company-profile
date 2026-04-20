@@ -5,21 +5,22 @@ const services = [
     {
         id: 1, type: "products", title: "نظام إداري",
         image: "./public/images/erp-system.jpg",
-        detailsUrl: "./details-service/product-details.html?id=1",
+        detailsUrl: `./details-service/Product details.html?id=1`
+,
         price: 2000, rating: 5
     },
 
     {
         id: 2, type: "products", title: "موقع تعريفي",
         image: "./public/images/web-dev.jpg",
-        detailsUrl: "./details-service/product-details.html?id=2",
+        detailsUrl: `./details-service/Product details.html?id=2`,
         price: 2000, rating: 4
     },
 
     {
         id: 3, type: "products", title: "موقع تجاري",
         image: "./public/images/ecommerce.jpg",
-        detailsUrl: "./details-service/product-details.html?id=3",
+        detailsUrl: `./details-service/Product details.html?id=3`,
         price: 2000, rating: 5
     },
 
