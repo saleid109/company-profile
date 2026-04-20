@@ -236,7 +236,7 @@
     <!-- Hero -->
     <section class="hero-section">
       <div class="container hero-content">
-        <img src="../public/images/project1.png" alt="صورة منتج موقع تعريفي
+        <img src="../public/images/project1.png" class="hereao-image service-image" alt="صورة منتج موقع تعريفي">
 " class="hereao-image">
 
         <div class="hero-text">
@@ -244,14 +244,15 @@
 
           <p class="hero-prices"><span class="service-price">200</span> ...
   <span class="price-currency"> <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 19 22" fill="none">
-<path d="M11.3787 19.2525L18.2987 17.6942C18.2187 18.5517 18.0089 19.3791 17.6693 20.1762L10.7653 21.7345C10.8364 20.8656 11.0409 20.0383 11.3787 19.2525ZM17.6693 15.4983L10.7653 17.0567V12.3817L8.61067 12.8718V15.4672C8.61067 15.6995 8.55022 15.9111 8.42933 16.1018L7.30667 17.867C7.008 18.3241 6.608 18.6056 6.10667 18.7113L0 20.0968C0.08 19.2374 0.289778 18.4101 0.629333 17.6148L6.45333 16.2945V13.3478L1.01867 14.5747C1.09867 13.7152 1.30756 12.8936 1.64533 12.1097L6.45333 11.0103V1.92667C7.06133 1.14089 7.78044 0.498667 8.61067 0V10.5343L10.7653 10.0413V3.07133C11.3751 2.28744 12.0889 1.64522 12.9067 1.14467V9.5625L18.2987 8.3385C18.2187 9.19795 18.0089 10.0253 17.6693 10.8205L12.9067 11.9028V14.2262L18.2987 13.0163C18.2187 13.8852 18.0089 14.7126 17.6693 15.4983Z" fill="#00025B"/>
+<path d="M11.3787 19.2525L18.2987 17.6942C18.2187 18.5517 18.0089 19.3791 17.6693 20.1762L10.7653 21.7345C10.8364 20.8656 11.0409 20.0383 11.3787 19.2525ZM17.6693 15.4983L10.7653 17.0567V12.3817L8.61067 12.8718V15.4672C8.61067 15.6995 8.55022 15.9111 8.42933 16.１０１８L7.30667 １７．８６７C7．００８ １８．３２４１ ６．６０８ １８．６０５６ ６．１０６６７ １８．７１１３L０ ２０．０９６８C０．０８ １９．２３７４ ０．２８９７７８ １８．４１０１ ０．６２９３３３ １７．６１４８L６．４５３３３ １６．２９４５V１３．３４７８L１．０１８６７ １４．５７４７C１．０９８６７ １３．７１５２ １．３０７５６ １２．８９３６ １．６４５３３ １２．１０９７L６．４５３３３ １１．０１０３V１．９２６６７C７．０６₁₃₃ ₁₁₄₀₈₉ ₋₇₈₀₄₄ ₋₄₉₈₆₆₇ ₋₆₁₀₆₇ ₋₀V₁₀․₅₃₄₃L₁₀․₇₆₅₃ ₋₁₀․₀₄₁₃V³․₀⁷¹³³C₁₁․³⁷⁵¹ ₋₂․₂⁸⁷⁴⁴ ₋₁₂․₀⁸⁸⁹ ₋₁․⁶⁴⁵²² ₋₁₂․⁹⁰⁶⁷ ₋₁․¹⁴⁴⁶⁷V₎․៥⁶²⁵L₁₈․²⁹⁸⁷ ₋八年八八八八八八八八八八八八八八八八八八八八八八 eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eight eighteighteighteighteighteighteighteighteighteighteighteighteighteighteight
 </svg></span></p>
           <h2 class="hero-subtitle">وصف الخدمة</h2>
           <p class="hero-description service-desc"> نصمّم لك موقعًا تعريفيًا يعكس هوية علامتك التجارية بأسلوب عصري وأنيق. يهدف الموقع
             إلى تعريف العملاء بخدماتك، تعزيز حضورك الرقمي، وزيادة فرص التواصل مع جمهورك المستهدف. جميع المواقع التي
             ننفذها متجاوبة مع جميع الأجهزة، وسهلة التحديث، وتراعي أفضل معايير تجربة المستخدم (UX).</p>
           <h2 class="hero-subtitle">يشمل: </h2>
-          <ul class="service-features">
+          <ul class="service-features service-includes">
+
             <li> تصميم صفحة رئيسية + صفحات (عنّا، خدماتنا، تواصل معنا)
             </li>
             <li>نموذج تواصل مخصص
@@ -617,7 +618,75 @@
       </div>
     </div>
   </div>
+<script>
+const productsData = {
+    1: {
+        title: "نظام إداري",
+        price: "2000",
+        desc: "نظام إداري متكامل يساعدك على إدارة أعمالك بكفاءة عالية وربط جميع أقسام شركتك في منصة واحدة.",
+        image: "../public/images/erp-system.jpg",
+        includes: [
+            "لوحة تحكم شاملة",
+            "إدارة المستخدمين والصلاحيات",
+            "تقارير وإحصائيات تفصيلية",
+            "دعم فني مستمر"
+        ]
+    },
+    2: {
+        title: "موقع تعريفي",
+        price: "2000",
+        desc: "نصمّم لك موقعًا تعريفيًا يعكس هوية علامتك التجارية بأسلوب عصري وأنيق، متجاوب مع جميع الأجهزة.",
+        image: "../public/images/web-dev.jpg",
+        includes: [
+            "تصميم صفحة رئيسية + صفحات (عنّا، خدماتنا، تواصل معنا)",
+            "نموذج تواصل مخصص",
+            "ربط بحسابات التواصل الاجتماعي",
+            "تصميم متجاوب للجوال والأجهزة اللوحية",
+            "استخدام لوحة تحكم لتحديث المحتوى (عند الطلب)",
+            "دعم فني لمدة شهر بعد التسليم"
+        ]
+    },
+    3: {
+        title: "موقع تجاري",
+        price: "2000",
+        desc: "موقع تجاري متكامل لعرض منتجاتك وخدماتك مع نظام طلبات وبوابة دفع إلكتروني.",
+        image: "../public/images/ecommerce.jpg",
+        includes: [
+            "تصميم صفحة المنتجات",
+            "سلة تسوق متكاملة",
+            "بوابة دفع إلكتروني",
+            "لوحة إدارة المنتجات",
+            "دعم فني لمدة شهر"
+        ]
+    },
+    5: {
+        title: "تطوير مواقع إلكترونية",
+        price: "1500",
+        desc: "تطوير مواقع احترافية بأحدث التقنيات مع أداء عالي وتجربة مستخدم مميزة.",
+        image: "../public/images/hero-main.jpg",
+        includes: [
+            "تطوير بأحدث التقنيات",
+            "تصميم متجاوب مع جميع الأجهزة",
+            "سرعة تحميل عالية",
+            "تحسين محركات البحث SEO"
+        ]
+    }
+};
 
+const id = new URLSearchParams(window.location.search).get('id');
+const data = productsData[id];
+
+if (!data) {
+    window.location.href = "../service.html";
+} else {
+    document.querySelector('.service-title').textContent = data.title;
+    document.querySelector('.service-price').textContent = data.price;
+    document.querySelector('.service-desc').textContent  = data.desc;
+    document.querySelector('.service-image').src         = data.image;
+    document.querySelector('.service-includes').innerHTML =
+        data.includes.map(i => `<li>${i}</li>`).join('');
+}
+</script>
 
 </body>
 
