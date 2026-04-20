@@ -15,7 +15,7 @@ const services = [
         id: 2, 
         type: "products", 
         title: "موقع تعريفي لجمعية", 
-        image: "./public/images/web-dev.jpg",
+        image: "./public/images/hero-main.jpg",
         detailsUrl: "./details-service/product-details.html?id=2",  // نفس الصفحة id مختلف
         price: 2000, 
         rating: 4 
@@ -42,7 +42,7 @@ const services = [
         id: 5, 
         type: "digital", 
         title: "تطوير مواقع إلكترونية", 
-        image: "./public/images/hero-main.jpg",
+        image: "./public/images/web-dev.jpg",
         detailsUrl: "./details-service/product-details.html?id=5",
         price: 1500, 
         rating: 5 
