@@ -99,7 +99,8 @@ function createCard(service) {
                 <button class="btn-add-cart" type="button">
                     ${isWork ? 'طلب الخدمة' : 'أضف إلى السلة'}
                 </button>
-                <a href="/service/${service.id}" class="card-details-link">التفاصيل &rsaquo;</a>
+                <a href="${service.detailsUrl}" class="card-details-link">التفاصيل &rsaquo;</a>
+
             </div>
         </article>`;
 }
