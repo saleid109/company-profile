@@ -2,11 +2,46 @@
 // بيانات الخدمات
 // ============================================
 const services = [
-    { id: 1, type: "products", title: "نظام إداري", image: "./public/images/logo-nuqta.svg", price: 2000, rating: 5 },
-    { id: 2, type: "products", title: "موقع إلكتروني", image: "./public/images/logo-nuqta.svg", price: 2000, rating: 4 },
-    { id: 3, type: "products", title: "موقع تعريفي", image: "./public/images/logo-nuqta.svg", price: 2000, rating: 5 },
-    { id: 4, type: "work", title: "تأهيل لسوق العمل", image: "./public/images/logo-nuqta.svg", price: null, rating: 5 },
-    { id: 5, type: "digital", title: "تطوير مواقع إلكتروني", image: "./public/images/logo-nuqta.svg", price: 1500, rating: 5 },
+    { 
+        id: 1, 
+        type: "products", 
+        title: "نظام إداري", 
+        image: "./public/images/erp-system.jpg", 
+        price: 2000, 
+        rating: 5 
+    },
+    { 
+        id: 2, 
+        type: "products", 
+        title: "تطوير المواقع", 
+        image: "./public/images/web-dev.png.jpg",  // ← اسم غريب، تأكد منه
+        price: 2000, 
+        rating: 4 
+    },
+    { 
+        id: 3, 
+        type: "products", 
+        title: "موقع تجاري", 
+        image: "./public/images/ecommerce.jpg", 
+        price: 2000, 
+        rating: 5 
+    },
+    { 
+        id: 4, 
+        type: "work", 
+        title: "تأهيل لسوق العمل", 
+        image: "./public/images/work-rehab.jpg", 
+        price: null, 
+        rating: 5 
+    },
+    { 
+        id: 5, 
+        type: "digital", 
+        title: "تطوير مواقع إلكترونية", 
+        image: "./public/images/hero-main.jpg", 
+        price: 1500, 
+        rating: 5 
+    },
 ];
 
 // ============================================
