@@ -14,7 +14,7 @@ const services = [
         id: 2, 
         type: "products", 
         title: "تطوير المواقع", 
-        image: "./public/images/web-dev.png.jpg",  // ← اسم غريب، تأكد منه
+        image: "./public/images/web-dev.jpg",
         price: 2000, 
         rating: 4 
     },
