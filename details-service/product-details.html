@@ -618,75 +618,8 @@
       </div>
     </div>
   </div>
-<script>
-const productsData = {
-    1: {
-        title: "نظام إداري",
-        price: "2000",
-        desc: "نظام إداري متكامل يساعدك على إدارة أعمالك بكفاءة عالية وربط جميع أقسام شركتك في منصة واحدة.",
-        image: "../public/images/erp-system.jpg",
-        includes: [
-            "لوحة تحكم شاملة",
-            "إدارة المستخدمين والصلاحيات",
-            "تقارير وإحصائيات تفصيلية",
-            "دعم فني مستمر"
-        ]
-    },
-    2: {
-        title: "موقع تعريفي",
-        price: "2000",
-        desc: "نصمّم لك موقعًا تعريفيًا يعكس هوية علامتك التجارية بأسلوب عصري وأنيق، متجاوب مع جميع الأجهزة.",
-        image: "../public/images/web-dev.jpg",
-        includes: [
-            "تصميم صفحة رئيسية + صفحات (عنّا، خدماتنا، تواصل معنا)",
-            "نموذج تواصل مخصص",
-            "ربط بحسابات التواصل الاجتماعي",
-            "تصميم متجاوب للجوال والأجهزة اللوحية",
-            "استخدام لوحة تحكم لتحديث المحتوى (عند الطلب)",
-            "دعم فني لمدة شهر بعد التسليم"
-        ]
-    },
-    3: {
-        title: "موقع تجاري",
-        price: "2000",
-        desc: "موقع تجاري متكامل لعرض منتجاتك وخدماتك مع نظام طلبات وبوابة دفع إلكتروني.",
-        image: "../public/images/ecommerce.jpg",
-        includes: [
-            "تصميم صفحة المنتجات",
-            "سلة تسوق متكاملة",
-            "بوابة دفع إلكتروني",
-            "لوحة إدارة المنتجات",
-            "دعم فني لمدة شهر"
-        ]
-    },
-    5: {
-        title: "تطوير مواقع إلكترونية",
-        price: "1500",
-        desc: "تطوير مواقع احترافية بأحدث التقنيات مع أداء عالي وتجربة مستخدم مميزة.",
-        image: "../public/images/hero-main.jpg",
-        includes: [
-            "تطوير بأحدث التقنيات",
-            "تصميم متجاوب مع جميع الأجهزة",
-            "سرعة تحميل عالية",
-            "تحسين محركات البحث SEO"
-        ]
-    }
-};
-
-const id = new URLSearchParams(window.location.search).get('id');
-const data = productsData[id];
-
-if (!data) {
-    window.location.href = "../service.html";
-} else {
-    document.querySelector('.service-title').textContent = data.title;
-    document.querySelector('.service-price').textContent = data.price;
-    document.querySelector('.service-desc').textContent  = data.desc;
-    document.querySelector('.service-image').src         = data.image;
-    document.querySelector('.service-includes').innerHTML =
-        data.includes.map(i => `<li>${i}</li>`).join('');
-}
-</script>
+<!-- بيانات المنتجات + منطق الصفحة -->
+<script src="product-details.js"></script>
 
 </body>
 
