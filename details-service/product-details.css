@@ -1,255 +1,204 @@
-/* ===== Hero Section ===== */
-.hero-section {
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* قسم الـ Hero */
+.product-hero {
     padding: 60px 0;
-    background: #f8f8f6;
 }
 
-.hero-content {
-    display: flex;
+.product-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 40px;
-    align-items: flex-start;
-    flex-direction: row-reverse;
+    align-items: start;
 }
 
-.hereao-image {
-    width: 45%;
-    border-radius: 16px;
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
-.hero-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.heroo-title {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--color-secondary);
-}
-
-.hero-prices {
+.price-tag {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--color-secondary);
-}
-
-.hero-subtitle {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--color-secondary);
-    margin-top: 8px;
-}
-
-.hero-description {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #555;
-}
-
-.service-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
     gap: 10px;
-    padding: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
-.service-features li {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 15px;
-    color: #444;
+.service-title {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.description-block h3, .includes-block h3 {
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-desc {
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.service-includes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.service-includes li {
+    position: relative;
+    padding-right: 25px;
+    margin-bottom: 12px;
     line-height: 1.6;
 }
 
-.service-features li::before {
+.service-includes li::before {
     content: "•";
-    color: var(--color-primary);
-    font-size: 20px;
-    line-height: 1.2;
-    flex-shrink: 0;
+    position: absolute;
+    right: 0;
+    color: var(--accent-color);
+    font-size: 24px;
+    line-height: 1;
 }
 
-.btn-primarye {
-    display: block;
-    width: fit-content;
-    margin: 24px auto 0;
-    padding: 14px 48px;
-    background: var(--color-secondary);
-    color: #fff;
+.btn-order {
+    background-color: var(--primary-color);
+    color: var(--white);
     border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 700;
+    padding: 12px 40px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
-    font-family: var(--font-main);
-    transition: background 0.2s;
+    transition: 0.3s;
 }
 
-.btn-primarye:hover {
-    background: #243660;
+.btn-order:hover {
+    background-color: #000044;
+    transform: translateY(-2px);
 }
 
-/* ===== Compare Section ===== */
-
-
-.compare-section {
-    padding: 60px 0;
-    background: #fff;
+/* صورة المنتج */
+.image-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
 }
 
-.compare-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.compare-side-text {
-    flex: 1;
-    min-width: 200px;
-}
-
-.compare-side-text h2 {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--color-secondary);
-    line-height: 1.4;
-}
-
-.highlight-yellow {
-    color: var(--color-primary);
-}
-
-.compare-table-wrapper {
-    flex: 2;
-    min-width: 280px;
-    overflow-x: auto;
-}
-
-.compare-table {
+.service-image {
     width: 100%;
-    border-collapse: collapse;
-    font-family: var(--font-main);
+    height: auto;
+    border-radius: 10px;
 }
 
-.compare-table th {
-    padding: 14px 20px;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: center;
+/* قسم الأسئلة الشائعة */
+.faq-section {
+    padding: 80px 0;
+    background-color: var(--white);
 }
 
-.us-col {
-    background: var(--color-secondary);
-    color: #fff;
-    border-radius: 12px 12px 0 0;
+.section-title {
+    font-size: 32px;
+    color: var(--primary-color);
+    text-align: right;
+    margin-bottom: 50px;
 }
 
-.others-col {
-    color: #888;
+.faq-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 50px;
+    align-items: center;
 }
 
-.compare-table td {
-    padding: 12px 20px;
-    font-size: 14px;
-    text-align: center;
-    border-bottom: 1px solid #f0f0f0;
+.faq-illustration img {
+    width: 100%;
+    max-width: 400px;
 }
 
-.feature-name {
-    text-align: right !important;
-    color: #444;
-    font-weight: 500;
-}
-
-.featured-us {
-    background: #f0f3ff;
-}
-
-.icon-check-gold { color: var(--color-primary); font-size: 18px; }
-.icon-check-gray { color: #aaa; font-size: 18px; }
-.icon-x          { color: #ddd; font-size: 18px; }
-
-/* ===== FAQ Section ===== */
-.why-choose-section {
-    padding: 60px 0;
-    background: #f8f8f6;
-}
-
-.container-why-choose {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 5%;
-    display: flex;
-    gap: 60px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.choose-content { flex: 2; min-width: 280px; }
-.choose-image   { flex: 1; min-width: 200px; }
-.choose-image img { width: 100%; max-width: 320px; }
-
-.choose-title {
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--color-secondary);
-    margin-bottom: 28px;
-}
-
-.choose-list {
+/* الأكورديون */
+.pd-faqs {
     list-style: none;
     padding: 0;
+}
+
+.pd-faqs li {
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.faq-header {
+    padding: 20px;
     display: flex;
-    flex-direction: column;
-    gap: 0;
+    align-items: center;
+    cursor: pointer;
+    gap: 15px;
 }
 
-.choose-list li {
-    border-bottom: 1px solid #eee;
-    padding: 16px 0;
+.faq-chevron {
+    color: var(--primary-color);
+    transition: 0.3s;
 }
 
-.choose-text h4 {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--color-secondary);
-    margin-bottom: 8px;
+.faq-header h4 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--primary-color);
+    flex: 1;
 }
 
-.choose-text p {
-    font-size: 14px;
+.faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease-out;
+    padding: 0 20px;
+    background-color: #fff;
+}
+
+.faq-body p {
+    padding-bottom: 20px;
+    margin: 0;
     color: #666;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
-/* ===== Responsive ===== */
+/* حالة الفتح */
+.pd-faqs li.open {
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.pd-faqs li.open .faq-body {
+    max-height: 200px;
+}
+
+.pd-faqs li.open .faq-chevron {
+    transform: rotate(180deg);
+}
+
+/* الجوال */
 @media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column;
+    .product-grid, .faq-grid {
+        grid-template-columns: 1fr;
     }
-
-    .hereao-image {
-        width: 100%;
+    
+    .product-image-container {
+        order: -1;
     }
-
-    .compare-container {
-        flex-direction: column;
-    }
-
-    .container-why-choose {
-        flex-direction: column;
+    
+    .faq-illustration {
+        display: none;
     }
 }
