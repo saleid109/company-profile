@@ -14,9 +14,15 @@
 .product-content-grid {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-between;
     gap: 48px;
     direction: rtl;
+}
+
+.product-text-side {
+    flex: 1;
+    max-width: 795px;
 }
 
 /* ===== جهة النصوص ===== */
