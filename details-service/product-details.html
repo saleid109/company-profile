@@ -1,16 +1,35 @@
 <!doctype html>
-<!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل الخدمة | نقطة صعود</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- تأكدي من ربط ملف الـ CSS الجديد -->
-    <link rel="stylesheet" href="product-details-final.css">
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقع تعريفي لجمعية | نقطة صعود</title>
+  <meta name="description"
+    content="شركة نقطة صعود تطلق مبادرة نوعية لتأهيل وتوظيف الكفاءات الوطنية في مجال التسويق الرقمي دعماً لرؤية المملكة 2030.">
+
+  <!-- الخطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- الأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- أيقونات Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!--صفحات الانماط الاساسية css-->
+  <link rel="stylesheet" href="../assets/css/css-reset.css" />
+  <link rel="stylesheet" href="../assets/css/variables.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/mobile.css" />
+  <link rel="stylesheet" href="../assets/css/layout.css" />
+  <link rel="stylesheet" href="../assets/css/product-details.css" />
+
+
+  <!-- مكتبة السلايدر Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+
 <body>
   <!-- رابط تخطي لتسهيل التنقل لمستخدمي قارئات الشاشة ولوحة المفاتيح -->
 
@@ -211,70 +230,69 @@
 
   <main id="main-content">
     <!-- قسم تفاصيل الخدمة (Hero) -->
-    <section class="product-hero">
-      <div class="container">
-        <div class="product-grid">
-          <!-- النصوص -->
-          <div class="product-info">
-            <div class="price-tag">
-              <span class="service-price">2000</span>
-              <span class="currency-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 19 22" fill="none">
-                  <path
-                    d="M11.3787 19.2525L18.2987 17.6942C18.2187 18.5517 18.0089 19.3791 17.6693 20.1762L10.7653 21.7345C10.8364 20.8656 11.0409 20.0383 11.3787 19.2525ZM17.6693 15.4983L10.7653 17.0567V12.3817L8.61067 12.8718V15.4672C8.61067 15.6995 8.55022 15.9111 8.42933 16.1018L7.30667 17.867C7.008 18.3241 6.608 18.6056 6.10667 18.7113L0 20.0968C0.08 19.2374 0.289778 18.4101 0.629333 17.6148L6.45333 16.2945V13.3478L1.01867 14.5747C1.09867 13.7152 1.30756 12.8936 1.64533 12.1097L6.45333 11.0103V1.92667C7.06133 1.14089 7.78044 0.498667 8.61067 0V10.5343L10.7653 10.0413V3.07133C11.3751 2.28744 12.0889 1.64522 12.9067 1.14467V9.5625L18.2987 8.3385C18.2187 9.19795 18.0089 10.0253 17.6693 10.8205L12.9067 11.9028V14.2262L18.2987 13.0163C18.2187 13.8852 18.0089 14.7126 17.6693 15.4983Z"
-                    fill="#F1B709" />
-                </svg>
-              </span>
-            </div>
-            <h1 class="service-title">تطوير موقع تعريفي</h1>
 
-            <div class="description-block">
-              <h3>وصف الخدمة</h3>
-              <p class="service-desc">
-                نصمّم لك موقعًا تعريفيًا يعكس هوية علامتك التجارية بأسلوب عصري وأنيق. يهدف الموقع إلى تعريف العملاء
-                بخدماتك، تعزيز حضورك الرقمي، وزيادة فرص التواصل مع جمهورك المستهدف. جميع المواقع التي ننفذها متجاوبة مع
-                جميع الأجهزة، وسهلة التحديث، وتراعي أفضل معايير تجربة المستخدم (UX).
-              </p>
-            </div>
+    <div class="main-wrapper">
+        <div class="container">
+            
+            <!-- قسم تفاصيل الخدمة -->
+            <section class="product-details-section">
+                <div class="product-content-grid">
+                    
+                    <!-- جهة النصوص -->
+                    <div class="product-text-side">
+                        <div class="price-badge">
+                            <span class="service-price">...</span>
+                            <span class="currency-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 19 22" fill="none">
+                                    <path d="M11.3787 19.2525L18.2987 17.6942C18.2187 18.5517 18.0089 19.3791 17.6693 20.1762L10.7653 21.7345C10.8364 20.8656 11.0409 20.0383 11.3787 19.2525ZM17.6693 15.4983L10.7653 17.0567V12.3817L8.61067 12.8718V15.4672C8.61067 15.6995 8.55022 15.9111 8.42933 16.1018L7.30667 17.867C7.008 18.3241 6.608 18.6056 6.10667 18.7113L0 20.0968C0.08 19.2374 0.289778 18.4101 0.629333 17.6148L6.45333 16.2945V13.3478L1.01867 14.5747C1.09867 13.7152 1.30756 12.8936 1.64533 12.1097L6.45333 11.0103V1.92667C7.06133 1.14089 7.78044 0.498667 8.61067 0V10.5343L10.7653 10.0413V3.07133C11.3751 2.28744 12.0889 1.64522 12.9067 1.14467V9.5625L18.2987 8.3385C18.2187 9.19795 18.0089 10.0253 17.6693 10.8205L12.9067 11.9028V14.2262L18.2987 13.0163C18.2187 13.8852 18.0089 14.7126 17.6693 15.4983Z" fill="#F1B709"/>
+                                </svg>
+                            </span>
+                        </div>
+                        
+                        <h1 class="service-title">جاري التحميل...</h1>
+                        
+                        <div class="info-group">
+                            <h2 class="group-title">وصف الخدمة</h2>
+                            <p class="service-desc">...</p>
+                        </div>
 
-            <div class="includes-block">
-              <h3>يشمل:</h3>
-              <ul class="service-includes">
-                <!-- سيتم تعبئتها عبر JS -->
-              </ul>
-            </div>
+                        <div class="info-group">
+                            <h2 class="group-title">يشمل:</h2>
+                            <ul class="service-includes">
+                                <!-- سيتم تعبئتها عبر JS -->
+                            </ul>
+                        </div>
 
-            <button class="btn-order">اطلب الخدمة</button>
-          </div>
+                        <button class="btn-submit">اطلب الخدمة</button>
+                    </div>
 
-          <!-- الصورة -->
-          <div class="product-image-container">
-            <div class="image-card">
-              <img src="images/project1.png" alt="تصميم موقع تعريفي" class="service-image">
-            </div>
-          </div>
+                    <!-- جهة الصورة -->
+                    <div class="product-image-side">
+                        <div class="image-wrapper">
+                            <img src="" alt="صورة الخدمة" class="service-image">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- قسم الأسئلة الشائعة -->
+            <section class="faq-section">
+                <h2 class="faq-main-title">الأسئلة الشائعة</h2>
+                <div class="faq-container-grid">
+                    <div class="faq-img-box">
+                        <img src="images/faq-illustration.png" alt="FAQ">
+                    </div>
+                    <div class="faq-accordion-box">
+                        <ul class="pd-faqs">
+                            <!-- سيتم تعبئتها عبر JS -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </div>
-      </div>
-    </section>
+    </div>
 
-    <!-- قسم الأسئلة الشائعة -->
-    <section class="faq-section">
-      <div class="container">
-        <h2 class="section-title">الأسئلة الشائعة</h2>
-        <div class="faq-grid">
-          <!-- صورة الـ FAQ -->
-          <div class="faq-illustration">
-            <img src="images/faq-illustration.png" alt="FAQ Illustration">
-          </div>
-          <!-- قائمة الأكورديون -->
-          <div class="faq-list-container">
-            <ul class="pd-faqs">
-              <!-- سيتم تعبئتها عبر JS -->
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
   <!--===========-قسم تذييل الصفحة -footer===============-->
   <footer class="site-footer">

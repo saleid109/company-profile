@@ -6,7 +6,7 @@ const productsData = {
         title: "نظام إداري",
         price: "2,000",
         desc: "نظام إداري متكامل يساعدك على إدارة عملياتك بكفاءة عالية، مع لوحة تحكم شاملة وتقارير دقيقة.",
-        image: "images/erp-system.jpg",
+        image: "../public/images/erp-system.jpg", // تأكدي من صحة المسار
         includes: ["لوحة تحكم شاملة", "إدارة المستخدمين", "تقارير تفصيلية", "نسخ احتياطي"],
         faqs: [
             { q: "كيف طريقة سداد الرسوم؟", a: "عبر البطاقات الائتمانية أو التحويل البنكي." },
@@ -17,7 +17,7 @@ const productsData = {
         title: "موقع تعريفي لجمعية",
         price: "2,000",
         desc: "نصمّم لك موقعًا تعريفيًا يعكس هوية علامتك التجارية بأسلوب عصري وأنيق. يهدف الموقع إلى تعريف العملاء بخدماتك، تعزيز حضورك الرقمي، وزيادة فرص التواصل مع جمهورك المستهدف.",
-        image: "images/project1.png",
+        image: "../public/images/project1.png", // تأكدي من صحة المسار
         includes: ["تصميم متجاوب", "نموذج تواصل", "ربط التواصل الاجتماعي", "دعم فني شهر"],
         faqs: [
             { q: "كم مدة التصميم؟", a: "من أسبوعين إلى 4 أسابيع." },
@@ -28,7 +28,7 @@ const productsData = {
         title: "موقع تجاري",
         price: "2,000",
         desc: "موقع تجاري متكامل لعرض منتجاتك وخدماتك مع بوابة دفع إلكتروني وإدارة سهلة للمنتجات.",
-        image: "images/ecommerce.jpg",
+        image: "../public/images/ecommerce.jpg", // تأكدي من صحة المسار
         includes: ["سلة تسوق", "بوابة دفع", "إدارة منتجات", "تقارير مبيعات"],
         faqs: [
             { q: "هل يدعم الدفع الإلكتروني؟", a: "نعم، ندمج بوابات الدفع المعتمدة." }
@@ -38,7 +38,7 @@ const productsData = {
         title: "تأهيل لسوق العمل",
         price: "مجاني",
         desc: "برنامج تدريبي مكثف لتأهيل الكفاءات الوطنية في مجال التسويق الرقمي والتقنية دعماً لرؤية المملكة 2030.",
-        image: "images/work-rehab.jpg",
+        image: "../public/images/work-rehab.jpg", // تأكدي من صحة المسار
         includes: ["تدريب عملي", "مشاريع واقعية", "شهادة إتمام", "توجيه مهني"],
         faqs: [
             { q: "من هم المستهدفون؟", a: "الخريجون والباحثون عن عمل في المجال التقني." }
@@ -48,7 +48,7 @@ const productsData = {
         title: "تطوير مواقع إلكترونية",
         price: "1,500",
         desc: "تطوير مواقع احترافية بأحدث التقنيات مع تصميم متجاوب وسرعة تحميل عالية لضمان أفضل تجربة مستخدم.",
-        image: "images/hero-main.jpg",
+        image: "../public/images/hero-main.jpg", // تأكدي من صحة المسار
         includes: ["React/Node.js", "SEO محسّن", "أداء عالي", "دعم مستمر"],
         faqs: [
             { q: "ما التقنيات المستخدمة؟", a: "نستخدم أحدث التقنيات العالمية مثل React و Node.js." }
@@ -61,7 +61,7 @@ const productsData = {
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id') || '2'; // افتراضياً نعرض الخدمة رقم 2
+    const id = params.get('id') || '2'; 
     const data = productsData[id];
 
     if (data) {
@@ -105,10 +105,8 @@ function setupAccordion() {
             const item = header.parentElement;
             const isOpen = item.classList.contains('open');
             
-            // إغلاق الكل أولاً
             document.querySelectorAll('.pd-faqs li').forEach(li => li.classList.remove('open'));
             
-            // فتح الحالي إذا كان مغلقاً
             if (!isOpen) item.classList.add('open');
         });
     });
