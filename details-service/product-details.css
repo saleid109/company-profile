@@ -1,15 +1,3 @@
-/* =============================================
-product-details.css — يطابق Figma بالضبط
-   ============================================= */
-
-:root {
-    --pd-primary: #00015B;
-    --pd-secondary: #FDCA30;
-    --pd-text: #1B2D45;
-    --pd-bg: #FAFAFA;
-    --pd-white: #ffffff;
-    --pd-font: 'Tajawal', sans-serif;
-}
 
 /* ===== Wrapper عام ===== */
 .main-wrapper {
