@@ -194,14 +194,16 @@
 
 .compare-table-wrapper {
     flex: 2;
-    min-width: 280px;
-    overflow-x: auto;
+    background: var(--color-white);
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .compare-table {
     width: 100%;
     border-collapse: collapse;
-    font-family: var(--pd-font);
+    font-family: var(--font-main);
 }
 
 .compare-table th {
@@ -212,8 +214,8 @@
 }
 
 .us-col {
-    background: var(--pd-primary) !important;
-    color: var(--pd-white) !important;
+    background: var(--color-secondary);
+    color: var(--color-white) !important;
     border-radius: 40px 40px 0 0;
     width: 271px;
 }
