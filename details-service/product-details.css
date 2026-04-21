@@ -163,7 +163,7 @@
 /* ===== قسم جدول المقارنة ===== */
 .compare-section {
     padding: 60px 0;
-    background: var(--pd-white);
+    background: var(--color-background);
 }
 
 .compare-container {
