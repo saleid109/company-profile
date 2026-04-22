@@ -512,6 +512,21 @@ document.addEventListener("DOMContentLoaded", () => {
 console.log('✅ All scripts loaded successfully');
 
 //=======================================
+// 1. قائمة الجوال والطبقة الظليلة
+//=======================================
+function toggleMenu() {
+    const navLinks = document.querySelector('.navbar-links');
+    const overlay = document.querySelector('.overlay');
+    const body = document.body;
+
+    navLinks.classList.toggle('active');
+    overlay.classList.toggle('active');
+    
+    // إضافة هذا السطر:
+    body.classList.toggle('menu-open'); 
+    
+    body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+}
 
 
 

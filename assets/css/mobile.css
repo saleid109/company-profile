@@ -1221,6 +1221,47 @@
             opacity: 1;
         }
     }
+
+    /* زر الاستشارة العائم */
+.floating-consult-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* جهة اليسار لأن الموقع RTL */
+    background-color: #f5e9b8; /* اللون الذهبي الخاص بك */
+    color: #001a4d; /* اللون الكحلي */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-consult-btn:active {
+    transform: scale(0.95);
+}
+
+.floating-consult-btn i {
+    font-size: 1.2rem;
+}
+
+/* إخفاء الزر في الشاشات الكبيرة (Desktop) */
+@media (min-width: 993px) {
+    .floating-consult-btn {
+        display: none;
+    }
+}
+
+/* تأثير بسيط ليختفي الزر قليلاً عند فتح القائمة الجانبية */
+body.menu-open .floating-consult-btn {
+    opacity: 0.2;
+    pointer-events: none;
+}
 }
 
 /* =========================================================
