@@ -85,11 +85,51 @@
     }
 
 
+}
 
+/* =========================================================
+    زر الاستشارة العائم - مستقل خارج أي ميديا كويري
+========================================================= */
 
+.floating-consult-btn {
+    position: fixed;
+    top: 80px; /* تحت الـ navbar مباشرة (ارتفاع الـ navbar 70px + 10px مسافة) */
+    left: 20px;
+    background-color: #f5c842;
+    color: #001a4d;
+    display: none; /* مخفي افتراضياً */
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
+.floating-consult-btn i {
+    font-size: 1.1rem;
+}
 
+/* إظهار الزر فقط في الجوال والتابلت */
+@media (max-width: 1024px) {
+    .floating-consult-btn {
+        display: flex;
+    }
+}
 
+/* إخفاء الزر عند فتح القائمة الجانبية */
+body.menu-open .floating-consult-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* تأثير النقر */
+.floating-consult-btn:active {
+    transform: scale(0.95);
 }
 
 /* =========================================================
@@ -824,48 +864,9 @@
         padding: 40px;
     }
 
-    
-    /* زر الاستشارة العائم */
-.floating-consult-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #f5c842;
-    color: #001a4d; 
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
-    border-radius: 50px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.floating-consult-btn:active {
-    transform: scale(0.95);
-}
 
-.floating-consult-btn i {
-    font-size: 1.2rem;
-}
-
-/* إخفاء الزر في الشاشات الكبيرة (Desktop) */
-@media (min-width: 993px) {
-    .floating-consult-btn {
-        display: none;
-    }
-}
-
-/* تأثير بسيط ليختفي الزر قليلاً عند فتح القائمة الجانبية */
-body.menu-open .floating-consult-btn {
-    opacity: 0.2;
-    pointer-events: none;
-}
-}
 
 /* =========================================================
     نهاية الملف
@@ -1269,47 +1270,8 @@ body.menu-open .floating-consult-btn {
         }
     }
 
-    /* زر الاستشارة العائم */
-.floating-consult-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px; /* جهة اليسار لأن الموقع RTL */
-    background-color: #f5c842; /* اللون الذهبي الخاص بك */
-    color: #001a4d; /* اللون الكحلي */
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
-    border-radius: 50px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.floating-consult-btn:active {
-    transform: scale(0.95);
-}
-
-.floating-consult-btn i {
-    font-size: 1.2rem;
-}
-
-/* إخفاء الزر في الشاشات الكبيرة (Desktop) */
-@media (min-width: 993px) {
-    .floating-consult-btn {
-        display: none;
-    }
-}
-
-/* تأثير بسيط ليختفي الزر قليلاً عند فتح القائمة الجانبية */
-body.menu-open .floating-consult-btn {
-    opacity: 0.2;
-    pointer-events: none;
-}
-}
 
 /* =========================================================
     نهاية الملف
