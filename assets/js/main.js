@@ -79,7 +79,7 @@ function activateSub(subValue) {
     3. Mega Menu للجوال والتابلت
 ========================================================= */
 function initMobileMegaMenu() {
-    if (window.innerWidth > 1024) return;
+    if (window.innerWidth > 1025) return;
 
     // إزالة المستمعات القديمة
     document.querySelectorAll('.nav-menu li.dropdown > a').forEach(link => {
