@@ -147,9 +147,12 @@ function handleFloatingBtn() {
 
     scrollTimeout = setTimeout(() => {
         const btn = document.querySelector('.floating-consult-btn');
-        if (btn) {
-            btn.classList.toggle('show', window.scrollY > 250);
-        }
+        if (!btn) return;
+
+        // فقط في الجوال والتابلت
+        if (window.innerWidth > 1024) return;
+
+        btn.classList.toggle('show', window.scrollY > 250);
         scrollTimeout = null;
     }, 100);
 }
