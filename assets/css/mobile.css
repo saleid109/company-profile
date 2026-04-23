@@ -933,7 +933,7 @@ body.menu-open .floating-consult-btn {
 
     /* يسار: زر الاستشارة */
     .nav-actions.desktop-only {
-        display: flex !important;
+        display: none !important;
         align-items: center;
     }
 
