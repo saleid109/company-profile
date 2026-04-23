@@ -997,7 +997,7 @@ body.menu-open .floating-consult-btn {
         padding: 8px 10px !important;
         font-size: 12px !important;
         font-family: inherit !important;
-        color: var(--color-secondary) !important;
+        color: var(--color-white) !important;
         white-space: nowrap !important;
         border-radius: 6px !important;
         cursor: pointer !important;
