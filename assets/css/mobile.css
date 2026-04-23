@@ -118,7 +118,7 @@
 /* إظهار الزر فقط في الجوال والتابلت */
 @media (max-width: 1024px) {
     .floating-consult-btn {
-        display: flex;
+        display: none;
     }
 }
 
