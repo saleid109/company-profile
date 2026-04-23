@@ -939,7 +939,6 @@ body.menu-open .floating-consult-btn {
     /* يسار: زر الاستشارة */
     .nav-actions.desktop-only {
         display: none !important;
-        align-items: center;
     }
 
     .nav-actions.desktop-only .btn-primary {
