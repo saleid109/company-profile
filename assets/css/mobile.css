@@ -973,100 +973,126 @@ body.menu-open .floating-consult-btn {
 
 /* القائمة أفقية */
     .nav-menu {
+        all: unset !important;          /* ← مسح كل التصاميم الموروثة */
         display: flex !important;
         flex-direction: row !important;
-        align-items: center;
-        gap: 4px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        width: auto;
+        align-items: center !important;
+        list-style: none !important;
+        gap: 2px !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .nav-menu li {
-        width: auto;
+        width: auto !important;
         border-bottom: none !important;
+        position: relative;
     }
 
     .nav-menu li a {
-        padding: 8px 12px !important;
-        font-size: 13px !important;
+        all: unset !important;          /* ← مسح كل التصاميم الموروثة */
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        padding: 8px 10px !important;
+        font-size: 12px !important;
+        font-family: inherit !important;
         color: var(--color-secondary) !important;
-        white-space: nowrap;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        border-radius: 6px;
-        transition: background 0.2s ease;
+        white-space: nowrap !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        transition: background 0.2s ease !important;
+        text-decoration: none !important;
     }
 
     .nav-menu li a:hover {
-        background: rgba(0, 0, 0, 0.05);
+        background: rgba(0, 0, 0, 0.06) !important;
         color: var(--color-primary) !important;
     }
 
     /* ===== Mega Menu في الآيباد - يفتح بالتحويم ===== */
-    .mega-menu-content {
+    .has-mega {
+        position: relative;
+    }
+
+   .mega-menu-content {
+        all: unset !important;
+        display: block !important;
         position: absolute !important;
-        top: 100% !important;
+        top: calc(100% + 8px) !important;
         right: 0 !important;
-        width: 320px !important;
+        width: 300px !important;
         background: white !important;
         border-radius: 12px !important;
         box-shadow: 0 10px 40px rgba(0,0,0,0.15) !important;
-        padding: 15px !important;
-        max-height: none !important;
-        overflow: visible !important;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-        z-index: 9999;
+        padding: 12px !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: opacity 0.25s ease, visibility 0.25s ease !important;
+        z-index: 9999 !important;
+        pointer-events: none !important;
     }
 
-    /* فتح Mega Menu بالنقر في الآيباد */
     .mega-menu-content.open {
         opacity: 1 !important;
         visibility: visible !important;
+        pointer-events: auto !important;
     }
 
     .mega-grid {
+        display: flex !important;
         flex-direction: column !important;
-        gap: 8px !important;
+        gap: 6px !important;
+        padding: 0 !important;
     }
 
     .mega-card {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        padding: 10px !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
         color: var(--color-secondary) !important;
-        border-bottom: 1px solid #f0f0f0 !important;
-        padding: 12px !important;
-        border-radius: 8px;
         background: transparent !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        transition: background 0.2s ease !important;
+    }
+
+    .mega-card:last-child {
+        border-bottom: none !important;
     }
 
     .mega-card:hover {
         background: rgba(0,0,0,0.03) !important;
     }
 
-    .card-info h4 {
+  .card-info h4 {
         color: var(--color-secondary) !important;
+        font-size: 14px !important;
+        margin: 0 0 4px !important;
     }
 
     .card-info p {
         color: #666 !important;
+        font-size: 12px !important;
+        margin: 0 !important;
     }
 
-    /* زر الاستشارة */
+    /* ===== زر الاستشارة ===== */
     .nav-actions.desktop-only {
         display: flex !important;
-        flex-shrink: 0;
+        flex-shrink: 0 !important;
+        align-items: center !important;
     }
 
     .nav-actions.desktop-only .btn-primary {
-        padding: 8px 14px;
-        font-size: 13px;
-        white-space: nowrap;
+        padding: 8px 14px !important;
+        font-size: 12px !important;
+        white-space: nowrap !important;
     }
 
-    /* إخفاء الـ overlay في الآيباد مع القائمة الأفقية */
+    /* إخفاء الـ overlay */
     .overlay {
         display: none !important;
     }

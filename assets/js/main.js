@@ -102,51 +102,47 @@ function activateSub(subValue) {
  * تفعيل القوائم الفرعية في الجوال
  */
 function initMobileMegaMenu() {
-    // تفعيل القوائم المنسدلة للجوال والايباد (أقل من 1025 بكسل)
+    // ← التابلت يستخدم نفس منطق الجوال (نقر بدل تحويم)
     if (window.innerWidth > 1024) return;
 
-    const dropdownLinks = document.querySelectorAll('.nav-menu li.dropdown > a');
-
-    dropdownLinks.forEach(link => {
-        // إزالة المستمعات القديمة لتجنب التكرار
+    document.querySelectorAll('.nav-menu li.dropdown > a').forEach(link => {
         const newLink = link.cloneNode(true);
         link.parentNode.replaceChild(newLink, link);
     });
 
-    // إضافة المستمعات الجديدة
     document.querySelectorAll('.nav-menu li.dropdown > a').forEach(link => {
-        link.addEventListener('click', function (e) {
-            // في الجوال والايباد، نريد النقر لفتح القائمة بدلاً من التحويم
-            if (window.innerWidth <= 1024) {
-                e.preventDefault();
-                e.stopPropagation();
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-                const parentLi = this.parentElement;
-                const megaMenu = this.nextElementSibling;
+            const megaMenu = this.nextElementSibling;
+            if (!megaMenu) return;
 
-                // تبديل الحالة
-                const isOpen = megaMenu && (megaMenu.classList.contains('open') || megaMenu.classList.contains('active-mobile'));
+            const isOpen = megaMenu.classList.contains('open');
 
-                // إغلاق جميع القوائم الأخرى أولاً
-                document.querySelectorAll('.nav-menu li.dropdown').forEach(li => {
-                    if (li !== parentLi) {
-                        li.querySelector('a').classList.remove('active');
-                        const menu = li.querySelector('.mega-menu-content, .dropdown-menu');
-                        if (menu) {
-                            menu.classList.remove('open');
-                            menu.classList.remove('active-mobile');
-                        }
-                    }
-                });
+            // إغلاق جميع القوائم أولاً
+            document.querySelectorAll('.mega-menu-content').forEach(m => {
+                m.classList.remove('open');
+            });
+            document.querySelectorAll('.nav-menu li.dropdown > a').forEach(a => {
+                a.classList.remove('active');
+            });
 
-                // تبديل حالة القائمة الحالية
-                this.classList.toggle('active', !isOpen);
-                if (megaMenu) {
-                    megaMenu.classList.toggle('open', !isOpen);
-                    megaMenu.classList.toggle('active-mobile', !isOpen);
-                }
+            // فتح المطلوبة إذا كانت مغلقة
+            if (!isOpen) {
+                megaMenu.classList.add('open');
+                this.classList.add('active');
             }
         });
+    });
+
+    // إغلاق عند النقر خارج القائمة
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.has-mega')) {
+            document.querySelectorAll('.mega-menu-content').forEach(m => {
+                m.classList.remove('open');
+            });
+        }
     });
 }
 
