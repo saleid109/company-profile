@@ -180,7 +180,7 @@ body.menu-open .floating-consult-btn {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: var(--color-secondary) ;
+        background-color: var(--color-secondary) !important;
         height: 70px;
         padding: 0 15px;
         width: 100%;
