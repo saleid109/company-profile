@@ -1274,7 +1274,7 @@ body.menu-open .floating-consult-btn {
     position: fixed;
     bottom: 20px;
     left: 20px; /* جهة اليسار لأن الموقع RTL */
-    background-color: #f5e9b8; /* اللون الذهبي الخاص بك */
+    background-color: #f5c842; /* اللون الذهبي الخاص بك */
     color: #001a4d; /* اللون الكحلي */
     display: flex;
     align-items: center;
