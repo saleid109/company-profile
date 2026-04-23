@@ -912,6 +912,7 @@ body.menu-open .floating-consult-btn {
         height: 70px;
         position: relative;
         z-index: 9999;
+        flex-wrap: nowrap;
     }
 
     .nav-right {
@@ -927,16 +928,6 @@ body.menu-open .floating-consult-btn {
     /* يمين بجانب اللوجو: الهامبرغر */
     .mobile-menu-icon {
         display: none !important;
-        align-items: center;
-        justify-content: center;
-        width: 45px;
-        height: 45px;
-        background: var(--color-white);
-        color: var(--color-secondary);
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 22px;
-        margin-right: 12px;
     }
 
     /* يسار: زر الاستشارة */
