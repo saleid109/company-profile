@@ -539,6 +539,16 @@ function toggleMenu() {
     }
 }
 
+window.addEventListener('scroll', () => {
+    const btn = document.querySelector('.floating-consult-btn');
+    if (!btn) return;
+
+    if (window.scrollY > 250) {
+        btn.style.display = 'flex';
+    } else {
+        btn.style.display = 'none';
+    }
+});
 
 
 
