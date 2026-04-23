@@ -936,6 +936,16 @@ body.menu-open .floating-consult-btn {
         display: none !important;
     }
 
+    /* يسار: زر الاستشارة */
+    .nav-actions.desktop-only {
+        display: none !important;
+    }
+
+    .nav-actions.desktop-only .btn-primary {
+        padding: 10px 18px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
 
     /* إخفاء زر الاستشارة داخل القائمة الجانبية */
     .nav-actions.mobile-only {
@@ -1074,18 +1084,6 @@ body.menu-open .floating-consult-btn {
         margin: 0 !important;
     }
 
-    /* ===== زر الاستشارة ===== */
-    .nav-actions.desktop-only {
-        display: flex !important;
-        flex-shrink: 0 !important;
-        align-items: center !important;
-    }
-
-    .nav-actions.desktop-only .btn-primary {
-        padding: 8px 14px !important;
-        font-size: 12px !important;
-        white-space: nowrap !important;
-    }
 
     /* إخفاء الـ overlay */
     .overlay {
