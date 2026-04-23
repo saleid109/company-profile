@@ -904,15 +904,15 @@ body.menu-open .floating-consult-btn {
 
     /* ===== Navbar ===== */
     .nav-wrapper {
-        display: flex;
+        display: flex !important;
         flex-direction: row !important;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        height: 70px;
-        position: relative;
-        z-index: 9999;
-        flex-wrap: nowrap;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 20px !important;
+        height: 70px !important;
+        position: relative !important;
+        z-index: 9999 !important;
+        gap: 10px;
     }
 
     .nav-right {
@@ -954,21 +954,21 @@ body.menu-open .floating-consult-btn {
         height: 75vh;
     }
 
-    /* ===== القائمة الجانبية ===== */
-    /* إخفاء القائمة الجانبية */
+   /* ===== القائمة الأفقية ===== */
     .navbar-links {
-        position: static !important;
-        transform: none !important;
-        width: auto !important;
-        height: auto !important;
-        background-color: transparent !important;
-        padding-top: 0 !important;
-        overflow: visible !important;
+        all: unset !important;          /* ← مسح كل التصاميم الموروثة */
         display: flex !important;
         flex-direction: row !important;
-        align-items: center;
-        flex: 1;
-        justify-content: center;
+        align-items: center !important;
+        flex: 1 !important;
+        justify-content: center !important;
+        position: static !important;
+        transform: none !important;
+        background: transparent !important;
+        height: auto !important;
+        width: auto !important;
+        overflow: visible !important;
+        padding: 0 !important;
     }
 
 /* القائمة أفقية */
