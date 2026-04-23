@@ -925,7 +925,7 @@ body.menu-open .floating-consult-btn {
 
     /* يمين بجانب اللوجو: الهامبرغر */
     .mobile-menu-icon {
-        display: flex !important;
+        display: none !important;
         align-items: center;
         justify-content: center;
         width: 45px;
