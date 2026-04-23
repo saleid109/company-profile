@@ -514,18 +514,33 @@ console.log('✅ All scripts loaded successfully');
 //=======================================
 // 1. قائمة الجوال والطبقة الظليلة
 //=======================================
+/**
+ * فتح وإغلاق قائمة الجوال والتحكم في الطبقة الظليلة والأيقونة
+ */
 function toggleMenu() {
-    const navLinks = document.querySelector('.navbar-links');
+    const navLinks = document.querySelector(".navbar-links");
+    const menuIcon = document.querySelector(".mobile-menu-icon i");
     const overlay = document.querySelector('.overlay');
     const body = document.body;
 
-    navLinks.classList.toggle('active');
-    overlay.classList.toggle('active');
+    if (!navLinks) return;
+
+    // استخدام كلاس "open" ليتوافق مع ملف CSS الخاص بك
+    navLinks.classList.toggle("open");
     
-    // إضافة هذا السطر:
-    body.classList.toggle('menu-open'); 
-    
-    body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+    if (overlay) {
+        overlay.classList.toggle('active');
+    }
+
+    if (navLinks.classList.contains("open")) {
+        if (menuIcon) menuIcon.className = "fas fa-times"; // تغيير الأيقونة إلى X
+        body.classList.add('menu-open');
+        body.style.overflow = 'hidden'; // منع التمرير عند فتح القائمة
+    } else {
+        if (menuIcon) menuIcon.className = "fas fa-bars"; // إعادة الأيقونة إلى هامبرغر
+        body.classList.remove('menu-open');
+        body.style.overflow = 'auto'; // السماح بالتمرير عند إغلاق القائمة
+    }
 }
 
 
