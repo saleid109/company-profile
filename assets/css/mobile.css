@@ -955,44 +955,120 @@ body.menu-open .floating-consult-btn {
     }
 
     /* ===== القائمة الجانبية ===== */
+    /* إخفاء القائمة الجانبية */
     .navbar-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 300px;
-        height: 100vh;
-        background-color: #0b0f5c;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 4000;
-        padding-top: 80px;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .navbar-links.open {
-        transform: translateX(0);
-    }
-
-    .nav-menu {
-        flex-direction: column;
+        position: static !important;
+        transform: none !important;
+        width: auto !important;
+        height: auto !important;
+        background-color: transparent !important;
+        padding-top: 0 !important;
+        overflow: visible !important;
+        display: flex !important;
+        flex-direction: row !important;
         align-items: center;
-        width: 100%;
+        flex: 1;
+        justify-content: center;
+    }
+
+/* القائمة أفقية */
+    .nav-menu {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        gap: 4px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: auto;
     }
 
     .nav-menu li {
-        width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        width: auto;
+        border-bottom: none !important;
     }
 
     .nav-menu li a {
-        padding: 18px 25px;
-        font-size: 16px;
-        color:var(--color-white);
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+        color: var(--color-secondary) !important;
+        white-space: nowrap;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        gap: 4px;
+        border-radius: 6px;
+        transition: background 0.2s ease;
+    }
+
+    .nav-menu li a:hover {
+        background: rgba(0, 0, 0, 0.05);
+        color: var(--color-primary) !important;
+    }
+
+    /* ===== Mega Menu في الآيباد - يفتح بالتحويم ===== */
+    .mega-menu-content {
+        position: absolute !important;
+        top: 100% !important;
+        right: 0 !important;
+        width: 320px !important;
+        background: white !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15) !important;
+        padding: 15px !important;
+        max-height: none !important;
+        overflow: visible !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 9999;
+    }
+
+    /* فتح Mega Menu بالنقر في الآيباد */
+    .mega-menu-content.open {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .mega-grid {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .mega-card {
+        color: var(--color-secondary) !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        padding: 12px !important;
+        border-radius: 8px;
+        background: transparent !important;
+    }
+
+    .mega-card:hover {
+        background: rgba(0,0,0,0.03) !important;
+    }
+
+    .card-info h4 {
+        color: var(--color-secondary) !important;
+    }
+
+    .card-info p {
+        color: #666 !important;
+    }
+
+    /* زر الاستشارة */
+    .nav-actions.desktop-only {
+        display: flex !important;
+        flex-shrink: 0;
+    }
+
+    .nav-actions.desktop-only .btn-primary {
+        padding: 8px 14px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    /* إخفاء الـ overlay في الآيباد مع القائمة الأفقية */
+    .overlay {
+        display: none !important;
     }
 
     /* طبقة التظليل */
