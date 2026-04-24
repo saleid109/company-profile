@@ -222,6 +222,40 @@
     /* اللون الأصفر الذي تستخدمه في بطاقاتك */
 }
 
+/* تنسيق الحاوية داخل السايدبار */
+.stars-filter-container {
+    padding: 10px 5px;
+    text-align: center;
+}
+
+.stars-interactive {
+    display: flex;
+    flex-direction: row-reverse; /* لضمان التظليل من اليمين لليسار */
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.stars-interactive label {
+    font-size: 28px; /* حجم مريح للنقر */
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+/* تلوين النجوم عند الاختيار أو التحويم */
+.stars-interactive input:checked ~ label,
+.stars-interactive label:hover,
+.stars-interactive label:hover ~ label {
+    color: #FFB800; /* اللون الذهبي الموحد في مشروعك */
+}
+
+.rating-hint-text {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
 /* =========================================
     Cards Grid & Service Cards
    ========================================= */
