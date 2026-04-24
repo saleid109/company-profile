@@ -16,11 +16,12 @@
 
 .hero-list-news {
   display: flex;
-  flex-direction: row-reverse; 
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   gap: 80px;
-  direction: rtl;               /* يضمن: أول عنصر = يمين */
+  direction: rtl;
+  /* يضمن: أول عنصر = يمين */
 }
 
 /* ── النص اليميني ── */
@@ -39,7 +40,8 @@
 }
 
 .hero-title-news span {
-  color: var(--color-primary);   /* أصفر */
+  color: var(--color-primary);
+  /* أصفر */
 }
 
 .hero-subtitle-news {
@@ -55,11 +57,11 @@
   max-width: 100%;
   border-radius: 24px;
   overflow: hidden;
-  background:var(--color-white);
-  box-shadow: 0 8px 32px rgba(0,0,0,.10);
+  background: var(--color-white);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .10);
 }
 
-.hero-card > img {
+.hero-card>img {
   width: 100%;
   display: block;
   border-radius: 24px 24px 0 0;
@@ -70,7 +72,7 @@
 .hero-card-body {
   padding: 24px 28px 20px;
   text-align: right;
-  background:var(--color-white);
+  background: var(--color-white);
   direction: rtl;
 }
 
@@ -98,7 +100,7 @@
   font-weight: 600;
   text-decoration: none;
   font-size: 15px;
-  float: left; 
+  float: left;
 }
 
 .btn-link-news:hover {
@@ -143,112 +145,189 @@
 /* الحاوية الرئيسية */
 
 .news-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    margin: 40px 0;
-    direction: rtl; /* التأكد من اتجاه اليمين لليسار */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin: 40px 0;
+  direction: rtl;
+  /* التأكد من اتجاه اليمين لليسار */
 }
 
 .controls-right-side {
-    display: flex;
-    align-items: flex-end;
-    gap: 15px;
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
 }
 
 /* زر الترتيب المنسدل */
 .sort-dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .sort-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 25px;
-    border: 1px solid #e0e0e0;
-    border-radius: 50px;
-    background: #fff;
-    cursor: pointer;
-    font-family: 'Tajawal', sans-serif;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 25px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50px;
+  background:var(--color-white);
+  color: var(--color-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
 .sort-btn:hover {
-    background-color: #f8f9fa;
+  background-color: #f8f9fa;
 }
+
 /* قائمة الخيارات المنسدلة */
 .dropdown-menu-list {
-    position: absolute;
-    top: 110%;
-    right: 0;
-    width: 180px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 5px 0;
-    list-style: none;
-    z-index: 100;
-    display: none; /* مخفية افتراضياً */
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 180px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 5px 0;
+  list-style: none;
+  z-index: 100;
+  display: none;
+  /* مخفية افتراضياً */
 }
 
 /* إظهار القائمة عند الحوم (Hover) أو الضغط */
 .sort-dropdown:hover .dropdown-menu-list {
-    display: block;
+  display: block;
 }
 
 .dropdown-menu-list li {
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.2s;
-    text-align: right;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  text-align: right;
 }
 
 .dropdown-menu-list li:hover {
-    background-color: #f5f5f5;
-    color: #000;
+  background-color: #f5f5f5;
+  color: #000;
 }
 
 /* تنسيق قائمة التصنيف (مثل الصورة) */
 .filter-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 1.1rem;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .filter-group select {
-    padding: 8px 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 15px;
-    min-width: 160px;
-    font-family: 'Tajawal', sans-serif;
-    outline: none;
+  padding: 8px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  min-width: 160px;
+  font-family: 'Tajawal', sans-serif;
+  outline: none;
 }
 
 /* حقل البحث (الجهة اليسرى) */
+/* --- تنسيق البحث (يمين) --- */
 .search-group {
-    position: relative;
-    width: 300px;
+  position: relative;
+  width: 350px;
+  /* يمكنك زيادة العرض حسب الرغبة */
 }
 
 .search-group input {
-    width: 100%;
-    padding: 10px 15px 10px 40px;
-    border: 1px solid #e0e0e0;
-    border-radius: 50px;
-    font-family: 'Tajawal', sans-serif;
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  /* مسافة للأيقونة على اليمين */
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-family: 'Tajawal', sans-serif;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* لون الهوفر للبحث (أصفر) */
+.search-group input:focus,
+.search-group input:hover {
+  border-color: #FFD700;
+  /* اللون الأصفر */
 }
 
 .search-group i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
+  position: absolute;
+  right: 18px;
+  /* الأيقونة على اليمين داخل الحقل */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+/* --- تنسيق الترتيب (يسار) --- */
+.sort-dropdown {
+  position: relative;
+}
+
+.sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 25px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  background: #fff;
+  cursor: pointer;
+  font-family: 'Tajawal', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* هوفر زر الترتيب (أصفر) */
+.sort-btn:hover {
+  border-color: #FFD700;
+  background-color: #fffbef;
+  /* خلفية صفراء خفيفة جداً عند الهوفر */
+}
+
+/* قائمة الخيارات المنسدلة */
+.dropdown-menu-list {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  /* تفتح لجهة اليسار */
+  width: 180px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  list-style: none;
+  z-index: 100;
+  display: none;
+  text-align: right;
+}
+
+.sort-dropdown:hover .dropdown-menu-list {
+  display: block;
+}
+
+.dropdown-menu-list li {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s;
+}
+
+/* هوفر خيارات القائمة المنسدلة (أصفر) */
+.dropdown-menu-list li:hover {
+  background-color: #FFD700;
+  color: #000;
 }
 
 .search-group input:focus {
@@ -269,7 +348,7 @@
 ========================================= */
 .news-card {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   padding: 16px 24px;
   align-items: center;
   gap: 24px;
@@ -277,8 +356,8 @@
   border: 1px solid #D0D0D0;
   background: #fff;
   box-shadow:
-    0 12px 16px -4px rgba(16,24,40,.08),
-    0 4px 6px -2px rgba(16,24,40,.03);
+    0 12px 16px -4px rgba(16, 24, 40, .08),
+    0 4px 6px -2px rgba(16, 24, 40, .03);
   direction: rtl;
 }
 
@@ -291,7 +370,8 @@
   flex-shrink: 0;
   border-radius: 20px;
   overflow: hidden;
-  order: 1;                      /* يظهر آخراً في RTL = يسار فعلياً */
+  order: 1;
+  /* يظهر آخراً في RTL = يسار فعلياً */
 }
 
 .news-thumb img {
@@ -311,7 +391,8 @@
   justify-content: center;
   gap: 16px;
   text-align: right;
-  order: 0;                     /* يظهر أولاً في RTL = يمين فعلياً */
+  order: 0;
+  /* يظهر أولاً في RTL = يمين فعلياً */
 }
 
 .news-body h3 {
@@ -344,7 +425,8 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  align-self: flex-start;          /* نهاية الفلكس = يسار في RTL */
+  align-self: flex-start;
+  /* نهاية الفلكس = يسار في RTL */
   direction: rtl;
 }
 
@@ -414,6 +496,7 @@
 /* ===== تابلت — 768px إلى 1024px ===== */
 /* ===== تابلت — 768px إلى 1024px ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
+
   /* ── الهيرو ── */
   .hero-list-news {
     flex-direction: row;
@@ -427,7 +510,8 @@
   }
 
   .hero-title-news {
-    font-size: 32px;        /* تابلت فقط ✅ */
+    font-size: 32px;
+    /* تابلت فقط ✅ */
   }
 
   .hero-subtitle-news {
@@ -451,21 +535,33 @@
     flex-shrink: 0;
   }
 
-  .news-body h3 { font-size: 18px; }
-  .news-body p  { font-size: 14px; }
+  .news-body h3 {
+    font-size: 18px;
+  }
+
+  .news-body p {
+    font-size: 14px;
+  }
 
   .news-controls {
     flex-direction: row;
     align-items: center;
   }
 
-  .search-group { width: 240px; }
+  .search-group {
+    width: 240px;
+  }
 }
 
 /* ===== موبايل — أقل من 768px ===== */
 @media (max-width: 768px) {
-  .hero-news      { padding: 40px 0; }
-  .news-container { padding: 0 20px; }
+  .hero-news {
+    padding: 40px 0;
+  }
+
+  .news-container {
+    padding: 0 20px;
+  }
 
   .hero-list-news {
     flex-direction: column;
@@ -485,22 +581,36 @@
   }
 
   .hero-title-news {
-    font-size: 28px;        /* موبايل فقط ✅ */
+    font-size: 28px;
+    /* موبايل فقط ✅ */
     text-align: center;
   }
 
-  .hero-subtitle-news { text-align: center; }
+  .hero-subtitle-news {
+    text-align: center;
+  }
 
-  .news-section           { padding: 40px 0; }
-  .news-section .container { padding: 0 20px; }
+  .news-section {
+    padding: 40px 0;
+  }
+
+  .news-section .container {
+    padding: 0 20px;
+  }
 
   .news-controls {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .search-group { width: 100%; }
-  .sort-btn     { width: 100%; justify-content: center; }
+  .search-group {
+    width: 100%;
+  }
+
+  .sort-btn {
+    width: 100%;
+    justify-content: center;
+  }
 
   .news-card {
     flex-direction: column;
@@ -513,14 +623,32 @@
     aspect-ratio: 16/9;
   }
 
-  .read-more { align-self: flex-end; }
+  .read-more {
+    align-self: flex-end;
+  }
 }
 
 /* ===== موبايل صغير — أقل من 480px ===== */
 @media (max-width: 480px) {
-  .hero-title-news    { font-size: 22px; }  /* موبايل صغير ✅ */
-  .hero-card-body h2  { font-size: 16px; }
-  .section-title      { font-size: 28px; }
-  .news-body h3       { font-size: 16px; }
-  .page-btn           { padding: 6px 12px; font-size: 13px; }
+  .hero-title-news {
+    font-size: 22px;
+  }
+
+  /* موبايل صغير ✅ */
+  .hero-card-body h2 {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .news-body h3 {
+    font-size: 16px;
+  }
+
+  .page-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
 }
