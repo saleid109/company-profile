@@ -5,7 +5,7 @@ const services = [
     {
         id: 1, type: "products", title: "نظام إداري",
         image: "./public/images/erp-system.jpg",
-        detailsUrl: `./details-service/Product details.html?id=1`
+        detailsUrl: `./details-service/Product-details.html?id=1`
 ,
         price: 2000, rating: 5
     },
@@ -13,27 +13,27 @@ const services = [
     {
         id: 2, type: "products", title: "موقع تعريفي",
         image: "./public/images/hero-main.jpg",
-        detailsUrl: `./details-service/Product details.html?id=2`,
+        detailsUrl: `./details-service/Product-details.html?id=2`,
         price: 2000, rating: 4
     },
 
     {
         id: 3, type: "products", title: "موقع تجاري",
         image: "./public/images/ecommerce.jpg",
-        detailsUrl: `./details-service/Product details.html?id=3`,
+        detailsUrl: `./details-service/Product-details.html?id=3`,
         price: 2000, rating: 5
     },
 
     {
         id: 4, type: "work", title: "تأهيل لسوق العمل",
-        image: "./public/images/work-rehab.jpg",
+        image: "../public/images/work-rehab.jpg",
         detailsUrl: "./details-service/work-details.html",
         price: null, rating: 5
     },
 
     {
         id: 5, type: "digital", title: "تطوير مواقع إلكترونية",
-        image: "./public/images/web-dev.jpg",
+        image: "../public/images/web-dev.jpg",
         detailsUrl: "./details-service/product-details.html?id=5",
         price: 1500, rating: 5
     },
