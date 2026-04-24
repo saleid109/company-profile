@@ -139,67 +139,113 @@
 }
 
     /* تنسيق قسم التحكم */ 
-
+/* تنسيق الحاوية الرئيسية للأدوات */
 .news-controls {
     display: flex;
+    justify-content: space-between;
     align-items: flex-end;
     gap: 20px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
+    margin: 40px 0;
 }
 
-/* تنسيق زر الترتيب (الصورة الثانية) */
+.controls-right-side {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+/* زر الترتيب المنسدل */
+.sort-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
 .sort-btn {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 25px;
-    border: 1px solid #ddd;
-    border-radius: 50px; /* لشكل الكبسولة */
+    gap: 10px;
+    padding: 8px 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
     background: #fff;
     cursor: pointer;
     font-family: 'Tajawal', sans-serif;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
-
 .sort-btn:hover {
     background-color: #f8f9fa;
 }
-
-.search-group {
-  width: 286px;
-  position: relative;
+/* قائمة الخيارات المنسدلة */
+.dropdown-menu-list {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    width: 180px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 5px 0;
+    list-style: none;
+    z-index: 100;
+    display: none; /* مخفية افتراضياً */
 }
 
-/* تنسيق قائمة التصنيف (الصورة الأولى) */
-.filter-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+/* إظهار القائمة عند الحوم (Hover) أو الضغط */
+.sort-dropdown:hover .dropdown-menu-list {
+    display: block;
 }
 
-.filter-group label {
-    font-weight: bold;
+.dropdown-menu-list li {
+    padding: 10px 15px;
+    cursor: pointer;
     font-size: 0.9rem;
+    transition: background 0.2s;
+    text-align: right;
+}
+
+.dropdown-menu-list li:hover {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+/* تنسيق قائمة التصنيف (مثل الصورة) */
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .filter-group select {
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 15px; /* حواف دائرية كما في الصورة */
-    min-width: 200px;
+    padding: 8px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    min-width: 160px;
     font-family: 'Tajawal', sans-serif;
     outline: none;
-    appearance: none; /* لإضافة سهم مخصص إذا أردت */
-    background: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E") no-repeat left 15px center;
 }
 
-/* تعديل حقل البحث ليتناسب معهم */
+/* حقل البحث (الجهة اليسرى) */
+.search-group {
+    position: relative;
+    width: 300px;
+}
+
 .search-group input {
-    padding: 10px 40px 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
     font-family: 'Tajawal', sans-serif;
+}
+
+.search-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
 }
 
 .search-group input:focus {
