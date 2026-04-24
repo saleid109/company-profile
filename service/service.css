@@ -51,7 +51,6 @@
     background: var(--color-secondary);
     color: var(--color-white);
 }
-
 /* =========================================
     Sidebar & Filters
    ========================================= */
@@ -64,15 +63,17 @@
 .sidebar {
     background: var(--color-white);
     border-radius: 12px;
-    overflow: hidden;
     padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* إضافة ظل بسيط لجمالية التصميم */
 }
 
 .sidebar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f5f5f5;
+    margin-bottom: 10px;
 }
 
 .sidebar-title {
@@ -80,8 +81,6 @@
     font-weight: 800;
     color: var(--color-text);
     margin: 0;
-    border-bottom: 1px solid #f5f5f5;
-    margin-bottom: 10px;
 }
 
 .btn-clear-filters {
@@ -103,7 +102,6 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* هذا يوزع النص والسهم على الأطراف */
     align-items: center;
     background: none;
     border: none;
@@ -114,7 +112,6 @@
     cursor: pointer;
     font-family: var(--font-main);
     text-align: right;
-    /*  لمحاذاة النص لليمين في العربية */
 }
 
 .filter-options {
@@ -124,56 +121,21 @@
     gap: 12px;
 }
 
-/* Rating in Sidebar */
-.rating-filter-item {
+.filter-option {
     display: flex;
     align-items: center;
-    /* row تجعل العناصر تتبع ترتيب الـ HTML (الشيك بوكس ثم النجوم) */
-    flex-direction: row;
-    gap: 12px;
-    /* مسافة بين الشيك بوكس والنجوم */
-    padding: 8px 0;
+    gap: 10px;
     cursor: pointer;
+    font-size: 14px;
 }
 
-/* لضمان بقاء النجوم بجانب بعضها وعدم انعكاس ترتيبها الداخلي */
-.rating-stars-sidebar {
-    display: flex;
-    gap: 4px;
-    color: #FFB800;
-    /* لون النجوم الذهبي */
-    /* نلغي أي row-reverse قديم كان موجوداً */
-    flex-direction: row;
-}
-
-/* تنسيق الشيك بوكس ليظهر بشكل نظيف */
-.rating-checkbox {
+.filter-cb {
     width: 18px;
     height: 18px;
-    cursor: pointer;
     accent-color: var(--color-secondary);
-    /* لتغيير لون الشيك بوكس عند التفعيل */
 }
 
-.rating-checkbox:checked {
-    background: var(--color-secondary);
-    border-color: var(--color-secondary);
-}
-
-.rating-checkbox:checked::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 4px;
-    width: 5px;
-    height: 9px;
-    border: 2px solid white;
-    border-top: none;
-    border-left: none;
-    transform: rotate(45deg);
-}
-
-/* الفلاتر accordion */
+/* التنسيقات الخاصة بالـ Accordion (إظهار وإخفاء القوائم) */
 .filter-content {
     overflow: hidden;
     max-height: 0;
@@ -181,48 +143,23 @@
 }
 
 .filter-content.open {
-    max-height: 300px;
+    max-height: 500px; /* زيادة القيمة لتستوعب المحتوى */
 }
 
 .chevron {
-    font-size: 14px;
+    font-size: 12px;
     color: #888;
     transition: transform 0.25s;
-    display: inline-block;
 }
 
 .chevron.open {
     transform: rotate(180deg);
 }
 
-.stars-interactive {
-    display: flex;
-    flex-direction: row-reverse;
-    /* مهم جداً ليعمل التلوين من اليمين لليسار */
-    justify-content: flex-end;
-    font-size: 25px;
-}
-
-.stars-interactive input {
-    display: none;
-}
-
-.stars-interactive label {
-    color: #ddd;
-    /* لون النجوم المطفأة */
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-/* تلوين النجوم عند الاختيار أو تمرير الفأرة */
-.stars-interactive input:checked~label,
-.stars-interactive label:hover,
-.stars-interactive label:hover~label {
-    color: #ffca08;
-    /* اللون الأصفر الذي تستخدمه في بطاقاتك */
-}
-
-/* تنسيق الحاوية داخل السايدبار */
+/* =========================================
+    نظام التقييم التفاعلي (Interactive Stars) 
+    (تم حذف التكرار والقديم)
+   ========================================= */
 .stars-filter-container {
     padding: 10px 5px;
     text-align: center;
@@ -230,30 +167,40 @@
 
 .stars-interactive {
     display: flex;
-    flex-direction: row-reverse; /* لضمان التظليل من اليمين لليسار */
+    flex-direction: row-reverse; /* لضمان منطق تلوين النجوم من اليمين لليسار */
     justify-content: center;
     gap: 5px;
     margin-bottom: 8px;
 }
 
+.stars-interactive input {
+    display: none; /* إخفاء الدوائر الأصلية */
+}
+
 .stars-interactive label {
-    font-size: 28px; /* حجم مريح للنقر */
-    color: #e0e0e0;
+    font-size: 28px;
+    color: #e0e0e0; /* لون النجوم قبل الاختيار */
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 }
 
-/* تلوين النجوم عند الاختيار أو التحويم */
+/* تلوين النجوم عند الاختيار (Checked) أو عند تمرير الماوس (Hover) */
 .stars-interactive input:checked ~ label,
 .stars-interactive label:hover,
 .stars-interactive label:hover ~ label {
-    color: #FFB800; /* اللون الذهبي الموحد في مشروعك */
+    color: #FFB800; /* اللون الذهبي الموحد */
 }
 
 .rating-hint-text {
     font-size: 12px;
     color: #888;
     margin-top: 5px;
+    font-family: var(--font-main);
+}
+
+/* كلاس المساعدة للإخفاء */
+.hidden {
+    display: none !important;
 }
 
 /* =========================================
