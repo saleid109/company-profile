@@ -275,24 +275,33 @@
         <!-- أدوات البحث والترتيب -->
         <div class="news-controls" role="search" aria-label="البحث في الأخبار وترتيبها">
 
-          <button class="sort-btn" type="button" aria-label="ترتيب الأخبار">
-            <i class="fas fa-sliders-h" aria-hidden="true"></i>
-            <span>ترتيب</span>
-          </button>
+          <div class="controls-right-side">
+            <div class="filter-group">
+              <label for="news-category">تصنيف الخبر</label>
+              <select id="news-category" name="category">
+                <option value="" selected disabled>اختر التصنيف...</option>
+                <option value="album">ألبوم صور</option>
+                <option value="news">خبر</option>
+              </select>
+            </div>
 
-          <div class="filter-group">
-            <label for="news-category">تصنيف الخبر</label>
-            <select id="news-category" name="category">
-              <option value="" selected disabled>اختر التصنيف...</option>
-              <option value="album">ألبوم صور</option>
-              <option value="news">خبر</option>
-            </select>
+            <div class="sort-dropdown">
+              <button class="sort-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <i class="fas fa-sliders-h"></i>
+                <span>ترتيب</span>
+              </button>
+              <ul class="dropdown-menu-list" role="listbox">
+                <li role="option">الأحدث</li>
+                <li role="option">الأقدم</li>
+                <li role="option">الأكثر قراءة</li>
+                <li role="option">ألبوم الصور</li>
+              </ul>
+            </div>
           </div>
 
           <div class="search-group">
-            <label for="news-search">البحث في الأخبار</label>
             <i class="fas fa-search" aria-hidden="true"></i>
-            <input type="search" id="news-search" name="q" placeholder="بحث في الأخبار..." autocomplete="off" />
+            <input type="search" id="news-search" placeholder="بحث في الأخبار..." />
           </div>
         </div>
 
