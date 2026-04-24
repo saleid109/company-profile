@@ -100,11 +100,27 @@ function createCard(service) {
 // عرض الخدمات
 // ======================<a href="${service.detailsUrl}" class="card-details-link">التفاصيل &rsaquo;</a>======================
 function renderServices(type) {
-    if (!container) return;
-    const filtered = services.filter(s => s.type === type);
-    container.innerHTML = filtered.length
-        ? filtered.map(createCard).join("")
-        : '<div class="no-data">لا توجد خدمات متاحة حالياً.</div>';
+    const allCards = document.querySelectorAll(".services-card");
+    let hasVisibleCards = false;
+
+    allCards.forEach(card => {
+        if (card.dataset.type === type) {
+            card.style.display = "block"; // إظهار البطاقة المناسبة للتبويب
+            hasVisibleCards = true;
+        } else {
+            card.style.display = "none"; // إخفاء البطاقات الأخرى
+        }
+    });
+
+    // إظهار رسالة "لا توجد خدمات" إذا كان القسم فارغاً
+    const noDataMsg = document.querySelector(".no-data");
+    if (!hasVisibleCards) {
+        if (!noDataMsg) {
+            container.insertAdjacentHTML('beforeend', '<div class="no-data">لا توجد خدمات متاحة حالياً.</div>');
+        }
+    } else {
+        noDataMsg?.remove();
+    }
 }
 
 // ============================================
