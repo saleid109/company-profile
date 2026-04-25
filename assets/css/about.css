@@ -762,12 +762,7 @@
   }
 
   .deco-curl {
-    position: static;   /* ← يخرج من الـ absolute */
-    display: block;
-    width: 70px;
-    height: auto;
-    margin-bottom: 8px;
-    transform: rotate(22.798deg);
+    display: none;
   }
 
   .cert-visual img {
@@ -806,6 +801,14 @@
     font-size: 28px;
   }
 
+}
+
+
+/* إذا كانت المشكلة أن المحتوى تحته، أضيفي على الأقسام */
+.features-section,
+.certs-section {
+  position: relative;
+  z-index: 1;
 }
 
 
