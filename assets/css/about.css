@@ -739,22 +739,29 @@
   .venn-social {
     width: 120px;
     height: 120px;
+    top: 10px; 
+    left: 50%; 
+    transform: translateX(-50%);
   }
 
   .venn-prof {
     width: 110px;
     height: 110px;
+    top: 100px; 
+    left: 10px;
   }
 
   .venn-enable {
     width: 105px;
     height: 105px;
-    top: 80px;
+    top: 95px; 
+    right: 10px;
   }
 
   .venn-innovation {
     width: 120px;
     height: 120px;
+    bottom: 0;
   }
 
 }
@@ -838,58 +845,4 @@
     }
 }
 
-/* ===== الجوال max-width: 767px ===== */
-@media (max-width: 767px) {
-
-    /* الشهادات */
-    .certs-layout {
-        flex-direction: column !important;
-        padding: 0 16px;
-        gap: 24px;
-    }
-
-    .cert-card {
-        width: 100% !important;
-    }
-
-    .cert-visual {
-        height: 280px;
-    }
-
-    .cert-visual img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    .certs-text {
-        top: 0;
-        width: 100%;
-    }
-
-    .certs-text h2 {
-        font-size: 26px;
-    }
-
-    .certs-text p {
-        width: 100%;
-        font-size: 16px;
-        line-height: 28px;
-    }
-
-    /* بطاقات الميزات */
-    .features-row {
-        flex-direction: column;
-        gap: 16px;
-        padding: 0 16px;
-    }
-
-    .feature-card {
-        width: 100%;
-    }
-
-    .section-center-title {
-        font-size: 28px;
-    }
-}
 
