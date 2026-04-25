@@ -687,14 +687,14 @@
     font-size: 15px;
   }
 
-  /* تصغير حجم الدوائر (Venn Diagram) لتناسب الشاشات الصغيرة */
+  /* تصغير حجم الدوائر  */
+  
   .venn-wrapper {
     width: 240px;
-    height: 260px;
+    height: 290px; /* ← زيادة الارتفاع لإظهار الابتكار كاملاً */
     margin: 0 auto;
   }
 
-  /* الأعلى - المسؤولية المجتمعية */
   .venn-social {
     width: 130px;
     height: 130px;
@@ -703,37 +703,26 @@
     transform: translateX(-50%);
   }
 
-  /* اليسار - الاحترافية */
   .venn-prof {
     width: 115px;
     height: 115px;
-    top: 85px;    /* ← تداخل مع العلوية */
-    left: 5px;
+    top: 90px;
+    left: 0px;  /* ← أبعد قليلاً للجانب */
   }
 
-  /* اليمين - التمكين */
   .venn-enable {
     width: 115px;
     height: 115px;
-    top: 80px;    /* ← تداخل مع العلوية */
-    right: 5px;
+    top: 85px;
+    right: 0px; /* ← أبعد قليلاً للجانب */
   }
 
-  /* الأسفل - الابتكار */
   .venn-innovation {
-    width: 130px;
-    height: 130px;
+    width: 140px; /* ← أكبر قليلاً */
+    height: 140px;
     bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
-  }
-
-  /* إصلاح hover على الموبايل */
-  .venn-social:hover {
-    transform: translateX(-50%) scale(1.04);
-  }
-  .venn-innovation:hover {
-    transform: translateX(-50%) scale(1.04);
   }
   .certs-layout {
     flex-direction: column !important;
@@ -754,7 +743,7 @@
   }
 
   .cert-visual img {
-    width: 100%;          /* ← بدل 377px الثابتة */
+    width: 100%;        
     height: 100%;
     object-fit: contain;
   }
