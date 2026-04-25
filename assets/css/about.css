@@ -688,42 +688,41 @@
   }
 
   /* تصغير حجم الدوائر  */
-  
-  .venn-wrapper {
-    width: 240px;
-    height: 290px; /* ← زيادة الارتفاع لإظهار الابتكار كاملاً */
-    margin: 0 auto;
-  }
 
-  .venn-social {
-    width: 130px;
-    height: 130px;
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+    /* الدوائر */
+    .venn-wrapper {
+        width: 370px;
+        height: 359px;
+        margin: 0 auto;
+    }
 
-  .venn-prof {
-    width: 115px;
-    height: 115px;
-    top: 90px;
-    left: 0px;  /* ← أبعد قليلاً للجانب */
-  }
+    .venn-social {
+        width: 160px;
+        height: 170px;
+        top: 30px;
+    }
 
-  .venn-enable {
-    width: 115px;
-    height: 115px;
-    top: 85px;
-    right: 0px; /* ← أبعد قليلاً للجانب */
-  }
+    .venn-prof {
+        width: 140px;
+        height: 140px;
+        top: 130px;
+        left: 20px;
+    }
 
-  .venn-innovation {
-    width: 140px; /* ← أكبر قليلاً */
-    height: 140px;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+    .venn-enable {
+        width: 150px;
+        height: 150px;
+        top: 120px;
+        right: 10px;
+    }
+
+    .venn-innovation {
+        width: 170px;
+        height: 170px;
+        
+    }
+
+
   .certs-layout {
     flex-direction: column !important;
     padding: 0 16px;
