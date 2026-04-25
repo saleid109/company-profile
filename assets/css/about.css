@@ -638,12 +638,6 @@
 }
 
 
-
-
-
-
-
-
 /* ===== التجاوب المحدث ===== */
 @media (max-width: 1024px) {
   .certs-layout {
@@ -671,6 +665,12 @@
 }
 
 @media (max-width: 768px) {
+
+  .hero-inner {
+    height: auto;
+    min-height: 200px;
+    padding: 30px 16px;
+  }
 
   /* توحيد الشبكات في عمود واحد */
   .intro-grid,
