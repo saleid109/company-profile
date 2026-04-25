@@ -638,31 +638,14 @@
 }
 
 
-/* ===== التجاوب المحدث ===== */
-@media (max-width: 1024px) {
-  .certs-layout {
-    grid-template-columns: 1fr;
-  }
 
-  .certs-layout .cert-card {
-    max-width: 420px;
-    margin: 0 auto;
-    /* لضمان التوسط */
-  }
-
-  .intro-grid {
-    gap: 40px;
-  }
-
-  /* تصحيح أبعاد الطائرة الورقية */
-  .paper-plane {
-    width: 120px;
-    /* حجم منطقي */
-    height: auto;
-    right: 5%;
-    opacity: 0.15;
-  }
+/* ✅ إصلاح زر "احصل على استشارة" */
+.floating-consult-btn {  
+  z-index: 99;
 }
+
+
+/* ===== التجاوب المحدث ===== */
 
 @media (max-width: 768px) {
 
@@ -764,7 +747,66 @@
     bottom: 0;
   }
 
+  .certs-layout {
+    flex-direction: column !important;
+    padding: 0 16px;
+    gap: 24px;
+  }
+
+  .cert-card {
+    width: 100% !important;
+  }
+
+  .cert-visual {
+    height: 280px;        /* ← تصغير الارتفاع */
+  }
+
+  .cert-visual img {
+    width: 100%;          /* ← بدل 377px الثابتة */
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .certs-text {
+    top: 0;
+    width: 100%;
+  }
+
+  .certs-text h2 {
+    font-size: 26px;
+  }
+
+  .certs-text p {
+    width: 100%;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  /* بطاقات الميزات */
+  .features-row {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .feature-card {
+    width: 100%;
+  }
+
+  .section-center-title {
+    font-size: 28px;
+  }
 }
+
+
+/* إذا كانت المشكلة أن المحتوى تحته، أضيفي على الأقسام */
+.features-section,
+.certs-section {
+  position: relative;
+  z-index: 1;
+}
+
+
 
 /* ===== التابلت 768px - 1024px ===== */
 @media (min-width: 768px) and (max-width: 1024px) {
