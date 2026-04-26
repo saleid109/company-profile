@@ -627,28 +627,3 @@
     align-self: flex-end;
   }
 }
-
-/* ===== موبايل صغير — أقل من 480px ===== */
-@media (max-width: 480px) {
-  .hero-title-news {
-    font-size: 22px;
-  }
-
-  /* موبايل صغير ✅ */
-  .hero-card-body h2 {
-    font-size: 16px;
-  }
-
-  .section-title {
-    font-size: 28px;
-  }
-
-  .news-body h3 {
-    font-size: 16px;
-  }
-
-  .page-btn {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
-}
