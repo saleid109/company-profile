@@ -236,7 +236,7 @@
 .stars-interactive input:checked ~ label,
 .stars-interactive label:hover,
 .stars-interactive label:hover ~ label {
-    color: #FFB800; /* اللون الذهبي الموحد */
+    color: #FFB800; /* لون النجوم عند التفاعل */
 }
 
 .rating-hint-text {
@@ -421,15 +421,39 @@
 .hidden {
     display: none !important;
 }
-
-@media (max-width: 991px) {
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 767px) {
+    .main-layout {
+        flex-direction: column !important;
+        gap: 20px;
+        padding: 20px 0;
     }
-}
 
-@media (max-width: 576px) {
-    .cards-grid {
-        grid-template-columns: 1fr;
+    /* الفلتر يجي فوق البطاقات */
+    .sidebar-side {
+        width: 100% !important;
+        position: static !important;
+        order: -1; /* يظهر أول */
+    }
+
+    .sidebar {
+        border-radius: 12px;
+    }
+
+    .tabs-row {
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .tab-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .hero-inner {
+        height: 200px;
+    }
+
+    .title-about h1 {
+        font-size: 2rem;
     }
 }
