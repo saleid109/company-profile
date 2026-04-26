@@ -41,8 +41,8 @@
 }
 
 .title-about h1 {
-    color: white;
-    font-size: 3rem;
+    color: var(--color-white);
+    font-size: 32px;
     font-weight: 700;
 }
 
