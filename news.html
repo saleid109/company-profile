@@ -87,127 +87,142 @@
       </div>
     </div>
 
+    <!--===== Navbar =====-->
     <nav class="main-nav" aria-label="القائمة الرئيسية">
-      <div class="nav-right">
-        <div class="logo">
-          <a href="index.html" title="العودة للرئيسية">
-            <img src="./public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود" />
-          </a>
+      <div class="container nav-wrapper">
+
+        <!--  يمين: لوجو + هامبرغر جنب بعض -->
+        <div class="nav-right">
+          <div class="logo">
+            <a href="index.html" title="العودة للرئيسية">
+              <img src="./public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود" />
+            </a>
+          </div>
         </div>
+        <!--  وسط: روابط التنقل الرئيسية (تتحول لقائمة جانبية في الجوال) -->
+    
+        <!-- زر القائمة الجانبية للجوال -->
         <button class="mobile-menu-icon" onclick="toggleMenu()" aria-label="فتح القائمة">
           <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
-      </div>
 
-      <div class="navbar-links">
-        <ul class="nav-menu">
-          <li>
-            <a href="index.html" class="active" aria-current="page">الرئيسية</a>
-          </li>
+        <!-- القوائم الجانبية -->
+        <div class="navbar-links">
+          <ul class="nav-menu">
+            <li>
+              <a href="index.html"  aria-current="page">الرئيسية</a>
+            </li>
 
-          <li class="dropdown has-mega">
-            <a href="#about.html" aria-haspopup="true" aria-expanded="false">
-              عن نقطة صعود
-              <i class="fas fa-chevron-down mr-1 text-xs"></i>
-            </a>
-            <div class="mega-menu-content">
-              <div class="mega-grid">
-                <a href="about.html" class="mega-card">
-                  <div class="card-icon-wrapper">
-                    <img src="./public/images/Frame.png" alt="icon" />
-                  </div>
-                  <div class="card-info">
-                    <h4>عن نقطة صعود</h4>
-                    <p>نبذة عن نقطة صعود أهدافنا ورؤيتنا</p>
-                    <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                  </div>
-                </a>
-                <a href="our-story.html" class="mega-card">
-                  <div class="card-icon-wrapper">
-                    <div class="mega-icon-wrap">
-                      <i class="fas fa-book-open"></i>
+            <li class="dropdown has-mega">
+              <a href="about.html" class="active"  aria-haspopup="true" aria-expanded="false">
+                عن نقطة صعود
+                <i class="fas fa-chevron-down mr-1 text-xs"></i>
+              </a>
+              <div class="mega-menu-content">
+                <div class="mega-grid">
+                  <a href="about.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <img src="./public/images/Frame.png" alt="icon">
                     </div>
-                  </div>
-                  <div class="card-info">
-                    <h4>قصتنا</h4>
-                    <p>تعرف على قصتنا وبدايتنا</p>
-                    <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                  </div>
-                </a>
-                <a href="../news/news.html" class="active" aria-current="page">
-                  <div class="card-icon-wrapper">
-                    <div class="mega-icon-wrap">
-                      <i class="fas fa-newspaper"></i>
+                    <div class="card-info">
+                      <h4>عن نقطة صعود</h4>
+                      <p>نبذة عن نقطة صعود أهدافنا ورؤيتنا</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
-                  </div>
-                  <div class="card-info">
-                    <h4>أخبارنا</h4>
-                    <p>آخر المستجدات والأخبار والإعلانات</p>
-                    <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                  </div>
-                </a>
+                  </a>
+                  <a href="our-story.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <div class="mega-icon-wrap">
+                        <i class="fas fa-book-open"></i>
+                      </div>
+                    </div>
+                    <div class="card-info">
+                      <h4>قصتنا</h4>
+                      <p>تعرف على قصتنا وبدايتنا</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+                  <a href="news.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <div class="mega-icon-wrap">
+                        <i class="fas fa-newspaper"></i>
+                      </div>
+                    </div>
+                    <div class="card-info">
+                      <h4>أخبارنا</h4>
+                      <p>آخر المستجدات والأخبار والإعلانات</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
 
-          <li class="dropdown">
-            <a href="./service/service.html" aria-haspopup="true" aria-expanded="false">خدماتنا</a>
-          </li>
-          <li><a href="./portfolio.html" aria_current="page">أعمالنا</a></li>
+            <li class="dropdown">
+              <a href="service.html" aria-haspopup="true" aria-expanded="false">خدماتنا</a>
+            </li>
 
-          <li class="dropdown has-mega">
-            <a href="./team.html" aria-haspopup="true" aria-expanded="false">
-              طاقم العمل
-              <i class="fas fa-chevron-down mr-1 text-xs"></i>
-            </a>
-            <div class="mega-menu-content">
-              <div class="mega-grid">
-                <a href="#" class="mega-card">
-                  <div class="card-icon-wrapper">
-                    <div class="mega-icon-wrap">
-                      <i class="fas fa-user-tie"></i>
+            <li><a href="portfolio.html">أعمالنا</a></li>
+
+            <li class="dropdown has-mega">
+              <a href="team.html" aria-haspopup="true" aria-expanded="false">
+                طاقم العمل
+                <i class="fas fa-chevron-down mr-1 text-xs"></i>
+              </a>
+              <div class="mega-menu-content">
+                <div class="mega-grid">
+                  <a href="board.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <div class="mega-icon-wrap">
+                        <i class="fas fa-user-tie"></i>
+                      </div>
                     </div>
-                  </div>
-                  <div class="card-info">
-                    <h4>اعضاء المجلس</h4>
-                    <p>الهيكل الاداري لنقطة صعود</p>
-                    <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                  </div>
-                </a>
-                <a href="#" class="mega-card">
-                  <div class="card-icon-wrapper">
-                    <img src="./public/images/Frame(2).png" alt="icon" />
-                  </div>
-                  <div class="card-info">
-                    <h4>الفرق</h4>
-                    <p>تعرف على فرق نقطة صعود</p>
-                    <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                  </div>
-                </a>
-                <a href="#" class="mega-card">
-                  <div class="card-icon-wrapper">
-                    <img src="./public/images/Frame(3).png" alt="icon" />
-                  </div>
-                  <div class="card-info">
-                    <h4>اعلانات التوظيف</h4>
-                    <p>اعلانات التوظيف في نقطة صعود</p>
-                    <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                  </div>
-                </a>
+                    <div class="card-info">
+                      <h4>اعضاء المجلس</h4>
+                      <p>الهيكل الاداري لنقطة صعود</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+                  <a href="teams.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <img src="./public/images/Frame(2).png" alt="icon">
+                    </div>
+                    <div class="card-info">
+                      <h4>الفرق</h4>
+                      <p>تعرف على فرق نقطة صعود</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+                  <a href="careers.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <img src="./public/images/Frame(3).png" alt="icon">
+                    </div>
+                    <div class="card-info">
+                      <h4>اعلانات التوظيف</h4>
+                      <p>اعلانات التوظيف في نقطة صعود</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
 
-          <li><a href="#clients-partners">شركاء النجاح</a></li>
-          <li><a href="#contact">تواصل معنا</a></li>
-        </ul>
-      </div>
+            <li><a href="clients.html">شركاء النجاح</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
 
-      <div class="nav-actions desktop-only">
-        <a href="#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
+        </div><!-- نهاية navbar-links -->
+
+        <!--  يسار: زر الاستشارة (ديسكتوب + تابلت) -->
+        <div class="nav-actions desktop-only">
+          <a href="contact.html#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
+        </div>
+
       </div>
-      </div>
+      <!-- نهاية nav-wrapper -->
     </nav>
+    <!--   nav نهاية -->
+
 
     <div class="overlay"></div>
   </header>
