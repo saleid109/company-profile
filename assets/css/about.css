@@ -639,7 +639,7 @@
 
 
 
-/* ✅ إصلاح زر "احصل على استشارة" */
+/*   زر "احصل على استشارة" */
 .floating-consult-btn {  
   z-index: 99;
 }
@@ -649,11 +649,6 @@
 
 @media (max-width: 768px) {
 
-  .hero-inner {
-    height: auto;
-    min-height: 200px;
-    padding: 30px 16px;
-  }
 
   /* توحيد الشبكات في عمود واحد */
   .intro-grid,
