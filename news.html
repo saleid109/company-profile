@@ -51,9 +51,12 @@
 
   <!--================= قسم الهيدر ================-->
   <header>
+    <!--العلوي barTOP-->
     <div class="top-bar">
       <div class="container">
+        <!-- اللغة والتواصل الاجتماعي -->
         <div class="flex-group">
+          <!--مواقع التواصل الاجتماعي-->
           <div class="social-links">
             <a href="#" class="ml-3" aria-label="زيارتنا على لينكدإن">
               <i class="fab fa-linkedin-in" aria-hidden="true"></i>
@@ -65,72 +68,76 @@
               <i class="fab fa-x-twitter" aria-hidden="true"></i>
             </a>
           </div>
+          <!--اللغة-->
           <div class="language en-text">
             <a href="#" aria-label="تبديل اللغة إلى العربية">عربي</a> |
             <a href="#" aria-label="تبديل اللغة إلى الإنجليزية">EN</a>
           </div>
         </div>
 
+        <!--  معلومات المستخدم والسلة -->
         <div class="flex-group">
+          <!--اسم المستخدم-->
           <div class="user-info" role="button" onclick="openAuth('login')" aria-label="تسجيل الدخول">
             <i class="fas fa-user-circle" aria-hidden="true"></i>
             <span>تسجيل الدخول</span>
           </div>
+          <!-- ايقونة السلة و العداد-->
           <div class="cart-info" aria-label="السلة تحتوي على عنصرين - السعر الإجمالي 1,200 ريال">
             <div class="cart-icon-wrapper">
               <i class="fas fa-shopping-cart" aria-hidden="true"></i>
               <span class="cart-badge" aria-label="عدد العناصر">2</span>
             </div>
+            <!--السعر-->
             <span class="price-text">1,200 ر.س</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!--===== Navbar =====-->
+    <!--القائمة الرئيسية (Main Navbar) -->
     <nav class="main-nav" aria-label="القائمة الرئيسية">
       <div class="container nav-wrapper">
-
-        <!--  يمين: لوجو + هامبرغر جنب بعض -->
-        <div class="nav-right">
-          <div class="logo">
-            <a href="index.html" title="العودة للرئيسية">
-              <img src="./public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود" />
-            </a>
-          </div>
-          
-        <!-- زر القائمة الجانبية للجوال -->
+        <!-- الشعار-->
+        <div class="logo">
+          <a href="index.html" title="العودة للرئيسية">
+            <img src="./public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود - متخصصون في الحلول الرقمية" />
+          </a>
+        </div>
+        <!--ايقونة التنقل للجوال -->
         <button class="mobile-menu-icon" onclick="toggleMenu()" aria-label="فتح القائمة">
           <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
-        </div>
-        <!--  وسط: روابط التنقل الرئيسية (تتحول لقائمة جانبية في الجوال) -->
-    
 
-        <!-- القوائم الجانبية -->
+        <!-- روابط التنقل-->
+        <!--القوائم المنسدلة-->
+        <!-- روابط التنقل مع دعم القوائم المنسدلة للخدمات والفريق -->
         <div class="navbar-links">
           <ul class="nav-menu">
             <li>
-              <a href="index.html"  aria-current="page">الرئيسية</a>
+              <a href="index.html" class="active" aria-current="page">الرئيسية</a>
             </li>
 
             <li class="dropdown has-mega">
-              <a href="about.html" class="active"  aria-haspopup="true" aria-expanded="false">
+              <a href="#about.html" aria-haspopup="true" aria-expanded="false">
                 عن نقطة صعود
                 <i class="fas fa-chevron-down mr-1 text-xs"></i>
               </a>
+              <!-- القائمة الضخمة (Mega Menu) عن نقطة صعود -->
               <div class="mega-menu-content">
                 <div class="mega-grid">
                   <a href="about.html" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <img src="./public/images/Frame.png" alt="icon">
+                      <img src="./public/images/Frame.png" alt="icon" />
                     </div>
+
                     <div class="card-info">
                       <h4>عن نقطة صعود</h4>
                       <p>نبذة عن نقطة صعود أهدافنا ورؤيتنا</p>
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
+
                   <a href="our-story.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <div class="mega-icon-wrap">
@@ -143,6 +150,7 @@
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
+
                   <a href="news.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <div class="mega-icon-wrap">
@@ -160,7 +168,9 @@
             </li>
 
             <li class="dropdown">
-              <a href="./service/service.html" aria-haspopup="true" aria-expanded="false">خدماتنا</a>
+              <a href="./service/service.html" aria-haspopup="true" aria-expanded="false">
+                خدماتنا
+              </a>
             </li>
 
             <li><a href="portfolio.html">أعمالنا</a></li>
@@ -170,6 +180,7 @@
                 طاقم العمل
                 <i class="fas fa-chevron-down mr-1 text-xs"></i>
               </a>
+
               <div class="mega-menu-content">
                 <div class="mega-grid">
                   <a href="board.html" class="mega-card">
@@ -178,15 +189,17 @@
                         <i class="fas fa-user-tie"></i>
                       </div>
                     </div>
+
                     <div class="card-info">
                       <h4>اعضاء المجلس</h4>
                       <p>الهيكل الاداري لنقطة صعود</p>
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
+
                   <a href="teams.html" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <img src="./public/images/Frame(2).png" alt="icon">
+                      <img src="./public/images/Frame(2).png" alt="icon" />
                     </div>
                     <div class="card-info">
                       <h4>الفرق</h4>
@@ -194,9 +207,10 @@
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
+
                   <a href="careers.html" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <img src="./public/images/Frame(3).png" alt="icon">
+                      <img src="./public/images/Frame(3).png" alt="icon" />
                     </div>
                     <div class="card-info">
                       <h4>اعلانات التوظيف</h4>
@@ -208,25 +222,29 @@
               </div>
             </li>
 
-            <li><a href="clients.html">شركاء النجاح</a></li>
+            <li><a href="clients-partners.html">شركاء النجاح</a></li>
             <li><a href="contact.html">تواصل معنا</a></li>
           </ul>
-
-        </div><!-- نهاية navbar-links -->
+        </div>
 
         <!--  يسار: زر الاستشارة (ديسكتوب + تابلت) -->
         <div class="nav-actions desktop-only">
           <a href="contact.html#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
         </div>
-
-      </div>
-      <!-- نهاية nav-wrapper -->
     </nav>
-    <!--   nav نهاية -->
 
-
+    <!-- طبقة التظليل الخلفية عند تفعيل قائمة الجوال -->
     <div class="overlay"></div>
   </header>
+
+  
+  <!--   زر الاستشارة العائم الذي يظهر عند التمرير -->
+    <div class="top-floating-container">
+  <a href="contact.html#Consultation" class="floating-consult-btn">
+    <i class="fas fa-comments"></i>
+    <span>احصل على استشارة</span>
+  </a>
+  </div>
 
   <!--   زر الاستشارة العائم الذي يظهر عند التمرير -->
   <div class="top-floating-container">
