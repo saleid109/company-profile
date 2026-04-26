@@ -630,6 +630,10 @@
   aspect-ratio: 3/4;
 }
 
+.cert-nav-btn:hover i {
+  transform: scale(1.2); /* تكبير بسيط عند التأشير بالماوس */
+}
+
 .cert-count {
   color: var(--sec2, #F1B709);
   font-family: var(--font-main);
