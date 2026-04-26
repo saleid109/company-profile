@@ -594,24 +594,25 @@
   border: 1px solid #e0e0e0;
   border-radius: 4px;
 }
-
 /* شريط التنقل */
 .cert-nav-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* ← بدل gap: 144px */
-  width: 100%;                    /* ← يمتد بعرض البطاقة كاملاً */
+  justify-content: space-between; 
+  width: 100%;                   
   padding: 0 8px;
+  /* نضمن أن العناصر تترتب أفقياً */
+  flex-direction: row; 
 }
 
 .cert-nav-btn {
-  width: 32px;
+  width: 40px; /* زدنا العرض قليلاً ليناسب السهم العرضي */
   height: 32px;
   border: none;
   background: none;
   cursor: pointer;
   color: var(--color-primary);
-  font-size: 18px;
+  font-size: 20px; /* حجم الأيقونة */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -622,24 +623,22 @@
   opacity: 0.7;
 }
 
-/* السهمين - الأيقونة المستديرة */
+/* السهمين - التعديل هنا */
 .cert-nav-btn i {
-  width: 12px;
-  height: 16px;
-  transform: rotate(90deg);
-  aspect-ratio: 3/4;
+  /* حذفنا rotate(90deg) لأنه هو ما كان يجعلها رأسية */
+  display: inline-block;
+  width: auto; 
+  height: auto;
 }
-
 
 .cert-count {
   color: var(--color-primary);
   font-family: var(--font-main);
   font-size: 24px;
   font-weight: 500;
-  
+  /* لضمان عدم انقلاب الأرقام (مثل 5/1) */
+  direction: ltr; 
 }
-
-
 
 /*   زر "احصل على استشارة" */
 .floating-consult-btn {  
