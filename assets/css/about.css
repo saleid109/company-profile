@@ -775,12 +775,6 @@
 }
 
 
-/* إذا كانت المشكلة أن المحتوى تحته، أضيفي على الأقسام */
-.features-section,
-.certs-section {
-  position: relative;
-  z-index: 1;
-}
 
 
 
