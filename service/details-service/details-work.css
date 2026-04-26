@@ -23,10 +23,41 @@
 }
 
 .wd-hero-img-wrap {
-  position: relative;
-  flex: 1;
-  min-width: 280px;
-  max-width: 420px;
+    position: relative;
+    flex: 1;
+    min-width: 280px;
+    max-width: 420px;
+    /* الإطار الخلفي الأزرق */
+    background-color: var(--color-secondary);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+
+/* مربع أصفر في الزاوية */
+.wd-hero-img-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 120px;
+    height: 120px;
+    background-color: var(--color-primary);
+    border-radius: 12px;
+    z-index: 0;
+}
+
+/* مربع أزرق في الزاوية العليا */
+.wd-hero-img-wrap::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-secondary);
+    border-radius: 10px;
+    z-index: 0;
 }
 
 .wd-hero-img {
@@ -35,16 +66,16 @@
   object-fit: cover;
   display: block;
 }
-
 .wd-hero-badge {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  background: var(--wd-dark);
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 8px;
-  max-width: 200px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: var(--color-secondary);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    max-width: 200px;
+    z-index: 2; /* فوق الصورة */
 }
 
 .wd-hero-badge span {
