@@ -599,37 +599,44 @@
 .cert-nav-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px; /* مسافة بين الأسهم والرقم */
+  justify-content: space-between; /* ← بدل gap: 144px */
+  width: 100%;                    /* ← يمتد بعرض البطاقة كاملاً */
+  padding: 0 8px;
 }
 
 .cert-nav-btn {
-  background: none;
+  width: 32px;
+  height: 32px;
   border: none;
+  background: none;
   cursor: pointer;
-  padding: 0;
+  color: var(--color-primary);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
 }
 
+.cert-nav-btn:hover {
+  opacity: 0.7;
+}
+
+/* السهمين - الأيقونة المستديرة */
 .cert-nav-btn i {
-  color: #ffcc00; /* اللون الأصفر الذهبي */
-  font-size: 24px; /* حجم السهم */
-  transition: transform 0.2s ease;
+  width: 12px;
+  height: 16px;
+  transform: rotate(90deg);
+  aspect-ratio: 3/4;
 }
 
-.cert-nav-btn:hover i {
-  transform: scale(1.2); /* تكبير بسيط عند التأشير بالماوس */
-}
 
 .cert-count {
-  color: #ffcc00;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-.cert-count {
-  color: var(--sec2, #F1B709);
+  color: var(--color-primary);
   font-family: var(--font-main);
   font-size: 24px;
   font-weight: 500;
+  
 }
 
 
