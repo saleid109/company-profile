@@ -61,7 +61,7 @@
 
 /* ===== قسم المقدمة ===== */
 .about-intro {
-  padding: 20px 0 40px;
+  padding: 60px 0 40px;
   background-color: var(--color-background);
   position: relative;
   overflow: visible;
