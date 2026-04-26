@@ -1,3 +1,51 @@
+/* ===== Hero Inner ===== */
+.hero-inner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* أو حسب التصميم */
+    overflow: hidden;
+}
+
+.hero-inner .hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* طبقة تعتيم فوق الفيديو */
+.video-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.title-about {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.title-about h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
 /* =========================================
     Main Layout
    ========================================= */
