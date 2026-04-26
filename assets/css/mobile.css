@@ -227,7 +227,7 @@ body.menu-open .floating-consult-btn {
 
     /* إخفاء القوائم وزر الاستشارة في الديسكتوب */
     .nav-actions.desktop-only {
-        display: none;
+        display: none !important;
     }
 
     /* القائمة الجانبية للجوال */
