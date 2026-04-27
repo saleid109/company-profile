@@ -18,7 +18,7 @@
   align-items: center;
   gap: 40px;
   padding: 60px 5%;
-  background: var(--wd-light);
+  background: var(--color-background);
   flex-wrap: wrap;
 }
 
@@ -234,7 +234,7 @@
 
 .wd-skills-card,
 .wd-target-card {
-  background: var(--wd-light);
+  background: var(--color-background);
   border-radius: var(--wd-radius);
   padding: 20px;
 }
@@ -274,7 +274,7 @@
 
 /* ===== OUTCOMES ===== */
 .wd-outcomes-section {
-  background: var(--wd-light);
+  background: var(--color-background);
   padding: 60px 0;
 }
 
@@ -310,7 +310,7 @@
 .wd-outcome-icon {
   width: 52px;
   height: 52px;
-  background: var(--wd-dark);
+  background: var(--color-secondary);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -319,7 +319,7 @@
 }
 
 .wd-outcome-icon i {
-  color: var(--wd-primary);
+  color: var(--color-white);
   font-size: 22px;
 }
 
