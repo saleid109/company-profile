@@ -149,7 +149,7 @@
 
 .wd-info-item i {
   font-size: 22px;
-  color: var(--color-text);
+  color: var(--color-secondary);
 }
 
 .wd-info-item > div {
