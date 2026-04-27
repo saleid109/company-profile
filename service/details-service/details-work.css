@@ -296,14 +296,19 @@
   flex-wrap: wrap;
   gap: 8px;
 }
-
 .wd-skills-tags span {
-  background: var(--color-white);
-  border: 1px solid #EAECF0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF; /* خلفية بيضاء */
+  border: 1px solid #E4E7EC; /* حدود رمادية خفيفة */
   border-radius: 20px;
-  padding: 4px 14px;
-  font-size: 13px;
+  padding: 10px 20px;
+  font-size: 14px;
   color: var(--color-text);
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); /* ظل خفيف جداً */
+  width: auto;
+  min-width: 150px; /* لتوحيد عرض العناصر */
 }
 
 .wd-target-badge {
@@ -314,6 +319,14 @@
   border-radius: 20px;
   font-size: 14px;
   font-weight: var(--weight-bold);
+}
+
+.wd-skills-tags {
+  display: flex;
+  flex-direction: column; /* ترتيب العناصر عمودياً */
+  gap: 12px;
+  width: 100%;
+  align-items: center; /* توسيط العناصر */
 }
 
 /* ===== OUTCOMES ===== */
