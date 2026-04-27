@@ -87,7 +87,7 @@
   font-size: 13px;
   font-weight: 700;
 }
-
+/* نص أصغر تحت العنوان الرئيسي في الشارة */
 .wd-hero-badge small {
   font-size: 11px;
   opacity: .8;
@@ -98,10 +98,12 @@
   min-width: 280px;
 }
 
+/*العناوين الرئيسية في الصفحة*/
 .wd-hero-title {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--wd-dark);
+  font-size: 48px;
+  text-align: right;
+  font-weight: bold;
+  color: var(--color-secondary);
   line-height: 1.4;
   margin-bottom: 20px;
 }
