@@ -45,10 +45,8 @@
     background-color: var(--color-primary);
     border-radius: -52px;
     z-index: 0;
-    -webkit-border-radius: -52px;
-    -moz-border-radius: -52px;
-    -ms-border-radius: -52px;
-    -o-border-radius: -52px;
+    border-radius: -12px;
+    
 }
 
 /* مربع أزرق في الزاوية العليا */
@@ -66,9 +64,11 @@
 
 .wd-hero-img {
   width: 100%;
-  border-radius: var(--wd-radius);
+  border-radius: 16px;
   object-fit: cover;
   display: block;
+  position: relative;
+  z-index: 1; /* فوق الإطارات */
 }
 .wd-hero-badge {
     position: absolute;
