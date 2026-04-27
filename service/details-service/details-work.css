@@ -119,15 +119,22 @@
 
 /* ===== INFO BAR ===== */
 .wd-info-bar {
-  background: var(--color-white);
-  border-top: 1px solid ;
-  border-bottom: 1px solid var(--color-white);
-  padding: 24px 0;
+  display: flex;
+  width: 1376px;
+  height: 156px;
+  padding: 42px 91px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   border-radius: 10px;
-  margin: 40px 0;
-  box-shadow: 0 4px 8px -2px rgba(16, 24, 40, 0.10), 0 2px 4px -2px rgba(201, 202, 205, 0.449);
-
-
+  background: #FFF;
+  box-shadow: 
+    0 4px 8px -2px rgba(16, 24, 40, 0.10), 
+    0 2px 4px -2px rgba(16, 24, 40, 0.06);
+  width: 100%;
+  max-width: 1376px;
+  box-sizing: border-box;
 }
 
 .wd-info-grid {
