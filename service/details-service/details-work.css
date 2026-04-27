@@ -322,7 +322,7 @@
   background: var(--color-white);
   border-radius: var(--border-radius);
   padding: var(--card-padding);
-  text-align: center;
+  text-align: right;
   border: 1px solid #EAECF0;
   transition: var(--transition);
 }
@@ -340,7 +340,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 16px;
+  margin: 0 0 16px auto;
+
 }
 
 .wd-outcome-icon i {
@@ -483,6 +484,8 @@
 
 .wd-faq-item {
   border-bottom: 1px solid #EAECF0;
+  border-right: 3px solid #F6D751;  
+  padding-right: 12px;
 }
 
 .wd-faq-btn {
