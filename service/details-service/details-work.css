@@ -1,17 +1,5 @@
 /* تفاصيل الخدمة - صفحة العمل */
-.wd-accent {
-  color: var(--color-primary);
-}
 
-
-.wd-dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  background: var(--color-primary);
-  border-radius: 50%;
-  margin-left: 8px;
-}
 
 /* ===== HERO ===== */
 .wd-hero {
@@ -177,6 +165,21 @@
   color: var(--color-gray-text);
   text-align: right;
   font-weight: var(--weight-regular);
+}
+
+
+.wd-accent {
+  color: var(--color-primary);
+}
+
+
+.wd-dot {
+  width: 20px;
+  height: 20px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: inset -2px -2px 5px rgba(0,0,0,0.1);
 }
 
 /* ===== ABOUT SECTION ===== */
