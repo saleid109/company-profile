@@ -24,7 +24,7 @@
 
 .wd-hero-img-wrap {
     position: relative;
-    flex: 1;
+    flex: 2;
     min-width: 280px;
     max-width: 420px;
     /* الإطار الخلفي الأزرق */
@@ -43,8 +43,12 @@
     width: 120px;
     height: 120px;
     background-color: var(--color-primary);
-    border-radius: 12px;
+    border-radius: -52px;
     z-index: 0;
+    -webkit-border-radius: -52px;
+    -moz-border-radius: -52px;
+    -ms-border-radius: -52px;
+    -o-border-radius: -52px;
 }
 
 /* مربع أزرق في الزاوية العليا */
