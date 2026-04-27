@@ -178,7 +178,7 @@
 /* ===== ABOUT SECTION ===== */
 .wd-about-section {
   padding: 60px 0;
-  background: var(--color-white);
+  background: var(--color-background);
 }
 
 .wd-about-grid {
@@ -369,7 +369,7 @@
 
 /* ===== REGISTER ===== */
 .wd-register-section {
-  background: var(--color-white);
+  background: var(--color-background);
   padding: 70px 0;
 }
 
