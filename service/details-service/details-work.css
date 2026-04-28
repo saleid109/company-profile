@@ -349,6 +349,8 @@
   margin-bottom: 32px;
   display: flex;
   align-items: center;
+  gap: 10px;
+  
 }
 
 .wd-outcomes-grid {
