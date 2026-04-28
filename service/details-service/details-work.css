@@ -546,7 +546,7 @@
   border-bottom: 1px solid #EAECF0;
   border-right: 3px solid #F6D751;
   padding-right: 12px;
-  height: 79px;
+  min-height: 79px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -564,14 +564,13 @@
   align-items: center;
   background: none;
   border: none;
-  padding: 18px 4px;
+  padding: 22px 0;               /* ← padding داخل الزر */
   font-family: var(--font-main);
   font-size: 15px;
   font-weight: 600;
   color: var(--color-secondary);
   cursor: pointer;
   text-align: right;
-  transition: var(--transition);
 }
 
 .wd-faq-btn i {
