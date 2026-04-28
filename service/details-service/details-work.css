@@ -330,6 +330,8 @@
   font-weight: var(--weight-bold);
   align-items: center;
   justify-content: center;
+  align-self: flex-start;
+  margin-right: 60px;
 }
 
 
