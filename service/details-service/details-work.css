@@ -272,51 +272,53 @@
 .wd-skills-card,
 .wd-target-card {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #FFFFFF; /* خلفية بيضاء */
-  border: 1px solid #E4E7EC; /* حدود رمادية خفيفة */
+  flex-direction: column;        /* ← عمودي */
+  align-items: flex-end;         /* ← محاذاة لليمين */
+  gap: 24px;
+  background: #FFF;
   border-radius: 20px;
-  padding: 10px 20px;
-  font-size: 14px;
-  color: var(--color-text);
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); /* ظل خفيف جداً */
-  width: auto;
-  min-width: 150px;
-  text-align: center;
+  border: 1px solid #DEDEDE;
+  box-shadow: 0 4px 8px 0 rgba(16, 24, 40, 0.10);
+  padding: 24px 16px;
+  height: 328px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* العنوان داخل الكارد */
 .wd-skills-card h3,
 .wd-target-card h3 {
-  font-size: 15px;
-  font-weight: var(--weight-bold);
-  color: var(--color-secondary);
-  margin-bottom: 14px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #1B2D45;
   text-align: center;
+  width: 100%;
+  margin: 0;
 }
 
+/* حاوية التاقات */
 .wd-skills-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  justify-content: center; 
+  justify-content: flex-end;    /* ← محاذاة لليمين للعربي */
+  width: 100%;
 }
 
+/* كل تاق */
 .wd-skills-tags span {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #FFFFFF;
-  border: 1px solid #E4E7EC;
-  border-radius: 20px;
-  padding: 8px 16px;
+  width: 113px;
+  padding: 10px 16px;
+  border-radius: 25px;
+  border: 2px solid #FDCA30; 
+  background: #FFF;
   font-size: 14px;
   color: var(--color-text);
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  width: auto;
-  min-width: unset;
+  box-sizing: border-box;
 }
-
 .wd-target-badge {
   display: inline-block;
   background: var(--color-primary);
