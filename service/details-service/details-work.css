@@ -614,27 +614,67 @@
   box-sizing: border-box;
 }
 /* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .wd-hero {
-    flex-direction: column;
-    padding: 30px 5%;
-  }
-
+/* ===== TABLET (768px - 1024px) ===== */
+@media (max-width: 1024px) {
   .wd-hero-title {
-    font-size: 22px;
+    font-size: 36px;
   }
 
   .wd-info-grid {
+    padding: 24px 40px;
+  }
+
+  .wd-outcomes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wd-faq-grid {
+    gap: 24px;
+  }
+
+  .wd-skills-tags span {
+    width: calc(50% - 4px);
+  }
+}
+
+/* ===== MOBILE (max 768px) ===== */
+@media (max-width: 768px) {
+  /* Hero */
+  .wd-hero {
+    flex-direction: column-reverse;   /* الصورة فوق */
+    padding: 30px 16px;
+    gap: 24px;
+  }
+
+  .wd-hero-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .wd-hero-desc {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .wd-hero-img-wrap {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Info Bar */
+  .wd-info-grid {
     flex-wrap: wrap;
     height: auto;
-    padding: 24px 20px;
+    padding: 16px;
     justify-content: flex-start;
+    gap: 0;
   }
 
   .wd-info-item {
+    flex: 1 1 45%;
     border-left: none;
     border-bottom: 1px solid #EAECF0;
-    padding: 12px 0;
+    padding: 12px 8px;
     justify-content: flex-start;
   }
 
@@ -642,23 +682,63 @@
     border-bottom: none;
   }
 
-  .wd-about-grid,
-  .wd-register-grid,
-  .wd-faq-grid {
+  /* About */
+  .wd-about-grid {
     flex-direction: column;
   }
 
+  .wd-about-side {
+    width: 100%;
+  }
+
+  .wd-skills-tags span {
+    width: calc(50% - 4px);
+  }
+
+  /* Outcomes */
   .wd-outcomes-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-@media (max-width: 480px) {
-  .wd-outcomes-grid {
-    grid-template-columns: 1fr;
+  .wd-outcome-card h4 {
+    font-size: 18px;
+  }
+
+  /* Register */
+  .wd-register-grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .wd-register-text h2 {
+    font-size: 22px;
+    text-align: center;
   }
 
   .wd-form-row {
     flex-direction: column;
+  }
+
+  .wd-submit-btn {
+    max-width: 100%;
+  }
+
+  /* FAQ */
+  .wd-faq-grid {
+    flex-direction: column;
+  }
+
+  .wd-faq-image {
+    order: -1;
+    max-height: 250px;
+  }
+
+  .wd-faq-btn {
+    font-size: 15px;
+  }
+
+  .wd-faq-list {
+    gap: 16px;
+    padding: 8px;
   }
 }
