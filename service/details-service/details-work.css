@@ -597,7 +597,15 @@
   line-height: 1.8;
   padding: 0 4px;
 }
-
+.wd-outcomes-section .container,
+.wd-register-section .container,
+.wd-about-section .container,
+.wd-faq-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .wd-hero {
