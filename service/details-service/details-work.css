@@ -558,18 +558,21 @@
 .wd-faq-btn {
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;  /* ← السهم على اليسار والنص على اليمين */
+  flex-direction: row-reverse; /* ← عكس اتجاه العناصر */
+  gap: 12px;
   justify-content: space-between;
   align-items: center;
   background: none;
   border: none;
   padding: 22px 0;
   font-family: var(--font-main);
-  font-size: 19.715px;          /* ← من الفيجما */
+  font-size: 19.715px; 
   font-weight: 700;
-  color: #292524;               /* ← من الفيجما */
+  color: #292524; 
   cursor: pointer;
   text-align: right;
+  direction: rtl;   
+
 }
 
 .wd-faq-btn i {
