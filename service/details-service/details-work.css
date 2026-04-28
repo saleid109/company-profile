@@ -459,16 +459,17 @@
 .wd-form-row select {
   flex: 1;
   min-width: 140px;
-  padding: 12px 16px;
-  border: 1.5px solid #EAECF0;
+  height: 55px;
+  padding: 10px;
+  border: 2px solid #F1B709;
   border-radius: 20px;
   font-family: var(--font-main);
   font-size: 14px;
   color: var(--color-text);
   background: var(--color-white);
   outline: none;
-  transition: var(--transition);
-
+  text-align: right;
+  box-sizing: border-box;
 }
 
 .wd-form-row input:focus,
@@ -544,6 +545,15 @@
   border-bottom: 1px solid #EAECF0;
   border-right: 3px solid #F6D751;
   padding-right: 12px;
+  height: 79px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3.48px;
+  background: #FFF;
+  box-shadow: 0 0.378px 0 0 #F6D751, 2.83px 0 0 0 #F6D751 inset; /* ← ظل أصفر */
+  padding: 20px 18px;
+  margin-bottom: 8px;
 }
 
 .wd-faq-btn {
