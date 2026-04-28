@@ -536,39 +536,38 @@
 }
 
 .wd-faq-list {
-  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 40px;          /* ← من الفيجما */
+  padding: 16px;
+  width: 100%;
 }
 
 .wd-faq-item {
-  border-bottom: 1px solid #EAECF0;
-  border-right: 3px solid #F6D751;
-  padding-right: 12px;
-  min-height: 79px;
+  min-height: auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 3.48px;
+  flex-direction: column;
   background: #FFF;
-  box-shadow: 0 0.378px 0 0 #F6D751, 2.83px 0 0 0 #F6D751 inset; /* ← ظل أصفر */
-  padding: 20px 18px;
-  margin-bottom: 8px;
+  box-shadow: 0 0.378px 0 0 #F6D751, 2.83px 0 0 0 #F6D751 inset;
+  border-radius: 3.48px;
+  padding: 0 18px;
+  margin-bottom: 0;   /* ← أزل margin لأن gap يتولى المسافة */
+  border: none;
 }
 
 .wd-faq-btn {
   width: 100%;
   display: flex;
+  flex-direction: row-reverse;  /* ← السهم على اليسار والنص على اليمين */
   justify-content: space-between;
   align-items: center;
   background: none;
   border: none;
-  padding: 22px 0;               /* ← padding داخل الزر */
+  padding: 22px 0;
   font-family: var(--font-main);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--color-secondary);
+  font-size: 19.715px;          /* ← من الفيجما */
+  font-weight: 700;
+  color: #292524;               /* ← من الفيجما */
   cursor: pointer;
   text-align: right;
 }
@@ -577,7 +576,6 @@
   color: var(--color-gray-text);
   transition: transform .25s;
   flex-shrink: 0;
-  margin-right: 8px;
 }
 
 .wd-faq-answer {
