@@ -521,11 +521,15 @@
 .wd-faq-image {
   flex: 1;
   min-width: 200px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
 }
 
 .wd-faq-image img {
   width: 100%;
-  max-width: 320px;
+  max-width: 350px;
+  display: block;
 }
 
 .wd-faq-title {
