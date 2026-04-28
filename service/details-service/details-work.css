@@ -176,7 +176,7 @@
 .wd-dot {
   width: 20px;
   height: 20px;
-  background: var(--color-primary);
+  background: var(--color-primary, white);
   border-radius: 50%;
   display: inline-block;
   box-shadow: inset -2px -2px 5px rgba(0,0,0,0.1);
