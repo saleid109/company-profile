@@ -300,7 +300,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  justify-content: flex-end;    /* ← محاذاة لليمين للعربي */
+  justify-content: flex-end;  
   width: 100%;
 }
 
@@ -326,7 +326,7 @@
   border-radius: 20px;
   font-size: 14px;
   font-weight: var(--weight-bold);
-  justify-content: right;
+  justify-content: flex-end;
   margin-left: auto; /* لدفع البادج لليمين */
 }
 
