@@ -240,7 +240,7 @@
 }
 
 .wd-content-list li i {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   margin-top: 4px;
   flex-shrink: 0;
 }
