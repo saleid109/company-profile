@@ -1,4 +1,3 @@
-
 /* ===== Wrapper عام ===== */
 .main-wrapper {
     background: var(--pd-bg);
@@ -50,8 +49,8 @@
 
 /* العنوان */
 .service-title {
-    color: var(--pd-primary);
-    font-family: var(--pd-font);
+    color: var(--color-secondary);
+    font-family: var(--font-main);
     font-size: 40px;
     font-weight: 500;
     line-height: normal;
@@ -67,8 +66,8 @@
 }
 
 .group-title {
-    color: var(--pd-text);
-    font-family: var(--pd-font);
+    color: var(--color-gray-text);
+    font-family: var(--font-main);
     font-size: 24px;
     font-weight: 700;
     line-height: normal;
@@ -77,8 +76,8 @@
 }
 
 .service-desc {
-    color: var(--pd-text);
-    font-family: var(--pd-font);
+    color: var(--color-gray-text);
+    font-family: var(--font-main);
     font-size: 20px;
     font-weight: 500;
     line-height: 1.7;
@@ -98,7 +97,7 @@
 
 .service-includes li {
     color: #000;
-    font-family: var(--pd-font);
+    font-family: var(--font-main);
     font-size: 20px;
     font-weight: 500;
     line-height: normal;
@@ -110,7 +109,7 @@
 
 .service-includes li::before {
     content: "•";
-    color: var(--pd-primary);
+    color: var(--color-primary);
     font-size: 22px;
     line-height: 1.2;
     flex-shrink: 0;
@@ -125,9 +124,9 @@
     align-items: center;
     gap: 10px;
     border-radius: 20px;
-    background: var(--pd-primary);
-    color: var(--pd-white);
-    font-family: var(--pd-font);
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-main);
     font-size: 18px;
     font-weight: 700;
     border: none;
@@ -137,7 +136,7 @@
 }
 
 .btn-submit:hover {
-    background: #000280;
+    background: var(--color-na);
 }
 
 /* ===== جهة الصورة ===== */
@@ -197,7 +196,7 @@
     background: var(--color-white);
     border-radius: 40px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .compare-table {
@@ -339,6 +338,127 @@
     line-height: 1.8;
     text-align: right;
     margin: 0;
+}
+
+
+/* ===== FAQ ===== */
+.wd-faq-section {
+    background: var(--color-background);
+    padding: 70px 0;
+}
+
+.wd-faq-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: stretch;
+    /* ← يجعل الأعمدة بنفس الارتفاع */
+}
+
+
+.wd-faq-content {
+    flex: 2;
+    min-width: 280px;
+}
+
+.wd-faq-image {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wd-faq-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 350px;
+    object-fit: contain;
+    display: block;
+}
+
+.wd-faq-title {
+    font-size: 26px;
+    font-weight: var(--weight-bold);
+    color: var(--color-secondary);
+    margin-bottom: 28px;
+    text-align: right;
+}
+
+.wd-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 16px;
+    width: 100%;
+}
+
+.wd-faq-item {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    background: #FFF;
+    box-shadow: 0 0.378px 0 0 #F6D751, 2.83px 0 0 0 #F6D751 inset;
+    border-radius: 3.48px;
+    padding: 0 18px;
+    margin-bottom: 0;
+    /* ← أزل margin لأن gap يتولى المسافة */
+    border: none;
+}
+
+.wd-faq-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* ← عكس اتجاه العناصر */
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 22px 0;
+    font-family: var(--font-main);
+    font-size: 19.715px;
+    font-weight: 700;
+    color: #292524;
+    cursor: pointer;
+    text-align: right;
+    direction: rtl;
+
+}
+
+.wd-faq-btn i {
+    color: var(--color-gray-text);
+    transition: transform .25s;
+    flex-shrink: 0;
+}
+
+.wd-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease, padding .3s;
+}
+
+.wd-faq-answer.open {
+    max-height: 300px;
+    padding-bottom: 16px;
+}
+
+.wd-faq-answer p {
+    font-size: 14px;
+    color: var(--color-gray-text);
+    line-height: 1.8;
+    padding: 0 4px;
+}
+
+.wd-outcomes-section .container,
+.wd-register-section .container,
+.wd-about-section .container,
+.wd-faq-section .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
 }
 
 /* ===== Responsive ===== */
