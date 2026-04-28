@@ -425,13 +425,14 @@
 .wd-register-grid {
   display: flex;
   gap: 60px;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
 }
 
 .wd-register-text {
   flex: 1;
   min-width: 220px;
+  text-align: right;
 }
 
 .wd-register-text h2 {
