@@ -298,20 +298,22 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  justify-content: center; 
 }
+
 .wd-skills-tags span {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #FFFFFF; /* خلفية بيضاء */
-  border: 1px solid #E4E7EC; /* حدود رمادية خفيفة */
+  background: #FFFFFF;
+  border: 1px solid #E4E7EC;
   border-radius: 20px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   font-size: 14px;
   color: var(--color-text);
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); /* ظل خفيف جداً */
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   width: auto;
-  min-width: 150px; /* لتوحيد عرض العناصر */
+  min-width: unset;
 }
 
 .wd-target-badge {
@@ -324,13 +326,7 @@
   font-weight: var(--weight-bold);
 }
 
-.wd-skills-tags {
-  display: flex;
-  flex-direction: column; /* ترتيب العناصر عمودياً */
-  gap: 12px;
-  width: 100%;
-  align-items: center; /* توسيط العناصر */
-}
+
 
 /* ===== OUTCOMES ===== */
 .wd-outcomes-section {
