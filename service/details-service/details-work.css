@@ -321,15 +321,15 @@
   box-sizing: border-box;
 }
 .wd-target-badge {
-  display: inline-block;
+  display:flex;
   background: var(--color-primary);
   color: var(--color-secondary);
-  padding: 6px 20px;
+  padding: 10px 16px;
   border-radius: 20px;
   font-size: 14px;
   font-weight: var(--weight-bold);
-  justify-content: flex-start;
-  margin-left: auto; /* لدفع البادج لليمين */
+  align-items: center;
+  justify-content: center;
 }
 
 
