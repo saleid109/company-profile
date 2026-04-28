@@ -280,7 +280,7 @@
   border: 1px solid #DEDEDE;
   box-shadow: 0 4px 8px 0 rgba(16, 24, 40, 0.10);
   padding: 24px 16px;
-  height: 328px;
+  min-height: 328px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -310,7 +310,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 113px;
+  width: calc(50% - 4px); /* 2 تاقات في كل صف مع 8px gap */
   padding: 10px 16px;
   border-radius: 25px;
   border: 2px solid #FDCA30; 
