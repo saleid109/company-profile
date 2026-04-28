@@ -350,7 +350,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  text-align: center;
+  flex-direction: column;
+
   
+
 }
 
 .wd-outcomes-grid {
