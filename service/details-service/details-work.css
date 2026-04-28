@@ -507,10 +507,11 @@
 
 .wd-faq-grid {
   display: flex;
+  flex-direction: row;
   gap: 40px;
   align-items: flex-start;
-  flex-wrap: wrap;
 }
+
 
 .wd-faq-content {
   flex: 2;
