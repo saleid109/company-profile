@@ -13,8 +13,11 @@
 
 .product-hero {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 10%; /* مساحة جانبية لراحة العين */
     gap: 40px;
+    direction: rtl; /* التأكد من الاتجاه العربي */
 }
 
 .container-product-image {
@@ -27,24 +30,24 @@
     height: auto;
     border-radius: 20px;
 }
-
 .product-info-text {
-    flex: 1;
+    flex: 1.2;
+    text-align: right;
 }
 
 .service-title {
-    font-size: 36px;
+    font-size: 38px;
     color: var(--color-secondary);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-weight: 700;
 }
 
 .service-price {
-    font-size: 28px;
+    font-size: 26px;
     color: var(--color-secondary);
-    font-weight: bold;
+    font-weight: 700;
+    margin-bottom: 25px;
     display: block;
-    margin-bottom: 20px;
 }
 
 .service-description {
