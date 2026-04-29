@@ -51,59 +51,79 @@
 }
 
 .service-description {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.8;
-    color: var(--color-text);
+    color: #555;
     margin-bottom: 30px;
+    max-width: 550px; /* لضمان عدم تمدد النص بشكل مزعج */
 }
 
+/* تنسيق قائمة "يشمل" */
 .includes-title {
-    font-size: 24px;
-    color: var(--color-secondary);
+    font-size: 22px;
+    color: #00015B;
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .service-includes {
     list-style: none;
     padding: 0;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .service-includes li {
     font-size: 16px;
-    color: var(--color-text);
-    margin-bottom: 10px;
-    position: relative;
-    padding-right: 25px;
+    color: #333;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+/* إضافة المربع الصغير أو الأيقونة قبل النص */
 .service-includes li::before {
-    content: '\f00c';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: var(--color-primary);
-    position: absolute;
-    right: 0;
-    top: 2px;
+    content: ''; 
+    width: 8px;
+    height: 8px;
+    border: 2px solid #F0AD4E; /* اللون البرتقالي/الذهبي */
+    border-radius: 2px;
+    display: inline-block;
 }
 
+/* تنسيق الزر ليكون مركزي أو محاذي لليمين حسب الصورة */
 .btn-submit-product {
-    background: var(--color-secondary);
+    background-color: #00015B;
     color: #fff;
     border: none;
-    padding: 12px 30px;
-    border-radius: 20px;
-    cursor: pointer;
+    padding: 12px 60px;
+    border-radius: 25px;
     font-size: 18px;
-    font-weight: bold;
+    cursor: pointer;
     transition: 0.3s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .btn-submit-product:hover {
-    background-color: var(--color-navy-light);
+    background-color: #00028c;
+    box-shadow: 0 4px 15px rgba(0, 1, 91, 0.2);
+}
+
+/* تنسيق صورة الخدمة (الجهة اليسرى) */
+.container-product-image {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #E0E0E0;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.product-image-hero {
+    max-width: 100%;
+    height: auto;
 }
 
 /* قسم الأسئلة الشائعة - النص يمين والصورة يسار (كما في الصورة الأصلية) */
