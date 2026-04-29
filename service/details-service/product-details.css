@@ -63,7 +63,7 @@
 
 .service-includes li::before {
     content: '\f00c'; /* Font Awesome check icon */
-    font-family: 'Font Awesome 5 Free';
+    font-family: var(--font-main);
     font-weight: 900;
     color: var(--color-primary);
     position: absolute;
@@ -72,8 +72,8 @@
 }
 
 .btn-submit-product {
-    background-color: var(--color-secondary); /* Dark blue */
-    color: #fff;
+    background-color: var(--color-secondary); 
+    color: var(--color-white);
     border: none;
     padding: 15px 30px;
     border-radius: 5px;
@@ -100,7 +100,7 @@
 /* FAQ Section */
 .wd-faq-section {
     padding: 60px 0;
-    background-color: #fff;
+    background-color: var(--color-background);
 }
 
 .faq-container {
@@ -126,14 +126,14 @@
 }
 
 .wd-faq-item {
-    border: 1px solid #eee;
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     margin-bottom: 15px;
     overflow: hidden;
 }
 
 .wd-faq-btn {
-    background-color: #f9f9f9;
+    background-color: var(--color-background);
     color: var(--color-secondary);
     padding: 15px 20px;
     width: 100%;
@@ -163,7 +163,7 @@
 }
 
 .wd-faq-answer.open {
-    max-height: 200px; /* Adjust as needed */
+    max-height: 200px; 
     padding: 15px 20px;
 }
 
@@ -185,7 +185,7 @@
 
 /* Footer Styles */
 .main-footer {
-    background-color: var(--color-secondary); /* Dark blue */
+    background-color: var(--color-secondary);
     color: var(--color-white);
     padding: 40px 0 20px;
 }
@@ -200,7 +200,7 @@
 .footer-section h3 {
     font-size: 20px;
     margin-bottom: 20px;
-    color: var(--color-primary); /* Gold */
+    color: var(--color-primary); 
 }
 
 .footer-section p,
