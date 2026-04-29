@@ -1,12 +1,65 @@
 /* ===============================
-    Container
+    Variables (variables.css)
 ================================= */
-.product-container  {
+:root {
+    /* الخطوط */
+    --font-main: 'Tajawal', sans-serif;
+    --font-en: 'Montserrat', sans-serif;
+
+    --color-primary: #FFCC35;
+    --color-secondary: #00025B;
+    --color-bg-light: #F5F5F5;
+    --color-text: #181A2A;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-background: #FAFAFA;
+
+    /* ألوان إضافية */
+    --color-accent: #FF4D4D;
+    --color-navy-light: #000385;
+    --color-gray-text: #666666;
+    --color-gray-secondary: #1B2D45;
+
+    /* المسافات */
+    --section-padding: 80px 0;
+    --card-padding: 25px;
+    --border-radius: 12px;
+
+    /* الترتيب */
+    --z-fixed: 100;
+    --z-modal: 200;
+
+    --weight-regular: 400;
+    --weight-bold: 700;
+    --weight-black: 900;
+
+    /* قياسات الهيكل */
+    --max-width: 1280px;
+    --header-height: 40px;
+
+    /* تأثيرات */
+    --transition: all 0.3s ease;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ===============================
+    product-details.css
+================================= */
+
+/* -----------------------------------------------
+   ✅ تم تغيير .product-container إلى .product-wrapper
+      لتجنب التعارض مع كلاس .container الموجود
+      في style.css العام
+----------------------------------------------- */
+.product-wrapper {
     width: 100%;
-    max-width: 1440px;
+    max-width: var(--max-width);
+    /* ✅ يستخدم المتغير بدل القيمة الثابتة */
     margin: auto;
     padding: 0 40px;
 }
+
 
 /* ===============================
     تفاصيل الخدمة
@@ -31,7 +84,7 @@
 .service-title {
     font-size: 52px;
     font-weight: 700;
-    color: #00015B;
+    color: var(--color-secondary);
     margin-bottom: 20px;
 }
 
@@ -39,22 +92,29 @@
     display: block;
     font-size: 34px;
     font-weight: 700;
-    color: #00015B;
+    color: var(--color-secondary);
     margin-bottom: 25px;
     text-align: left;
+}
+
+.currency-product {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--color-secondary);
+    margin-right: 6px;
 }
 
 .includes-title {
     font-size: 32px;
     font-weight: 700;
-    color: #00015B;
+    color: var(--color-secondary);
     margin-bottom: 18px;
 }
 
 .service-description {
     font-size: 20px;
     line-height: 2;
-    color: #444;
+    color: var(--color-text);
     margin-bottom: 30px;
     max-width: 700px;
 }
@@ -68,7 +128,7 @@
 .service-includes li {
     font-size: 20px;
     margin-bottom: 16px;
-    color: #111;
+    color: var(--color-text);
     position: relative;
     padding-right: 20px;
 }
@@ -77,20 +137,21 @@
     content: "•";
     position: absolute;
     right: 0;
-    color: #d8a400;
+    color: var(--color-primary);
     font-size: 22px;
 }
 
 .btn-submit-product {
-    background: #00015B;
-    color: white;
+    background: var(--color-secondary);
+    color: var(--color-white);
     border: none;
     padding: 16px 55px;
     border-radius: 35px;
     font-size: 22px;
     font-weight: 700;
     cursor: pointer;
-    transition: .3s;
+    transition: var(--transition);
+    /* ✅ يستخدم المتغير */
 }
 
 .btn-submit-product:hover {
@@ -111,6 +172,7 @@
     width: 100%;
     max-width: 520px;
 }
+
 
 /* ===============================
     FAQ
@@ -133,7 +195,7 @@
 .wd-faq-title {
     font-size: 52px;
     font-weight: 700;
-    color: #00015B;
+    color: var(--color-secondary);
     margin-bottom: 35px;
 }
 
@@ -150,23 +212,29 @@
 
 .wd-faq-btn {
     width: 100%;
-    background: white;
+    background: var(--color-white);
     border: none;
     padding: 22px 25px;
     font-size: 22px;
     font-weight: 700;
-    color: #111;
+    color: var(--color-text);
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    transition: var(--transition);
+    /* ✅ يستخدم المتغير */
+}
+
+.wd-faq-btn:hover {
+    background: var(--color-bg-light);
 }
 
 .wd-faq-answer {
-    background: white;
+    background: var(--color-white);
     max-height: 0;
     overflow: hidden;
-    transition: .4s;
+    transition: max-height 0.4s ease, padding 0.4s ease;
     padding: 0 25px;
 }
 
@@ -184,6 +252,7 @@
     width: 100%;
     max-width: 520px;
 }
+
 
 /* ===============================
     Mobile
@@ -208,5 +277,10 @@
 
     .btn-submit-product {
         width: 100%;
+        text-align: center;
+    }
+
+    .product-wrapper {
+        padding: 0 20px;
     }
 }
