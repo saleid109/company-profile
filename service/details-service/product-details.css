@@ -7,8 +7,10 @@
 
 .product-hero {
     display: flex;
-    align-items: center;
-    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 60px;
 }
 
 .product-info-text {
@@ -72,19 +74,20 @@
 }
 
 .btn-submit-product {
-    background-color: var(--color-secondary); 
-    color: var(--color-white);
+    background-color: var(--color-secondary);
+    color: #fff;
     border: none;
-    padding: 15px 30px;
-    border-radius: 5px;
+    padding: 12px 40px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-weight: 500;
+    transition: transform 0.2s ease;
 }
 
 .btn-submit-product:hover {
-    background-color: var(--color-navy-light);
+    transform: scale(1.05); 
+    background-color: #00028c;
 }
 
 .container-product-image {
