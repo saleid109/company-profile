@@ -35,12 +35,13 @@
     margin-bottom: 20px;
 }
 
-.service-price {
+.service-price-left {
     display: block;
     font-size: 34px;
     font-weight: 700;
     color: #00015B;
     margin-bottom: 25px;
+    text-align: left;
 }
 
 .includes-title {
