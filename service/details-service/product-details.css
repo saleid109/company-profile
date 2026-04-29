@@ -1,7 +1,7 @@
 /* ===============================
     Container
 ================================= */
-.container .product-hero {
+.product-container  {
     width: 100%;
     max-width: 1440px;
     margin: auto;
@@ -12,7 +12,7 @@
     تفاصيل الخدمة
 ================================= */
 .product-details-section {
-    background: #f8f8f8;
+    background: var(--color-bg-light);
     padding: 70px 0;
 }
 
@@ -115,7 +115,7 @@
     FAQ
 ================================= */
 .wd-faq-section {
-    background: #f8f8f8;
+    background: var(--color-bg-light);
     padding: 70px 0;
 }
 
