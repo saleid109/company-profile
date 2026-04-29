@@ -1,24 +1,8 @@
+/*تفاصيل المنتج */
 
-.consultation-btn {
-    background-color: #F1B709; /* Gold color from image */
-    color: #001F3F;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.consultation-btn:hover {
-    background-color: #e0a800;
-}
-
-/* Product Details Section */
 .product-details-section {
     padding: 60px 0;
-    background-color: #f8f8f8;
+    background-color: var(--color-background);
 }
 
 .product-hero {
@@ -33,13 +17,13 @@
 
 .service-title {
     font-size: 36px;
-    color: #001F3F;
+    color: var(--color-secondary);
     margin-bottom: 15px;
 }
 
 .service-price {
     font-size: 28px;
-    color: #F1B709;
+    color: var(--color-secondary);
     font-weight: bold;
     display: block;
     margin-bottom: 20px;
@@ -53,13 +37,13 @@
 .service-description {
     font-size: 16px;
     line-height: 1.8;
-    color: #555;
+    color: var(--color-text);
     margin-bottom: 30px;
 }
 
 .includes-title {
     font-size: 24px;
-    color: #001F3F;
+    color: var(--color-secondary);
     margin-bottom: 15px;
 }
 
@@ -71,7 +55,7 @@
 
 .service-includes li {
     font-size: 16px;
-    color: #555;
+    color: var(--color-text);
     margin-bottom: 10px;
     position: relative;
     padding-right: 25px;
@@ -81,14 +65,14 @@
     content: '\f00c'; /* Font Awesome check icon */
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    color: #F1B709;
+    color: var(--color-primary);
     position: absolute;
     right: 0;
     top: 2px;
 }
 
 .btn-submit-product {
-    background-color: #001F3F; /* Dark blue */
+    background-color: var(--color-secondary); /* Dark blue */
     color: #fff;
     border: none;
     padding: 15px 30px;
@@ -100,7 +84,7 @@
 }
 
 .btn-submit-product:hover {
-    background-color: #003366;
+    background-color: var(--color-navy-light);
 }
 
 .container-product-image {
@@ -131,7 +115,7 @@
 
 .wd-faq-title {
     font-size: 36px;
-    color: #001F3F;
+    color: var(--color-secondary);
     margin-bottom: 30px;
     text-align: center;
 }
@@ -150,7 +134,7 @@
 
 .wd-faq-btn {
     background-color: #f9f9f9;
-    color: #001F3F;
+    color: var(--color-secondary);
     padding: 15px 20px;
     width: 100%;
     text-align: right;
@@ -185,7 +169,7 @@
 
 .wd-faq-answer p {
     margin: 0;
-    color: #555;
+    color: var(--color-text);
     line-height: 1.6;
 }
 
@@ -201,8 +185,8 @@
 
 /* Footer Styles */
 .main-footer {
-    background-color: #001F3F; /* Dark blue */
-    color: #fff;
+    background-color: var(--color-secondary); /* Dark blue */
+    color: var(--color-white);
     padding: 40px 0 20px;
 }
 
@@ -216,7 +200,7 @@
 .footer-section h3 {
     font-size: 20px;
     margin-bottom: 20px;
-    color: #F1B709; /* Gold */
+    color: var(--color-primary); /* Gold */
 }
 
 .footer-section p,
@@ -232,7 +216,7 @@
 }
 
 .footer-section a {
-    color: #fff;
+    color: var(--color-white);
     text-decoration: none;
     font-size: 15px;
     margin-bottom: 8px;
@@ -241,7 +225,7 @@
 }
 
 .footer-section a:hover {
-    color: #F1B709;
+    color: var(--color-primary);
 }
 
 .social-icons {
@@ -252,12 +236,12 @@
     display: inline-block;
     margin-left: 15px;
     font-size: 20px;
-    color: #fff;
+    color: var(--color-white);
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #F1B709;
+    color: var(--color-primary);
 }
 
 .copyright {
@@ -265,7 +249,7 @@
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 14px;
-    color: #ccc;
+    color: var(--color-gray-text);
 }
 
 /* Responsive Design */
