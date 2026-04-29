@@ -1,504 +1,313 @@
-/* ===== Wrapper عام ===== */
-.main-wrapper {
-    background: var(--pd-bg);
-    padding: 60px 0;
-    direction: rtl;
+
+.consultation-btn {
+    background-color: #F1B709; /* Gold color from image */
+    color: #001F3F;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-/* ===== قسم تفاصيل المنتج ===== */
+.consultation-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Product Details Section */
 .product-details-section {
-    margin-bottom: 80px;
+    padding: 60px 0;
+    background-color: #f8f8f8;
 }
 
-.product-content-grid {
+.product-hero {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 48px;
-    direction: rtl;
+    gap: 40px;
 }
 
-.product-text-side {
+.product-info-text {
     flex: 1;
-    max-width: 795px;
 }
 
-/* ===== جهة النصوص ===== */
-
-
-/* السعر */
-.price-badge {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.price-badge .service-price {
-    color: var(--pd-secondary);
-    font-family: var(--pd-font);
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 40px;
-}
-
-.price-badge .currency-icon svg {
-    width: 19px;
-    height: 22px;
-}
-
-/* العنوان */
 .service-title {
-    color: var(--color-secondary);
-    font-family: var(--font-main);
-    font-size: 40px;
-    font-weight: 500;
-    line-height: normal;
-    text-align: right;
-    margin: 0;
+    font-size: 36px;
+    color: #001F3F;
+    margin-bottom: 15px;
 }
 
-/* وصف الخدمة ويشمل */
-.info-group {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.service-price {
+    font-size: 28px;
+    color: #F1B709;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
 }
 
-.group-title {
-    color: var(--color-gray-text);
-    font-family: var(--font-main);
+.currency {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.service-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.includes-title {
     font-size: 24px;
-    font-weight: 700;
-    line-height: normal;
-    text-align: right;
-    margin: 0;
+    color: #001F3F;
+    margin-bottom: 15px;
 }
 
-.service-desc {
-    color: var(--color-gray-text);
-    font-family: var(--font-main);
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1.7;
-    text-align: right;
-    margin: 0;
-}
-
-/* قائمة يشمل */
 .service-includes {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    margin-bottom: 30px;
 }
 
 .service-includes li {
-    color: #000;
-    font-family: var(--font-main);
-    font-size: 20px;
-    font-weight: 500;
-    line-height: normal;
-    text-align: right;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    position: relative;
+    padding-right: 25px;
 }
 
 .service-includes li::before {
-    content: "•";
-    color: var(--color-primary);
-    font-size: 22px;
-    line-height: 1.2;
-    flex-shrink: 0;
+    content: '\f00c'; /* Font Awesome check icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #F1B709;
+    position: absolute;
+    right: 0;
+    top: 2px;
 }
 
-/* زر اطلب الخدمة */
-.btn-submit {
-    display: flex;
-    width: 251px;
-    padding: 10px 16px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 20px;
-    background: var(--color-primary);
-    color: var(--color-white);
-    font-family: var(--font-main);
-    font-size: 18px;
-    font-weight: 700;
+.btn-submit-product {
+    background-color: #001F3F; /* Dark blue */
+    color: #fff;
     border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.2s;
-    margin-top: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.btn-submit:hover {
-    background: var(--color-na);
+.btn-submit-product:hover {
+    background-color: #003366;
 }
 
-/* ===== جهة الصورة ===== */
-.product-image-side {
-    flex-shrink: 0;
-}
-
-.image-wrapper {
-    width: 552px;
-    height: 414px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.30);
-}
-
-.image-wrapper .service-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* ===== قسم جدول المقارنة ===== */
-.compare-section {
-    padding: 60px 0;
-    background: var(--color-background);
-}
-
-.compare-container {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    direction: rtl;
-}
-
-.compare-side-text {
+.container-product-image {
     flex: 1;
-    min-width: 200px;
-}
-
-.compare-side-text h2 {
-    font-family: var(--pd-font);
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--pd-primary);
-    line-height: normal;
-    text-align: right;
-}
-
-.highlight-yellow {
-    color: var(--pd-secondary);
-}
-
-.compare-table-wrapper {
-    flex: 2;
-    background: var(--color-white);
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.compare-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--font-main);
-}
-
-.compare-table th {
-    padding: 14px 20px;
-    font-size: 15px;
-    font-weight: 700;
     text-align: center;
 }
 
-.us-col {
-    background: var(--color-secondary);
-    color: var(--color-white) !important;
-    border-radius: 40px 40px 0 0;
-    width: 271px;
-}
-
-.others-col {
-    color: #888;
-    background: none !important;
-}
-
-.feature-col {
-    background: none !important;
-}
-
-.compare-table td {
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: 500;
-    text-align: center;
-    border-bottom: 1px solid #f0f0f0;
-    background: none;
-    color: #262626;
-}
-
-.feature-name {
-    text-align: right !important;
-    color: #262626 !important;
-    font-weight: 500 !important;
-}
-
-.featured-us {
-    background: rgba(0, 1, 91, 0.05) !important;
-}
-
-.others-cell {
-    background: none !important;
-}
-
-.icon-check-gold {
-    color: var(--pd-secondary);
-    font-size: 20px;
-}
-
-.icon-check-gray {
-    color: #aaa;
-    font-size: 20px;
-}
-
-.icon-x {
-    color: #ddd;
-    font-size: 20px;
-}
-
-/* ===== قسم الأسئلة الشائعة ===== */
-.faq-section {
-    padding: 60px 0;
-    background: var(--pd-bg);
-    direction: rtl;
-}
-
-.faq-main-title {
-    font-family: var(--pd-font);
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--pd-primary);
-    text-align: right;
-    margin-bottom: 40px;
-}
-
-.faq-container-grid {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    direction: rtl;
-}
-
-.faq-accordion-box {
-    flex: 1;
-    min-width: 280px;
-    max-width: 805px;
-}
-
-.faq-img-box {
-    width: 544px;
-    flex-shrink: 0;
-}
-
-.faq-img-box img {
-    width: 100%;
+.product-image-hero {
+    max-width: 100%;
     height: auto;
 }
 
-/* الأسئلة */
-.pd-faqs {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.pd-faqs li {
-    border-bottom: 1px solid #e0e0e0;
-    padding: 16px 0;
-}
-
-.pd-faqs .choose-text h4 {
-    font-family: var(--pd-font);
-    font-size: 19.715px;
-    font-weight: 700;
-    color: #292524;
-    text-align: right;
-    margin: 0 0 8px;
-}
-
-.pd-faqs .choose-text p {
-    font-family: var(--pd-font);
-    font-size: 16px;
-    color: #555;
-    line-height: 1.8;
-    text-align: right;
-    margin: 0;
-}
-
-
-/* ===== FAQ ===== */
+/* FAQ Section */
 .wd-faq-section {
-    background: var(--color-background);
-    padding: 70px 0;
+    padding: 60px 0;
+    background-color: #fff;
 }
 
-.wd-faq-grid {
+.faq-container {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     gap: 40px;
-    align-items: stretch;
-    /* ← يجعل الأعمدة بنفس الارتفاع */
 }
-
 
 .wd-faq-content {
-    flex: 2;
-    min-width: 280px;
+    flex: 1;
+}
+
+.wd-faq-title {
+    font-size: 36px;
+    color: #001F3F;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wd-faq-list {
+    list-style: none;
+    padding: 0;
+}
+
+.wd-faq-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.wd-faq-btn {
+    background-color: #f9f9f9;
+    color: #001F3F;
+    padding: 15px 20px;
+    width: 100%;
+    text-align: right;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wd-faq-btn i {
+    transition: transform 0.3s ease;
+}
+
+.wd-faq-btn[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+.wd-faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.wd-faq-answer.open {
+    max-height: 200px; /* Adjust as needed */
+    padding: 15px 20px;
+}
+
+.wd-faq-answer p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
 }
 
 .wd-faq-image {
     flex: 1;
-    min-width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 .wd-faq-image img {
-    width: 100%;
-    height: 100%;
-    max-width: 350px;
-    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer Styles */
+.main-footer {
+    background-color: #001F3F; /* Dark blue */
+    color: #fff;
+    padding: 40px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #F1B709; /* Gold */
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 8px;
     display: block;
+    transition: color 0.3s ease;
 }
 
-.wd-faq-title {
-    font-size: 26px;
-    font-weight: var(--weight-bold);
-    color: var(--color-secondary);
-    margin-bottom: 28px;
-    text-align: right;
+.footer-section a:hover {
+    color: #F1B709;
 }
 
-.wd-faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 16px;
-    width: 100%;
+.social-icons {
+    margin-top: 20px;
 }
 
-.wd-faq-item {
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    background: #FFF;
-    box-shadow: 0 0.378px 0 0 #F6D751, 2.83px 0 0 0 #F6D751 inset;
-    border-radius: 3.48px;
-    padding: 0 18px;
-    margin-bottom: 0;
-    /* ← أزل margin لأن gap يتولى المسافة */
-    border: none;
+.social-icons a {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 20px;
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
-.wd-faq-btn {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    /* ← عكس اتجاه العناصر */
-    gap: 12px;
-    justify-content: space-between;
-    align-items: center;
-    background: none;
-    border: none;
-    padding: 22px 0;
-    font-family: var(--font-main);
-    font-size: 19.715px;
-    font-weight: 700;
-    color: #292524;
-    cursor: pointer;
-    text-align: right;
-    direction: rtl;
-
+.social-icons a:hover {
+    color: #F1B709;
 }
 
-.wd-faq-btn i {
-    color: var(--color-gray-text);
-    transition: transform .25s;
-    flex-shrink: 0;
-}
-
-.wd-faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .3s ease, padding .3s;
-}
-
-.wd-faq-answer.open {
-    max-height: 300px;
-    padding-bottom: 16px;
-}
-
-.wd-faq-answer p {
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 14px;
-    color: var(--color-gray-text);
-    line-height: 1.8;
-    padding: 0 4px;
+    color: #ccc;
 }
 
-.wd-outcomes-section .container,
-.wd-register-section .container,
-.wd-about-section .container,
-.wd-faq-section .container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 24px;
-    box-sizing: border-box;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 1100px) {
-    .image-wrapper {
-        width: 100%;
-        height: 300px;
-    }
-
-    .product-content-grid {
-        flex-direction: column-reverse;
-    }
-
-    .product-image-side {
-        width: 100%;
-    }
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-    .service-title {
-        font-size: 26px;
-    }
-
-    .price-badge .service-price {
-        font-size: 28px;
-    }
-
-    .compare-container {
+    .navbar {
         flex-direction: column;
     }
 
-    .faq-container-grid {
+    .nav-links {
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 0 0 10px 0;
+    }
+
+    .product-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .faq-container {
         flex-direction: column;
     }
 
-    .faq-img-box {
-        width: 100%;
+    .wd-faq-image {
+        margin-top: 30px;
     }
 
-    .btn-submit {
-        width: 100%;
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section ul {
+        display: inline-block;
+        text-align: right;
+    }
+
+    .social-icons {
+        text-align: center;
     }
 }
