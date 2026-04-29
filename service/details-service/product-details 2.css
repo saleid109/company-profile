@@ -128,64 +128,67 @@
 /* ===============================
     ماذا يميزنا عن الآخرين؟ قسم المقارنة
 ================================= */
-.compare-section {
+/* ===============================
+    قسم المقارنة - product details
+    pd- prefix لتجنب التعارض مع الرئيسية
+================================= */
+.pd-compare-section {
     padding: 100px 0;
     background: var(--color-bg-light);
 }
 
-.compare-container {
+.pd-compare-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 40px;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* ✅ محاذاة من الأعلى */
     justify-content: space-between;
     gap: 80px;
-    align-items:flex-end ;
 }
 
-.compare-side-text {
+.pd-compare-side-text {
     flex: 1;
     order: 2;
+    padding-top: 72px; /* ✅ يساوي ارتفاع رأس الجدول تقريباً ليصطف مع أول صف */
 }
 
-.compare-side-text h2 {
+.pd-compare-side-text h2 {
     font-size: 42px;
     font-weight: 900;
     line-height: 1.3;
     color: var(--color-secondary);
 }
 
-.highlight-yellow {
+.pd-highlight-yellow {
     color: var(--color-primary);
 }
 
-.compare-table-wrapper {
+.pd-compare-table-wrapper {
     flex: 1.5;
     order: 1;
 }
 
-.compare-table {
+.pd-compare-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
     direction: rtl;
 }
 
-/* رأس الجدول */
-.compare-table thead th {
+.pd-compare-table thead th {
     padding: 18px 20px;
     font-size: 15px;
     font-weight: 700;
     text-align: center;
 }
 
-.feature-col {
+.pd-feature-col {
     width: auto;
     min-width: 200px;
 }
 
-/* عمود نقطة صعود */
-.us-col {
+.pd-us-col {
     background-color: var(--color-secondary);
     color: var(--color-white);
     width: 160px;
@@ -197,12 +200,12 @@
     z-index: 3;
 }
 
-.compare-table thead th.us-col {
+.pd-compare-table thead th.pd-us-col {
     padding-top: 30px;
     border-radius: 40px 40px 0 0;
 }
 
-.others-col {
+.pd-others-col {
     color: #262626;
     font-weight: 700;
     width: 160px;
@@ -210,8 +213,7 @@
     white-space: nowrap;
 }
 
-/* اسم الميزة */
-.feature-name {
+.pd-feature-name {
     padding: 18px 25px;
     text-align: right;
     font-size: 15px;
@@ -220,29 +222,25 @@
     border-bottom: 1px solid #eef1f8;
 }
 
-/* خلايا شركات أخرى */
-.others-cell {
+.pd-others-cell {
     text-align: center;
     padding: 15px;
     border-bottom: 1px solid #eef1f8;
 }
 
-/* تلوين الصفوف - يشمل كل الخلايا عدا الكحلي */
-.compare-table tbody tr:nth-child(odd) td:not(.featured-us) {
+.pd-compare-table tbody tr:nth-child(odd) td:not(.pd-featured-us) {
     background-color: var(--color-white);
 }
 
-.compare-table tbody tr:nth-child(even) td:not(.featured-us) {
+.pd-compare-table tbody tr:nth-child(even) td:not(.pd-featured-us) {
     background-color: #ededed;
 }
 
-/* العمود الكحلي البارز */
-.featured-us {
-    background-color: #00015b !important;
+.pd-featured-us {
+    background-color: var(--color-secondary) !important;
     text-align: center;
     padding: 20px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    position: relative;
     z-index: 2;
     width: 160px;
     min-width: 160px;
@@ -251,69 +249,51 @@
     z-index: 5;
 }
 
-.featured-us.last-us {
+.pd-featured-us.pd-last-us {
     border-radius: 0 0 40px 40px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     padding-bottom: 30px;
 }
 
-/* حواف دائرية أول وآخر صف */
-.compare-table tbody tr:first-child .feature-name {
+.pd-compare-table tbody tr:first-child .pd-feature-name {
     border-radius: 0 16px 0 0;
 }
 
-.compare-table tbody tr:last-child .feature-name {
+.pd-compare-table tbody tr:last-child .pd-feature-name {
     border-radius: 0 0 16px 0;
     border-bottom: none;
 }
 
-.compare-table tbody tr:last-child .others-cell {
+.pd-compare-table tbody tr:last-child .pd-others-cell {
     border-bottom: none;
 }
 
-/* الأيقونات */
-.icon-check-gold {
-    background-color: #ffc107;
-    color: #050a44;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.icon-check-gray {
-    background-color: #262626;
-    color: var(--color-white);
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-}
-
-.icon-x {
-    color: #262626;
-    font-size: 20px;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-}
-
-/* Hover */
-.compare-table tbody tr:hover td:not(.featured-us) {
+.pd-compare-table tbody tr:hover td:not(.pd-featured-us) {
     background-color: #e4e9f7;
-    transition: 0.3s;
+    transition: var(--transition);
 }
 
+/* Mobile */
+@media (max-width: 992px) {
+    .pd-compare-container {
+        flex-direction: column;
+    }
+
+    .pd-compare-side-text {
+        padding-top: 0;
+        order: 1;
+    }
+
+    .pd-compare-table-wrapper {
+        order: 2;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .pd-compare-side-text h2 {
+        font-size: 32px;
+    }
+}
 
 /* ===============================
     FAQ
