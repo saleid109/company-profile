@@ -2,7 +2,6 @@
 .product-wrapper {
     width: 100%;
     max-width: var(--max-width);
-    /*  يستخدم المتغير بدل القيمة الثابتة */
     margin: auto;
     padding: 0 40px;
 }
@@ -120,6 +119,201 @@
 }
 
 
+.product-details-section-2 {
+    background: var(--color-bg-light);
+    padding: 70px 0;
+}
+
+
+/* ===============================
+    ماذا يميزنا عن الآخرين؟ قسم المقارنة
+================================= */
+.compare-section {
+    padding: 100px 0;
+    background: var(--color-bg-light);
+}
+
+.compare-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.compare-side-text {
+    flex: 1;
+    order: 2;
+}
+
+.compare-side-text h2 {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.3;
+    color: var(--color-secondary);
+}
+
+.highlight-yellow {
+    color: var(--color-primary);
+}
+
+.compare-table-wrapper {
+    flex: 1.5;
+    order: 1;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    direction: rtl;
+}
+
+/* رأس الجدول */
+.compare-table thead th {
+    padding: 18px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.feature-col {
+    width: auto;
+    min-width: 200px;
+}
+
+/* عمود نقطة صعود */
+.us-col {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    width: 160px;
+    min-width: 160px;
+    white-space: nowrap;
+    border-radius: 40px 40px 0 0;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3;
+}
+
+.compare-table thead th.us-col {
+    padding-top: 30px;
+    border-radius: 40px 40px 0 0;
+}
+
+.others-col {
+    color: #262626;
+    font-weight: 700;
+    width: 160px;
+    min-width: 160px;
+    white-space: nowrap;
+}
+
+/* اسم الميزة */
+.feature-name {
+    padding: 18px 25px;
+    text-align: right;
+    font-size: 15px;
+    color: var(--color-gray-text);
+    font-weight: 600;
+    border-bottom: 1px solid #eef1f8;
+}
+
+/* خلايا شركات أخرى */
+.others-cell {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #eef1f8;
+}
+
+/* تلوين الصفوف - يشمل كل الخلايا عدا الكحلي */
+.compare-table tbody tr:nth-child(odd) td:not(.featured-us) {
+    background-color: var(--color-white);
+}
+
+.compare-table tbody tr:nth-child(even) td:not(.featured-us) {
+    background-color: #ededed;
+}
+
+/* العمود الكحلي البارز */
+.featured-us {
+    background-color: #00015b !important;
+    text-align: center;
+    padding: 20px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    z-index: 2;
+    width: 160px;
+    min-width: 160px;
+    position: sticky;
+    right: 0;
+    z-index: 5;
+}
+
+.featured-us.last-us {
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding-bottom: 30px;
+}
+
+/* حواف دائرية أول وآخر صف */
+.compare-table tbody tr:first-child .feature-name {
+    border-radius: 0 16px 0 0;
+}
+
+.compare-table tbody tr:last-child .feature-name {
+    border-radius: 0 0 16px 0;
+    border-bottom: none;
+}
+
+.compare-table tbody tr:last-child .others-cell {
+    border-bottom: none;
+}
+
+/* الأيقونات */
+.icon-check-gold {
+    background-color: #ffc107;
+    color: #050a44;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.icon-check-gray {
+    background-color: #262626;
+    color: var(--color-white);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.icon-x {
+    color: #262626;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+/* Hover */
+.compare-table tbody tr:hover td:not(.featured-us) {
+    background-color: #e4e9f7;
+    transition: 0.3s;
+}
+
+
 /* ===============================
     FAQ
 ================================= */
@@ -169,7 +363,6 @@
     align-items: center;
     cursor: pointer;
     transition: var(--transition);
-    /* ✅ يستخدم المتغير */
 }
 
 .wd-faq-btn:hover {
