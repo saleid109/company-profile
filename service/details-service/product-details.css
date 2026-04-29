@@ -1,141 +1,128 @@
-
+/* ===============================
+    Container
+================================= */
 .container {
+    width: 100%;
     max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: auto;
+    padding: 0 40px;
 }
 
-/*القسم الأول: تفاصيل المنتج  */
+/* ===============================
+    تفاصيل الخدمة
+================================= */
 .product-details-section {
-    padding: 60px 0;
-    background-color: var(--color-background);
+    background: #f8f8f8;
+    padding: 70px 0;
 }
 
 .product-hero {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 60px 10%; /* مساحة جانبية لراحة العين */
-    gap: 40px;
-    direction: rtl; /* التأكد من الاتجاه العربي */
+    gap: 60px;
 }
 
-.container-product-image {
-    flex: 1;
-    text-align: center;
-}
-
-.product-image-hero {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-}
 .product-info-text {
-    flex: 1.2;
+    flex: 1;
     text-align: right;
 }
 
 .service-title {
-    font-size: 38px;
-    color: var(--color-secondary);
-    margin-bottom: 10px;
+    font-size: 52px;
     font-weight: 700;
+    color: #00015B;
+    margin-bottom: 20px;
 }
 
 .service-price {
-    font-size: 26px;
-    color: var(--color-secondary);
-    font-weight: 700;
-    margin-bottom: 25px;
     display: block;
+    font-size: 34px;
+    font-weight: 700;
+    color: #00015B;
+    margin-bottom: 25px;
+}
+
+.includes-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #00015B;
+    margin-bottom: 18px;
 }
 
 .service-description {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #555;
+    font-size: 20px;
+    line-height: 2;
+    color: #444;
     margin-bottom: 30px;
-    max-width: 550px; /* لضمان عدم تمدد النص بشكل مزعج */
-}
-
-/* تنسيق قائمة "يشمل" */
-.includes-title {
-    font-size: 22px;
-    color: #00015B;
-    margin-bottom: 15px;
-    font-weight: 700;
+    max-width: 700px;
 }
 
 .service-includes {
     list-style: none;
     padding: 0;
-    margin-bottom: 40px;
+    margin: 0 0 35px;
 }
 
 .service-includes li {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #111;
+    position: relative;
+    padding-right: 20px;
 }
 
-/* إضافة المربع الصغير أو الأيقونة قبل النص */
 .service-includes li::before {
-    content: ''; 
-    width: 8px;
-    height: 8px;
-    border: 2px solid #F0AD4E; /* اللون البرتقالي/الذهبي */
-    border-radius: 2px;
-    display: inline-block;
+    content: "•";
+    position: absolute;
+    right: 0;
+    color: #d8a400;
+    font-size: 22px;
 }
 
-/* تنسيق الزر ليكون مركزي أو محاذي لليمين حسب الصورة */
 .btn-submit-product {
-    background-color: #00015B;
-    color: #fff;
+    background: #00015B;
+    color: white;
     border: none;
-    padding: 12px 60px;
-    border-radius: 25px;
-    font-size: 18px;
+    padding: 16px 55px;
+    border-radius: 35px;
+    font-size: 22px;
+    font-weight: 700;
     cursor: pointer;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .btn-submit-product:hover {
-    background-color: #00028c;
-    box-shadow: 0 4px 15px rgba(0, 1, 91, 0.2);
+    transform: translateY(-3px);
 }
 
-/* تنسيق صورة الخدمة (الجهة اليسرى) */
+/* الصورة */
 .container-product-image {
     flex: 1;
-    background: #fff;
-    border: 1px solid #E0E0E0;
-    border-radius: 20px;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
 }
 
 .product-image-hero {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    max-width: 520px;
 }
 
-/* قسم الأسئلة الشائعة - النص يمين والصورة يسار (كما في الصورة الأصلية) */
+/* ===============================
+    FAQ
+================================= */
 .wd-faq-section {
-    padding: 60px 0;
-    background-color: var(--color-white);
+    background: #f8f8f8;
+    padding: 70px 0;
 }
 
 .faq-container {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 70px;
 }
 
 .wd-faq-content {
@@ -143,10 +130,10 @@
 }
 
 .wd-faq-title {
-    font-size: 36px;
-    color: var(--color-secondary);
-    margin-bottom: 30px;
-    text-align: center;
+    font-size: 52px;
+    font-weight: 700;
+    color: #00015B;
+    margin-bottom: 35px;
 }
 
 .wd-faq-list {
@@ -155,37 +142,36 @@
 }
 
 .wd-faq-item {
-    border: 1px solid #eee;
+    margin-bottom: 18px;
     border-radius: 8px;
-    margin-bottom: 15px;
     overflow: hidden;
 }
 
 .wd-faq-btn {
-    background-color: #f9f9f9;
-    color: var(--color-secondary);
-    padding: 15px 20px;
     width: 100%;
-    text-align: right;
+    background: white;
     border: none;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
+    padding: 22px 25px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .wd-faq-answer {
-    padding: 0 20px;
+    background: white;
     max-height: 0;
     overflow: hidden;
-    transition: 0.3s ease-out;
+    transition: .4s;
+    padding: 0 25px;
 }
 
 .wd-faq-answer.open {
     max-height: 200px;
-    padding: 15px 20px;
+    padding: 20px 25px;
 }
 
 .wd-faq-image {
@@ -194,17 +180,32 @@
 }
 
 .wd-faq-image img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    max-width: 520px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .product-hero, .faq-container {
+/* ===============================
+    Mobile
+================================= */
+@media (max-width: 992px) {
+
+    .product-hero,
+    .faq-container {
         flex-direction: column;
-        text-align: center;
     }
-    .service-includes li {
-        text-align: right;
+
+    .service-title,
+    .wd-faq-title {
+        font-size: 38px;
+    }
+
+    .service-description,
+    .service-includes li,
+    .wd-faq-btn {
+        font-size: 18px;
+    }
+
+    .btn-submit-product {
+        width: 100%;
     }
 }
