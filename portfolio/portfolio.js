@@ -1,7 +1,7 @@
 // ============================================
 // بيانات الخدمات
 // ============================================
-const services = [
+const portfolios = [
     {
         id: 1, type: "products", title: "نظام إداري",
         image: "../public/images/erp-system.jpg",
