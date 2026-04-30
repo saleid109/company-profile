@@ -262,7 +262,8 @@
 .portfolio-card {
     display: flex;
     width: 327px;
-    height: 363px;
+    min-height: 363px;
+    height: auto;
     padding: 16px;
     flex-direction: column;
     align-items: flex-start;
