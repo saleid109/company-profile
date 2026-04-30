@@ -1,0 +1,516 @@
+/* ===== Hero Inner ===== */
+.hero-inner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.hero-inner .hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.title-about {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.title-about h1 {
+    color: var(--color-white);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* =========================================
+    Main Layout
+   ========================================= */
+.main-layout {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    padding: 40px 0;
+    flex-direction: row-reverse;
+}
+
+.cards-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* =========================================
+    Tabs
+   ========================================= */
+.tabs-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 40px;
+    border: 1.5px solid var(--color-secondary);
+    background: var(--color-white);
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-secondary);
+    transition: var(--transition);
+}
+
+.tab-btn.active {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(222, 220, 215, 0.3);
+}
+
+.tab-btn:hover:not(.active) {
+    background: var(--color-secondary);
+    color: var(--color-white);
+}
+
+/* =========================================
+    Sidebar & Filters
+   ========================================= */
+.sidebar-side {
+    width: 300px;
+    position: sticky;
+    top: 120px;
+}
+
+.sidebar {
+    background: var(--color-white);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f5f5f5;
+    margin-bottom: 10px;
+}
+
+.sidebar-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.btn-clear-filters {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: var(--font-main);
+}
+
+/* ✅ sidebar-filters: الفلتر المباشر بدون toggle (لتأهيل لسوق العمل) */
+.sidebar-filters {
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+    margin-bottom: 15px;
+}
+
+.filter-group {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 15px;
+}
+
+.filter-group-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 12px 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+    font-family: var(--font-main);
+    text-align: right;
+}
+
+.filter-options {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-cb {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-secondary);
+}
+
+.filter-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+}
+
+.filter-content.open {
+    max-height: 500px;
+}
+
+.chevron {
+    font-size: 12px;
+    color: #888;
+    transition: transform 0.25s;
+}
+
+.chevron.open {
+    transform: rotate(180deg);
+}
+
+/* =========================================
+    نظام التقييم التفاعلي
+   ========================================= */
+.stars-filter-container {
+    padding: 10px 5px;
+    text-align: center;
+}
+
+.stars-interactive {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.stars-interactive input {
+    display: none;
+}
+
+.stars-interactive label {
+    font-size: 28px;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.stars-interactive input:checked ~ label,
+.stars-interactive label:hover,
+.stars-interactive label:hover ~ label {
+    color: #FFB800;
+}
+
+.rating-hint-text {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+    font-family: var(--font-main);
+}
+
+/* =========================================
+    Cards Grid
+   ========================================= */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* ✅ portfolio-card: البطاقة الخاصة بصفحة أعمالنا (بدون سعر أو سلة) */
+.portfolio-card {
+    background: var(--color-white);
+    border-radius: 16px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* services-card: تُستخدم في صفحة الخدمات (مع سعر وسلة) */
+.services-card {
+    background: var(--color-white);
+    border-radius: 16px;
+    border: 1px solid #eee;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: var(--transition);
+}
+
+.services-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ✅ صورة البطاقة — مختلفة بين portfolio و services */
+.portfolio-card .card-img-wrapper {
+    width: 100%;
+    height: 180px;
+    background: #f7f7f7;
+    overflow: hidden;
+}
+
+.portfolio-card .card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.services-card .card-img-wrapper {
+    width: 100%;
+    height: 160px;
+    background: #f7f7f7;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-card .card-img-wrapper img {
+    max-width: 160px;
+    max-height: 160px;
+    object-fit: contain;
+}
+
+/* ✅ card-body للبورتفوليو */
+.portfolio-card .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text);
+    text-align: right;
+}
+
+/* ✅ تفاصيل البطاقة (تطوير ويب، 50 مستفيد) */
+.footer-detailes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-detailes li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    font-size: 13px;
+    color: #555;
+    font-weight: 600;
+}
+
+.card-divider {
+    height: 1px;
+    background: #f0f0f0;
+    margin: 4px 0;
+}
+
+.card-details-link {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-top: 4px;
+    transition: opacity 0.2s;
+}
+
+.card-details-link:hover {
+    opacity: 0.7;
+}
+
+/* زر السلة (للخدمات فقط) */
+.btn-add-cart {
+    background: var(--color-secondary);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-main);
+}
+
+.btn-add-cart:hover {
+    background: var(--color-navy-light);
+}
+
+/* =========================================
+    رسالة "لا توجد أعمال"
+   ========================================= */
+.no-data {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    font-size: 16px;
+}
+
+/* =========================================
+    Pagination
+   ========================================= */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.pagination-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f0f0f0;
+    color: #666;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.pagination-active {
+    background: #d1d5db;
+    color: #333;
+}
+
+.pagination-nav-text {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-size: 16px;
+}
+
+/* =========================================
+    Utilities
+   ========================================= */
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+    Responsive
+   ========================================= */
+@media (max-width: 767px) {
+    .main-layout {
+        flex-direction: column !important;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .sidebar-side {
+        width: 100% !important;
+        position: static !important;
+        order: -1;
+    }
+
+    .tabs-row {
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .tab-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .hero-inner {
+        height: 200px;
+    }
+
+    .title-about h1 {
+        font-size: 2rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main-layout {
+        flex-direction: column !important;
+        gap: 24px;
+    }
+
+    .sidebar-side {
+        width: 100% !important;
+        position: static !important;
+        order: -1;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
