@@ -142,14 +142,15 @@
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
-    align-items: flex-start; 
+    align-items: center; 
     justify-content:  space-between;
     gap: 80px;
     direction: rtl;
 }
 
 .pd-compare-side-text {
-    flex: 1;
+    flex: 0 0 30%;
+    text-align: right;
     order: 1;
     padding-top: 72px; 
     
@@ -174,7 +175,6 @@
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    order: 2;
 
 }
 
