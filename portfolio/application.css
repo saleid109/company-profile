@@ -40,7 +40,7 @@
 }
 
 /* =========================================
-   القسم 1: Hero المشروع
+القسم  : Hero المشروع
    ========================================= */
 .project-hero {
     padding: 60px 0;
@@ -51,7 +51,8 @@
     display: flex;
     align-items: center;
     gap: 60px;
-    flex-direction: row-reverse; /* النص يسار، الصور يمين */
+    flex-direction: row-reverse;
+    /* النص يسار، الصور يمين */
 }
 
 /* النص */
@@ -86,7 +87,7 @@
 }
 
 .project-mockups img {
-    width: 30%;
+    width: 50%;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     transition: transform 0.3s ease;
@@ -96,14 +97,9 @@
     transform: translateY(-8px);
 }
 
-/* الصورة الوسطى أطول قليلاً */
-.project-mockups img:nth-child(2) {
-    width: 34%;
-    margin-bottom: 20px;
-}
 
 /* =========================================
-   القسم 2: شاشات المشروع
+    القسم 2: شاشات المشروع
    ========================================= */
 .project-screens {
     padding: 60px 0;
@@ -150,14 +146,14 @@
 }
 
 /* =========================================
-   القسم 3: آراء العملاء
+    القسم 3: آراء العملاء
    ========================================= */
 .client-reviews {
     padding: 60px 0;
     background: var(--color-white);
 }
 
-/* ✅ قائمة البطاقات بدون نقاط */
+/*  قائمة البطاقات بدون نقاط */
 .testimonials-grid {
     list-style: none;
     padding: 0;
@@ -233,9 +229,10 @@
 }
 
 /* =========================================
-   Responsive
+    Responsive
    ========================================= */
 @media (max-width: 767px) {
+
     /* Hero */
     .project-hero-layout {
         flex-direction: column;
