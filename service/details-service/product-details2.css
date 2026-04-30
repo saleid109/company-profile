@@ -143,9 +143,8 @@
     padding: 0 40px;
     display: flex;
     align-items: flex-start; 
-    justify-content: space-between;
+    justify-content:  space-between;
     gap: 80px;
-    flex-direction: row-reverse;
 }
 
 .pd-compare-side-text {
