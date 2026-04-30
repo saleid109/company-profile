@@ -335,13 +335,14 @@
 .footer-detailes li {
     display: flex;
     align-items: center;
-    justify-content: flex-end; 
-    flex-direction: row-reverse; 
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     gap: 8px;
     font-size: 13px;
     font-weight: 600;
     color: #333;
 }
+
 
 
 /* =========================================
