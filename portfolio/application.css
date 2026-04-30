@@ -85,7 +85,7 @@
 /*  الجانب الأيمن — الصور    */
 .project-mockups {
     flex: 1;
-    background: var(--color-white); 
+    background: var(--color-secondary); 
     display: flex;
     gap: 12px;
     align-items: flex-end;
@@ -94,7 +94,7 @@
 }
 
 .project-mockups img {
-    width: 30%;
+    width: 60%;
     border-radius: 20px 20px 0 0; /* ← مستدير من الأعلى فقط */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
