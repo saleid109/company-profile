@@ -258,7 +258,7 @@
     gap: 20px;
 }
 
-.services-card {
+.portfolio-card {
     background: var(--color-white);
     border-radius: 16px;
     border: 1px solid #eee;
@@ -269,7 +269,7 @@
     transition: var(--transition);
 }
 
-.services-card:hover {
+.portfolio-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
