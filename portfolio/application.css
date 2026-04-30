@@ -23,3 +23,53 @@
     width: 30%;
     border-radius: 16px;
 }
+
+/* تنسيق بطاقة الرأي العامة */
+.testimonial-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px; /* لإضافة مسافة بين البطاقات */
+    font-family: sans-serif; /* اختر الخط الذي تفضله */
+}
+
+/* تنسيق رأس البطاقة (الصورة والاسم) */
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* تنسيق صورة العميل */
+.testimonial-header img {
+    border-radius: 50%;
+    margin-left: 15px; /* مسافة على اليمين للصورة (للاتجاه من اليمين لليسار) */
+}
+
+/* تنسيق الاسم والتقييم */
+.testimonial-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* تنسيق اسم العميل */
+.testimonial-info h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1em; /* حجم الخط لاسم العميل */
+}
+
+/* تنسيق النجوم (التقييم) */
+.testimonial-rating {
+    color: #ffc107;
+    font-size: 1.2em; /* حجم الخط للنجوم */
+}
+
+/* تنسيق نص الرأي */
+.testimonial-body p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
