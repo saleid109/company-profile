@@ -131,7 +131,7 @@
 /* أزرار السلايدر */
 .swiper-button-next,
 .swiper-button-prev {
-    background: var(--color-white);
+    background: var(--color-secondary);
     width: 44px !important;
     height: 44px !important;
     border-radius: 50%;
