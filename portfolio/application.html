@@ -137,20 +137,54 @@
             <!--  أعمالنا هي الصفحة الأم -->
             <li><a href="portfolio.html" aria-current="page">أعمالنا</a></li>
 
+
             <li class="dropdown has-mega">
               <a href="../team.html" aria-haspopup="true" aria-expanded="false">
                 طاقم العمل
                 <i class="fas fa-chevron-down mr-1 text-xs"></i>
               </a>
-              <!--  mega-menu داخل الـ li -->
+
               <div class="mega-menu-content">
                 <div class="mega-grid">
-                  <a href="../board.html" class="mega-card">...</a>
-                  <a href="../teams.html" class="mega-card">...</a>
-                  <a href="../careers.html" class="mega-card">...</a>
+                  <a href="../board.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <div class="mega-icon-wrap">
+                        <i class="fas fa-user-tie"></i>
+                      </div>
+                    </div>
+
+                    <div class="card-info">
+                      <h4>اعضاء المجلس</h4>
+                      <p>الهيكل الاداري لنقطة صعود</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+
+                  <a href="../teams.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <img src="../public/images/Frame(2).png" alt="icon" />
+                    </div>
+                    <div class="card-info">
+                      <h4>الفرق</h4>
+                      <p>تعرف على فرق نقطة صعود</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+
+                  <a href="../careers.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <img src="../public/images/Frame(3).png" alt="icon" />
+                    </div>
+                    <div class="card-info">
+                      <h4>اعلانات التوظيف</h4>
+                      <p>اعلانات التوظيف في نقطة صعود</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
                 </div>
               </div>
-            </li> <!--  الإغلاق هنا -->
+            </li>
+            <!--  الإغلاق هنا -->
 
             <li><a href="../clients-partners.html">شركاء النجاح</a></li>
             <li><a href="../contact.html">تواصل معنا</a></li>
@@ -423,29 +457,29 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../assets/js/main.js"></script>
   <script>
-    const screensSwiper = new Swiper('.screens-swiper', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      a11y: {
-        prevSlideMessage: 'الشريحة السابقة',
-        nextSlideMessage: 'الشريحة التالية',
-      },
-      breakpoints: {
-        480: { slidesPerView: 2, spaceBetween: 20 },
-        768: { slidesPerView: 3, spaceBetween: 30 },
-        1024: { slidesPerView: 4, spaceBetween: 30 },
-      }
-    });
-  </script>
+  const screensSwiper = new Swiper('.screens-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: false, /* ← غيّر لـ false مع 4 شرائح فقط */
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    a11y: {
+      prevSlideMessage: 'الشريحة السابقة',
+      nextSlideMessage: 'الشريحة التالية',
+    },
+    breakpoints: {
+      480:  { slidesPerView: 2, spaceBetween: 20 },
+      768:  { slidesPerView: 3, spaceBetween: 30 },
+      1024: { slidesPerView: 4, spaceBetween: 30 },
+    }
+  });
+</script>
 
 </body>
 
