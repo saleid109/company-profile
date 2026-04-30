@@ -328,7 +328,7 @@
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
     gap: 8px;
 }
 
@@ -342,9 +342,6 @@
     font-weight: 600;
     color: #333;
 }
-
-
-
 
 
 /* =========================================
