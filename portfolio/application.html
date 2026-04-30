@@ -137,39 +137,21 @@
             <!--  أعمالنا هي الصفحة الأم -->
             <li><a href="portfolio.html" aria-current="page">أعمالنا</a></li>
 
-            <div class="mega-menu-content">
-              <div class="mega-grid">
-                <a href="../board.html" class="mega-card">
-                  <div class="card-icon-wrapper">
-                    <div class="mega-icon-wrap"><i class="fas fa-user-tie"></i></div>
-                  </div>
-                  <div class="card-info">
-                    <h4>اعضاء المجلس</h4>
-                    <p>الهيكل الاداري لنقطة صعود</p><span class="read-more">المزيد <i
-                        class="fas fa-chevron-left"></i></span>
-                  </div>
-                </a>
-                <a href="../teams.html" class="mega-card">
-                  <div class="card-icon-wrapper"><img src="../public/images/Frame(2).png" alt="" aria-hidden="true" />
-                  </div>
-                  <div class="card-info">
-                    <h4>الفرق</h4>
-                    <p>تعرف على فرق نقطة صعود</p><span class="read-more">المزيد <i
-                        class="fas fa-chevron-left"></i></span>
-                  </div>
-                </a>
-                <a href="../careers.html" class="mega-card">
-                  <div class="card-icon-wrapper"><img src="../public/images/Frame(3).png" alt="" aria-hidden="true" />
-                  </div>
-                  <div class="card-info">
-                    <h4>اعلانات التوظيف</h4>
-                    <p>اعلانات التوظيف في نقطة صعود</p><span class="read-more">المزيد <i
-                        class="fas fa-chevron-left"></i></span>
-                  </div>
-                </a>
+            <li class="dropdown has-mega">
+              <a href="../team.html" aria-haspopup="true" aria-expanded="false">
+                طاقم العمل
+                <i class="fas fa-chevron-down mr-1 text-xs"></i>
+              </a>
+              <!--  mega-menu داخل الـ li -->
+              <div class="mega-menu-content">
+                <div class="mega-grid">
+                  <a href="../board.html" class="mega-card">...</a>
+                  <a href="../teams.html" class="mega-card">...</a>
+                  <a href="../careers.html" class="mega-card">...</a>
+                </div>
               </div>
-            </div>
-            </li>
+            </li> <!--  الإغلاق هنا -->
+
             <li><a href="../clients-partners.html">شركاء النجاح</a></li>
             <li><a href="../contact.html">تواصل معنا</a></li>
           </ul>
@@ -254,8 +236,8 @@
               <img src="../public/images/Frame37742.png" alt="شاشة الملف الشخصي" loading="lazy">
             </div>
           </div>
-            
-          
+
+
           <div class="swiper-pagination"></div>
           <button class="swiper-button-next" aria-label="الشريحة التالية"></button>
           <button class="swiper-button-prev" aria-label="الشريحة السابقة"></button>
