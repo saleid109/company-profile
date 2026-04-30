@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>اعمالنا - نقطة صعود | حلول رقمية وتأهيل مهني</title>
+  <title>أعمالنا - نقطة صعود | حلول رقمية وتأهيل مهني</title>
   <meta name="description"
-    content="استكشف اعمال نقطة صعود: تطوير المواقع، المنتجات الرقمية، وبرامج التأهيل لسوق العمل الرقمي.">
+    content="استكشف أعمال نقطة صعود: تطوير المواقع، المنتجات الرقمية، وبرامج التأهيل لسوق العمل الرقمي.">
 
   <!-- الخطوط -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,15 +16,18 @@
 
   <!-- الأيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <!-- أيقونات Material Symbols -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-  <!--صفحات الانماط الاساسية css-->
+  <!-- ============================================
+       ✅ المسارات مصححة — أنت داخل مجلد portfolio/
+       ============================================ -->
   <link rel="stylesheet" href="../assets/css/css-reset.css" />
   <link rel="stylesheet" href="../assets/css/variables.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/mobile.css" />
-  <link rel="stylesheet" href="../portfolio/portfolio.css" />
+  <!-- ✅ ملفات CSS الخاصة بهذا المجلد (بدون ../) -->
+  <link rel="stylesheet" href="application.css" />
+  <link rel="stylesheet" href="portfolio.css" />
 
   <!-- مكتبة السلايدر Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -71,12 +74,12 @@
       </div>
     </div>
 
-    <!--القائمة الرئيسية (Main Navbar) -->
+    <!--القائمة الرئيسية-->
     <nav class="main-nav" aria-label="القائمة الرئيسية">
       <div class="container nav-wrapper">
-        <!-- الشعار-->
         <div class="nav-right">
           <div class="logo">
+            <!-- ✅ المسار صحيح — نرجع خطوة للجذر -->
             <a href="../index.html" title="العودة للرئيسية">
               <img src="../public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود" />
             </a>
@@ -86,13 +89,10 @@
           </button>
         </div>
 
-        <!-- روابط التنقل-->
-        <!--القوائم المنسدلة-->
-        <!-- روابط التنقل مع دعم القوائم المنسدلة للخدمات والفريق -->
         <div class="navbar-links">
           <ul class="nav-menu">
             <li>
-              <a href="../index.html" aria-current="page">الرئيسية</a>
+              <a href="../index.html">الرئيسية</a>
             </li>
 
             <li class="dropdown has-mega">
@@ -100,21 +100,18 @@
                 عن نقطة صعود
                 <i class="fas fa-chevron-down mr-1 text-xs"></i>
               </a>
-              <!-- القائمة الضخمة (Mega Menu) عن نقطة صعود -->
               <div class="mega-menu-content">
                 <div class="mega-grid">
                   <a href="../about.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <img src="../public/images/Frame.png" alt="icon" />
                     </div>
-
                     <div class="card-info">
                       <h4>عن نقطة صعود</h4>
                       <p>نبذة عن نقطة صعود أهدافنا ورؤيتنا</p>
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-
                   <a href="../our-story.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <div class="mega-icon-wrap">
@@ -127,7 +124,6 @@
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-
                   <a href="../news.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <div class="mega-icon-wrap">
@@ -150,14 +146,14 @@
               </a>
             </li>
 
-            <li><a href="../portfolio.html">أعمالنا</a></li>
+            <!-- ✅ رابط أعمالنا يشير للصفحة الحالية -->
+            <li><a href="portfolio.html" aria-current="page">أعمالنا</a></li>
 
             <li class="dropdown has-mega">
               <a href="../team.html" aria-haspopup="true" aria-expanded="false">
                 طاقم العمل
                 <i class="fas fa-chevron-down mr-1 text-xs"></i>
               </a>
-
               <div class="mega-menu-content">
                 <div class="mega-grid">
                   <a href="../board.html" class="mega-card">
@@ -166,14 +162,12 @@
                         <i class="fas fa-user-tie"></i>
                       </div>
                     </div>
-
                     <div class="card-info">
                       <h4>اعضاء المجلس</h4>
                       <p>الهيكل الاداري لنقطة صعود</p>
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-
                   <a href="../teams.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <img src="../public/images/Frame(2).png" alt="icon" />
@@ -184,7 +178,6 @@
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-
                   <a href="../careers.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <img src="../public/images/Frame(3).png" alt="icon" />
@@ -204,19 +197,18 @@
           </ul>
         </div>
 
-        <!--زر الاستشارة-->
         <div class="nav-actions desktop-only">
-          <a href="#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
+          <a href="../contact.html#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
         </div>
+      </div>
     </nav>
 
     <div class="overlay"></div>
   </header>
 
-
-  <!--   زر الاستشارة العائم الذي يظهر عند التمرير -->
+  <!-- زر الاستشارة العائم -->
   <div class="top-floating-container">
-    <a href="contact.html#Consultation" class="floating-consult-btn">
+    <a href="../contact.html#Consultation" class="floating-consult-btn">
       <i class="fas fa-comments"></i>
       <span>احصل على استشارة</span>
     </a>
@@ -225,7 +217,6 @@
   <main id="main-content">
 
     <!-- ========== Hero ========== -->
-
     <section id="hero" class="hero-inner">
       <div class="container hero-content">
         <div class="video-wrapper">
@@ -235,36 +226,40 @@
           </video>
         </div>
         <div class="title-about">
+          <!-- ✅ العنوان صحيح لصفحة أعمالنا -->
           <h1>أعمالنا</h1>
         </div>
       </div>
     </section>
 
-    <!-- ========== قسم الاعمال ========== -->
+    <!-- ========== قسم الأعمال ========== -->
     <div class="container">
       <div class="main-layout">
 
-        <!-- عمود البطاقات (اليسار) -->
+        <!-- عمود البطاقات -->
         <div class="cards-column">
+
+          <!-- ✅ تبويبان فقط (بدون "خدمة رقمية" الموجودة في خدماتنا) -->
           <nav class="tabs-row" role="tablist">
-
-            <button class="tab-btn" data-tab="products" role="tab" aria-selected="false">منتجات رقمية</button>
-
-            <button class="tab-btn active" data-tab="work" role="tab" aria-selected="true">تأهيل لسوق العمل</button>
-
+            <button class="tab-btn active" data-tab="work" role="tab" aria-selected="true">
+              تأهيل لسوق العمل
+            </button>
+            <button class="tab-btn" data-tab="products" role="tab" aria-selected="false">
+              منتجات رقمية
+            </button>
           </nav>
 
-          <!-- الحاوية الديناميكية للخدمات -->
+          <!-- الحاوية الديناميكية للأعمال -->
           <div id="portfolios-container" class="cards-grid">
 
+            <!-- ✅ بطاقة أعمال — بدون زر "طلب الخدمة" وبدون زر "أضف للسلة" -->
             <article class="portfolio-card" data-type="work">
               <div class="card-img-wrapper">
-                <img src="../public/images/work-rehab.jpg" alt="  جمعية روافد" loading="lazy">
+                <img src="../public/images/work-rehab.jpg" alt="جمعية روافد" loading="lazy">
               </div>
               <div class="card-body">
-                <div class="card-label"> جمعية روافد</div>
+                <div class="card-label">جمعية روافد</div>
                 <ul class="footer-detailes">
-
                   <li>تطوير ويب
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002060" stroke-width="2"
                       stroke-linecap="round" stroke-linejoin="round">
@@ -283,41 +278,175 @@
                   </li>
                 </ul>
                 <div class="card-divider"></div>
-                <button class="btn-add-cart" type="button">طلب الخدمة</button>
+                <!-- ✅ رابط التفاصيل فقط — بدون أزرار الشراء -->
                 <a href="details-service/details-work.html" class="card-details-link">التفاصيل &rsaquo;</a>
               </div>
             </article>
 
-            <article class="services-card" data-type="products">
+            <article class="portfolio-card" data-type="work">
               <div class="card-img-wrapper">
-                <img src="../public/images/erp-system.jpg" alt=" اسم المشروع" loading="lazy">
+                <img src="../public/images/work-rehab.jpg" alt="جمعية روافد" loading="lazy">
               </div>
               <div class="card-body">
-                <div class="card-label"> اسم المشروع</div>
-
+                <div class="card-label">جمعية روافد</div>
+                <ul class="footer-detailes">
+                  <li>تطوير ويب
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002060" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" />
+                      <path d="M8 21h8m-4-4v4" />
+                    </svg>
+                  </li>
+                  <li>50 مستفيد
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002060" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </li>
+                </ul>
                 <div class="card-divider"></div>
-                <button class="btn-add-cart" type="button">أضف إلى السلة</button>
-                <a href="details-service/product-details.html?id=5" class="card-details-link">التفاصيل &rsaquo;</a>
+                <a href="details-service/details-work.html" class="card-details-link">التفاصيل &rsaquo;</a>
               </div>
             </article>
 
+            <article class="portfolio-card" data-type="work">
+              <div class="card-img-wrapper">
+                <img src="../public/images/work-rehab.jpg" alt="جمعية روافد" loading="lazy">
+              </div>
+              <div class="card-body">
+                <div class="card-label">جمعية روافد</div>
+                <ul class="footer-detailes">
+                  <li>تطوير ويب
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002060" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" />
+                      <path d="M8 21h8m-4-4v4" />
+                    </svg>
+                  </li>
+                  <li>50 مستفيد
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002060" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </li>
+                </ul>
+                <div class="card-divider"></div>
+                <a href="details-service/details-work.html" class="card-details-link">التفاصيل &rsaquo;</a>
+              </div>
+            </article>
 
+            <article class="portfolio-card" data-type="work">
+              <div class="card-img-wrapper">
+                <img src="../public/images/work-rehab.jpg" alt="جمعية روافد" loading="lazy">
+              </div>
+              <div class="card-body">
+                <div class="card-label">جمعية روافد</div>
+                <ul class="footer-detailes">
+                  <li>تطوير ويب
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002060" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" />
+                      <path d="M8 21h8m-4-4v4" />
+                    </svg>
+                  </li>
+                  <li>50 مستفيد
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002060" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </li>
+                </ul>
+                <div class="card-divider"></div>
+                <a href="details-service/details-work.html" class="card-details-link">التفاصيل &rsaquo;</a>
+              </div>
+            </article>
+
+            <article class="portfolio-card" data-type="work">
+              <div class="card-img-wrapper">
+                <img src="../public/images/work-rehab.jpg" alt="جمعية روافد" loading="lazy">
+              </div>
+              <div class="card-body">
+                <div class="card-label">جمعية روافد</div>
+                <ul class="footer-detailes">
+                  <li>تطوير ويب
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002060" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" />
+                      <path d="M8 21h8m-4-4v4" />
+                    </svg>
+                  </li>
+                  <li>50 مستفيد
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002060" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </li>
+                </ul>
+                <div class="card-divider"></div>
+                <a href="details-service/details-work.html" class="card-details-link">التفاصيل &rsaquo;</a>
+              </div>
+            </article>
+
+            <article class="portfolio-card" data-type="work">
+              <div class="card-img-wrapper">
+                <img src="../public/images/work-rehab.jpg" alt="جمعية روافد" loading="lazy">
+              </div>
+              <div class="card-body">
+                <div class="card-label">جمعية روافد</div>
+                <ul class="footer-detailes">
+                  <li>تطوير ويب
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002060" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" />
+                      <path d="M8 21h8m-4-4v4" />
+                    </svg>
+                  </li>
+                  <li>50 مستفيد
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002060" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </li>
+                </ul>
+                <div class="card-divider"></div>
+                <a href="details-service/details-work.html" class="card-details-link">التفاصيل &rsaquo;</a>
+              </div>
+            </article>
+
+            <!-- ✅ بطاقات المنتجات الرقمية (مخفية افتراضياً) -->
+            <article class="portfolio-card" data-type="products" style="display:none;">
+              <div class="card-img-wrapper">
+                <img src="../public/images/erp-system.jpg" alt="اسم المشروع" loading="lazy">
+              </div>
+              <div class="card-body">
+                <div class="card-label">اسم المشروع</div>
+                <div class="card-divider"></div>
+                <a href="details-service/product-details.html" class="card-details-link">التفاصيل &rsaquo;</a>
+              </div>
+            </article>
 
           </div>
+          <!-- نهاية cards-grid -->
 
-          <!-- الترقيم (Pagination) -->
-          <nav class="pagination">
-            <button class="pagination-nav-text">السابق</button>
-            <button class="pagination-btn pagination-active">1</button>
-            <button class="pagination-btn">2</button>
-            <button class="pagination-btn">3</button>
-            <button class="pagination-btn">4</button>
-            <button class="pagination-btn">5</button>
-            <button class="pagination-btn">6</button>
-            <button class="pagination-nav-text">التالي</button>
-          </nav>
         </div>
+        <!-- نهاية cards-column -->
 
+        <!-- ========== السايدبار ========== -->
         <aside class="sidebar-side">
           <div class="sidebar">
             <div class="sidebar-header">
@@ -325,14 +454,14 @@
               <button class="btn-clear-filters">مسح الكل</button>
             </div>
 
-            <!-- فلتر تأهيل لسوق العمل -->
+            <!--  فلتر تأهيل لسوق العمل  -->
             <div id="filter-group-work" class="sidebar-filters">
               <div class="filter-options">
                 <label class="filter-option">
                   <input type="checkbox" class="filter-cb"> <span>الإدارة</span>
                 </label>
                 <label class="filter-option">
-                  <input type="checkbox" class="filter-cb"> <span>التقنية</span>
+                  <input type="checkbox" class="filter-cb" checked> <span>التقنية</span>
                 </label>
                 <label class="filter-option">
                   <input type="checkbox" class="filter-cb"> <span>التصاميم</span>
@@ -340,63 +469,16 @@
               </div>
             </div>
 
-            <!-- فلتر تطوير الويب -->
-            <div id="filter-group-web" class="filter-group hidden">
+            <!-- ✅ فلتر المنتجات الرقمية (مخفي حتى يضغط المستخدم على التبويب) -->
+            <div id="filter-group-products" class="filter-group hidden">
               <button class="filter-group-toggle">
                 تطوير الويب <i class="fas fa-chevron-down chevron"></i>
-
               </button>
               <div class="filter-content">
                 <div class="filter-options">
                   <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>React</span></label>
                   <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>Vue.js</span></label>
                   <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>Angular</span></label>
-                </div>
-              </div>
-            </div>
-
-            <!-- فلتر تطوير التطبيقات -->
-            <div id="filter-group-apps" class="filter-group hidden">
-              <button class="filter-group-toggle">
-                تطوير التطبيقات <i class="fas fa-chevron-down chevron"></i>
-
-              </button>
-              <div class="filter-content">
-                <div class="filter-options">
-                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>iOS</span></label>
-                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>Android</span></label>
-                  <label class="filter-option"><input type="checkbox" class="filter-cb">
-                    <span>Cross-Platform</span></label>
-                </div>
-              </div>
-            </div>
-
-            <!-- فلتر التسويق -->
-            <div id="filter-group-marketing" class="filter-group hidden">
-              <button class="filter-group-toggle">
-                التسويق <i class="fas fa-chevron-down chevron"></i>
-
-              </button>
-              <div class="filter-content">
-                <div class="filter-options">
-                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>SEO</span></label>
-                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>Content
-                      Marketing</span></label>
-                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>Social
-                      Media</span></label>
-                </div>
-              </div>
-            </div>
-
-            <!-- فلتر التراخيص -->
-            <div id="filter-group-licenses" class="filter-group hidden">
-              <button class="filter-group-toggle">
-                التراخيص <i class="fas fa-chevron-down chevron"></i>
-              </button>
-              <div class="filter-content">
-                <div class="filter-options">
-                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>MIT</span></label>
-                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>GPL</span></label>
                 </div>
               </div>
             </div>
@@ -442,8 +524,8 @@
         <h4>نقطة صعود</h4>
         <ul>
           <li><a href="../about.html">من نحن</a></li>
-          <li><a href="../service.html">خدماتنا</a></li>
-          <li><a href="../portfolio.html">أعمالنا</a></li>
+          <li><a href="../service/service.html">خدماتنا</a></li>
+          <li><a href="portfolio.html">أعمالنا</a></li>
         </ul>
       </div>
 
@@ -451,7 +533,7 @@
         <h4>روابط سريعة</h4>
         <ul>
           <li><a href="../index.html">الرئيسية</a></li>
-          <li><a href="../team.html">أعضاء المجلس</a></li>
+          <li><a href="../board.html">اعضاء المجلس</a></li>
           <li><a href="../teams.html">الفرق</a></li>
         </ul>
       </div>
@@ -461,11 +543,11 @@
         <p class="contact-item">050000000 <i class="fas fa-phone-alt"></i></p>
         <p class="contact-item">email@gmail.com <i class="fas fa-envelope"></i></p>
         <div class="social-links-footer">
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-          <a href="#"><i class="fab fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-snapchat"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="تويتر"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="سناب شات"><i class="fab fa-snapchat"></i></a>
+          <a href="#" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -555,16 +637,14 @@
                 <label for="reg-fname">الاسم الأول</label>
                 <div class="input-wrap">
                   <i class="fas fa-user" aria-hidden="true"></i>
-                  <input type="text" id="reg-fname" name="fname" placeholder="أحمد" required
-                    autocomplete="given-name" />
+                  <input type="text" id="reg-fname" name="fname" placeholder="أحمد" required autocomplete="given-name" />
                 </div>
               </div>
               <div class="form-group">
                 <label for="reg-lname">الاسم الأخير</label>
                 <div class="input-wrap">
                   <i class="fas fa-user" aria-hidden="true"></i>
-                  <input type="text" id="reg-lname" name="lname" placeholder="هزازي" required
-                    autocomplete="family-name" />
+                  <input type="text" id="reg-lname" name="lname" placeholder="هزازي" required autocomplete="family-name" />
                 </div>
               </div>
             </div>
@@ -617,12 +697,13 @@
     </div>
   </div>
 
+  <!-- ============================================
+      service.js
+      ============================================ -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../assets/js/main.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="../service/service.js"></script>
-
+  <script src="portfolio.js"></script>
 
 </body>
 
