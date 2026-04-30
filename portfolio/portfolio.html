@@ -304,6 +304,7 @@
         <!-- نهاية cards-column -->
 
         <!-- ========== السايدبار ========== -->
+
         <aside class="sidebar-side">
           <div class="sidebar">
             <div class="sidebar-header">
@@ -311,14 +312,14 @@
               <button class="btn-clear-filters">مسح الكل</button>
             </div>
 
-            <!--  فلتر تأهيل لسوق العمل  -->
+            <!-- فلتر تأهيل لسوق العمل -->
             <div id="filter-group-work" class="sidebar-filters">
               <div class="filter-options">
                 <label class="filter-option">
                   <input type="checkbox" class="filter-cb"> <span>الإدارة</span>
                 </label>
                 <label class="filter-option">
-                  <input type="checkbox" class="filter-cb" checked> <span>التقنية</span>
+                  <input type="checkbox" class="filter-cb"> <span>التقنية</span>
                 </label>
                 <label class="filter-option">
                   <input type="checkbox" class="filter-cb"> <span>التصاميم</span>
@@ -326,15 +327,63 @@
               </div>
             </div>
 
-            <div id="filter-group-products" class="filter-group hidden">
+            <!-- فلتر تطوير الويب -->
+            <div id="filter-group-web" class="filter-group hidden">
               <button class="filter-group-toggle">
                 تطوير الويب <i class="fas fa-chevron-down chevron"></i>
+
               </button>
               <div class="filter-content">
                 <div class="filter-options">
                   <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>React</span></label>
                   <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>Vue.js</span></label>
                   <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>Angular</span></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- فلتر تطوير التطبيقات -->
+            <div id="filter-group-apps" class="filter-group hidden">
+              <button class="filter-group-toggle">
+                تطوير التطبيقات <i class="fas fa-chevron-down chevron"></i>
+
+              </button>
+              <div class="filter-content">
+                <div class="filter-options">
+                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>iOS</span></label>
+                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>Android</span></label>
+                  <label class="filter-option"><input type="checkbox" class="filter-cb">
+                    <span>Cross-Platform</span></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- فلتر التسويق -->
+            <div id="filter-group-marketing" class="filter-group hidden">
+              <button class="filter-group-toggle">
+                التسويق <i class="fas fa-chevron-down chevron"></i>
+
+              </button>
+              <div class="filter-content">
+                <div class="filter-options">
+                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>SEO</span></label>
+                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>Content
+                      Marketing</span></label>
+                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>Social
+                      Media</span></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- فلتر التراخيص -->
+            <div id="filter-group-licenses" class="filter-group hidden">
+              <button class="filter-group-toggle">
+                التراخيص <i class="fas fa-chevron-down chevron"></i>
+              </button>
+              <div class="filter-content">
+                <div class="filter-options">
+                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>MIT</span></label>
+                  <label class="filter-option"><input type="checkbox" class="filter-cb"> <span>GPL</span></label>
                 </div>
               </div>
             </div>
@@ -361,7 +410,6 @@
 
           </div>
         </aside>
-
         
 
       </div>
