@@ -2,10 +2,13 @@
 // إعداد السايدبار لكل تبويب
 // ============================================
 const sidebarConfig = {
-    // تأهيل لسوق العمل
     work: ["filter-group-work"],
-    // منتجات رقمية
-    products: ["filter-group-products"],
+    products: [
+        "filter-group-web",
+        "filter-group-apps", 
+        "filter-group-marketing",
+        "filter-group-licenses"
+    ],
 };
 
 // ============================================
