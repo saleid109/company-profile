@@ -15,14 +15,12 @@ const sidebarConfig = {
 // DOM
 // ============================================
 const tabs = document.querySelectorAll(".tab-btn");
-// ✅ تم تصحيح الـ ID ليطابق portfolio.html
 const container = document.getElementById("portfolios-container");
 
 // ============================================
 // عرض البطاقات حسب التبويب
 // ============================================
 function renderPortfolios(type) {
-    // ✅ تم تصحيح الـ selector ليطابق class البطاقات في HTML
     const allCards = document.querySelectorAll(".portfolio-card");
     let hasVisibleCards = false;
 
@@ -50,11 +48,13 @@ function renderPortfolios(type) {
 // تبديل السايدبار حسب التبويب
 // ============================================
 function updateSidebar(type) {
-    // ✅ قائمة IDs تطابق ما في portfolio.html
     const allFilterIds = [
-        "filter-group-work",
-        "filter-group-products",
-    ];
+    "filter-group-work",
+    "filter-group-web",
+    "filter-group-apps",
+    "filter-group-marketing",
+    "filter-group-licenses",
+];
 
     // إخفاء الكل أولاً
     allFilterIds.forEach(id => {
