@@ -168,14 +168,14 @@
 
 .pd-compare-table-wrapper {
     flex: 1.5;
-    order: 1;
 }
 
 .pd-compare-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    direction: rtl;
+    order: 2;
+
 }
 
 .pd-compare-table thead th {
