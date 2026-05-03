@@ -39,7 +39,7 @@
 
         /* Card Design (Accessibility: Article) */
         .teams-card {
-            background: #fff;
+            background:var(--color-white);
             border-radius: 12px;
             padding: 65px 24px 35px;
             text-align: center;
@@ -90,7 +90,7 @@
         }
 
         /* ============================================
-           Media Queries - التجاوب الدقيق
+        Media Queries - التجاوب الدقيق
            ============================================ */
 
         /* ===== تابلت (769px - 1024px) ===== */
