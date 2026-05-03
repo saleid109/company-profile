@@ -1,0 +1,150 @@
+        /* ========== Hero Section (SEO: H1) ========== */
+        .hero-section {
+            background: linear-gradient(180deg, #000022 0%, #000044 100%);
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-section h1 {
+            color: #fff;
+            font-size: clamp(28px, 5vw, 42px); /* خط مرن للسيو والتجاوب */
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        /* ========== Board Section ========== */
+        .board-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* Leader Row (Top Member) */
+        .leader-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 100px;
+        }
+
+        /* Grid for other members */
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* الافتراضي للشاشات الكبيرة */
+            gap: 90px 30px;
+        }
+
+        /* Card Design (Accessibility: Article) */
+        .board-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 65px 24px 35px;
+            text-align: center;
+            position: relative;
+            border: 1px solid #f1f1f1;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .board-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Avatar Styling */
+        .board-avatar {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background-color: #dde1ea;
+            border-radius: 50%;
+            border: 5px solid #F5F5F5;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .board-avatar svg {
+            width: 85%;
+            height: 85%;
+        }
+
+        .board-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+        }
+
+        .board-role {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           Media Queries - التجاوب الدقيق
+           ============================================ */
+
+        /* ===== تابلت (769px - 1024px) ===== */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .board-section {
+                padding: 60px 40px;
+            }
+            .board-grid {
+                grid-template-columns: repeat(2, 1fr); /* عمودين في التابلت */
+                gap: 80px 25px;
+            }
+            .leader-row {
+                margin-bottom: 80px;
+            }
+            .board-card {
+                padding: 60px 20px 30px;
+            }
+        }
+
+        /* ===== جوال (أقل من 768px) ===== */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 240px;
+            }
+            .board-section {
+                padding: 50px 15px;
+            }
+            .board-grid {
+                grid-template-columns: 1fr; /* عمود واحد في الجوال */
+                gap: 70px 0;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .leader-row {
+                margin-bottom: 70px;
+            }
+            .board-card {
+                padding: 55px 20px 25px;
+            }
+            .board-avatar {
+                width: 90px;
+                height: 90px;
+                top: -45px;
+            }
+        }
+
+        /* تحسينات قارئ الشاشة */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
