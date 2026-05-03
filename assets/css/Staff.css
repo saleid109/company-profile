@@ -17,7 +17,7 @@
         }
 
         /* ========== Board Section ========== */
-        .teams-section {
+        .Staff-section {
             max-width: 1280px;
             margin: 0 auto;
             padding: 80px 20px;
@@ -31,14 +31,14 @@
         }
 
         /* Grid for other members */
-        .teams-grid {
+        .Staff-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* الافتراضي للشاشات الكبيرة */
             gap: 90px 30px;
         }
 
         /* Card Design (Accessibility: Article) */
-        .teams-card {
+        .Staff-card {
             background:var(--color-white);
             border-radius: 12px;
             padding: 65px 24px 35px;
@@ -49,13 +49,13 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .teams-card:hover {
+        .Staff-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         /* Avatar Styling */
-        .teams-avatar {
+        .Staff-avatar {
             position: absolute;
             top: -50px;
             left: 50%;
@@ -71,19 +71,19 @@
             justify-content: center;
         }
 
-        .teams-avatar svg {
+        .Staff-avatar svg {
             width: 85%;
             height: 85%;
         }
 
-        .teams-name {
+        .Staff-name {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 6px;
             color: var(--text-dark);
         }
 
-        .teams-role {
+        .Staff-role {
             font-size: 14px;
             color: var(--text-gray);
             font-weight: 600;
@@ -95,17 +95,17 @@
 
         /* ===== تابلت (769px - 1024px) ===== */
         @media (min-width: 769px) and (max-width: 1024px) {
-            .teams-section {
+            .Staff-section {
                 padding: 60px 40px;
             }
-            .teams-grid {
+            .Staff-grid {
                 grid-template-columns: repeat(2, 1fr); /* عمودين في التابلت */
                 gap: 80px 25px;
             }
             .leader-row {
                 margin-bottom: 80px;
             }
-            .teams-card {
+            .Staff-card {
                 padding: 60px 20px 30px;
             }
         }
@@ -115,10 +115,10 @@
             .hero-section {
                 height: 240px;
             }
-            .teams-section {
+            .Staff-section {
                 padding: 50px 15px;
             }
-            .teams-grid {
+            .Staff-grid {
                 grid-template-columns: 1fr; /* عمود واحد في الجوال */
                 gap: 70px 0;
                 max-width: 400px;
@@ -127,10 +127,10 @@
             .leader-row {
                 margin-bottom: 70px;
             }
-            .teams-card {
+            .Staff-card {
                 padding: 55px 20px 25px;
             }
-            .teams-avatar {
+            .Staff-avatar {
                 width: 90px;
                 height: 90px;
                 top: -45px;
