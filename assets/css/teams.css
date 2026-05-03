@@ -17,7 +17,7 @@
         }
 
         /* ========== Board Section ========== */
-        .board-section {
+        .teams-section {
             max-width: 1280px;
             margin: 0 auto;
             padding: 80px 20px;
@@ -31,14 +31,14 @@
         }
 
         /* Grid for other members */
-        .board-grid {
+        .teams-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* الافتراضي للشاشات الكبيرة */
             gap: 90px 30px;
         }
 
         /* Card Design (Accessibility: Article) */
-        .board-card {
+        .teams-card {
             background: #fff;
             border-radius: 12px;
             padding: 65px 24px 35px;
@@ -49,13 +49,13 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .board-card:hover {
+        .teams-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         /* Avatar Styling */
-        .board-avatar {
+        .teams-avatar {
             position: absolute;
             top: -50px;
             left: 50%;
@@ -71,19 +71,19 @@
             justify-content: center;
         }
 
-        .board-avatar svg {
+        .teams-avatar svg {
             width: 85%;
             height: 85%;
         }
 
-        .board-name {
+        .teams-name {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 6px;
             color: var(--text-dark);
         }
 
-        .board-role {
+        .teams-role {
             font-size: 14px;
             color: var(--text-gray);
             font-weight: 600;
@@ -95,17 +95,17 @@
 
         /* ===== تابلت (769px - 1024px) ===== */
         @media (min-width: 769px) and (max-width: 1024px) {
-            .board-section {
+            .teams-section {
                 padding: 60px 40px;
             }
-            .board-grid {
+            .teams-grid {
                 grid-template-columns: repeat(2, 1fr); /* عمودين في التابلت */
                 gap: 80px 25px;
             }
             .leader-row {
                 margin-bottom: 80px;
             }
-            .board-card {
+            .teams-card {
                 padding: 60px 20px 30px;
             }
         }
@@ -115,10 +115,10 @@
             .hero-section {
                 height: 240px;
             }
-            .board-section {
+            .teams-section {
                 padding: 50px 15px;
             }
-            .board-grid {
+            .teams-grid {
                 grid-template-columns: 1fr; /* عمود واحد في الجوال */
                 gap: 70px 0;
                 max-width: 400px;
@@ -127,10 +127,10 @@
             .leader-row {
                 margin-bottom: 70px;
             }
-            .board-card {
+            .teams-card {
                 padding: 55px 20px 25px;
             }
-            .board-avatar {
+            .teams-avatar {
                 width: 90px;
                 height: 90px;
                 top: -45px;
