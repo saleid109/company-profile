@@ -354,6 +354,34 @@
     </div>
   </footer>
 
+  <script>
+    // فلترة الفرق بناءً على المدينة والمجال
+    const cityFilter = document.getElementById('city-filter');
+    const fieldFilter = document.getElementById('field-filter');
+    const teamsGrid = document.getElementById('teamsGrid');
+
+    function filterTeams() {
+      const selectedCity = cityFilter.value;
+      const selectedField = fieldFilter.value;
+
+      const teamCards = teamsGrid.querySelectorAll('.team-card');
+      teamCards.forEach(card => {
+        const matchesCity = selectedCity === 'all' || card.dataset.city === selectedCity;
+        const matchesField = selectedField === 'all' || card.dataset.field === selectedField;
+
+        if (matchesCity && matchesField) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    cityFilter.addEventListener('change', filterTeams);
+    fieldFilter.addEventListener('change', filterTeams);
+    
+
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./assets/js/main.js"></script>
 
