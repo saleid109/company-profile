@@ -129,7 +129,7 @@ gap: 16px;
 }
 .teams-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));/* 3 أعمدة بحد أدنى 260px لكل عمود */
   gap: 24px;
 }
 
