@@ -1,0 +1,181 @@
+
+        /* ========== Hero Section (SEO: H1) ========== */
+        .hero-section {
+            background: linear-gradient(180deg, #000022 0%, #000044 100%);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            color: var(--white);
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 800;
+        }
+
+        /* ========== Filters Section ========== */
+        .filters-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .filter-select {
+            border: none;
+            background: none;
+            font-family: inherit;
+            font-size: 16px;
+            color: #999;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* ========== Teams Grid ========== */
+        .teams-section {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        /* Team Card Design */
+        .team-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            background-color: #f0f2f5;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .card-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .location-tag {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .team-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-main);
+            text-align: left;
+        }
+
+        .team-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 13px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ============================================
+            Media Queries - التجاوب
+           ============================================ */
+
+        /* تابلت (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .teams-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .filters-container {
+                justify-content: center;
+            }
+        }
+
+        /* جوال (أقل من 768px) */
+        @media (max-width: 768px) {
+            .hero-section { height: 200px; }
+            .filters-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .teams-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .team-title, .team-desc { text-align: center; }
+            .location-tag { justify-content: center; width: 100%; margin-bottom: 10px; }
+            .card-header { flex-direction: column; }
+        }
+
+        /* Accessibility: Screen Reader Only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+

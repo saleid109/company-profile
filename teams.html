@@ -1,0 +1,563 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> الفرق - نقطة صعود</title>
+  <meta name="description"
+    content="الفرق- نقطة صعود" />
+
+  <!-- الخطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- الأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- أيقونات Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!--صفحات الانماط الاساسية css-->
+  <link rel="stylesheet" href="./assets/css/css-reset.css" />
+  <link rel="stylesheet" href="./assets/css/variables.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/mobile.css" />
+  <link rel="stylesheet" href="./assets/css/about.css" />
+  <link rel="stylesheet" href="./assets/css/Staff.css" />
+  <link rel="stylesheet" href="./assets/css/teams.css" />
+
+
+  <!-- مكتبة السلايدر Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
+
+  <!--================= قسم الهيدر ================-->
+  <header>
+    <div class="top-bar">
+      <div class="container">
+        <div class="flex-group">
+          <div class="social-links">
+            <a href="#" class="ml-3" aria-label="زيارتنا على لينكدإن">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="ml-3" aria-label="زيارتنا على تيك توك">
+              <i class="fab fa-tiktok" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="ml-3" aria-label="زيارتنا على تويتر">
+              <i class="fab fa-x-twitter" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="language en-text">
+            <a href="#" aria-label="تبديل اللغة إلى العربية">عربي</a> |
+            <a href="#" aria-label="تبديل اللغة إلى الإنجليزية">EN</a>
+          </div>
+        </div>
+
+        <div class="flex-group">
+          <div class="user-info" role="button" onclick="openAuth('login')" aria-label="تسجيل الدخول">
+            <i class="fas fa-user-circle" aria-hidden="true"></i>
+            <span>تسجيل الدخول</span>
+          </div>
+          <div class="cart-info" aria-label="السلة تحتوي على عنصرين - السعر الإجمالي 1,200 ريال">
+            <div class="cart-icon-wrapper">
+              <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+              <span class="cart-badge" aria-label="عدد العناصر">2</span>
+            </div>
+            <span class="price-text">1,200 ر.س</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--===== Navbar =====-->
+    <nav class="main-nav" aria-label="القائمة الرئيسية">
+      <div class="container nav-wrapper">
+
+        <!--  يمين: لوجو + هامبرغر جنب بعض -->
+        <div class="nav-right">
+          <div class="logo">
+            <a href="#hero" title="العودة للرئيسية">
+              <img src="./public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود" />
+            </a>
+          </div>
+        </div>
+        <!--  وسط: روابط التنقل الرئيسية (تتحول لقائمة جانبية في الجوال) -->
+
+        <!-- زر القائمة الجانبية للجوال -->
+        <button class="mobile-menu-icon" onclick="toggleMenu()" aria-label="فتح القائمة">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <!-- القوائم الجانبية -->
+        <div class="navbar-links">
+          <ul class="nav-menu">
+            <li>
+              <a href="index.html" aria-current="page">الرئيسية</a>
+            </li>
+
+            <li class="dropdown has-mega">
+              <a href="about.html" " aria-haspopup="true" aria-expanded="false">
+                عن نقطة صعود
+                <i class="fas fa-chevron-down mr-1 text-xs"></i>
+              </a>
+              <div class="mega-menu-content">
+                <div class="mega-grid">
+                  <a href="about.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <img src="./public/images/Frame.png" alt="icon">
+                    </div>
+                    <div class="card-info">
+                      <h4>عن نقطة صعود</h4>
+                      <p>نبذة عن نقطة صعود أهدافنا ورؤيتنا</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+                  <a href="our-story.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <div class="mega-icon-wrap">
+                        <i class="fas fa-book-open"></i>
+                      </div>
+                    </div>
+                    <div class="card-info">
+                      <h4>قصتنا</h4>
+                      <p>تعرف على قصتنا وبدايتنا</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+                  <a href="news.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <div class="mega-icon-wrap">
+                        <i class="fas fa-newspaper"></i>
+                      </div>
+                    </div>
+                    <div class="card-info">
+                      <h4>أخبارنا</h4>
+                      <p>آخر المستجدات والأخبار والإعلانات</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <li class="dropdown">
+              <a href="./service/service.html" aria-haspopup="true" aria-expanded="false">خدماتنا</a>
+            </li>
+
+            <li><a href="./portfolio/portfolio.html">أعمالنا</a></li>
+
+            <li class="dropdown has-mega">
+              <a href="team.html" aria-haspopup="true" aria-expanded="false">
+                طاقم العمل
+                <i class="fas fa-chevron-down mr-1 text-xs"></i>
+              </a>
+              <div class="mega-menu-content">
+                <div class="mega-grid">
+                  <a href="board.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <div class="mega-icon-wrap">
+                        <i class="fas fa-user-tie"></i>
+                      </div>
+                    </div>
+                    <div class="card-info">
+                      <h4>اعضاء المجلس</h4>
+                      <p>الهيكل الاداري لنقطة صعود</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+                  <a href="teams.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <img src="./public/images/Frame(2).png" alt="icon">
+                    </div>
+                    <div class="card-info">
+                      <h4>الفرق</h4>
+                      <p>تعرف على فرق نقطة صعود</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+                  <a href="careers.html" class="mega-card">
+                    <div class="card-icon-wrapper">
+                      <img src="./public/images/Frame(3).png" alt="icon">
+                    </div>
+                    <div class="card-info">
+                      <h4>اعلانات التوظيف</h4>
+                      <p>اعلانات التوظيف في نقطة صعود</p>
+                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <li><a href="clients.html">شركاء النجاح</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+
+        </div><!-- نهاية navbar-links -->
+
+        <!--  يسار: زر الاستشارة (ديسكتوب + تابلت) -->
+        <div class="nav-actions desktop-only">
+          <a href="contact.html#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
+        </div>
+
+      </div>
+      <!-- نهاية nav-wrapper -->
+    </nav>
+    <!--   nav نهاية -->
+
+
+    <div class="overlay"></div>
+  </header>
+
+
+  <!--   زر الاستشارة العائم الذي يظهر عند التمرير -->
+  <div class="top-floating-container">
+    <a href="#Consultation" class="floating-consult-btn">
+      <i class="fas fa-comments"></i>
+      <span> استشارة</span>
+    </a>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ========== Hero ========== -->
+    <section id="hero" class="hero-inner">
+      <div class="container hero-content">
+        <div class="video-wrapper">
+          <video autoplay muted loop playsinline class="hero-video" aria-hidden="true">
+            <source src="./public/videos/about-video.webm" type="video/webm" />
+            متصفحك لا يدعم عرض الفيديو.
+          </video>
+        </div>
+        <div class="title-about">
+          <h1> فريق العمل</h1>
+        </div>
+      </div>
+    </section>
+
+
+        <!-- قسم أعضاء المجلس -->
+        <section class="Staff-section">
+          <div class="Staff-container">
+                
+              
+
+                <!-- شبكة باقي الأعضاء (3 في كل صف) -->
+                <div class="Staff-grid">
+                    <!-- سنكرر البطاقة 9 مرات كما في الصورة -->
+                    
+                    <!-- صف 1 -->
+                    <article class="Staff-card">
+                        <div class="Staff-avatar">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="36" r="22" fill="#001a4d" />
+                                <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
+                            </svg>
+                        </div>
+                        <h2 class="Staff-name">احمد هزازي</h2>
+                        <p class="Staff-role">مدير تنفيذي</p>
+                    </article>
+
+                    <article class="Staff-card">
+                        <div class="Staff-avatar">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="36" r="22" fill="#001a4d" />
+                                <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
+                            </svg>
+                        </div>
+                        <h2 class="Staff-name">احمد هزازي</h2>
+                        <p class="Staff-role">مدير تنفيذي</p>
+                    </article>
+
+                    <article class="Staff-card">
+                        <div class="Staff-avatar">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="36" r="22" fill="#001a4d" />
+                                <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
+                            </svg>
+                        </div>
+                        <h2 class="Staff-name">احمد هزازي</h2>
+                        <p class="Staff-role">مدير تنفيذي</p>
+                    </article>
+
+                    <!-- صف 2 -->
+                    <article class="Staff-card">
+                        <div class="Staff-avatar">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="36" r="22" fill="#001a4d" />
+                                <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
+                            </svg>
+                        </div>
+                        <h2 class="Staff-name">احمد هزازي</h2>
+                        <p class="Staff-role">مدير تنفيذي</p>
+                    </article>
+
+                    <article class="Staff-card">
+                        <div class="Staff-avatar">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="36" r="22" fill="#001a4d" />
+                                <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
+                            </svg>
+                        </div>
+                        <h2 class="Staff-name">احمد هزازي</h2>
+                        <p class="Staff-role">مدير تنفيذي</p>
+                    </article>
+
+                    <article class="Staff-card">
+                        <div class="Staff-avatar">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="36" r="22" fill="#001a4d" />
+                                <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
+                            </svg>
+                        </div>
+                        <h2 class="Staff-name">احمد هزازي</h2>
+                        <p class="Staff-role">مدير تنفيذي</p>
+                    </article>
+
+                    <!-- صف 3 -->
+                    <article class="Staff-card">
+                        <div class="Staff-avatar">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="36" r="22" fill="#001a4d" />
+                                <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
+                            </svg>
+                        </div>
+                        <h2 class="Staff-name">احمد هزازي</h2>
+                        <p class="Staff-role">مدير تنفيذي</p>
+                    </article>
+
+                    <article class="Staff-card">
+                        <div class="Staff-avatar">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="36" r="22" fill="#001a4d" />
+                                <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
+                            </svg>
+                        </div>
+                        <h2 class="Staff-name">احمد هزازي</h2>
+                        <p class="Staff-role">مدير تنفيذي</p>
+                    </article>
+
+                    <article class="Staff-card">
+                        <div class="Staff-avatar">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="36" r="22" fill="#001a4d" />
+                                <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
+                            </svg>
+                        </div>
+                        <h2 class="Staff-name">احمد هزازي</h2>
+                        <p class="Staff-role">مدير تنفيذي</p>
+                    </article>
+
+                </div>
+            </div>
+            
+        </section>
+  </main>
+
+
+  <!--=========== Footer ===========-->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column brand-column">
+        <div class="logo-wrapper">
+          <img src="./public/images/Footer-logo.svg" alt="نقطة صعود" class="footer-logo" />
+        </div>
+        <p class="brand-text">شركة سعودية متخصصة في الحلول التقنية والتحول الرقمي.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>نقطة صعود</h4>
+        <ul>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="./service/service.html">خدماتنا</a></li>
+          <li><a href="portfolio.html">أعمالنا</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="Staff.html">أعضاء المجلس</a></li>
+          <li><a href="teams.html">الفرق</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column contact-col">
+        <h4>تواصل معنا</h4>
+        <p class="contact-item">050000000 <i class="fas fa-phone-alt"></i></p>
+        <p class="contact-item">email@gmail.com <i class="fas fa-envelope"></i></p>
+        <div class="social-links-footer">
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-snapchat"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>حقوق النشر © 2024 نقطة صعود | تم بواسطة نقطة صعود</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+  <!-- نموذج تسجيل الدخول -->
+  <div class="auth-overlay" id="authOverlay" onclick="handleOverlayClick(event)">
+    <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="auth-main-title">
+      <button class="auth-close" onclick="closeAuth()" aria-label="إغلاق نافذة تسجيل الدخول">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+
+      <div class="auth-brand">
+        <div class="auth-brand-logo" aria-hidden="true">
+          <img src="./public/images/logo-nuqta.svg" alt="شعار نقطة صعود" class="auth-logo-img" />
+        </div>
+        <div>
+          <p class="auth-brand-sub">نقطة بداية .. تقودك نحو الصعود</p>
+        </div>
+      </div>
+
+      <div class="auth-content">
+        <div class="auth-tabs" role="tablist">
+          <button id="tab-login" class="auth-tab active" role="tab" aria-selected="true" aria-controls="panel-login"
+            onclick="switchTab('login', this)">
+            تسجيل الدخول
+          </button>
+          <button id="tab-register" class="auth-tab" role="tab" aria-selected="false" aria-controls="panel-register"
+            onclick="switchTab('register', this)">
+            حساب جديد
+          </button>
+        </div>
+
+        <section class="auth-panel active" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
+          <h3 class="auth-title" id="auth-main-title">أهلاً بعودتك</h3>
+          <p class="auth-subtitle">أدخل بياناتك للوصول إلى حسابك</p>
+          <form onsubmit="handleLogin(event)">
+            <div class="form-group">
+              <label for="login-email">البريد الإلكتروني أو اسم المستخدم</label>
+              <div class="input-wrap">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <input type="text" id="login-email" name="username" placeholder="example@email.com" required
+                  autocomplete="username" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="login-password">كلمة المرور</label>
+              <div class="input-wrap">
+                <i class="fas fa-lock" aria-hidden="true"></i>
+                <input type="password" id="login-password" name="password" placeholder="••••••••" required
+                  autocomplete="current-password" />
+              </div>
+            </div>
+            <div class="form-meta">
+              <label class="toggle-label">
+                <span>تذكرني</span>
+                <div class="toggle-switch">
+                  <input type="checkbox" name="remember" id="remember" />
+                  <span class="toggle-track"></span>
+                </div>
+              </label>
+              <a href="#" class="forgot-link">نسيت كلمة المرور؟</a>
+            </div>
+            <button type="submit" class="auth-submit">
+              <span>تسجيل الدخول</span>
+              <i class="fas fa-arrow-left" aria-hidden="true"></i>
+            </button>
+          </form>
+          <div class="auth-switch">
+            <span>ليس لديك حساب؟</span>
+            <button type="button" onclick="switchTab('register', document.getElementById('tab-register'))">
+              أنشئ حساباً الآن
+            </button>
+          </div>
+        </section>
+
+        <section class="auth-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register" hidden>
+          <h3 class="auth-title">إنشاء حساب جديد</h3>
+          <p class="auth-subtitle">انضم إلى نقطة صعود وابدأ رحلتك</p>
+          <form onsubmit="handleRegister(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reg-fname">الاسم الأول</label>
+                <div class="input-wrap">
+                  <i class="fas fa-user" aria-hidden="true"></i>
+                  <input type="text" id="reg-fname" name="fname" placeholder="أحمد" required
+                    autocomplete="given-name" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="reg-lname">الاسم الأخير</label>
+                <div class="input-wrap">
+                  <i class="fas fa-user" aria-hidden="true"></i>
+                  <input type="text" id="reg-lname" name="lname" placeholder="هزازي" required
+                    autocomplete="family-name" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reg-email">البريد الإلكتروني</label>
+              <div class="input-wrap">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <input type="email" id="reg-email" name="email" placeholder="example@email.com" required
+                  autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reg-phone">رقم الجوال</label>
+              <div class="input-wrap">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <input type="tel" id="reg-phone" name="phone" placeholder="05xxxxxxxx" required autocomplete="tel" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reg-password">كلمة المرور</label>
+                <div class="input-wrap">
+                  <i class="fas fa-lock" aria-hidden="true"></i>
+                  <input type="password" id="reg-password" name="new-password" placeholder="••••••••" required
+                    autocomplete="new-password" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="reg-confirm">تأكيد كلمة المرور</label>
+                <div class="input-wrap">
+                  <i class="fas fa-lock" aria-hidden="true"></i>
+                  <input type="password" id="reg-confirm" name="confirm-password" placeholder="••••••••" required
+                    autocomplete="new-password" />
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="auth-submit">
+              <span>إنشاء الحساب</span>
+              <i class="fas fa-arrow-left" aria-hidden="true"></i>
+            </button>
+          </form>
+          <div class="auth-switch">
+            <span>لديك حساب بالفعل؟</span>
+            <button type="button" onclick="switchTab('login', document.getElementById('tab-login'))">
+              سجّل دخولك
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="./assets/js/about.js"></script>
+  <script src="./assets/js/our-story.js"></script>
+
+</body>
+
+</html>
+    </style>
+</head>
+<body>
