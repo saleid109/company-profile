@@ -5,8 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title> الفرق - نقطة صعود</title>
-  <meta name="description"
-    content="استكشف فرق العمل المبدعة في نقطة صعود - فرق ابتكار متخصصة في البرمجة والمشاريع التقنية" />
+  <meta name="description" content="استكشف فرق العمل المبدعة في نقطة صعود - فرق ابتكار متخصصة في البرمجة والمشاريع التقنية" />
 
   <!-- الخطوط -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap"
@@ -236,47 +235,75 @@
           <h1> الفرق </h1>
         </div>
       </div>
-
     </section>
 
-    <section class="intro-section">
-      <!-- FILTERS -->
-      <div class="filters-bar" role="search" aria-label="تصفية الفرق">
-        <div class="filters-inner">
-          <p id="results-count" aria-live="polite" aria-atomic="true">
-            <span id="count-num">6</span> فريق
-          </p>
-          <div class="filter-group">
-            <label for="field-filter">اختر المجال:</label>
-            <select id="field-filter" class="filter-select" aria-controls="teamsGrid">
-              <option value="all">كل المجالات</option>
-              <option value="برمجة">برمجة</option>
-              <option value="تصميم">تصميم</option>
-              <option value="تسويق">تسويق</option>
-            </select>
+    <!-- Filters -->
+    <nav class="filters-container" aria-label="تصفية الفرق">
+      <div class="filter-group">
+        <label for="city-filter">اختر المدينة:</label>
+        <select id="city-filter" class="filter-select">
+          <option>كل المناطق</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="field-filter">اختر المجال:</label>
+        <select id="field-filter" class="filter-select">
+          <option>كل المجالات</option>
+        </select>
+      </div>
+    </nav>
+
+    <!-- Teams Grid -->
+    <section class="teams-section">
+      <div class="teams-grid" role="list">
+        
+        <!-- بطاقة 1 -->
+        <article class="team-card" role="listitem" tabindex="0">
+          <div class="card-header" aria-hidden="true">
+            <img src="./public/images/Frame37804.png" alt="Logo">
           </div>
-          <div class="filter-group">
-            <label for="city-filter">اختر المدينة:</label>
-            <select id="city-filter" class="filter-select" aria-controls="teamsGrid">
-              <option value="all">كل المناطق</option>
-              <option value="الرياض">الرياض</option>
-              <option value="جدة">جدة</option>
-              <option value="الدمام">الدمام</option>
-            </select>
+          <h3>فريق ابتكار</h3>
+          <p class="description">فريق ابتكار فريق برمجي يركز على تطوير حلول تقنية</p>
+          <div class="dots-separator">....</div>
+          <div class="card-footer">
+            <div class="footer-item"><i class="fas fa-map-marker-alt"></i> الرياض</div>
+            <div class="footer-item"><i class="fas fa-code"></i> برمجة</div>
+            <div class="footer-item"><i class="fas fa-users"></i> 5 أعضاء</div>
           </div>
-        </div>
+        </article>
+
+        <!-- بطاقة 2 -->
+        <article class="team-card" role="listitem" tabindex="0">
+          <div class="card-header" aria-hidden="true">
+            <img src="./public/images/Frame37804.png" alt="Logo">
+          </div>
+          <h3>فريق ابتكار</h3>
+          <p class="description">فريق ابتكار فريق برمجي يركز على تطوير حلول تقنية</p>
+          <div class="dots-separator">....</div>
+          <div class="card-footer">
+            <div class="footer-item"><i class="fas fa-map-marker-alt"></i> الرياض</div>
+            <div class="footer-item"><i class="fas fa-code"></i> برمجة</div>
+            <div class="footer-item"><i class="fas fa-users"></i> 5 أعضاء</div>
+          </div>
+        </article>
+
+        <!-- بطاقة 3 -->
+        <article class="team-card" role="listitem" tabindex="0">
+          <div class="card-header" aria-hidden="true">
+            <img src="./public/images/Frame37804.png" alt="Logo">
+          </div>
+          <h3>فريق ابتكار</h3>
+          <p class="description">فريق ابتكار فريق برمجي يركز على تطوير حلول تقنية</p>
+          <div class="dots-separator">....</div>
+          <div class="card-footer">
+            <div class="footer-item"><i class="fas fa-map-marker-alt"></i> الرياض</div>
+            <div class="footer-item"><i class="fas fa-code"></i> برمجة</div>
+            <div class="footer-item"><i class="fas fa-users"></i> 5 أعضاء</div>
+          </div>
+        </article>
+
       </div>
     </section>
-
-    <!-- TEAMS GRID -->
-    <section class="teams-section" aria-labelledby="teams-heading">
-      <h2 id="teams-heading" class="sr-only">قائمة الفرق</h2>
-      <div class="teams-grid" id="teamsGrid" role="list" aria-label="الفرق المتاحة"></div>
-      <p class="no-results" id="noResults" role="status" aria-live="polite">
-        لا توجد فرق تطابق معايير البحث المحددة.
-      </p>
-    </section>
-
 
   </main>
 

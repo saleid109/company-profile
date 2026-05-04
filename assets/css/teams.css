@@ -1,152 +1,135 @@
 
-    /* Breadcrumb */
-    .breadcrumb {
-      position: relative; display: flex; align-items: center; gap: 8px;
-      justify-content: center; list-style: none; padding: 0; margin-top: 20px; font-size: .85rem;
+    /* ===== FILTERS ===== */
+    .filters-bar {
+      background: var(--white);
+      border-bottom: 1px solid #e8eaf0;
+      padding: 18px 0;
     }
-    .breadcrumb li { color: rgba(255,255,255,.5); }
-    .breadcrumb li + li::before { content: '/'; margin-left: 8px; opacity: .4; }
-    .breadcrumb a { color: rgba(255,255,255,.7); text-decoration: none; transition: color var(--t); }
-    .breadcrumb a:hover { color: var(--gold); }
-    .breadcrumb [aria-current="page"] { color: var(--gold); }
- 
-    /* ======================================================  FILTERS  */
-    .filters-bar { background: var(--white); border-bottom: 1px solid #e6e9f2; }
     .filters-inner {
-      max-width: 1280px; margin: auto; padding: 16px 32px;
+      max-width: 1280px; margin: auto; padding: 0 32px;
       display: flex; align-items: center; gap: 32px; justify-content: flex-end;
     }
-    #results-count { font-size: .82rem; color: #888; margin-right: auto; }
-    .filter-group { display: flex; align-items: center; gap: 10px; }
-    .filter-group label { font-size: .9rem; color: var(--text-mid); font-weight: 600; white-space: nowrap; }
+    .filter-group {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .filter-group label { font-size: 0.92rem; color: var(--text-mid); font-weight: 500; }
     .filter-select {
-      border: 1.5px solid #d2d6ea; border-radius: 10px;
-      padding: 8px 14px 8px 34px;
-      font-family: var(--font); font-size: .88rem; color: var(--text-dark);
-      background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23001f5b' d='M6 8 0 0h12z'/%3E%3C/svg%3E") no-repeat left 12px center;
-      appearance: none; cursor: pointer; min-width: 155px;
-      transition: border-color var(--t);
+      border: 1.5px solid #d0d5e8;
+      border-radius: 10px;
+      padding: 8px 14px 8px 32px;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23001f5b' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat left 12px center;
+      appearance: none; cursor: pointer;
+      transition: border-color .2s;
+      min-width: 150px;
     }
-    .filter-select:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(0,31,91,.12); }
+    .filter-select:focus { outline: none; border-color: var(--navy); }
  
-    /* ======================================================  TEAMS SECTION  */
-    .teams-section { max-width: 1280px; margin: 0 auto; padding: 48px 32px 80px; }
- 
-    .no-results {
-      grid-column: 1 / -1; text-align: center; padding: 60px 20px;
-      color: var(--text-mid); font-size: 1.05rem; display: none;
+    /* ===== TEAMS GRID ===== */
+    .teams-section {
+      max-width: 1280px; margin: 0 auto;
+      padding: 48px 32px 80px;
     }
-    .no-results.visible { display: block; }
  
-    /* ======================================================
-       TEAMS GRID — gap: 16px (فيجما)
-    ====================================================== */
     .teams-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--card-gap);   /* 16px ← فيجما */
+      gap: 28px;
     }
  
-    /* ======================================================
-       TEAM CARD
-       display: flex / flex-direction: column / align-items: center / gap: 16px
-       border-radius: 20px / background: #FFF  ← فيجما
-    ====================================================== */
+    /* ===== CARD ===== */
     .team-card {
       background: var(--white);
-      border-radius: var(--card-radius);   /* 20px ← فيجما */
+      border-radius: var(--radius-card);
       overflow: hidden;
       box-shadow: var(--shadow-card);
-      display: flex;
-      flex-direction: column;              /* ← فيجما */
-      align-items: center;                 /* ← فيجما */
-      gap: var(--card-gap);               /* 16px ← فيجما */
-      transition: transform var(--t), box-shadow var(--t);
+      transition: transform .25s ease, box-shadow .25s ease;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
     }
-    .team-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(0,31,91,.13); }
-    .team-card:focus-visible { outline: 3px solid var(--gold); }
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,31,91,.14);
+    }
  
-    /* صورة — بدون padding (تملأ العرض كاملاً) */
+    /* صورة/لوجو أعلى البطاقة */
     .card-img-wrap {
-      width: 100%; aspect-ratio: 16/9;
       background: var(--gray-card);
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden; flex-shrink: 0;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
     }
-    .card-img-wrap img { max-width: 55%; max-height: 65%; object-fit: contain; }
+    .card-img-wrap img {
+      max-width: 55%;
+      max-height: 70%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0,31,91,.15));
+    }
  
-    /* body داخل البطاقة — padding: 0 24px (من فيجما) */
+    /* محتوى البطاقة */
     .card-body {
-      width: 100%;
-      padding: 0 var(--card-pad-h);   /* 0 24px ← فيجما */
-      display: flex; flex-direction: column;
-      gap: var(--card-gap);           /* 16px ← فيجما */
+      padding: 20px 22px 0;
       flex: 1;
     }
  
     /* سطر الاسم + المدينة */
     .card-title-row {
-      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
     }
-    .card-name { font-size: 1.08rem; font-weight: 800; color: var(--navy); }
-    .card-city { display: flex; align-items: center; gap: 5px; font-size: .84rem; color: var(--text-mid); }
-    .card-city i { color: var(--gold); font-size: .82rem; }
+    .card-name {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .card-city {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+    }
+    .card-city i { color: var(--gold); font-size: 0.85rem; }
  
-    /* وصف */
-    .card-desc { font-size: .88rem; color: var(--text-mid); line-height: 1.65; text-align: right; }
+    /* الوصف */
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
  
-    /* ======================================================
-       CARD FOOTER
-       padding: 32px 24px ← فيجما  (top = 0 لأن gap يتولاه)
-    ====================================================== */
+    /* فوتر البطاقة */
     .card-footer {
-      width: 100%;
-      padding: 0 var(--card-pad-h) var(--card-pad-v);  /* 0 24px 32px ← فيجما */
-      border-top: 1px solid #eceef6;
-      padding-top: var(--card-pad-h);                   /* 24px فوق الخط الفاصل */
-      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 22px;
+      border-top: 1px solid #f0f2f8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .footer-tag { display: flex; align-items: center; gap: 5px; font-size: .82rem; color: var(--text-mid); }
-    .footer-tag i { color: var(--navy); opacity: .7; font-size: .88rem; }
-    .footer-divider { width: 1px; height: 16px; background: #e0e3ee; }
- 
-    /* ======================================================  SITE FOOTER  */
-    .site-footer { background: var(--navy-dark); color: #8090b0; padding: 60px 0 0; }
-    .footer-inner {
-      max-width: 1280px; margin: auto; padding: 0 32px 48px;
-      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.4fr; gap: 48px;
+    .footer-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--text-mid);
     }
-    .footer-brand p { font-size: .9rem; line-height: 1.7; margin-top: 14px; }
-    .footer-col h4 {
-      color: var(--white); font-size: 1rem; font-weight: 700;
-      margin-bottom: 20px; padding-bottom: 10px;
-      border-bottom: 2px solid rgba(245,184,0,.25); display: inline-block;
+    .footer-tag i {
+      color: var(--navy);
+      font-size: 0.9rem;
+      opacity: .75;
     }
-    .footer-col ul { list-style: none; padding: 0; }
-    .footer-col ul li { margin-bottom: 11px; }
-    .footer-col ul li a { color: #8090b0; text-decoration: none; font-size: .9rem; transition: color var(--t); }
-    .footer-col ul li a:hover { color: var(--gold); }
-    .footer-contact-item { display: flex; align-items: center; gap: 10px; font-size: .9rem; color: #8090b0; margin-bottom: 12px; }
-    .footer-contact-item i { color: var(--gold); width: 18px; flex-shrink: 0; }
-    .social-row { display: flex; gap: 10px; margin-top: 18px; }
-    .social-row a {
-      width: 36px; height: 36px; background: rgba(255,255,255,.07); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: #8090b0; font-size: .85rem; text-decoration: none; transition: all var(--t);
-    }
-    .social-row a:hover { background: var(--gold); color: var(--navy); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,.07); padding: 20px 32px; text-align: center; font-size: .82rem; color: #4e5e78; }
-
-    /* ======================================================  RESPONSIVE  */
-    @media (max-width: 1024px) {
-      .teams-grid  { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
-      .nav-list    { display: none; }
-    }
-    @media (max-width: 600px) {
-      .teams-grid  { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
-      .filters-inner { flex-wrap: wrap; justify-content: flex-start; }
-      #results-count { order: -1; width: 100%; }
+    .footer-divider {
+      width: 1px;
+      height: 18px;
+      background: #e0e4f0;
     }
