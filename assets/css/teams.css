@@ -35,90 +35,109 @@
 .filter-select option {
   padding: 8px 12px;
 }
-
+/* ===== CARD ===== */
 .team-card {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,.06);
-  transition: .3s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .team-card:hover {
   transform: translateY(-6px);
 }
 
-.card-img-wrap {
+/* الصورة */
+.card-header {
   height: 180px;
   background: #f4f6fb;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.card-img-wrap img {
+.card-header img {
   max-width: 60%;
+  object-fit: contain;
 }
 
+/* المحتوى */
 .card-body {
   padding: 20px;
-}
-
-.card-title-row {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  flex-direction: column;
+  flex: 1;
 }
 
-.card-name {
+.card-title {
   font-size: 18px;
   font-weight: bold;
-}
-
-.card-city {
-  font-size: 14px;
-  color: #777;
+  color: #002060;
+  margin-bottom: 10px;
 }
 
 .card-desc {
   font-size: 14px;
   color: #666;
+  line-height: 1.6;
 }
 
+/* الخط الفاصل */
+.card-divider {
+  height: 1px;
+  background: #eee;
+  margin: 15px 0;
+}
+
+.card-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* الفوتر */
 .card-footer {
   display: flex;
   justify-content: space-between;
-  padding: 15px;
-  border-top: 1px solid #eee;
+  font-size: 13px;
+  color: #444;
 }
 
-.footer-tag {
-  font-size: 13px;
+.card-footer span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-.footer-members {
-  font-size: 13px;
-  color: #777;
+
+.card-footer i {
+  color: #002060;
 }
 
 .teams-section {
   padding: 50px 0;
 }
-
 .teams-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
 }
 
+
 @media (max-width: 768px) {
-  .filters-inner {
-    flex-direction: column;
-    align-items: stretch;
+  .card-header {
+    height: 150px;
   }
 
-  .filter-select {
-    width: 100%;
+  .card-footer {
+    flex-direction: column;
+    gap: 8px;
   }
+
 
   .card-img-wrap {
     height: 150px;
