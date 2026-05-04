@@ -1,143 +1,135 @@
-============================================================
-   قسم الفرق — Groups Sectio=============================== */
 
-.teams-group-section {
-    font-family: var(--font-main);
-    background-color: #f8f8f8;
-    padding: 60px 0;
-    direction: rtl;
-}
-
-.teams-group-section .container {
-    max-width: 1442px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.teams-group-section h2 {
-    font-size: 2.5em;
-    color: var(--color-black);
-    margin-bottom: 40px;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* ← الحاوية الخارجية تحتوي الأزرار والـ wrapper */
-.teams-group-section .carousel-outer {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-/* ← فقط الـ wrapper عنده overflow hidden */
-.teams-group-section .carousel-wrapper {
-    flex: 1;
-    overflow: hidden;
-    padding: 20px 0;
-    position: relative;
-}
-
-.teams-group-section .carousel-track {
-    display: flex;
-    gap: 24px;
-    transition: transform 0.5s ease-in-out;
-    align-items: stretch;
-}
-
-/* ← الأزرار الآن خارج overflow hidden */
-.teams-group-section .nav-btn {
-    flex-shrink: 0;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    color: #002060;
-    font-size: 1.8em;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-    transition: all 0.3s ease;
-    /* ← لا position absolute */
-}
-
-.teams-group-section .nav-btn:hover:not(:disabled) {
-    background-color: #002060;
-    color: #fff;
-}
-
-.teams-group-section .nav-btn:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-.teams-group-section .group {
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 24px;
-    flex-shrink: 0;
-    /* ← JS سيحدد العرض */
-    min-height: 420px;
-    text-align: right;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.teams-group-section .card-header {
-    width: 100%;
-    height: 160px;
-    flex-shrink: 0;
-    /*    — يمنع الضغط على الصورة */
-    margin-bottom: 24px;
-    background-color: #f9f9f9;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.teams-group-section .full-logo-img {
-    max-width: 80%;
-    object-fit: contain;
-}
-
-.teams-group-section .group h3 {
-    font-size: 1.4em;
-    color: #002060;
-    margin-bottom: 12px;
-    font-weight: bold;
-}
-
-.teams-group-section .group .description {
-    font-size: 0.9em;
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-.teams-group-section .dots-separator {
-    color: #999;
-    margin-bottom: 20px;
-}
-
-.teams-group-section .footer-details {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.teams-group-section .footer-details li {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 0.85em;
-    color: #333;
-}
+    /* ===== FILTERS ===== */
+    .filters-bar {
+      background: var(--white);
+      border-bottom: 1px solid #e8eaf0;
+      padding: 18px 0;
+    }
+    .filters-inner {
+      max-width: 1280px; margin: auto; padding: 0 32px;
+      display: flex; align-items: center; gap: 32px; justify-content: flex-end;
+    }
+    .filter-group {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .filter-group label { font-size: 0.92rem; color: var(--text-mid); font-weight: 500; }
+    .filter-select {
+      border: 1.5px solid #d0d5e8;
+      border-radius: 10px;
+      padding: 8px 14px 8px 32px;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23001f5b' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat left 12px center;
+      appearance: none; cursor: pointer;
+      transition: border-color .2s;
+      min-width: 150px;
+    }
+    .filter-select:focus { outline: none; border-color: var(--navy); }
+ 
+    /* ===== TEAMS GRID ===== */
+    .teams-section {
+      max-width: 1280px; margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+ 
+    .teams-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+ 
+    /* ===== CARD ===== */
+    .team-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform .25s ease, box-shadow .25s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,31,91,.14);
+    }
+ 
+    /* صورة/لوجو أعلى البطاقة */
+    .card-img-wrap {
+      background: var(--gray-card);
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .card-img-wrap img {
+      max-width: 55%;
+      max-height: 70%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0,31,91,.15));
+    }
+ 
+    /* محتوى البطاقة */
+    .card-body {
+      padding: 20px 22px 0;
+      flex: 1;
+    }
+ 
+    /* سطر الاسم + المدينة */
+    .card-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .card-name {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .card-city {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+    }
+    .card-city i { color: var(--gold); font-size: 0.85rem; }
+ 
+    /* الوصف */
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+ 
+    /* فوتر البطاقة */
+    .card-footer {
+      padding: 14px 22px;
+      border-top: 1px solid #f0f2f8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--text-mid);
+    }
+    .footer-tag i {
+      color: var(--navy);
+      font-size: 0.9rem;
+      opacity: .75;
+    }
+    .footer-divider {
+      width: 1px;
+      height: 18px;
+      background: #e0e4f0;
+    }
