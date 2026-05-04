@@ -1,0 +1,143 @@
+============================================================
+   قسم الفرق — Groups Sectio=============================== */
+
+.teams-group-section {
+    font-family: var(--font-main);
+    background-color: #f8f8f8;
+    padding: 60px 0;
+    direction: rtl;
+}
+
+.teams-group-section .container {
+    max-width: 1442px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.teams-group-section h2 {
+    font-size: 2.5em;
+    color: var(--color-black);
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ← الحاوية الخارجية تحتوي الأزرار والـ wrapper */
+.teams-group-section .carousel-outer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ← فقط الـ wrapper عنده overflow hidden */
+.teams-group-section .carousel-wrapper {
+    flex: 1;
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+}
+
+.teams-group-section .carousel-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.5s ease-in-out;
+    align-items: stretch;
+}
+
+/* ← الأزرار الآن خارج overflow hidden */
+.teams-group-section .nav-btn {
+    flex-shrink: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    color: #002060;
+    font-size: 1.8em;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    /* ← لا position absolute */
+}
+
+.teams-group-section .nav-btn:hover:not(:disabled) {
+    background-color: #002060;
+    color: #fff;
+}
+
+.teams-group-section .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.teams-group-section .group {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    flex-shrink: 0;
+    /* ← JS سيحدد العرض */
+    min-height: 420px;
+    text-align: right;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.teams-group-section .card-header {
+    width: 100%;
+    height: 160px;
+    flex-shrink: 0;
+    /*    — يمنع الضغط على الصورة */
+    margin-bottom: 24px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.teams-group-section .full-logo-img {
+    max-width: 80%;
+    object-fit: contain;
+}
+
+.teams-group-section .group h3 {
+    font-size: 1.4em;
+    color: #002060;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.teams-group-section .group .description {
+    font-size: 0.9em;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.teams-group-section .dots-separator {
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.teams-group-section .footer-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.teams-group-section .footer-details li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85em;
+    color: #333;
+}
