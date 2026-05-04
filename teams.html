@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title> الفرق - نقطة صعود</title>
-  <meta name="description" content="استكشف فرق العمل المبدعة في نقطة صعود - فرق ابتكار متخصصة في البرمجة والمشاريع التقنية" />
+  <meta name="description"
+    content="استكشف فرق العمل المبدعة في نقطة صعود - فرق ابتكار متخصصة في البرمجة والمشاريع التقنية" />
 
   <!-- الخطوط -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap"
@@ -236,56 +237,45 @@
         </div>
       </div>
 
-      
-    <!-- Breadcrumb -->
-    <nav aria-label="مسار التنقل" class="breadcrumb">
-      <div class="container">
-        <ol>
-          <li><a href="index.html">الرئيسية</a></li>
-          <li aria-current="page">الفرق</li>
-        </ol>
-      </div>
-    </nav>
-
     </section>
 
-<section class="intro-section">
-  <!-- FILTERS -->
-  <div class="filters-bar" role="search" aria-label="تصفية الفرق">
-    <div class="filters-inner">
-      <p id="results-count" aria-live="polite" aria-atomic="true">
-        <span id="count-num">6</span> فريق
-      </p>
-      <div class="filter-group">
-        <label for="field-filter">اختر المجال:</label>
-        <select id="field-filter" class="filter-select" aria-controls="teamsGrid">
-          <option value="all">كل المجالات</option>
-          <option value="برمجة">برمجة</option>
-          <option value="تصميم">تصميم</option>
-          <option value="تسويق">تسويق</option>
-        </select>
+    <section class="intro-section">
+      <!-- FILTERS -->
+      <div class="filters-bar" role="search" aria-label="تصفية الفرق">
+        <div class="filters-inner">
+          <p id="results-count" aria-live="polite" aria-atomic="true">
+            <span id="count-num">6</span> فريق
+          </p>
+          <div class="filter-group">
+            <label for="field-filter">اختر المجال:</label>
+            <select id="field-filter" class="filter-select" aria-controls="teamsGrid">
+              <option value="all">كل المجالات</option>
+              <option value="برمجة">برمجة</option>
+              <option value="تصميم">تصميم</option>
+              <option value="تسويق">تسويق</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="city-filter">اختر المدينة:</label>
+            <select id="city-filter" class="filter-select" aria-controls="teamsGrid">
+              <option value="all">كل المناطق</option>
+              <option value="الرياض">الرياض</option>
+              <option value="جدة">جدة</option>
+              <option value="الدمام">الدمام</option>
+            </select>
+          </div>
+        </div>
       </div>
-      <div class="filter-group">
-        <label for="city-filter">اختر المدينة:</label>
-        <select id="city-filter" class="filter-select" aria-controls="teamsGrid">
-          <option value="all">كل المناطق</option>
-          <option value="الرياض">الرياض</option>
-          <option value="جدة">جدة</option>
-          <option value="الدمام">الدمام</option>
-        </select>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-  <!-- TEAMS GRID -->
-  <section class="teams-section" aria-labelledby="teams-heading">
-    <h2 id="teams-heading" class="sr-only">قائمة الفرق</h2>
-    <div class="teams-grid" id="teamsGrid" role="list" aria-label="الفرق المتاحة"></div>
-    <p class="no-results" id="noResults" role="status" aria-live="polite">
-      لا توجد فرق تطابق معايير البحث المحددة.
-    </p>
-  </section>
+    <!-- TEAMS GRID -->
+    <section class="teams-section" aria-labelledby="teams-heading">
+      <h2 id="teams-heading" class="sr-only">قائمة الفرق</h2>
+      <div class="teams-grid" id="teamsGrid" role="list" aria-label="الفرق المتاحة"></div>
+      <p class="no-results" id="noResults" role="status" aria-live="polite">
+        لا توجد فرق تطابق معايير البحث المحددة.
+      </p>
+    </section>
 
 
   </main>
