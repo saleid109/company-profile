@@ -1,102 +1,112 @@
+/* الحاوية الرئيسية للمحتوى - تضمن بقاء العناصر في المنتصف مع عرض أقصى */
 .containers-teams {
-  max-width: 1440px;
-  margin: auto;
-  padding: 0 24px;
+  max-width: 1440px; /* العرض الأقصى للحاوية */
+  margin: auto;      /* التوسط في منتصف الصفحة */
+  padding: 0 24px;   /* هوامش داخلية جانبية */
 }
 
+/* شريط الفلاتر - الجزء العلوي المخصص للتصفية */
 .filters-bar {
-  background: #fff;
-  border-bottom: 1px solid #eee;
+  background: #fff;             /* خلفية بيضاء */
+  border-bottom: 1px solid #eee; /* خط رمادي خفيف في الأسفل */
 }
 
+/* التنسيق الداخلي لشريط الفلاتر */
 .filters-inner {
-  display: flex;
-  justify-content: flex-start;
-  gap: 24px;
-  padding: 20px 0;
+  display: flex;            /* استخدام نظام المرونة (Flexbox) */
+  justify-content: flex-start; /* محاذاة العناصر للبداية */
+  gap: 24px;                /* مسافة بين الفلاتر */
+  padding: 20px 0;          /* هوامش علوية وسفلية */
 }
 
+/* مجموعة الفلتر الواحد (التسمية مع القائمة) */
 .filter-group {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: center; /* موازنة العناصر عمودياً */
+  gap: 10px;           /* مسافة بين النص والقائمة */
 }
 
+/* تنسيق قائمة الاختيار (Select) */
 .filter-select {
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 8px;   /* حواف دائرية */
   padding: 8px 12px;
-  cursor: pointer;
+  cursor: pointer;      /* تغيير شكل الماوس عند التمرير */
 }
+
+/* تأثير عند الضغط على قائمة الاختيار */
 .filter-select:focus {
   outline: none;
-  border-color: var(--color-navy-light);
+  border-color: var(--color-navy-light); /* تغيير لون الإطار عند التركيز */
 }
+
+/* تنسيق الخيارات داخل القائمة */
 .filter-select option {
   padding: 8px 12px;
 }
-/* ===== GRID ===== */
-/* ===== CARD ===== */
+
+/* ===== تنسيق البطاقة (Card) ===== */
 .team-card {
   background: var(--color-white);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s;
+  border-radius: 16px;          /* حواف دائرية كبيرة للبطاقة */
+  overflow: hidden;             /* إخفاء أي محتوى يخرج عن حدود البطاقة */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); /* ظل خفيف */
+  transition: transform 0.3s;   /* حركة انسيابية عند التفاعل */
   display: flex;
-  flex-direction: column;
+  flex-direction: column;       /* ترتيب العناصر عمودياً */
 }
 
-
+/* الرابط المحيط بالبطاقة */
 .card-link {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  text-decoration: none;
-  color: inherit;
+  height: 100%;                 /* ملء كامل ارتفاع البطاقة */
+  text-decoration: none;        /* إزالة خط الرابط السفلي */
+  color: inherit;               /* وراثة لون النص من الأب */
 }
 
+/* تأثير عند تمرير الماوس فوق البطاقة */
 .team-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);  /* رفع البطاقة قليلاً للأعلى */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* زيادة قوة الظل */
 }
 
-/* ===== HEADER -   ===== */
+/* ===== رأس البطاقة (مكان الصورة/الشعار) ===== */
 .card-header {
   width: 100%;
   height: 200px;
-  background: #f0f2f8;
+  background: #f0f2f8;    /* خلفية رمادية فاتحة جداً */
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  flex-shrink: 0;         /* منع تقلص مساحة الصورة */
 }
 
 .card-header img {
-  max-width: 50%;
-  object-fit: contain;
+  max-width: 50%;         /* الحفاظ على حجم الشعار متناسقاً */
+  object-fit: contain;    /* عرض الصورة كاملة دون قص */
 }
 
-/* ===== BODY -     ===== */
+/* ===== محتوى البطاقة الداخلي ===== */
 .card-body {
   padding: 20px 20px 24px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  flex: 1;
+  flex: 1;                /* تمدد المحتوى ليملأ المساحة المتبقية */
 }
 
-/* ===== TITLE + LOCATION ROW ===== */
+/* الجزء العلوي داخل المحتوى (العنوان والموقع) */
 .card-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* توزيع العنوان لليسار والموقع لليمين */
   align-items: center;
 }
 
 .card-title {
   font-size: 18px;
   font-weight: 700;
-  color: #002060;
+  color: #002060;         /* لون كحلي */
   margin: 0;
 }
 
@@ -113,24 +123,24 @@
   font-size: 12px;
 }
 
-/* ===== DESCRIPTION ===== */
+/* وصف الفريق أو الشركة */
 .card-desc {
   font-size: 14px;
   color: #666;
-  line-height: 1.7;
+  line-height: 1.7;       /* تباعد الأسطر لسهولة القراءة */
   margin: 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow: hidden;       /* إخفاء النص الزائد */
 }
 
-/* ===== FOOTER ===== */
+/* أسفل البطاقة (المعلومات الإضافية) */
 .card-footer {
   display: flex;
   justify-content: space-between;
   font-size: 13px;
   color: #555;
-  margin-top: auto;
+  margin-top: auto;       /* دفع التذييل لأسفل البطاقة دائماً */
   padding-top: 10px;
 }
 
@@ -144,26 +154,29 @@
   color: #002060;
 }
 
-/* ===== GRID ===== */
+/* ===== شبكة العرض (Grid) ===== */
 .teams-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr); /* عرض 3 بطاقات في الصف الواحد */
+  gap: 24px; /* مسافة بين البطاقات */
 }
 
-/* ===== SECTION ===== */
+/* ===== القسم الرئيسي ===== */
 .teams-section {
-  padding: 60px 0;
-  background: #f5f6fa; 
+  padding: 60px 0;        /* هوامش علوية وسفلية للقسم */
+  background: #f5f6fa;    /* خلفية الصفحة العامة */
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== التجاوب مع الشاشات (Responsive) ===== */
+
+/* للشاشات المتوسطة (مثل الأجهزة اللوحية) */
 @media (max-width: 1024px) {
-  .teams-grid { grid-template-columns: repeat(2, 1fr); }
+  .teams-grid { grid-template-columns: repeat(2, 1fr); } /* بطاقتان في الصف */
 }
 
+/* للشاشات الصغيرة (الهواتف المحمولة) */
 @media (max-width: 640px) {
-  .teams-grid { grid-template-columns: 1fr; }
-  .card-header { height: 160px; }
-  .card-footer { flex-wrap: wrap; gap: 8px; }
+  .teams-grid { grid-template-columns: 1fr; } /* بطاقة واحدة في الصف */
+  .card-header { height: 160px; }            /* تصغير ارتفاع منطقة الصورة */
+  .card-footer { flex-wrap: wrap; gap: 8px; } /* جعل التذييل مرن عند ضيق المساحة */
 }
