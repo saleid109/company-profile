@@ -1,85 +1,9 @@
-/* Global Variables from User */
-:root {
-  /* الخطوط */
-  --font-main: 'Tajawal', sans-serif;
-  --font-en: 'Montserrat', sans-serif;
-
-  /* الألوان الأساسية */
-  --color-primary: #FFCC35;
-  --color-secondary: #00025B;
-  --color-bg-light: #F5F5F5;
-  --color-text: #181A2A;
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-  --color-background: #FAFAFA;
-
-  /* ألوان إضافية */
-  --color-accent: #FF4D4D;      /* اللون الأحمر لعداد السلة والتنبيهات */
-  --color-navy-light: #000385;  /* عند الضغط Hover */
-  --color-gray-text: #666666;   
-  --color-gray-secondary: #1B2D45;   /* للنصوص الثانوية */
-
-  /* متغيرات المسافات */
-  --section-padding: 80px 0;    /* المسافة الثابتة بين الأقسام الرئيسية */
-  --card-padding: 25px;         /* المسافة الداخلية للبطاقات */
-  --border-radius: 12px;        /* لتوحيد انحناء زوايا البطاقات والأزرار */
-
-  /* متغيرات الترتيب */
-  --z-fixed: 100;               /* للهيدر الثابت */
-  --z-modal: 200;               /* للنوافذ المنبثقة */
-  
-  /* أوزان الخط */
-  --weight-regular: 400;
-  --weight-bold: 700;
-  --weight-black: 900;
-
-  /* قياسات الهيكل */
-  --max-width: 1280px;
-  --header-height: 40px; 
-  
-  /* تأثيرات احترافية */
-  --transition: all 0.3s ease;
-  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
 
 /* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--font-main);
-    line-height: 1.6;
-    color: var(--color-text);
-    background-color: var(--color-background);
-    direction: rtl;
-}
-
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transition);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
 
 .text-yellow {
     color: var(--color-primary);
+    right: 0;
 }
 
 .btn {
