@@ -1,0 +1,437 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* ============================================
+        مسار التنقل (Breadcrumb)
+    ============================================ */
+.breadcrumb {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.breadcrumb__list li+li::before {
+  content: "/";
+  color: var(--text-muted);
+}
+
+.breadcrumb__list a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.breadcrumb__list a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb__list [aria-current="page"] {
+  color: var(--text-muted);
+}
+
+/* ============================================
+        القسم الرئيسي - معلومات الفريق
+    ============================================ */
+.team-hero {
+  padding: 48px 0 32px;
+}
+
+.team-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: start;
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 40px;
+}
+
+.team-hero__content {}
+
+/* العنوان والوصف */
+.team-hero__name {
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.team-hero__desc {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0 0 32px;
+}
+
+/* أهداف الفريق */
+.team-goals {}
+
+.team-goals__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 16px;
+}
+
+.team-goals__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.team-goals__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+.team-goals__list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 8px;
+}
+
+/* حاوية صورة الفريق */
+.team-hero__image-wrap {
+  width: 220px;
+  height: 220px;
+  border-radius: 16px;
+  background: var(--bg-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.team-hero__image-wrap img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+/* ============================================
+        شريط الإحصائيات
+    ============================================ */
+.team-stats {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  margin-top: 20px;
+}
+
+.team-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+
+.team-stats__item {
+  padding: 28px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+/* الفاصل بين عناصر الإحصائيات */
+.team-stats__item+.team-stats__item::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: var(--border);
+}
+
+.team-stats__label {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.team-stats__label i {
+  color: var(--primary);
+  font-size: 14px;
+}
+
+.team-stats__value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ============================================
+        قسم عام (قائد، مسؤولون، أعضاء)
+    ============================================ */
+.team-section {
+  padding: 48px 0 0;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 28px;
+  text-align: right;
+}
+
+/* ============================================
+       بطاقة قائد الفريق
+    ============================================ */
+.leader-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 36px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.leader-info {}
+
+.leader-info__row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.leader-info__row:last-child {
+  margin-bottom: 0;
+}
+
+.leader-info__label {
+  font-weight: 700;
+  color: var(--primary);
+  min-width: 90px;
+}
+
+.leader-info__value {
+  color: var(--text-main);
+}
+
+.leader-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 16px;
+  background: var(--bg-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.leader-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leader-avatar .avatar-placeholder {
+  font-size: 60px;
+  color: var(--primary);
+  opacity: 0.25;
+}
+
+/* ============================================
+  شبكة الأعضاء (مسؤولون + أعضاء)
+    ============================================ */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.member-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.member-card__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--bg-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.member-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-card__avatar .avatar-placeholder {
+  font-size: 36px;
+  color: var(--primary);
+  opacity: 0.3;
+}
+
+.member-card__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+}
+
+.member-card__role {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ============================================
+    آخر قسم - مساحة سفلى
+    ============================================ */
+.team-section:last-of-type {
+  padding-bottom: 64px;
+}
+
+/* ============================================
+      التجاوب - الأجهزة اللوحية (Tablet 768px)
+    ============================================ */
+@media (max-width: 900px) {
+  .team-hero__grid {
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+
+  .team-hero__image-wrap {
+    width: 160px;
+    height: 160px;
+    margin-inline: auto;
+  }
+
+  .team-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-stats__item:nth-child(3)::before {
+    display: none;
+  }
+
+  .team-stats__item:nth-child(3) {
+    border-top: 1px solid var(--border);
+  }
+
+  .team-stats__item:nth-child(4) {
+    border-top: 1px solid var(--border);
+  }
+
+  .leader-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 28px;
+  }
+
+  .leader-avatar {
+    margin-inline: auto;
+  }
+
+  .leader-info__row {
+    justify-content: center;
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+      التجاوب - الهواتف المحمولة (Mobile 480px)
+    ============================================ */
+@media (max-width: 480px) {
+  .team-hero__grid {
+    padding: 20px;
+    gap: 24px;
+  }
+
+  .team-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-stats__item+.team-stats__item::before {
+    display: none;
+  }
+
+  .team-stats__item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .team-stats__item:nth-child(even) {
+    border-right: 1px solid var(--border);
+    border-left: none;
+  }
+
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leader-card {
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+}
+
+/* ============================================
+        تحديد التركيز المرئي لتحسين الوصول (Accessibility)
+    ============================================ */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
