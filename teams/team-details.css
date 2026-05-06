@@ -40,6 +40,8 @@
     ============================================ */
 .team-hero {
   padding: 48px 0 32px;
+  flex-direction: rtl;
+
 }
 
 .team-hero__grid {
@@ -51,9 +53,9 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   padding: 40px;
+  padding-top: 55px;
 }
 
-.team-hero__content {}
 
 /* العنوان */
 .team-hero__name {
