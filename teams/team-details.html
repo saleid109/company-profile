@@ -244,61 +244,242 @@
 
   <!-- Main Content Start: البداية الفعلية للمحتوى ومستهدف رابط التخطي -->
   <main id="main-content">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="مسار التنقل">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="teams.html">الفرق</a></li>
+          <li aria-current="page">فريق البرمجة الإبداعي</li>
+        </ol>
+      </div>
+    </nav>
 
-    <!-- Hero -->
+    <!-- ===== معلومات الفريق ===== -->
+    <section class="team-hero" aria-labelledby="team-name">
+      <div class="container">
 
-    <article>
-      <header>
-        <h1>إنجاز جديد: نفخر في شركة نقطة صعود بإطلاق مبادرة نوعية لتطوير الكفاءات الوطنية في مجال التسويق الرقمي</h1>
-        <p class="post-date">
-          <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-          <time datetime="2025-11-15">15 نوفمبر 2025</time>
-        </p>
-      </header>
+        <div class="team-hero__grid">
 
-      <figure>
-        <img src="../public/images/news2.png"
-          alt="شعار مبادرة نقطة صعود: تأهيل وتوظيف الكفاءات السعودية في التسويق الرقمي - نوفمبر 2025">
-        <figcaption>مبادرة نقطة صعود - نوفمبر 2025</figcaption>
-      </figure>
+          <!-- المحتوى النصي -->
+          <div class="team-hero__content">
 
-      <section class="content">
-        <p>
-          حيث تم تأهيل <strong>10 شباب وشابات سعوديين مجاناً</strong> ضمن برنامج احترافي تبلغ قيمته <strong>7,000 ريال
-            سعودي</strong> للشخص الواحد، وذلك دعماً وتمكيناً للطاقات السعودية في مجالات الاقتصاد الرقمي.
-        </p>
+            <h1 class="team-hero__name" id="team-name">فريق البرمجة الإبداعي</h1>
+            <p class="team-hero__desc">وصف عن الفريق</p>
 
-        <p>
-          كما يسعدنا الإعلان عن <strong>توظيف 100 مسوق رقمي سعودي</strong> ضمن كوادرنا، استمراراً لالتزامنا برؤية
-          المملكة 2030 في تمكين الشباب وتوطين الوظائف.
-        </p>
+            <!-- أهداف الفريق -->
+            <div class="team-goals">
+              <h2 class="team-goals__title">اهداف الفريق</h2>
+              <ul class="team-goals__list" aria-label="قائمة أهداف الفريق">
+                <li>تقديم حلول برمجية تواكب احتياجات السوق.</li>
+                <li>بناء منصات ومواقع إلكترونية بجودة عالية.</li>
+                <li>تمكين المواهب الشابة من العمل ضمن بيئة تقنية احترافية.</li>
+                <li>تعزيز التحول الرقمي في مختلف القطاعات.</li>
+              </ul>
+            </div>
 
-        <blockquote>
-          نعتز بهذا الإنجاز الذي يعكس إيماننا بأن الاستثمار في الإنسان هو أعظم استثمار.
-        </blockquote>
-      </section>
-      <!--البوم الصور-->
-      <section class="gallery" aria-labelledby="gallery-title">
-        <h2 id="gallery-title">ألبوم الصور</h2>
-        <div class="slider-container">
-          <div class="slides">
-            <img src="../public/images/tdreb.png" alt="جانب من تدريب الشباب في مبادرة نقطة صعود" width="300"
-              height="200">
-            <img src="../public/images/tkrem.png" alt="تكريم المتفوقين في برنامج التسويق الرقمي" width="300"
-              height="200">
           </div>
-          <div class="slider-controls">
-            <button aria-label="الصورة السابقة">السابق</button>
-            <button aria-label="الصورة التالية">التالي</button>
+
+          <!-- صورة الفريق -->
+          <div class="team-hero__image-wrap" role="img" aria-label="شعار فريق البرمجة الإبداعي">
+            <img src="./public/images/Frame37804.png" alt="شعار فريق البرمجة الإبداعي" width="220" height="220"
+              loading="eager" />
           </div>
 
         </div>
-      </section>
-    </article>
 
-    <nav aria-label="العودة">
-      <a href="../news.html">العودة للأخبار</a>
-    </nav>
+        <!-- شريط الإحصائيات -->
+        <div class="team-stats" aria-label="إحصائيات الفريق">
+          <dl class="team-stats__grid">
+
+            <div class="team-stats__item">
+              <dt class="team-stats__label">
+                <i class="fas fa-book-open" aria-hidden="true"></i>
+                المجال
+              </dt>
+              <dd class="team-stats__value">برمجة</dd>
+            </div>
+
+            <div class="team-stats__item">
+              <dt class="team-stats__label">
+                <i class="fas fa-folder-open" aria-hidden="true"></i>
+                الاعمال المنفذة
+              </dt>
+              <dd class="team-stats__value">9 اعمال</dd>
+            </div>
+
+            <div class="team-stats__item">
+              <dt class="team-stats__label">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                الموقع
+              </dt>
+              <dd class="team-stats__value">الرياض</dd>
+            </div>
+
+            <div class="team-stats__item">
+              <dt class="team-stats__label">
+                <i class="fas fa-users" aria-hidden="true"></i>
+                عدد الاعضاء
+              </dt>
+              <dd class="team-stats__value">4 اعضاء</dd>
+            </div>
+
+          </dl>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== قائد الفريق ===== -->
+    <section class="team-section" aria-labelledby="leader-title">
+      <div class="container">
+
+        <h2 class="section-title" id="leader-title">قائد الفريق</h2>
+
+        <article class="leader-card" aria-label="معلومات قائد الفريق">
+
+          <div class="leader-info">
+            <div class="leader-info__row">
+              <span class="leader-info__label">الاسم:</span>
+              <span class="leader-info__value">عمر قيسي</span>
+            </div>
+            <div class="leader-info__row">
+              <span class="leader-info__label">المنصب:</span>
+              <span class="leader-info__value">قائد فريق</span>
+            </div>
+            <div class="leader-info__row">
+              <span class="leader-info__label">التخصص:</span>
+              <span class="leader-info__value">برمجة</span>
+            </div>
+          </div>
+
+          <div class="leader-avatar">
+            <!-- استبدل بصورة حقيقية -->
+            <i class="fas fa-user-circle avatar-placeholder" aria-hidden="true"></i>
+            <!-- <img src="./public/images/leader.jpg" alt="صورة قائد الفريق عمر قيسي" width="140" height="140" /> -->
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== مسؤولو الفريق ===== -->
+    <section class="team-section" aria-labelledby="supervisors-title">
+      <div class="container">
+
+        <h2 class="section-title" id="supervisors-title">مسؤولي الفريق</h2>
+
+        <ul class="members-grid" role="list" aria-label="قائمة مسؤولي الفريق">
+
+          <li>
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <i class="fas fa-user-circle avatar-placeholder" aria-hidden="true"></i>
+                <!-- <img src="./public/images/member1.jpg" alt="صورة احمد هزازي" width="80" height="80" /> -->
+              </div>
+              <h3 class="member-card__name">احمد هزازي</h3>
+              <p class="member-card__role">مدير تنفيذي</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <i class="fas fa-user-circle avatar-placeholder" aria-hidden="true"></i>
+              </div>
+              <h3 class="member-card__name">بشاير</h3>
+              <p class="member-card__role">مصمم واجهات</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <i class="fas fa-user-circle avatar-placeholder" aria-hidden="true"></i>
+              </div>
+              <h3 class="member-card__name">روان</h3>
+              <p class="member-card__role">مطور تطبيقات</p>
+            </article>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ===== أعضاء الفريق ===== -->
+    <section class="team-section" aria-labelledby="members-title">
+      <div class="container">
+
+        <h2 class="section-title" id="members-title">اعضاء الفريق</h2>
+
+        <ul class="members-grid" role="list" aria-label="قائمة أعضاء الفريق">
+
+          <li>
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <i class="fas fa-user-circle avatar-placeholder" aria-hidden="true"></i>
+              </div>
+              <h3 class="member-card__name">احمد هزازي</h3>
+              <p class="member-card__role">مدير تنفيذي</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <i class="fas fa-user-circle avatar-placeholder" aria-hidden="true"></i>
+              </div>
+              <h3 class="member-card__name">بشاير</h3>
+              <p class="member-card__role">مصمم واجهات</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <i class="fas fa-user-circle avatar-placeholder" aria-hidden="true"></i>
+              </div>
+              <h3 class="member-card__name">روان</h3>
+              <p class="member-card__role">مطور تطبيقات</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <i class="fas fa-user-circle avatar-placeholder" aria-hidden="true"></i>
+              </div>
+              <h3 class="member-card__name">احمد هزازي</h3>
+              <p class="member-card__role">مدير تنفيذي</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <i class="fas fa-user-circle avatar-placeholder" aria-hidden="true"></i>
+              </div>
+              <h3 class="member-card__name">بشاير</h3>
+              <p class="member-card__role">مصمم واجهات</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <i class="fas fa-user-circle avatar-placeholder" aria-hidden="true"></i>
+              </div>
+              <h3 class="member-card__name">روان</h3>
+              <p class="member-card__role">مطور تطبيقات</p>
+            </article>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
 
   </main>
 
