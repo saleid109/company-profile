@@ -172,6 +172,14 @@
 /* للشاشات المتوسطة (مثل الأجهزة اللوحية) */
 @media (max-width: 1024px) {
   .teams-grid { grid-template-columns: repeat(2, 1fr); } /* بطاقتان في الصف */
+
+  .filters-inner {
+    display: flex;
+    flex-direction: row; /* بجانب بعضها كما في النسخة المكتبية */
+    justify-content: flex-start;
+    gap: 15px; /* تقليل الفجوة لتناسب الشاشة */
+    padding: 15px 0;
+  }
 }
 
 /* للشاشات الصغيرة (الهواتف المحمولة) */
