@@ -188,3 +188,22 @@
   .card-header { height: 160px; }            /* تصغير ارتفاع منطقة الصورة */
   .card-footer { flex-wrap: wrap; gap: 8px; } /* جعل التذييل مرن عند ضيق المساحة */
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .filters-inner {
+    display: flex !important;
+    flex-direction: row !important; /* إجبار العناصر على البقاء بجانب بعضها */
+    flex-wrap: nowrap; /* منع العناصر من القفز لسطر جديد */
+    justify-content: flex-start;
+    gap: 15px; /* تقليل المسافة لضمان كفاية المساحة */
+  }
+
+  .filter-group {
+    flex-shrink: 1; /* السماح للعناصر بالتقلص قليلاً إذا ضاقت الشاشة */
+  }
+
+  .filter-select {
+    padding: 6px 10px; /* تصغير الحشوة قليلاً لتوفير مساحة */
+    font-size: 14px;
+  }
+}
