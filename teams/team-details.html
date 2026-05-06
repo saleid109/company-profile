@@ -4,9 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> الفرق - نقطة صعود</title>
+  <title>فريق البرمجة الإبداعي - نقطة صعود</title>
   <meta name="description"
-    content="استكشف فرق العمل المبدعة في نقطة صعود - فرق ابتكار متخصصة في البرمجة والمشاريع التقنية" />
+    content="تعرف على فريق البرمجة الإبداعي في نقطة صعود - فريق متخصص في تطوير الحلول التقنية والأنظمة الحديثة" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="فريق البرمجة الإبداعي - نقطة صعود" />
+  <meta property="og:description" content="فريق برمجي متخصص في تطوير الحلول التقنية والأنظمة الحديثة" />
+  <meta property="og:type" content="website" />
 
   <!-- الخطوط -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap"
@@ -18,13 +24,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
   <!--صفحات الانماط الاساسية css-->
-  <link rel="stylesheet" href="./assets/css/css-reset.css" />
-  <link rel="stylesheet" href="./assets/css/variables.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/mobile.css" />
-  <link rel="stylesheet" href="./assets/css/about.css" />
-  <link rel="stylesheet" href="./assets/css/staff.css" />
-  <link rel="stylesheet" href="./assets/css/teams.css" />
+  <link rel="stylesheet" href="../assets/css/css-reset.css" />
+  <link rel="stylesheet" href="../assets/css/variables.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/mobile.css" />
+  <link rel="stylesheet" href="../assets/css/about.css" />
+  <link rel="stylesheet" href="../assets/css/our-story.css" />
+  <link rel="canonical" href="https://example.com/news.html" />
+  <link rel="stylesheet" href="../assets/css/news.css" />
+  <link rel="stylesheet" href="../assets/css/initiative-digital-marketing.css" />
 
 
   <!-- مكتبة السلايدر Swiper -->
@@ -32,13 +40,18 @@
 </head>
 
 <body>
+  <!-- رابط تخطي لتسهيل التنقل لمستخدمي قارئات الشاشة ولوحة المفاتيح -->
+
   <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
 
   <!--================= قسم الهيدر ================-->
   <header>
+    <!--العلوي barTOP-->
     <div class="top-bar">
       <div class="container">
+        <!-- اللغة والتواصل الاجتماعي -->
         <div class="flex-group">
+          <!--مواقع التواصل الاجتماعي-->
           <div class="social-links">
             <a href="#" class="ml-3" aria-label="زيارتنا على لينكدإن">
               <i class="fab fa-linkedin-in" aria-hidden="true"></i>
@@ -50,72 +63,77 @@
               <i class="fab fa-x-twitter" aria-hidden="true"></i>
             </a>
           </div>
+          <!--اللغة-->
           <div class="language en-text">
             <a href="#" aria-label="تبديل اللغة إلى العربية">عربي</a> |
             <a href="#" aria-label="تبديل اللغة إلى الإنجليزية">EN</a>
           </div>
         </div>
 
+        <!--  معلومات المستخدم والسلة -->
         <div class="flex-group">
+          <!--اسم المستخدم-->
           <div class="user-info" role="button" onclick="openAuth('login')" aria-label="تسجيل الدخول">
             <i class="fas fa-user-circle" aria-hidden="true"></i>
             <span>تسجيل الدخول</span>
           </div>
+          <!-- ايقونة السلة و العداد-->
           <div class="cart-info" aria-label="السلة تحتوي على عنصرين - السعر الإجمالي 1,200 ريال">
             <div class="cart-icon-wrapper">
               <i class="fas fa-shopping-cart" aria-hidden="true"></i>
               <span class="cart-badge" aria-label="عدد العناصر">2</span>
             </div>
+            <!--السعر-->
             <span class="price-text">1,200 ر.س</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!--===== Navbar =====-->
+    <!--القائمة الرئيسية (Main Navbar) -->
     <nav class="main-nav" aria-label="القائمة الرئيسية">
       <div class="container nav-wrapper">
-
-        <!--  يمين: لوجو + هامبرغر جنب بعض -->
-        <div class="nav-right">
-          <div class="logo">
-            <a href="#hero" title="العودة للرئيسية">
-              <img src="./public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود" />
-            </a>
-          </div>
+        <!-- الشعار-->
+        <div class="logo">
+          <a href="index.html" title="العودة للرئيسية">
+            <img src="../public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود - متخصصون في الحلول الرقمية" />
+          </a>
         </div>
-        <!--  وسط: روابط التنقل الرئيسية (تتحول لقائمة جانبية في الجوال) -->
-
-        <!-- زر القائمة الجانبية للجوال -->
+        <!--ايقونة التنقل للجوال -->
         <button class="mobile-menu-icon" onclick="toggleMenu()" aria-label="فتح القائمة">
           <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
 
-        <!-- القوائم الجانبية -->
+        <!-- روابط التنقل-->
+        <!--القوائم المنسدلة-->
+        <!-- روابط التنقل مع دعم القوائم المنسدلة للخدمات والفريق -->
         <div class="navbar-links">
           <ul class="nav-menu">
             <li>
-              <a href="index.html" aria-current="page">الرئيسية</a>
+              <a href="../index.html" aria-current="page">الرئيسية</a>
             </li>
 
             <li class="dropdown has-mega">
-              <a href="about.html" " aria-haspopup=" true" aria-expanded="false">
+              <a href="../about.html" aria-haspopup="true" aria-expanded="false">
                 عن نقطة صعود
                 <i class="fas fa-chevron-down mr-1 text-xs"></i>
               </a>
+              <!-- القائمة الضخمة (Mega Menu) عن نقطة صعود -->
               <div class="mega-menu-content">
                 <div class="mega-grid">
-                  <a href="about.html" class="mega-card">
+                  <a href="../about.html" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <img src="./public/images/Frame.png" alt="icon">
+                      <img src="../public/images/Frame.png" alt="icon" />
                     </div>
+
                     <div class="card-info">
                       <h4>عن نقطة صعود</h4>
                       <p>نبذة عن نقطة صعود أهدافنا ورؤيتنا</p>
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-                  <a href="our-story.html" class="mega-card">
+
+                  <a href="../our-story.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <div class="mega-icon-wrap">
                         <i class="fas fa-book-open"></i>
@@ -127,7 +145,8 @@
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-                  <a href="news.html" class="mega-card">
+
+                  <a href="../news.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <div class="mega-icon-wrap">
                         <i class="fas fa-newspaper"></i>
@@ -144,33 +163,38 @@
             </li>
 
             <li class="dropdown">
-              <a href="./service/service.html" aria-haspopup="true" aria-expanded="false">خدماتنا</a>
+              <a href="../service/service.html" aria-haspopup="true" aria-expanded="false">
+                خدماتنا
+              </a>
             </li>
 
-            <li><a href="./portfolio/portfolio.html">أعمالنا</a></li>
+            <li><a href="../portfolio.html">أعمالنا</a></li>
 
             <li class="dropdown has-mega">
-              <a href="team.html" aria-haspopup="true" aria-expanded="false">
+              <a href="../team.html" aria-haspopup="true" aria-expanded="false">
                 طاقم العمل
                 <i class="fas fa-chevron-down mr-1 text-xs"></i>
               </a>
+
               <div class="mega-menu-content">
                 <div class="mega-grid">
-                  <a href="board.html" class="mega-card">
+                  <a href="../board.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <div class="mega-icon-wrap">
                         <i class="fas fa-user-tie"></i>
                       </div>
                     </div>
+
                     <div class="card-info">
                       <h4>اعضاء المجلس</h4>
                       <p>الهيكل الاداري لنقطة صعود</p>
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-                  <a href="teams.html" class="mega-card">
+
+                  <a href="../teams.html" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <img src="./public/images/Frame(2).png" alt="icon">
+                      <img src="../public/images/Frame(2).png" alt="icon" />
                     </div>
                     <div class="card-info">
                       <h4>الفرق</h4>
@@ -178,9 +202,10 @@
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-                  <a href="careers.html" class="mega-card">
+
+                  <a href="../careers.html" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <img src="./public/images/Frame(3).png" alt="icon">
+                      <img src="../public/images/Frame(3).png" alt="icon" />
                     </div>
                     <div class="card-info">
                       <h4>اعلانات التوظيف</h4>
@@ -192,279 +217,134 @@
               </div>
             </li>
 
-            <li><a href="clients.html">شركاء النجاح</a></li>
-            <li><a href="contact.html">تواصل معنا</a></li>
+            <li><a href="../clients-partners.html">شركاء النجاح</a></li>
+            <li><a href="../contact.html">تواصل معنا</a></li>
           </ul>
-
-        </div><!-- نهاية navbar-links -->
-
-        <!--  يسار: زر الاستشارة (ديسكتوب + تابلت) -->
-        <div class="nav-actions desktop-only">
-          <a href="contact.html#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
         </div>
 
-      </div>
-      <!-- نهاية nav-wrapper -->
+        <!--زر الاستشارة-->
+        <div class="nav-actions desktop-only">
+          <a href="#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
+        </div>
     </nav>
-    <!--   nav نهاية -->
 
-
+    <!-- طبقة التظليل الخلفية عند تفعيل قائمة الجوال -->
     <div class="overlay"></div>
   </header>
 
 
   <!--   زر الاستشارة العائم الذي يظهر عند التمرير -->
-    <div class="top-floating-container">
-  <a href="#Consultation" class="floating-consult-btn">
-    <i class="fas fa-comments"></i>
-    <span>  استشارة</span>
-  </a>
+  <div class="top-floating-container">
+    <a href="#Consultation" class="floating-consult-btn">
+      <i class="fas fa-comments"></i>
+      <span> استشارة</span>
+    </a>
   </div>
 
+  <!--قسم البداية Hero-->
+
+  <!-- Main Content Start: البداية الفعلية للمحتوى ومستهدف رابط التخطي -->
   <main id="main-content">
 
-    <!-- ========== Hero ========== -->
-    <section id="hero" class="hero-inner">
-      <div class="container hero-content">
-        <div class="video-wrapper">
-          <video autoplay muted loop playsinline class="hero-video" aria-hidden="true">
-            <source src="./public/videos/about-video.webm" type="video/webm" />
-            متصفحك لا يدعم عرض الفيديو.
-          </video>
-        </div>
-        <div class="title-about">
-          <h1> الفرق </h1>
-        </div>
-      </div>
-    </section>
+    <!-- Hero -->
 
+    <article>
+      <header>
+        <h1>إنجاز جديد: نفخر في شركة نقطة صعود بإطلاق مبادرة نوعية لتطوير الكفاءات الوطنية في مجال التسويق الرقمي</h1>
+        <p class="post-date">
+          <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+          <time datetime="2025-11-15">15 نوفمبر 2025</time>
+        </p>
+      </header>
 
-    <!-- Filters -->
-    <section class="filters-bar" aria-label="تصفية الفرق">
-      <div class="container filters-inner">
+      <figure>
+        <img src="../public/images/news2.png"
+          alt="شعار مبادرة نقطة صعود: تأهيل وتوظيف الكفاءات السعودية في التسويق الرقمي - نوفمبر 2025">
+        <figcaption>مبادرة نقطة صعود - نوفمبر 2025</figcaption>
+      </figure>
 
-        <div class="filter-group">
-          <label for="city-filter">اختر المدينة</label>
-          <select id="city-filter" class="filter-select">
-            <option value="all">كل المناطق</option>
-            <option value="riyadh">الرياض</option>
-          </select>
-        </div>
+      <section class="content">
+        <p>
+          حيث تم تأهيل <strong>10 شباب وشابات سعوديين مجاناً</strong> ضمن برنامج احترافي تبلغ قيمته <strong>7,000 ريال
+            سعودي</strong> للشخص الواحد، وذلك دعماً وتمكيناً للطاقات السعودية في مجالات الاقتصاد الرقمي.
+        </p>
 
-        <div class="filter-group">
-          <label for="field-filter">اختر المجال</label>
-          <select id="field-filter" class="filter-select">
-            <option value="all">كل المجالات</option>
-            <option value="dev">برمجة</option>
-            <option value="design">تصميم</option>
-            <option value="marketing">تسويق</option>
-          </select>
-        </div>
+        <p>
+          كما يسعدنا الإعلان عن <strong>توظيف 100 مسوق رقمي سعودي</strong> ضمن كوادرنا، استمراراً لالتزامنا برؤية
+          المملكة 2030 في تمكين الشباب وتوطين الوظائف.
+        </p>
 
-      </div>
-    </section>
-
-    <!-- الفرق -->
-    <section class="teams-section">
-      <div class="container containers-teams">
-        <div class="teams-grid" id="teamsGrid">
-
-          <!-- البطاقات 1 -->
-          <article class="team-card">
-            <a href="team-details.html" class="card-link" aria-label="تفاصيل فريق البرمجة الإبداعي">
-
-              <div class="card-header">
-                <img src="./public/images/Frame37804.png" alt="شعار فريق البرمجة الإبداعي">
-              </div>
-
-              <div class="card-body">
-                <div class="card-top">
-                  <h3 class="card-title">فريق البرمجة الإبداعي</h3>
-                  <span class="card-location">
-                    <i class="fas fa-map-marker-alt"></i> الرياض
-                  </span>
-                </div>
-                <p class="card-desc">فريق تقني متخصص في تطوير البرمجيات وتقديم حلول رقمية مبتكرة</p>
-                <div class="card-footer">
-                  <span><i class="fas fa-book-open"></i> برمجة</span>
-                  <span><i class="fas fa-folder"></i> 9 مشروع</span>
-                  <span><i class="fas fa-users"></i> 4 أعضاء</span>
-                </div>
-              </div>
-            </a>
-          </article>
-          
-          <!-- Card 2-->
-          <article class="team-card">
-            <a href="team-details.html?id=1" class="card-link" aria-label="تفاصيل فريق ابتكار">
-
-              <div class="card-header">
-                <img src="./public/images/Frame37804.png" alt="شعار فريق ابتكار">
-              </div>
-
-              <div class="card-body">
-                <div class="card-top">
-                  <h3 class="card-title">فريق ابتكار</h3>
-                  <span class="card-location">
-                    <i class="fas fa-map-marker-alt"></i> الرياض
-                  </span>
-                </div>
-                <p class="card-desc">وصف الفريق</p>
-                <div class="card-footer">
-                  <span><i class="fas fa-book-open"></i> برمجة</span>
-                  <span><i class="fas fa-folder"></i> 20 مشروع</span>
-                  <span><i class="fas fa-users"></i> 5 أعضاء</span>
-                </div>
-              </div>
-
-            </a>
-          </article>
-          <!-- Card 3-->
-          <article class="team-card">
-            <a href="team-details.html?id=1" class="card-link" aria-label="تفاصيل فريق ابتكار">
-
-              <div class="card-header">
-                <img src="./public/images/Frame37804.png" alt="شعار فريق ابتكار">
-              </div>
-
-              <div class="card-body">
-                <div class="card-top">
-                  <h3 class="card-title">فريق ابتكار</h3>
-                  <span class="card-location">
-                    <i class="fas fa-map-marker-alt"></i> الرياض
-                  </span>
-                </div>
-                <p class="card-desc">وصف الفريق</p>
-                <div class="card-footer">
-                  <span><i class="fas fa-book-open"></i> برمجة</span>
-                  <span><i class="fas fa-folder"></i> 20 مشروع</span>
-                  <span><i class="fas fa-users"></i> 5 أعضاء</span>
-                </div>
-              </div>
-
-            </a>
-          </article>
-          <!-- Card 4-->
-          <article class="team-card">
-            <a href="team-details.html?id=1" class="card-link" aria-label="تفاصيل فريق ابتكار">
-
-              <div class="card-header">
-                <img src="./public/images/Frame37804.png" alt="شعار فريق ابتكار">
-              </div>
-
-              <div class="card-body">
-                <div class="card-top">
-                  <h3 class="card-title">فريق ابتكار</h3>
-                  <span class="card-location">
-                    <i class="fas fa-map-marker-alt"></i> الرياض
-                  </span>
-                </div>
-                <p class="card-desc">وصف الفريق</p>
-                <div class="card-footer">
-                  <span><i class="fas fa-book-open"></i> برمجة</span>
-                  <span><i class="fas fa-folder"></i> 20 مشروع</span>
-                  <span><i class="fas fa-users"></i> 5 أعضاء</span>
-                </div>
-              </div>
-
-            </a>
-          </article>
-          <!-- Card 5-->
-          <article class="team-card">
-            <a href="team-details.html?id=1" class="card-link" aria-label="تفاصيل فريق ابتكار">
-
-              <div class="card-header">
-                <img src="./public/images/Frame37804.png" alt="شعار فريق ابتكار">
-              </div>
-
-              <div class="card-body">
-                <div class="card-top">
-                  <h3 class="card-title">فريق ابتكار</h3>
-                  <span class="card-location">
-                    <i class="fas fa-map-marker-alt"></i> الرياض
-                  </span>
-                </div>
-                <p class="card-desc">وصف الفريق</p>
-                <div class="card-footer">
-                  <span><i class="fas fa-book-open"></i> برمجة</span>
-                  <span><i class="fas fa-folder"></i> 20 مشروع</span>
-                  <span><i class="fas fa-users"></i> 5 أعضاء</span>
-                </div>
-              </div>
-
-            </a>
-          </article>
-          <!-- Card 6-->
-          <article class="team-card">
-            <a href="team-details.html?id=1" class="card-link" aria-label="تفاصيل فريق ابتكار">
-
-              <div class="card-header">
-                <img src="./public/images/Frame37804.png" alt="شعار فريق ابتكار">
-              </div>
-
-              <div class="card-body">
-                <div class="card-top">
-                  <h3 class="card-title">فريق ابتكار</h3>
-                  <span class="card-location">
-                    <i class="fas fa-map-marker-alt"></i> الرياض
-                  </span>
-                </div>
-                <p class="card-desc">وصف الفريق</p>
-                <div class="card-footer">
-                  <span><i class="fas fa-book-open"></i> برمجة</span>
-                  <span><i class="fas fa-folder"></i> 20 مشروع</span>
-                  <span><i class="fas fa-users"></i> 5 أعضاء</span>
-                </div>
-              </div>
-
-            </a>
-          </article>
+        <blockquote>
+          نعتز بهذا الإنجاز الذي يعكس إيماننا بأن الاستثمار في الإنسان هو أعظم استثمار.
+        </blockquote>
+      </section>
+      <!--البوم الصور-->
+      <section class="gallery" aria-labelledby="gallery-title">
+        <h2 id="gallery-title">ألبوم الصور</h2>
+        <div class="slider-container">
+          <div class="slides">
+            <img src="../public/images/tdreb.png" alt="جانب من تدريب الشباب في مبادرة نقطة صعود" width="300"
+              height="200">
+            <img src="../public/images/tkrem.png" alt="تكريم المتفوقين في برنامج التسويق الرقمي" width="300"
+              height="200">
+          </div>
+          <div class="slider-controls">
+            <button aria-label="الصورة السابقة">السابق</button>
+            <button aria-label="الصورة التالية">التالي</button>
+          </div>
 
         </div>
-      </div>
-    </section>
+      </section>
+    </article>
+
+    <nav aria-label="العودة">
+      <a href="../news.html">العودة للأخبار</a>
+    </nav>
 
   </main>
 
-
-  <!--=========== Footer ===========-->
+  <!--===========-قسم تذييل الصفحة -footer===============-->
   <footer class="site-footer">
     <div class="footer-container">
+
+      <!--  . عمود اللوجو (أقصى اليمين) -->
       <div class="footer-column brand-column">
-        <div class="logo-wrapper">
-          <img src="./public/images/Footer-logo.svg" alt="نقطة صعود" class="footer-logo" />
-        </div>
+        <img src="../public/images/Footer-logo.svg" alt="نقطة صعود" class="footer-logo">
         <p class="brand-text">شركة سعودية متخصصة في الحلول التقنية والتحول الرقمي.</p>
       </div>
 
-      <div class="footer-column">
-        <h4>نقطة صعود</h4>
-        <ul>
-          <li><a href="about.html">من نحن</a></li>
-          <li><a href="./service/service.html">خدماتنا</a></li>
-          <li><a href="portfolio.html">أعمالنا</a></li>
-        </ul>
-      </div>
-
+      <!-- روابط سريعة (بعد اللوجو مباشرة) -->
       <div class="footer-column">
         <h4>روابط سريعة</h4>
         <ul>
           <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="Staff.html">أعضاء المجلس</a></li>
+          <li><a href="board-members.html">أعضاء المجلس</a></li>
           <li><a href="teams.html">الفرق</a></li>
         </ul>
       </div>
 
+      <!-- نقطة صعود (في المركز) -->
+      <div class="footer-column">
+        <h4>نقطة صعود</h4>
+        <ul>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="service.html">خدماتنا</a></li>
+          <li><a href="portfolio.html">أعمالنا</a></li>
+        </ul>
+      </div>
+
+      <!-- تواصل معنا (أقصى اليسار) -->
       <div class="footer-column contact-col">
         <h4>تواصل معنا</h4>
         <p class="contact-item">050000000 <i class="fas fa-phone-alt"></i></p>
         <p class="contact-item">email@gmail.com <i class="fas fa-envelope"></i></p>
+
         <div class="social-links-footer">
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-          <a href="#"><i class="fab fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-snapchat"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="تويتر"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="سناب شات"><i class="fab fa-snapchat"></i></a>
+          <a href="#" aria-label="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -474,54 +354,34 @@
     </div>
   </footer>
 
-  <script>
-    // فلترة الفرق بناءً على المدينة والمجال
-    const cityFilter = document.getElementById('city-filter');
-    const fieldFilter = document.getElementById('field-filter');
-    const teamsGrid = document.getElementById('teamsGrid');
-
-    function filterTeams() {
-      const selectedCity = cityFilter.value;
-      const selectedField = fieldFilter.value;
-
-      const teamCards = teamsGrid.querySelectorAll('.team-card');
-      teamCards.forEach(card => {
-        const matchesCity = selectedCity === 'all' || card.dataset.city === selectedCity;
-        const matchesField = selectedField === 'all' || card.dataset.field === selectedField;
-
-        if (matchesCity && matchesField) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    cityFilter.addEventListener('change', filterTeams);
-    fieldFilter.addEventListener('change', filterTeams);
-
-
-  </script>
+  <!-- مكتبة السلايدر Swiper -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="./assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 
+  <!--===========تسجيل حساب جديد/دخول ================-->
   <!-- نموذج تسجيل الدخول -->
   <div class="auth-overlay" id="authOverlay" onclick="handleOverlayClick(event)">
     <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="auth-main-title">
+      <!-- زر الإغلاق -->
+
       <button class="auth-close" onclick="closeAuth()" aria-label="إغلاق نافذة تسجيل الدخول">
         <i class="fas fa-times" aria-hidden="true"></i>
       </button>
 
+      <!-- العمود  الايمن — الهوية -->
       <div class="auth-brand">
         <div class="auth-brand-logo" aria-hidden="true">
-          <img src="./public/images/logo-nuqta.svg" alt="شعار نقطة صعود" class="auth-logo-img" />
+          <img src="../public/images/logo-nuqta.svg" alt="شعار نقطة صعود" class="auth-logo-img" />
         </div>
+
         <div>
           <p class="auth-brand-sub">نقطة بداية .. تقودك نحو الصعود</p>
         </div>
       </div>
+      <!-- العمود الايسر — النموذج -->
 
       <div class="auth-content">
+        <!-- التبويبات -->
         <div class="auth-tabs" role="tablist">
           <button id="tab-login" class="auth-tab active" role="tab" aria-selected="true" aria-controls="panel-login"
             onclick="switchTab('login', this)">
@@ -533,9 +393,11 @@
           </button>
         </div>
 
+        <!-- ===== لوحة تسجيل الدخول ===== -->
         <section class="auth-panel active" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
           <h3 class="auth-title" id="auth-main-title">أهلاً بعودتك</h3>
           <p class="auth-subtitle">أدخل بياناتك للوصول إلى حسابك</p>
+          <!-- حقل البريد الإلكتروني أو اسم المستخدم -->
           <form onsubmit="handleLogin(event)">
             <div class="form-group">
               <label for="login-email">البريد الإلكتروني أو اسم المستخدم</label>
@@ -545,6 +407,7 @@
                   autocomplete="username" />
               </div>
             </div>
+            <!-- حقل كلمة المرور -->
             <div class="form-group">
               <label for="login-password">كلمة المرور</label>
               <div class="input-wrap">
@@ -553,6 +416,7 @@
                   autocomplete="current-password" />
               </div>
             </div>
+            <!-- خيارات إضافية -->
             <div class="form-meta">
               <label class="toggle-label">
                 <span>تذكرني</span>
@@ -563,22 +427,28 @@
               </label>
               <a href="#" class="forgot-link">نسيت كلمة المرور؟</a>
             </div>
+            <!-- زر تسجيل الدخول -->
             <button type="submit" class="auth-submit">
               <span>تسجيل الدخول</span>
               <i class="fas fa-arrow-left" aria-hidden="true"></i>
             </button>
           </form>
+          <!-- رابط للتبديل إلى تسجيل حساب جديد -->
           <div class="auth-switch">
             <span>ليس لديك حساب؟</span>
-            <button type="button" onclick="switchTab('register', document.getElementById('tab-register'))">
+            <button type="button" onclick="
+                  switchTab('register', document.getElementById('tab-register'))
+                ">
               أنشئ حساباً الآن
             </button>
           </div>
         </section>
+        <!-- ===== لوحة إنشاء حساب ===== -->
 
         <section class="auth-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register" hidden>
           <h3 class="auth-title">إنشاء حساب جديد</h3>
           <p class="auth-subtitle">انضم إلى نقطة صعود وابدأ رحلتك</p>
+          <!-- حقول إنشاء الحساب -->
           <form onsubmit="handleRegister(event)">
             <div class="form-row">
               <div class="form-group">
@@ -598,6 +468,7 @@
                 </div>
               </div>
             </div>
+            <!-- حقل البريد الإلكتروني -->
             <div class="form-group">
               <label for="reg-email">البريد الإلكتروني</label>
               <div class="input-wrap">
@@ -606,6 +477,7 @@
                   autocomplete="email" />
               </div>
             </div>
+            <!-- حقل رقم الجوال -->
             <div class="form-group">
               <label for="reg-phone">رقم الجوال</label>
               <div class="input-wrap">
@@ -613,6 +485,7 @@
                 <input type="tel" id="reg-phone" name="phone" placeholder="05xxxxxxxx" required autocomplete="tel" />
               </div>
             </div>
+            <!-- حقول كلمة المرورا -->
             <div class="form-row">
               <div class="form-group">
                 <label for="reg-password">كلمة المرور</label>
@@ -622,6 +495,7 @@
                     autocomplete="new-password" />
                 </div>
               </div>
+              <!-- حقل تأكيد كلمة المرور -->
               <div class="form-group">
                 <label for="reg-confirm">تأكيد كلمة المرور</label>
                 <div class="input-wrap">
@@ -631,14 +505,18 @@
                 </div>
               </div>
             </div>
+
             <button type="submit" class="auth-submit">
               <span>إنشاء الحساب</span>
               <i class="fas fa-arrow-left" aria-hidden="true"></i>
             </button>
           </form>
+
           <div class="auth-switch">
             <span>لديك حساب بالفعل؟</span>
-            <button type="button" onclick="switchTab('login', document.getElementById('tab-login'))">
+            <button type="button" onclick="
+                  switchTab('login', document.getElementById('tab-login'))
+                ">
               سجّل دخولك
             </button>
           </div>
@@ -647,12 +525,7 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 </body>
 
 </html>
-</style>
-</head>
-
-<body>
