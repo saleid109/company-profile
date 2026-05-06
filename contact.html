@@ -2,17 +2,12 @@
 <html lang="ar" dir="rtl">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>فريق البرمجة الإبداعي - نقطة صعود</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل معنا | نقطة صعود - Nuqta Suud</title>
   <meta name="description"
-    content="تعرف على فريق البرمجة الإبداعي في نقطة صعود - فريق متخصص في تطوير الحلول التقنية والأنظمة الحديثة" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="فريق البرمجة الإبداعي - نقطة صعود" />
-  <meta property="og:description" content="فريق برمجي متخصص في تطوير الحلول التقنية والأنظمة الحديثة" />
-  <meta property="og:type" content="website" />
+    content="تواصل مع فريق نقطة صعود للحصول على استشارات تقنية، حلول مبتكرة، ودعم فني احترافي. نحن هنا لخدمتكم في رحلة التطور التقني والمهني.">
+  <meta name="keywords" content="نقطة صعود, تواصل معنا, استشارات تقنية, حلول برمجية, دعم فني, تطوير أعمال">
 
   <!-- الخطوط -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap"
@@ -24,33 +19,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
   <!--صفحات الانماط الاساسية css-->
-  <link rel="stylesheet" href="../assets/css/css-reset.css" />
-  <link rel="stylesheet" href="../assets/css/variables.css" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <link rel="stylesheet" href="../assets/css/mobile.css" />
-  <link rel="stylesheet" href="../assets/css/about.css" />
-  <link rel="stylesheet" href="../assets/css/our-story.css" />
-  <link rel="canonical" href="https://example.com/news.html" />
-  <link rel="stylesheet" href="../assets/css/teams.css" />
-  <link rel="stylesheet" href="../teams/team-details.css" />
+
+  <link rel="stylesheet" href="./assets/css/css-reset.css" />
+  <link rel="stylesheet" href="./assets/css/variables.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/mobile.css">
+
+
 
   <!-- مكتبة السلايدر Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
 </head>
 
 <body>
+
   <!-- رابط تخطي لتسهيل التنقل لمستخدمي قارئات الشاشة ولوحة المفاتيح -->
 
   <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
 
+
+
   <!--================= قسم الهيدر ================-->
   <header>
-    <!--العلوي barTOP-->
+
+    <!--===== Top Bar =====-->
     <div class="top-bar">
       <div class="container">
-        <!-- اللغة والتواصل الاجتماعي -->
         <div class="flex-group">
-          <!--مواقع التواصل الاجتماعي-->
           <div class="social-links">
             <a href="#" class="ml-3" aria-label="زيارتنا على لينكدإن">
               <i class="fab fa-linkedin-in" aria-hidden="true"></i>
@@ -62,77 +59,71 @@
               <i class="fab fa-x-twitter" aria-hidden="true"></i>
             </a>
           </div>
-          <!--اللغة-->
           <div class="language en-text">
             <a href="#" aria-label="تبديل اللغة إلى العربية">عربي</a> |
             <a href="#" aria-label="تبديل اللغة إلى الإنجليزية">EN</a>
           </div>
         </div>
 
-        <!--  معلومات المستخدم والسلة -->
         <div class="flex-group">
-          <!--اسم المستخدم-->
           <div class="user-info" role="button" onclick="openAuth('login')" aria-label="تسجيل الدخول">
             <i class="fas fa-user-circle" aria-hidden="true"></i>
             <span>تسجيل الدخول</span>
           </div>
-          <!-- ايقونة السلة و العداد-->
           <div class="cart-info" aria-label="السلة تحتوي على عنصرين - السعر الإجمالي 1,200 ريال">
             <div class="cart-icon-wrapper">
               <i class="fas fa-shopping-cart" aria-hidden="true"></i>
               <span class="cart-badge" aria-label="عدد العناصر">2</span>
             </div>
-            <!--السعر-->
             <span class="price-text">1,200 ر.س</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!--القائمة الرئيسية (Main Navbar) -->
+    <!--===== Navbar =====-->
     <nav class="main-nav" aria-label="القائمة الرئيسية">
       <div class="container nav-wrapper">
-        <!-- الشعار-->
-        <div class="logo">
-          <a href="index.html" title="العودة للرئيسية">
-            <img src="../public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود - متخصصون في الحلول الرقمية" />
-          </a>
+
+        <!--  يمين: لوجو + هامبرغر جنب بعض -->
+        <div class="nav-right">
+          <div class="logo">
+            <a href="index.html" title="العودة للرئيسية">
+              <img src="./public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود" />
+            </a>
+          </div>
         </div>
-        <!--ايقونة التنقل للجوال -->
+
+        <!-- زر القائمة الجانبية للجوال -->
         <button class="mobile-menu-icon" onclick="toggleMenu()" aria-label="فتح القائمة">
           <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
 
-        <!-- روابط التنقل-->
-        <!--القوائم المنسدلة-->
-        <!-- روابط التنقل مع دعم القوائم المنسدلة للخدمات والفريق -->
+        <!-- القوائم الجانبية -->
         <div class="navbar-links">
           <ul class="nav-menu">
             <li>
-              <a href="../index.html" aria-current="page">الرئيسية</a>
+              <a href="index.html" class="active" aria-current="page">الرئيسية</a>
             </li>
 
             <li class="dropdown has-mega">
-              <a href="../about.html" aria-haspopup="true" aria-expanded="false">
+              <a href="about.html" aria-haspopup="true" aria-expanded="false">
                 عن نقطة صعود
                 <i class="fas fa-chevron-down mr-1 text-xs"></i>
               </a>
-              <!-- القائمة الضخمة (Mega Menu) عن نقطة صعود -->
               <div class="mega-menu-content">
                 <div class="mega-grid">
-                  <a href="../about.html" class="mega-card">
+                  <a href="about.html" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <img src="../public/images/Frame.png" alt="icon" />
+                      <img src="./public/images/Frame.png" alt="icon">
                     </div>
-
                     <div class="card-info">
                       <h4>عن نقطة صعود</h4>
                       <p>نبذة عن نقطة صعود أهدافنا ورؤيتنا</p>
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-
-                  <a href="../our-story.html" class="mega-card">
+                  <a href="our-story.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <div class="mega-icon-wrap">
                         <i class="fas fa-book-open"></i>
@@ -144,8 +135,7 @@
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-
-                  <a href="../news.html" class="mega-card">
+                  <a href="news.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <div class="mega-icon-wrap">
                         <i class="fas fa-newspaper"></i>
@@ -162,38 +152,33 @@
             </li>
 
             <li class="dropdown">
-              <a href="../service/service.html" aria-haspopup="true" aria-expanded="false">
-                خدماتنا
-              </a>
+              <a href="./service/service.html" aria-haspopup="true" aria-expanded="false">خدماتنا</a>
             </li>
 
-            <li><a href="../portfolio.html">أعمالنا</a></li>
+            <li><a href="./portfolio/portfolio.html">أعمالنا</a></li>
 
             <li class="dropdown has-mega">
-              <a href="../team.html" aria-haspopup="true" aria-expanded="false">
+              <a href="team.html" aria-haspopup="true" aria-expanded="false">
                 طاقم العمل
                 <i class="fas fa-chevron-down mr-1 text-xs"></i>
               </a>
-
               <div class="mega-menu-content">
                 <div class="mega-grid">
-                  <a href="../board.html" class="mega-card">
+                  <a href="board.html" class="mega-card">
                     <div class="card-icon-wrapper">
                       <div class="mega-icon-wrap">
                         <i class="fas fa-user-tie"></i>
                       </div>
                     </div>
-
                     <div class="card-info">
                       <h4>اعضاء المجلس</h4>
                       <p>الهيكل الاداري لنقطة صعود</p>
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-
-                  <a href="../teams.html" class="mega-card">
+                  <a href="teams.html" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <img src="../public/images/Frame(2).png" alt="icon" />
+                      <img src="./public/images/Frame(2).png" alt="icon">
                     </div>
                     <div class="card-info">
                       <h4>الفرق</h4>
@@ -201,10 +186,9 @@
                       <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
                     </div>
                   </a>
-
-                  <a href="../careers.html" class="mega-card">
+                  <a href="careers.html" class="mega-card">
                     <div class="card-icon-wrapper">
-                      <img src="../public/images/Frame(3).png" alt="icon" />
+                      <img src="./public/images/Frame(3).png" alt="icon">
                     </div>
                     <div class="card-info">
                       <h4>اعلانات التوظيف</h4>
@@ -216,21 +200,28 @@
               </div>
             </li>
 
-            <li><a href="../clients-partners.html">شركاء النجاح</a></li>
-            <li><a href="../contact.html">تواصل معنا</a></li>
+            <li><a href="clients.html">شركاء النجاح</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
           </ul>
-        </div>
 
-        <!--زر الاستشارة-->
+        </div><!-- نهاية navbar-links -->
+
+        <!--  يسار: زر الاستشارة (ديسكتوب + تابلت) -->
         <div class="nav-actions desktop-only">
-          <a href="#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
+          <a href="contact.html#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
         </div>
+
+
+
+      </div>
+      <!-- نهاية nav-wrapper -->
     </nav>
+    <!--   nav نهاية -->
 
-    <!-- طبقة التظليل الخلفية عند تفعيل قائمة الجوال -->
+    <!-- طبقة التظليل -->
     <div class="overlay"></div>
-  </header>
 
+  </header><!--   header نهاية -->
 
   <!--   زر الاستشارة العائم الذي يظهر عند التمرير -->
   <div class="top-floating-container">
@@ -240,277 +231,121 @@
     </a>
   </div>
 
+
   <!--قسم البداية Hero-->
 
   <!-- Main Content Start: البداية الفعلية للمحتوى ومستهدف رابط التخطي -->
   <main id="main-content">
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb" aria-label="مسار التنقل">
-      <div class="container-breadcrumb">
-        <ol class="breadcrumb__list">
-          <li><a href="../index.html">الرئيسية</a></li>
-          <li><a href="../teams.html">الفرق</a></li>
-          <li aria-current="page">فريق البرمجة الإبداعي</li>
-        </ol>
-      </div>
-    </nav>
 
-    <!-- ===== معلومات الفريق ===== -->
-    <section class="team-hero" aria-labelledby="team-name">
-      <div class="container-team-hero">
-
-        <div class="team-hero__grid">
-
-          
-          <!-- صورة الفريق -->
-          <div class="team-hero__image-wrap" role="img" aria-label="شعار فريق البرمجة الإبداعي">
-            <img src="../public/images/Frame37962.png" alt="شعار فريق البرمجة الإبداعي" width="220" height="220"
-              loading="eager" />
-          </div>
-
-        
-          <!-- المحتوى النصي -->
-          <div class="team-hero__content">
-
-            <h1 class="team-hero__name" id="team-name">فريق البرمجة الإبداعي</h1>
-            <p class="team-hero__desc">وصف عن الفريق</p>
-
-            <!-- أهداف الفريق -->
-            <div class="team-goals">
-              <h2 class="team-goals__title">اهداف الفريق</h2>
-              <ul class="team-goals__list" aria-label="قائمة أهداف الفريق">
-                <li>تقديم حلول برمجية تواكب احتياجات السوق.</li>
-                <li>بناء منصات ومواقع إلكترونية بجودة عالية.</li>
-                <li>تمكين المواهب الشابة من العمل ضمن بيئة تقنية احترافية.</li>
-                <li>تعزيز التحول الرقمي في مختلف القطاعات.</li>
-              </ul>
-            </div>
-
-          </div>
-
-          
-
-
+    <section id="hero" class="hero-inner">
+      <div class="container hero-content">
+        <div class="video-wrapper">
+          <video autoplay muted loop playsinline class="hero-video" aria-hidden="true">
+            <source src="./public/videos/about-video.webm" type="video/webm" />
+            متصفحك لا يدعم عرض الفيديو.
+          </video>
         </div>
-
-        <!-- شريط الإحصائيات -->
-        <div class="team-stats" aria-label="إحصائيات الفريق">
-          <dl class="team-stats__grid">
-
-            <div class="team-stats__item">
-              <dt class="team-stats__label">
-                <i class="fas fa-book-open" aria-hidden="true"></i>
-                المجال
-              </dt>
-              <dd class="team-stats__value">برمجة</dd>
-            </div>
-
-            <div class="team-stats__item">
-              <dt class="team-stats__label">
-                <i class="fas fa-folder-open" aria-hidden="true"></i>
-                الاعمال المنفذة
-              </dt>
-              <dd class="team-stats__value">9 اعمال</dd>
-            </div>
-
-            <div class="team-stats__item">
-              <dt class="team-stats__label">
-                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                الموقع
-              </dt>
-              <dd class="team-stats__value">الرياض</dd>
-            </div>
-
-            <div class="team-stats__item">
-              <dt class="team-stats__label">
-                <i class="fas fa-users" aria-hidden="true"></i>
-                عدد الاعضاء
-              </dt>
-              <dd class="team-stats__value">4 اعضاء</dd>
-            </div>
-
-          </dl>
+        <div class="title-about">
+          <h1> تواصل معنا</h1>
         </div>
-
       </div>
     </section>
 
-    <!-- ===== قائد الفريق ===== -->
-<section class="team-section" aria-labelledby="leader-title">
-  <div class="container-team-sections">
-    <h2 class="section-title" id="leader-title">قائد الفريق</h2>
+    <!-- قسم التواصل -->
 
-    <article class="leader-card" aria-label="معلومات قائد الفريق">
+    <!-- Intro Section -->
+    <section class="intro-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="text-yellow">دائمًا في خدمتك</h2>
+          <p>فريقنا جاهز دائمًا للتواصل معك ودعمك في رحلتك نحو التطور التقني والمهني، سواء للاستفسار عن خدماتنا التقنية
+            أو برامج التدريب والتأهيل لسوق العمل.</p>
+        </div>
 
-      
-      <div class="leader-avatar">
-        <img src="../public/images/Frame37677.png"
-          alt="صورة قائد الفريق عمر قيسي" width="140" height="140" />
+        <h3 class="subsection-title">تواصل مباشرة مع الخبير المناسب</h3>
+
+        <div class="contact-cards">
+          <!-- Card 1 -->
+          <div class="contact-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <h4>احصل على إرشادات الخبراء</h4>
+            <p>تواصل مع أحد خبرائنا لاستكشاف كيفية تحويل بيانات العملاء والسوق إلى رؤى عملية لتتخذ على أساسها قرارات
+              صائبة تحسن أداء أعمالك وتضمن نموها المستدام.</p>
+            <a href="#" class="card-link">تحدث إلى خبرائنا <i class="fa-solid fa-chevron-left"></i></a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="contact-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h4>كن شريكًا لنقطة صعود</h4>
+            <p>تعاون مع نقطة صعود لاستكشاف آفاق جديدة للنمو عبر حلول مدعومة تقنية تُحسن تجربة عملائك.</p>
+            <a href="#" class="card-link">ابدأ شراكتك معنا <i class="fa-solid fa-chevron-left"></i></a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="contact-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <h4>انضم إلى الفريق</h4>
+            <p>انضم إلى فريق عمل شغوف يوظف مهاراتك التقنية والحلول المبتكرة لتطوير تجارب عملاء متميزة تلبي احتياجات
+              الأسواق الناشئة.</p>
+            <a href="#" class="card-link">انضم لفريق تقني <i class="fa-solid fa-chevron-left"></i></a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="contact-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h4>طلب دعم فني</h4>
+            <p>تواصل مع فريق الدعم للحصول على حلول فورية، وإرشادات احترافية، ومساعدة سلسة متى احتجت إليها.</p>
+            <a href="#" class="card-link">تواصل معنا <i class="fa-solid fa-chevron-left"></i></a>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="leader-info">
-        <div class="leader-info__row">
-          <span class="leader-info__label">الاسم:</span>
-          <span class="leader-info__value">عمر قيسي</span>
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="container">
+        <div class="map-container">
+          <img src="https://placehold.co/1200x500/e0e0e0/333333?text=Map+Placeholder" alt="خريطة الفروع"
+            class="map-image" loading="lazy">
+          <!-- Overlay points would be positioned here with CSS -->
         </div>
-        <div class="leader-info__row">
-          <span class="leader-info__label">المنصب:</span>
-          <span class="leader-info__value">قائد فريق</span>
+
+        <h3 class="branches-title">الفروع</h3>
+
+        <div class="branches-grid">
+          <div class="branch-card">
+            <h4>الرياض</h4>
+            <p>شارع الملك عبد العزيز بن سعود</p>
+            <p class="phone">050050000</p>
+            <a href="#" class="branch-link">احصل على الاتجاهات <i class="fa-solid fa-location-arrow"></i></a>
+          </div>
+          <div class="branch-card">
+            <h4>المنطقة الشرقية</h4>
+            <p>اسم الشارع</p>
+            <p class="phone">050050000</p>
+            <a href="#" class="branch-link">احصل على الاتجاهات <i class="fa-solid fa-location-arrow"></i></a>
+          </div>
+          <div class="branch-card">
+            <h4>مكة المكرمة</h4>
+            <p>اسم الشارع</p>
+            <p class="phone">050050000</p>
+            <a href="#" class="branch-link">احصل على الاتجاهات <i class="fa-solid fa-location-arrow"></i></a>
+          </div>
         </div>
-        <div class="leader-info__row">
-          <span class="leader-info__label">التخصص:</span>
-          <span class="leader-info__value">برمجة</span>
-        </div>
-        <p class="leader-info__bio">
-          مطور Full-Stack يتمتع بخبرة واسعة في تطوير الواجهات الأمامية والخلفية،
-          وقيادة فرق العمل التقنية لبناء حلول رقمية متكاملة
-        </p>
       </div>
+    </section>
 
-
-    </article>
-  </div>
-</section>
-    
-<!-- ===== مسؤولو الفريق ===== -->
-<section class="team-section" aria-labelledby="supervisors-title">
-  <div class="container">
-    <h2 class="section-title" id="supervisors-title">مسؤولي الفريق</h2>
-
-    <ul class="members-grid" role="list" aria-label="قائمة مسؤولي الفريق">
-
-      <li>
-        <article class="member-card">
-          <div class="member-card__avatar">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="50" cy="36" r="22" fill="#001a4d" />
-              <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
-            </svg>
-          </div>
-          <h3 class="member-card__name">احمد هزازي</h3>
-          <p class="member-card__role">مدير تنفيذي</p>
-        </article>
-      </li>
-
-      <li>
-        <article class="member-card">
-          <div class="member-card__avatar">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="50" cy="36" r="22" fill="#001a4d" />
-              <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
-            </svg>
-          </div>
-          <h3 class="member-card__name">بشاير</h3>
-          <p class="member-card__role">مصمم واجهات</p>
-        </article>
-      </li>
-
-      <li>
-        <article class="member-card">
-          <div class="member-card__avatar">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="50" cy="36" r="22" fill="#001a4d" />
-              <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
-            </svg>
-          </div>
-          <h3 class="member-card__name">روان</h3>
-          <p class="member-card__role">مطور تطبيقات</p>
-        </article>
-      </li>
-
-    </ul>
-  </div>
-</section>
-
-<!-- ===== أعضاء الفريق ===== -->
-<section class="team-section" aria-labelledby="members-title">
-  <div class="container">
-    <h2 class="section-title" id="members-title">اعضاء الفريق</h2>
-
-    <ul class="members-grid" role="list" aria-label="قائمة أعضاء الفريق">
-
-      <li>
-        <article class="member-card">
-          <div class="member-card__avatar">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="50" cy="36" r="22" fill="#001a4d" />
-              <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
-            </svg>
-          </div>
-          <h3 class="member-card__name">احمد هزازي</h3>
-          <p class="member-card__role">مدير تنفيذي</p>
-        </article>
-      </li>
-
-      <li>
-        <article class="member-card">
-          <div class="member-card__avatar">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="50" cy="36" r="22" fill="#001a4d" />
-              <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
-            </svg>
-          </div>
-          <h3 class="member-card__name">بشاير</h3>
-          <p class="member-card__role">مصمم واجهات</p>
-        </article>
-      </li>
-
-      <li>
-        <article class="member-card">
-          <div class="member-card__avatar">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="50" cy="36" r="22" fill="#001a4d" />
-              <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
-            </svg>
-          </div>
-          <h3 class="member-card__name">روان</h3>
-          <p class="member-card__role">مطور تطبيقات</p>
-        </article>
-      </li>
-
-      <li>
-        <article class="member-card">
-          <div class="member-card__avatar">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="50" cy="36" r="22" fill="#001a4d" />
-              <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
-            </svg>
-          </div>
-          <h3 class="member-card__name">احمد هزازي</h3>
-          <p class="member-card__role">مدير تنفيذي</p>
-        </article>
-      </li>
-
-      <li>
-        <article class="member-card">
-          <div class="member-card__avatar">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="50" cy="36" r="22" fill="#001a4d" />
-              <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
-            </svg>
-          </div>
-          <h3 class="member-card__name">بشاير</h3>
-          <p class="member-card__role">مصمم واجهات</p>
-        </article>
-      </li>
-
-      <li>
-        <article class="member-card">
-          <div class="member-card__avatar">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="50" cy="36" r="22" fill="#001a4d" />
-              <ellipse cx="50" cy="95" rx="42" ry="30" fill="#001a4d" />
-            </svg>
-          </div>
-          <h3 class="member-card__name">روان</h3>
-          <p class="member-card__role">مطور تطبيقات</p>
-        </article>
-      </li>
-
-    </ul>
-  </div>
-</section>
   </main>
+
 
   <!--===========-قسم تذييل الصفحة -footer===============-->
   <footer class="site-footer">
@@ -518,7 +353,7 @@
 
       <!--  . عمود اللوجو (أقصى اليمين) -->
       <div class="footer-column brand-column">
-        <img src="../public/images/Footer-logo.svg" alt="نقطة صعود" class="footer-logo">
+        <img src="./public/images/Footer-logo.svg" alt="نقطة صعود" class="footer-logo">
         <p class="brand-text">شركة سعودية متخصصة في الحلول التقنية والتحول الرقمي.</p>
       </div>
 
@@ -526,9 +361,9 @@
       <div class="footer-column">
         <h4>روابط سريعة</h4>
         <ul>
-          <li><a href="../index.html">الرئيسية</a></li>
-          <li><a href="../board-members.html">أعضاء المجلس</a></li>
-          <li><a href="../teams.html">الفرق</a></li>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">أعضاء المجلس</a></li>
+          <li><a href="team.html">الفرق</a></li>
         </ul>
       </div>
 
@@ -536,9 +371,9 @@
       <div class="footer-column">
         <h4>نقطة صعود</h4>
         <ul>
-          <li><a href="../about.html">من نحن</a></li>
-          <li><a href="../service/service.html">خدماتنا</a></li>
-          <li><a href="../portfolio/portfolio.html">أعمالنا</a></li>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="./service/service.html">خدماتنا</a></li>
+          <li><a href="./portfolio/portfolio.html">أعمالنا</a></li>
         </ul>
       </div>
 
@@ -563,14 +398,15 @@
     </div>
   </footer>
 
-  <!-- مكتبة السلايدر Swiper -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="../assets/js/main.js"></script>
 
-  <!--===========تسجيل حساب جديد/دخول ================-->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+  <!--===========تسجيل حساب جديد/دخول ====================-->
   <!-- نموذج تسجيل الدخول -->
   <div class="auth-overlay" id="authOverlay" onclick="handleOverlayClick(event)">
     <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="auth-main-title">
+
       <!-- زر الإغلاق -->
 
       <button class="auth-close" onclick="closeAuth()" aria-label="إغلاق نافذة تسجيل الدخول">
@@ -580,7 +416,7 @@
       <!-- العمود  الايمن — الهوية -->
       <div class="auth-brand">
         <div class="auth-brand-logo" aria-hidden="true">
-          <img src="../public/images/logo-nuqta.svg" alt="شعار نقطة صعود" class="auth-logo-img" />
+          <img src="./public/images/logo-nuqta.svg" alt="شعار نقطة صعود" class="auth-logo-img" />
         </div>
 
         <div>
@@ -593,18 +429,14 @@
         <!-- التبويبات -->
         <div class="auth-tabs" role="tablist">
           <button id="tab-login" class="auth-tab active" role="tab" aria-selected="true" aria-controls="panel-login"
-            onclick="switchTab('login', this)">
-            تسجيل الدخول
-          </button>
+            onclick="switchTab('login', this)">تسجيل الدخول</button>
           <button id="tab-register" class="auth-tab" role="tab" aria-selected="false" aria-controls="panel-register"
-            onclick="switchTab('register', this)">
-            حساب جديد
-          </button>
+            onclick="switchTab('register', this)">حساب جديد</button>
         </div>
 
         <!-- ===== لوحة تسجيل الدخول ===== -->
         <section class="auth-panel active" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
-          <h3 class="auth-title" id="auth-main-title">أهلاً بعودتك</h3>
+          <h3 class="auth-title" id="auth-main-title">أهلاً بعودتك </h3>
           <p class="auth-subtitle">أدخل بياناتك للوصول إلى حسابك</p>
           <!-- حقل البريد الإلكتروني أو اسم المستخدم -->
           <form onsubmit="handleLogin(event)">
@@ -645,17 +477,14 @@
           <!-- رابط للتبديل إلى تسجيل حساب جديد -->
           <div class="auth-switch">
             <span>ليس لديك حساب؟</span>
-            <button type="button" onclick="
-                  switchTab('register', document.getElementById('tab-register'))
-                ">
-              أنشئ حساباً الآن
-            </button>
+            <button type="button" onclick="switchTab('register', document.getElementById('tab-register'))">أنشئ حساباً
+              الآن</button>
           </div>
         </section>
         <!-- ===== لوحة إنشاء حساب ===== -->
 
         <section class="auth-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register" hidden>
-          <h3 class="auth-title">إنشاء حساب جديد</h3>
+          <h3 class="auth-title">إنشاء حساب جديد </h3>
           <p class="auth-subtitle">انضم إلى نقطة صعود وابدأ رحلتك</p>
           <!-- حقول إنشاء الحساب -->
           <form onsubmit="handleRegister(event)">
@@ -723,17 +552,12 @@
 
           <div class="auth-switch">
             <span>لديك حساب بالفعل؟</span>
-            <button type="button" onclick="
-                  switchTab('login', document.getElementById('tab-login'))
-                ">
-              سجّل دخولك
-            </button>
+            <button type="button" onclick="switchTab('login', document.getElementById('tab-login'))">سجّل دخولك</button>
           </div>
         </section>
       </div>
     </div>
   </div>
-
 
 </body>
 

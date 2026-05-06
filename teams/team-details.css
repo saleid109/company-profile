@@ -58,7 +58,7 @@
 }
 .team-hero__grid {
   display: grid;
-  grid-template-columns: 1fr 220px; /* المحتوى يأخذ الباقي، الصورة حجم ثابت */
+  grid-template-columns: 220px 1fr; /* المحتوى يأخذ الباقي، الصورة حجم ثابت */
   gap: 40px;
   align-items: start;
   background: var(--color-white);
@@ -215,7 +215,7 @@
     ============================================ */
 .leader-card {
   display: grid;
-  grid-template-columns: 1fr 160px; /* المعلومات تأخذ الباقي، الصورة حجم ثابت */
+  grid-template-columns: 160px 1fr; /* المعلومات تأخذ الباقي، الصورة حجم ثابت */
   gap: 40px;
   align-items: center;
   background: var(--color-white);
