@@ -1,3 +1,5 @@
+
+
 /* ============================================
         الـ Breadcrumb (مسار التنقل)
     ============================================ */
@@ -35,6 +37,17 @@
   color: var(--color-gray-text);
 }
 
+/* ===== Containers ===== */
+.container-breadcrumb,
+.container-team-hero,
+.container-team-sections {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+
 /* ============================================
         القسم الرئيسي - معلومات الفريق
     ============================================ */
@@ -43,20 +56,16 @@
   flex-direction: rtl;
 
 }
-
 .team-hero__grid {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 220px; /* المحتوى يأخذ الباقي، الصورة حجم ثابت */
   gap: 40px;
   align-items: start;
   background: var(--color-white);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   padding: 40px;
-  padding-top: 55px;
 }
-
-
 /* العنوان */
 .team-hero__name {
   font-size: clamp(26px, 4vw, 36px);
@@ -205,17 +214,27 @@
         قائد الفريق
     ============================================ */
 .leader-card {
+  display: grid;
+  grid-template-columns: 1fr 160px; /* المعلومات تأخذ الباقي، الصورة حجم ثابت */
+  gap: 40px;
+  align-items: center;
   background: var(--color-white);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   padding: 36px 40px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 40px;
-  align-items: center;
 }
 
-.leader-info {}
+
+/* ===== نص السيرة الذاتية للقائد ===== */
+.leader-info__bio {
+  margin-top: 16px;
+  font-size: 15px;
+  color: var(--color-gray-text);
+  line-height: 1.8;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
 
 .leader-info__row {
   display: flex;
@@ -285,11 +304,12 @@
   box-shadow: var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.me.member-card:hover {
+.member-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+
+
 .member-card__avatar {
   position: absolute;
   top: -50px;
