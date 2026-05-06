@@ -26,11 +26,11 @@
 
 .breadcrumb__list li+li::before {
   content: "/";
-  color: var(--text-muted);
+  color: var(--color-gray-text);
 }
 
 .breadcrumb__list a {
-  color: var(--primary);
+  color: var(--color-secondary);
   text-decoration: none;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .breadcrumb__list [aria-current="page"] {
-  color: var(--text-muted);
+  color: var(--color-gray-text);
 }
 
 /* ============================================
@@ -66,7 +66,7 @@
 .team-hero__name {
   font-size: clamp(26px, 4vw, 36px);
   font-weight: 800;
-  color: var(--primary);
+  color: var(--color-primary);
   margin: 0 0 10px;
   line-height: 1.3;
 }
@@ -84,7 +84,7 @@
 .team-goals__title {
   font-size: 20px;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--color-primary);
   margin: 0 0 16px;
 }
 
