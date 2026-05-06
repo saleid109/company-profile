@@ -10,7 +10,7 @@
     ============================================ */
 .breadcrumb {
   background: var(--color-white);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #e5e7eb;
   padding: 14px 0;
 }
 
