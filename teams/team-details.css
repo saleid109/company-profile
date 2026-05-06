@@ -1,16 +1,9 @@
-.container-wide {
-  width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: 24px;
-}
-
 /* ============================================
-        مسار التنقل (Breadcrumb)
+        الـ Breadcrumb (مسار التنقل)
     ============================================ */
 .breadcrumb {
-  background: var(--color-white);
-  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding: 14px 0;
 }
 
@@ -54,15 +47,15 @@
   grid-template-columns: 1fr auto;
   gap: 40px;
   align-items: start;
-  background: var(--bg-card);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
   padding: 40px;
 }
 
 .team-hero__content {}
 
-/* العنوان والوصف */
+/* العنوان */
 .team-hero__name {
   font-size: clamp(26px, 4vw, 36px);
   font-weight: 800;
@@ -73,12 +66,12 @@
 
 .team-hero__desc {
   font-size: 16px;
-  color: var(--text-muted);
+  color: var(--color-gray-text);
   line-height: 1.8;
   margin: 0 0 32px;
 }
 
-/* أهداف الفريق */
+/* اهداف الفريق */
 .team-goals {}
 
 .team-goals__title {
@@ -102,7 +95,7 @@
   align-items: flex-start;
   gap: 10px;
   font-size: 15px;
-  color: var(--color-gray-text);
+  color: var(--color-text);
   line-height: 1.7;
 }
 
@@ -112,16 +105,16 @@
   height: 8px;
   min-width: 8px;
   border-radius: 50%;
-  background: var(--color-accent);
+  background: var(--color-primary);
   margin-top: 8px;
 }
 
-/* حاوية صورة الفريق */
+/* صورة الفريق */
 .team-hero__image-wrap {
   width: 220px;
   height: 220px;
   border-radius: 16px;
-  background: var(--bg-page);
+  background: var(--color-background);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -139,9 +132,9 @@
         شريط الإحصائيات
     ============================================ */
 .team-stats {
-  background: var(--bg-card);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
   margin-top: 20px;
 }
 
@@ -160,7 +153,6 @@
   position: relative;
 }
 
-/* الفاصل بين عناصر الإحصائيات */
 .team-stats__item+.team-stats__item::before {
   content: "";
   position: absolute;
@@ -168,26 +160,26 @@
   top: 20%;
   height: 60%;
   width: 1px;
-  background: var(--border);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .team-stats__label {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--color-gray-text);
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
 .team-stats__label i {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-size: 14px;
 }
 
 .team-stats__value {
   font-size: 18px;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 /* ============================================
@@ -206,12 +198,12 @@
 }
 
 /* ============================================
-       بطاقة قائد الفريق
+        قائد الفريق
     ============================================ */
 .leader-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
   padding: 36px 40px;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -240,14 +232,14 @@
 }
 
 .leader-info__value {
-  color: var(--color-gray-text);
+  color: var(--color-text);
 }
 
 .leader-avatar {
   width: 140px;
   height: 140px;
   border-radius: 16px;
-  background: var(--bg-page);
+  background: var(--color-background);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,12 +255,12 @@
 
 .leader-avatar .avatar-placeholder {
   font-size: 60px;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   opacity: 0.25;
 }
 
 /* ============================================
-  شبكة الأعضاء (مسؤولون + أعضاء)
+        كروت الأعضاء (مسؤولون + أعضاء)
     ============================================ */
 .members-grid {
   display: grid;
@@ -277,9 +269,9 @@
 }
 
 .member-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
   padding: 28px 20px;
   display: flex;
   flex-direction: column;
@@ -298,7 +290,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: var(--bg-page);
+  background: var(--color-background);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -313,32 +305,32 @@
 
 .member-card__avatar .avatar-placeholder {
   font-size: 36px;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   opacity: 0.3;
 }
 
 .member-card__name {
   font-size: 16px;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   margin: 0;
 }
 
 .member-card__role {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--color-gray-text);
   margin: 0;
 }
 
 /* ============================================
-    آخر قسم - مساحة سفلى
+        آخر قسم - padding سفلي
     ============================================ */
 .team-section:last-of-type {
   padding-bottom: 64px;
 }
 
 /* ============================================
-      التجاوب - الأجهزة اللوحية (Tablet 768px)
+        Responsive - Tablet (768px)
     ============================================ */
 @media (max-width: 900px) {
   .team-hero__grid {
@@ -361,11 +353,11 @@
   }
 
   .team-stats__item:nth-child(3) {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .team-stats__item:nth-child(4) {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .leader-card {
@@ -388,7 +380,7 @@
 }
 
 /* ============================================
-      التجاوب - الهواتف المحمولة (Mobile 480px)
+        Responsive - Mobile (480px)
     ============================================ */
 @media (max-width: 480px) {
   .team-hero__grid {
@@ -405,11 +397,11 @@
   }
 
   .team-stats__item {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .team-stats__item:nth-child(even) {
-    border-right: 1px solid var(--border);
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
     border-left: none;
   }
 
@@ -427,11 +419,11 @@
 }
 
 /* ============================================
-        تحديد التركيز المرئي لتحسين الوصول (Accessibility)
+        Focus visible للـ accessibility
     ============================================ */
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--color-primary);
   outline-offset: 3px;
   border-radius: 4px;
 }
