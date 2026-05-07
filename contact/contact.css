@@ -83,7 +83,7 @@
     padding: 24px 20px 20px;
     border-radius: 16px;
     border: 1.5px solid var(--color-secondary);
-    background: #FFF;
+    background: var(--color-white);
     box-sizing: border-box;
     gap: 12px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -222,10 +222,13 @@
 /* ── شبكة الفروع ── */
 
 .contact-branches-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-    justify-content: flex-end;
+}
+
+.contact-branch-card {
+    width: 100%;
 }
 
 
@@ -233,15 +236,15 @@
 
 .contact-branch-card {
     display: flex;
-    flex-direction: column;
     align-items: flex-end;
     gap: 8px;
-    width: 443px;
+    flex: 1 1 calc(33.333% - 17px);
+    min-width: 280px;
     min-height: 181px;
     padding: 16px;
     border-radius: 20px;
     border: 1.5px solid var(--color-secondary);
-    background: #FFF;
+    background: var(--color-white);
     box-sizing: border-box;
 }
 
