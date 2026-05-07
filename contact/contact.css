@@ -1,10 +1,11 @@
 
 /* Global Styles */
 
-.text-yellow {
+.section-header h2  {
     color: var(--color-primary);
     right: 0;
     text-align: right;
+    font-size: 40px;
 }
 
 .btn {
