@@ -233,17 +233,18 @@
 /* ── بطاقة الفرع ── */
 .contact-branch-card {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
     width: 100%;
     min-height: 181px;
     padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
     border-radius: 20px;
     border: 1.5px solid var(--color-secondary);
     background: var(--color-white);
+
     box-sizing: border-box;
-    margin: 0 32px 0 0;
 }
 .contact-branch-name {
     color: var(--color-secondary);
@@ -295,9 +296,16 @@
     opacity: 0.75;
 }
 
+.contact-branch-name,
+.contact-branch-address,
+.contact-branch-phone {
+    width: 100%;
+    text-align: right;
+}
+
 
 /* ══════════════════════════════════════════════════
-   Responsive Design
+    Responsive Design
 ══════════════════════════════════════════════════ */
 
 /* تابلت كبير */
