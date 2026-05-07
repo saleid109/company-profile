@@ -46,3 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Nuqta Suud - Contact Page Loaded Successfully');
 
 });
+
+// تحديد إحداثيات مركز الخريطة (خط الطول والعرض)
+const map = L.map('map').setView([24.7136, 46.6753], 10); // إحداثيات الرياض كمثال
+
+// إضافة شكل الخريطة من OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+// إضافة علامة للمركز الأول
+const marker1 = L.marker([24.7136, 46.6753]).addTo(map);
+marker1.bindPopup("<b>الفرع الرئيسي</b><br>نقطة صعود - الرياض").openPopup();
+
+// إضافة علامة للمركز الثاني
+const marker2 = L.marker([24.7742, 46.7385]).addTo(map);
+marker2.bindPopup("<b>فرع التدريب</b><br>حي الصحافة");
