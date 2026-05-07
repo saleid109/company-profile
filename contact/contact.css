@@ -6,9 +6,9 @@
 }
 
 .section-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 50px;
+    text-align: right;
+    max-width: 100%;
+    margin: 0 0 50px;
 }
 
 .section-contact h2 {
