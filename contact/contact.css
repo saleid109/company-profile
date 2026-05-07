@@ -5,6 +5,16 @@
     text-align: right;
 }
 
+.contact-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 40px;
+}
+
 .contact-main-title {
     color: var(--color-primary);
     font-family: var(--font-main);
@@ -56,16 +66,12 @@
     شبكة البطاقات  .contact-cards-grid
 ══════════════════════════════════════════════════ */
 .contact-cards-grid {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    /* ← تأكد من هذا */
-    justify-content: flex-end;
-    /* يبدأ من اليمين */
+    justify-content: flex-start;
     gap: 20px;
-    width: 100%;
 }
-
 /* ── البطاقة ── */
 
 .contact-card {
