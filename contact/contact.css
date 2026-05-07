@@ -4,6 +4,7 @@
 .text-yellow {
     color: var(--color-primary);
     right: 0;
+    text-align: right;
 }
 
 .btn {
