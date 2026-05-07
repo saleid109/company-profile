@@ -2,12 +2,12 @@
 
 .contact-section-header {
     width: 100%;
-    text-align: center;
+    text-align: right;
 }
 
 .contact-main-title {
     color: var(--color-primary);
-    font-family: 'Tajawal', sans-serif;
+    font-family: var(--font-main);
     font-size: 48px;
     font-weight: 700;
     line-height: normal;
@@ -17,7 +17,7 @@
 
 .contact-main-desc {
     color: #1B2D45;
-    font-family: 'Tajawal', sans-serif;
+    font-family: var(--font-main);
     font-size: 20px;
     font-weight: 500;
     line-height: 1.7;
@@ -31,7 +31,7 @@
 
 .contact-sub-title {
     color: #00015B;
-    font-family: 'Tajawal', sans-serif;
+    font-family: var(--font-main);
     font-size: 32px;
     font-weight: 500;
     line-height: 35.2px;
@@ -87,7 +87,7 @@
 
 .contact-card-title {
     color: #00015B;
-    font-family: 'Tajawal', sans-serif;
+    font-family: var(--font-main);
     font-size: 20px;
     font-weight: 700;
     line-height: normal;
@@ -101,7 +101,7 @@
 
 .contact-card-text {
     color: #00015B;
-    font-family: 'Tajawal', sans-serif;
+    font-family: var(--font-main);
     font-size: 16px;
     font-weight: 400;
     line-height: 25.2px;
@@ -115,7 +115,7 @@
 
 .contact-card-link {
     color: #00015B;
-    font-family: 'Tajawal', sans-serif;
+    font-family: var(--font-main);
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.2px;
@@ -195,8 +195,8 @@
 /* ── عنوان الفروع ── */
 
 .contact-branches-title {
-    color: #00015B;
-    font-family: 'Tajawal', sans-serif;
+    color:var(--color-secondary);
+    font-family: var(--font-main);
     font-size: 32px;
     font-weight: 500;
     line-height: 35.2px;
@@ -227,14 +227,14 @@
     min-height: 181px;
     padding: 16px;
     border-radius: 20px;
-    border: 1.5px solid #00015B;
+    border: 1.5px solid var(--color-secondary);
     background: #FFF;
     box-sizing: border-box;
 }
 
 .contact-branch-name {
-    color: #00015B;
-    font-family: 'Tajawal', sans-serif;
+    color: var(--color-secondary);
+    font-family: var(--font-main);
     font-size: 28px;
     font-weight: 500;
     line-height: 35.2px;
@@ -245,8 +245,8 @@
 }
 
 .contact-branch-address {
-    color: #1B2D45;
-    font-family: 'Tajawal', sans-serif;
+    color:var(--color-gray-secondary);
+    font-family: var(--font-main);
     font-size: 15px;
     font-weight: 400;
     text-align: right;
@@ -255,8 +255,8 @@
 }
 
 .contact-branch-phone {
-    color: #1B2D45;
-    font-family: 'Montserrat', sans-serif;
+    color:var(--color-gray-secondary);
+    font-family: var(--font-main);
     font-size: 15px;
     font-weight: 700;
     text-align: right;
@@ -267,7 +267,7 @@
 
 .contact-branch-link {
     color: #F1B709;
-    font-family: 'Tajawal', sans-serif;
+    font-family: var(--font-main);
     font-size: 14px;
     font-weight: 700;
     text-decoration: none;
