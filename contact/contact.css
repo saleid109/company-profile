@@ -38,6 +38,10 @@
     letter-spacing: -0.96px;
     text-align: right;
     width: 100%;
+    white-space: normal;
+    /* ← أضف هذا */
+    overflow: visible;
+    /* ← وهذا */
     margin: 0;
 }
 
@@ -45,15 +49,16 @@
 /* ══════════════════════════════════════════════════
     شبكة البطاقات  .contact-cards-grid
 ══════════════════════════════════════════════════ */
-
 .contact-cards-grid {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    /* ← تأكد من هذا */
     justify-content: flex-end;
+    /* يبدأ من اليمين */
     gap: 20px;
     width: 100%;
 }
-
 
 /* ── البطاقة ── */
 
