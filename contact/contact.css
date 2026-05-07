@@ -150,7 +150,11 @@
 }
 
 .contact-card-link:hover i {
-    transform: translateX(-4px);
+    transform: translateX(4px);
+    -webkit-transform: translateX(4px);
+    -moz-transform: translateX(4px);
+    -ms-transform: translateX(4px);
+    -o-transform: translateX(4px);
 }
 
 
@@ -175,10 +179,7 @@
     color: var(--color-primary);
 }
 
-.contact-card-icon svg {
-    width: 72px;
-    height: 72px;
-}
+
 
 
 /* ══════════════════════════════════════════════════
