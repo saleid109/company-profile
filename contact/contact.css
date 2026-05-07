@@ -12,37 +12,43 @@
     font-weight: 700;
     line-height: normal;
     margin-bottom: 16px;
-    text-align: center;
+    text-align: right;
+    margin: 0 32px 0 0;
+    padding: 0 0 20px 0;
+
 }
 
 .contact-main-desc {
-    color: #1B2D45;
+    color: var(--color-gray-secondary);
     font-family: var(--font-main);
     font-size: 20px;
     font-weight: 500;
     line-height: 1.7;
-    text-align: center;
+    text-align: right;
     max-width: 750px;
-    margin: 0 auto;
+    margin: 0 32px 0 0;
+    padding: 0 0 20px 0;
+
+
 }
 
 
 /* ── العنوان الفرعي ── */
 
 .contact-sub-title {
-    color: #00015B;
+    color: var(--color-secondary);
     font-family: var(--font-main);
     font-size: 32px;
     font-weight: 500;
     line-height: 35.2px;
     letter-spacing: -0.96px;
     text-align: right;
+    right: 0;
     width: 100%;
     white-space: normal;
-    /* ← أضف هذا */
     overflow: visible;
-    /* ← وهذا */
     margin: 0;
+    margin: 0 32px 24px 0;
 }
 
 
@@ -70,7 +76,7 @@
     min-height: 321px;
     padding: 24px 20px 20px;
     border-radius: 16px;
-    border: 1.5px solid #00015B;
+    border: 1.5px solid var(--color-secondary);
     background: #FFF;
     box-sizing: border-box;
     gap: 12px;
@@ -86,7 +92,7 @@
 /* ── عنوان البطاقة ── */
 
 .contact-card-title {
-    color: #00015B;
+    color: var(--color-secondary);
     font-family: var(--font-main);
     font-size: 20px;
     font-weight: 700;
@@ -100,7 +106,7 @@
 /* ── نص البطاقة ── */
 
 .contact-card-text {
-    color: #00015B;
+    color: var(--color-gray-secondary);
     font-family: var(--font-main);
     font-size: 16px;
     font-weight: 400;
@@ -114,7 +120,7 @@
 /* ── رابط البطاقة ── */
 
 .contact-card-link {
-    color: #00015B;
+    color: var(--color-secondary);
     font-family: var(--font-main);
     font-size: 15px;
     font-weight: 600;
@@ -266,7 +272,7 @@
 }
 
 .contact-branch-link {
-    color: #F1B709;
+    color: var(--color-primary);
     font-family: var(--font-main);
     font-size: 14px;
     font-weight: 700;
