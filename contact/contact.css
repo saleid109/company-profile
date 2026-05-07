@@ -204,6 +204,18 @@
     display: block;
 }
 
+.map-container {
+    width: 100%;
+    border-radius: 15px; /* لجعل الزوايا منحنية */
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+iframe {
+    filter: grayscale(10%) contrast(1.1); /* اختياري: لإعطاء طابع هادئ للخريطة */
+}
+
 
 /* ── عنوان الفروع ── */
 
