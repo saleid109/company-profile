@@ -1,281 +1,350 @@
+/* ====================================================
+   contact.css — صفحة تواصل معنا
+   مبني على مواصفات Figma
+   ==================================================== */
 
-
-/* Intro Section */
-.intro-section {
-    padding: var(--section-padding);
+/* ── قسم المقدمة ── */
+.intro-contact {
+    padding: 80px 0;
 }
 
-.section-header {
+.container-contact {
+    display: flex;
+    width: 1362px;
+    max-width: 100%;
+    padding: 0 16px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 32px;
+    margin: 0 auto;
+}
+
+/* ── رأس القسم ── */
+.intro-contact .section-header {
     text-align: right;
     max-width: 100%;
-    margin: 0 0 50px;
+    margin: 0;
+    width: 100%;
 }
 
-.section-contact h2 {
+.intro-contact .section-header h2 {
+    color: #F1B709;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
     font-size: 48px;
+    font-style: normal;
     font-weight: 700;
-    color: var(--color-primary);
-    text-align: right;
-
-}
-
-.section-contact p {
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--color-gray-secondary);
-    text-align: right;
     line-height: normal;
-    margin-bottom: 65px;
-
+    margin-bottom: 16px;
 }
 
-.subsection-titles {
-    font-size: 32px;
+.intro-contact .section-header p {
+    color: #1B2D45;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 24px;
+    font-style: normal;
     font-weight: 500;
-    color: var(--color-secondary);
-    letter-spacing: -0.96px;
-    line-height: 35.2px;
+    line-height: normal;
 }
 
-.contact-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* ── العنوان الفرعي ── */
+.subsection-titles {
+    color: #00015B;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35.2px;
+    /* 110% */
+    letter-spacing: -0.96px;
+    width: 100%;
 }
+
+/* ── شبكة البطاقات ── */
+.contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 20px;
+    width: 100%;
+}
+
+/* ── بطاقة تواصل ── */
 .contact-card {
+    position: relative;
+    display: flex;
     width: 321.25px;
-    height: 321px;
     min-height: 321px;
     padding: 30px 20px;
-    border-radius: 16px;
-    border: 1.5px solid var(--color-secondary); 
+    flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 16px;
+    border: 1.5px solid #00015B;
+    background: #FFF;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    overflow: visible;
 }
 
 .contact-card:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 1, 91, 0.12);
     transform: translateY(-5px);
-    border-color: var(--color-primary);
 }
 
-.contact-card p {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 25.2px;
-    color: var(--color-secondary);
+/* ── الأيقونة SVG فوق البطاقة ── */
+.card-icon {
+    position: relative;
+    width: 80px;
+    height: 72px;
+    margin-bottom: 8px;
 }
 
+.card-icon svg,
+.card-icon i {
+    position: absolute;
+    right: 0.5px;
+    top: 0;
+}
 
+/* إذا كانت الأيقونة Font Awesome */
+.card-icon i {
+    font-size: 2.5rem;
+    color: #FDCA30;
+    position: static;
+}
 
-.card-link {
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: 0.34px;
-    color: var(--color-primary);
+/* ── محتوى نص البطاقة ── */
+.contact-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: stretch;
+    padding-bottom: 5px;
 }
 
 .contact-card h4 {
+    color: #00015B;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
     font-size: 20px;
-    margin-bottom: 15px;
-    color: var(--color-secondary);
-    font-weight: var(--weight-bold);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 12px;
+    width: 100%;
 }
 
 .contact-card p {
-    color: var(--color-gray-text);
-    font-size: 0.95rem;
-    margin-bottom: 25px;
-    flex-grow: 1;
+    color: #00015B;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.2px;
+    /* 140% */
+    margin-bottom: 0;
+    flex-grow: 0;
 }
 
+/* ── رابط البطاقة ── */
 .card-link {
-    color: var(--color-secondary);
-    font-weight: var(--weight-bold);
+    color: #00015B;
+    text-align: right;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    /* 94.118% */
+    letter-spacing: 0.34px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.card-link:hover {
+    opacity: 0.75;
 }
 
 .card-link i {
     font-size: 0.8rem;
-    transition: var(--transition);
-}
-
-.card-link:hover {
-    color: var(--color-navy-light);
+    transition: transform 0.2s ease;
 }
 
 .card-link:hover i {
-    transform: translateX(-5px);
+    transform: translateX(-4px);
 }
 
-/* Map Section */
+/* ══════════════════════════════════════════
+   قسم الخريطة والفروع
+══════════════════════════════════════════ */
 .map-section {
     padding: 60px 0 100px;
 }
 
 .map-container {
-    border-radius: var(--border-radius);
+    width: 100%;
+    aspect-ratio: 323 / 113;
+    border-radius: 16px;
     overflow: hidden;
     margin-bottom: 40px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: lightgray 50% / cover no-repeat;
 }
 
 .map-image {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
+/* ── عنوان الفروع ── */
 .branches-title {
-    font-size: 1.8rem;
+    color: #00015B;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35.2px;
+    letter-spacing: -0.96px;
     margin-bottom: 30px;
-    color: var(--color-secondary);
-    font-weight: var(--weight-bold);
 }
 
+/* ── شبكة الفروع ── */
 .branches-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 25px;
+    justify-content: flex-start;
 }
 
+/* ── بطاقة الفرع ── */
 .branch-card {
-    background-color: var(--color-white);
-    border: 1px solid #eee;
-    border-radius: var(--border-radius);
-    padding: var(--card-padding);
-    box-shadow: var(--shadow);
+    display: flex;
+    width: 443px;
+    min-height: 181px;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 20px;
+    border: 1.5px solid #00015B;
+    background: #FFF;
+    box-sizing: border-box;
 }
 
 .branch-card h4 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: var(--color-secondary);
-    font-weight: var(--weight-bold);
+    color: #00015B;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35.2px;
+    letter-spacing: -0.96px;
+    width: 100%;
 }
 
 .branch-card p {
-    color: var(--color-gray-text);
-    margin-bottom: 5px;
+    color: #1B2D45;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: right;
 }
 
 .branch-card .phone {
-    font-weight: var(--weight-bold);
-    margin-bottom: 15px;
-    font-family: var(--font-en);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #1B2D45;
 }
 
 .branch-link {
-    color: var(--color-primary);
-    font-weight: var(--weight-bold);
+    color: #F1B709;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.9rem;
+    gap: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
 }
 
-/* Footer */
-.main-footer {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    padding: var(--section-padding);
-    padding-bottom: 20px;
+.branch-link:hover {
+    opacity: 0.75;
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 50px;
-    margin-bottom: 60px;
+/* ══════════════════════════════════════════
+   Responsive — الجوال
+══════════════════════════════════════════ */
+@media (max-width: 1400px) {
+    .container-contact {
+        width: 100%;
+    }
 }
 
-.footer-column h5 {
-    font-size: 1.4rem;
-    margin-bottom: 25px;
-    font-weight: var(--weight-bold);
-}
-
-.footer-column p {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.footer-social {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.footer-social a {
-    width: 35px;
-    height: 35px;
-    background-color: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-.footer-social a:hover {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-}
-
-.footer-column ul li {
-    margin-bottom: 12px;
-}
-
-.footer-column ul li a {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.footer-column ul li a:hover {
-    color: var(--color-primary);
-    padding-right: 5px;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* Responsive Design */
 @media (max-width: 992px) {
-    .nav-links {
-        display: none;
+    .intro-contact .section-header h2 {
+        font-size: 36px;
     }
-    
-    .hero-section h1 {
-        font-size: 2.5rem;
+
+    .intro-contact .section-header p {
+        font-size: 18px;
     }
-    
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
+
+    .subsection-titles,
+    .branches-title {
+        font-size: 26px;
+    }
+
+    .contact-cards {
+        justify-content: center;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .branch-card {
+        width: 100%;
     }
 }
 
-@media (max-width: 768px) {
-    .top-bar-content {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .section-header h2 {
-        font-size: 2rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .hero-section {
+@media (max-width: 600px) {
+    .intro-contact {
         padding: 50px 0;
+    }
+
+    .intro-contact .section-header h2 {
+        font-size: 28px;
+    }
+
+    .intro-contact .section-header p {
+        font-size: 16px;
+    }
+
+    .subsection-titles,
+    .branches-title {
+        font-size: 22px;
+    }
+
+    .contact-card {
+        min-height: auto;
+    }
+
+    .branch-card h4 {
+        font-size: 22px;
     }
 }
