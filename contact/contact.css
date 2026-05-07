@@ -225,31 +225,28 @@
 
 .contact-branches-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
-}
-
-.contact-branch-card {
-    width: 100%;
 }
 
 
 /* ── بطاقة الفرع ── */
-
 .contact-branch-card {
     display: flex;
+    flex-direction: column;
     align-items: flex-end;
     gap: 8px;
-    flex: 1 1 calc(33.333% - 17px);
-    min-width: 280px;
+
+    width: 100%;
     min-height: 181px;
-    padding: 16px;
+
+    padding: 24px;
     border-radius: 20px;
     border: 1.5px solid var(--color-secondary);
     background: var(--color-white);
+
     box-sizing: border-box;
 }
-
 .contact-branch-name {
     color: var(--color-secondary);
     font-family: var(--font-main);
