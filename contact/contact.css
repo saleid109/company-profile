@@ -11,22 +11,30 @@
     margin: 0 auto 50px;
 }
 
-.section-header h2 {
+.section-contact h2 {
     font-size: 48px;
-    margin-bottom: 20px;
-    font-weight: var(--weight-black);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: right;
+
 }
 
-.section-header p {
-    color: var(--color-gray-text);
-    font-size: 1.1rem;
+.section-contact p {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--color-gray-secondary);
+    text-align: right;
+    line-height: normal;
+    margin-bottom: 65px;
+
 }
 
-.subsection-title {
-    font-size: 1.8rem;
-    margin-bottom: 40px;
+.subsection-titles {
+    font-size: 32px;
+    font-weight: 500;
     color: var(--color-secondary);
-    font-weight: var(--weight-bold);
+    letter-spacing: -0.96px;
+    line-height: 35.2px;
 }
 
 .contact-cards {
