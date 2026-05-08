@@ -75,7 +75,7 @@
 .form-group textarea,
 .phone-group {
   width: 100%;
-  border: 1.5px solid var(--border);
+  border: 1px solid #dddddd;
   border-radius: 10px;
   background: #fff;
   transition: 0.3s;
