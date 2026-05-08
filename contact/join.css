@@ -29,7 +29,7 @@
   width: 100%;
 }
 
-.form-section h1 {
+#join-heading h1 {
   font-size: 56px;
   color: var(--color-primary);
   margin-bottom: 12px;
