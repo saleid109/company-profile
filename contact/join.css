@@ -8,7 +8,7 @@
   
 .main-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1fr 1.2fr;/* عمود للمعلومات وعمود للنموذج */
   gap: 70px;
   align-items: start;
   max-width: 1400px;
