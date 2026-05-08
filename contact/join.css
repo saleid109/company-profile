@@ -79,14 +79,14 @@
   border-radius: 10px;
   background: #fff;
   transition: 0.3s;
-  font-family: "Tajawal", sans-serif;
+  font-family: var(--font-main);
 }
 
 .form-group input,
 .form-group textarea {
   padding: 15px 18px;
   font-size: 15px;
-  color: var(--text);
+  color: var(--color-gray-text);
   outline: none;
 }
 
@@ -103,8 +103,9 @@
 .form-group input:focus,
 .form-group textarea:focus,
 .phone-group:focus-within {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(232, 164, 0, 0.10);
+  border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(255, 204, 53, 0.12);
+  outline: none;
 }
 
 /* =========================================
