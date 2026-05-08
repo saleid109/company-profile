@@ -120,7 +120,7 @@
 
 .phone-group select {
   border: none;
-  border-inline-start: 1px solid var(--border);
+  border-inline-start: 1px solid #dddddd;
   background: #f8f8f8;
   padding: 15px 16px;
   min-width: 95px;
@@ -157,7 +157,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--gold);
+  color: var(--color-primary);
   font-weight: 700;
   font-size: 14px;
 }
@@ -169,7 +169,7 @@
 .cv-hint {
   margin-top: 8px;
   font-size: 12px;
-  color: var(--muted);
+  color: var(--color-gray-text);
   line-height: 1.7;
 }
 
@@ -229,12 +229,12 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid var(--gold);
+  border: 2px solid var(--color-primary);
   background: #fffbf0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold);
+  color: var(--color-primary);
   font-size: 22px;
   flex-shrink: 0;
 }
@@ -248,7 +248,7 @@
 
 .info-text p {
   font-size: 15px;
-  color: var(--muted);
+  color: var(--color-gray-text);
   line-height: 1.7;
   margin-bottom: 6px;
 }
@@ -263,7 +263,7 @@
 }
 
 .info-link:hover {
-  color: var(--gold);
+  color: var(--color-primary);
 }
 
 .address {
