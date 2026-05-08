@@ -193,7 +193,7 @@
 }
 
 .submit-btn:hover {
-  background: #23233d;
+  background: var(--color-navy-light);
   transform: translateY(-1px);
 }
 
@@ -231,7 +231,7 @@
   height: 60px;
   border-radius: 50%;
   border: 2px solid var(--color-primary);
-  background: #fffbf0;
+  background: var(--color-bg-light);
   display: flex;
   align-items: center;
   justify-content: center;
