@@ -105,7 +105,7 @@
 
 .form-group input:focus,
 .form-group textarea:focus,
-.phone-group:focus-within
+.phone-group:focus-within,
 .form-section select:focus {
   border-color: var(--color-primary);
     box-shadow: 0 0 0 4px rgba(255, 204, 53, 0.12);
