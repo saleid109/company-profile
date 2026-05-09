@@ -298,7 +298,7 @@
 }
 
 .thank-you-card {
-  background: #fff;
+  background: var(--color-white);
   border-radius: 20px;
   padding: 50px 40px;
   max-width: 460px;
@@ -326,7 +326,7 @@
 
 .thank-you-icon i {
   font-size: 36px;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .thank-you-title {
@@ -369,12 +369,12 @@
 
 .ty-btn-outline:hover {
   background: var(--color-secondary);
-  color: #fff;
+  color: var(--color-white);
 }
 
 .ty-btn-primary {
   background: var(--color-secondary);
-  color: #fff;
+  color: var(--color-white);
 }
 
 .ty-btn-primary:hover {
