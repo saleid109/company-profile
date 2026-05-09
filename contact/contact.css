@@ -330,20 +330,11 @@ iframe {
 ══════════════════════════════════════════════════ */
 
 /* تابلت كبير */
-@media (max-width: 1400px) {
+/* ══ تابلت  768px – 1024px ══ */
+@media (min-width: 768px) and (max-width: 1024px) {
     .contact-container {
         padding: 0 24px;
-    }
-
-    .contact-card {
-        width: calc(50% - 10px);
-    }
-}
-
-/* تابلت */
-@media (max-width: 992px) {
-    .contact-intro {
-        padding: 60px 0;
+        gap: 24px;
     }
 
     .contact-main-title {
@@ -359,13 +350,12 @@ iframe {
         font-size: 26px;
     }
 
-    .contact-cards-grid {
-        justify-content: center;
+    .contact-card {
+        width: calc(50% - 10px);
     }
 
-    .contact-card {
-        width: 100%;
-        max-width: 420px;
+    .contact-cards-grid {
+        justify-content: center;
     }
 
     .contact-branch-card {
@@ -375,10 +365,16 @@ iframe {
     .contact-branches-grid {
         justify-content: center;
     }
+
+    .order-summary {
+        position: static;
+        max-width: 500px;
+    }
 }
 
-/* جوال */
-@media (max-width: 600px) {
+
+/* ══ موبايل  ≤ 767px ══ */
+@media (max-width: 767px) {
     .contact-intro {
         padding: 40px 0;
     }
@@ -390,16 +386,19 @@ iframe {
 
     .contact-main-title {
         font-size: 28px;
+        margin: 0 16px 0 0;
     }
 
     .contact-main-desc {
         font-size: 15px;
+        margin: 0 16px 0 0;
     }
 
     .contact-sub-title,
     .contact-branches-title {
         font-size: 22px;
         letter-spacing: -0.5px;
+        margin: 0 16px 16px 0;
     }
 
     .contact-card {
@@ -415,8 +414,21 @@ iframe {
         font-size: 14px;
     }
 
+    .contact-cards-grid {
+        justify-content: center;
+    }
+
     .contact-branch-name {
         font-size: 22px;
+    }
+
+    .contact-branch-card {
+        width: 100%;
+    }
+
+    .contact-branches-grid {
+        padding: 0 16px;
+        justify-content: center;
     }
 
     .contact-map-section {
