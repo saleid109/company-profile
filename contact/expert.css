@@ -71,8 +71,20 @@
   color: var(--text);
 }
 
+.form-group select {
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  background: #fff;
+  font-family: var(--font-main);
+  cursor: pointer;
+  appearance: none;
+  box-shadow: ;
+}
+
 .form-group input,
 .form-group textarea,
+.form-group select,
 .phone-group {
   width: 100%;
   border: 1px solid #dddddd;
@@ -103,11 +115,14 @@
 
 .form-group input:focus,
 .form-group textarea:focus,
-.phone-group:focus-within {
+.phone-group:focus-within
+.form-section select:focus {
   border-color: var(--color-primary);
     box-shadow: 0 0 0 4px rgba(255, 204, 53, 0.12);
   outline: none;
 }
+
+
 
 /* =========================================
     PHONE GROUP
