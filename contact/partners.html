@@ -394,34 +394,35 @@
   </footer>
 
   <script>
-    function handleSubmit() {
-      const inputs = document.querySelectorAll('.form-section input[type="text"], .form-section input[type="email"], .form-section input[type="tel"]');
-      let allFilled = true;
-      inputs.forEach(input => {
-        if (!input.value.trim()) {
-          input.style.borderColor = '#e53935';
-          allFilled = false;
-          setTimeout(() => { input.style.borderColor = ''; }, 2500);
-        }
-      });
-      if (allFilled) {
-        const btn = document.querySelector('.submit-btn');
-        btn.textContent = '✔ تم الإرسال بنجاح!';
-        btn.style.background = '#2e7d32';
-        setTimeout(() => {
-          btn.textContent = 'ارسال';
-          btn.style.background = '';
-        }, 3000);
-      }
+function handleSubmit() {
+  const inputs = document.querySelectorAll(
+    '.form-section input[type="text"], .form-section input[type="email"], .form-section input[type="tel"]'
+  );
+  let allFilled = true;
+  inputs.forEach(input => {
+    if (!input.value.trim()) {
+      input.style.borderColor = '#e53935';
+      allFilled = false;
+      setTimeout(() => { input.style.borderColor = ''; }, 2500);
     }
+  });
 
-    // File upload label update
-    document.getElementById('cvInput').addEventListener('change', function () {
-      const label = document.querySelector('.cv-upload-label');
-      if (this.files.length > 0) {
-        label.innerHTML = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:var(--gold)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg> ${this.files[0].name}`;
-      }
-    });
+  if (allFilled) {
+    // أظهر نافذة الشكر
+    document.getElementById('thankYouOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeThankYou() {
+  document.getElementById('thankYouOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// إغلاق عند النقر خارج البطاقة
+document.getElementById('thankYouOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeThankYou();
+});
   </script>
   <!-- نموذج تسجيل الدخول -->
   <div class="auth-overlay" id="authOverlay" onclick="handleOverlayClick(event)">
