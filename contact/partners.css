@@ -153,7 +153,7 @@
   font-size: 15px;
   font-family: var(--font-main);
   color: var(--color-gray-text);
-  background-color: #fff;
+  background-color: var(--color-white);
   border: 1px solid #dddddd;
   border-radius: 10px;
   outline: none;
@@ -417,6 +417,20 @@
   opacity: 0.85;
 }
 
+
+.phone-group select {
+  width: auto !important;
+  border: none !important;
+  border-inline-start: 1px solid #dddddd !important;
+  border-radius: 0 !important;
+  background-color: #f8f8f8 !important;
+  padding: 15px 28px 15px 10px !important;
+  min-width: 110px !important;
+  box-shadow: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: left 8px center !important;
+}
 /* =========================================
     TABLET
 ========================================= */
