@@ -226,149 +226,108 @@
 
   <main class="main-content" id="main-content">
     <!-- HERO -->
-    <section class="hero-expert">
-      <h1 class="hero-titles">تحدث إلى أحد خبرائنا</h1>
-    </section>
+    <div class="container main-grid">
 
-    <!-- MAIN CONTENT -->
-    <div class="main-contents">
 
-      <!-- CONTACT FORM (right side in RTL = first in DOM) -->
-      <div class="contact-form-wrap">
-        <p class="form-subtitle">احصل على استشارة متخصصة تساعدك على اتخاذ القرار الصحيح وتجاوز التحديات التقنية بثقة.
+      <div class="join-header">
+        <h1 id="join-heading" class="text-yellow">تحدث إلى أحد خبرائنا </h1>
+      </div>
+
+
+      <section class="form-section" aria-labelledby="join-heading">
+
+        <p class="subtitle">
+احصل على استشارة متخصصة تساعدك على اتخاذ القرار الصحيح وتجاوز التحديات التقنية بثقة.
+
+
         </p>
 
-        <form onsubmit="return false;">
-          <!-- Name Row -->
+        <form id="joinForm" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <label>الاسم الاخير</label>
-              <input type="text" class="form-control" placeholder="الاسم الاخير">
+              <label for="first-name">الاسم الأول</label>
+              <input type="text" id="first-name" name="first-name" placeholder="الاسم الأول" required />
             </div>
             <div class="form-group">
-              <label>الاسم الاول</label>
-              <input type="text" class="form-control" placeholder="الاسم الاول">
+              <label for="last-name">الاسم الأخير</label>
+              <input type="text" id="last-name" name="last-name" placeholder="الاسم الأخير" required />
             </div>
           </div>
 
-          <!-- Email -->
-          <div class="form-group" style="margin-bottom:16px;">
-            <label>البريد الالكتروني</label>
-            <input type="email" class="form-control" placeholder="you@company.com" dir="ltr">
+          <div class="form-group mb-4">
+            <label for="email">البريد الالكتروني</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required />
           </div>
 
-          <!-- Phone -->
-          <div class="form-group" style="margin-bottom:16px;">
-            <label>رقم التواصل</label>
+          <div class="form-group mb-4">
+            <label for="specialty">التخصص او المجال المهني</label>
+            <input type="text" id="specialty" name="specialty" placeholder="مثال: برمجة" required />
+          </div>
+
+          <div class="form-group mb-4">
+            <label for="phone">رقم التواصل</label>
             <div class="phone-group">
-              <div class="phone-flag">
-                <span class="flag">🇸🇦</span>
-                <span>SA</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2.5">
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
-              </div>
-              <input type="tel" class="phone-input" placeholder="+966 5000000">
+              <input type="tel" id="phone" name="phone" placeholder="5000000" required />
+              <select aria-label="مفتاح الدولة">
+                <option value="SA">SA 🇸🇦</option>
+                <option value="AE">AE 🇦🇪</option>
+              </select>
             </div>
           </div>
 
-          <!-- Consultation field -->
-          <div class="form-group select-wrap" style="margin-bottom:16px;">
-            <label>مجال الاستشارة</label>
-            <select class="form-control select">
-              <option value="" disabled selected>Select</option>
-              <option>تقنية المعلومات</option>
-              <option>الأمن السيبراني</option>
-              <option>التحول الرقمي</option>
-              <option>استشارات الأعمال</option>
-            </select>
+          <div class="form-group mb-4">
+            <label for="bio">نبذة عنك</label>
+            <textarea id="bio" name="bio" placeholder="اترك رسالتك هنا.."></textarea>
           </div>
 
-          <!-- Preferred time -->
-          <div class="form-group select-wrap" style="margin-bottom:16px;">
-            <label>الوقت المناسب</label>
-            <select class="form-control select">
-              <option value="" disabled selected>Select</option>
-              <option>صباحاً (8 - 12)</option>
-              <option>ظهراً (12 - 4)</option>
-              <option>مساءً (4 - 10)</option>
-            </select>
-          </div>
-
-          <!-- Description -->
-          <div class="form-group" style="margin-bottom:16px;">
-            <label>وصف مختصر</label>
-            <textarea class="form-control" placeholder="اترك رسالتك هنا..."></textarea>
-          </div>
-
-          <!-- Upload -->
-          <div>
-            <div class="upload-area">
-              <div class="upload-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="17 8 12 3 7 8" />
-                  <line x1="12" y1="3" x2="12" y2="15" />
-                </svg>
+          <div class="upload-container">
+            <label class="cv-upload-wrapper">
+              <input type="file" id="cvInput" accept=".pdf,.doc,.docx" hidden />
+              <div class="cv-upload-label">
+                <span class="material-symbols-outlined">upload_file</span>
+                <span>ارفق السيرة الذاتية</span>
               </div>
-              <span class="upload-text">ارفق السيرة الذاتية</span>
-            </div>
-            <p class="upload-hint">سيتم مراجعة طلبك والتواصل معك في حال وجود فرصة مناسبة</p>
+            </label>
+            <p class="cv-hint">سيتم مراجعة طلبك والتواصل معك في حال وجود فرصة مناسبة</p>
           </div>
 
           <button type="submit" class="submit-btn">ارسال</button>
         </form>
-      </div>
+      </section>
 
-      <!-- CONTACT INFO (left side in RTL) -->
-      <div class="contact-info">
-        <h2>معلومات التواصل</h2>
 
-        <div class="info-block">
-          <div class="info-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.8">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
+      <section class="contact-info-side" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">معلومات التواصل</h2>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
+          <div class="info-text">
+            <h3>البريد الالكتروني</h3>
+            <p>فريقنا جاهز لتواصل معكم في اي وقت</p>
+            <a href="mailto:hi@agency.com" class="info-link">hi@agency.com</a>
           </div>
-          <h3>البريد الالكتروني</h3>
-          <p class="sub">فريقنا جاهز لتواصل معكم في اي وقت</p>
-          <span class="value">hi@agency.com</span>
         </div>
 
-        <div class="info-block">
-          <div class="info-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.8">
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45a2 2 0 0 1 1.97-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6.29 6.29l1.52-1.83a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+          <div class="info-text">
+            <h3>رقم التواصل</h3>
+            <p>اوقات التواصل من 8 صباحا حتى 10 مساءا</p>
+            <a href="tel:+15550000000" class="info-link" dir="ltr">+1 (555) 000-0000</a>
           </div>
-          <h3>رقم التواصل</h3>
-          <p class="sub">اوقات التواصل من 8 صباحا حتى 10 مساءا</p>
-          <span class="value">+1(555) 000–0000</span>
         </div>
 
-        <div class="info-block">
-          <div class="info-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.8">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+          <div class="info-text">
+            <h3>الفرع الرئيسي</h3>
+            <p>جميع الفروع &gt;</p>
+            <p class="address" dir="ltr">100 Smith Street,<br>Collingwood VIC 3066 AU</p>
           </div>
-          <h3>الفرع الرئيسي</h3>
-          <p class="sub"><a href="#" style="color:var(--purple);text-decoration:none;font-size:14px;">جميع الفروع
-              &lt;</a></p>
-          <span class="value" style="direction:ltr;">100 Smith Street<br>Collingwood VIC 3066 AU</span>
         </div>
-      </div>
+      </section>
 
     </div>
-
   </main>
   <!--=========== Footer ===========-->
   <footer class="site-footer">
