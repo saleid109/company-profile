@@ -108,6 +108,8 @@
   outline: none;
 }
 
+
+
 /* =========================================
     PHONE GROUP
 ========================================= */
@@ -271,6 +273,112 @@
   line-height: 1.8;
   font-family: var(--font-en);
   color: var(--color-secondary);
+}
+
+
+/* =========================================
+    THANK YOU MODAL
+========================================= */
+.thank-you-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.thank-you-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.thank-you-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 50px 40px;
+  max-width: 460px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.thank-you-overlay.active .thank-you-card {
+  transform: translateY(0);
+}
+
+.thank-you-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.thank-you-icon i {
+  font-size: 36px;
+  color: #fff;
+}
+
+.thank-you-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 12px;
+}
+
+.thank-you-desc {
+  font-size: 15px;
+  color: var(--color-gray-text);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.thank-you-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ty-btn {
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-main);
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+  border: 2px solid var(--color-secondary);
+}
+
+.ty-btn-outline {
+  background: transparent;
+  color: var(--color-secondary);
+}
+
+.ty-btn-outline:hover {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.ty-btn-primary {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.ty-btn-primary:hover {
+  opacity: 0.85;
 }
 
 /* =========================================
