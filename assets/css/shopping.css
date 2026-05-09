@@ -283,8 +283,8 @@
   width: 42px;
   height: 34px;
   border: none;
-  border-right: 1.5px solid var(--color-secondary);
-  border-left: 1.5px solid var(--color-secondary);
+  border-right: 1.5px solid var(--color-gray-text);
+  border-left: 1.5px solid var(--color-gray-text);
   text-align: center;
   font-family: var(--font-main);
   font-size: 14px;
