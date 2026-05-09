@@ -6,7 +6,7 @@
   padding: 80px 40px;
 }
   
-.main-grid {
+.partners-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;/* عمود للمعلومات وعمود للنموذج */
   gap: 70px;
@@ -15,7 +15,7 @@
   margin: 0 auto;
 }
 
-.main-grid .partners-header {
+.partners-grid .partners-header {
   grid-column: 1 / -1; /* يمتد على كل العرض */
 }
 
