@@ -160,13 +160,18 @@
     -o-transform: translateX(4px);
 }
 
+.contact-card:hover .contact-card-title,
+.contact-card:hover .contact-card-text,
+.contact-card:hover .contact-card-link {
+    color: var(--color-white);
+}
 
-/* ── أيقونة البطاقة — دائماً في الأسفل ── */
-/*
-    لأن الأيقونة آخر عنصر داخل flex column，
-    margin-top: auto تدفعها تلقائياً للنهاية
-    بغض النظر عن طول النص
-*/
+.contact-card:hover .contact-card-icon i {
+    color: var(--color-white);
+}
+
+/* ── أيقونة البطاقة الأسفل ── */
+
 
 .contact-card-icon {
     width: 100%;
