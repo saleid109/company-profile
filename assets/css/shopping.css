@@ -144,15 +144,15 @@
 
 
 /* ══════════════════════════════════════════════
-   بطاقة المنتج  .cart-item
-   ┌──────────────────────────────────────────┐
-   │ [صورة] [عنوان + سعر الوحدة] [كمية+مجموع] [×]│
-   └──────────────────────────────────────────┘
+    بطاقة المنتج  .cart-item
+  
+    [صورة] [عنوان + سعر الوحدة] [كمية+مجموع] [زر حذف]
+    
 ══════════════════════════════════════════════ */
 .cart-item {
   background: var(--color-white);
   border-radius: 16px;
-  border: 1.5px solid var(--color-secondary);
+  border: 1.5px solid var(--color-background);
   padding: 20px;
   display: grid;
   grid-template-columns: 90px 1fr auto 36px;
