@@ -117,35 +117,33 @@
 /* =========================================
     PHONE GROUP
 ========================================= */
-
 .phone-group {
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
   overflow: hidden;
+  background: #fff;
+  transition: 0.3s;
 }
 
 .phone-group select {
+  width: 110px;
   border: none;
-  width: auto;
-  flex: 0 0 auto;
-  border-inline-start: 1px solid #dddddd;
   background: #f8f8f8;
-  padding: 15px 16px;
-  min-width: 95px;
+  padding: 0 14px;
   font-size: 14px;
   font-family: inherit;
-  color: var(--text);
-  outline: none;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .phone-group input {
-  border: none !important;
-  box-shadow: none !important;
+  border: none;
   flex: 1;
-  direction: ltr;
-  text-align: left;
   padding: 15px 18px;
+  font-size: 15px;
+  outline: none;
 }
 
 /* =========================================
