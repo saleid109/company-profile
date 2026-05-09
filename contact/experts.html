@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="../assets/css/variables.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/mobile.css" />
-    <link rel="stylesheet" href="../contact/expert.css" />
+  <link rel="stylesheet" href="../contact/expert.css" />
 
 
   <!-- مكتبة السلايدر Swiper -->
@@ -237,7 +237,7 @@
       <section class="form-section" aria-labelledby="join-heading">
 
         <p class="subtitle">
-احصل على استشارة متخصصة تساعدك على اتخاذ القرار الصحيح وتجاوز التحديات التقنية بثقة.
+          احصل على استشارة متخصصة تساعدك على اتخاذ القرار الصحيح وتجاوز التحديات التقنية بثقة.
 
 
         </p>
@@ -259,10 +259,6 @@
             <input type="email" id="email" name="email" placeholder="you@company.com" required />
           </div>
 
-          <div class="form-group mb-4">
-            <label for="specialty">التخصص او المجال المهني</label>
-            <input type="text" id="specialty" name="specialty" placeholder="مثال: برمجة" required />
-          </div>
 
           <div class="form-group mb-4">
             <label for="phone">رقم التواصل</label>
@@ -274,10 +270,33 @@
               </select>
             </div>
           </div>
+          <!-- Consultation field -->
+          <div class="form-group select-wrap" style="margin-bottom:16px;">
+            <label>مجال الاستشارة</label>
+            <select class="form-control select">
+              <option value="" disabled selected>Select</option>
+              <option>تقنية المعلومات</option>
+              <option>الأمن السيبراني</option>
+              <option>التحول الرقمي</option>
+              <option>استشارات الأعمال</option>
+            </select>
+          </div>
 
-          <div class="form-group mb-4">
-            <label for="bio">نبذة عنك</label>
-            <textarea id="bio" name="bio" placeholder="اترك رسالتك هنا.."></textarea>
+          <!-- Preferred time -->
+          <div class="form-group select-wrap" style="margin-bottom:16px;">
+            <label>الوقت المناسب</label>
+            <select class="form-control select">
+              <option value="" disabled selected>Select</option>
+              <option>صباحاً (8 - 12)</option>
+              <option>ظهراً (12 - 4)</option>
+              <option>مساءً (4 - 10)</option>
+            </select>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group" style="margin-bottom:16px;">
+            <label>وصف مختصر</label>
+            <textarea class="form-control" placeholder="اترك رسالتك هنا..."></textarea>
           </div>
 
           <div class="upload-container">
