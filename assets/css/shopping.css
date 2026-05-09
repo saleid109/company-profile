@@ -131,7 +131,7 @@
 
 
 /* ══════════════════════════════════════════════
-   قائمة المنتجات
+    قائمة المنتجات
 ══════════════════════════════════════════════ */
 .cart-items-list {
   display: flex;
@@ -152,7 +152,7 @@
 .cart-item {
   background: var(--color-white);
   border-radius: 16px;
-  border: 1.5px solid var(--color-background);
+  border: 1.5px solid #d1d5db;
   padding: 20px;
   display: grid;
   grid-template-columns: 90px 1fr auto 36px;
@@ -239,7 +239,7 @@
 .qty-control {
   display: flex;
   align-items: center;
-  border: 1.5px solid var(--color-background);
+  border: 1.5px solid #d1d5db;
   border-radius: 8px;
   overflow: hidden;
   background: var(--color-white);
@@ -369,7 +369,7 @@
 .order-summary {
   background: var(--color-white);
   border-radius: 16px;
-  border: 1.5px solid var(--color-background);
+  border: 1.5px solid #d1d5db;
   padding: 28px 24px;
   box-shadow: 0 2px 12px rgba(0, 1, 91, 0.07);
   position: sticky;
