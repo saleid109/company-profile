@@ -71,16 +71,6 @@
   color: var(--text);
 }
 
-.form-group select {
-  width: 100%;
-  border: 1px solid #dddddd;
-  border-radius: 10px;
-  background: #fff;
-  font-family: var(--font-main);
-  cursor: pointer;
-  appearance: none;
-  box-shadow: ;
-}
 
 .form-group input,
 .form-group textarea,
@@ -136,6 +126,8 @@
 
 .phone-group select {
   border: none;
+  width: auto;
+  flex: 0 0 auto;
   border-inline-start: 1px solid #dddddd;
   background: #f8f8f8;
   padding: 15px 16px;
@@ -338,7 +330,7 @@
 }
 
 /* =========================================
-   MOBILE
+    MOBILE
 ========================================= */
 
 @media (max-width: 767px) {
@@ -347,7 +339,7 @@
     padding: 50px 16px;
   }
 
-  .main-grid {
+  .experts-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
