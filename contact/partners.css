@@ -143,6 +143,42 @@
 }
 
 /* =========================================
+    SELECT STYLING
+========================================= */
+
+.form-group select,
+.select {
+  width: 100%;
+  padding: 15px 18px;
+  font-size: 15px;
+  font-family: var(--font-main);
+  color: var(--color-gray-text);
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  direction: rtl;
+
+  /* إخفاء السهم الافتراضي */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* سهم مخصص */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 16px center;
+}
+
+.form-group select:focus,
+.select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(255, 204, 53, 0.12);
+}
+
+/* =========================================
     FILE UPLOAD
 ========================================= */
 
