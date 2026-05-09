@@ -6,7 +6,7 @@
   padding: 80px 40px;
 }
   
-.main-grid {
+.experts-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;/* عمود للمعلومات وعمود للنموذج */
   gap: 70px;
@@ -15,7 +15,7 @@
   margin: 0 auto;
 }
 
-.main-grid .join-header {
+.experts-grid .experts-header {
   grid-column: 1 / -1; /* يمتد على كل العرض */
 }
 
@@ -29,7 +29,7 @@
   width: 100%;
 }
 
-#join-heading {
+#experts-heading {
   font-size: 56px;
   color: var(--color-primary);
   margin-bottom: 12px;
