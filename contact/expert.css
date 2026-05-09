@@ -36,7 +36,7 @@
   line-height: 1.2;
 }
 
-.subtitle {
+.experts-subtitle {
   font-size: 24px;
   color: var(--color-gray-text);
   line-height: 1.8;
@@ -48,7 +48,7 @@
     FORM STYLES
 ========================================= */
 
-#joinForm {
+#expertsForm {
   width: 100%;
 }
 
