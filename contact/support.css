@@ -6,7 +6,7 @@
     padding: 100px 0;
     background-color: var(--color-background);
     overflow: hidden;
-    
+
 }
 
 .container-support {
@@ -105,31 +105,49 @@
 /* ===================================
 Phone Input
 =================================== */
+/* =========================================
+    PHONE GROUP - RTL FIX
+========================================= */
 
-.phone-input-wrapper {
-    position: relative;
+.phone-group {
+    display: flex;
+    flex-direction: row-reverse;
+    /* RTL: الكود على اليمين */
+    align-items: stretch;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    transition: 0.3s;
+    width: 100%;
 }
 
-.phone-input-wrapper input {
-    padding-inline-start: 90px;
+.phone-group select {
+    width: 110px;
+    border: none;
+    border-right: none;
+    border-left: 1px solid #dddddd;
+    /* فاصل بين الكود والرقم */
+    background: #f8f8f8;
+    padding: 0 14px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    flex-shrink: 0;
+    direction: ltr;
+    text-align: center;
+    outline: none;
+}
+
+.phone-group input {
+    border: none;
+    flex: 1;
+    padding: 15px 18px;
+    font-size: 15px;
+    outline: none;
     direction: ltr;
     text-align: left;
-    font-family: var(--font-main);
-}
-
-.country-code {
-    position: absolute;
-    top: 50%;
-    inset-inline-start: 18px;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--color-secondary);
-    font-family: var(--font-main);
-    font-weight: var(--weight-bold);
-    border-inline-end: 1px solid #e5e5e5;
-    padding-inline-end: 12px;
+    background: #fff;
 }
 
 /* ===================================
@@ -227,7 +245,7 @@ a:focus-visible {
     color: var(--color-primary);
 }
 
-.address p{
+.address p {
     line-height: 1.8;
     font-family: var(--font-main);
     color: var(--color-secondary);
