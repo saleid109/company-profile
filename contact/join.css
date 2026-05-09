@@ -15,7 +15,7 @@
   margin: 0 auto;
 }
 
-.main-grid .support-header {
+.main-grid .join-header {
   grid-column: 1 / -1; /* يمتد على كل العرض */
 }
 
