@@ -97,7 +97,7 @@
 .cart-empty {
   background: var(--color-white);
   border-radius: 16px;
-  border: 2px dashed var(--color-primary);
+  border: 2px dashed var(--color-bg-light);
   padding: 70px 32px;
   text-align: center;
 }
