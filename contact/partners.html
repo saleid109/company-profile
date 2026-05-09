@@ -236,7 +236,8 @@
 
       <section class="form-section" aria-labelledby="partners-heading">
 
-        <p class="partners-subtitle">نؤمن بالشراكات الاستراتيجية التي تصنع أثرًا حقيقيًا. شاركنا تفاصيلك ولنبدأ معًا رحلة نجاح جديدة.
+        <p class="partners-subtitle">نؤمن بالشراكات الاستراتيجية التي تصنع أثرًا حقيقيًا. شاركنا تفاصيلك ولنبدأ معًا
+          رحلة نجاح جديدة.
 
 
         </p>
@@ -280,12 +281,12 @@
           <!-- Partnership Type -->
           <div class="form-group select-wrap" ">
             <label>نوع الشراكة</label>
-            <select class="form-control select">
-              <option value="" disabled selected>Select</option>
-              <option>شراكة استراتيجية</option>
-              <option>شراكة تقنية</option>
-              <option>شراكة تسويقية</option>
-              <option>شراكة أعمال</option>
+            <select class=" form-control select">
+            <option value="" disabled selected>Select</option>
+            <option>شراكة استراتيجية</option>
+            <option>شراكة تقنية</option>
+            <option>شراكة تسويقية</option>
+            <option>شراكة أعمال</option>
             </select>
           </div>
 
@@ -295,7 +296,7 @@
             <textarea class="form-control" placeholder="اترك رسالتك هنا..."></textarea>
           </div>
 
-      <!-- Company Description -->
+          <!-- Company Description -->
 
           <div class="upload-container">
             <label class="cv-upload-wrapper">
@@ -307,8 +308,7 @@
             </label>
             <p class="cv-hint">سيتم مراجعة طلبك والتواصل معك في حال وجود فرصة مناسبة</p>
           </div>
-
-          <button type="submit" class="submit-btn">ارسال</button>
+          <button type="button" class="submit-btn" onclick="handleSubmit()">ارسال</button>
         </form>
       </section>
 
@@ -567,19 +567,19 @@
 
 
   <!-- ====== نافذة الشكر ====== -->
-<div class="thank-you-overlay" id="thankYouOverlay">
-  <div class="thank-you-card">
-    <div class="thank-you-icon">
-      <i class="fas fa-check"></i>
-    </div>
-    <h2 class="thank-you-title">شكرًا لتواصلك معنا</h2>
-    <p class="thank-you-desc">سيقوم فريق نقطة صعود بمراجعة طلبك والتواصل معك خلال 24 ساعة عمل.</p>
-    <div class="thank-you-actions">
-      <button class="ty-btn ty-btn-outline" onclick="closeThankYou()">رجوع</button>
-      <a href="../index.html" class="ty-btn ty-btn-primary">العودة للصفحة الرئيسية</a>
+  <div class="thank-you-overlay" id="thankYouOverlay">
+    <div class="thank-you-card">
+      <div class="thank-you-icon">
+        <i class="fas fa-check"></i>
+      </div>
+      <h2 class="thank-you-title">شكرًا لتواصلك معنا</h2>
+      <p class="thank-you-desc">سيقوم فريق نقطة صعود بمراجعة طلبك والتواصل معك خلال 24 ساعة عمل.</p>
+      <div class="thank-you-actions">
+        <button class="ty-btn ty-btn-outline" onclick="closeThankYou()">رجوع</button>
+        <a href="../index.html" class="ty-btn ty-btn-primary">العودة للصفحة الرئيسية</a>
+      </div>
     </div>
   </div>
-</div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../assets/js/main.js"></script>
