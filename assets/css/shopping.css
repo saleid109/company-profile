@@ -585,6 +585,13 @@
 ══════════════════════════════════════════════ */
 @media (max-width: 767px) {
 
+  .nav-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
   .cart-page-wrapper {
     padding: 24px 16px 70px;
   }
