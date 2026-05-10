@@ -204,7 +204,7 @@
   <div class="top-floating-container">
     <a href="../../contact/experts.html" class="floating-consult-btn">
       <i class="fas fa-comments" aria-hidden="true"></i>
-      <span>  استشارة</span>
+      <span> استشارة</span>
     </a>
   </div>
 
@@ -457,37 +457,40 @@
   <!-- السكريبتات -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../assets/js/main.js"></script>
-  
+
   <script>
-const screensSwiper = new Swiper('.screens-swiper', {
-  spaceBetween: 30,
-  loop: true,
+    const screensSwiper = new Swiper('.screens-swiper', {
+      slidesPerView: 'auto',
+      centeredSlides: false,
+      spaceBetween: 24,
+      loop: true,
 
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
 
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
 
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
+      breakpoints: {
+        0: {
+          spaceBetween: 16,
+        },
 
-    768: {
-      slidesPerView: 2,
-    },
+        768: {
+          spaceBetween: 20,
+        },
 
-    1024: {
-      slidesPerView: 3,
-    }
-  }
-});
-</script>
+        1024: {
+          spaceBetween: 24,
+        }
+      }
+    });
+
+  </script>
 
 </body>
 
