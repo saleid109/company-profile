@@ -431,6 +431,17 @@
 
 @media (max-width: 767px) {
 
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .mobile-menu-icon {
+        order: -1;
+    }
+
+
 
     .main-layout {
         flex-direction: column !important;
