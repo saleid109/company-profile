@@ -422,6 +422,12 @@
 }
 @media (max-width: 767px) {
 
+    .nav-right {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
 
     .main-layout {
         flex-direction: column !important;
