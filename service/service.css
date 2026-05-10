@@ -2,7 +2,8 @@
 .hero-inner {
     position: relative;
     width: 100%;
-    height: 300px; /* أو حسب التصميم */
+    height: 300px;
+    /* أو حسب التصميم */
     overflow: hidden;
 }
 
@@ -99,6 +100,7 @@
     background: var(--color-secondary);
     color: var(--color-white);
 }
+
 /* =========================================
     Sidebar & Filters
    ========================================= */
@@ -112,7 +114,8 @@
     background: var(--color-white);
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* إضافة ظل بسيط لجمالية التصميم */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* إضافة ظل بسيط لجمالية التصميم */
 }
 
 .sidebar-header {
@@ -191,7 +194,8 @@
 }
 
 .filter-content.open {
-    max-height: 500px; /* زيادة القيمة لتستوعب المحتوى */
+    max-height: 500px;
+    /* زيادة القيمة لتستوعب المحتوى */
 }
 
 .chevron {
@@ -214,28 +218,32 @@
 
 .stars-interactive {
     display: flex;
-    flex-direction: row-reverse; /* لضمان منطق تلوين النجوم من اليمين لليسار */
+    flex-direction: row-reverse;
+    /* لضمان منطق تلوين النجوم من اليمين لليسار */
     justify-content: center;
     gap: 5px;
     margin-bottom: 8px;
 }
 
 .stars-interactive input {
-    display: none; /* إخفاء الدوائر الأصلية */
+    display: none;
+    /* إخفاء الدوائر الأصلية */
 }
 
 .stars-interactive label {
     font-size: 28px;
-    color: #e0e0e0; /* لون النجوم قبل الاختيار */
+    color: #e0e0e0;
+    /* لون النجوم قبل الاختيار */
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 }
 
 /* تلوين النجوم عند الاختيار (Checked) أو عند تمرير الماوس (Hover) */
-.stars-interactive input:checked ~ label,
+.stars-interactive input:checked~label,
 .stars-interactive label:hover,
-.stars-interactive label:hover ~ label {
-    color: #FFB800; /* لون النجوم عند التفاعل */
+.stars-interactive label:hover~label {
+    color: #FFB800;
+    /* لون النجوم عند التفاعل */
 }
 
 .rating-hint-text {
@@ -420,13 +428,8 @@
 .hidden {
     display: none !important;
 }
-@media (max-width: 767px) {
 
-    .nav-right {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    }
+@media (max-width: 767px) {
 
 
     .main-layout {
@@ -439,7 +442,8 @@
     .sidebar-side {
         width: 100% !important;
         position: static !important;
-        order: -1; /* يظهر أول */
+        order: -1;
+        /* يظهر أول */
     }
 
     .sidebar {
