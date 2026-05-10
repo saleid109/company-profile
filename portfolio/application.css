@@ -131,6 +131,8 @@
     width: 100%;
     padding: 10px 0 40px !important;
     position: relative;
+    overflow: visible !important; /* ← يخلي الأزرار تظهر */
+    padding: 10px 60px 40px !important; /* ← مساحة للأزرار */
 }
 
 .screens-swiper .swiper-slide {
