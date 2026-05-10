@@ -114,6 +114,7 @@
 .project-screens {
     padding: 60px 0;
     background: #f9f9f9;
+    overflow: hidden;/* ← يخلي السلايدر يمدد للخارج ويظهر الأزرار */
 }
 
 .project-screens h2,
