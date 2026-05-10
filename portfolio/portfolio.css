@@ -2,7 +2,7 @@
 .hero-inner {
     position: relative;
     width: 100%;
-    height: 300px; 
+    height: 300px;
     overflow: hidden;
 }
 
@@ -98,6 +98,7 @@
     background: var(--color-secondary);
     color: var(--color-white);
 }
+
 /* =========================================
     Sidebar & Filters
    ========================================= */
@@ -111,7 +112,7 @@
     background: var(--color-white);
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .sidebar-header {
@@ -190,7 +191,8 @@
 }
 
 .filter-content.open {
-    max-height: 500px; /* زيادة القيمة لتستوعب المحتوى */
+    max-height: 500px;
+    /* زيادة القيمة لتستوعب المحتوى */
 }
 
 .chevron {
@@ -213,28 +215,32 @@
 
 .stars-interactive {
     display: flex;
-    flex-direction: row-reverse; /* لضمان منطق تلوين النجوم من اليمين لليسار */
+    flex-direction: row-reverse;
+    /* لضمان منطق تلوين النجوم من اليمين لليسار */
     justify-content: center;
     gap: 5px;
     margin-bottom: 8px;
 }
 
 .stars-interactive input {
-    display: none; /* إخفاء الدوائر الأصلية */
+    display: none;
+    /* إخفاء الدوائر الأصلية */
 }
 
 .stars-interactive label {
     font-size: 28px;
-    color: #e0e0e0; /* لون النجوم قبل الاختيار */
+    color: #e0e0e0;
+    /* لون النجوم قبل الاختيار */
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 }
 
 /* تلوين النجوم عند الاختيار (Checked) أو عند تمرير الماوس (Hover) */
-.stars-interactive input:checked ~ label,
+.stars-interactive input:checked~label,
 .stars-interactive label:hover,
-.stars-interactive label:hover ~ label {
-    color: #FFB800; /* لون النجوم عند التفاعل */
+.stars-interactive label:hover~label {
+    color: #FFB800;
+    /* لون النجوم عند التفاعل */
 }
 
 .rating-hint-text {
@@ -271,7 +277,7 @@
     border-radius: 20px;
     background: #FFF;
     border: none;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
     transition: var(--transition);
 }
 
@@ -296,6 +302,7 @@
     object-fit: contain;
     background: #F5F5F5;
 }
+
 .card-body {
     display: flex;
     flex-direction: column;
@@ -323,7 +330,7 @@
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     justify-content: space-between;
     gap: 8px;
 }
@@ -409,7 +416,22 @@
 .hidden {
     display: none !important;
 }
+
 @media (max-width: 767px) {
+
+    .nav-right {
+        display: flex;
+        flex-direction: row-reverse;
+        /* يعكس الترتيب */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .mobile-menu-icon {
+        order: unset;
+    }
+
     .main-layout {
         flex-direction: column !important;
         gap: 20px;
@@ -420,7 +442,8 @@
     .sidebar-side {
         width: 100% !important;
         position: static !important;
-        order: -1; /* يظهر أول */
+        order: -1;
+        /* يظهر أول */
     }
 
     .sidebar {
