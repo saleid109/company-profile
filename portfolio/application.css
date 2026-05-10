@@ -132,6 +132,7 @@
     height: 296px;
     margin: 0 auto;
     position: relative;
+    padding: 0 70px; /* مساحة لأزرار التنقل */
 }
 
 .screens-swiper .swiper-slide {
@@ -164,12 +165,12 @@
 }
 
 .swiper-button-next {
-    right: 10px !important;
+    right: 0px !important;
     left: auto !important;
 }
 
 .swiper-button-prev {
-    left: 10px !important;
+    left: 0px !important;
     right: auto !important;
 }
 
