@@ -251,34 +251,39 @@
     </section>
 
     <!-- ========== القسم 2: شاشات المشروع (Swiper) ========== -->
-    <section class="project-screens" aria-labelledby="screens-title">
-      <div class="container">
-        <h2 id="screens-title">شاشات المشروع</h2>
+  <section class="project-screens" aria-labelledby="screens-title">
+  <div class="container">
+    <h2 id="screens-title">شاشات المشروع</h2>
 
-        <!--  Accessibility: aria-label للسلايدر -->
-        <div class="swiper screens-swiper" role="region" aria-label="معرض شاشات المشروع">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="../public/images/Frame37742.png" alt="شاشة الرئيسية" loading="lazy">
-            </div>
-            <div class="swiper-slide">
-              <img src="../public/images/Frame37742.png" alt="شاشة قائمة الطعام" loading="lazy">
-            </div>
-            <div class="swiper-slide">
-              <img src="../public/images/Frame37742.png" alt="شاشة التبرع" loading="lazy">
-            </div>
-            <div class="swiper-slide">
-              <img src="../public/images/Frame37742.png" alt="شاشة الملف الشخصي" loading="lazy">
-            </div>
+    <div class="swiper-outer-wrapper">
+      <button class="custom-prev-btn" aria-label="السابق">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <div class="swiper screens-swiper" role="region" aria-label="معرض شاشات المشروع">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="../public/images/Frame37742.png" alt="شاشة الرئيسية" loading="lazy">
           </div>
-
-
-          <div class="swiper-pagination"></div>
-          <button class="swiper-button-next" aria-label="الشريحة التالية"></button>
-          <button class="swiper-button-prev" aria-label="الشريحة السابقة"></button>
+          <div class="swiper-slide">
+            <img src="../public/images/Frame37742.png" alt="شاشة قائمة الطعام" loading="lazy">
+          </div>
+          <div class="swiper-slide">
+            <img src="../public/images/Frame37742.png" alt="شاشة التبرع" loading="lazy">
+          </div>
+          <div class="swiper-slide">
+            <img src="../public/images/Frame37742.png" alt="شاشة الملف الشخصي" loading="lazy">
+          </div>
         </div>
+        <div class="swiper-pagination"></div>
       </div>
-    </section>
+
+      <button class="custom-next-btn" aria-label="التالي">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+    </div>
+  </div>
+</section>
 
     <!-- ========== القسم 3: آراء العملاء ========== -->
     <section class="client-reviews" aria-labelledby="reviews-title">
