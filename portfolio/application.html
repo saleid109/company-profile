@@ -457,31 +457,37 @@
   <!-- السكريبتات -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../assets/js/main.js"></script>
+  
   <script>
-  const screensSwiper = new Swiper('.screens-swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 40, // gap: 40px
-    loop: true,
-    centeredSlides: false,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+const screensSwiper = new Swiper('.screens-swiper', {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  loop: true,
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
     },
 
-    a11y: {
-      prevSlideMessage: 'الشريحة السابقة',
-      nextSlideMessage: 'الشريحة التالية',
+    768: {
+      slidesPerView: 2,
     },
-    breakpoints: {
-      480:  { slidesPerView: 1, spaceBetween: 20 },
-      768:  { slidesPerView: 2, spaceBetween: 30 },
-      1024: { slidesPerView: 3, spaceBetween: 30 },
+
+    1024: {
+      slidesPerView: 3,
     }
-  });
+  }
+});
 </script>
 
 </body>
