@@ -136,17 +136,18 @@
 }
 
 .screens-swiper .swiper-slide {
+    width: auto !important /* ← يخلي العرض حسب المحتوى */;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .screens-swiper .swiper-slide img {
-    width: 100%;
-    max-width: 255px;
+    width: 260px;
     height: auto;
     object-fit: contain;
     border-radius: 16px;
+    display: block ;
 }
 
 /* أزرار التنقل */
