@@ -422,15 +422,22 @@
     .nav-right {
         display: flex;
         flex-direction: row-reverse;
-        /* يعكس الترتيب */
+        /* الترتيب الطبيعي */
         justify-content: space-between;
         align-items: center;
         width: 100%;
     }
 
-    .mobile-menu-icon {
-        order: unset;
+    .logo {
+        order: 1;
+        /* يمين */
     }
+
+    .mobile-menu-icon {
+        order: -1;
+        /* يسار */
+    }
+
 
     .main-layout {
         flex-direction: column !important;
