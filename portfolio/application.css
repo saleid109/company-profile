@@ -157,9 +157,10 @@
     border: 1.5px solid #ddd;
     border-radius: 50%;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    top: 50% !important;
+    top: 45% !important;
     transform: translateY(-50%);
     color: var(--color-secondary) !important;
+    position: relative;
 }
 
 .swiper-button-next {
