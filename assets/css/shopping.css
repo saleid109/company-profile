@@ -585,6 +585,16 @@
 ══════════════════════════════════════════════ */
 @media (max-width: 767px) {
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mobile-menu-icon {
+    order: -1;
+  }
+
   .nav-wrapper {
     display: flex !important;
     flex-direction: row !important;
