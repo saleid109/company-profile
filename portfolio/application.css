@@ -123,65 +123,45 @@
     color: var(--color-text);
     text-align: right;
     margin-bottom: 32px;
+    padding-right: 30px; /* مساحة ليتماشى مع الحشو الداخلي للسلايدر */
 }
 
 /* السلايدر */
 .screens-swiper {
     width: 100%;
-    max-width: 1376px;
-    height: 296px;
-    margin: 0 auto;
+    padding: 10px 0 40px !important;
     position: relative;
-    padding: 0 70px; /* مساحة لأزرار التنقل */
 }
 
 .screens-swiper .swiper-slide {
-    width: auto !important /* ← يخلي العرض حسب المحتوى */;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: auto !important;
 }
 
 .screens-swiper .swiper-slide img {
-    width: 260px;
-    height: auto;
+    width: 255px;
+    height: 264px;
     object-fit: contain;
+    display: block;
     border-radius: 16px;
-    display: block ;
 }
 
-/* أزرار التنقل */
 .swiper-button-next,
 .swiper-button-prev {
-    width: 58px !important;
-    height: 58px !important;
-    background: var(--color-white);
-    border: 1.5px solid #ddd;
+    width: 50px !important;
+    height: 50px !important;
+    background: #fff;
     border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    top: 45% !important;
-    transform: translateY(-50%);
+    border: 1.5px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     color: var(--color-secondary) !important;
-    position: relative;
-}
-
-.swiper-button-next {
-    right: 0px !important;
-    left: auto !important;
-}
-
-.swiper-button-prev {
-    left: 0px !important;
-    right: auto !important;
+    top: 45% !important;
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 16px !important;
+    font-size: 14px !important;
     font-weight: 900;
 }
-
-
 /* =========================================
     القسم 3: آراء العملاء
    ========================================= */
@@ -221,7 +201,6 @@
     align-items: center;
     gap: 14px;
     margin-bottom: 16px;
-    /* ✅ RTL: الصورة على اليمين والاسم على اليسار */
     flex-direction: row-reverse;
     justify-content: flex-end;
 }

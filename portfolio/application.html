@@ -459,36 +459,40 @@
   <script src="../assets/js/main.js"></script>
 
   <script>
-    const screensSwiper = new Swiper('.screens-swiper', {
-      slidesPerView: 'auto',
-      centeredSlides: false,
-      spaceBetween: 24,
-      loop: true,
+ const screensSwiper = new Swiper('.screens-swiper', {
 
-      navigation: {
+    slidesPerView: 'auto',
+    centeredSlides: false,
+    spaceBetween: 24,
+    loop: true,
+
+    navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-      },
+    },
 
-      pagination: {
+    pagination: {
         el: '.swiper-pagination',
         clickable: true,
-      },
+    },
 
-      breakpoints: {
+    breakpoints: {
+
         0: {
-          spaceBetween: 16,
+            spaceBetween: 16,
         },
 
         768: {
-          spaceBetween: 20,
+            spaceBetween: 20,
         },
 
         1024: {
-          spaceBetween: 24,
+            spaceBetween: 24,
         }
-      }
-    });
+
+    }
+
+});
 
   </script>
 
