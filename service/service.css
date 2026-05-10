@@ -422,12 +422,7 @@
 }
 @media (max-width: 767px) {
 
-    .nav-wrapper {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-}
+
     .main-layout {
         flex-direction: column !important;
         gap: 20px;
@@ -462,6 +457,12 @@
     .title-about h1 {
         font-size: 2rem;
     }
+
+    .nav-wrapper {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    padding: 0 15px !important;
+}
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
