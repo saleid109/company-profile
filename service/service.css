@@ -421,6 +421,13 @@
     display: none !important;
 }
 @media (max-width: 767px) {
+
+    .nav-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
     .main-layout {
         flex-direction: column !important;
         gap: 20px;
