@@ -461,7 +461,7 @@
   const screensSwiper = new Swiper('.screens-swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
-    loop: false, /* ← غيّر لـ false مع 4 شرائح فقط */
+    loop: true, /* ← غيّر لـ false مع 4 شرائح فقط */
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -475,9 +475,9 @@
       nextSlideMessage: 'الشريحة التالية',
     },
     breakpoints: {
-      480:  { slidesPerView: 2, spaceBetween: 20 },
-      768:  { slidesPerView: 3, spaceBetween: 30 },
-      1024: { slidesPerView: 4, spaceBetween: 30 },
+      480:  { slidesPerView: 1, spaceBetween: 20 },
+      768:  { slidesPerView: 2, spaceBetween: 30 },
+      1024: { slidesPerView: 3, spaceBetween: 30 },
     }
   });
 </script>
