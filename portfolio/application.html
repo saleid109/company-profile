@@ -464,20 +464,33 @@
   <script src="../assets/js/main.js"></script>
 
   <script>
-  const screensSwiper = new Swiper('.screens-swiper', {
-    slidesPerView: 'auto',
+const screensSwiper = new Swiper('.screens-swiper', {
+
+    slidesPerView: 1,
     spaceBetween: 24,
     loop: true,
-    centeredSlides: false, // ← غير من true لـ false
     grabCursor: true,
+
     navigation: {
         nextEl: '.custom-next-btn',
         prevEl: '.custom-prev-btn',
     },
+
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
     },
+
+    breakpoints: {
+        768: {
+            slidesPerView: 2
+        },
+
+        1024: {
+            slidesPerView: 3
+        }
+    }
+
 });
 
   </script>

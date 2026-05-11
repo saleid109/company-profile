@@ -114,7 +114,6 @@
 .project-screens {
     padding: 60px 0;
     background: #f9f9f9;
-    overflow: visible;
 }
 
 .project-screens .container {
@@ -176,10 +175,8 @@
 }
 
 .screens-swiper .swiper-slide {
-    width: 300px;
     display: flex;
     justify-content: center;
-    flex-shrink: 0;
 
 }
 
