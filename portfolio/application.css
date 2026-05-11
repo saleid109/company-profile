@@ -120,6 +120,12 @@
 .project-screens .container {
     overflow: visible !important;
 }
+
+
+.swiper {
+    min-width: 0;
+}
+
 .swiper-outer-wrapper {
     position: relative;
     max-width: 1200px;
@@ -173,6 +179,8 @@
     width: 300px;
     display: flex;
     justify-content: center;
+    flex-shrink: 0;
+
 }
 
 .screens-swiper .swiper-slide img {
