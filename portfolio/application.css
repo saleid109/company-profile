@@ -126,14 +126,44 @@
     margin-bottom: 32px;
     padding-right: 30px; /* مساحة ليتماشى مع الحشو الداخلي للسلايدر */
 }
+.swiper-outer-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.custom-prev-btn,
+.custom-next-btn {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    border: 1.5px solid #ddd;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    color: var(--color-secondary);
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.custom-prev-btn:hover,
+.custom-next-btn:hover {
+    background: var(--color-secondary);
+    color: #fff;
+    border-color: var(--color-secondary);
+}
+
 
 /* السلايدر */
 .screens-swiper {
-    width: 100%;
-    padding: 10px 0 40px !important;
-    position: relative;
-    overflow: visible !important; /* ← يخلي الأزرار تظهر */
-    padding: 10px 60px 40px !important; /* ← مساحة للأزرار */
+    flex: 1;
+    overflow: hidden;
+    padding-bottom: 40px !important;
 }
 
 .screens-swiper .swiper-slide {
