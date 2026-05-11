@@ -126,16 +126,37 @@
     margin-bottom: 32px;
     padding-right: 30px; /* مساحة ليتماشى مع الحشو الداخلي للسلايدر */
 }
-.swiper-outer-wrapper {
-    position: relative;
-    padding: 0 50px; /* مساحة للأسهم على الجوانب */
+/* =========================================
+    القسم 2: شاشات المشروع (نسخة نظيفة بدون تكرار)
+   ========================================= */
+.project-screens {
+    padding: 60px 0;
+    background: #f9f9f9;
+    overflow: hidden;
 }
 
+.project-screens h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-text);
+    text-align: right;
+    margin-bottom: 32px;
+}
+
+/* الحاوية الخارجية */
+.swiper-outer-wrapper {
+    position: relative;
+    padding: 0 60px; /* مساحة كافية للأسهم */
+}
+
+/* تنسيق موحد للأسهم */
 .custom-prev-btn,
 .custom-next-btn {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     border: 1.5px solid #ddd;
     background: #fff;
@@ -146,8 +167,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s;
-    flex-shrink: 0;
+    z-index: 10;
+    transition: all 0.3s ease;
 }
 
 .custom-prev-btn:hover,
@@ -157,57 +178,33 @@
     border-color: var(--color-secondary);
 }
 
+/* تحديد المواقع بدقة للـ RTL */
+.custom-prev-btn {
+    right: 5px; /* السهم الأيمن (السابق في العربية) */
+}
+
+.custom-next-btn {
+    left: 5px; /* السهم الأيسر (التالي في العربية) */
+}
 
 /* السلايدر */
 .screens-swiper {
-    flex: 1;
-    overflow: hidden;
+    width: 100%;
     padding-bottom: 40px !important;
 }
 
 .screens-swiper .swiper-slide {
-    width: auto !important;
-}
-/* تنسيق الأسهم المخصصة */
-.custom-prev-btn, .custom-next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #fff;
-    border: 1px solid #ddd;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-    color: #333;
+    width: 280px !important; /* حدد عرض الشريحة ليظهر السلايدر بشكل صحيح */
 }
 
-.custom-prev-btn:hover, .custom-next-btn:hover {
-    background: #f0f0f0;
-    color: #000;
-}
-
-/* تحديد موقع السهم الأيمن والأيسر */
-.custom-prev-btn {
-    right: 0;
-}
-
-.custom-next-btn {
-    left: 0;
-}
-
-/* تأكد من أن الصور داخل السلايدر لها حجم مناسب */
 .screens-swiper .swiper-slide img {
     width: 100%;
     height: auto;
     border-radius: 15px;
     display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
+
 
 /* =========================================
     القسم 3: آراء العملاء
