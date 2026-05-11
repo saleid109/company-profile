@@ -114,6 +114,7 @@
 .project-screens {
     padding: 60px 0;
     background: #f9f9f9;
+    overflow: hidden;
 }
 
 .project-screens .container {
