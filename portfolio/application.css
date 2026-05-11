@@ -112,102 +112,73 @@
     القسم 2: شاشات المشروع
    ========================================= */
 
-/* =========================================
-    القسم 2: شاشات المشروع - النسخة المصلحة
-   ========================================= */
 .project-screens {
-    padding: 80px 0;
+    padding: 60px 0;
     background: #f9f9f9;
-    overflow: visible; /* تغيير إلى visible لضمان ظهور الأسهم */
 }
 
-.project-screens h2 {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--color-text, #333);
-    text-align: right;
-    margin-bottom: 40px;
-    padding-right: 20px;
-}
-
-/* الحاوية الخارجية للسلايدر */
+/* الحاوية الخارجية تضمن عدم خروج الأسهم عن الشاشة في الجوال */
 .swiper-outer-wrapper {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 70px; /* مساحة أكبر للأسهم */
+    padding: 0 60px; 
 }
 
-/* تنسيق الأسهم (تأكد من وجود FontAwesome) */
+/* الأزرار بشكلها الجديد في الصورة */
 .custom-prev-btn,
 .custom-next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+    background: #fff !important;
     border-radius: 50%;
-    border: 2px solid #eee;
-    background: #ffffff !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    color: #222 !important;
-    cursor: pointer;
-    display: flex !important; /* إجبار الظهور */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 999; /* رقم عالي جداً لتظهر فوق الصور */
+    z-index: 10;
+    cursor: pointer;
+    border: 1px solid #eee;
     transition: all 0.3s ease;
 }
 
-.custom-prev-btn:hover,
-.custom-next-btn:hover {
+.custom-prev-btn:hover, .custom-next-btn:hover {
     background: var(--color-secondary, #001f3f) !important;
     color: #fff !important;
-    border-color: var(--color-secondary, #001f3f);
 }
 
-/* مواقع الأسهم - RTL */
-.custom-prev-btn {
-    right: 10px; /* سهم اليمين */
-}
+/* ضبط المواقع للـ RTL */
+.custom-prev-btn { right: 10px; } /* سهم اليمين > */
+.custom-next-btn { left: 10px; }  /* سهم اليسار < */
 
-.custom-next-btn {
-    left: 10px; /* سهم اليسار */
-}
-
-/* حجم الأيقونة داخل السهم */
-.custom-prev-btn i, .custom-next-btn i {
-    font-size: 18px;
-    pointer-events: none;
-}
-
-/* السلايدر والصور */
+/* السلايدر */
 .screens-swiper {
     width: 100%;
-    overflow: hidden; /* السلايدر نفسه يجب أن يكون مخفياً */
+    padding-bottom: 50px !important; /* مساحة للنقاط */
 }
 
 .screens-swiper .swiper-slide {
-    width: 280px !important; /* عرض الهاتف */
-    transition: transform 0.3s;
+    width: 300px !important; /* تكبير بسيط للصور لتملأ الفراغ */
+    display: flex;
+    justify-content: center;
 }
 
 .screens-swiper .swiper-slide img {
-    width: 100%;
+    width: 90%; /* ترك مسافة بسيطة بين الصور */
     height: auto;
     border-radius: 20px;
-    display: block;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-/* نقاط التنقل السفلية */
-.swiper-pagination {
-    bottom: 0 !important;
-}
+/* تنسيق النقاط (Pagination) */
 .swiper-pagination-bullet-active {
     background: var(--color-secondary, #001f3f) !important;
+    width: 20px;
+    border-radius: 5px;
 }
-
 
 /* =========================================
     القسم 3: آراء العملاء
