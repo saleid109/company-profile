@@ -127,9 +127,8 @@
     padding-right: 30px; /* مساحة ليتماشى مع الحشو الداخلي للسلايدر */
 }
 .swiper-outer-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    position: relative;
+    padding: 0 50px; /* مساحة للأسهم على الجوانب */
 }
 
 .custom-prev-btn,
