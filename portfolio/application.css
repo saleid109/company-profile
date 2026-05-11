@@ -51,7 +51,8 @@
 
 .project-hero-layout {
     display: flex;
-    align-items: stretch; /* ← يخلي العمودين بنفس الارتفاع */
+    align-items: stretch;
+    /* ← يخلي العمودين بنفس الارتفاع */
     gap: 0;
     flex-direction: row-reverse;
     min-height: 350px;
@@ -72,20 +73,21 @@
 .project-info h1 {
     font-size: 36px;
     font-weight: 800;
-    color: var(--color-white); 
+    color: var(--color-white);
     margin-bottom: 20px;
 }
 
 .project-description {
     font-size: 15px;
-    color: rgba(255, 255, 255, 0.85); /* ← أبيض شفاف */
+    color: rgba(255, 255, 255, 0.85);
+    /* ← أبيض شفاف */
     line-height: 1.9;
 }
 
 /*  الجانب الأيمن — الصور    */
 .project-mockups {
     flex: 1;
-    background: var(--color-secondary); 
+    background: var(--color-secondary);
     display: flex;
     gap: 12px;
     align-items: flex-end;
@@ -95,7 +97,8 @@
 
 .project-mockups img {
     width: 60%;
-    border-radius: 20px 20px 0 0; /* ← مستدير من الأعلى فقط */
+    border-radius: 20px 20px 0 0;
+    /* ← مستدير من الأعلى فقط */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
@@ -103,81 +106,78 @@
     width: 34%;
     margin-bottom: 20px;
 }
+
 .project-mockups img:hover {
     transform: translateY(-8px);
 }
-
-
-/* =========================================
-    القسم 2: شاشات المشروع
-   ========================================= */
 
 .project-screens {
     padding: 60px 0;
     background: #f9f9f9;
 }
 
-/* الحاوية الخارجية تضمن عدم خروج الأسهم عن الشاشة في الجوال */
+.project-screens .container {
+    overflow: visible !important;
+}
+
 .swiper-outer-wrapper {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 60px; 
+    padding: 0 60px;
+    overflow: visible;
 }
 
-/* الأزرار بشكلها الجديد في الصورة */
 .custom-prev-btn,
 .custom-next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 20;
     width: 45px;
     height: 45px;
-    background: #fff !important;
+    background: #fff;
     border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
     cursor: pointer;
-    border: 1px solid #eee;
     transition: all 0.3s ease;
 }
 
-.custom-prev-btn:hover, .custom-next-btn:hover {
-    background: var(--color-secondary, #001f3f) !important;
-    color: #fff !important;
+.custom-prev-btn {
+    right: 0;
 }
 
-/* ضبط المواقع للـ RTL */
-.custom-prev-btn { right: 10px; } /* سهم اليمين > */
-.custom-next-btn { left: 10px; }  /* سهم اليسار < */
+.custom-next-btn {
+    left: 0;
+}
 
-/* السلايدر */
+.custom-prev-btn:hover,
+.custom-next-btn:hover {
+    background: var(--color-secondary);
+    color: #fff;
+    border-color: var(--color-secondary);
+}
+
 .screens-swiper {
-    width: 100%;
-    padding-bottom: 50px !important; /* مساحة للنقاط */
+    overflow: visible !important;
+    padding-bottom: 50px !important;
 }
 
 .screens-swiper .swiper-slide {
-    width: 300px !important; /* تكبير بسيط للصور لتملأ الفراغ */
+    width: 300px;
     display: flex;
     justify-content: center;
 }
 
 .screens-swiper .swiper-slide img {
-    width: 90%; /* ترك مسافة بسيطة بين الصور */
+    width: 100%;
     height: auto;
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-/* تنسيق النقاط (Pagination) */
-.swiper-pagination-bullet-active {
-    background: var(--color-secondary, #001f3f) !important;
-    width: 20px;
-    border-radius: 5px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* =========================================
@@ -301,6 +301,22 @@
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
+
+
+    .swiper-outer-wrapper {
+        padding: 0 15px;
+    }
+
+    .custom-prev-btn,
+    .custom-next-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .screens-swiper .swiper-slide {
+        width: 240px;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
