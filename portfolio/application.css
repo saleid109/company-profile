@@ -168,33 +168,46 @@
 .screens-swiper .swiper-slide {
     width: auto !important;
 }
-
-.screens-swiper .swiper-slide img {
-    width: 255px;
-    height: 264px;
-    object-fit: contain;
-    display: block;
-    border-radius: 16px;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    width: 50px !important;
-    height: 50px !important;
+/* تنسيق الأسهم المخصصة */
+.custom-prev-btn, .custom-next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     background: #fff;
+    border: 1px solid #ddd;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    border: 1.5px solid #ddd;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    color: var(--color-secondary) !important;
-    top: 45% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    color: #333;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
-    font-size: 14px !important;
-    font-weight: 900;
+.custom-prev-btn:hover, .custom-next-btn:hover {
+    background: #f0f0f0;
+    color: #000;
 }
 
+/* تحديد موقع السهم الأيمن والأيسر */
+.custom-prev-btn {
+    right: 0;
+}
+
+.custom-next-btn {
+    left: 0;
+}
+
+/* تأكد من أن الصور داخل السلايدر لها حجم مناسب */
+.screens-swiper .swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+}
 
 /* =========================================
     القسم 3: آراء العملاء
