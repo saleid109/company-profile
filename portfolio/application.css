@@ -148,11 +148,13 @@
 }
 
 .custom-prev-btn {
-    right:5px;
+    right: 8px;  /* داخل الـ padding بشكل واضح */
+    left: auto;
 }
 
 .custom-next-btn {
-    left: 5px;
+    left: 8px;  /* داخل الـ padding بشكل واضح */
+    right: auto;
 }
 
 .custom-prev-btn:hover,
