@@ -111,98 +111,101 @@
 /* =========================================
     القسم 2: شاشات المشروع
    ========================================= */
-.project-screens {
-    padding: 60px 0;
-    background: #f9f9f9;
-    overflow: hidden;/* ← يخلي السلايدر يمدد للخارج ويظهر الأزرار */
-}
 
-.project-screens h2,
-.client-reviews h2 {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--color-text);
-    text-align: right;
-    margin-bottom: 32px;
-    padding-right: 30px; /* مساحة ليتماشى مع الحشو الداخلي للسلايدر */
-}
 /* =========================================
-    القسم 2: شاشات المشروع (نسخة نظيفة بدون تكرار)
+    القسم 2: شاشات المشروع - النسخة المصلحة
    ========================================= */
 .project-screens {
-    padding: 60px 0;
+    padding: 80px 0;
     background: #f9f9f9;
-    overflow: hidden;
+    overflow: visible; /* تغيير إلى visible لضمان ظهور الأسهم */
 }
 
 .project-screens h2 {
     font-size: 28px;
     font-weight: 800;
-    color: var(--color-text);
+    color: var(--color-text, #333);
     text-align: right;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
+    padding-right: 20px;
 }
 
-/* الحاوية الخارجية */
+/* الحاوية الخارجية للسلايدر */
 .swiper-outer-wrapper {
     position: relative;
-    padding: 0 60px; /* مساحة كافية للأسهم */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 70px; /* مساحة أكبر للأسهم */
 }
 
-/* تنسيق موحد للأسهم */
+/* تنسيق الأسهم (تأكد من وجود FontAwesome) */
 .custom-prev-btn,
 .custom-next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    border: 1.5px solid #ddd;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    color: var(--color-secondary);
+    border: 2px solid #eee;
+    background: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    color: #222 !important;
     cursor: pointer;
-    font-size: 16px;
-    display: flex;
+    display: flex !important; /* إجبار الظهور */
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 999; /* رقم عالي جداً لتظهر فوق الصور */
     transition: all 0.3s ease;
 }
 
 .custom-prev-btn:hover,
 .custom-next-btn:hover {
-    background: var(--color-secondary);
-    color: #fff;
-    border-color: var(--color-secondary);
+    background: var(--color-secondary, #001f3f) !important;
+    color: #fff !important;
+    border-color: var(--color-secondary, #001f3f);
 }
 
-/* تحديد المواقع بدقة للـ RTL */
+/* مواقع الأسهم - RTL */
 .custom-prev-btn {
-    right: 5px; /* السهم الأيمن (السابق في العربية) */
+    right: 10px; /* سهم اليمين */
 }
 
 .custom-next-btn {
-    left: 5px; /* السهم الأيسر (التالي في العربية) */
+    left: 10px; /* سهم اليسار */
 }
 
-/* السلايدر */
+/* حجم الأيقونة داخل السهم */
+.custom-prev-btn i, .custom-next-btn i {
+    font-size: 18px;
+    pointer-events: none;
+}
+
+/* السلايدر والصور */
 .screens-swiper {
     width: 100%;
-    padding-bottom: 40px !important;
+    overflow: hidden; /* السلايدر نفسه يجب أن يكون مخفياً */
 }
 
 .screens-swiper .swiper-slide {
-    width: 280px !important; /* حدد عرض الشريحة ليظهر السلايدر بشكل صحيح */
+    width: 280px !important; /* عرض الهاتف */
+    transition: transform 0.3s;
 }
 
 .screens-swiper .swiper-slide img {
     width: 100%;
     height: auto;
-    border-radius: 15px;
+    border-radius: 20px;
     display: block;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* نقاط التنقل السفلية */
+.swiper-pagination {
+    bottom: 0 !important;
+}
+.swiper-pagination-bullet-active {
+    background: var(--color-secondary, #001f3f) !important;
 }
 
 
