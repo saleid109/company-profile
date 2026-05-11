@@ -114,7 +114,7 @@
 .project-screens {
     padding: 60px 0;
     background: #f9f9f9;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .project-screens .container {
@@ -148,12 +148,12 @@
 }
 
 .custom-prev-btn {
-    right: 8px;  /* داخل الـ padding بشكل واضح */
+    right: 12px;  /* داخل الـ padding بشكل واضح */
     left: auto;
 }
 
 .custom-next-btn {
-    left: 8px;  /* داخل الـ padding بشكل واضح */
+    left: 12px;  /* داخل الـ padding بشكل واضح */
     right: auto;
 }
 
