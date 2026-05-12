@@ -460,7 +460,7 @@ body.menu-open .floating-consult-btn {
 
 
     .nav-actions.mobile-cta {
-        display: flex !important;
+        display: none;
         align-items: center;
     }
 
