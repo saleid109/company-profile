@@ -443,6 +443,33 @@
 
 @media (max-width: 767px) {
 
+  
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .mobile-menu-icon {
+        order: 1;
+        /* يبقى على اليسار */
+        margin-left: 0;
+    }
+
+    .logo {
+        order: -1;
+        /* الشعار على اليمين */
+    }
+
+
   .main-content {
     padding: 40px 16px;
   }

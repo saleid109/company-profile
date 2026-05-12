@@ -1,0 +1,275 @@
+/* ══════════════════════════════════════════════════
+    contact-info-shared.css
+    تنسيقات مشتركة لقسم معلومات التواصل
+    يتم استخدامها في جميع صفحات التواصل
+══════════════════════════════════════════════════ */
+
+/* ── القسم الرئيسي لمعلومات التواصل ── */
+.contact-info-side {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-info-side h2 {
+    color: var(--color-secondary);
+    font-family: var(--font-main);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: right;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* ── عنصر المعلومات الفردي ── */
+.info-item {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.info-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 193, 7, 0.1);
+    border-radius: 12px;
+    order: 2;
+}
+
+.info-icon i {
+    font-size: 24px;
+    color: var(--color-primary);
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    order: 1;
+    flex: 1;
+}
+
+.info-text h3 {
+    color: var(--color-secondary);
+    font-family: var(--font-main);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    text-align: right;
+}
+
+.info-text p {
+    color: var(--color-gray-secondary);
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+    text-align: right;
+}
+
+.info-link {
+    color: var(--color-primary);
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+    text-align: right;
+}
+
+.info-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.address {
+    direction: ltr;
+    text-align: right;
+}
+
+/* ══════════════════════════════════════════════════
+    Desktop Layout (1024px and above)
+══════════════════════════════════════════════════ */
+
+@media (min-width: 1025px) {
+    .contact-info-side {
+        gap: 40px;
+    }
+
+    .contact-info-side h2 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .info-item {
+        gap: 24px;
+    }
+
+    .info-icon {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+    }
+
+    .info-icon i {
+        font-size: 28px;
+    }
+
+    .info-text h3 {
+        font-size: 18px;
+    }
+
+    .info-text p {
+        font-size: 14px;
+    }
+}
+
+/* ══════════════════════════════════════════════════
+    Tablet Layout (768px - 1024px)
+══════════════════════════════════════════════════ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .contact-info-side {
+        gap: 35px;
+        align-items: center;
+    }
+
+    .contact-info-side h2 {
+        font-size: 26px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .info-item {
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .info-icon {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        order: 2;
+    }
+
+    .info-icon i {
+        font-size: 24px;
+    }
+
+    .info-text {
+        order: 1;
+        max-width: 400px;
+    }
+
+    .info-text h3 {
+        font-size: 17px;
+    }
+
+    .info-text p {
+        font-size: 13px;
+    }
+}
+
+/* ══════════════════════════════════════════════════
+    Mobile Layout (≤ 767px)
+══════════════════════════════════════════════════ */
+
+@media (max-width: 767px) {
+    .contact-info-side {
+        gap: 30px;
+        align-items: center;
+    }
+
+    .contact-info-side h2 {
+        font-size: 22px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .info-item {
+        gap: 16px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .info-icon {
+        width: 55px;
+        height: 55px;
+        min-width: 55px;
+        order: 2;
+    }
+
+    .info-icon i {
+        font-size: 20px;
+    }
+
+    .info-text {
+        order: 1;
+        max-width: 100%;
+    }
+
+    .info-text h3 {
+        font-size: 16px;
+    }
+
+    .info-text p {
+        font-size: 13px;
+    }
+
+    .info-link {
+        font-size: 13px;
+    }
+}
+
+/* ══════════════════════════════════════════════════
+    Extra Small Mobile (≤ 480px)
+══════════════════════════════════════════════════ */
+
+@media (max-width: 480px) {
+    .contact-info-side {
+        gap: 25px;
+    }
+
+    .contact-info-side h2 {
+        font-size: 20px;
+    }
+
+    .info-item {
+        gap: 12px;
+    }
+
+    .info-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+    }
+
+    .info-icon i {
+        font-size: 18px;
+    }
+
+    .info-text h3 {
+        font-size: 15px;
+    }
+
+    .info-text p {
+        font-size: 12px;
+    }
+
+    .info-link {
+        font-size: 12px;
+    }
+}

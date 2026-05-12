@@ -39,3 +39,39 @@
   margin-bottom: 30px;
   max-width: 600px;
 }
+
+/* =========================================
+    RESPONSIVE DESIGN FOR EXPERTS PAGE
+========================================= */
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .experts-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  #experts-heading {
+    font-size: 40px;
+  }
+
+  .experts-subtitle {
+    font-size: 18px;
+  }
+}
+
+/* Mobile (≤ 767px) */
+@media (max-width: 767px) {
+  .experts-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  #experts-heading {
+    font-size: 28px;
+  }
+
+  .experts-subtitle {
+    font-size: 15px;
+  }
+}
