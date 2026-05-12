@@ -24,9 +24,9 @@
   <link rel="stylesheet" href="../assets/css/variables.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/mobile.css" />
-<!-- support.html -->
-<link rel="stylesheet" href="../contact/forms-shared.css">
-<link rel="stylesheet" href="../contact/support.css">
+  <!-- support.html -->
+  <link rel="stylesheet" href="../contact/forms-shared.css">
+  <link rel="stylesheet" href="../contact/support.css">
 
   <!-- مكتبة السلايدر Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -210,7 +210,7 @@
         <div class="nav-actions desktop-only">
           <a href="#Consultation" class="btn-primary" role="button">احصل على استشارة</a>
         </div>
-      </div>  
+      </div>
     </nav>
 
     <div class="overlay"></div>
@@ -257,16 +257,16 @@
               <input type="email" id="email" name="email" placeholder="you@company.com" required>
             </div>
 
-          <div class="form-group mb-4">
-            <label for="phone">رقم التواصل</label>
-            <div class="phone-group">
-              <input type="tel" id="phone" name="phone" placeholder="5000000" required />
-              <select aria-label="مفتاح الدولة">
-                <option value="+966">🇸🇦 +966</option>
-                <option value="+971">🇦🇪 +971</option>
-              </select>
+            <div class="form-group mb-4">
+              <label for="phone">رقم التواصل</label>
+              <div class="phone-group">
+                <input type="tel" id="phone" name="phone" placeholder="5000000" required />
+                <select aria-label="مفتاح الدولة">
+                  <option value="+966">🇸🇦 +966</option>
+                  <option value="+971">🇦🇪 +971</option>
+                </select>
+              </div>
             </div>
-          </div>
 
             <div class="form-group">
               <label for="message">الرسالة</label>
@@ -274,7 +274,7 @@
             </div>
 
             <button type="button" class="submit-btn" onclick="handleSubmit()">ارسال</button>
-        </form>
+          </form>
           </form>
         </div>
 
@@ -368,38 +368,38 @@
 
   <script>
     function handleSubmit() {
-  const inputs = document.querySelectorAll('.form-section input[type="text"], .form-section input[type="email"], .form-section input[type="tel"]');
-  let allFilled = true;
+      const inputs = document.querySelectorAll('.form-section input[type="text"], .form-section input[type="email"], .form-section input[type="tel"]');
+      let allFilled = true;
 
-  inputs.forEach(input => {
-    if (!input.value.trim()) {
-      input.style.borderColor = '#e53935';
-      allFilled = false;
-      setTimeout(() => { input.style.borderColor = ''; }, 2500);
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          input.style.borderColor = '#e53935';
+          allFilled = false;
+          setTimeout(() => { input.style.borderColor = ''; }, 2500);
+        }
+      });
+
+      if (allFilled) {
+        document.getElementById('thankYouOverlay').classList.add('active');
+      }
     }
-  });
 
-  if (allFilled) {
-    document.getElementById('thankYouOverlay').classList.add('active');
-  }
-}
-
-function closeThankYou() {
-  document.getElementById('thankYouOverlay').classList.remove('active');
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('thankYouOverlay').addEventListener('click', function (e) {
-    if (e.target === this) closeThankYou();
-  });
-
-  document.getElementById('cvInput').addEventListener('change', function () {
-    const label = document.querySelector('.cv-upload-label');
-    if (this.files.length > 0) {
-      label.innerHTML = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:var(--gold)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg> ${this.files[0].name}`;
+    function closeThankYou() {
+      document.getElementById('thankYouOverlay').classList.remove('active');
     }
-  });
-});
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('thankYouOverlay').addEventListener('click', function (e) {
+        if (e.target === this) closeThankYou();
+      });
+
+      document.getElementById('cvInput').addEventListener('change', function () {
+        const label = document.querySelector('.cv-upload-label');
+        if (this.files.length > 0) {
+          label.innerHTML = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:var(--gold)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg> ${this.files[0].name}`;
+        }
+      });
+    });
   </script>
   <!-- نموذج تسجيل الدخول -->
   <div class="auth-overlay" id="authOverlay" onclick="handleOverlayClick(event)">
@@ -543,7 +543,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </div>
 
-  
+
   <!-- ====== نافذة الشكر ====== -->
   <div class="thank-you-overlay" id="thankYouOverlay">
     <div class="thank-you-card">

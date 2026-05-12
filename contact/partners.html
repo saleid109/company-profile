@@ -25,9 +25,9 @@
   <link rel="stylesheet" href="../assets/css/variables.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/mobile.css" />
-<!-- partners.html -->
-<link rel="stylesheet" href="../assets/css/forms-shared.css">
-<link rel="stylesheet" href="../contact/partners.css">
+  <!-- partners.html -->
+  <link rel="stylesheet" href="../assets/css/forms-shared.css">
+  <link rel="stylesheet" href="../contact/partners.css">
 
 
   <!-- مكتبة السلايدر Swiper -->
@@ -59,7 +59,7 @@
           </div>
         </div>
 
-      
+
         <div class="flex-group">
           <div class="user-info" role="button" onclick="openAuth('login')" aria-label="تسجيل الدخول">
             <i class="fas fa-user-circle" aria-hidden="true"></i>
@@ -213,7 +213,7 @@
         <div class="nav-actions desktop-only">
           <a href="../contact/experts.html" class="btn-primary" role="button">احصل على استشارة</a>
         </div>
-      </div>  
+      </div>
     </nav>
 
     <div class="overlay"></div>
@@ -400,38 +400,38 @@
 
   <script>
     function handleSubmit() {
-  const inputs = document.querySelectorAll('.form-section input[type="text"], .form-section input[type="email"], .form-section input[type="tel"]');
-  let allFilled = true;
+      const inputs = document.querySelectorAll('.form-section input[type="text"], .form-section input[type="email"], .form-section input[type="tel"]');
+      let allFilled = true;
 
-  inputs.forEach(input => {
-    if (!input.value.trim()) {
-      input.style.borderColor = '#e53935';
-      allFilled = false;
-      setTimeout(() => { input.style.borderColor = ''; }, 2500);
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          input.style.borderColor = '#e53935';
+          allFilled = false;
+          setTimeout(() => { input.style.borderColor = ''; }, 2500);
+        }
+      });
+
+      if (allFilled) {
+        document.getElementById('thankYouOverlay').classList.add('active');
+      }
     }
-  });
 
-  if (allFilled) {
-    document.getElementById('thankYouOverlay').classList.add('active');
-  }
-}
-
-function closeThankYou() {
-  document.getElementById('thankYouOverlay').classList.remove('active');
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('thankYouOverlay').addEventListener('click', function (e) {
-    if (e.target === this) closeThankYou();
-  });
-
-  document.getElementById('cvInput').addEventListener('change', function () {
-    const label = document.querySelector('.cv-upload-label');
-    if (this.files.length > 0) {
-      label.innerHTML = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:var(--gold)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg> ${this.files[0].name}`;
+    function closeThankYou() {
+      document.getElementById('thankYouOverlay').classList.remove('active');
     }
-  });
-});
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('thankYouOverlay').addEventListener('click', function (e) {
+        if (e.target === this) closeThankYou();
+      });
+
+      document.getElementById('cvInput').addEventListener('change', function () {
+        const label = document.querySelector('.cv-upload-label');
+        if (this.files.length > 0) {
+          label.innerHTML = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:var(--gold)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg> ${this.files[0].name}`;
+        }
+      });
+    });
   </script>
 
 
