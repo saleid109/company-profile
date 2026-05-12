@@ -201,10 +201,13 @@ body.menu-open .floating-consult-btn {
     }
 
     .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    width: 100%;
+    gap: 0;
+}
 
     .logo img {
         height: 45px;

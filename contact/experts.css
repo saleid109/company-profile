@@ -1,0 +1,41 @@
+/* ==========================================================
+    experts.css  —  خاص بصفحة الخبراء فقط
+    يتطلب: forms-shared.css قبله في الـ HTML
+========================================================== */
+
+/* =========================================
+    GRID الخاص بصفحة experts
+========================================= */
+
+.experts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 70px;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.experts-grid .experts-header {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================
+    HEADING الخاص بصفحة experts
+========================================= */
+
+#experts-heading {
+  font-size: 56px;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.experts-subtitle {
+  font-size: 24px;
+  color: var(--color-gray-text);
+  line-height: 1.8;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
