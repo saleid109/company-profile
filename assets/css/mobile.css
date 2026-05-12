@@ -194,6 +194,7 @@ body.menu-open .floating-consult-btn {
         justify-content: space-between;
         align-items: center;
         background-color: var(--color-secondary) !important;
+        flex-wrap: nowrap !important;
         height: 70px;
         padding: 0 15px;
         width: 100%;
