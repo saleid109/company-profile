@@ -197,6 +197,14 @@
     gap: 24px;
 }
 
+.reviews-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
 /* بطاقة الرأي */
 .testimonial-card {
     background: var(--color-white);
