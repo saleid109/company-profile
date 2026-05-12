@@ -520,4 +520,19 @@ a:focus-visible {
         min-height: 54px;
     }
 
+    .thank-you-card {
+        padding: 40px 30px;
+    }
+
+    .thank-you-title {
+        font-size: 22px;
+    }
+
+    .thank-you-desc {
+        font-size: 14px;
+    }
+.btn-submit {
+    height: 54px;   
+    
+
 }
