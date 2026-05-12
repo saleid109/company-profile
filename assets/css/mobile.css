@@ -925,7 +925,6 @@ body.menu-open .floating-consult-btn {
         align-items: center !important;
         justify-content: space-between !important;
         padding: 0 20px !important;
-        flex-wrap: nowrap !important;
         height: 70px !important;
         position: relative !important;
         z-index: 9999 !important;
