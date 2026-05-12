@@ -396,10 +396,6 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  .main-content {
-    padding: 60px 24px;
-  }
-
   .main-grid {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -443,9 +439,6 @@
 
 @media (max-width: 767px) {
 
-  .main-content {
-    padding: 50px 16px;
-  }
 
   .main-grid {
     grid-template-columns: 1fr;

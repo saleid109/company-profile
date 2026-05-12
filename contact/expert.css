@@ -451,10 +451,7 @@
 
 @media (max-width: 767px) {
 
-  .main-content {
-    padding: 50px 16px;
-  }
-
+ 
   .experts-grid {
     grid-template-columns: 1fr;
     gap: 40px;
