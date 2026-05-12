@@ -423,11 +423,11 @@ a:focus-visible {
 }
 
 /* =========================
-   Mobile
+    Mobile
 ========================= */
 @media (max-width: 767px) {
 
-     .top-bar .container {
+    .top-bar .container {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
