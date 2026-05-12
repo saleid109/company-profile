@@ -117,6 +117,9 @@
     overflow: hidden;
 }
 
+
+/*  السلايدر الخارجي /المشاريع*/
+
 .swiper-outer-wrapper {
     position: relative;
     max-width: 1200px;

@@ -468,19 +468,27 @@ const screensSwiper = new Swiper('.screens-swiper', {
     slidesPerView: 1,
     spaceBetween: 24,
     loop: true,
+    centeredSlides: false,
     grabCursor: true,
-    slideToClickedSlide: false,
+
     navigation: {
         nextEl: '.custom-next-btn',
         prevEl: '.custom-prev-btn',
     },
+
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
     },
+
     breakpoints: {
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
+        768: {
+            slidesPerView: 2,
+        },
+
+        1024: {
+            slidesPerView: 3,
+        }
     }
 });
 
