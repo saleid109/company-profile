@@ -421,8 +421,8 @@
     top: -45px; /* رفع نصف القطر للأعلى خارج الكارت */
     left: 50%;
     transform: translateX(-50%);
-    background: #fff;
-    border: 3px solid var(--color-primary);
+    background:var(--color-background);
+    border: 3px solid var(--color-border);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -458,7 +458,7 @@
     ============================================ */
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--color-primary);
+  outline: 3px solid var(--color-background);
   outline-offset: 3px;
   border-radius: 4px;
 }
