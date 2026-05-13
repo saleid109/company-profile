@@ -393,64 +393,72 @@
 /* جوال */
 /* جوال */
 @media (max-width: 768px) {
-  .members-grid {
-    grid-template-columns: 1fr;
-    gap: 70px 0;
-    max-width: 100%; /* تغيير من 400px لضمان عدم الخروج في الشاشات الصغيرة جداً */
-    padding-inline: 20px;
+
+  /* ===== team-hero grid ===== */
+  .team-hero {
+    padding: 24px 0 20px;
+  }
+
+  .team-hero__grid {
+    grid-template-columns: 1fr;   /* عمود واحد */
+    padding: 24px 20px;
+    gap: 24px;
+    text-align: center;
+  }
+
+  /* الصورة في المنتصف */
+  .team-hero__image-wrap {
+    width: 140px;
+    height: 140px;
     margin-inline: auto;
   }
 
-  .member-card {
-    display: flex;
-    flex-direction: column; /* ترتيب عمودي */
-    align-items: center;    /* توسيط العناصر */
-    text-align: center;     /* توسيط النصوص */
-    padding: 65px 20px 30px;
-    position: relative;
-    overflow: visible;      /* للسماح للأيقونة بالبروز للأعلى */
+  /* منع الـ overflow */
+  .team-hero__content {
+    min-width: 0;
+    text-align: right;
   }
 
-  /* جعل الأيقونة/الصورة دائرية وفي المنتصف بالأعلى */
-  .member-card__avatar, 
-  .info-icon { 
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    position: absolute;
-    top: -45px; /* رفع نصف القطر للأعلى خارج الكارت */
-    left: 50%;
-    transform: translateX(-50%);
-    background:var(--color-background);
-    border: 3px solid var(--color-border);
-    display: flex;
-    align-items: center;
+  /* قائمة الأهداف تبقى يمين */
+  .team-goals__list {
+    text-align: right;
+  }
+
+  /* ===== شريط الإحصائيات ===== */
+  .team-stats__grid {
+    grid-template-columns: repeat(2, 1fr);   /* صفان بدل أربعة */
+  }
+
+  /* الفواصل العمودية تتكيف مع 2 أعمدة */
+  .team-stats__item + .team-stats__item::before {
+    display: none;
+  }
+
+  /* ===== كارت القائد ===== */
+  .leader-card {
+    grid-template-columns: 1fr;   /* عمود واحد */
+    padding: 24px 20px;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .leader-avatar {
+    margin-inline: auto;
+  }
+
+  .leader-info__row {
     justify-content: center;
-    z-index: 2;
   }
 
-  /* تنسيق النصوص لتجنب التداخل الظاهر في الصورة */
-  .section-title, 
-  .member-card h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    line-height: 1.4;
-    width: 100%;
+  .leader-info__bio {
+    text-align: right;
   }
 
-  .info-text p, 
-  .member-card p {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-
-  /* تنسيق القائمة (أهداف الفريق) لتكون مرتبة */
-  .member-card ul {
-    text-align: right; /* العودة لليمين للقوائم لتسهيل القراءة */
-    display: inline-block;
-    width: fit-content;
-    padding-right: 20px;
+  /* ===== كروت الأعضاء (موجودة لكن نكملها) ===== */
+  .members-grid {
+    grid-template-columns: 1fr;
+    gap: 70px 0;
+    padding-inline: 20px;
   }
 }
 /* ============================================
