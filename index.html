@@ -33,12 +33,12 @@
 </head>
 
 <body>
-  
+
   <!-- رابط تخطي لتسهيل التنقل لمستخدمي قارئات الشاشة ولوحة المفاتيح -->
 
   <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
 
-  
+
 
   <!--================= قسم الهيدر ================-->
   <header>
@@ -92,7 +92,7 @@
             </a>
           </div>
         </div>
-      
+
         <!-- زر القائمة الجانبية للجوال -->
         <button class="mobile-menu-icon" onclick="toggleMenu()" aria-label="فتح القائمة">
           <i class="fas fa-bars" aria-hidden="true"></i>
@@ -210,7 +210,7 @@
           <a href="../contact/experts.html" class="btn-primary" role="button">احصل على استشارة</a>
         </div>
 
-        
+
 
       </div>
       <!-- نهاية nav-wrapper -->
@@ -223,11 +223,11 @@
   </header><!--   header نهاية -->
 
   <!--   زر الاستشارة العائم الذي يظهر عند التمرير -->
-    <div class="top-floating-container">
-  <a href="../contact/experts.html" class="floating-consult-btn">
-    <i class="fas fa-comments"></i>
-    <span>  استشارة</span>
-  </a>
+  <div class="top-floating-container">
+    <a href="../contact/experts.html" class="floating-consult-btn">
+      <i class="fas fa-comments"></i>
+      <span> استشارة</span>
+    </a>
   </div>
 
 
@@ -685,7 +685,8 @@
         </div>
 
         <div class="view-all-container">
-          <a href="./portfolio/portfolio.html" class="btn-view-all" aria-label="الانتقال لصفحة عرض كافة المشاريع">عرض كافة
+          <a href="./portfolio/portfolio.html" class="btn-view-all" aria-label="الانتقال لصفحة عرض كافة المشاريع">عرض
+            كافة
             المشاريع</a>
         </div>
       </div>
@@ -1282,8 +1283,68 @@
     </div>
   </div>
 
+<!--=================القائمة الجانبية للهواتف المحمولة ================-->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
 
-  
+  <nav class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="القائمة الجانبية" dir="rtl">
+
+    <!-- زر الإغلاق -->
+    <button class="drawer-close" id="drawerClose" aria-label="إغلاق القائمة">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+
+    <ul class="drawer-menu">
+
+      <!-- رابط عادي -->
+      <li class="drawer-item">
+        <a href="index.html" class="drawer-link active">الرئيسية</a>
+      </li>
+
+      <!-- رابط مع سب مينو -->
+      <li class="drawer-item has-sub">
+        <button class="drawer-link drawer-toggle" aria-expanded="false">
+          عن نقطة صعود
+          <i class="fas fa-chevron-down drawer-arrow" aria-hidden="true"></i>
+        </button>
+        <ul class="drawer-submenu">
+          <li><a href="about.html">عن نقطة صعود</a></li>
+          <li><a href="our-story.html">قصتنا</a></li>
+          <li><a href="news.html">أخبارنا</a></li>
+        </ul>
+      </li>
+
+      <li class="drawer-item">
+        <a href="./service/service.html" class="drawer-link">خدماتنا</a>
+      </li>
+
+      <li class="drawer-item">
+        <a href="portfolio.html" class="drawer-link">أعمالنا</a>
+      </li>
+
+      <!-- طاقم العمل -->
+      <li class="drawer-item has-sub">
+        <button class="drawer-link drawer-toggle" aria-expanded="false">
+          طاقم العمل
+          <i class="fas fa-chevron-down drawer-arrow" aria-hidden="true"></i>
+        </button>
+        <ul class="drawer-submenu">
+          <li><a href="board.html">أعضاء المجلس</a></li>
+          <li><a href="teams.html">الفرق</a></li>
+          <li><a href="careers.html">إعلانات التوظيف</a></li>
+        </ul>
+      </li>
+
+      <li class="drawer-item">
+        <a href="#clients-partners.html" class="drawer-link">شركاء النجاح</a>
+      </li>
+
+      <li class="drawer-item">
+        <a href="./contact/contact.html" class="drawer-link">تواصل معنا</a>
+      </li>
+
+    </ul>
+
+  </nav>
 </body>
 
 </html>
