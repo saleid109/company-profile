@@ -81,13 +81,11 @@ function activateSub(subValue) {
 function initMobileMegaMenu() {
     if (window.innerWidth > 1025) return;
 
-    // إزالة المستمعات القديمة
     document.querySelectorAll('.nav-menu li.dropdown > a').forEach(link => {
         const newLink = link.cloneNode(true);
         link.parentNode.replaceChild(newLink, link);
     });
 
-    // إضافة مستمعات جديدة
     document.querySelectorAll('.nav-menu li.dropdown > a').forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
@@ -98,11 +96,9 @@ function initMobileMegaMenu() {
 
             const isOpen = megaMenu.classList.contains('open');
 
-            // إغلاق الكل أولاً
             document.querySelectorAll('.mega-menu-content').forEach(m => m.classList.remove('open'));
             document.querySelectorAll('.nav-menu li.dropdown > a').forEach(a => a.classList.remove('active'));
 
-            // فتح المطلوب
             if (!isOpen) {
                 megaMenu.classList.add('open');
                 this.classList.add('active');
@@ -110,7 +106,6 @@ function initMobileMegaMenu() {
         });
     });
 
-    // إغلاق عند النقر خارج القائمة
     document.addEventListener('click', function (e) {
         if (!e.target.closest('.has-mega')) {
             document.querySelectorAll('.mega-menu-content').forEach(m => m.classList.remove('open'));
@@ -138,7 +133,7 @@ function animateNumber(element, target) {
 }
 
 /* =========================================================
-    5. الزر العائم — بـ class بدل style
+    5. الزر العائم
 ========================================================= */
 let scrollTimeout;
 
@@ -149,7 +144,6 @@ function handleFloatingBtn() {
         const btn = document.querySelector('.floating-consult-btn');
         if (!btn) return;
 
-        // فقط في الجوال والتابلت
         if (window.innerWidth > 1024) return;
 
         btn.classList.toggle('show', window.scrollY > 250);
@@ -219,7 +213,6 @@ function handleFloatingBtn() {
         if (currentIndex > 0) { currentIndex--; updateCarousel(); }
     });
 
-    // دعم اللمس
     let touchStartX = 0;
     track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
     track.addEventListener('touchend', e => {
@@ -236,7 +229,6 @@ function handleFloatingBtn() {
         resizeTimer = setTimeout(() => { currentIndex = 0; updateCarousel(); }, 150);
     });
 
-    // تشغيل أولي
     window.addEventListener('load', updateCarousel);
     setTimeout(updateCarousel, 100);
 })();
@@ -329,6 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === 'Escape') {
             if (document.querySelector(".navbar-links")?.classList.contains("open")) toggleMenu();
             closeAuth();
+            closeDrawer();
         }
     });
 
@@ -396,59 +389,51 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // ===== الزر العائم =====
+    // الزر العائم
     window.addEventListener('scroll', handleFloatingBtn);
 
-    // ظهور ذكي بعد 4 ثوان إذا ما نزل المستخدم
     setTimeout(() => {
         const btn = document.querySelector('.floating-consult-btn');
         if (btn && window.scrollY < 100) btn.classList.add('show');
     }, 4000);
 
-});
-
-console.log('✅ Main.js loaded - Clean Version');
-// =========================================================
-// 9. نظام الـ Drawer للجوال
-(function () {
-    const openBtn = document.getElementById('drawerOpen');
-    const closeBtn = document.getElementById('drawerClose');
-    const drawer = document.getElementById('mobileDrawer');
-    const overlay = document.getElementById('drawerOverlay');
+    /* =========================================================
+        9. نظام الـ Drawer للجوال — داخل DOMContentLoaded ✅
+    ========================================================= */
+    const openBtn      = document.getElementById('drawerOpen');
+    const closeBtn     = document.getElementById('drawerClose');
+    const drawer       = document.getElementById('mobileDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
 
     if (!drawer) return;
 
-    /* --- فتح --- */
     function openDrawer() {
         drawer.classList.add('open');
-        overlay.classList.add('active');
+        drawerOverlay?.classList.add('active');
         openBtn?.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';   /* منع التمرير خلف الـ drawer */
+        document.body.style.overflow = 'hidden';
     }
 
-    /* --- إغلاق --- */
     function closeDrawer() {
         drawer.classList.remove('open');
-        overlay.classList.remove('active');
+        drawerOverlay?.classList.remove('active');
         openBtn?.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
 
     openBtn?.addEventListener('click', openDrawer);
     closeBtn?.addEventListener('click', closeDrawer);
-    overlay?.addEventListener('click', closeDrawer);
+    drawerOverlay?.addEventListener('click', closeDrawer);
 
-    /* --- إغلاق بـ Escape --- */
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeDrawer();
-    });
-
-    /* --- Sub Menu Toggles --- */
-    drawer.querySelectorAll('.drawer-toggle').forEach(function (btn) {
+    // القوائم الفرعية داخل الـ Drawer (توسيع/طي)
+    drawer.querySelectorAll('.drawer-toggle').forEach(btn => {
         btn.addEventListener('click', function () {
             const sub = this.closest('.drawer-item').querySelector('.drawer-submenu');
             const isOpen = sub.classList.toggle('open');
             this.setAttribute('aria-expanded', isOpen);
         });
     });
-})();
+
+}); // نهاية DOMContentLoaded
+
+console.log(' Main.js loaded - Fixed Drawer Version');
