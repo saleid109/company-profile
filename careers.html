@@ -397,6 +397,77 @@
     </div>
   </footer>
 
+
+  <script>
+    (function () {
+      const sortToggle = document.getElementById('sortToggle');
+      const sortDropdown = document.getElementById('sortDropdown');
+      const sortLabel = document.getElementById('sortLabel');
+
+      if (!sortToggle) return;
+
+      /* --- فتح / إغلاق القائمة --- */
+      sortToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = this.classList.toggle('open');
+        this.setAttribute('aria-expanded', isOpen);
+      });
+
+      /* --- إغلاق عند الضغط خارج القائمة --- */
+      document.addEventListener('click', function () {
+        sortToggle.classList.remove('open');
+        sortToggle.setAttribute('aria-expanded', 'false');
+      });
+
+      /* --- اختيار عنصر --- */
+      sortDropdown.addEventListener('click', function (e) {
+        const item = e.target.closest('[role="option"]');
+        if (!item) return;
+
+        /* تحديث الـ active */
+        sortDropdown.querySelectorAll('[role="option"]').forEach(li => li.classList.remove('active'));
+        item.classList.add('active');
+
+        /* تحديث النص الظاهر */
+        sortLabel.textContent = item.textContent.trim();
+
+        /* إغلاق القائمة */
+        sortToggle.classList.remove('open');
+        sortToggle.setAttribute('aria-expanded', 'false');
+
+        /* ======= منطق الترتيب الفعلي ======= */
+        const value = item.dataset.value;
+        sortJobs(value);
+      });
+
+      /* --- دالة الترتيب --- */
+      function sortJobs(sortBy) {
+        const grid = document.querySelector('.jobs-grid');
+        if (!grid) return;
+
+        const cards = Array.from(grid.querySelectorAll('.job-card'));
+
+        cards.sort(function (a, b) {
+          const dateA = new Date(a.querySelector('.job-deadline')?.textContent.replace('آخر موعد للتقديم:', '').trim() || 0);
+          const dateB = new Date(b.querySelector('.job-deadline')?.textContent.replace('آخر موعد للتقديم:', '').trim() || 0);
+          const titleA = a.querySelector('.job-title')?.textContent.trim() || '';
+          const titleB = b.querySelector('.job-title')?.textContent.trim() || '';
+
+          switch (sortBy) {
+            case 'newest': return dateB - dateA;
+            case 'oldest': return dateA - dateB;
+            case 'most-read': return titleA.localeCompare(titleB, 'ar');
+            case 'gallery': return titleB.localeCompare(titleA, 'ar');
+            default: return 0;
+          }
+        });
+
+        /* إعادة ترتيب الـ DOM */
+        cards.forEach(card => grid.appendChild(card));
+      }
+    })();
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./assets/js/main.js"></script>
 
