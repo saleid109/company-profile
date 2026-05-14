@@ -4,14 +4,14 @@
 function toggleMenu() {
     const navLinks = document.querySelector(".navbar-links");
     const menuIcon = document.querySelector(".mobile-menu-icon i");
-    const overlay  = document.querySelector('.overlay');
-    const body     = document.body;
+    const overlay = document.querySelector('.overlay');
+    const body = document.body;
 
     if (!navLinks) return;
 
     const isOpen = navLinks.classList.toggle("open");
 
-    if (overlay)  overlay.classList.toggle('active', isOpen);
+    if (overlay) overlay.classList.toggle('active', isOpen);
     if (menuIcon) menuIcon.className = isOpen ? "fas fa-times" : "fas fa-bars";
 
     body.classList.toggle('menu-open', isOpen);
@@ -22,7 +22,7 @@ function toggleMenu() {
     2. فلترة الخدمات
 ========================================================= */
 let currentMain = "products";
-let currentSub  = "web";
+let currentSub = "web";
 
 function filterCards() {
     const cards = document.querySelectorAll(".service-card");
@@ -89,7 +89,7 @@ function initMobileMegaMenu() {
 
     // إضافة مستمعات جديدة
     document.querySelectorAll('.nav-menu li.dropdown > a').forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
 
@@ -111,7 +111,7 @@ function initMobileMegaMenu() {
     });
 
     // إغلاق عند النقر خارج القائمة
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (!e.target.closest('.has-mega')) {
             document.querySelectorAll('.mega-menu-content').forEach(m => m.classList.remove('open'));
         }
@@ -123,9 +123,9 @@ function initMobileMegaMenu() {
 ========================================================= */
 function animateNumber(element, target) {
     let current = 0;
-    const frameRate    = 1000 / 60;
-    const totalFrames  = 1800 / frameRate;
-    const increment    = target / totalFrames;
+    const frameRate = 1000 / 60;
+    const totalFrames = 1800 / frameRate;
+    const increment = target / totalFrames;
 
     const counter = setInterval(() => {
         current += increment;
@@ -164,10 +164,10 @@ function handleFloatingBtn() {
     const section = document.querySelector('.teams-group-section');
     if (!section) return;
 
-    const track   = section.querySelector('.carousel-track');
+    const track = section.querySelector('.carousel-track');
     const prevBtn = section.querySelector('.nav-btn.prev');
     const nextBtn = section.querySelector('.nav-btn.next');
-    const cards   = section.querySelectorAll('.group');
+    const cards = section.querySelectorAll('.group');
 
     if (!track || !prevBtn || !nextBtn || cards.length === 0) return;
 
@@ -175,37 +175,37 @@ function handleFloatingBtn() {
 
     function getVisibleCards() {
         const w = window.innerWidth;
-        if (w < 768)  return 1;
+        if (w < 768) return 1;
         if (w < 1024) return 2;
         return 3;
     }
 
     function getGap() {
         const w = window.innerWidth;
-        if (w < 640)  return 12;
-        if (w < 768)  return 16;
+        if (w < 640) return 12;
+        if (w < 768) return 16;
         if (w < 1024) return 20;
         return 24;
     }
 
     function updateCarousel() {
         const visibleCards = getVisibleCards();
-        const maxIndex     = Math.max(0, cards.length - visibleCards);
+        const maxIndex = Math.max(0, cards.length - visibleCards);
         if (currentIndex > maxIndex) currentIndex = maxIndex;
 
         const wrapperWidth = track.parentElement.getBoundingClientRect().width;
-        const gap  = getGap();
+        const gap = getGap();
         const cardW = (wrapperWidth - gap * (visibleCards - 1)) / visibleCards;
 
         cards.forEach(card => {
             card.style.width = cardW + 'px';
-            card.style.flex  = `0 0 ${cardW}px`;
+            card.style.flex = `0 0 ${cardW}px`;
         });
 
         track.style.transform = `translateX(${currentIndex * (cardW + gap)}px)`;
 
-        prevBtn.disabled      = currentIndex >= maxIndex;
-        nextBtn.disabled      = currentIndex <= 0;
+        prevBtn.disabled = currentIndex >= maxIndex;
+        nextBtn.disabled = currentIndex <= 0;
         prevBtn.style.opacity = prevBtn.disabled ? '0.3' : '1';
         nextBtn.style.opacity = nextBtn.disabled ? '0.3' : '1';
     }
@@ -222,11 +222,11 @@ function handleFloatingBtn() {
     // دعم اللمس
     let touchStartX = 0;
     track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-    track.addEventListener('touchend',   e => {
+    track.addEventListener('touchend', e => {
         const diff = touchStartX - e.changedTouches[0].screenX;
         if (Math.abs(diff) > 50) {
             if (diff > 0) nextBtn.click();
-            else          prevBtn.click();
+            else prevBtn.click();
         }
     }, { passive: true });
 
@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('revealed');
-                const el     = entry.target.querySelector('.stat-number');
+                const el = entry.target.querySelector('.stat-number');
                 const target = parseInt(el.dataset.target);
                 animateNumber(el, target);
                 observer.unobserve(entry.target);
@@ -408,3 +408,47 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 console.log('✅ Main.js loaded - Clean Version');
+// =========================================================
+// 9. نظام الـ Drawer للجوال
+(function () {
+    const openBtn = document.getElementById('drawerOpen');
+    const closeBtn = document.getElementById('drawerClose');
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+
+    if (!drawer) return;
+
+    /* --- فتح --- */
+    function openDrawer() {
+        drawer.classList.add('open');
+        overlay.classList.add('active');
+        openBtn?.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';   /* منع التمرير خلف الـ drawer */
+    }
+
+    /* --- إغلاق --- */
+    function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('active');
+        openBtn?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    openBtn?.addEventListener('click', openDrawer);
+    closeBtn?.addEventListener('click', closeDrawer);
+    overlay?.addEventListener('click', closeDrawer);
+
+    /* --- إغلاق بـ Escape --- */
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeDrawer();
+    });
+
+    /* --- Sub Menu Toggles --- */
+    drawer.querySelectorAll('.drawer-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const sub = this.closest('.drawer-item').querySelector('.drawer-submenu');
+            const isOpen = sub.classList.toggle('open');
+            this.setAttribute('aria-expanded', isOpen);
+        });
+    });
+})();
