@@ -1415,7 +1415,7 @@ body.menu-open .floating-consult-btn {
     width: 300px;
     max-width: 85vw;
     height: 100%;
-    background: var(--color-secondary, #00025B);
+    background: var(--color-secondary);
     z-index: 999;
     display: flex;
     flex-direction: column;
@@ -1468,7 +1468,7 @@ body.menu-open .floating-consult-btn {
     padding: 16px 24px;
     color: #fff;
     text-decoration: none;
-    font-family: var(--font-main, 'Tajawal', sans-serif);
+    font-family: var(--font-main);
     font-size: 16px;
     background: none;
     border: none;
@@ -1479,7 +1479,7 @@ body.menu-open .floating-consult-btn {
 
 .drawer-link:hover,
 .drawer-link.active {
-    color: var(--color-primary, #FFCC35);
+    color: var(--color-primary);
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -1496,7 +1496,7 @@ body.menu-open .floating-consult-btn {
 
 .drawer-toggle[aria-expanded="true"] .drawer-arrow {
     transform: rotate(180deg);
-    color: var(--color-primary, #FFCC35);
+    color: var(--color-primary);
 }
 
 /* ===== Sub Menu ===== */
@@ -1518,7 +1518,7 @@ body.menu-open .floating-consult-btn {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     font-size: 15px;
-    font-family: var(--font-main, 'Tajawal', sans-serif);
+    font-family: var(--font-main);
     transition: color 0.2s, padding-right 0.2s;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -1528,7 +1528,7 @@ body.menu-open .floating-consult-btn {
 }
 
 .drawer-submenu li a:hover {
-    color: var(--color-primary, #FFCC35);
+    color: var(--color-primary);
     padding-right: 44px;
 }
 
@@ -1543,8 +1543,8 @@ body.menu-open .floating-consult-btn {
     text-align: center;
     padding: 12px;
     border-radius: 8px;
-    background: var(--color-primary, #FFCC35);
-    color: var(--color-secondary, #00025B) !important;
+    background: var(--color-primary);
+    color: var(--color-secondary) !important;
     font-weight: 700;
     text-decoration: none;
     font-family: var(--font-main, 'Tajawal', sans-serif);
