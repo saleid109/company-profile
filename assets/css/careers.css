@@ -151,7 +151,7 @@
 }
 
 .btn-apply:hover {
-  background-color: var(--color-bg-light);
+  background-color: var(--color-navy-light);
   color: var(--color-white);
 }
 
