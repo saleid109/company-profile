@@ -1,18 +1,9 @@
-/* ملف CSS لصفحة الوظائف */
+/* ملف CSS لصفحة الوظائف - محدّث ليطابق تصميم الفيجما */
 
-
-/* قسم الهيرو */
-
-
-.hero-section h1 {
-  font-size: 48px;
-  font-weight: 700;
-}
-
-/* قسم التحكم (البحث والترتيب) */
+/* ========== قسم التحكم (البحث والترتيب) ========== */
 .controls-section {
   padding: 40px 0;
-  align-items: flex-start;
+  background-color: var(--color-bg-light, #F5F5F5);
 }
 
 .controls-wrapper {
@@ -21,8 +12,11 @@
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+  /* RTL: ترتيب → يسار | بحث → يمين */
+  flex-direction: row-reverse;
 }
 
+/* حقل البحث */
 .search-box {
   position: relative;
   flex: 1;
@@ -34,8 +28,15 @@
   padding: 12px 45px 12px 15px;
   border: 1px solid #E0E0E0;
   border-radius: 30px;
-  font-size: 16px;
+  font-size: 15px;
+  font-family: var(--font-main);
+  background: #fff;
   outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.search-box input:focus {
+  border-color: var(--color-secondary, #00025B);
 }
 
 .search-box i {
@@ -44,209 +45,202 @@
   top: 50%;
   transform: translateY(-50%);
   color: #999;
+  pointer-events: none;
 }
 
+/* زر الترتيب */
 .sort-box {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   border: 1px solid #E0E0E0;
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  background: var(--white);
+  background: #fff;
+  font-family: var(--font-main);
+  font-size: 15px;
+  transition: border-color 0.25s ease;
+  white-space: nowrap;
 }
 
-/* شبكة الوظائف */
-.jobs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+.sort-box:hover {
+  border-color: var(--color-secondary, #00025B);
+}
+
+/* ========== قسم الوظائف ========== */
+.jobs-section {
+  background-color: var(--color-bg-light, #F5F5F5);
   padding-bottom: 80px;
 }
 
+/* شبكة 3 أعمدة */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ========== بطاقة الوظيفة ========== */
 .job-card {
-  background: var(--white);
-  border: 1px solid #F0F0F0;
+  background: #ffffff;
+  border: 1px solid #EBEBEB;
   border-radius: 12px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: var(--card-shadow);
-  transition: var(--transition);
+  padding: 28px 24px 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;          /* محاذاة لليمين (RTL) */
+  text-align: right;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .job-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 2, 91, 0.08);
 }
 
+/* أيقونة الحقيبة */
 .job-icon {
-  font-size: 24px;
-  color: var(--primary-color);
-  margin-bottom: 15px;
+  font-size: 20px;
+  color: var(--color-secondary, #00025B);
+  margin-bottom: 12px;
 }
 
+/* نوع الإعلان */
 .job-type {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 
+/* عنوان الوظيفة */
 .job-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 15px;
+  color: var(--color-secondary, #00025B);
+  margin-bottom: 10px;
+  font-family: var(--font-main);
 }
 
+/* آخر موعد */
 .job-deadline {
-  font-size: 14px;
-  color: #888;
-  margin-bottom: 25px;
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 20px;
 }
 
+/* زر التقديم — نص بسيط مع خط سفلي (يطابق الفيجما) */
 .btn-apply {
-  background-color: var(--primary-color);
-  color: var(--white);
+  display: inline-block;
+  color: var(--color-secondary, #00025B);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-main);
   text-decoration: none;
-  padding: 10px 40px;
-  border-radius: 25px;
-  font-weight: 500;
-  transition: var(--transition);
-  width: 100%;
-  max-width: 150px;
+  padding: 8px 32px;
+  border: 2px solid var(--color-secondary, #00025B);
+  border-radius: 6px;
+  transition: background 0.25s ease, color 0.25s ease;
+  align-self: flex-end;
 }
 
 .btn-apply:hover {
-  background-color: #000044;
+  background-color: var(--color-secondary, #00025B);
+  color: #fff;
 }
 
-/* الفوتر */
-footer {
-  background-color: var(--primary-color);
-  color: var(--white);
+/* ========== الفوتر ========== */
+footer,
+.site-footer {
+  background-color: var(--color-secondary, #00025B);
+  color: #fff;
   padding: 60px 0 20px;
 }
 
-.footer-grid {
+.footer-grid,
+.footer-container {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr;
   gap: 40px;
   margin-bottom: 40px;
 }
 
-.footer-col h4 {
-  font-size: 20px;
-  margin-bottom: 25px;
+.footer-col h4,
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
   position: relative;
   padding-bottom: 10px;
 }
 
-.footer-col h4::after {
+.footer-col h4::after,
+.footer-column h4::after {
   content: '';
   position: absolute;
   right: 0;
   bottom: 0;
   width: 30px;
   height: 2px;
-  background-color: var(--secondary-color);
+  background-color: var(--color-primary, #FFCC35);
 }
 
-.footer-col ul {
+.footer-col ul,
+.footer-column ul {
   list-style: none;
 }
 
-.footer-col ul li {
-  margin-bottom: 12px;
+.footer-col ul li,
+.footer-column ul li {
+  margin-bottom: 10px;
 }
 
-.footer-col ul li a {
-  color: rgba(255, 255, 255, 0.8);
+.footer-col ul li a,
+.footer-column ul li a {
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
-  transition: var(--transition);
+  transition: color 0.2s ease;
 }
 
-.footer-col ul li a:hover {
-  color: var(--secondary-color);
-  padding-right: 5px;
+.footer-col ul li a:hover,
+.footer-column ul li a:hover {
+  color: var(--color-primary, #FFCC35);
 }
 
-.contact-info p {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.social-footer {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.social-footer a {
-  width: 35px;
-  height: 35px;
-  background: rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: var(--white);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.social-footer a:hover {
-  background: var(--secondary-color);
-  color: var(--primary-color);
-}
-
-.footer-bottom {
+.footer-bottom,
+.footer-bottom-bar {
   text-align: center;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
 }
 
-/* التجاوب - الأيباد */
+/* ========== التجاوب ========== */
+
+/* تابلت */
 @media (max-width: 1024px) {
-  .footer-grid {
+  .jobs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid,
+  .footer-container {
     grid-template-columns: 1fr 1fr;
   }
-
-  .hero-section h1 {
-    font-size: 36px;
-  }
 }
 
-/* التجاوب - الجوال */
+/* جوال */
 @media (max-width: 768px) {
-
   .nav-menu,
   .desktop-only {
     display: none;
   }
 
-  .footer-grid {
+  .jobs-grid {
     grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-col h4::after {
-    right: 50%;
-    transform: translateX(50%);
-  }
-
-  .social-footer {
-    justify-content: center;
   }
 
   .controls-wrapper {
@@ -258,12 +252,16 @@ footer {
     max-width: none;
   }
 
-  .hero-section h1 {
-    font-size: 28px;
+  .footer-grid,
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
-  .job-card {
-    padding: 20px;
+  .footer-col h4::after,
+  .footer-column h4::after {
+    right: 50%;
+    transform: translateX(50%);
   }
 }
 
