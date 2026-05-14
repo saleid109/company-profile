@@ -36,7 +36,8 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/mobile.css" />
   <link rel="stylesheet" href="./assets/css/about.css" />
-  
+    <link rel="stylesheet" href="./assets/css/careers.css" />
+
 
   <!-- مكتبة السلايدر Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -243,6 +244,7 @@
 
   <main id="main-content">
 
+
     <!-- ========== Hero ========== -->
     <section id="hero" class="hero-inner">
       <div class="container hero-content">
@@ -259,120 +261,83 @@
     </section>
 
 
-    <!-- ===== قسم الأخبار ===== -->
-    <section class="news-section" aria-labelledby="news-section-title">
-      <div class="container">
-
-        <!-- أدوات البحث والترتيب -->
-        <div class="news-controls" role="search" aria-label="البحث في الأخبار وترتيبها">
-
-          <div class="search-group">
-            <i class="fas fa-search" aria-hidden="true"></i>
-            <input type="search" id="news-search" placeholder="بحث في الأخبار..." />
-          </div>
-
-          <div class="sort-dropdown">
-            <button class="sort-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
-              <i class="fas fa-sliders-h"></i>
-              <span>ترتيب</span>
-            </button>
-            <ul class="dropdown-menu-list" role="listbox">
-              <li role="option">الأحدث</li>
-              <li role="option">الأقدم</li>
-              <li role="option">الأكثر قراءة</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <!-- قائمة الأخبار -->
-          <section class="news-list" aria-label="قائمة أخبار التوظيف">
-          <article class="news-item" role="article">
-            <div class="news-card">
-              <i class="fas fa-bullhorn news-icon" aria-hidden="true"></i>
-              <div class="news-content">
-                <p class="news-title">أعلانات التوظيف</p>
-              </div>
-              <div class="title-job">
-                <h4>شاغر  مدرب</h4>
-                <span class="news-date"> أخر موعد للتقديم: 30-12-2025</span>
-              </div>
+        <!-- قسم التحكم -->
+        <section class="controls-section">
+            <div class="container">
+                <div class="controls-wrapper">
+                    <div class="sort-box" role="button" aria-haspopup="listbox" aria-label="ترتيب النتائج">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>ترتيب</span>
+                    </div>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="search" placeholder="بحث" aria-label="بحث في الوظائف">
+                    </div>
+                </div>
             </div>
-          </article>
-          <article class="news-item" role="article">
-            <div class="news-card">
-              <i class="fas fa-bullhorn news-icon" aria-hidden="true"></i>
-              <div class="news-content">
-                <p class="news-title">أعلانات التوظيف</p>
-              </div>
-              <div class="title-job">
-                <h4>شاغر  مدرب</h4>
-                <span class="news-date"> أخر موعد للتقديم: 30-12-2025</span>
-              </div>
-            </div>
-          </article>
-          <article class="news-item" role="article">
-            <div class="news-card">
-              <i class="fas fa-bullhorn news-icon" aria-hidden="true"></i>
-              <div class="news-content">
-                <p class="news-title">أعلانات التوظيف</p>
-              </div>
-              <div class="title-job">
-                <h4>شاغر باحث اجتماعي  </h4>
-                <span class="news-date"> أخر موعد للتقديم: 30-12-2025</span>
-              </div>
-            </div>
-          </article>
-          <article class="news-item" role="article">
-            <div class="news-card">
-              <i class="fas fa-bullhorn news-icon" aria-hidden="true"></i>
-              <div class="news-content">
-                <p class="news-title">أعلانات التوظيف</p>
-              </div>
-              <div class="title-job">
-                <h4>  شاغر محاسب</h4>
-                <span class="news-date"> أخر موعد للتقديم: 30-12-2025</span>
-              </div>
-            </div>
-          </article>
-          <article class="news-item" role="article">
-            <div class="news-card">
-              <i class="fas fa-bullhorn news-icon" aria-hidden="true"></i>
-              <div class="news-content">
-                <p class="news-title">أعلانات التوظيف</p>
-              </div>
-              <div class="title-job">
-                <h4>  شاغر مصمم</h4>
-                <span class="news-date"> أخر موعد للتقديم: 30-12-2025</span>
-              </div>
-            </div>
-          </article>
-          <article class="news-item" role="article">
-            <div class="news-card">
-              <i class="fas fa-bullhorn news-icon" aria-hidden="true"></i>
-              <div class="news-content">
-                <p class="news-title">أعلانات التوظيف</p>
-              </div>
-              <div class="title-job">
-                <h4>   شاغر مدير برامج</h4>
-                <span class="news-date"> أخر موعد للتقديم: 30-12-2025</span>
-              </div>
-            </div>
-          </article>
-          <article class="news-item" role="article">
-            <div class="news-card">
-              <i class="fas fa-bullhorn news-icon" aria-hidden="true"></i>
-              <div class="news-content">
-                <p class="news-title">أعلانات التوظيف</p>
-              </div>
-              <div class="title-job">
-                <h4>   شاغر منسق برامج</h4>
-                <span class="news-date"> أخر موعد للتقديم: 30-12-2025</span>
-              </div>
-            </div>
-          </article>
         </section>
 
+        <!-- شبكة الوظائف -->
+        <section class="jobs-section">
+            <div class="container">
+                <div class="jobs-grid">
+                    <!-- وظيفة 1 -->
+                    <article class="job-card">
+                        <div class="job-icon"><i class="fas fa-briefcase"></i></div>
+                        <span class="job-type">إعلان توظيف</span>
+                        <h2 class="job-title">شاغر مدرب</h2>
+                        <p class="job-deadline">آخر موعد للتقديم: 2025-04-30</p>
+                        <a href="#" class="btn-apply" aria-label="تقديم على وظيفة شاغر مدرب">تقديم</a>
+                    </article>
+
+                    <!-- وظيفة 2 -->
+                    <article class="job-card">
+                        <div class="job-icon"><i class="fas fa-briefcase"></i></div>
+                        <span class="job-type">إعلان توظيف</span>
+                        <h2 class="job-title">شاغر باحث اجتماعي</h2>
+                        <p class="job-deadline">آخر موعد للتقديم: 2025-04-30</p>
+                        <a href="#" class="btn-apply" aria-label="تقديم على وظيفة شاغر باحث اجتماعي">تقديم</a>
+                    </article>
+
+                    <!-- وظيفة 3 -->
+                    <article class="job-card">
+                        <div class="job-icon"><i class="fas fa-briefcase"></i></div>
+                        <span class="job-type">إعلان توظيف</span>
+                        <h2 class="job-title">شاغر محاسب</h2>
+                        <p class="job-deadline">آخر موعد للتقديم: 2025-04-30</p>
+                        <a href="#" class="btn-apply" aria-label="تقديم على وظيفة شاغر محاسب">تقديم</a>
+                    </article>
+
+                    <!-- وظيفة 4 -->
+                    <article class="job-card">
+                        <div class="job-icon"><i class="fas fa-briefcase"></i></div>
+                        <span class="job-type">إعلان توظيف</span>
+                        <h2 class="job-title">شاغر مصمم</h2>
+                        <p class="job-deadline">آخر موعد للتقديم: 2025-04-30</p>
+                        <a href="#" class="btn-apply" aria-label="تقديم على وظيفة شاغر مصمم">تقديم</a>
+                    </article>
+
+                    <!-- وظيفة 5 -->
+                    <article class="job-card">
+                        <div class="job-icon"><i class="fas fa-briefcase"></i></div>
+                        <span class="job-type">إعلان توظيف</span>
+                        <h2 class="job-title">شاغر مدير برامج</h2>
+                        <p class="job-deadline">آخر موعد للتقديم: 2025-04-30</p>
+                        <a href="#" class="btn-apply" aria-label="تقديم على وظيفة شاغر مدير برامج">تقديم</a>
+                    </article>
+
+                    <!-- وظيفة 6 -->
+                    <article class="job-card">
+                        <div class="job-icon"><i class="fas fa-briefcase"></i></div>
+                        <span class="job-type">إعلان توظيف</span>
+                        <h2 class="job-title">شاغر منسق برامج</h2>
+                        <p class="job-deadline">آخر موعد للتقديم: 2025-04-30</p>
+                        <a href="#" class="btn-apply" aria-label="تقديم على وظيفة شاغر منسق برامج">تقديم</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    
   </main>
 
   <!--=========== Footer ===========-->
