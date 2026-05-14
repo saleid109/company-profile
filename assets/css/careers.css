@@ -14,6 +14,7 @@
   flex-wrap: wrap;
   /* RTL: ترتيب → يسار | بحث → يمين */
   flex-direction: row-reverse;
+  padding: 0 15px;
 }
 
 /* حقل البحث */
@@ -65,12 +66,12 @@
 }
 
 .sort-box:hover {
-  border-color: var(--color-secondary, #00025B);
+  border-color: var(--color-secondary);
 }
 
 /* ========== قسم الوظائف ========== */
 .jobs-section {
-  background-color: var(--color-bg-light, #F5F5F5);
+  background-color: var(--color-bg-light);
   padding-bottom: 80px;
 }
 
@@ -79,6 +80,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  padding: 40px 15px 0;
 }
 
 /* ========== بطاقة الوظيفة ========== */
@@ -89,8 +91,8 @@
   padding: 28px 24px 24px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;          /* محاذاة لليمين (RTL) */
-  text-align: right;
+  align-items: center;          /* محاذاة لليمين (RTL) */
+  text-align: center;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
@@ -102,7 +104,7 @@
 /* أيقونة الحقيبة */
 .job-icon {
   font-size: 20px;
-  color: var(--color-secondary, #00025B);
+  color: var(--color-secondary);
   margin-bottom: 12px;
 }
 
@@ -120,7 +122,7 @@
 .job-title {
   font-size: 20px;
   font-weight: 700;
-  color: var(--color-secondary, #00025B);
+  color: var(--color-secondary);
   margin-bottom: 10px;
   font-family: var(--font-main);
 }
@@ -135,28 +137,29 @@
 /* زر التقديم — نص بسيط مع خط سفلي (يطابق الفيجما) */
 .btn-apply {
   display: inline-block;
-  color: var(--color-secondary, #00025B);
+  color: var(--color-bg-light);
+  background-color: var(--color-secondary);
   font-size: 15px;
   font-weight: 600;
   font-family: var(--font-main);
   text-decoration: none;
   padding: 8px 32px;
-  border: 2px solid var(--color-secondary, #00025B);
+  border: 2px solid var(--color-secondary);
   border-radius: 6px;
   transition: background 0.25s ease, color 0.25s ease;
-  align-self: flex-end;
+  align-self: center; /* محاذاة لليمين (RTL) */
 }
 
 .btn-apply:hover {
-  background-color: var(--color-secondary, #00025B);
-  color: #fff;
+  background-color: var(--color-bg-light);
+  color: var(--color-white);
 }
 
 /* ========== الفوتر ========== */
 footer,
 .site-footer {
-  background-color: var(--color-secondary, #00025B);
-  color: #fff;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
   padding: 60px 0 20px;
 }
 
@@ -221,7 +224,7 @@ footer,
 /* ========== التجاوب ========== */
 
 /* تابلت */
-@media ( max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .jobs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
