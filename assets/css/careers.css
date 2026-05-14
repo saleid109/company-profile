@@ -237,10 +237,7 @@ footer,
 
 /* جوال */
 @media (max-width: 768px) {
-  .nav-menu,
-  .desktop-only {
-    display: none;
-  }
+
 
   .jobs-grid {
     grid-template-columns: 1fr;
