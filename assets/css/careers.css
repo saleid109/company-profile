@@ -52,6 +52,10 @@
 /* زر الترتيب */
 .sort-box {
   position: relative;
+  background: var(--color-white);
+  border: 1px solid #E0E0E0;
+  border-radius: 30px;
+  padding: 10px 20px;
 }
 
 /* القائمة المنسدلة — مخفية افتراضياً */
@@ -62,7 +66,7 @@
   right: 0;
   /* يسار في LTR، يمين في RTL لأن dir="rtl" */
   min-width: 160px;
-  background: #fff;
+  background: var(--color-white);
   border: 1px solid #E0E0E0;
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0, 2, 91, 0.10);
@@ -108,7 +112,6 @@
   font-size: 14px;
   font-family: var(--font-main);
   color: var(--color-text);
-  background: var(--color-white);
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
   white-space: nowrap;
@@ -245,7 +248,7 @@ footer,
   bottom: 0;
   width: 30px;
   height: 2px;
-  background-color: var(--color-primary, #FFCC35);
+  background-color: var(--color-primary);
 }
 
 .footer-col ul,
@@ -267,7 +270,7 @@ footer,
 
 .footer-col ul li a:hover,
 .footer-column ul li a:hover {
-  color: var(--color-primary, #FFCC35);
+  color: var(--color-primary);
 }
 
 .footer-bottom,
