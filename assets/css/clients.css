@@ -1,0 +1,100 @@
+/* Clients Styles */
+
+
+        .hero-section h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        /* شبكة الشركاء */
+        .partners-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .partner-card {
+            width: 100%;
+            max-width: 220px;
+            padding: 20px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-card img {
+            max-width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .partner-card:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+@media screen and (max-width: 768px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 32px;
+  }
+
+  .partner-card {
+    max-width: 150px;
+    padding: 10px;
+  }
+
+  .partner-card img {
+    max-width: 80%;
+  }
+
+
+  
+}
+/*tablet*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .hero-section h1 {
+    font-size: 40px;
+  }
+
+  .partner-card {
+    max-width: 200px;
+    padding: 15px;
+  }
+
+  .partner-card img {
+    max-width: 90%;
+  }  
+}
+
+ /* قارئ الشاشات */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
