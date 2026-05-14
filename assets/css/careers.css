@@ -3,7 +3,7 @@
 /* ========== قسم التحكم (البحث والترتيب) ========== */
 .controls-section {
   padding: 40px 0;
-  background-color: var(--color-bg-light, #F5F5F5);
+  background-color: var(--color-bg-light);
 }
 
 .controls-wrapper {
@@ -31,13 +31,13 @@
   border-radius: 30px;
   font-size: 15px;
   font-family: var(--font-main);
-  background: #fff;
+  background: var(--color-white);
   outline: none;
   transition: border-color 0.25s ease;
 }
 
 .search-box input:focus {
-  border-color: var(--color-secondary, #00025B);
+  border-color: var(--color-secondary);
 }
 
 .search-box i {
@@ -51,22 +51,78 @@
 
 /* زر الترتيب */
 .sort-box {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid #E0E0E0;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
+  position: relative;
+}
+
+/* القائمة المنسدلة — مخفية افتراضياً */
+.dropdown-menu-list {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  /* يسار في LTR، يمين في RTL لأن dir="rtl" */
+  min-width: 160px;
   background: #fff;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 2, 91, 0.10);
+  list-style: none;
+  padding: 6px 0;
+  z-index: 50;
+  overflow: hidden;
+  animation: fadeSlideDown 0.2s ease forwards;
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* إظهار القائمة عند الفتح */
+.sort-box.open .dropdown-menu-list {
+  display: block;
+}
+
+/* دوران السهم */
+.sort-box.open .sort-arrow {
+  transform: rotate(180deg);
+}
+
+.sort-arrow {
+  transition: transform 0.25s ease;
+  font-size: 12px;
+  margin-right: auto;
+  /* يدفع السهم لأقصى اليسار */
+}
+
+/* عناصر القائمة */
+.dropdown-menu-list li {
+  padding: 10px 18px;
+  font-size: 14px;
   font-family: var(--font-main);
-  font-size: 15px;
-  transition: border-color 0.25s ease;
+  color: var(--color-text);
+  background: var(--color-white);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
   white-space: nowrap;
 }
 
-.sort-box:hover {
-  border-color: var(--color-secondary);
+.dropdown-menu-list li:hover {
+  background: #F5F5F5;
+  color: var(--color-secondary);
+}
+
+.dropdown-menu-list li.active {
+  color: var(--color-secondary);
+  font-weight: 700;
+  background: rgba(0, 2, 91, 0.05);
 }
 
 /* ========== قسم الوظائف ========== */
@@ -85,13 +141,14 @@
 
 /* ========== بطاقة الوظيفة ========== */
 .job-card {
-  background: #ffffff;
+  background: var(--color-white);
   border: 1px solid #EBEBEB;
   border-radius: 12px;
   padding: 28px 24px 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;          /* محاذاة لليمين (RTL) */
+  align-items: center;
+  /* محاذاة لليمين (RTL) */
   text-align: center;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
@@ -147,7 +204,8 @@
   border: 2px solid var(--color-secondary);
   border-radius: 6px;
   transition: background 0.25s ease, color 0.25s ease;
-  align-self: center; /* محاذاة لليمين (RTL) */
+  align-self: center;
+  /* محاذاة لليمين (RTL) */
 }
 
 .btn-apply:hover {

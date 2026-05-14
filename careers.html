@@ -264,18 +264,26 @@
 
     <!-- قسم التحكم -->
     <section class="controls-section">
-      <div class="sort-box" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="ترتيب النتائج"
-        id="sortToggle">
-        <i class="fas fa-sliders-h" aria-hidden="true"></i>
-        <span id="sortLabel">ترتيب</span>
-        <i class="fas fa-chevron-down sort-arrow" aria-hidden="true"></i>
+      <div class="container">
+        <div class="controls-wrapper">
+          <div class="sort-box" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="ترتيب النتائج"
+            id="sortToggle">
+            <i class="fas fa-sliders-h" aria-hidden="true"></i>
+            <span id="sortLabel">ترتيب</span>
+            <i class="fas fa-chevron-down sort-arrow" aria-hidden="true"></i>
 
-        <ul class="dropdown-menu-list" role="listbox" aria-label="خيارات الترتيب" id="sortDropdown">
-          <li role="option" data-value="newest" class="active">الأحدث</li>
-          <li role="option" data-value="oldest">الأقدم</li>
-          <li role="option" data-value="most-read">الأكثر قراءة</li>
-          <li role="option" data-value="gallery">ألبوم الصور</li>
-        </ul>
+            <ul class="dropdown-menu-list" role="listbox" aria-label="خيارات الترتيب" id="sortDropdown">
+              <li role="option" data-value="newest" class="active">الأحدث</li>
+              <li role="option" data-value="oldest">الأقدم</li>
+              <li role="option" data-value="most-read">الأكثر قراءة</li>
+              <li role="option" data-value="gallery">ألبوم الصور</li>
+            </ul>
+          </div>
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="search" placeholder="بحث" aria-label="بحث في الوظائف">
+          </div>
+        </div>
       </div>
     </section>
 
