@@ -586,23 +586,30 @@
 @media (max-width: 767px) {
 
   
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+    .nav-right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 
-  .mobile-menu-icon {
-    order: -1;
-  }
+    .mobile-menu-icon {
+        order: 1;
+        /* يبقى على اليسار */
+        margin-left: 0;
+    }
 
-  .nav-wrapper {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
+    .logo {
+        order: -1;
+        /* الشعار على اليمين */
+    }
 
   .cart-page-wrapper {
     padding: 24px 16px 70px;
