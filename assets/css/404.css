@@ -33,7 +33,7 @@
 .error-number {
   font-size: clamp(56px, 10vw, 96px);
   font-weight: 900;
-  color: var(--navy);
+  color: var(--color-secondary);
   line-height: 1;
   margin-bottom: 8px;
   letter-spacing: -3px;
@@ -43,7 +43,7 @@
 .error-title {
   font-size: clamp(24px, 4vw, 32px);
   font-weight: 900;
-  color: var(--navy);
+  color: var(--color-secondary);
   margin-bottom: 6px;
 }
 
@@ -51,7 +51,7 @@
   font-family: var(--font-en);
   font-size: 16px;
   font-weight: 700;
-  color: var(--text-muted);
+  color: var(--color-text);
   letter-spacing: .03em;
   margin-bottom: 19px;
 }
@@ -68,7 +68,7 @@
 /* ── الفقرات ── */
 .error-description {
   font-size: 16px;
-  color: var(--text-body);
+  color: var(--color-text);
   line-height: 1.8;
   max-width: 480px;
   margin: 0 auto 8px;
@@ -77,14 +77,14 @@
 .error-description-en {
   font-family: var(--font-en);
   font-size: 14px;
-  color: var(--text-muted);
+  color: var(--color-text);
   line-height: 1.8;
   max-width: 480px;
   margin: 0 auto 35px;
 }
 
 /* ════════════════════════════════════════════════
-   الأزرار
+    الأزرار
    ════════════════════════════════════════════════ */
 .error-actions {
   display: flex;
@@ -112,26 +112,28 @@
 }
 
 .btn-home {
-  background: var(--navy);
+  background: var(--color-secondary);
   color: var(--color-white);
 }
 
 .btn-home:hover {
-  background: var(--navy-dark);
+  background: var(--color-navy-light);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 2, 91, .22);
 }
 
 .btn-contact {
   background: transparent;
-  color: var(--navy);
+  color: var(--color-secondary);
   border-color: var(--color-navy-light);
 }
 
 .btn-contact:hover {
   border-color: var(--color-secondary);
-  background: var(--color-white);
+  background: var(--color-navy-light);
   transform: translateY(-2px);
+  color: var(--color-white);
+  box-shadow: 0 8px 24px rgba(0, 2, 91, .22);
 }
 
 /* ════════════════════════════════════════════════

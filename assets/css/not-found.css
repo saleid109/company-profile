@@ -142,7 +142,7 @@
     font-size: 14px;
     color: var(--color-gray-secondary);
     margin-bottom: 40px;
-    font-family:var(--font-main);
+    font-family: var(--font-main);
 }
 
 .error-actions {
@@ -194,4 +194,109 @@
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+/* ════════════════════════════════════════════════
+    Responsive - الجوال والتابلت
+   ════════════════════════════════════════════════ */
+
+/* التابلت: 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .error-section {
+        padding: 48px 32px;
+    }
+
+    .error-wrapper {
+        max-width: 580px;
+    }
+
+    .error-illustration {
+        margin-bottom: 36px;
+        margin-top: 40px;
+    }
+
+    .browser-mockup {
+        width: 260px;
+    }
+
+    .browser-body {
+        height: 130px;
+        font-size: 48px;
+    }
+
+    .error-title {
+        font-size: 30px;
+    }
+
+    .error-subtitle {
+        font-size: 16px;
+    }
+
+    .btn-home,
+    .btn-contact {
+        padding: 11px 28px;
+        font-size: 14px;
+    }
+}
+
+/* الجوال: max-width 768px */
+@media (max-width: 768px) {
+    .error-section {
+        padding: 32px 16px;
+    }
+
+    .error-wrapper {
+        max-width: 100%;
+    }
+
+    .error-illustration {
+        margin-bottom: 28px;
+        margin-top: 32px;
+    }
+
+    .hanging-lines {
+        gap: 100px;
+    }
+
+    .browser-mockup {
+        width: 220px;
+    }
+
+    .browser-body {
+        height: 110px;
+        font-size: 40px;
+    }
+
+    .error-title {
+        font-size: 26px;
+    }
+
+    .error-subtitle {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    .error-description {
+        font-size: 14px;
+    }
+
+    .error-description-en {
+        font-size: 13px;
+        margin-bottom: 28px;
+    }
+
+    .error-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-home,
+    .btn-contact {
+        width: 100%;
+        max-width: 280px;
+        padding: 12px 20px;
+        font-size: 15px;
+        text-align: center;
+    }
 }
