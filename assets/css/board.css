@@ -11,7 +11,8 @@
 
         .hero-section h1 {
             color: #fff;
-            font-size: clamp(28px, 5vw, 42px); /* خط مرن للسيو والتجاوب */
+            font-size: clamp(28px, 5vw, 42px);
+            /* خط مرن للسيو والتجاوب */
             font-weight: 800;
             letter-spacing: 0.5px;
         }
@@ -33,7 +34,8 @@
         /* Grid for other members */
         .board-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* الافتراضي للشاشات الكبيرة */
+            grid-template-columns: repeat(3, 1fr);
+            /* الافتراضي للشاشات الكبيرة */
             gap: 90px 30px;
         }
 
@@ -94,46 +96,75 @@
            ============================================ */
 
         /* ===== تابلت (769px - 1024px) ===== */
+        /* للشاشات المتوسطة (الأجهزة اللوحية: 769px - 1024px) */
         @media (min-width: 769px) and (max-width: 1024px) {
-            .board-section {
-                padding: 60px 40px;
+            .teams-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            .board-grid {
-                grid-template-columns: repeat(2, 1fr); /* عمودين في التابلت */
-                gap: 80px 25px;
+
+            .filters-inner {
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                gap: 15px;
+                padding: 15px 0;
             }
-            .leader-row {
-                margin-bottom: 80px;
+
+            .filter-group {
+                flex-shrink: 1;
             }
-            .board-card {
-                padding: 60px 20px 30px;
+
+            .filter-select {
+                padding: 6px 10px;
+                font-size: 14px;
             }
         }
 
+        /* للشاشات الصغيرة (الهواتف: max-width 768px) */
         /* ===== جوال (أقل من 768px) ===== */
         @media (max-width: 768px) {
             .hero-section {
                 height: 240px;
             }
+
             .board-section {
                 padding: 50px 15px;
             }
+
             .board-grid {
-                grid-template-columns: 1fr; /* عمود واحد في الجوال */
+                grid-template-columns: 1fr;
+                /* عمود واحد في الجوال */
                 gap: 70px 0;
                 max-width: 400px;
                 margin: 0 auto;
             }
+
             .leader-row {
                 margin-bottom: 70px;
             }
+
             .board-card {
                 padding: 55px 20px 25px;
             }
+
             .board-avatar {
                 width: 90px;
                 height: 90px;
                 top: -45px;
+            }
+
+            .teams-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-header {
+                height: 160px;
+            }
+
+            .card-footer {
+                flex-wrap: wrap;
+                gap: 8px;
             }
         }
 
