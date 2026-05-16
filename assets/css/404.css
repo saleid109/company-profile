@@ -195,11 +195,11 @@
 /* للشاشات المتوسطة (الأجهزة اللوحية: 769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .page-404 {
-    padding: 48px 32px 64px;
-    min-height: calc(100vh - 120px);
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 40px 32px;
   }
 
   .card-404 {
@@ -208,8 +208,8 @@
   }
 
   .browser-wrap {
-    width: min(100%, 280px);
-    margin-bottom: 28px;
+    width: min(100%, 200px); /* تصغير الصورة */
+    margin-bottom: 24px;
   }
 
   .error-code {
@@ -228,24 +228,25 @@
 }
 
 /* للشاشات الصغيرة (الهواتف: max-width 768px) */
+
 @media (max-width: 768px) {
   .page-404 {
-    padding: 32px 16px 48px;
-    min-height: calc(100vh - 100px);
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 24px 16px;
   }
 
   .card-404 {
     max-width: 100%;
-    padding: 32px 20px;
+    padding: 28px 18px;
     border-radius: 12px;
   }
 
   .browser-wrap {
-    width: min(100%, 220px);
-    margin-bottom: 24px;
+    width: min(100%, 160px); /* تصغير الصورة أكثر للجوال */
+    margin-bottom: 20px;
   }
 
   .error-code {
