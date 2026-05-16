@@ -14,7 +14,6 @@
 .card-404 {
   background: var(--color-white);
   border-radius: var(--border-radius);
-  /* 12px */
   box-shadow: var(--shadow);
   max-width: 680px;
   width: 100%;
@@ -39,7 +38,6 @@
 .error-code {
   font-size: clamp(56px, 10vw, 96px);
   font-weight: var(--weight-black);
-  /* 900 */
   color: var(--navy);
   line-height: 1;
   margin-bottom: 8px;
@@ -63,7 +61,6 @@
 .title-ar {
   font-size: clamp(24px, 4vw, 32px);
   font-weight: var(--weight-black);
-  /* 900 */
   color: var(--navy);
   margin-bottom: 6px;
 }
@@ -72,7 +69,6 @@
   font-family: var(--font-en);
   font-size: 16px;
   font-weight: var(--weight-bold);
-  /* 700 */
   color: var(--text-muted);
   letter-spacing: .03em;
   margin-bottom: 19px;
@@ -115,11 +111,9 @@
   gap: 8px;
   padding: 12px 28px;
   border-radius: var(--radius-md);
-  /* 16px */
   font-family: var(--font-main);
   font-size: 15px;
   font-weight: var(--weight-bold);
-  /* 700 */
   cursor: pointer;
   border: 2px solid transparent;
   transition: var(--transition);
@@ -129,13 +123,11 @@
 /* الزر الأساسي */
 .btn-primary {
   background: var(--navy);
-  /* #00025B */
   color: var(--color-white);
 }
 
 .btn-primary:hover {
   background: var(--navy-dark);
-  /* #000140 */
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 2, 91, .22);
 }
@@ -150,13 +142,11 @@
   background: transparent;
   color: var(--navy);
   border-color: var(--border);
-  /* #DDE2F0 */
 }
 
 .btn-outline:hover {
   border-color: var(--navy);
   background: var(--off-white);
-  /* #F5F5F5 */
   transform: translateY(-2px);
 }
 
@@ -164,7 +154,6 @@
   outline: 3px solid var(--navy);
   outline-offset: 2px;
 }
-
 
 /* ════════════════════════════════════════════════
     الأنيميشن
@@ -174,7 +163,6 @@
     opacity: 0;
     transform: translateY(28px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -182,14 +170,97 @@
 }
 
 @keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
 
-  0%,
-  100% {
-    transform: translateY(0);
+/* ════════════════════════════════════════════════
+    Responsive
+   ════════════════════════════════════════════════ */
+
+/* التابلت: 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page-404 {
+    min-height: 100vh;
+    padding: 40px 32px;
   }
 
-  50% {
-    transform: translateY(-10px);
+  .card-404 {
+    max-width: 580px;
+    padding: 44px 36px;
+  }
+
+  .browser-wrap {
+    width: min(100%, 200px);
+    margin-bottom: 24px;
+  }
+
+  .error-code {
+    font-size: clamp(48px, 8vw, 80px);
+  }
+
+  .title-ar {
+    font-size: clamp(22px, 3.5vw, 28px);
+  }
+
+  .btn {
+    min-width: 140px;
+    padding: 11px 22px;
+    font-size: 14px;
+  }
+}
+
+/* الجوال: max-width 768px */
+@media (max-width: 768px) {
+  .page-404 {
+    min-height: 100vh;
+    padding: 24px 16px;
+  }
+
+  .card-404 {
+    max-width: 100%;
+    padding: 28px 18px;
+    border-radius: 12px;
+  }
+
+  .browser-wrap {
+    width: min(100%, 160px);
+    margin-bottom: 20px;
+  }
+
+  .error-code {
+    font-size: clamp(40px, 15vw, 64px);
+    letter-spacing: -2px;
+  }
+
+  .title-ar {
+    font-size: clamp(20px, 5vw, 26px);
+  }
+
+  .title-en {
+    font-size: 14px;
+  }
+
+  .desc-ar {
+    font-size: 15px;
+  }
+
+  .desc-en {
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 20px;
+    font-size: 15px;
   }
 }
 /* للشاشات المتوسطة (الأجهزة اللوحية: 769px - 1024px) */
