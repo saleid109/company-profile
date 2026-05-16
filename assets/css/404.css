@@ -36,7 +36,7 @@
 
 /* ── رقم الخطأ ── */
 .error-code {
-  font-size: clamp(56px, 10vw, 96px);
+  font-size: 96px;
   font-weight: var(--weight-black);
   color: var(--navy);
   line-height: 1;
