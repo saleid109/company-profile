@@ -101,25 +101,21 @@ body {
 
 .floating-consult-btn {
     position: fixed;
-    top: 80px;
-    /* تحت الـ navbar مباشرة (ارتفاع الـ navbar 70px + 10px مسافة) */
+    display: flex;
+    top: unset;
+    /* ← مهم لإلغاء top: 80px القديم */
+    bottom: 20px;
     left: 20px;
-    background-color: #f5c842;
-    color: #001a4d;
-    display: none;
-    /* مخفي افتراضياً */
     align-items: center;
     gap: 8px;
     padding: 10px 18px;
     border-radius: 50px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    z-index: 100 !important;
-    /* تأكد من أنه فوق كل العناصر */
-
+    z-index: 100;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.85rem;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    font-size: 14px;
+    background: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .floating-consult-btn i {
@@ -133,8 +129,16 @@ body {
 }
 
 @media (max-width: 1024px) {
+
+    /* إظهار الزر العائم في الجوال والتابلت */
     .floating-consult-btn.show {
         display: flex !important;
+
+    }
+
+    body {
+        padding-bottom: 80px;
+        /* مساحة كافية لظهور الزر العائم بدون تغطية المحتوى */
     }
 }
 
@@ -189,6 +193,8 @@ body.menu-open .floating-consult-btn {
         display: none;
     }
 
+
+
     /* ============================================
         القوائم - النسخة المتقدمة
     ============================================ */
@@ -225,7 +231,7 @@ body.menu-open .floating-consult-btn {
         color: var(--color-secondary);
         border-radius: 8px;
         cursor: pointer;
-        z-index: 5000;
+        z-index: 2000;
         font-size: 24px;
     }
 
@@ -234,248 +240,189 @@ body.menu-open .floating-consult-btn {
         display: none !important;
     }
 
-    /* القائمة الجانبية للجوال */
-    .navbar-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 280px;
-        height: 100vh;
-        background-color: #0b0f5c;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 4000;
-        padding-top: 80px;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-    }
 
-    .navbar-links.open {
-        transform: translateX(0);
-    }
-
-    /* طبقة التظليل */
-    .overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 3000;
-    }
-
-    .overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    /* القوائم الرئيسية */
-    .nav-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        flex: 1;
-    }
-
-    .nav-menu li {
-        width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .nav-menu li a {
-        padding: 18px 25px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-        transition: background 0.3s ease;
-    }
-
-    .nav-menu li a:active {
-        transform: scale(0.96);
-        background-color: rgba(255, 255, 255, 0.1);
-        transition: transform 0.1s ease;
-    }
-
-    /* القوائم الفرعية (Mega Menu) */
-    .mega-menu-content {
-        position: static;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 0;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        max-height: 0;
+    /* منع السكرول عند فتح القائمة */
+    body.menu-open {
         overflow: hidden;
-        opacity: 0;
-        transition: all 0.3s ease;
-        box-shadow: none;
     }
 
-    .nav-menu li.has-mega>a.active+.mega-menu-content,
-    .mega-menu-content.open {
-        max-height: 500px;
-        opacity: 1;
-        padding: 10px 0;
-    }
-
-    .mega-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        padding: 0;
-    }
-
-    .mega-card {
-        display: flex;
-        gap: 15px;
-        padding: 15px 25px;
-        background: transparent;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        text-decoration: none;
-        color: var(--color-white);
-        align-items: flex-start;
-    }
-
-    .mega-card:last-child {
-        border-bottom: none;
-    }
-
-    .card-icon-wrapper {
-        flex-shrink: 0;
-        width: 40px;
-        height: 40px;
+    /* ===== زر الهامبرغر ===== */
+    .mobile-menu-icon {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-
-    .card-icon-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    .mega-icon-wrap {
-        width: 40px;
-        height: 40px;
-        background: rgba(245, 200, 66, 0.2);
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--color-primary, #f5c842);
-    }
-
-    .card-info {
-        flex: 1;
-    }
-
-    .card-info h4 {
-        font-size: 15px;
-        margin: 0 0 5px 0;
-        color: white;
-        font-weight: 700;
-    }
-
-    .card-info p {
-        font-size: 13px;
-        margin: 0 0 5px 0;
-        color: rgba(255, 255, 255, 0.7);
-        line-height: 1.4;
-    }
-
-    .read-more {
-        font-size: 12px;
-        color: var(--color-primary, #f5c842);
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-    }
-
-    /* تدوير السهم عند فتح القائمة */
-    .nav-menu li.has-mega>a.active .fa-chevron-down {
-        transform: rotate(180deg);
-    }
-
-    .nav-menu li a .fa-chevron-down {
-        transition: transform 0.3s ease;
-        font-size: 12px;
-    }
-
-    .navbar-links .mega-menu-content {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 10px;
-        padding: 10px;
-        margin: 10px 15px;
-        display: none;
-        box-shadow: none;
-        min-width: unset;
-    }
-
-    /* عند الضغط يظهر */
-    .navbar-links .mega-menu-content.open,
-    .navbar-links .mega-menu-content.active-mobile {
-        display: block;
-    }
-
-    .navbar-links .mega-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navbar-links .mega-card {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 12px;
-        background: rgba(255, 255, 255, 0.07);
-        border-radius: 8px;
-        color: white;
-        text-decoration: none;
-    }
-
-    .navbar-links .card-info h4 {
-        color: var(--color-primary, #f5c842);
-        font-size: 14px;
-        margin: 0 0 4px;
-    }
-
-    .navbar-links .card-info p {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.7);
-        margin: 0;
-    }
-
-
-
-    .nav-actions.mobile-cta {
-        display: none;
-        align-items: center;
-    }
-
-    .nav-actions.mobile-cta .btn-primary {
-        padding: 8px 12px;
-        font-size: 12px;
-        background: var(--color-primary);
+        width: 45px;
+        height: 45px;
+        background: var(--color-white);
         color: var(--color-secondary);
         border-radius: 8px;
-        font-weight: 700;
-        white-space: nowrap;
+        cursor: pointer;
+        z-index: 2000;
+        font-size: 22px;
+    }
+
+    /* ===== Overlay ===== */
+    .drawer-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1998;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+        backdrop-filter: blur(2px);
+    }
+
+    .drawer-overlay.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* ===== القائمة ===== */
+    .mobile-drawer {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        max-width: 85%;
+        height: 100vh;
+        background: var(--color-secondary);
+        z-index: 1999;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transition: right 0.35s ease;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .mobile-drawer.open {
+        right: 0;
+    }
+
+    /* ===== Header ===== */
+    .drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 14px 16px;
+        min-height: 64px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        direction: rtl;
+    }
+
+    /* ===== زر الإغلاق ===== */
+    .drawer-close {
+        width: 42px;
+        height: 42px;
+        border: none;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--color-white);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .drawer-close:hover {
+        background: rgba(255, 255, 255, 0.14);
+    }
+
+    .drawer-close:active {
+        transform: scale(0.94);
+    }
+
+    /* ===== القائمة ===== */
+    .drawer-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex: 1;
+    }
+
+    .drawer-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .drawer-link {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 22px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        font-family: var(--font-main);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition:
+            background 0.2s ease,
+            color 0.2s ease;
+    }
+
+    .drawer-link:hover,
+    .drawer-link.active {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--color-primary);
+    }
+
+    /* ===== السهم ===== */
+    .drawer-arrow {
+        font-size: 12px;
+        transition: transform 0.3s ease;
+    }
+
+    .drawer-toggle[aria-expanded="true"] .drawer-arrow {
+    transform: rotate(-180deg);
+}
+
+
+    /* ===== القائمة الفرعية ===== */
+    .drawer-submenu {
+        max-height: 0;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.03);
+        transition: max-height 0.35s ease;
+    }
+
+    .drawer-submenu.open {
+        max-height: 400px;
+    }
+
+    .drawer-submenu a {
+        display: block;
+        padding: 14px 40px;
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+        font-size: 14px;
+        font-family: var(--font-main);
+        transition:
+            color 0.2s ease,
+            padding-right 0.2s ease,
+            background 0.2s ease;
+    }
+
+    .drawer-submenu a:hover {
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--color-primary);
+        padding-right: 48px;
+    }
+
+    /* ===== تعطيل النظام القديم ===== */
+    .navbar-links,
+    .overlay {
+        display: none !important;
     }
 
 
@@ -1099,11 +1046,6 @@ body.menu-open .floating-consult-btn {
     }
 
 
-    /* إخفاء الـ overlay */
-    .overlay {
-        display: none !important;
-    }
-
     /* طبقة التظليل */
     .overlay {
         position: fixed;
@@ -1388,172 +1330,6 @@ body.menu-open .floating-consult-btn {
 
 }
 
-
-/* ===== Overlay ===== */
-.drawer-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-    backdrop-filter: blur(2px);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.drawer-overlay.active {
-    display: block;
-    opacity: 1;
-}
-
-/* ===== Drawer Panel ===== */
-.mobile-drawer {
-    position: fixed;
-    top: 0;
-    right: -320px;
-    /* مخفي خارج الشاشة */
-    width: 300px;
-    max-width: 85vw;
-    height: 100%;
-    background: var(--color-secondary);
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow-y: auto;
-}
-
-.mobile-drawer.open {
-    right: 0;
-}
-
-/* ===== زر الإغلاق ===== */
-.drawer-close {
-    align-self: flex-start;
-    margin: 16px 16px 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-}
-
-.drawer-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* ===== قائمة الـ Drawer ===== */
-.drawer-menu {
-    list-style: none;
-    padding: 12px 0;
-    flex: 1;
-}
-
-.drawer-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.drawer-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 16px 24px;
-    color: #fff;
-    text-decoration: none;
-    font-family: var(--font-main);
-    font-size: 16px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: right;
-    transition: background 0.2s, color 0.2s;
-}
-
-.drawer-link:hover,
-.drawer-link.active {
-    color: var(--color-primary);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.drawer-link.active {
-    font-weight: 700;
-}
-
-/* ===== سهم الـ dropdown ===== */
-.drawer-arrow {
-    font-size: 13px;
-    transition: transform 0.3s ease;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.drawer-toggle[aria-expanded="true"] .drawer-arrow {
-    transform: rotate(180deg);
-    color: var(--color-primary);
-}
-
-/* ===== Sub Menu ===== */
-.drawer-submenu {
-    list-style: none;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.drawer-submenu.open {
-    max-height: 300px;
-}
-
-.drawer-submenu li a {
-    display: block;
-    padding: 13px 36px;
-    color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
-    font-size: 15px;
-    font-family: var(--font-main);
-    transition: color 0.2s, padding-right 0.2s;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.drawer-submenu li:last-child a {
-    border-bottom: none;
-}
-
-.drawer-submenu li a:hover {
-    color: var(--color-primary);
-    padding-right: 44px;
-}
-
-/* ===== Footer CTA ===== */
-.drawer-footer {
-    padding: 20px 24px 32px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.drawer-cta {
-    display: block;
-    text-align: center;
-    padding: 12px;
-    border-radius: 8px;
-    background: var(--color-primary);
-    color: var(--color-secondary) !important;
-    font-weight: 700;
-    text-decoration: none;
-    font-family: var(--font-main, 'Tajawal', sans-serif);
-    transition: opacity 0.2s;
-}
-
-.drawer-cta:hover {
-    opacity: 0.88;
-}
 
 /* ===== إخفاء على الديسكتوب ===== */
 @media (min-width: 769px) {

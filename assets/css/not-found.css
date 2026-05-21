@@ -81,7 +81,7 @@
     width: 300px;
     border-radius: 12px;
     overflow: hidden;
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--color-secondary);
     box-shadow: 0 8px 30px rgba(13, 13, 92, .15);
     animation: sway 4s ease-in-out infinite;
     transform-origin: top center;
@@ -95,14 +95,19 @@
     align-items: center;
     padding: 0 12px;
     gap: 6px;
+    direction: ltr;
 }
 
 .dot {
     width: 8px;
     height: 8px;
-    border-radius: 50%;
+    border-radius: 12px;
     background: var(--color-secondary);
     opacity: .55;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
 }
 
 .browser-body {
@@ -155,11 +160,15 @@
 .btn-home {
     background: var(--color-secondary);
     color: var(--color-white);
-    padding: 12px 38px;
-    border-radius: 8px;
+    padding: 10px 28px;
+    border-radius: 12px;
     font-size: 15px;
     font-weight: 600;
     transition: var(--transition);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
 }
 
 .btn-home:hover {
@@ -170,12 +179,16 @@
 .btn-contact {
     border: 1.5px solid var(--color-secondary);
     color: var(--color-secondary);
-    padding: 12px 38px;
-    border-radius: 8px;
+    padding: 10px 28px;
+    border-radius: 12px;
     background: transparent;
     font-size: 15px;
     font-weight: 600;
     transition: var(--transition);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
 }
 
 .btn-contact:hover {
@@ -295,7 +308,7 @@
     .btn-contact {
         width: 100%;
         max-width: 280px;
-        padding: 12px 20px;
+        padding: 10px 20px;
         font-size: 15px;
         text-align: center;
     }

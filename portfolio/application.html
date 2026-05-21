@@ -1,567 +1,781 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  SEO: عنوان فريد لكل مشروع -->
+    <title>تطبيق الخير - أعمال نقطة صعود | حلول رقمية وتأهيل مهني</title>
+    <meta
+      name="description"
+      content="تطبيق الخير — منصة مجتمعية مبتكرة تهدف إلى الحد من هدر الطعام عبر التبرع بالفائض. من أعمال شركة نقطة صعود."
+    />
 
-  <!--  SEO: عنوان فريد لكل مشروع -->
-  <title>تطبيق الخير - أعمال نقطة صعود | حلول رقمية وتأهيل مهني</title>
-  <meta name="description"
-    content="تطبيق الخير — منصة مجتمعية مبتكرة تهدف إلى الحد من هدر الطعام عبر التبرع بالفائض. من أعمال شركة نقطة صعود.">
+    <!--  SEO: Open Graph للمشاركة على السوشيال ميديا -->
+    <meta property="og:title" content="تطبيق الخير - نقطة صعود" />
+    <meta
+      property="og:description"
+      content="منصة مجتمعية مبتكرة تهدف إلى الحد من هدر الطعام عبر التبرع بالفائض."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_SA" />
 
-  <!--  SEO: Open Graph للمشاركة على السوشيال ميديا -->
-  <meta property="og:title" content="تطبيق الخير - نقطة صعود">
-  <meta property="og:description" content="منصة مجتمعية مبتكرة تهدف إلى الحد من هدر الطعام عبر التبرع بالفائض.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ar_SA">
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- الخطوط -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Montserrat:wght@400;700&display=swap"
-    rel="stylesheet" />
+    <!-- الأيقونات -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
 
-  <!-- الأيقونات -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/css-reset.css" />
+    <link rel="stylesheet" href="../assets/css/variables.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/mobile.css" />
+    <link rel="stylesheet" href="portfolio.css" />
+    <link rel="stylesheet" href="application.css" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../assets/css/css-reset.css" />
-  <link rel="stylesheet" href="../assets/css/variables.css" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <link rel="stylesheet" href="../assets/css/mobile.css" />
-  <link rel="stylesheet" href="portfolio.css" />
-  <link rel="stylesheet" href="application.css" />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
 
-  <!-- Swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-</head>
+  <body>
+    <!--  Accessibility: تخطي للمحتوى الرئيسي -->
+    <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
 
-<body>
-  <!--  Accessibility: تخطي للمحتوى الرئيسي -->
-  <a href="#main-content" class="skip-link">تخطي إلى المحتوى</a>
-
-  <!--================= الهيدر ================-->
-  <header>
-    <div class="top-bar">
-      <div class="container">
-        <div class="flex-group">
-          <div class="social-links">
-            <a href="#" class="ml-3" aria-label="زيارتنا على لينكدإن">
-              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="ml-3" aria-label="زيارتنا على تيك توك">
-              <i class="fab fa-tiktok" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="ml-3" aria-label="زيارتنا على تويتر">
-              <i class="fab fa-x-twitter" aria-hidden="true"></i>
-            </a>
-          </div>
-          <div class="language en-text">
-            <a href="#" aria-label="تبديل اللغة إلى العربية">عربي</a> |
-            <a href="#" aria-label="تبديل اللغة إلى الإنجليزية">EN</a>
-          </div>
-        </div>
-
-        <div class="flex-group">
-          <div class="user-info" role="button" onclick="openAuth('login')" aria-label="تسجيل الدخول">
-            <i class="fas fa-user-circle" aria-hidden="true"></i>
-            <span>تسجيل الدخول</span>
-          </div>
-          <a href="../shopping.html" class="cart-info" aria-label="السلة تحتوي على عنصرين - السعر الإجمالي 1,200 ريال">
-            <div class="cart-icon-wrapper">
-              <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-              <span class="cart-badge" aria-label="عدد العناصر">2</span>
+    <!--================= الهيدر ================-->
+    <header>
+      <div class="top-bar">
+        <div class="container">
+          <div class="flex-group">
+            <div class="social-links">
+              <a href="#" class="ml-3" aria-label="زيارتنا على لينكدإن">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="ml-3" aria-label="زيارتنا على تيك توك">
+                <i class="fab fa-tiktok" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="ml-3" aria-label="زيارتنا على تويتر">
+                <i class="fab fa-x-twitter" aria-hidden="true"></i>
+              </a>
             </div>
-            <span class="price-text">1,200 ر.س</span>
-          </a>
+            <div class="language en-text">
+              <a href="#" aria-label="تبديل اللغة إلى العربية">عربي</a> |
+              <a href="#" aria-label="تبديل اللغة إلى الإنجليزية">EN</a>
+            </div>
+          </div>
+
+          <div class="flex-group">
+            <div
+              class="user-info"
+              role="button"
+              onclick="openAuth('login')"
+              aria-label="تسجيل الدخول"
+            >
+              <i class="fas fa-user-circle" aria-hidden="true"></i>
+              <span>تسجيل الدخول</span>
+            </div>
+            <a
+              href="../shopping.html"
+              class="cart-info"
+              aria-label="السلة تحتوي على عنصرين - السعر الإجمالي 1,200 ريال"
+            >
+              <div class="cart-icon-wrapper">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                <span class="cart-badge" aria-label="عدد العناصر">2</span>
+              </div>
+              <span class="price-text">1,200 ر.س</span>
+            </a>
+          </div>
         </div>
       </div>
+
+      <nav class="main-nav" aria-label="القائمة الرئيسية">
+        <div class="container nav-wrapper">
+          <div class="nav-right">
+            <div class="logo">
+              <a href="../index.html" title="العودة للرئيسية">
+                <img
+                  src="../public/images/logo-nuqta.svg"
+                  alt="شعار شركة نقطة صعود"
+                />
+              </a>
+            </div>
+
+            <!-- زر القائمة الجانبية للجوال -->
+            <!-- بعد -->
+            <button
+              class="mobile-menu-icon"
+              id="drawerOpen"
+              aria-label="فتح القائمة"
+              aria-expanded="false"
+            >
+              <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="navbar-links">
+            <ul class="nav-menu">
+              <li><a href="../index.html">الرئيسية</a></li>
+              <li class="dropdown has-mega">
+                <a
+                  href="../about.html"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  عن نقطة صعود <i class="fas fa-chevron-down mr-1 text-xs"></i>
+                </a>
+                <div class="mega-menu-content">
+                  <div class="mega-grid">
+                    <a href="../about.html" class="mega-card">
+                      <div class="card-icon-wrapper">
+                        <img
+                          src="../public/images/Frame.png"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div class="card-info">
+                        <h4>عن نقطة صعود</h4>
+                        <p>نبذة عن نقطة صعود أهدافنا ورؤيتنا</p>
+                        <span class="read-more"
+                          >المزيد <i class="fas fa-chevron-left"></i
+                        ></span>
+                      </div>
+                    </a>
+                    <a href="../our-story.html" class="mega-card">
+                      <div class="card-icon-wrapper">
+                        <div class="mega-icon-wrap">
+                          <i class="fas fa-book-open"></i>
+                        </div>
+                      </div>
+                      <div class="card-info">
+                        <h4>قصتنا</h4>
+                        <p>تعرف على قصتنا وبدايتنا</p>
+                        <span class="read-more"
+                          >المزيد <i class="fas fa-chevron-left"></i
+                        ></span>
+                      </div>
+                    </a>
+                    <a href="../news.html" class="mega-card">
+                      <div class="card-icon-wrapper">
+                        <div class="mega-icon-wrap">
+                          <i class="fas fa-newspaper"></i>
+                        </div>
+                      </div>
+                      <div class="card-info">
+                        <h4>أخبارنا</h4>
+                        <p>آخر المستجدات والأخبار والإعلانات</p>
+                        <span class="read-more"
+                          >المزيد <i class="fas fa-chevron-left"></i
+                        ></span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li><a href="../service/service.html">خدماتنا</a></li>
+              <!--  أعمالنا هي الصفحة الأم -->
+              <li><a href="portfolio.html" aria-current="page">أعمالنا</a></li>
+
+              <li class="dropdown has-mega">
+                <a
+                  href="../team.html"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  طاقم العمل
+                  <i class="fas fa-chevron-down mr-1 text-xs"></i>
+                </a>
+
+                <div class="mega-menu-content">
+                  <div class="mega-grid">
+                    <a href="../board.html" class="mega-card">
+                      <div class="card-icon-wrapper">
+                        <div class="mega-icon-wrap">
+                          <i class="fas fa-user-tie"></i>
+                        </div>
+                      </div>
+
+                      <div class="card-info">
+                        <h4>اعضاء المجلس</h4>
+                        <p>الهيكل الاداري لنقطة صعود</p>
+                        <span class="read-more"
+                          >المزيد <i class="fas fa-chevron-left"></i
+                        ></span>
+                      </div>
+                    </a>
+
+                    <a href="../teams.html" class="mega-card">
+                      <div class="card-icon-wrapper">
+                        <img src="../public/images/Frame(2).png" alt="icon" />
+                      </div>
+                      <div class="card-info">
+                        <h4>الفرق</h4>
+                        <p>تعرف على فرق نقطة صعود</p>
+                        <span class="read-more"
+                          >المزيد <i class="fas fa-chevron-left"></i
+                        ></span>
+                      </div>
+                    </a>
+
+                    <a href="../careers.html" class="mega-card">
+                      <div class="card-icon-wrapper">
+                        <img src="../public/images/Frame(3).png" alt="icon" />
+                      </div>
+                      <div class="card-info">
+                        <h4>اعلانات التوظيف</h4>
+                        <p>اعلانات التوظيف في نقطة صعود</p>
+                        <span class="read-more"
+                          >المزيد <i class="fas fa-chevron-left"></i
+                        ></span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <!--  الإغلاق هنا -->
+
+              <li><a href="../clients-partners.html">شركاء النجاح</a></li>
+              <li><a href="../contact/contact.html">تواصل معنا</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-actions desktop-only">
+            <a
+              href="../../contact/experts.html"
+              class="btn-primary"
+              role="button"
+              >احصل على استشارة</a
+            >
+          </div>
+        </div>
+      </nav>
+      <div class="overlay"></div>
+    </header>
+
+    <!-- زر الاستشارة العائم -->
+    <div class="top-floating-container">
+      <a href="../../contact/experts.html" class="floating-consult-btn">
+        <i class="fas fa-comments" aria-hidden="true"></i>
+        <span> استشارة</span>
+      </a>
     </div>
 
-    <nav class="main-nav" aria-label="القائمة الرئيسية">
-      <div class="container nav-wrapper">
-        <div class="nav-right">
-          <div class="logo">
-            <a href="../index.html" title="العودة للرئيسية">
-              <img src="../public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود" />
-            </a>
-          </div>
-        
-        <!-- زر القائمة الجانبية للجوال -->
-        <!-- بعد -->
-        <button class="mobile-menu-icon" id="drawerOpen" aria-label="فتح القائمة" aria-expanded="false">
-          <i class="fas fa-bars" aria-hidden="true"></i>
-        </button>
-
-        </div>
-
-        <div class="navbar-links">
-          <ul class="nav-menu">
+    <main id="main-content">
+      <!--  SEO: Breadcrumb — يساعد محركات البحث وقارئ الشاشات -->
+      <nav class="breadcrumb-nav" aria-label="مسار التنقل">
+        <div class="container">
+          <ol class="breadcrumb" role="list">
             <li><a href="../index.html">الرئيسية</a></li>
-            <li class="dropdown has-mega">
-              <a href="../about.html" aria-haspopup="true" aria-expanded="false">
-                عن نقطة صعود <i class="fas fa-chevron-down mr-1 text-xs"></i>
-              </a>
-              <div class="mega-menu-content">
-                <div class="mega-grid">
-                  <a href="../about.html" class="mega-card">
-                    <div class="card-icon-wrapper"><img src="../public/images/Frame.png" alt="" aria-hidden="true" />
-                    </div>
-                    <div class="card-info">
-                      <h4>عن نقطة صعود</h4>
-                      <p>نبذة عن نقطة صعود أهدافنا ورؤيتنا</p>
-                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                    </div>
-                  </a>
-                  <a href="../our-story.html" class="mega-card">
-                    <div class="card-icon-wrapper">
-                      <div class="mega-icon-wrap"><i class="fas fa-book-open"></i></div>
-                    </div>
-                    <div class="card-info">
-                      <h4>قصتنا</h4>
-                      <p>تعرف على قصتنا وبدايتنا</p>
-                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                    </div>
-                  </a>
-                  <a href="../news.html" class="mega-card">
-                    <div class="card-icon-wrapper">
-                      <div class="mega-icon-wrap"><i class="fas fa-newspaper"></i></div>
-                    </div>
-                    <div class="card-info">
-                      <h4>أخبارنا</h4>
-                      <p>آخر المستجدات والأخبار والإعلانات</p>
-                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                    </div>
-                  </a>
+            <li aria-hidden="true"><i class="fas fa-chevron-left"></i></li>
+            <li><a href="portfolio.html">أعمالنا</a></li>
+            <li aria-hidden="true"><i class="fas fa-chevron-left"></i></li>
+            <!--  الصفحة الحالية -->
+            <li aria-current="page">تطبيق الخير</li>
+          </ol>
+        </div>
+      </nav>
+
+      <!-- ========== القسم 1: Hero المشروع ========== -->
+      <section class="project-hero" aria-labelledby="project-title">
+        <div class="container">
+          <div class="project-hero-layout">
+            <!-- النص — يسار -->
+            <div class="project-info">
+              <!--  SEO: h1 واحد فقط في الصفحة -->
+              <h1 id="project-title">تطبيق الخير</h1>
+              <p class="project-description">
+                تطبيق الخير منصة مجتمعية مبتكرة تهدف إلى الحد من هدر الطعام عبر
+                التبرع بالفائض من الأفراد أو من الشركات والجهات الكبرى.
+              </p>
+            </div>
+
+            <!-- الصور — يمين -->
+            <!--  Accessibility: role="img" مع aria-label لمجموعة الصور -->
+            <div
+              class="project-mockups"
+              role="img"
+              aria-label="شاشات تطبيق الخير على أجهزة موبايل"
+            >
+              <img
+                src="../public/images/Frame37742.png"
+                alt="شاشة الرئيسية في تطبيق الخير"
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== القسم 2: شاشات المشروع (Swiper) ========== -->
+      <section class="project-screens" aria-labelledby="screens-title">
+        <div class="container">
+          <h2 id="screens-title">شاشات المشروع</h2>
+
+          <div class="swiper-outer-wrapper">
+            <button class="custom-prev-btn" aria-label="السابق">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div
+              class="swiper screens-swiper"
+              role="region"
+              aria-label="معرض شاشات المشروع"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="../public/images/Frame37742.png"
+                    alt="شاشة الرئيسية"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="../public/images/Frame37742.png"
+                    alt="شاشة قائمة الطعام"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="../public/images/Frame37742.png"
+                    alt="شاشة التبرع"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="../public/images/Frame37742.png"
+                    alt="شاشة الملف الشخصي"
+                    loading="lazy"
+                  />
                 </div>
               </div>
-            </li>
-            <li><a href="../service/service.html">خدماتنا</a></li>
-            <!--  أعمالنا هي الصفحة الأم -->
-            <li><a href="portfolio.html" aria-current="page">أعمالنا</a></li>
+              <div class="swiper-pagination"></div>
+            </div>
 
+            <button class="custom-next-btn" aria-label="التالي">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+          </div>
+        </div>
+      </section>
 
-            <li class="dropdown has-mega">
-              <a href="../team.html" aria-haspopup="true" aria-expanded="false">
-                طاقم العمل
-                <i class="fas fa-chevron-down mr-1 text-xs"></i>
-              </a>
+      <!-- ========== القسم 3: آراء العملاء ========== -->
+      <section class="client-reviews" aria-labelledby="reviews-title">
+        <div class="container">
+          <h2 id="reviews-title">اراء عملائنا</h2>
 
-              <div class="mega-menu-content">
-                <div class="mega-grid">
-                  <a href="../board.html" class="mega-card">
-                    <div class="card-icon-wrapper">
-                      <div class="mega-icon-wrap">
-                        <i class="fas fa-user-tie"></i>
-                      </div>
+          <!--  Accessibility: list لبطاقات الآراء -->
+          <ul class="testimonials-grid" role="list">
+            <li>
+              <!--  Accessibility: article لكل رأي مع aria-label -->
+              <article
+                class="testimonial-card"
+                aria-label="رأي العميل أحمد العمري"
+              >
+                <div class="testimonial-header">
+                  <img
+                    src="../public/images/Frame(1).png"
+                    alt="صورة أحمد العمري"
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  />
+                  <div class="testimonial-info">
+                    <h3>أحمد العمري</h3>
+                    <!--  Accessibility: التقييم بنص مقروء -->
+                    <div
+                      class="testimonial-rating"
+                      aria-label="التقييم: 5 من 5 نجوم"
+                    >
+                      <span aria-hidden="true">★★★★★</span>
                     </div>
-
-                    <div class="card-info">
-                      <h4>اعضاء المجلس</h4>
-                      <p>الهيكل الاداري لنقطة صعود</p>
-                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                    </div>
-                  </a>
-
-                  <a href="../teams.html" class="mega-card">
-                    <div class="card-icon-wrapper">
-                      <img src="../public/images/Frame(2).png" alt="icon" />
-                    </div>
-                    <div class="card-info">
-                      <h4>الفرق</h4>
-                      <p>تعرف على فرق نقطة صعود</p>
-                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                    </div>
-                  </a>
-
-                  <a href="../careers.html" class="mega-card">
-                    <div class="card-icon-wrapper">
-                      <img src="../public/images/Frame(3).png" alt="icon" />
-                    </div>
-                    <div class="card-info">
-                      <h4>اعلانات التوظيف</h4>
-                      <p>اعلانات التوظيف في نقطة صعود</p>
-                      <span class="read-more">المزيد <i class="fas fa-chevron-left"></i></span>
-                    </div>
-                  </a>
+                  </div>
                 </div>
-              </div>
+                <div class="testimonial-body">
+                  <p>
+                    تجربة رائعة مع فريق نقطة صعود، التطبيق يعمل بشكل ممتاز وساهم
+                    في تقليل الهدر بشكل ملحوظ.
+                  </p>
+                </div>
+              </article>
             </li>
-            <!--  الإغلاق هنا -->
 
-            <li><a href="../clients-partners.html">شركاء النجاح</a></li>
-            <li><a href="../contact/contact.html">تواصل معنا</a></li>
+            <li>
+              <article
+                class="testimonial-card"
+                aria-label="رأي العميلة سارة الشمري"
+              >
+                <div class="testimonial-header">
+                  <img
+                    src="../public/images/Frame(1).png"
+                    alt="صورة سارة الشمري"
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  />
+                  <div class="testimonial-info">
+                    <h3>سارة الشمري</h3>
+                    <div
+                      class="testimonial-rating"
+                      aria-label="التقييم: 4 من 5 نجوم"
+                    >
+                      <span aria-hidden="true">★★★★☆</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-body">
+                  <p>
+                    فريق محترف وملتزم بالمواعيد، أنصح بالتعامل معهم لأي مشروع
+                    تقني.
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article
+                class="testimonial-card"
+                aria-label="رأي العميل محمد القحطاني"
+              >
+                <div class="testimonial-header">
+                  <img
+                    src="../public/images/Frame(1).png"
+                    alt="صورة محمد القحطاني"
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  />
+                  <div class="testimonial-info">
+                    <h3>محمد القحطاني</h3>
+                    <div
+                      class="testimonial-rating"
+                      aria-label="التقييم: 5 من 5 نجوم"
+                    >
+                      <span aria-hidden="true">★★★★★</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-body">
+                  <p>
+                    التصميم احترافي والتطبيق سهل الاستخدام، شكراً لفريق نقطة
+                    صعود.
+                  </p>
+                </div>
+              </article>
+            </li>
           </ul>
         </div>
+      </section>
+    </main>
 
-        <div class="nav-actions desktop-only">
-          <a href="../../contact/experts.html" class="btn-primary" role="button">احصل على استشارة</a>
+    <!--=========== Footer ===========-->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-column brand-column">
+          <div class="logo-wrapper">
+            <img
+              src="../public/images/Footer-logo.svg"
+              alt="نقطة صعود"
+              class="footer-logo"
+            />
+          </div>
+          <p class="brand-text">
+            شركة سعودية متخصصة في الحلول التقنية والتحول الرقمي.
+          </p>
         </div>
-      </div>
-    </nav>
-    <div class="overlay"></div>
-  </header>
-
-  <!-- زر الاستشارة العائم -->
-  <div class="top-floating-container">
-    <a href="../../contact/experts.html" class="floating-consult-btn">
-      <i class="fas fa-comments" aria-hidden="true"></i>
-      <span> استشارة</span>
-    </a>
-  </div>
-
-  <main id="main-content">
-
-    <!--  SEO: Breadcrumb — يساعد محركات البحث وقارئ الشاشات -->
-    <nav class="breadcrumb-nav" aria-label="مسار التنقل">
-      <div class="container">
-        <ol class="breadcrumb" role="list">
-          <li><a href="../index.html">الرئيسية</a></li>
-          <li aria-hidden="true"><i class="fas fa-chevron-left"></i></li>
-          <li><a href="portfolio.html">أعمالنا</a></li>
-          <li aria-hidden="true"><i class="fas fa-chevron-left"></i></li>
-          <!--  الصفحة الحالية -->
-          <li aria-current="page">تطبيق الخير</li>
-        </ol>
-      </div>
-    </nav>
-
-    <!-- ========== القسم 1: Hero المشروع ========== -->
-    <section class="project-hero" aria-labelledby="project-title">
-      <div class="container">
-        <div class="project-hero-layout">
-
-          <!-- النص — يسار -->
-          <div class="project-info">
-            <!--  SEO: h1 واحد فقط في الصفحة -->
-            <h1 id="project-title">تطبيق الخير</h1>
-            <p class="project-description">
-              تطبيق الخير منصة مجتمعية مبتكرة تهدف إلى الحد من هدر الطعام
-              عبر التبرع بالفائض من الأفراد أو من الشركات والجهات الكبرى.
-            </p>
-          </div>
-
-          <!-- الصور — يمين -->
-          <!--  Accessibility: role="img" مع aria-label لمجموعة الصور -->
-          <div class="project-mockups" role="img" aria-label="شاشات تطبيق الخير على أجهزة موبايل">
-            <img src="../public/images/Frame37742.png" alt="شاشة الرئيسية في تطبيق الخير" loading="eager">
-
-          </div>
-
+        <div class="footer-column">
+          <h4>نقطة صعود</h4>
+          <ul>
+            <li><a href="../about.html">من نحن</a></li>
+            <li><a href="../service/service.html">خدماتنا</a></li>
+            <li><a href="portfolio.html">أعمالنا</a></li>
+          </ul>
         </div>
-      </div>
-    </section>
-
-    <!-- ========== القسم 2: شاشات المشروع (Swiper) ========== -->
-  <section class="project-screens" aria-labelledby="screens-title">
-  <div class="container">
-    <h2 id="screens-title">شاشات المشروع</h2>
-
-    <div class="swiper-outer-wrapper">
-      <button class="custom-prev-btn" aria-label="السابق">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-
-      <div class="swiper screens-swiper" role="region" aria-label="معرض شاشات المشروع">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="../public/images/Frame37742.png" alt="شاشة الرئيسية" loading="lazy">
-          </div>
-          <div class="swiper-slide">
-            <img src="../public/images/Frame37742.png" alt="شاشة قائمة الطعام" loading="lazy">
-          </div>
-          <div class="swiper-slide">
-            <img src="../public/images/Frame37742.png" alt="شاشة التبرع" loading="lazy">
-          </div>
-          <div class="swiper-slide">
-            <img src="../public/images/Frame37742.png" alt="شاشة الملف الشخصي" loading="lazy">
+        <div class="footer-column">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="../index.html">الرئيسية</a></li>
+            <li><a href="../board.html">اعضاء المجلس</a></li>
+            <li><a href="../teams.html">الفرق</a></li>
+          </ul>
+        </div>
+        <div class="footer-column contact-col">
+          <h4>تواصل معنا</h4>
+          <p class="contact-item">
+            050000000 <i class="fas fa-phone-alt" aria-hidden="true"></i>
+          </p>
+          <p class="contact-item">
+            email@gmail.com <i class="fas fa-envelope" aria-hidden="true"></i>
+          </p>
+          <div class="social-links-footer">
+            <a href="#" aria-label="واتساب"
+              ><i class="fab fa-whatsapp" aria-hidden="true"></i
+            ></a>
+            <a href="#" aria-label="تويتر"
+              ><i class="fab fa-x-twitter" aria-hidden="true"></i
+            ></a>
+            <a href="#" aria-label="سناب شات"
+              ><i class="fab fa-snapchat" aria-hidden="true"></i
+            ></a>
+            <a href="#" aria-label="لينكدإن"
+              ><i class="fab fa-linkedin-in" aria-hidden="true"></i
+            ></a>
+            <a href="#" aria-label="انستغرام"
+              ><i class="fab fa-instagram" aria-hidden="true"></i
+            ></a>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
       </div>
-
-      <button class="custom-next-btn" aria-label="التالي">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-    </div>
-  </div>
-</section>
-
-    <!-- ========== القسم 3: آراء العملاء ========== -->
-    <section class="client-reviews" aria-labelledby="reviews-title">
-      <div class="container">
-        <h2 id="reviews-title">اراء عملائنا</h2>
-
-        <!--  Accessibility: list لبطاقات الآراء -->
-        <ul class="testimonials-grid" role="list">
-
-          <li>
-            <!--  Accessibility: article لكل رأي مع aria-label -->
-            <article class="testimonial-card" aria-label="رأي العميل أحمد العمري">
-              <div class="testimonial-header">
-                <img src="../public/images/Frame(1).png" alt="صورة أحمد العمري" width="48" height="48" loading="lazy">
-                <div class="testimonial-info">
-                  <h3>أحمد العمري</h3>
-                  <!--  Accessibility: التقييم بنص مقروء -->
-                  <div class="testimonial-rating" aria-label="التقييم: 5 من 5 نجوم">
-                    <span aria-hidden="true">★★★★★</span>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-body">
-                <p>تجربة رائعة مع فريق نقطة صعود، التطبيق يعمل بشكل ممتاز وساهم في تقليل الهدر بشكل ملحوظ.</p>
-              </div>
-            </article>
-          </li>
-
-          <li>
-            <article class="testimonial-card" aria-label="رأي العميلة سارة الشمري">
-              <div class="testimonial-header">
-                <img src="../public/images/Frame(1).png" alt="صورة سارة الشمري" width="48" height="48" loading="lazy">
-                <div class="testimonial-info">
-                  <h3>سارة الشمري</h3>
-                  <div class="testimonial-rating" aria-label="التقييم: 4 من 5 نجوم">
-                    <span aria-hidden="true">★★★★☆</span>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-body">
-                <p>فريق محترف وملتزم بالمواعيد، أنصح بالتعامل معهم لأي مشروع تقني.</p>
-              </div>
-            </article>
-          </li>
-
-          <li>
-            <article class="testimonial-card" aria-label="رأي العميل محمد القحطاني">
-              <div class="testimonial-header">
-                <img src="../public/images/Frame(1).png" alt="صورة محمد القحطاني" width="48" height="48" loading="lazy">
-                <div class="testimonial-info">
-                  <h3>محمد القحطاني</h3>
-                  <div class="testimonial-rating" aria-label="التقييم: 5 من 5 نجوم">
-                    <span aria-hidden="true">★★★★★</span>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-body">
-                <p>التصميم احترافي والتطبيق سهل الاستخدام، شكراً لفريق نقطة صعود.</p>
-              </div>
-            </article>
-          </li>
-
-        </ul>
+      <div class="footer-bottom-bar">
+        <p>حقوق النشر © 2024 نقطة صعود | تم بواسطة نقطة صعود</p>
       </div>
-    </section>
+    </footer>
 
-  </main>
-
-  <!--=========== Footer ===========-->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-column brand-column">
-        <div class="logo-wrapper">
-          <img src="../public/images/Footer-logo.svg" alt="نقطة صعود" class="footer-logo" />
+    <!-- نموذج تسجيل الدخول -->
+    <div
+      class="auth-overlay"
+      id="authOverlay"
+      onclick="handleOverlayClick(event)"
+    >
+      <div
+        class="auth-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="auth-main-title"
+      >
+        <button
+          class="auth-close"
+          onclick="closeAuth()"
+          aria-label="إغلاق نافذة تسجيل الدخول"
+        >
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <div class="auth-brand">
+          <div class="auth-brand-logo" aria-hidden="true">
+            <img
+              src="../public/images/logo-nuqta.svg"
+              alt="شعار نقطة صعود"
+              class="auth-logo-img"
+            />
+          </div>
+          <p class="auth-brand-sub">نقطة بداية .. تقودك نحو الصعود</p>
         </div>
-        <p class="brand-text">شركة سعودية متخصصة في الحلول التقنية والتحول الرقمي.</p>
-      </div>
-      <div class="footer-column">
-        <h4>نقطة صعود</h4>
-        <ul>
-          <li><a href="../about.html">من نحن</a></li>
-          <li><a href="../service/service.html">خدماتنا</a></li>
-          <li><a href="portfolio.html">أعمالنا</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>روابط سريعة</h4>
-        <ul>
-          <li><a href="../index.html">الرئيسية</a></li>
-          <li><a href="../board.html">اعضاء المجلس</a></li>
-          <li><a href="../teams.html">الفرق</a></li>
-        </ul>
-      </div>
-      <div class="footer-column contact-col">
-        <h4>تواصل معنا</h4>
-        <p class="contact-item">050000000 <i class="fas fa-phone-alt" aria-hidden="true"></i></p>
-        <p class="contact-item">email@gmail.com <i class="fas fa-envelope" aria-hidden="true"></i></p>
-        <div class="social-links-footer">
-          <a href="#" aria-label="واتساب"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-          <a href="#" aria-label="تويتر"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
-          <a href="#" aria-label="سناب شات"><i class="fab fa-snapchat" aria-hidden="true"></i></a>
-          <a href="#" aria-label="لينكدإن"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-          <a href="#" aria-label="انستغرام"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom-bar">
-      <p>حقوق النشر © 2024 نقطة صعود | تم بواسطة نقطة صعود</p>
-    </div>
-  </footer>
-
-  <!-- نموذج تسجيل الدخول -->
-  <div class="auth-overlay" id="authOverlay" onclick="handleOverlayClick(event)">
-    <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="auth-main-title">
-      <button class="auth-close" onclick="closeAuth()" aria-label="إغلاق نافذة تسجيل الدخول">
-        <i class="fas fa-times" aria-hidden="true"></i>
-      </button>
-      <div class="auth-brand">
-        <div class="auth-brand-logo" aria-hidden="true">
-          <img src="../public/images/logo-nuqta.svg" alt="شعار نقطة صعود" class="auth-logo-img" />
-        </div>
-        <p class="auth-brand-sub">نقطة بداية .. تقودك نحو الصعود</p>
-      </div>
-      <div class="auth-content">
-        <div class="auth-tabs" role="tablist">
-          <button id="tab-login" class="auth-tab active" role="tab" aria-selected="true" aria-controls="panel-login"
-            onclick="switchTab('login', this)">تسجيل الدخول</button>
-          <button id="tab-register" class="auth-tab" role="tab" aria-selected="false" aria-controls="panel-register"
-            onclick="switchTab('register', this)">حساب جديد</button>
-        </div>
-        <section class="auth-panel active" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
-          <h3 class="auth-title" id="auth-main-title">أهلاً بعودتك</h3>
-          <p class="auth-subtitle">أدخل بياناتك للوصول إلى حسابك</p>
-          <form onsubmit="handleLogin(event)">
-            <div class="form-group">
-              <label for="login-email">البريد الإلكتروني أو اسم المستخدم</label>
-              <div class="input-wrap">
-                <i class="fas fa-envelope" aria-hidden="true"></i>
-                <input type="text" id="login-email" name="username" placeholder="example@email.com" required
-                  autocomplete="username" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="login-password">كلمة المرور</label>
-              <div class="input-wrap">
-                <i class="fas fa-lock" aria-hidden="true"></i>
-                <input type="password" id="login-password" name="password" placeholder="••••••••" required
-                  autocomplete="current-password" />
-              </div>
-            </div>
-            <div class="form-meta">
-              <label class="toggle-label">
-                <span>تذكرني</span>
-                <div class="toggle-switch">
-                  <input type="checkbox" name="remember" id="remember" />
-                  <span class="toggle-track"></span>
-                </div>
-              </label>
-              <a href="#" class="forgot-link">نسيت كلمة المرور؟</a>
-            </div>
-            <button type="submit" class="auth-submit">
-              <span>تسجيل الدخول</span>
-              <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <div class="auth-content">
+          <div class="auth-tabs" role="tablist">
+            <button
+              id="tab-login"
+              class="auth-tab active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-login"
+              onclick="switchTab('login', this)"
+            >
+              تسجيل الدخول
             </button>
-          </form>
-          <div class="auth-switch">
-            <span>ليس لديك حساب؟</span>
-            <button type="button" onclick="switchTab('register', document.getElementById('tab-register'))">أنشئ حساباً
-              الآن</button>
+            <button
+              id="tab-register"
+              class="auth-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-register"
+              onclick="switchTab('register', this)"
+            >
+              حساب جديد
+            </button>
           </div>
-        </section>
+          <section
+            class="auth-panel active"
+            id="panel-login"
+            role="tabpanel"
+            aria-labelledby="tab-login"
+          >
+            <h3 class="auth-title" id="auth-main-title">أهلاً بعودتك</h3>
+            <p class="auth-subtitle">أدخل بياناتك للوصول إلى حسابك</p>
+            <form onsubmit="handleLogin(event)">
+              <div class="form-group">
+                <label for="login-email"
+                  >البريد الإلكتروني أو اسم المستخدم</label
+                >
+                <div class="input-wrap">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <input
+                    type="text"
+                    id="login-email"
+                    name="username"
+                    placeholder="example@email.com"
+                    required
+                    autocomplete="username"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="login-password">كلمة المرور</label>
+                <div class="input-wrap">
+                  <i class="fas fa-lock" aria-hidden="true"></i>
+                  <input
+                    type="password"
+                    id="login-password"
+                    name="password"
+                    placeholder="••••••••"
+                    required
+                    autocomplete="current-password"
+                  />
+                </div>
+              </div>
+              <div class="form-meta">
+                <label class="toggle-label">
+                  <span>تذكرني</span>
+                  <div class="toggle-switch">
+                    <input type="checkbox" name="remember" id="remember" />
+                    <span class="toggle-track"></span>
+                  </div>
+                </label>
+                <a href="#" class="forgot-link">نسيت كلمة المرور؟</a>
+              </div>
+              <button type="submit" class="auth-submit">
+                <span>تسجيل الدخول</span>
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+              </button>
+            </form>
+            <div class="auth-switch">
+              <span>ليس لديك حساب؟</span>
+              <button
+                type="button"
+                onclick="
+                  switchTab('register', document.getElementById('tab-register'))
+                "
+              >
+                أنشئ حساباً الآن
+              </button>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
-  </div>
 
-  
-  <!--=================القائمة الجانبية للهواتف المحمولة ================-->
-  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+    <!--=================القائمة الجانبية للهواتف المحمولة ================-->
+    <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
 
-  <nav class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="القائمة الجانبية" dir="rtl">
+    <nav
+      class="mobile-drawer"
+      id="mobileDrawer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="القائمة الجانبية"
+      dir="rtl"
+    >
+      <!-- زر الإغلاق -->
 
-    <!-- زر الإغلاق -->
-    <button class="drawer-close" id="drawerClose" aria-label="إغلاق القائمة">
-      <i class="fas fa-times" aria-hidden="true"></i>
-    </button>
-
-    <ul class="drawer-menu">
-
-      <!-- رابط عادي -->
-      <li class="drawer-item">
-        <a href="index.html" class="drawer-link active">الرئيسية</a>
-      </li>
-
-      <!-- رابط مع سب مينو -->
-      <li class="drawer-item has-sub">
-        <button class="drawer-link drawer-toggle" aria-expanded="false">
-          عن نقطة صعود
-          <i class="fas fa-chevron-down drawer-arrow" aria-hidden="true"></i>
+      <div class="drawer-header">
+        <button
+          class="drawer-close"
+          id="drawerClose"
+          aria-label="إغلاق القائمة"
+        >
+          <i class="fas fa-times" aria-hidden="true"></i>
         </button>
-        <ul class="drawer-submenu">
-          <li><a href="about.html">عن نقطة صعود</a></li>
-          <li><a href="our-story.html">قصتنا</a></li>
-          <li><a href="news.html">أخبارنا</a></li>
-        </ul>
-      </li>
+      </div>
 
-      <li class="drawer-item">
-        <a href="./service/service.html" class="drawer-link">خدماتنا</a>
-      </li>
+      <ul class="drawer-menu">
+        <!-- رابط عادي -->
+        <li class="drawer-item">
+          <a href="index.html" class="drawer-link active">الرئيسية</a>
+        </li>
 
-      <li class="drawer-item">
-        <a href="portfolio.html" class="drawer-link">أعمالنا</a>
-      </li>
+        <!-- رابط مع سب مينو -->
+        <li class="drawer-item has-sub">
+          <button class="drawer-link drawer-toggle" aria-expanded="false">
+            عن نقطة صعود
+            <i class="fas fa-chevron-down drawer-arrow" aria-hidden="true"></i>
+          </button>
+          <ul class="drawer-submenu">
+            <li><a href="about.html">عن نقطة صعود</a></li>
+            <li><a href="our-story.html">قصتنا</a></li>
+            <li><a href="news.html">أخبارنا</a></li>
+          </ul>
+        </li>
 
-      <!-- طاقم العمل -->
-      <li class="drawer-item has-sub">
-        <button class="drawer-link drawer-toggle" aria-expanded="false">
-          طاقم العمل
-          <i class="fas fa-chevron-down drawer-arrow" aria-hidden="true"></i>
-        </button>
-        <ul class="drawer-submenu">
-          <li><a href="board.html">أعضاء المجلس</a></li>
-          <li><a href="teams.html">الفرق</a></li>
-          <li><a href="careers.html">إعلانات التوظيف</a></li>
-        </ul>
-      </li>
+        <li class="drawer-item">
+          <a href="./service/service.html" class="drawer-link">خدماتنا</a>
+        </li>
 
-      <li class="drawer-item">
-        <a href="#clients-partners.html" class="drawer-link">شركاء النجاح</a>
-      </li>
+        <li class="drawer-item">
+          <a href="portfolio.html" class="drawer-link">أعمالنا</a>
+        </li>
 
-      <li class="drawer-item">
-        <a href="./contact/contact.html" class="drawer-link">تواصل معنا</a>
-      </li>
+        <!-- طاقم العمل -->
+        <li class="drawer-item has-sub">
+          <button class="drawer-link drawer-toggle" aria-expanded="false">
+            طاقم العمل
+            <i class="fas fa-chevron-down drawer-arrow" aria-hidden="true"></i>
+          </button>
+          <ul class="drawer-submenu">
+            <li><a href="board.html">أعضاء المجلس</a></li>
+            <li><a href="teams.html">الفرق</a></li>
+            <li><a href="careers.html">إعلانات التوظيف</a></li>
+          </ul>
+        </li>
 
-    </ul>
+        <li class="drawer-item">
+          <a href="#clients-partners.html" class="drawer-link">شركاء النجاح</a>
+        </li>
 
-  </nav>
+        <li class="drawer-item">
+          <a href="./contact/contact.html" class="drawer-link">تواصل معنا</a>
+        </li>
+      </ul>
+    </nav>
 
-  <!-- السكريبتات -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="../assets/js/main.js"></script>
+    <!-- السكريبتات -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
 
-  <script>
-const screensSwiper = new Swiper('.screens-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 24,
-    loop: true,
-    centeredSlides: false,
-    grabCursor: true,
+    <script>
+      const screensSwiper = new Swiper(".screens-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        centeredSlides: false,
+        grabCursor: true,
 
-    navigation: {
-        nextEl: '.custom-next-btn',
-        prevEl: '.custom-prev-btn',
-    },
-
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-
-    breakpoints: {
-        768: {
-            slidesPerView: 2,
+        navigation: {
+          nextEl: ".custom-next-btn",
+          prevEl: ".custom-prev-btn",
         },
 
-        1024: {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+
+          1024: {
             slidesPerView: 3,
-        }
-    }
-});
-
-  </script>
-
-</body>
-
+          },
+        },
+      });
+    </script>
+  </body>
 </html>

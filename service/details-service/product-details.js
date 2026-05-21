@@ -61,7 +61,7 @@ const productsData = {
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id') || '2'; 
+    const id = params.get('id') || '2';
     const data = productsData[id];
 
     if (data) {
@@ -104,10 +104,32 @@ function setupAccordion() {
         header.addEventListener('click', () => {
             const item = header.parentElement;
             const isOpen = item.classList.contains('open');
-            
+
             document.querySelectorAll('.pd-faqs li').forEach(li => li.classList.remove('open'));
-            
+
             if (!isOpen) item.classList.add('open');
         });
     });
+}
+//دالة لتبديل حالة السؤال في الأسئلة الشائعة
+function toggleFaq(btn) {
+    const item = btn.closest('.wd-faq-item');
+    const answer = item.querySelector('.wd-faq-answer');
+    const isOpen = answer.classList.contains('open');
+
+    // أغلق جميع الإجابات + ارجع كل الأسهم
+    document.querySelectorAll('.wd-faq-answer.open').forEach(el => {
+        el.classList.remove('open');
+    });
+    document.querySelectorAll('.wd-faq-btn i').forEach(icon => {
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+    });
+
+    // افتح المحدد وحرّك سهمه
+    if (!isOpen) {
+        answer.classList.add('open');
+        btn.querySelector('i').classList.remove('fa-chevron-down');
+        btn.querySelector('i').classList.add('fa-chevron-up');
+    }
 }

@@ -62,7 +62,7 @@
         </div>
 
         <!--  معلومات المستخدم والسلة -->
-  
+
         <div class="flex-group">
           <div class="user-info" role="button" onclick="openAuth('login')" aria-label="تسجيل الدخول">
             <i class="fas fa-user-circle" aria-hidden="true"></i>
@@ -88,7 +88,7 @@
             <img src="../../public/images/logo-nuqta.svg" alt="شعار شركة نقطة صعود - متخصصون في الحلول الرقمية" />
           </a>
         </div>
-        
+
         <!-- زر القائمة الجانبية للجوال -->
         <!-- بعد -->
         <button class="mobile-menu-icon" id="drawerOpen" aria-label="فتح القائمة" aria-expanded="false">
@@ -229,7 +229,7 @@
   <div class="top-floating-container">
     <a href="../../contact/experts.html" class="floating-consult-btn">
       <i class="fas fa-comments"></i>
-      <span>  استشارة</span>
+      <span> استشارة</span>
     </a>
   </div>
 
@@ -421,8 +421,8 @@
 
     <!-- FAQ -->
     <section class="wd-faq-section">
-      <div class="container-faq"> 
-        <div class="wd-faq-grid"> 
+      <div class="container-faq">
+        <div class="wd-faq-grid">
           <div class="wd-faq-content">
             <h2 class="wd-faq-title">الاسئلة الشائعة</h2>
             <ul class="wd-faq-list">
@@ -533,9 +533,6 @@
     </div>
   </footer>
 
-  <!-- مكتبة السلايدر Swiper -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="../../assets/js/main.js"></script>
 
   <!--===========تسجيل حساب جديد/دخول ================-->
   <!-- نموذج تسجيل الدخول -->
@@ -704,16 +701,19 @@
     </div>
   </div>
 
-  
+
   <!--=================القائمة الجانبية للهواتف المحمولة ================-->
   <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
 
   <nav class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="القائمة الجانبية" dir="rtl">
 
     <!-- زر الإغلاق -->
-    <button class="drawer-close" id="drawerClose" aria-label="إغلاق القائمة">
-      <i class="fas fa-times" aria-hidden="true"></i>
-    </button>
+
+    <div class="drawer-header">
+      <button class="drawer-close" id="drawerClose" aria-label="إغلاق القائمة">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
 
     <ul class="drawer-menu">
 
@@ -769,6 +769,10 @@
   </nav>
 
 
+  <!-- مكتبة السلايدر Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../service/details-service/product-details.js"></script>
 </body>
 
 </html>

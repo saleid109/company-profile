@@ -1,22 +1,7 @@
 /* =========================================================
     1. قائمة الجوال
 ========================================================= */
-function toggleMenu() {
-    const navLinks = document.querySelector(".navbar-links");
-    const menuIcon = document.querySelector(".mobile-menu-icon i");
-    const overlay = document.querySelector('.overlay');
-    const body = document.body;
 
-    if (!navLinks) return;
-
-    const isOpen = navLinks.classList.toggle("open");
-
-    if (overlay) overlay.classList.toggle('active', isOpen);
-    if (menuIcon) menuIcon.className = isOpen ? "fas fa-times" : "fas fa-bars";
-
-    body.classList.toggle('menu-open', isOpen);
-    body.style.overflow = isOpen ? 'hidden' : 'auto';
-}
 
 /* =========================================================
     2. فلترة الخدمات
@@ -138,17 +123,7 @@ function animateNumber(element, target) {
 let scrollTimeout;
 
 function handleFloatingBtn() {
-    if (scrollTimeout) return;
-
-    scrollTimeout = setTimeout(() => {
-        const btn = document.querySelector('.floating-consult-btn');
-        if (!btn) return;
-
-        if (window.innerWidth > 1024) return;
-
-        btn.classList.toggle('show', window.scrollY > 250);
-        scrollTimeout = null;
-    }, 100);
+    // لا تفعل شيئاً — الزر ثابت دائماً
 }
 
 /* =========================================================
@@ -306,20 +281,10 @@ function handleRegister(e) {
 ========================================================= */
 document.addEventListener("DOMContentLoaded", () => {
 
-    // إغلاق القائمة عبر الـ Overlay
-    const overlay = document.querySelector('.overlay');
-    if (overlay) {
-        overlay.addEventListener('click', () => {
-            if (document.querySelector(".navbar-links")?.classList.contains("open")) {
-                toggleMenu();
-            }
-        });
-    }
 
     // إغلاق بـ ESC
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') {
-            if (document.querySelector(".navbar-links")?.classList.contains("open")) toggleMenu();
             closeAuth();
             closeDrawer();
         }
@@ -380,25 +345,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.3 });
     document.querySelectorAll('.stat-item').forEach(item => statsObserver.observe(item));
 
-    // إغلاق القائمة عند النقر على الروابط
-    document.querySelectorAll('.nav-menu li:not(.has-mega) a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth < 768 && document.querySelector('.navbar-links')?.classList.contains('open')) {
-                toggleMenu();
-            }
-        });
-    });
-
     // الزر العائم
     window.addEventListener('scroll', handleFloatingBtn);
 
-    setTimeout(() => {
-        const btn = document.querySelector('.floating-consult-btn');
-        if (btn && window.scrollY < 100) btn.classList.add('show');
-    }, 4000);
-
     /* =========================================================
-        9. نظام الـ Drawer للجوال — داخل DOMContentLoaded ✅
+        9. نظام الـ Drawer للجوال — داخل DOMContentLoaded 
     ========================================================= */
     const openBtn      = document.getElementById('drawerOpen');
     const closeBtn     = document.getElementById('drawerClose');
@@ -411,14 +362,14 @@ document.addEventListener("DOMContentLoaded", () => {
         drawer.classList.add('open');
         drawerOverlay?.classList.add('active');
         openBtn?.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('menu-open');
     }
 
     function closeDrawer() {
         drawer.classList.remove('open');
         drawerOverlay?.classList.remove('active');
         openBtn?.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        document.body.classList.remove('menu-open');
     }
 
     openBtn?.addEventListener('click', openDrawer);
@@ -433,6 +384,17 @@ document.addEventListener("DOMContentLoaded", () => {
             this.setAttribute('aria-expanded', isOpen);
         });
     });
+
+    // إغلاق القائمة عند الضغط على رابط
+drawer.querySelectorAll('a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        closeDrawer();
+
+    });
+
+});
 
 }); // نهاية DOMContentLoaded
 

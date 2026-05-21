@@ -416,7 +416,7 @@
   margin: 0;
 }
 
-/* ===== REGISTER ===== */
+/* ===== التسجيل ===== */
 .wd-register-section {
   background: var(--color-background);
   padding: 70px 0;
@@ -499,7 +499,7 @@
   background: var(--color-navy-light);
 }
 
-/* ===== FAQ ===== */
+/* ===== الأسئلة الشائعة ===== */
 .wd-faq-section {
   background: var(--color-bg-light);
   padding: 70px 0;
@@ -585,17 +585,29 @@
   color: var(--color-gray-text);
   transition: transform .25s;
   flex-shrink: 0;
+  -webkit-transition: transform .25s;
+  -moz-transition: transform .25s;
+  -ms-transition: transform .25s;
+  -o-transition: transform .25s;
+}
+
+
+.wd-faq-btn.active i {
+  transform: rotate(180deg);
 }
 
 .wd-faq-answer {
+  display: none;
   max-height: 0;
   overflow: hidden;
   transition: max-height .3s ease, padding .3s;
+
 }
 
 .wd-faq-answer.open {
   max-height: 300px;
   padding-bottom: 16px;
+  display: block;
 }
 
 .wd-faq-answer p {

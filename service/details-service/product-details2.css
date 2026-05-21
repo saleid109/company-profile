@@ -151,7 +151,6 @@
 .pd-compare-side-text {
     flex: 0 0 30%;
     text-align: right;
-    order: 1;
     padding-top: 72px; 
     
 }
@@ -243,7 +242,6 @@
     text-align: center;
     padding: 20px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    z-index: 2;
     width: 160px;
     min-width: 160px;
     position: sticky;
@@ -282,9 +280,9 @@
     }
 
     .pd-compare-side-text {
-        padding-top: 0;
-        order: 1;
-    }
+    align-self: center; /* يتمحور تلقائياً مع الجدول */
+    padding-top: 0;
+}
 
     .pd-compare-table-wrapper {
         order: 2;
