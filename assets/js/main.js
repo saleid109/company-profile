@@ -309,7 +309,10 @@ document.addEventListener("DOMContentLoaded", () => {
             slidesPerView: 1, spaceBetween: 24,
             grabCursor: true, loop: true, speed: 700,
             autoplay: { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true },
-            navigation: { nextEl: ".team-swiper .swiper-button-next", prevEl: ".team-swiper .swiper-button-prev" },
+            navigation: {
+                nextEl: ".team-swiper-outer .swiper-button-next",
+                prevEl: ".team-swiper-outer .swiper-button-prev"
+            },
             breakpoints: { 640: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } },
         });
     }
@@ -351,9 +354,9 @@ document.addEventListener("DOMContentLoaded", () => {
     /* =========================================================
         9. نظام الـ Drawer للجوال — داخل DOMContentLoaded 
     ========================================================= */
-    const openBtn      = document.getElementById('drawerOpen');
-    const closeBtn     = document.getElementById('drawerClose');
-    const drawer       = document.getElementById('mobileDrawer');
+    const openBtn = document.getElementById('drawerOpen');
+    const closeBtn = document.getElementById('drawerClose');
+    const drawer = document.getElementById('mobileDrawer');
     const drawerOverlay = document.getElementById('drawerOverlay');
 
     if (!drawer) return;
@@ -386,15 +389,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // إغلاق القائمة عند الضغط على رابط
-drawer.querySelectorAll('a').forEach(link => {
+    drawer.querySelectorAll('a').forEach(link => {
 
-    link.addEventListener('click', () => {
+        link.addEventListener('click', () => {
 
-        closeDrawer();
+            closeDrawer();
+
+        });
 
     });
-
-});
 
 }); // نهاية DOMContentLoaded
 
