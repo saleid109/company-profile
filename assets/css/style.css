@@ -1956,10 +1956,10 @@ html {
 }
 
 .team-swiper-outer {
-    overflow: hidden;
-    padding-top: 55px;
-    margin-top: -55px;
     position: relative;
+    overflow: hidden;
+    padding: 55px 54px 20px;
+    margin-top: -55px;
 }
 
 .team-swiper {
