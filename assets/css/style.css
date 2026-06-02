@@ -1957,20 +1957,25 @@ html {
 
 .team-swiper-outer {
     position: relative;
-    overflow: hidden;
+    overflow: visible !important;
     padding: 55px 54px 20px;
     margin-top: -55px;
 }
 
 .team-swiper {
-    overflow: visible !important;
+    overflow: hidden;
     padding: 0 0 20px !important;
     margin: 0 !important;
 }
 
 /* ===== الأزرار ===== */
 
-
+.team-swiper-outer .swiper-button-prev,
+.team-swiper-outer .swiper-button-next {
+    width: 44px;
+    height: 44px;
+    color: #001a4d;
+}
 .team-swiper .swiper-button-prev {
     left: -60px;
     /* ← خارج منطقة الكروت */
