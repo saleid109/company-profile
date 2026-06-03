@@ -1958,7 +1958,7 @@ html {
 }
 
 .team-swiper-outer {
-    overflow: visible !important;
+    overflow: !important;
     padding-top: 0;
     margin-top: 0;
 }
