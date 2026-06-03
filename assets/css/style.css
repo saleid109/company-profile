@@ -1980,7 +1980,7 @@ html {
     background: #fff;
     color: #1b2d45;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    top: 50%;
+    top: 65% !important;
     transform: translateY(-50%);
     margin-top: 0;
     /* ← أزلنا الـ 27px */
