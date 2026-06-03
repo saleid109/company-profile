@@ -1987,12 +1987,12 @@ html {
 }
 
 .team-swiper-outer .swiper-button-prev {
-    left: 0;
+    left: 20px;
     right: auto;
 }
 
 .team-swiper-outer .swiper-button-next {
-    right: 0;
+    right: 20px;
     left: auto;
 }
 
