@@ -1958,7 +1958,7 @@ html {
 }
 
 .team-swiper-outer {
-    overflow: !important;
+    overflow: visible !important;
     padding-top: 0;
     margin-top: 0;
 }
@@ -1980,8 +1980,9 @@ html {
     background: #fff;
     color: #1b2d45;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-   top: calc(50% + 30px); /* تنزل للأسفل لتكون في منتصف الكرت */
-    transform: translateY(-50%);
+    top: auto;
+    transform:none;
+    bottom: 35%;
 
 }
 .team-swiper .swiper-button-prev {
