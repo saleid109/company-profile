@@ -1958,15 +1958,15 @@ html {
 }
 
 .team-swiper-outer {
-    position: relative;
     overflow: visible !important;
-    padding: 0px 54px 20px;
-    margin-top: 0px;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .team-swiper {
-    padding: 0 0 20px !important;
-    margin: 0 !important;
+    overflow: hidden;
+    padding-top: 60px !important;
+    margin-top: -60px !important;
 }
 
 /* ===== الأزرار ===== */
