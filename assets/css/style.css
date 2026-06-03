@@ -1980,10 +1980,9 @@ html {
     background: #fff;
     color: #1b2d45;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    top: 65% !important;
+   top: calc(50% + 30px); /* تنزل للأسفل لتكون في منتصف الكرت */
     transform: translateY(-50%);
-    margin-top: 0;
-    /* ← أزلنا الـ 27px */
+
 }
 .team-swiper .swiper-button-prev {
     left: -54px;
