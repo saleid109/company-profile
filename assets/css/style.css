@@ -1980,9 +1980,9 @@ html {
     background: #fff;
     color: #1b2d45;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    top: auto;
-    transform:none;
-    bottom: 35%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-bottom: 0;
 
 }
 .team-swiper .swiper-button-prev {
