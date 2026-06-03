@@ -1970,39 +1970,44 @@ html {
 }
 
 /* ===== الأزرار ===== */
-
-.team-swiper .swiper-button-prev,
-.team-swiper .swiper-button-next {
+.team-swiper-outer .swiper-button-prev,
+.team-swiper-outer .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 27px; /* نص ارتفاع الأفاتار البارز ÷ 2 = 55÷2 */
     width: 42px;
     height: 42px;
     border-radius: 50%;
     border: 1px solid #e0e0e0;
     background: #fff;
-    color: #1b2d45;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    top: 50%;
-    transform: translateY(-50%);
-    margin-bottom: 0;
-
+    color: #001a4d !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    z-index: 10;
 }
-.team-swiper .swiper-button-prev {
-    left: 0px;
-    /* ← خارج منطقة الكروت */
+
+.team-swiper-outer .swiper-button-prev {
+    left: 0;
     right: auto;
 }
 
-.team-swiper .swiper-button-next {
-    right: 0px;
-    /* ← خارج منطقة الكروت */
+.team-swiper-outer .swiper-button-next {
+    right: 0;
     left: auto;
 }
 
-.team-swiper .swiper-button-prev::after,
-.team-swiper .swiper-button-next::after {
+.team-swiper-outer .swiper-button-prev::after,
+.team-swiper-outer .swiper-button-next::after {
     font-size: 14px;
     font-weight: 700;
 }
 
+.team-swiper-outer .swiper-button-prev:hover,
+.team-swiper-outer .swiper-button-next:hover {
+    background: #001a4d;
+    color: #fff !important;
+    transform: translateY(-50%) scale(1.1);
+}
 /* ===== البطاقة ===== */
 .team-card {
     position: relative;
